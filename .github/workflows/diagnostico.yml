@@ -7,6 +7,9 @@ on:
         description: "URL del sitio del proveedor"
         default: "http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/"
 
+permissions:
+  contents: write
+
 jobs:
   diagnostico:
     runs-on: ubuntu-latest
@@ -22,4 +25,16 @@ jobs:
           URL_PROVEEDOR: ${{ github.event.inputs.url }}
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
-        run: python diagnostico.py
+        run: python diagnostico.py 2>&1 | tee diagnostico.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          cp diagnostico.txt /tmp/diagnostico.txt
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout --orphan diagnostico
+          git rm -rfq .
+          cp /tmp/diagnostico.txt .
+          git add diagnostico.txt
+          git commit -qm "Resultado del diagnóstico"
+          git push -f origin diagnostico
