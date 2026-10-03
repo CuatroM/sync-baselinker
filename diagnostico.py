@@ -154,6 +154,10 @@ def main():
     accion = urljoin(r.url, form.get("action") or "")
     metodo = (form.get("method") or "post").lower()
     print(f"\nIntentando login: {metodo.upper()} {accion} con campos {list(datos)}")
+    origen = "/".join(r.url.split("/")[:3])
+    ses.headers.update({"Referer": r.url, "Origin": origen,
+                        "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+                        "Accept-Language": "es-AR,es;q=0.9"})
     r2 = (ses.post(accion, data=datos, timeout=60) if metodo == "post"
           else ses.get(accion, params=datos, timeout=60))
     sopa2 = describir_pagina(r2, "Después del login")
