@@ -118,6 +118,12 @@ def main():
 
     usuario = os.environ.get("PROVEEDOR_USER")
     clave = os.environ.get("PROVEEDOR_PASS")
+    for nombre, v in (("PROVEEDOR_USER", usuario), ("PROVEEDOR_PASS", clave)):
+        if v is not None:
+            print(f"{nombre}: {len(v)} caracteres, espacios/saltos al inicio o final: "
+                  f"{'SÍ' if v != v.strip() else 'no'}")
+    usuario = usuario.strip() if usuario else usuario
+    clave = clave.strip() if clave else clave
     if not (usuario and clave):
         print("\nNo hay secrets PROVEEDOR_USER / PROVEEDOR_PASS: no se intenta el login.")
         return
