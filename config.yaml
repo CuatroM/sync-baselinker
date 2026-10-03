@@ -9,14 +9,15 @@ dry_run: true
 
 proveedor:
   # Link directo de descarga de la lista (Excel o CSV)
-  url_lista: "https://www.PROVEEDOR.com.ar/descargas/lista-precios.xlsx"
+  url_lista: "PENDIENTE"   # se completa después del diagnóstico con login
 
   # Tipo de acceso: ninguno | basic | formulario
-  login: ninguno
+  # Proveedor: panel "Administra ML" (PHP, formulario POST simple, sin captcha)
+  login: formulario
   # Solo si login: formulario
-  login_url: "https://www.PROVEEDOR.com.ar/login"
-  login_campo_usuario: "email"
-  login_campo_clave: "password"
+  login_url: "http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/"
+  login_campo_usuario: "usu_codigo"
+  login_campo_clave: "usu_password"
   login_campos_extra: {}
 
   formato: auto            # auto | excel | csv
