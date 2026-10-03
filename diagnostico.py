@@ -111,6 +111,8 @@ def main():
     ses.headers["User-Agent"] = UA
     r = ses.get(URL, timeout=60, allow_redirects=True)
     sopa = describir_pagina(r, "Página inicial")
+    print("\n----- HTML de la página inicial -----")
+    print(r.text[:15000])
     forms = describir_formularios(sopa, r.url)
     describir_scripts(ses, sopa, r.url)
 
