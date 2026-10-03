@@ -59,6 +59,37 @@ def describir_formularios(sopa, base):
     return forms
 
 
+CLAVES_JS = re.compile(r"usu_|login|ajax|\$\.post|fetch\(|\.php|location|submit|url\s*:", re.I)
+
+
+def describir_scripts(ses, sopa, base):
+    """Muestra las líneas de JavaScript que parecen manejar el login (botón type=button)."""
+    print("\n----- JavaScript relacionado con el login -----")
+    fuentes = []
+    for s in sopa.find_all("script"):
+        if s.get("src"):
+            src = urljoin(base, s["src"])
+            print(f"  script externo: {src}")
+            if "jquery" in src.lower() or "bootstrap" in src.lower() or not src.startswith(
+                    base.split("/")[0] + "//" + base.split("/")[2]):
+                continue
+            try:
+                fuentes.append((src, ses.get(src, timeout=30).text))
+            except requests.RequestException as e:
+                print(f"    (no se pudo leer: {e})")
+        elif s.string:
+            fuentes.append(("inline", s.string))
+    for origen, codigo in fuentes:
+        lineas = [l.strip() for l in codigo.splitlines() if CLAVES_JS.search(l)]
+        if lineas:
+            print(f"\n  [{origen}]")
+            for l in lineas[:40]:
+                print("   ", l[:200])
+    for b in sopa.find_all("button"):
+        print(f"\n  botón: texto={b.get_text(strip=True)!r} onclick={b.get('onclick')!r} "
+              f"class={b.get('class')}")
+
+
 def listar_links(sopa, base, titulo):
     vistos = set()
     print(f"\n----- Links que parecen descargas o listados ({titulo}) -----")
@@ -81,6 +112,7 @@ def main():
     r = ses.get(URL, timeout=60, allow_redirects=True)
     sopa = describir_pagina(r, "Página inicial")
     forms = describir_formularios(sopa, r.url)
+    describir_scripts(ses, sopa, r.url)
 
     usuario = os.environ.get("PROVEEDOR_USER")
     clave = os.environ.get("PROVEEDOR_PASS")
