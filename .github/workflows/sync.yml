@@ -1,0 +1,46 @@
+name: Sincronizar precio y stock con BaseLinker
+
+on:
+  schedule:
+    # Cada 4 horas (GitHub usa hora UTC; 03:00 UTC = 00:00 Argentina).
+    # Corre a las 00, 04, 08, 12, 16 y 20 hs de Argentina.
+    - cron: "7 3,7,11,15,19,23 * * *"
+  workflow_dispatch:        # botón "Run workflow" para ejecutarlo a mano
+    inputs:
+      dry_run:
+        description: "Simular sin escribir en BaseLinker (1 = sí, 0 = no)"
+        default: "0"
+
+concurrency:
+  group: sync-baselinker    # nunca corren dos sincronizaciones a la vez
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Sincronizar
+        env:
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
+          PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+        run: python sync.py
+
+      - name: Guardar reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reportes-${{ github.run_number }}
+          path: reportes/
+          retention-days: 30

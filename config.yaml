@@ -1,0 +1,48 @@
+# ============================================================
+#  Configuración de la sincronización Proveedor -> BaseLinker
+#  (los datos sensibles NO van acá: van como Secrets en GitHub)
+# ============================================================
+
+# true = simula y genera el reporte, pero no escribe en BaseLinker.
+# Dejarlo en true en las primeras pruebas.
+dry_run: true
+
+proveedor:
+  # Link directo de descarga de la lista (Excel o CSV)
+  url_lista: "https://www.PROVEEDOR.com.ar/descargas/lista-precios.xlsx"
+
+  # Tipo de acceso: ninguno | basic | formulario
+  login: ninguno
+  # Solo si login: formulario
+  login_url: "https://www.PROVEEDOR.com.ar/login"
+  login_campo_usuario: "email"
+  login_campo_clave: "password"
+  login_campos_extra: {}
+
+  formato: auto            # auto | excel | csv
+  hoja: null               # nombre de la hoja del Excel (null = la primera)
+  fila_encabezado: 1       # fila donde están los títulos de las columnas
+  separador_csv: null      # null = detectar automáticamente
+  codificacion: utf-8-sig
+
+columnas:
+  codigo: "Código"         # título exacto de la columna con el código
+  precio: "Precio"         # null si el proveedor no informa precio
+  stock: "Stock"           # null si el proveedor no informa stock
+  vincular_por: sku        # sku | ean (contra qué campo de BaseLinker se compara)
+
+reglas:
+  multiplicador_precio: 1.0     # ej. 1.35 = +35 % sobre el precio del proveedor
+  decimales_precio: 2
+  stock_minimo_publicar: 0      # si el stock es menor a esto, se publica 0
+  stock_maximo: null            # tope de stock a informar (null = sin tope)
+  minimo_productos_lista: 10    # si la lista trae menos, se aborta (protección)
+  stock_texto:                  # por si el proveedor informa stock con texto
+    "sin stock": 0
+    "consultar": 0
+    "disponible": 10
+
+baselinker:
+  inventory_id: 0          # ID del catálogo
+  price_group_id: 0        # ID del grupo de precios a actualizar
+  warehouse_id: "bl_0"     # ID del depósito, formato bl_123
