@@ -155,6 +155,8 @@ def main():
         print("\n⚠ Sigue apareciendo un campo de contraseña: el login probablemente falló "
               "(usuario/clave, captcha o un paso extra).")
     listar_links(sopa2, r2.url, "después del login")
+    print("\n----- HTML después del login -----")
+    print(r2.text[:25000])
 
 
 if __name__ == "__main__":
