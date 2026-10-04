@@ -1,0 +1,8 @@
+[2026-10-04 00:19:03] Login en el sitio del proveedor OK
+[2026-10-04 00:19:03] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-10-04 00:19:09] Recibido: 588,695 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-031026.xlsx"
+[2026-10-04 00:19:10] Lista del proveedor: 18534 productos con datos válidos
+[2026-10-04 00:19:22] Catálogo BaseLinker: 16197 productos
+[2026-10-04 00:19:22] Cambios detectados: 1 de stock, 1 de precio. Códigos del proveedor sin vincular en BaseLinker: 2405
+[2026-10-04 00:19:22] DRY_RUN activo: no se escribió nada en BaseLinker
+[2026-10-04 00:19:22] Listo. 2 cambios, 2405 sin vincular, 0 advertencias.
