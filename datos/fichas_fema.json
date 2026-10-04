@@ -1,0 +1,1965 @@
+[
+ {
+  "sku": "69350354",
+  "familia": "Aparejo / Malacate Eléctrico 12 V",
+  "nombre": "Malacate Eléctrico 12 V FEMA 900 2722 kg con Control Remoto",
+  "specs": {
+   "Modelo": "FEMA 900",
+   "Capacidad de arrastre (kg)": 2722,
+   "Largo de cable (m)": 9,
+   "Velocidad (m/min)": 1.8,
+   "Diámetro del cable (mm)": 5.1,
+   "Potencia del motor (HP)": 0.4,
+   "Voltaje (V)": 12,
+   "Dimensiones (mm)": "240 x 564 x 190",
+   "Peso (kg)": 22,
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Placa de montaje": "Incluida"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350358",
+  "familia": "Aparejo / Malacate Eléctrico 12 V",
+  "nombre": "Malacate Eléctrico 12 V FEMA 3161 4082 kg con Control Remoto",
+  "specs": {
+   "Modelo": "FEMA 3161",
+   "Capacidad de arrastre (kg)": 4082,
+   "Largo de cable (m)": 9,
+   "Velocidad (m/min)": 1.8,
+   "Diámetro del cable (mm)": 5.6,
+   "Potencia del motor (HP)": 0.6,
+   "Voltaje (V)": 12,
+   "Dimensiones (mm)": "260 x 305 x 193",
+   "Peso (kg)": 16,
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Placa de montaje": "Incluida"
+  },
+  "dudas": [
+   "El PDF dice '4,082 Kg de Rodado': lo tomé como 4.082 kg (no 4,08 kg)."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350366",
+  "familia": "Aparejo / Malacate Eléctrico 12 V",
+  "nombre": "Malacate Eléctrico 12 V FEMA 2271 2271 kg 24 m con Control Remoto",
+  "specs": {
+   "Modelo": "FEMA 2271",
+   "Capacidad de arrastre (kg)": 2271,
+   "Largo de cable (m)": 24,
+   "Velocidad (m/min)": 1.8,
+   "Diámetro del cable (mm)": 6,
+   "Potencia del motor (HP)": 2.3,
+   "Voltaje (V)": 12,
+   "Montaje": "4 bulones 10 mm",
+   "Placa (mm)": "167 x 115",
+   "Tambor (mm)": "63 x 140",
+   "Dimensiones (mm)": "470 x 180 x 193",
+   "Peso (kg)": 22,
+   "Control remoto": "Sí",
+   "Freno automático": "Sí"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350372",
+  "familia": "Aparejo / Malacate Eléctrico 12 V",
+  "nombre": "Malacate Eléctrico 12 V 3336 kg 29 m con Control Remoto",
+  "specs": {
+   "Modelo": "FEMA 2271",
+   "Capacidad de arrastre (kg)": 3336,
+   "Largo de cable (m)": 29,
+   "Velocidad (m/min)": 1.8,
+   "Diámetro del cable (mm)": 8,
+   "Potencia del motor (HP)": 3,
+   "Voltaje (V)": 12,
+   "Montaje": "4 bulones 10 mm",
+   "Placa (mm)": "262 x 115",
+   "Tambor (mm)": "63 x 228",
+   "Dimensiones (mm)": "545 x 180 x 222",
+   "Peso (kg)": 31,
+   "Control remoto": "Sí",
+   "Freno automático": "Sí"
+  },
+  "dudas": [
+   "El PDF indica modelo 'FEMA 2271' igual que el 69350366, pero con 3336 kg: ¿el modelo es otro?"
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350730",
+  "familia": "Aparejo Manual a Cadena",
+  "nombre": "Aparejo Manual a Cadena 1 Tn 1,5 m",
+  "specs": {
+   "Tipo": "Manual a cadena",
+   "Capacidad (kg)": 1000,
+   "Altura de elevación (m)": 1.5,
+   "Carga de prueba (kg)": 1500,
+   "Cantidad de cadenas": 1,
+   "Cadena de carga": "6 mm",
+   "Peso (kg)": 6.5,
+   "Esfuerzo de tracción (kg)": 16
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350736",
+  "familia": "Aparejo Manual a Cadena",
+  "nombre": "Aparejo Manual a Cadena 2 Tn 1,5 m",
+  "specs": {
+   "Tipo": "Manual a cadena",
+   "Capacidad (kg)": 2000,
+   "Altura de elevación (m)": 1.5,
+   "Carga de prueba (kg)": 3000,
+   "Cantidad de cadenas": 1,
+   "Cadena de carga": "8 mm",
+   "Peso (kg)": 11.2,
+   "Esfuerzo de tracción (kg)": 26
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350720",
+  "familia": "Aparejo Manual a Cadena",
+  "nombre": "Aparejo Manual a Cadena 1 Tn 3 m",
+  "specs": {
+   "Tipo": "Manual a cadena",
+   "Capacidad (kg)": 1000,
+   "Altura de elevación (m)": 3,
+   "Carga de prueba (kg)": 1250,
+   "Cantidad de cadenas": 1,
+   "Cadena de carga": "6 x 18 mm",
+   "Peso (kg)": 12.2,
+   "Medida de embalaje": "32 x 18 x 19 cm"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350724",
+  "familia": "Aparejo Manual a Cadena",
+  "nombre": "Aparejo Manual a Cadena 2 Tn 3 m",
+  "specs": {
+   "Tipo": "Manual a cadena",
+   "Capacidad (kg)": 2000,
+   "Altura de elevación (m)": 3,
+   "Carga de prueba (kg)": 2500,
+   "Cantidad de cadenas": 1,
+   "Cadena de carga": "8 x 24 mm",
+   "Peso (kg)": 19.5,
+   "Medida de embalaje": "37 x 20 x 24 cm"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350792",
+  "familia": "Carro de Traslación Manual",
+  "nombre": "Carro de Traslación para Aparejo 1 Tn Sin cadena",
+  "specs": {
+   "Tipo": "Para aparejo (sin cadena)",
+   "Capacidad (kg)": 1000,
+   "Ancho (mm)": 190,
+   "Alto (mm)": 135,
+   "Largo (mm)": 160,
+   "Distancia entre ejes (mm)": 90,
+   "Radio mínimo de giro": "1 m",
+   "Peso (kg)": 8.2,
+   "Ancho de viga aplicable (mm)": "80 a 146"
+  },
+  "dudas": [
+   "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350794",
+  "familia": "Carro de Traslación Manual",
+  "nombre": "Carro de Traslación para Aparejo 2 Tn Sin cadena",
+  "specs": {
+   "Tipo": "Para aparejo (sin cadena)",
+   "Capacidad (kg)": 2000,
+   "Ancho (mm)": 200,
+   "Alto (mm)": 170,
+   "Largo (mm)": 221,
+   "Distancia entre ejes (mm)": 115,
+   "Radio mínimo de giro": "1 m",
+   "Peso (kg)": 13,
+   "Ancho de viga aplicable (mm)": "80 a 146"
+  },
+  "dudas": [
+   "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350801",
+  "familia": "Carro de Traslación Manual",
+  "nombre": "Carro de Traslación para Aparejo 1 Tn Con cadena",
+  "specs": {
+   "Tipo": "Para aparejo (con cadena)",
+   "Capacidad (kg)": 1000,
+   "Ancho (mm)": 260,
+   "Alto (mm)": 210,
+   "Largo (mm)": 200,
+   "Distancia entre ejes (mm)": 95,
+   "Radio mínimo de giro": "0,9 m",
+   "Peso (kg)": 10.5,
+   "Ancho de viga aplicable (mm)": "80 a 146"
+  },
+  "dudas": [
+   "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350802",
+  "familia": "Carro de Traslación Manual",
+  "nombre": "Carro de Traslación para Aparejo 2 Tn Con cadena",
+  "specs": {
+   "Tipo": "Para aparejo (con cadena)",
+   "Capacidad (kg)": 2000,
+   "Ancho (mm)": 295,
+   "Alto (mm)": 250,
+   "Largo (mm)": 223.5,
+   "Distancia entre ejes (mm)": 125,
+   "Radio mínimo de giro": "1 m",
+   "Peso (kg)": 15.5,
+   "Ancho de viga aplicable (mm)": "80 a 146"
+  },
+  "dudas": [
+   "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350890",
+  "familia": "Imán Elevador",
+  "nombre": "Imán Elevador para Aparejo 500 kg",
+  "specs": {
+   "Capacidad (kg)": 500,
+   "Peso (kg)": 12.5,
+   "Dimensiones (mm)": "210 x 96 x 203"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350892",
+  "familia": "Imán Elevador",
+  "nombre": "Imán Elevador para Aparejo 1000 kg",
+  "specs": {
+   "Capacidad (kg)": 1000,
+   "Peso (kg)": 37,
+   "Dimensiones (mm)": "264 x 138 x 266"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350970",
+  "familia": "Grampa de Sujeción",
+  "nombre": "Grampa de Sujeción Horizontal para Aparejo 1 Tn",
+  "specs": {
+   "Apertura (mm)": "0 a 25",
+   "Orientación": "Horizontal",
+   "Capacidad (kg)": 1000,
+   "Peso (kg)": 2.5
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350980",
+  "familia": "Grampa de Sujeción",
+  "nombre": "Grampa de Sujeción Vertical para Aparejo 1 Tn",
+  "specs": {
+   "Apertura (mm)": "0 a 20",
+   "Orientación": "Vertical",
+   "Capacidad (kg)": 1000,
+   "Peso (kg)": 5
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350994",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 6 Tn 4 Ruedas",
+  "specs": {
+   "Capacidad (kg)": 6000,
+   "Ruedas": 4,
+   "Peso (kg)": 13.1
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350998",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 12 Tn 8 Ruedas",
+  "specs": {
+   "Capacidad (kg)": 12000,
+   "Ruedas": 8,
+   "Peso (kg)": 19.05
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350992",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 7 Tn 5 Ruedas Giro 360°",
+  "specs": {
+   "Capacidad (kg)": 7000,
+   "Ruedas": 5,
+   "Giro": "360°"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350993",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 12 Tn 6 Ruedas Giro 360°",
+  "specs": {
+   "Capacidad (kg)": 12000,
+   "Ruedas": 6,
+   "Giro": "360°"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350990",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 4 Tn 4 Ruedas con Manija Giro 360°",
+  "specs": {
+   "Capacidad (kg)": 4000,
+   "Ruedas": 4,
+   "Peso (kg)": 36.4,
+   "Base (cm)": "38 x 38",
+   "Largo con manija (m)": 1.05,
+   "Diámetro de crapodina (cm)": 14.5,
+   "Altura de base a piso (cm)": 11,
+   "Giro": "360°"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350991",
+  "familia": "Patín de Carga",
+  "nombre": "Patín de Carga 6 Tn 8 Ruedas con Manija Giro 360°",
+  "specs": {
+   "Capacidad (kg)": 6000,
+   "Ruedas": 8,
+   "Peso (kg)": 46.6,
+   "Base (cm)": "41 x 41",
+   "Largo con manija (m)": 1.05,
+   "Diámetro de crapodina (cm)": 14.5,
+   "Altura de base a piso (cm)": 11,
+   "Giro": "360°"
+  },
+  "dudas": [
+   "El título del PDF dice 'Patín de Carga - 8 Toneladas' pero la tabla dice 'Capacidad 6 Toneladas': tomé 6.000 kg."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350310",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 250 250 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 250",
+   "Capacidad máxima (kg)": 250,
+   "Altura de elevación (m)": "6 / 12",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 3,
+   "Potencia (W)": 500,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "125 / 250",
+   "Fuerza de rotura del cable (kg)": 750
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350314",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 250 250 kg 220 V",
+  "specs": {
+   "Modelo": "FEMA 250",
+   "Capacidad máxima (kg)": 250,
+   "Altura de elevación (m)": 60,
+   "Velocidad (m/min)": 15,
+   "Diámetro del cable (mm)": 4.5,
+   "Potencia (W)": 1300,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Fuerza de rotura del cable (kg)": 750
+  },
+  "dudas": [
+   "Altura de alzada 60 m y 15 m/min: ¿es correcto? Es muy distinto al resto de los FEMA 250."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350316",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 500 500 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 500",
+   "Capacidad máxima (kg)": 500,
+   "Altura de elevación (m)": "6 / 12",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 4.2,
+   "Potencia (W)": 900,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "250 / 500",
+   "Fuerza de rotura del cable (kg)": 1250
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350324",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 1000 1000 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 1000",
+   "Capacidad máxima (kg)": 1000,
+   "Altura de elevación (m)": "6 / 12",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 5.6,
+   "Potencia (W)": 1600,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "500 / 1000",
+   "Fuerza de rotura del cable (kg)": 2500
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350326",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 1000 1000 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 1000",
+   "Capacidad máxima (kg)": 1000,
+   "Altura de elevación (m)": "9 / 18",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 5.6,
+   "Potencia (W)": 1600,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "500 / 1000",
+   "Fuerza de rotura del cable (kg)": 2500
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350850",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 800 ECO 800 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 800 ECO",
+   "Capacidad máxima (kg)": 800,
+   "Altura de elevación (m)": "30 / 15",
+   "Velocidad (m/min)": "14 / 7",
+   "Diámetro del cable (mm)": 6,
+   "Potencia (W)": 2200,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "400 / 800",
+   "Peso (kg)": 31
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350854",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 1000 ECO 1000 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 1000 ECO",
+   "Capacidad máxima (kg)": 1000,
+   "Altura de elevación (m)": "30 / 15",
+   "Velocidad (m/min)": "14 / 7",
+   "Diámetro del cable (mm)": 6,
+   "Potencia (W)": 2200,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "500 / 1000",
+   "Peso (kg)": 31
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350320",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 1000 ECO 1000 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 1000 ECO",
+   "Capacidad máxima (kg)": 1000,
+   "Altura de elevación (m)": "6 / 12",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 6,
+   "Potencia (W)": 1700,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "500 / 1000",
+   "Peso (kg)": 30.7
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350321",
+  "familia": "Aparejo Eléctrico 220 V Doble Gancho",
+  "nombre": "Aparejo Eléctrico FEMA 1000 ECO 1000 kg 220 V Doble Gancho",
+  "specs": {
+   "Modelo": "FEMA 1000 ECO",
+   "Capacidad máxima (kg)": 1000,
+   "Altura de elevación (m)": "9 / 18",
+   "Velocidad (m/min)": "8 / 4",
+   "Diámetro del cable (mm)": 6,
+   "Potencia (W)": 1700,
+   "Voltaje (V)": 220,
+   "Protección del motor": "IP54",
+   "Aislación del motor": "Clase B",
+   "Control remoto": "Sí",
+   "Freno automático": "Sí",
+   "Capacidad con gancho simple / doble (kg)": "500 / 1000",
+   "Peso (kg)": 32
+  },
+  "dudas": [
+   "El PDF dice '8/18 Metros' (el título de la sección dice 18 m): tomé 9/18 m como el FEMA 1000. ¿Es 8 o 9 m?"
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350550",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 2 Tn 6 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 6.6,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 10,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 110,
+   "Dimensiones H/A/B/D/E (mm)": "800 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350554",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 2 Tn 9 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 6.6,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 10,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 110,
+   "Dimensiones H/A/B/D/E (mm)": "800 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350560",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 3 Tn 6 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 5.4,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 115,
+   "Dimensiones H/A/B/D/E (mm)": "845 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350564",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 3 Tn 9 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 5.4,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 115,
+   "Dimensiones H/A/B/D/E (mm)": "845 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350570",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 5 Tn 6 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 5000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 2,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 138,
+   "Dimensiones H/A/B/D/E (mm)": "1030 / 615 / 295 / 430 / 325"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350574",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 5 Tn 9 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 5000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 2,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 138,
+   "Dimensiones H/A/B/D/E (mm)": "1030 / 615 / 295 / 430 / 325"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350580",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 10 Tn 6 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 10000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "2 x 3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 4,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 300,
+   "Dimensiones H/A/B/D/E (mm)": "1400 / 630 / 315 / 890 / 445"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350584",
+  "familia": "Aparejo Eléctrico a Cadena 380 V",
+  "nombre": "Aparejo Eléctrico a Cadena 10 Tn 9 m Trifásico 380 V",
+  "specs": {
+   "Capacidad (kg)": 10000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "2 x 3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 4,
+   "Espesor de cadena (mm)": 11.2,
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 300,
+   "Dimensiones H/A/B/D/E (mm)": "1400 / 630 / 315 / 890 / 445"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350610",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 3 Tn 6 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 5.4,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "0,75 kW",
+   "Velocidad de traslación (m/min)": 21,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "100 a 178",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 167,
+   "Dimensiones H/A/B/D/E (mm)": "830 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350614",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 3 Tn 9 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 5.4,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "0,75 kW",
+   "Velocidad de traslación (m/min)": 21,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 1,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "100 a 178",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 167,
+   "Dimensiones H/A/B/D/E (mm)": "830 / 615 / 295 / 430 / 265"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350620",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 5 Tn 6 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 5000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "0,75 kW",
+   "Velocidad de traslación (m/min)": 11,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 2,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "100 a 178",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 220,
+   "Dimensiones H/A/B/D/E (mm)": "1015 / 615 / 295 / 430 / 325"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350624",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 5 Tn 9 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 5000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "0,75 kW",
+   "Velocidad de traslación (m/min)": 11,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 2,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "100 a 178",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 220,
+   "Dimensiones H/A/B/D/E (mm)": "1015 / 615 / 295 / 430 / 325"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350630",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 10 Tn 6 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 10000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "2 x 3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "2 x 0,8 kW",
+   "Velocidad de traslación (m/min)": 11,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 8,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "150 a 220",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 503,
+   "Dimensiones H/A/B/D/E (mm)": "1580 / 630 / 315 / 1460 / 725"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350634",
+  "familia": "Aparejo Eléctrico a Cadena 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cadena 10 Tn 9 m 380 V con Carro de Traslación",
+  "specs": {
+   "Capacidad (kg)": 10000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 2.7,
+   "Potencia del motor": "2 x 3,0 kW",
+   "Velocidad del motor (RPM)": 1440,
+   "Potencia motor del carro": "2 x 0,8 kW",
+   "Velocidad de traslación (m/min)": 11,
+   "Aislación": "Clase F",
+   "Cantidad de cadenas": 8,
+   "Espesor de cadena (mm)": 11.2,
+   "Ancho de viga (mm)": "150 a 220",
+   "Tablero de comando (V)": 24,
+   "Peso (kg)": 503,
+   "Dimensiones H/A/B/D/E (mm)": "1580 / 630 / 315 / 1460 / 725"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350515",
+  "familia": "Aparejo Eléctrico a Cable 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cable 2 Tn 6 m Trifásico 380 V con Carro",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 8,
+   "Velocidad de traslación (m/min)": 20,
+   "Potencia del motor": "3 kW (4 HP)",
+   "Velocidad del motor (RPM)": 1380,
+   "Diámetro del cable (mm)": 11,
+   "Tablero de comando (V)": 48,
+   "Peso (kg)": 234
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350517",
+  "familia": "Aparejo Eléctrico a Cable 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cable 2 Tn 9 m Trifásico 380 V con Carro",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 8,
+   "Velocidad de traslación (m/min)": 20,
+   "Potencia del motor": "3 kW (4 HP)",
+   "Velocidad del motor (RPM)": 1380,
+   "Diámetro del cable (mm)": 11,
+   "Tablero de comando (V)": 48,
+   "Peso (kg)": 250
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350523",
+  "familia": "Aparejo Eléctrico a Cable 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cable 3 Tn 6 m Trifásico 380 V con Carro",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 6,
+   "Velocidad de izado (m/min)": 8,
+   "Velocidad de traslación (m/min)": 20,
+   "Potencia del motor": "4,5 kW (6 HP)",
+   "Velocidad del motor (RPM)": 1380,
+   "Diámetro del cable (mm)": 13,
+   "Tablero de comando (V)": 48,
+   "Peso (kg)": 294
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350526",
+  "familia": "Aparejo Eléctrico a Cable 380 V con Carro",
+  "nombre": "Aparejo Eléctrico a Cable 3 Tn 9 m Trifásico 380 V con Carro",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Voltaje (V)": 380,
+   "Altura de elevación (m)": 9,
+   "Velocidad de izado (m/min)": 8,
+   "Velocidad de traslación (m/min)": 20,
+   "Potencia del motor": "4,5 kW (6 HP)",
+   "Velocidad del motor (RPM)": 1380,
+   "Diámetro del cable (mm)": 13,
+   "Tablero de comando (V)": 48,
+   "Peso (kg)": 310
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350396",
+  "familia": "Carro de Traslación Eléctrico",
+  "nombre": "Carro de Traslación Eléctrico 1000 kg 220 V",
+  "specs": {
+   "Capacidad (kg)": 1000,
+   "Velocidad de traslación (m/min)": 15,
+   "Potencia (W)": 180,
+   "Voltaje (V)": 220,
+   "Altura de montaje (m)": 3,
+   "Ancho de viga (mm)": "68 a 110",
+   "Tamaño de haz H": "10 a 22",
+   "Ruedas de equilibrio": "Sí"
+  },
+  "dudas": [
+   "El PDF dice 'Potencia 180 W' y también 'Entrada de energía 120 W': tomé 180 W."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350440",
+  "familia": "Soporte Giratorio para Aparejo",
+  "nombre": "Soporte Giratorio para Aparejos 300 / 600 kg",
+  "specs": {
+   "Capacidad (kg)": "300 (3 estructuras) / 600 (2 estructuras)",
+   "Instalación": "Simple o doble",
+   "Largo (mm)": "1100 (3 estructuras) / 750 (2 estructuras)",
+   "Rango de giro": "±75°",
+   "Embalaje (cm)": "44 x 9 x 10",
+   "Peso (kg)": 6.2
+  },
+  "dudas": [
+   "La tabla dice 'Capacidad 300 / 1.100 Kg' pero el texto dice 300 kg (3 estructuras) y 600 kg (2 estructuras); 1.100 parece ser el largo en mm. Tomé 300 / 600 kg."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350307",
+  "familia": "Malacate Manual",
+  "nombre": "Malacate Manual FEMA 350 360 kg Cinta",
+  "specs": {
+   "Modelo": "FEMA 350",
+   "Cinta / cable": "6 m de cinta",
+   "Gancho": "1 gancho garra",
+   "Fuerza máxima de arrastre (kg)": 360,
+   "Peso (kg)": 2.2,
+   "Medidas": "21,9 x 13,5 x 11 cm",
+   "Ancho de cinta": "5 cm"
+  },
+  "dudas": [
+   "El PDF dice '219x13,5x11 cm': lo tomé como 21,9 x 13,5 x 11 cm."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350309",
+  "familia": "Malacate Manual",
+  "nombre": "Malacate Manual FEMA 500 540 kg Cinta",
+  "specs": {
+   "Modelo": "FEMA 500",
+   "Cinta / cable": "8 m de cinta",
+   "Gancho": "1 gancho garra",
+   "Fuerza máxima de arrastre (kg)": 540,
+   "Peso (kg)": 3.2,
+   "Medidas": "21,5 x 15 x 13 cm",
+   "Ancho de cinta": "5 cm"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350302",
+  "familia": "Malacate Manual",
+  "nombre": "Malacate Manual FEMA 2000 907 kg Cinta",
+  "specs": {
+   "Modelo": "FEMA 2000",
+   "Cinta / cable": "6 m de cinta",
+   "Gancho": "1 gancho garra",
+   "Fuerza máxima de arrastre (kg)": 907,
+   "Peso (kg)": 4,
+   "Medidas": "23 x 15 x 15 cm"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350303",
+  "familia": "Malacate Manual",
+  "nombre": "Malacate Manual FEMA 2500 1134 kg Cinta",
+  "specs": {
+   "Modelo": "FEMA 2500",
+   "Cinta / cable": "6 m de cinta",
+   "Gancho": "1 gancho garra",
+   "Fuerza máxima de arrastre (kg)": 1134,
+   "Peso (kg)": 5,
+   "Medidas": "23 x 15 x 15 cm"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350305",
+  "familia": "Malacate Manual",
+  "nombre": "Malacate Manual FEMA 2500 907 kg Cable De Acero",
+  "specs": {
+   "Modelo": "FEMA 2500",
+   "Cinta / cable": "6 m de cable de acero",
+   "Gancho": "1 gancho garra",
+   "Fuerza máxima de arrastre (kg)": 907,
+   "Peso (kg)": 4.66,
+   "Medidas": "23 x 15 x 15 cm"
+  },
+  "dudas": [
+   "Mismo modelo FEMA 2500 que el 69350303 pero con cable de acero y 907 kg (vs 1.134 kg con cinta): ¿correcto?"
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69351048",
+  "familia": "Aspiradora Polvo y Líquido",
+  "nombre": "Aspiradora Industrial Polvo y Líquido 20 L 1200 W Tanque Acero Inoxidable",
+  "specs": {
+   "Capacidad del tanque (L)": 20,
+   "Potencia (W)": 1200,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Succión (kPa)": ">17",
+   "Nivel de ruido (dB)": "<80",
+   "Largo de cable (m)": 4.5,
+   "Peso bruto / neto (kg)": "6,5 / 5,5",
+   "Medidas (cm)": "35 x 35 x 45",
+   "Manguera": "1,5 m",
+   "Ruedas": "Chicas",
+   "Tanque": "Acero inoxidable",
+   "Uso": "Polvo y líquido",
+   "Observaciones": "Aspiradora y sopladora"
+  },
+  "dudas": [
+   "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69351050",
+  "familia": "Aspiradora Polvo y Líquido",
+  "nombre": "Aspiradora Industrial Polvo y Líquido 60 L 1200 W Tanque Acero Inoxidable",
+  "specs": {
+   "Capacidad del tanque (L)": 60,
+   "Potencia (W)": 1200,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Succión (kPa)": ">17",
+   "Nivel de ruido (dB)": "<80",
+   "Largo de cable (m)": 4.5,
+   "Peso bruto / neto (kg)": "13,5 / 12,5",
+   "Medidas (cm)": "47 x 45 x 80",
+   "Manguera": "2,5 m",
+   "Ruedas": "Grandes",
+   "Tanque": "Acero inoxidable",
+   "Uso": "Polvo y líquido",
+   "Observaciones": "Aspiradora y sopladora"
+  },
+  "dudas": [
+   "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69351065",
+  "familia": "Aspiradora Polvo y Líquido",
+  "nombre": "Aspiradora Industrial Polvo y Líquido 20 L 1400 W Tanque Acero Inoxidable",
+  "specs": {
+   "Capacidad del tanque (L)": 20,
+   "Potencia (W)": 1400,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Succión (kPa)": ">18",
+   "Nivel de ruido (dB)": "<75",
+   "Largo de cable (m)": 4.5,
+   "Peso bruto / neto (kg)": "8 / 7,5",
+   "Medidas (cm)": "39 x 38 x 56,5",
+   "Manguera": "1,5 m",
+   "Ruedas": "Grandes",
+   "Tanque": "Acero inoxidable",
+   "Uso": "Polvo y líquido",
+   "Observaciones": "Aspiradora y sopladora"
+  },
+  "dudas": [
+   "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69351070",
+  "familia": "Aspiradora Polvo y Líquido",
+  "nombre": "Aspiradora Industrial Polvo y Líquido 60 L 1400 W Tanque Acero Inoxidable",
+  "specs": {
+   "Capacidad del tanque (L)": 60,
+   "Potencia (W)": 1400,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Succión (kPa)": ">17",
+   "Nivel de ruido (dB)": "<80",
+   "Largo de cable (m)": 4.5,
+   "Peso bruto / neto (kg)": "13,5 / 12,5",
+   "Medidas (cm)": "47 x 45 x 80",
+   "Manguera": "2,5 m",
+   "Ruedas": "Grandes",
+   "Tanque": "Acero inoxidable",
+   "Uso": "Polvo y líquido"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69351110",
+  "familia": "Aspiradora Polvo y Líquido",
+  "nombre": "Aspiradora Industrial Polvo y Líquido 80 L 2000 W Tanque Acero Inoxidable",
+  "specs": {
+   "Capacidad del tanque (L)": 80,
+   "Potencia (W)": 2000,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Succión (kPa)": ">19",
+   "Nivel de ruido (dB)": "<78",
+   "Largo de cable (m)": 5.5,
+   "Peso bruto / neto (kg)": "26,5 / 23,5",
+   "Medidas (cm)": "60 x 58 x 95",
+   "Manguera": "2,5 m x 40 mm",
+   "Ruedas": "Grandes",
+   "Tanque": "Acero inoxidable",
+   "Uso": "Polvo y líquido",
+   "Observaciones": "2 motores"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310340",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico para Aspiradora FEMA 1200 W - 60 L",
+  "specs": {
+   "Tipo": "Caño plástico",
+   "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310344",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Pico plástico para Aspiradora FEMA 1200 W - 60 L",
+  "specs": {
+   "Tipo": "Pico plástico",
+   "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310440",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico para Aspiradora FEMA 1400 W - 60 L",
+  "specs": {
+   "Tipo": "Caño plástico",
+   "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310640",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico para Aspiradora FEMA 2000 W - 80 L",
+  "specs": {
+   "Tipo": "Caño plástico",
+   "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310650",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Bolsa de tela para Aspiradora FEMA 2000 W - 80 L",
+  "specs": {
+   "Tipo": "Bolsa de tela",
+   "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310350",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Bolsa de papel para Aspiradora FEMA 1200 W - 60 L",
+  "specs": {
+   "Tipo": "Bolsa de papel",
+   "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310560",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico 1,5 m para Aspiradora FEMA 1400 W - 20 L",
+  "specs": {
+   "Tipo": "Caño plástico 1,5 m",
+   "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310557",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Bolsa de papel para Aspiradora FEMA 1400 W - 20 L",
+  "specs": {
+   "Tipo": "Bolsa de papel",
+   "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310450",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Bolsa de tela para Aspiradora FEMA 1400 W - 60 L",
+  "specs": {
+   "Tipo": "Bolsa de tela",
+   "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310540",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico para Aspiradora FEMA 1400 W - 20 L",
+  "specs": {
+   "Tipo": "Caño plástico",
+   "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310555",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Bolsa de tela para Aspiradora FEMA 1400 W - 20 L",
+  "specs": {
+   "Tipo": "Bolsa de tela",
+   "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310360",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño plástico 1,5 m para Aspiradora FEMA 1200 W - 60 L",
+  "specs": {
+   "Tipo": "Caño plástico 1,5 m",
+   "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310370",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Filtro para Aspiradora FEMA 1200 W - 60 L",
+  "specs": {
+   "Tipo": "Filtro",
+   "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310480",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Filtro esponja para Aspiradora FEMA 1400 W - 60 L",
+  "specs": {
+   "Tipo": "Filtro esponja",
+   "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310675",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Caño metálico para Aspiradora FEMA 2000 W - 80 L",
+  "specs": {
+   "Tipo": "Caño metálico",
+   "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69310680",
+  "familia": "Accesorio para Aspiradora",
+  "nombre": "Cepillo plástico para Aspiradora FEMA 2000 W - 80 L",
+  "specs": {
+   "Tipo": "Cepillo plástico",
+   "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69381502",
+  "familia": "Arrancador / Cargador de Batería",
+  "nombre": "Arrancador Portátil 12 V 600 A Batería Litio 12000 mAh con Linterna y USB",
+  "specs": {
+   "Tipo": "Portátil multifunción",
+   "Batería": "Litio polímero 12.000 mAh",
+   "Voltaje (V)": 12,
+   "Corriente de arranque máxima (A)": 600,
+   "Salida USB": "5 V / 2,1 A",
+   "Entrada de carga": "DC 12 V / 1 A; Micro USB 5 V / 1 A",
+   "Luz LED": "1 W blanca con función SOS",
+   "Ciclos de vida": "> 500",
+   "Temperatura de trabajo": "-20 °C a 60 °C",
+   "Peso (g)": 400,
+   "Medidas (mm)": "167 x 72 x 38",
+   "Motores": "Nafta y diésel hasta 3,5 L",
+   "Protecciones": "Sobrecarga, polaridad inversa y cortocircuito",
+   "Pantalla": "LED de capacidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69381506",
+  "familia": "Arrancador / Cargador de Batería",
+  "nombre": "Arrancador Portátil 12 V 850 A con Doble USB y Linterna",
+  "specs": {
+   "Tipo": "Portátil multifunción",
+   "Voltaje (V)": 12,
+   "Corriente de arranque (A)": 450,
+   "Corriente de arranque máxima (A)": 850,
+   "Entrada": "14 V / 1 A",
+   "Salidas USB": "5 V / 1 A y 5 V / 2 A",
+   "Temperatura de trabajo": "-20 °C a 60 °C",
+   "Peso (g)": 750,
+   "Medidas (mm)": "232 x 86 x 33",
+   "Tiempo de carga (h)": 7,
+   "Motores": "Nafta y diésel hasta 6 L",
+   "Luz LED": "Con función SOS",
+   "Protecciones": "Sobrecarga, polaridad inversa y cortocircuito",
+   "Incluye": "Pinzas, cable de arranque inteligente, adaptador encendedor 12 V y cable USB"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69381380",
+  "familia": "Arrancador / Cargador de Batería",
+  "nombre": "Cargador de Baterías DUCA 200 12/24 V",
+  "specs": {
+   "Marca": "DUCA",
+   "Modelo": "DUCA 200",
+   "Voltaje de entrada (V)": 230,
+   "Voltaje de carga": "12 / 24 V",
+   "Potencia de carga": "0,3 kW",
+   "Corriente de carga promedio (A)": "12 / 8",
+   "Capacidad máxima (Ah)": 200,
+   "Capacidad mínima (Ah)": 60,
+   "Posiciones de ajuste": 1,
+   "Fusible (A)": 30,
+   "Peso (kg)": 7.4,
+   "Dimensiones (cm)": "26 x 23 x 19,5",
+   "Protecciones": "Sobrecarga e inversión de polaridad"
+  },
+  "dudas": [
+   "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69381395",
+  "familia": "Arrancador / Cargador de Batería",
+  "nombre": "Cargador Arrancador de Baterías DUCA 400 12/24 V 240 A",
+  "specs": {
+   "Marca": "DUCA",
+   "Modelo": "DUCA 400",
+   "Voltaje de entrada (V)": 230,
+   "Voltaje de carga": "12 / 24 V",
+   "Potencia de carga": "1,6 kW",
+   "Corriente de carga promedio (A)": "40",
+   "Capacidad máxima (Ah)": 700,
+   "Capacidad mínima (Ah)": 40,
+   "Posiciones de ajuste": 4,
+   "Fusible (A)": 16,
+   "Peso (kg)": 16,
+   "Dimensiones (cm)": "32 x 25 x 57,5",
+   "Protecciones": "Sobrecarga e inversión de polaridad",
+   "Arranque": "8 kW / 35 A",
+   "Corriente máxima de arranque (A)": 240
+  },
+  "dudas": [
+   "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69381415",
+  "familia": "Arrancador / Cargador de Batería",
+  "nombre": "Cargador Arrancador de Baterías DUCA 600 12/24 V 540 A",
+  "specs": {
+   "Marca": "DUCA",
+   "Modelo": "DUCA 600",
+   "Voltaje de entrada (V)": 230,
+   "Voltaje de carga": "12 / 24 V",
+   "Potencia de carga": "2 kW",
+   "Corriente de carga promedio (A)": "60",
+   "Capacidad máxima (Ah)": 1000,
+   "Capacidad mínima (Ah)": 60,
+   "Posiciones de ajuste": 6,
+   "Fusible (A)": 20,
+   "Peso (kg)": 26,
+   "Dimensiones (cm)": "40,5 x 31,5 x 61,5",
+   "Protecciones": "Sobrecarga e inversión de polaridad",
+   "Arranque": "12 kW / 55 A",
+   "Corriente máxima de arranque (A)": 540
+  },
+  "dudas": [
+   "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350220",
+  "familia": "Sensitiva / Cortadora de Metales",
+  "nombre": "Sensitiva Cortadora 355 mm 1850 W 220 V Hobby",
+  "specs": {
+   "Tipo": "Hobby",
+   "Transmisión": "Mando directo",
+   "Potencia (W)": 1850,
+   "Diámetro del disco (mm)": 355,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Velocidad (RPM)": 3800,
+   "Traba de disco": "Sí",
+   "Morsa de ajuste rápido": "No",
+   "Medidas (cm)": "53 x 29 x 39",
+   "Peso (kg)": 13.5,
+   "Capacidad de corte (mm)": 110,
+   "Ángulos de corte": "15°, 30°, 45° y 90°"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350225",
+  "familia": "Sensitiva / Cortadora de Metales",
+  "nombre": "Sensitiva Cortadora 355 mm 2450 W 220 V Servicio",
+  "specs": {
+   "Tipo": "Servicio pesado",
+   "Transmisión": "Mando directo",
+   "Potencia (W)": 2450,
+   "Diámetro del disco (mm)": 355,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Velocidad (RPM)": 3900,
+   "Traba de disco": "Sí",
+   "Morsa de ajuste rápido": "Sí",
+   "Medidas (cm)": "53 x 29 x 39",
+   "Peso (kg)": 15,
+   "Capacidad de corte (mm)": 120,
+   "Ángulos de corte": "15°, 30°, 45° y 90°",
+   "Observaciones": "Con tope regulable de corte"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350233",
+  "familia": "Sensitiva / Cortadora de Metales",
+  "nombre": "Sensitiva Cortadora 400 mm 2600 W 220 V Servicio",
+  "specs": {
+   "Tipo": "Servicio pesado industrial",
+   "Transmisión": "A correa",
+   "Potencia (W)": 2600,
+   "Diámetro del disco (mm)": 400,
+   "Voltaje (V)": 220,
+   "Frecuencia (Hz)": 50,
+   "Velocidad (RPM)": 2280,
+   "Traba de disco": "Sí",
+   "Morsa de ajuste rápido": "Sí",
+   "Medidas (cm)": "67 x 40,5 x 54,5",
+   "Peso (kg)": 53
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350235",
+  "familia": "Sensitiva / Cortadora de Metales",
+  "nombre": "Sensitiva Cortadora 400 mm 3000 W 380 V Servicio",
+  "specs": {
+   "Tipo": "Servicio pesado industrial",
+   "Transmisión": "A correa",
+   "Potencia (W)": 3000,
+   "Diámetro del disco (mm)": 400,
+   "Voltaje (V)": 380,
+   "Frecuencia (Hz)": 50,
+   "Velocidad (RPM)": 2280,
+   "Traba de disco": "Sí",
+   "Morsa de ajuste rápido": "Sí",
+   "Medidas (cm)": "67 x 40,5 x 54,5",
+   "Peso (kg)": 49
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69350203",
+  "familia": "Amoladora de Banco",
+  "nombre": "Amoladora de Banco 150 mm 350 W",
+  "specs": {
+   "Diámetro de piedra (mm)": 150,
+   "Potencia (W)": 350,
+   "Piedra": "150 x 16 x 12,7 mm",
+   "Velocidad (RPM)": 2950,
+   "Voltaje (V)": 220,
+   "Peso neto / bruto (kg)": "6,7 / 7",
+   "Caja (cm)": "36,5 x 20,5 x 21"
+  },
+  "dudas": [
+   "El PDF no indica el voltaje de las amoladoras de banco: asumí 220 V."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69350205",
+  "familia": "Amoladora de Banco",
+  "nombre": "Amoladora de Banco 200 mm 550 W",
+  "specs": {
+   "Diámetro de piedra (mm)": 200,
+   "Potencia (W)": 550,
+   "Piedra": "200 x 20 x 16 mm",
+   "Velocidad (RPM)": 2950,
+   "Voltaje (V)": 220,
+   "Peso neto / bruto (kg)": "9 / 10",
+   "Caja (cm)": "38,5 x 26,5 x 28"
+  },
+  "dudas": [
+   "El PDF no indica el voltaje de las amoladoras de banco: asumí 220 V."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69503408",
+  "familia": "Balanceadora de Cubiertas",
+  "nombre": "Balanceadora de Cubiertas DUCA 5 Programas 120 RPM 220 V",
+  "specs": {
+   "Marca": "DUCA",
+   "Potencia": "0,37 kW",
+   "Alimentación": "220 V / 50 Hz",
+   "Velocidad de balanceo (RPM)": 120,
+   "Precisión": "1 g",
+   "Tiempo de medición": "8 s",
+   "Carga máxima (kg)": 65,
+   "Diámetro de llanta": "10\" a 24\" (256 a 610 mm)",
+   "Ancho de llanta": "1,5\" a 20\" (40 a 510 mm)",
+   "Cono": "TR36",
+   "Nivel sonoro (dB)": 70,
+   "Tipos de balanceo": 5,
+   "Peso neto / bruto (kg)": "98 / 122",
+   "Dimensiones (mm)": "960 x 760 x 1160",
+   "Funciones": "Autocalibración y autodiagnóstico, tablero digital"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503420",
+  "familia": "Balanceadora de Cubiertas",
+  "nombre": "Balanceadora de Cubiertas DUCA 5 Programas 200 RPM 220 V",
+  "specs": {
+   "Marca": "DUCA",
+   "Potencia": "0,37 kW",
+   "Alimentación": "220 V / 50 Hz",
+   "Velocidad de balanceo (RPM)": 200,
+   "Precisión": "1 g",
+   "Tiempo de medición": "8 s",
+   "Carga máxima (kg)": 65,
+   "Diámetro de llanta": "10\" a 24\" (256 a 610 mm)",
+   "Ancho de llanta": "1,5\" a 20\" (40 a 510 mm)",
+   "Cono": "TR16",
+   "Nivel sonoro (dB)": 70,
+   "Tipos de balanceo": 5,
+   "Peso neto / bruto (kg)": "101 / 125",
+   "Dimensiones (mm)": "960 x 760 x 1160",
+   "Funciones": "Autocalibración y autodiagnóstico, tablero digital"
+  },
+  "dudas": [
+   "69503420 figura con cono TR16 en la tabla y TR36 en los accesorios: confirmar."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69503410",
+  "familia": "Balanceadora de Cubiertas",
+  "nombre": "Balanceadora de Cubiertas DUCA 10 Programas 200 RPM 220 V",
+  "specs": {
+   "Marca": "DUCA",
+   "Potencia": "0,37 kW",
+   "Alimentación": "220 V / 50 Hz",
+   "Velocidad de balanceo (RPM)": 200,
+   "Precisión": "1 g",
+   "Tiempo de medición": "8 s",
+   "Carga máxima (kg)": 65,
+   "Diámetro de llanta": "10\" a 24\" (256 a 610 mm)",
+   "Ancho de llanta": "1,5\" a 20\" (40 a 510 mm)",
+   "Cono": "TR16",
+   "Nivel sonoro (dB)": 70,
+   "Tipos de balanceo": 10,
+   "Peso neto / bruto (kg)": "98 / 122",
+   "Dimensiones (mm)": "960 x 760 x 1160",
+   "Funciones": "Autocalibración y autodiagnóstico, tablero digital",
+   "Extras": "Medición automática de distancia y diámetro, pantalla LED 7\", modo rastreo de contrapeso"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503230",
+  "familia": "Elevador de Autos",
+  "nombre": "Elevador de Autos 4 Columnas 4000 kg 3 HP 380 V",
+  "specs": {
+   "Columnas": 4,
+   "Capacidad (kg)": 4000,
+   "Motor": "3 HP - 380 V",
+   "Altura de columna (mm)": 2120,
+   "Altura máxima de elevación (mm)": 1700,
+   "Largo de plataforma (mm)": 4250,
+   "Altura de plataforma (mm)": 170,
+   "Tiempo de subida (s)": 45,
+   "Tiempo de bajada (s)": 45,
+   "Peso bruto (kg)": 1000
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503240",
+  "familia": "Elevador de Autos",
+  "nombre": "Elevador de Autos 2 Columnas 4000 kg 1 HP 220 V",
+  "specs": {
+   "Columnas": 2,
+   "Capacidad (kg)": 4000,
+   "Motor": "1 HP - 220 V",
+   "Altura de columna (mm)": 2824,
+   "Altura máxima de elevación (mm)": 1930,
+   "Tiempo de subida (s)": "≤ 50",
+   "Tiempo de bajada (s)": "≤ 50",
+   "Peso bruto (kg)": 597
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503222",
+  "familia": "Elevador de Autos",
+  "nombre": "Elevador de Autos 2 Columnas 4000 kg 3 HP 220 V con Traba Manual",
+  "specs": {
+   "Columnas": 2,
+   "Capacidad (kg)": 4000,
+   "Motor": "3 HP - 220 V",
+   "Altura máxima de elevación (mm)": 1700,
+   "Altura mínima de soporte (mm)": 140,
+   "Distancia entre columnas (mm)": 2830,
+   "Altura total (mm)": 2826,
+   "Ancho total (mm)": 3470,
+   "Brazo largo (mm)": "890 a 1390",
+   "Brazo corto (mm)": "740 a 1310",
+   "Tiempo de subida (s)": "≤ 65",
+   "Ruido (dB)": 70,
+   "Presión de aceite (MPa)": 16,
+   "Tanque de aceite (L)": 10,
+   "Peso (kg)": "620 / 680",
+   "Traba": "Manual"
+  },
+  "dudas": [
+   "El PDF dice peso bruto 620 kg y neto 680 kg (el neto mayor que el bruto): confirmar."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69503223",
+  "familia": "Elevador de Autos",
+  "nombre": "Elevador de Autos 2 Columnas 4000 kg 3 HP 380 V con Traba Manual",
+  "specs": {
+   "Columnas": 2,
+   "Capacidad (kg)": 4000,
+   "Motor": "3 HP - 380 V",
+   "Altura máxima de elevación (mm)": 1700,
+   "Altura mínima de soporte (mm)": 140,
+   "Distancia entre columnas (mm)": 2830,
+   "Altura total (mm)": 2826,
+   "Ancho total (mm)": 3470,
+   "Brazo largo (mm)": "890 a 1390",
+   "Brazo corto (mm)": "740 a 1310",
+   "Tiempo de subida (s)": "≤ 65",
+   "Ruido (dB)": 70,
+   "Presión de aceite (MPa)": 16,
+   "Tanque de aceite (L)": 10,
+   "Peso (kg)": "620 / 680",
+   "Traba": "Manual"
+  },
+  "dudas": [
+   "El PDF dice peso bruto 620 kg y neto 680 kg (el neto mayor que el bruto): confirmar."
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69503221",
+  "familia": "Elevador de Autos",
+  "nombre": "Elevador Tijera Móvil 3000 kg Hidráulico 380 V",
+  "specs": {
+   "Tipo": "Plataforma tijera móvil con ruedas",
+   "Capacidad (kg)": 3000,
+   "Altura máxima de elevación (mm)": 1000,
+   "Altura mínima (mm)": 110,
+   "Ancho total (mm)": 1760,
+   "Largo de plataforma (mm)": "1400 a 1900",
+   "Espacio entre plataformas (mm)": 700,
+   "Tiempo de elevación (s)": "50 a 60",
+   "Potencia": "2,2 kW / 380 V",
+   "Ruido (dB)": 70,
+   "Presión de aceite (MPa)": 25,
+   "Tanque de aceite (L)": 14,
+   "Peso bruto (kg)": 477
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503315",
+  "familia": "Desarmadora de Cubiertas",
+  "nombre": "Desarmadora de Cubiertas Semi Neumática 12\"-26\"",
+  "specs": {
+   "Llanta, cierre exterior": "12\" a 23\"",
+   "Llanta, cierre interior": "14\" a 26\"",
+   "Diámetro máximo de rueda": "1143 mm (45\")",
+   "Ancho máximo de rueda": "406 mm (16\")",
+   "Presión de trabajo (bar)": "8 a 10",
+   "Potencia": "0,37 kW",
+   "Torque máximo (Nm)": 1078,
+   "Dimensiones (cm)": "113 x 90 x 103",
+   "Ruido (dB)": "< 75",
+   "Brazo": "Semi neumático, móvil"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503325",
+  "familia": "Desarmadora de Cubiertas",
+  "nombre": "Desarmadora de Cubiertas Semi Neumática 12\"-26\" con Tanque de Aire",
+  "specs": {
+   "Llanta, cierre exterior": "12\" a 23\"",
+   "Llanta, cierre interior": "14\" a 26\"",
+   "Diámetro máximo de rueda": "1143 mm (45\")",
+   "Ancho máximo de rueda": "406 mm (16\")",
+   "Presión de trabajo (bar)": "8 a 10",
+   "Potencia": "0,37 kW",
+   "Torque máximo (Nm)": 1078,
+   "Dimensiones (cm)": "113 x 90 x 103",
+   "Ruido (dB)": "< 75",
+   "Brazo": "Semi neumático, móvil",
+   "Extras": "Columna con tanque de aire y refuerzo para neumáticos de perfil bajo"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503750",
+  "familia": "Soporte de Chasis",
+  "nombre": "Soporte de Chasis para Moto 150 kg",
+  "specs": {
+   "Capacidad (kg)": 150,
+   "Medidas (cm)": "35 x 31 x 59"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503800",
+  "familia": "Soporte de Chasis",
+  "nombre": "Soporte de Chasis con Criquet 12 Tn 480-750 mm",
+  "specs": {
+   "Capacidad (kg)": 12000,
+   "Altura mínima (mm)": 480,
+   "Altura máxima (mm)": 750,
+   "Medidas (cm)": "35 x 31 x 59"
+  },
+  "dudas": [
+   "El PDF dice 'Peso de elevación 12 Tt': tomé 12.000 kg.",
+   "El PDF dice 'Se vende por dos unidades, el precio publicado es por unidad': ¿lo aclaramos en la descripción?",
+   "Medidas iguales al soporte de moto (35 x 31 x 59 cm): ¿correcto?"
+  ],
+  "notas": []
+ },
+ {
+  "sku": "69503874",
+  "familia": "Criquet Carro",
+  "nombre": "Criquet Carro Hidráulico 2 Tn 125-300 mm",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Altura mínima (mm)": 125,
+   "Altura máxima (mm)": 300
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69503892",
+  "familia": "Criquet Carro",
+  "nombre": "Criquet Carro Hidráulico 3 Tn Super Bajo 75-505 mm",
+  "specs": {
+   "Capacidad (kg)": 3000,
+   "Altura mínima (mm)": 75,
+   "Altura máxima (mm)": 505,
+   "Perfil": "Super bajo"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69504160",
+  "familia": "Prensa Hidráulica",
+  "nombre": "Prensa Hidráulica de Taller 20 Tn 2 Columnas",
+  "specs": {
+   "Capacidad (kg)": 20000,
+   "Recorrido (mm)": 140,
+   "Apertura máxima (mm)": 830,
+   "Apertura mínima (mm)": 50,
+   "Columnas": 2,
+   "Peso bruto / neto (kg)": "69 / 67"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69504164",
+  "familia": "Prensa Hidráulica",
+  "nombre": "Prensa Hidráulica de Taller 30 Tn 2 Columnas",
+  "specs": {
+   "Capacidad (kg)": 30000,
+   "Recorrido (mm)": 130,
+   "Apertura máxima (mm)": 950,
+   "Apertura mínima (mm)": 75,
+   "Columnas": 2,
+   "Peso bruto / neto (kg)": "121 / 113"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69504105",
+  "familia": "Guinche Pluma",
+  "nombre": "Guinche Pluma Plegable 1 Tn Hidráulico",
+  "specs": {
+   "Capacidad (kg)": 1000,
+   "Altura de elevación mínima (mm)": 180,
+   "Altura de elevación máxima (mm)": 1960,
+   "Brazo telescópico (mm)": 860,
+   "Brazo extensible (mm)": 1130,
+   "Columna (mm)": 1440,
+   "Peso bruto / neto (kg)": "68 / 63",
+   "Tipo": "Plegable"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69504110",
+  "familia": "Guinche Pluma",
+  "nombre": "Guinche Pluma Plegable 2 Tn Hidráulico",
+  "specs": {
+   "Capacidad (kg)": 2000,
+   "Altura de elevación mínima (mm)": 0,
+   "Altura de elevación máxima (mm)": 2300,
+   "Brazo telescópico (mm)": 1025,
+   "Brazo extensible (mm)": 1560,
+   "Columna (mm)": 1480,
+   "Peso bruto / neto (kg)": "70 / 68",
+   "Tipo": "Plegable",
+   "Observaciones": "Con asa trasera"
+  },
+  "dudas": [],
+  "notas": []
+ }
+]
