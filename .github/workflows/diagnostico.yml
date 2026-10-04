@@ -6,6 +6,9 @@ on:
       url:
         description: "URL del sitio del proveedor"
         default: "http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/"
+      solo_baselinker:
+        description: "1 = solo listar catálogos, grupos de precio y depósitos de BaseLinker"
+        default: "0"
       paginas:
         description: "Páginas del panel a inspeccionar (separadas por coma)"
         default: "utilidades_datos_fema.php,utilidades_datos_oechsle.php,utilidades_datos_sitec.php,utilidades_datos_toyako.php"
@@ -29,7 +32,14 @@ jobs:
           PAGINAS: ${{ github.event.inputs.paginas }}
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          SOLO_BASELINKER: ${{ github.event.inputs.solo_baselinker }}
         run: |
+          if [ "$SOLO_BASELINKER" = "1" ]; then
+            echo "########## IDS DE BASELINKER ##########" > diagnostico.txt
+            python listar_ids.py 2>&1 | tee -a diagnostico.txt
+            exit 0
+          fi
           python diagnostico.py 2>&1 | tee diagnostico.txt
           echo "" >> diagnostico.txt
           echo "########## MUESTRA DE LA LISTA ##########" | tee -a diagnostico.txt
