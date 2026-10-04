@@ -38,6 +38,8 @@ jobs:
           if [ "$SOLO_BASELINKER" = "1" ]; then
             echo "########## IDS DE BASELINKER ##########" > diagnostico.txt
             python listar_ids.py 2>&1 | tee -a diagnostico.txt
+            echo "########## COMPARACIÓN DE INVENTARIOS ##########" | tee -a diagnostico.txt
+            python comparar_inventarios.py 2>&1 | tee -a diagnostico.txt
             exit 0
           fi
           python diagnostico.py 2>&1 | tee diagnostico.txt
