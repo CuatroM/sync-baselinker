@@ -72,7 +72,7 @@ def a_numero(valor):
 def normalizar_codigo(valor):
     if valor is None or (isinstance(valor, float) and pd.isna(valor)):
         return ""
-    s = str(valor).strip()
+    s = str(valor).replace("\ufeff", "").strip()
     if s.endswith(".0") and s[:-2].isdigit():   # Excel convierte códigos numéricos a float
         s = s[:-2]
     return s.upper()

@@ -52,6 +52,6 @@ reglas:
     "disponible": 10
 
 baselinker:
-  inventory_id: 0          # ID del catálogo
-  price_group_id: 0        # ID del grupo de precios a actualizar
-  warehouse_id: "bl_0"     # ID del depósito, formato bl_123
+  inventory_id: 61608        # INVENTARIO COMPLETO FEMA 2026 MATIAS
+  price_group_id: 65271      # GRUPO DE PRECIO COMPLETO FEMA 2026 MATIAS
+  warehouse_id: "bl_75994"   # ALMACEN COMPLETO FEMA 2026 MATIAS
