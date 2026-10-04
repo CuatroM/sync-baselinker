@@ -157,7 +157,7 @@ def leer_lista(contenido, cfg):
     lista = {}
     for _, fila in df.iterrows():
         codigo = normalizar_codigo(fila[col["codigo"]])
-        if not codigo:
+        if not codigo or codigo in ("-", "N/A", "NAN"):
             continue
         item = {}
         if col.get("precio"):

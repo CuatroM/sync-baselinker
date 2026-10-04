@@ -32,9 +32,11 @@ proveedor:
   codificacion: utf-8-sig
 
 columnas:
-  codigo: "Código"         # título exacto de la columna con el código
-  precio: "Precio"         # null si el proveedor no informa precio
-  stock: "Stock"           # null si el proveedor no informa stock
+  # Columnas del Excel de FEMA: SKU | DESCRIPCION | STOCK | PRECIO MAYORISTA |
+  #                            PRECIO SUGERIDO ML | IMPUESTOS | UNIDAD DE VENTA
+  codigo: "SKU"
+  precio: "PRECIO SUGERIDO ML"   # A CONFIRMAR: o "PRECIO MAYORISTA" (+ multiplicador)
+  stock: "STOCK"
   vincular_por: sku        # sku | ean (contra qué campo de BaseLinker se compara)
 
 reglas:
