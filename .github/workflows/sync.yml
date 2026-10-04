@@ -45,15 +45,24 @@ jobs:
       - name: Publicar reportes en la rama "reportes"
         if: always()
         run: |
-          mkdir -p /tmp/rep && cp -r reportes/. /tmp/rep/ 2>/dev/null || true
-          cp /tmp/sync.log /tmp/rep/ultima-ejecucion.log 2>/dev/null || true
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git fetch origin reportes 2>/dev/null && git checkout reportes 2>/dev/null || git checkout --orphan reportes
-          git rm -rfq . 2>/dev/null || true
-          cp -r /tmp/rep/. .
-          ls *.csv 2>/dev/null | sort | head -n -30 | xargs -r rm -f
-          git add -A && git commit -qm "Reportes ejecución ${{ github.run_number }}" && git push origin reportes || true
+          if git fetch -q origin reportes:reportes 2>/dev/null; then
+            git worktree add -q /tmp/pub reportes
+          else
+            git worktree add -q --orphan -b reportes /tmp/pub
+          fi
+          cd /tmp/pub
+          rm -rf reportes
+          cp "$GITHUB_WORKSPACE"/reportes/*.csv . 2>/dev/null || true
+          cp /tmp/sync.log ultima-ejecucion.log 2>/dev/null || true
+          # conserva solo los reportes de los últimos ~5 días (30 ejecuciones)
+          for pref in cambios sin-vincular advertencias; do
+            ls ${pref}-*.csv 2>/dev/null | sort | head -n -30 | xargs -r rm -f
+          done
+          git add -A
+          git commit -qm "Reportes ejecución ${{ github.run_number }}" || exit 0
+          git push -q origin reportes
 
       - name: Guardar reportes
         if: always()
