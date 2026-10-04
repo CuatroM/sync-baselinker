@@ -1,10 +1,42 @@
-[2026-10-04 00:41:27] Login en el sitio del proveedor OK
-[2026-10-04 00:41:27] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
-[2026-10-04 00:41:32] Recibido: 588,696 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-031026.xlsx"
-[2026-10-04 00:41:33] Lista del proveedor: 18534 productos con datos válidos
-[2026-10-04 00:41:45] Catálogo BaseLinker: 16197 productos
-[2026-10-04 00:41:45] SKU sin '#FEMA': 16129 pendientes; en esta ejecución hasta 1
-[2026-10-04 00:41:47] Prueba OK en producto 107500467: solo cambió el SKU (130 -> 130#FEMA)
-[2026-10-04 00:41:47] SKU con '#FEMA' agregado: 1
-[2026-10-04 00:41:47] Cambios detectados: 0 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2405
-[2026-10-04 00:41:47] Listo. 0 cambios, 2405 sin vincular, 0 advertencias.
+[2026-10-04 01:28:03] Login en el sitio del proveedor OK
+[2026-10-04 01:28:03] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-10-04 01:28:09] Recibido: 588,695 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-031026.xlsx"
+[2026-10-04 01:28:10] Lista del proveedor: 18534 productos con datos válidos
+[2026-10-04 01:28:22] Catálogo BaseLinker: 16197 productos
+[2026-10-04 01:28:22] SKU sin '#FEMA': 16128 pendientes; en esta ejecución hasta 17000
+[2026-10-04 01:28:24] Prueba OK en producto 107500468: solo cambió el SKU (131 -> 131#FEMA)
+[2026-10-04 01:34:13]   SKU actualizados: 500/16128
+[2026-10-04 01:40:04]   SKU actualizados: 1000/16128
+[2026-10-04 01:45:54]   SKU actualizados: 1500/16128
+[2026-10-04 01:51:44]   SKU actualizados: 2000/16128
+[2026-10-04 01:57:40]   SKU actualizados: 2500/16128
+[2026-10-04 02:03:35]   SKU actualizados: 3000/16128
+[2026-10-04 02:09:25]   SKU actualizados: 3500/16128
+[2026-10-04 02:15:24]   SKU actualizados: 4000/16128
+[2026-10-04 02:21:14]   SKU actualizados: 4500/16128
+[2026-10-04 02:27:04]   SKU actualizados: 5000/16128
+[2026-10-04 02:32:57]   SKU actualizados: 5500/16128
+[2026-10-04 02:38:47]   SKU actualizados: 6000/16128
+[2026-10-04 02:44:37]   SKU actualizados: 6500/16128
+[2026-10-04 02:50:27]   SKU actualizados: 7000/16128
+[2026-10-04 02:56:17]   SKU actualizados: 7500/16128
+[2026-10-04 03:02:07]   SKU actualizados: 8000/16128
+[2026-10-04 03:07:57]   SKU actualizados: 8500/16128
+[2026-10-04 03:13:47]   SKU actualizados: 9000/16128
+[2026-10-04 03:19:37]   SKU actualizados: 9500/16128
+[2026-10-04 03:25:28]   SKU actualizados: 10000/16128
+[2026-10-04 03:31:22]   SKU actualizados: 10500/16128
+[2026-10-04 03:37:19]   SKU actualizados: 11000/16128
+[2026-10-04 03:43:09]   SKU actualizados: 11500/16128
+[2026-10-04 03:49:04]   SKU actualizados: 12000/16128
+[2026-10-04 03:55:01]   SKU actualizados: 12500/16128
+[2026-10-04 04:00:57]   SKU actualizados: 13000/16128
+[2026-10-04 04:06:47]   SKU actualizados: 13500/16128
+[2026-10-04 04:12:40]   SKU actualizados: 14000/16128
+[2026-10-04 04:18:30]   SKU actualizados: 14500/16128
+[2026-10-04 04:24:20]   SKU actualizados: 15000/16128
+[2026-10-04 04:30:10]   SKU actualizados: 15500/16128
+[2026-10-04 04:36:01]   SKU actualizados: 16000/16128
+[2026-10-04 04:37:33] SKU con '#FEMA' agregado: 16128
+[2026-10-04 04:37:33] Cambios detectados: 0 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2405
+[2026-10-04 04:37:33] Listo. 0 cambios, 2405 sin vincular, 0 advertencias.
