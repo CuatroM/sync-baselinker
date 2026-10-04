@@ -6,6 +6,9 @@ on:
       url:
         description: "URL del sitio del proveedor"
         default: "http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/"
+      paginas:
+        description: "Páginas del panel a inspeccionar (separadas por coma)"
+        default: "utilidades_datos_fema.php,utilidades_datos_oechsle.php,utilidades_datos_sitec.php,utilidades_datos_toyako.php"
 
 permissions:
   contents: write
@@ -23,6 +26,7 @@ jobs:
       - name: Diagnosticar
         env:
           URL_PROVEEDOR: ${{ github.event.inputs.url }}
+          PAGINAS: ${{ github.event.inputs.paginas }}
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
         run: python diagnostico.py 2>&1 | tee diagnostico.txt

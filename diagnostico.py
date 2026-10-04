@@ -165,8 +165,18 @@ def main():
         print("\n⚠ Sigue apareciendo un campo de contraseña: el login probablemente falló "
               "(usuario/clave, captcha o un paso extra).")
     listar_links(sopa2, r2.url, "después del login")
-    print("\n----- HTML después del login -----")
-    print(r2.text[:25000])
+    paginas = [x.strip() for x in os.environ.get("PAGINAS", "").split(",") if x.strip()]
+    for pag in paginas:
+        url = urljoin(r2.url, pag)
+        rp = ses.get(url, timeout=120)
+        sp = describir_pagina(rp, f"Página {pag}")
+        describir_formularios(sp, rp.url)
+        cuerpo = sp.body or sp
+        nav = cuerpo.find("nav")
+        if nav:
+            nav.decompose()
+        print(f"\n----- HTML (sin menú) de {pag} -----")
+        print(str(cuerpo)[:12000])
 
 
 if __name__ == "__main__":
