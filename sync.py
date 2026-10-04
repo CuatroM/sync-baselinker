@@ -101,12 +101,20 @@ def descargar_lista(cfg):
         campos[p["login_campo_clave"]] = clave
         r = ses.post(p["login_url"], data=campos, timeout=60)
         r.raise_for_status()
+        if 'type="password"' in r.text or "type='password'" in r.text:
+            raise RuntimeError("El login en el sitio del proveedor falló "
+                               "(revisar PROVEEDOR_USER / PROVEEDOR_PASS).")
         log("Login en el sitio del proveedor OK")
 
     log(f"Descargando lista: {p['url_lista']}")
-    r = ses.get(p["url_lista"], timeout=180)
+    if p.get("datos_descarga"):          # descarga por formulario (botón que hace POST)
+        r = ses.post(p["url_lista"], data=p["datos_descarga"], timeout=300)
+    else:
+        r = ses.get(p["url_lista"], timeout=300)
     r.raise_for_status()
     contenido = r.content
+    nombre = r.headers.get("content-disposition", "")
+    log(f"Recibido: {len(contenido):,} bytes | {r.headers.get('content-type')} | {nombre}")
     if contenido[:15].lstrip().lower().startswith((b"<!doctype", b"<html")):
         raise RuntimeError(
             "El proveedor devolvió una página web en lugar del archivo. "

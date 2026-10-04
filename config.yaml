@@ -8,8 +8,13 @@
 dry_run: true
 
 proveedor:
-  # Link directo de descarga de la lista (Excel o CSV)
-  url_lista: "PENDIENTE"   # se completa después del diagnóstico con login
+  # Página de descarga de la lista. En este panel es Utilidades -> Info Sellers,
+  # botón "Precios al <fecha>" de FEMA (la fecha es solo el texto del botón).
+  url_lista: "http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php"
+  # Datos que envía el botón (si se omite, la lista se descarga con un link directo)
+  datos_descarga:
+    accion: descargar-lista-precio
+    seller: fema
 
   # Tipo de acceso: ninguno | basic | formulario
   # Proveedor: panel "Administra ML" (PHP, formulario POST simple, sin captcha)
