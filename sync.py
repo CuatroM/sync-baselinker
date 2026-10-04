@@ -247,12 +247,21 @@ def sincronizar(cfg, lista, bl, dry_run):
     deposito = str(b["warehouse_id"])
     campo = cfg["columnas"].get("vincular_por", "sku").lower()
 
+    sufijo = str(b.get("sufijo_sku") or "")
+    suf_norm = sufijo.upper()
+
     catalogo = bl.catalogo(inv)
     indice = {}
     for pid, prod in catalogo.items():
         clave = normalizar_codigo(prod.get(campo))
+        if suf_norm and clave.endswith(suf_norm):
+            clave = clave[: -len(suf_norm)]      # "01013170F#FEMA" -> "01013170F"
         if clave:
             indice[clave] = (pid, prod)
+
+    renombres = []
+    if sufijo and campo == "sku":
+        renombres = agregar_sufijo(cfg, lista, indice, bl, inv, sufijo, dry_run)
 
     cambios_stock, cambios_precio, reporte, no_encontrados = {}, {}, [], []
     for codigo, item in lista.items():
@@ -288,14 +297,72 @@ def sincronizar(cfg, lista, bl, dry_run):
     else:
         log("DRY_RUN activo: no se escribió nada en BaseLinker")
 
-    guardar_reporte(reporte, no_encontrados, advertencias, dry_run)
+    advertencias += [r for r in renombres if r[0] == "ERROR"]
+    guardar_reporte(reporte, no_encontrados, advertencias, dry_run,
+                    [r for r in renombres if r[0] != "ERROR"])
     return len(reporte), len(no_encontrados), len(advertencias)
 
 
-def guardar_reporte(reporte, no_encontrados, advertencias, dry_run):
+CAMPOS_CONTROL = ("ean", "prices", "stock", "images", "text_fields", "tax_rate", "weight")
+
+
+def agregar_sufijo(cfg, lista, indice, bl, inv, sufijo, dry_run):
+    """Agrega el sufijo (ej. '#FEMA') al SKU de los productos de BaseLinker que están en la
+    lista del proveedor y todavía no lo tienen. Antes del lote, prueba con 1 producto y
+    verifica que no haya cambiado ningún otro dato; si cambió algo, aborta."""
+    tope_env = os.environ.get("MAX_SUFIJOS", "").strip()
+    tope = int(tope_env or cfg["baselinker"].get("max_sufijos_por_ejecucion", 1500))
+    pendientes = []
+    for codigo, (pid, prod) in indice.items():
+        sku = str(prod.get("sku") or "").replace("\ufeff", "").strip()
+        if codigo in lista and not sku.upper().endswith(sufijo.upper()):
+            pendientes.append((pid, sku, sku + sufijo))
+    log(f"SKU sin '{sufijo}': {len(pendientes)} pendientes; en esta ejecución hasta {tope}")
+    if not pendientes or tope <= 0:
+        return []
+    lote = pendientes[:tope]
+    if dry_run:
+        return [["SIMULADO", pid, a, n] for pid, a, n in lote]
+
+    def datos(pid):
+        d = bl.llamar("getInventoryProductsData", {"inventory_id": inv, "products": [int(pid)]})
+        return (d.get("products") or {}).get(str(pid)) or {}
+
+    resultado = []
+    for i, (pid, antes, nuevo) in enumerate(lote):
+        previo = datos(pid) if i == 0 else None
+        try:
+            bl.llamar("addInventoryProduct",
+                      {"inventory_id": str(inv), "product_id": str(pid), "sku": nuevo})
+        except RuntimeError as e:
+            resultado.append(["ERROR", pid, antes, str(e)])
+            if i == 0:
+                raise
+            continue
+        if i == 0:
+            post = datos(pid)
+            distintos = [c for c in CAMPOS_CONTROL if previo.get(c) != post.get(c)]
+            if post.get("sku") != nuevo or distintos:
+                raise RuntimeError(
+                    f"Prueba de cambio de SKU en producto {pid}: cambiaron {distintos} "
+                    f"(sku ahora {post.get('sku')!r}). Se detiene sin seguir.")
+            log(f"Prueba OK en producto {pid}: solo cambió el SKU ({antes} -> {nuevo})")
+        resultado.append(["OK", pid, antes, nuevo])
+        if (i + 1) % 500 == 0:
+            log(f"  SKU actualizados: {i + 1}/{len(lote)}")
+    log(f"SKU con '{sufijo}' agregado: {sum(r[0] == 'OK' for r in resultado)}")
+    return resultado
+
+
+def guardar_reporte(reporte, no_encontrados, advertencias, dry_run, renombres=()):
     carpeta = BASE / "reportes"
     carpeta.mkdir(exist_ok=True)
     sello = datetime.now().strftime("%Y%m%d-%H%M")
+    if renombres:
+        with open(carpeta / f"sku-sufijo-{sello}.csv", "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.writer(f, delimiter=";")
+            w.writerow(["estado", "product_id", "sku_antes", "sku_ahora"])
+            w.writerows(renombres)
     with open(carpeta / f"cambios-{sello}.csv", "w", newline="", encoding="utf-8-sig") as f:
         w = csv.writer(f, delimiter=";")
         w.writerow(["codigo", "product_id", "campo", "antes", "ahora",

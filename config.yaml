@@ -55,3 +55,7 @@ baselinker:
   inventory_id: 61608        # INVENTARIO COMPLETO FEMA 2026 MATIAS
   price_group_id: 65271      # GRUPO DE PRECIO COMPLETO FEMA 2026 MATIAS
   warehouse_id: "bl_75994"   # ALMACEN COMPLETO FEMA 2026 MATIAS
+  # Los SKU en BaseLinker llevan este sufijo (igual que en Mercado Libre): 01013170F#FEMA.
+  # La sincronización compara "SKU del Excel + sufijo" y agrega el sufijo a los que no lo tengan.
+  sufijo_sku: "#FEMA"
+  max_sufijos_por_ejecucion: 1500   # tope por corrida programada (~18 min a 85 pedidos/min)

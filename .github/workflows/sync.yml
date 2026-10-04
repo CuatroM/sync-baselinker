@@ -10,6 +10,9 @@ on:
       dry_run:
         description: "Simular sin escribir en BaseLinker (1 = sí, 0 = no)"
         default: "0"
+      max_sufijos:
+        description: "Máximo de SKU a los que agregar #FEMA en esta corrida (vacío = lo de config)"
+        default: ""
 
 concurrency:
   group: sync-baselinker    # nunca corren dos sincronizaciones a la vez
@@ -21,7 +24,7 @@ permissions:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 340
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +41,7 @@ jobs:
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
           DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+          MAX_SUFIJOS: ${{ github.event.inputs.max_sufijos }}
         run: |
           set -o pipefail
           python sync.py 2>&1 | tee /tmp/sync.log
