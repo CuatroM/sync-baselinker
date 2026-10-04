@@ -1,5 +1,11 @@
 # Sincronización Proveedor → BaseLinker
 
+**Configuración actual:** lista de precios FEMA del panel "Administra ML" (Utilidades → Info Sellers → FEMA → "Precios al…") → BaseLinker, inventario **INVENTARIO COMPLETO FEMA 2026 MATIAS**. Se actualizan solo **PRECIO MAYORISTA** (grupo "GRUPO DE PRECIO COMPLETO FEMA 2026 MATIAS") y **STOCK** (depósito "ALMACEN COMPLETO FEMA 2026 MATIAS"), vinculando por **SKU**. Corre cada 4 hs.
+
+**Ver qué cambió:** rama [`reportes`](../../tree/reportes) → `ultima-ejecucion.log` y los CSV `cambios-*` / `sin-vincular-*`.
+
+**Diagnóstico:** el proceso "Diagnóstico del sitio del proveedor" (Actions → Run workflow) prueba el login y la descarga sin tocar BaseLinker; con `solo_baselinker = 1` lista catálogos, grupos de precio y depósitos.
+
 Descarga la lista de precios y stock del proveedor (Excel o CSV) cada 4 horas y actualiza BaseLinker por API. Solo envía los productos que cambiaron.
 
 ## Puesta en marcha
