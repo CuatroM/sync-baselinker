@@ -5,7 +5,7 @@
 
 # true = simula y genera el reporte, pero no escribe en BaseLinker.
 # Dejarlo en true en las primeras pruebas.
-dry_run: true
+dry_run: false
 
 proveedor:
   # Página de descarga de la lista. En este panel es Utilidades -> Info Sellers,

@@ -1,11 +1,10 @@
 name: Sincronizar precio y stock con BaseLinker
 
 on:
-  # PROGRAMACIÓN EN PAUSA hasta completar config.yaml (quitar los # para activarla)
-  # schedule:
+  schedule:
     # Cada 4 horas (GitHub usa hora UTC; 03:00 UTC = 00:00 Argentina).
     # Corre a las 00, 04, 08, 12, 16 y 20 hs de Argentina.
-  #  - cron: "7 3,7,11,15,19,23 * * *"
+    - cron: "7 3,7,11,15,19,23 * * *"
   workflow_dispatch:        # botón "Run workflow" para ejecutarlo a mano
     inputs:
       dry_run:
