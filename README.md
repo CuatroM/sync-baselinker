@@ -4,6 +4,10 @@
 
 **Ver qué cambió:** rama [`reportes`](../../tree/reportes) → `ultima-ejecucion.log` y los CSV `cambios-*` / `sin-vincular-*`.
 
+**Mercado Libre (cuenta ABASTOTOOLS):** los procesos "Mercado Libre - …" piden un código de autorización nuevo en cada corrida. Abrí este link (con la sesión de Mercado Libre iniciada), copiá la dirección completa a la que te redirige (`…?code=TG-…`) y pegala enseguida en *Run workflow*. Cada código vale ~10 minutos y un solo uso.
+
+https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=2635478937867404&redirect_uri=https://github.com/CuatroM/sync-baselinker
+
 **Diagnóstico:** el proceso "Diagnóstico del sitio del proveedor" (Actions → Run workflow) prueba el login y la descarga sin tocar BaseLinker; con `solo_baselinker = 1` lista catálogos, grupos de precio y depósitos.
 
 Descarga la lista de precios y stock del proveedor (Excel o CSV) cada 4 horas y actualiza BaseLinker por API. Solo envía los productos que cambiaron.
