@@ -175,6 +175,12 @@ def main():
         nav = cuerpo.find("nav")
         if nav:
             nav.decompose()
+        print(f"\n----- HTML (sin menú ni scripts) de {pag} -----")
+        import copy
+        c2 = copy.copy(cuerpo)
+        for t in c2.find_all(["script", "style"]):
+            t.decompose()
+        print(str(c2)[:15000])
         print(f"\n----- Scripts de {pag} -----")
         for sc in sp.find_all("script"):
             if sc.get("src"):
