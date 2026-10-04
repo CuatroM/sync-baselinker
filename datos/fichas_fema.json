@@ -17,6 +17,7 @@
    "Freno automático": "Sí",
    "Placa de montaje": "Incluida"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -38,9 +39,10 @@
    "Freno automático": "Sí",
    "Placa de montaje": "Incluida"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice '4,082 Kg de Rodado': lo tomé como 4.082 kg (no 4,08 kg)."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -63,6 +65,7 @@
    "Control remoto": "Sí",
    "Freno automático": "Sí"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -71,7 +74,6 @@
   "familia": "Aparejo / Malacate Eléctrico 12 V",
   "nombre": "Malacate Eléctrico 12 V 3336 kg 29 m con Control Remoto",
   "specs": {
-   "Modelo": "FEMA 2271",
    "Capacidad de arrastre (kg)": 3336,
    "Largo de cable (m)": 29,
    "Velocidad (m/min)": 1.8,
@@ -86,9 +88,8 @@
    "Control remoto": "Sí",
    "Freno automático": "Sí"
   },
-  "dudas": [
-   "El PDF indica modelo 'FEMA 2271' igual que el 69350366, pero con 3336 kg: ¿el modelo es otro?"
-  ],
+  "dudas_confirmadas": [],
+  "dudas": [],
   "notas": []
  },
  {
@@ -105,6 +106,7 @@
    "Peso (kg)": 6.5,
    "Esfuerzo de tracción (kg)": 16
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -122,6 +124,7 @@
    "Peso (kg)": 11.2,
    "Esfuerzo de tracción (kg)": 26
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -139,6 +142,7 @@
    "Peso (kg)": 12.2,
    "Medida de embalaje": "32 x 18 x 19 cm"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -156,6 +160,7 @@
    "Peso (kg)": 19.5,
    "Medida de embalaje": "37 x 20 x 24 cm"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -174,9 +179,10 @@
    "Peso (kg)": 8.2,
    "Ancho de viga aplicable (mm)": "80 a 146"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -194,9 +200,10 @@
    "Peso (kg)": 13,
    "Ancho de viga aplicable (mm)": "80 a 146"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -214,9 +221,10 @@
    "Peso (kg)": 10.5,
    "Ancho de viga aplicable (mm)": "80 a 146"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -234,9 +242,10 @@
    "Peso (kg)": 15.5,
    "Ancho de viga aplicable (mm)": "80 a 146"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no deja claro cuáles son 'con cadena' y cuáles 'sin cadena': asumí 69350792/794 sin cadena y 69350801/802 con cadena."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -248,6 +257,7 @@
    "Peso (kg)": 12.5,
    "Dimensiones (mm)": "210 x 96 x 203"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -260,6 +270,7 @@
    "Peso (kg)": 37,
    "Dimensiones (mm)": "264 x 138 x 266"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -273,6 +284,7 @@
    "Capacidad (kg)": 1000,
    "Peso (kg)": 2.5
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -286,6 +298,7 @@
    "Capacidad (kg)": 1000,
    "Peso (kg)": 5
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -298,6 +311,7 @@
    "Ruedas": 4,
    "Peso (kg)": 13.1
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -310,6 +324,7 @@
    "Ruedas": 8,
    "Peso (kg)": 19.05
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -322,6 +337,7 @@
    "Ruedas": 5,
    "Giro": "360°"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -334,6 +350,7 @@
    "Ruedas": 6,
    "Giro": "360°"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -351,6 +368,7 @@
    "Altura de base a piso (cm)": 11,
    "Giro": "360°"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -368,9 +386,10 @@
    "Altura de base a piso (cm)": 11,
    "Giro": "360°"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El título del PDF dice 'Patín de Carga - 8 Toneladas' pero la tabla dice 'Capacidad 6 Toneladas': tomé 6.000 kg."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -392,6 +411,7 @@
    "Capacidad con gancho simple / doble (kg)": "125 / 250",
    "Fuerza de rotura del cable (kg)": 750
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -402,7 +422,6 @@
   "specs": {
    "Modelo": "FEMA 250",
    "Capacidad máxima (kg)": 250,
-   "Altura de elevación (m)": 60,
    "Velocidad (m/min)": 15,
    "Diámetro del cable (mm)": 4.5,
    "Potencia (W)": 1300,
@@ -413,9 +432,8 @@
    "Freno automático": "Sí",
    "Fuerza de rotura del cable (kg)": 750
   },
-  "dudas": [
-   "Altura de alzada 60 m y 15 m/min: ¿es correcto? Es muy distinto al resto de los FEMA 250."
-  ],
+  "dudas_confirmadas": [],
+  "dudas": [],
   "notas": []
  },
  {
@@ -437,6 +455,7 @@
    "Capacidad con gancho simple / doble (kg)": "250 / 500",
    "Fuerza de rotura del cable (kg)": 1250
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -459,6 +478,7 @@
    "Capacidad con gancho simple / doble (kg)": "500 / 1000",
    "Fuerza de rotura del cable (kg)": 2500
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -481,6 +501,7 @@
    "Capacidad con gancho simple / doble (kg)": "500 / 1000",
    "Fuerza de rotura del cable (kg)": 2500
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -503,6 +524,7 @@
    "Capacidad con gancho simple / doble (kg)": "400 / 800",
    "Peso (kg)": 31
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -525,6 +547,7 @@
    "Capacidad con gancho simple / doble (kg)": "500 / 1000",
    "Peso (kg)": 31
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -547,6 +570,7 @@
    "Capacidad con gancho simple / doble (kg)": "500 / 1000",
    "Peso (kg)": 30.7
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -569,9 +593,10 @@
    "Capacidad con gancho simple / doble (kg)": "500 / 1000",
    "Peso (kg)": 32
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice '8/18 Metros' (el título de la sección dice 18 m): tomé 9/18 m como el FEMA 1000. ¿Es 8 o 9 m?"
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -592,6 +617,7 @@
    "Peso (kg)": 110,
    "Dimensiones H/A/B/D/E (mm)": "800 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -613,6 +639,7 @@
    "Peso (kg)": 110,
    "Dimensiones H/A/B/D/E (mm)": "800 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -634,6 +661,7 @@
    "Peso (kg)": 115,
    "Dimensiones H/A/B/D/E (mm)": "845 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -655,6 +683,7 @@
    "Peso (kg)": 115,
    "Dimensiones H/A/B/D/E (mm)": "845 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -676,6 +705,7 @@
    "Peso (kg)": 138,
    "Dimensiones H/A/B/D/E (mm)": "1030 / 615 / 295 / 430 / 325"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -697,6 +727,7 @@
    "Peso (kg)": 138,
    "Dimensiones H/A/B/D/E (mm)": "1030 / 615 / 295 / 430 / 325"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -718,6 +749,7 @@
    "Peso (kg)": 300,
    "Dimensiones H/A/B/D/E (mm)": "1400 / 630 / 315 / 890 / 445"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -739,6 +771,7 @@
    "Peso (kg)": 300,
    "Dimensiones H/A/B/D/E (mm)": "1400 / 630 / 315 / 890 / 445"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -763,6 +796,7 @@
    "Peso (kg)": 167,
    "Dimensiones H/A/B/D/E (mm)": "830 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -787,6 +821,7 @@
    "Peso (kg)": 167,
    "Dimensiones H/A/B/D/E (mm)": "830 / 615 / 295 / 430 / 265"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -811,6 +846,7 @@
    "Peso (kg)": 220,
    "Dimensiones H/A/B/D/E (mm)": "1015 / 615 / 295 / 430 / 325"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -835,6 +871,7 @@
    "Peso (kg)": 220,
    "Dimensiones H/A/B/D/E (mm)": "1015 / 615 / 295 / 430 / 325"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -859,6 +896,7 @@
    "Peso (kg)": 503,
    "Dimensiones H/A/B/D/E (mm)": "1580 / 630 / 315 / 1460 / 725"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -883,6 +921,7 @@
    "Peso (kg)": 503,
    "Dimensiones H/A/B/D/E (mm)": "1580 / 630 / 315 / 1460 / 725"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -902,6 +941,7 @@
    "Tablero de comando (V)": 48,
    "Peso (kg)": 234
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -921,6 +961,7 @@
    "Tablero de comando (V)": 48,
    "Peso (kg)": 250
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -940,6 +981,7 @@
    "Tablero de comando (V)": 48,
    "Peso (kg)": 294
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -959,6 +1001,7 @@
    "Tablero de comando (V)": 48,
    "Peso (kg)": 310
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -976,9 +1019,10 @@
    "Tamaño de haz H": "10 a 22",
    "Ruedas de equilibrio": "Sí"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice 'Potencia 180 W' y también 'Entrada de energía 120 W': tomé 180 W."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -993,9 +1037,10 @@
    "Embalaje (cm)": "44 x 9 x 10",
    "Peso (kg)": 6.2
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "La tabla dice 'Capacidad 300 / 1.100 Kg' pero el texto dice 300 kg (3 estructuras) y 600 kg (2 estructuras); 1.100 parece ser el largo en mm. Tomé 300 / 600 kg."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1011,9 +1056,10 @@
    "Medidas": "21,9 x 13,5 x 11 cm",
    "Ancho de cinta": "5 cm"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice '219x13,5x11 cm': lo tomé como 21,9 x 13,5 x 11 cm."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1029,6 +1075,7 @@
    "Medidas": "21,5 x 15 x 13 cm",
    "Ancho de cinta": "5 cm"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1044,6 +1091,7 @@
    "Peso (kg)": 4,
    "Medidas": "23 x 15 x 15 cm"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1059,6 +1107,7 @@
    "Peso (kg)": 5,
    "Medidas": "23 x 15 x 15 cm"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1074,9 +1123,10 @@
    "Peso (kg)": 4.66,
    "Medidas": "23 x 15 x 15 cm"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "Mismo modelo FEMA 2500 que el 69350303 pero con cable de acero y 907 kg (vs 1.134 kg con cinta): ¿correcto?"
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1099,9 +1149,10 @@
    "Uso": "Polvo y líquido",
    "Observaciones": "Aspiradora y sopladora"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1124,9 +1175,10 @@
    "Uso": "Polvo y líquido",
    "Observaciones": "Aspiradora y sopladora"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1149,9 +1201,10 @@
    "Uso": "Polvo y líquido",
    "Observaciones": "Aspiradora y sopladora"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF marca 'Aspiradora y Sopladora Doble Función' solo en algunos modelos: confirmar cuáles soplan."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1173,6 +1226,7 @@
    "Tanque": "Acero inoxidable",
    "Uso": "Polvo y líquido"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1196,6 +1250,7 @@
    "Uso": "Polvo y líquido",
    "Observaciones": "2 motores"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1207,6 +1262,7 @@
    "Tipo": "Caño plástico",
    "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1218,6 +1274,7 @@
    "Tipo": "Pico plástico",
    "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1229,6 +1286,7 @@
    "Tipo": "Caño plástico",
    "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1240,6 +1298,7 @@
    "Tipo": "Caño plástico",
    "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1251,6 +1310,7 @@
    "Tipo": "Bolsa de tela",
    "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1262,6 +1322,7 @@
    "Tipo": "Bolsa de papel",
    "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1273,6 +1334,7 @@
    "Tipo": "Caño plástico 1,5 m",
    "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1284,6 +1346,7 @@
    "Tipo": "Bolsa de papel",
    "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1295,6 +1358,7 @@
    "Tipo": "Bolsa de tela",
    "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1306,6 +1370,7 @@
    "Tipo": "Caño plástico",
    "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1317,6 +1382,7 @@
    "Tipo": "Bolsa de tela",
    "Compatible con": "Aspiradora FEMA 1400 W - 20 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1328,6 +1394,7 @@
    "Tipo": "Caño plástico 1,5 m",
    "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1339,6 +1406,7 @@
    "Tipo": "Filtro",
    "Compatible con": "Aspiradora FEMA 1200 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1350,6 +1418,7 @@
    "Tipo": "Filtro esponja",
    "Compatible con": "Aspiradora FEMA 1400 W - 60 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1361,6 +1430,7 @@
    "Tipo": "Caño metálico",
    "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1372,6 +1442,7 @@
    "Tipo": "Cepillo plástico",
    "Compatible con": "Aspiradora FEMA 2000 W - 80 L"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1395,6 +1466,7 @@
    "Protecciones": "Sobrecarga, polaridad inversa y cortocircuito",
    "Pantalla": "LED de capacidad"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1418,6 +1490,7 @@
    "Protecciones": "Sobrecarga, polaridad inversa y cortocircuito",
    "Incluye": "Pinzas, cable de arranque inteligente, adaptador encendedor 12 V y cable USB"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1440,9 +1513,10 @@
    "Dimensiones (cm)": "26 x 23 x 19,5",
    "Protecciones": "Sobrecarga e inversión de polaridad"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1466,9 +1540,10 @@
    "Arranque": "8 kW / 35 A",
    "Corriente máxima de arranque (A)": 240
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1492,9 +1567,10 @@
    "Arranque": "12 kW / 55 A",
    "Corriente máxima de arranque (A)": 540
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "'Capacidad máxima/mínima promedio' figura en Amp en el PDF; asumí que es capacidad de batería en Ah."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1516,6 +1592,7 @@
    "Capacidad de corte (mm)": 110,
    "Ángulos de corte": "15°, 30°, 45° y 90°"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1539,6 +1616,7 @@
    "Ángulos de corte": "15°, 30°, 45° y 90°",
    "Observaciones": "Con tope regulable de corte"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1559,6 +1637,7 @@
    "Medidas (cm)": "67 x 40,5 x 54,5",
    "Peso (kg)": 53
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1579,6 +1658,7 @@
    "Medidas (cm)": "67 x 40,5 x 54,5",
    "Peso (kg)": 49
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1595,9 +1675,10 @@
    "Peso neto / bruto (kg)": "6,7 / 7",
    "Caja (cm)": "36,5 x 20,5 x 21"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no indica el voltaje de las amoladoras de banco: asumí 220 V."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1613,9 +1694,10 @@
    "Peso neto / bruto (kg)": "9 / 10",
    "Caja (cm)": "38,5 x 26,5 x 28"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF no indica el voltaje de las amoladoras de banco: asumí 220 V."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1639,6 +1721,7 @@
    "Dimensiones (mm)": "960 x 760 x 1160",
    "Funciones": "Autocalibración y autodiagnóstico, tablero digital"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1663,9 +1746,10 @@
    "Dimensiones (mm)": "960 x 760 x 1160",
    "Funciones": "Autocalibración y autodiagnóstico, tablero digital"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "69503420 figura con cono TR16 en la tabla y TR36 en los accesorios: confirmar."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1690,6 +1774,7 @@
    "Funciones": "Autocalibración y autodiagnóstico, tablero digital",
    "Extras": "Medición automática de distancia y diámetro, pantalla LED 7\", modo rastreo de contrapeso"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1709,6 +1794,7 @@
    "Tiempo de bajada (s)": 45,
    "Peso bruto (kg)": 1000
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1726,6 +1812,7 @@
    "Tiempo de bajada (s)": "≤ 50",
    "Peso bruto (kg)": 597
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1751,9 +1838,10 @@
    "Peso (kg)": "620 / 680",
    "Traba": "Manual"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice peso bruto 620 kg y neto 680 kg (el neto mayor que el bruto): confirmar."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1778,9 +1866,10 @@
    "Peso (kg)": "620 / 680",
    "Traba": "Manual"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice peso bruto 620 kg y neto 680 kg (el neto mayor que el bruto): confirmar."
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1802,6 +1891,7 @@
    "Tanque de aceite (L)": 14,
    "Peso bruto (kg)": 477
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1821,6 +1911,7 @@
    "Ruido (dB)": "< 75",
    "Brazo": "Semi neumático, móvil"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1841,6 +1932,7 @@
    "Brazo": "Semi neumático, móvil",
    "Extras": "Columna con tanque de aire y refuerzo para neumáticos de perfil bajo"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1852,6 +1944,7 @@
    "Capacidad (kg)": 150,
    "Medidas (cm)": "35 x 31 x 59"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1863,13 +1956,15 @@
    "Capacidad (kg)": 12000,
    "Altura mínima (mm)": 480,
    "Altura máxima (mm)": 750,
-   "Medidas (cm)": "35 x 31 x 59"
+   "Medidas (cm)": "35 x 31 x 59",
+   "Presentación": "Se vende por dos unidades"
   },
-  "dudas": [
+  "dudas_confirmadas": [
    "El PDF dice 'Peso de elevación 12 Tt': tomé 12.000 kg.",
    "El PDF dice 'Se vende por dos unidades, el precio publicado es por unidad': ¿lo aclaramos en la descripción?",
    "Medidas iguales al soporte de moto (35 x 31 x 59 cm): ¿correcto?"
   ],
+  "dudas": [],
   "notas": []
  },
  {
@@ -1881,6 +1976,7 @@
    "Altura mínima (mm)": 125,
    "Altura máxima (mm)": 300
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1894,6 +1990,7 @@
    "Altura máxima (mm)": 505,
    "Perfil": "Super bajo"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1909,6 +2006,7 @@
    "Columnas": 2,
    "Peso bruto / neto (kg)": "69 / 67"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1924,6 +2022,7 @@
    "Columnas": 2,
    "Peso bruto / neto (kg)": "121 / 113"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1941,6 +2040,7 @@
    "Peso bruto / neto (kg)": "68 / 63",
    "Tipo": "Plegable"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  },
@@ -1959,6 +2059,7 @@
    "Tipo": "Plegable",
    "Observaciones": "Con asa trasera"
   },
+  "dudas_confirmadas": [],
   "dudas": [],
   "notas": []
  }
