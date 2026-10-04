@@ -60,6 +60,9 @@ class ML:
             return r
         return r
 
+    def put(self, ruta, cuerpo):
+        return self.pedir("PUT", ruta, json=cuerpo)
+
     def get(self, ruta, **params):
         r = self.pedir("GET", ruta, params=params)
         r.raise_for_status()
