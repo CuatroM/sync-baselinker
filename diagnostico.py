@@ -175,8 +175,13 @@ def main():
         nav = cuerpo.find("nav")
         if nav:
             nav.decompose()
-        print(f"\n----- HTML (sin menú) de {pag} -----")
-        print(str(cuerpo)[:12000])
+        print(f"\n----- Scripts de {pag} -----")
+        for sc in sp.find_all("script"):
+            if sc.get("src"):
+                print("  externo:", urljoin(rp.url, sc["src"]))
+            elif sc.string and sc.string.strip():
+                print(sc.string.strip()[:8000])
+                print("  ---")
 
 
 if __name__ == "__main__":
