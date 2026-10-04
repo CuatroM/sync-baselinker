@@ -34,12 +34,15 @@ proveedor:
 columnas:
   # Columnas del Excel de FEMA: SKU | DESCRIPCION | STOCK | PRECIO MAYORISTA |
   #                            PRECIO SUGERIDO ML | IMPUESTOS | UNIDAD DE VENTA
+  # Se usan solo SKU, STOCK, PRECIO MAYORISTA e IMPUESTOS (el resto se ignora)
   codigo: "SKU"
-  precio: "PRECIO SUGERIDO ML"   # A CONFIRMAR: o "PRECIO MAYORISTA" (+ multiplicador)
+  precio: "PRECIO MAYORISTA"
   stock: "STOCK"
+  impuestos: "IMPUESTOS"         # % de impuestos por producto (ej. 21)
   vincular_por: sku        # sku | ean (contra qué campo de BaseLinker se compara)
 
 reglas:
+  sumar_impuestos: false        # true = precio mayorista + % de la columna IMPUESTOS
   multiplicador_precio: 1.0     # ej. 1.35 = +35 % sobre el precio del proveedor
   decimales_precio: 2
   stock_minimo_publicar: 0      # si el stock es menor a esto, se publica 0

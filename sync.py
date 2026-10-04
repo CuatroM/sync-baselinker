@@ -140,7 +140,8 @@ def leer_lista(contenido, cfg):
                          engine="python", header=fila_enc, dtype=object)
 
     df.columns = [str(c).strip() for c in df.columns]
-    faltan = [c for c in (col["codigo"], col.get("precio"), col.get("stock"))
+    faltan = [c for c in (col["codigo"], col.get("precio"), col.get("stock"),
+                          col.get("impuestos"))
               if c and c not in df.columns]
     if faltan:
         raise RuntimeError(f"No encuentro las columnas {faltan} en el archivo. "
@@ -163,6 +164,9 @@ def leer_lista(contenido, cfg):
         if col.get("precio"):
             precio = a_numero(fila[col["precio"]])
             if precio is not None and precio > 0:
+                if reglas.get("sumar_impuestos") and col.get("impuestos"):
+                    porc = a_numero(fila[col["impuestos"]]) or 0
+                    precio = precio * (1 + porc / 100)
                 item["precio"] = round(precio * mult, dec)
         if col.get("stock"):
             crudo = fila[col["stock"]]
