@@ -41,7 +41,7 @@ columnas:
   vincular_por: sku        # sku | ean (contra qué campo de BaseLinker se compara)
 
 reglas:
-  multiplicador_precio: 1.0     # ej. 1.35 = +35 % sobre el precio del proveedor
+  multiplicador_precio: 1.25    # precio mayorista del Excel + 25 % (= precio informado por FEMA con IVA)
   decimales_precio: 2
   stock_minimo_publicar: 0      # si el stock es menor a esto, se publica 0
   stock_maximo: null            # tope de stock a informar (null = sin tope)
