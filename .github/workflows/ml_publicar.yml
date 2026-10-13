@@ -21,6 +21,9 @@ on:
       tipo:
         description: "gold_special = Clásica, gold_pro = Premium"
         default: "gold_special"
+      extra:
+        description: "Datos extra: SKU|Atributo=Valor;SKU|Atributo=Valor (o *|Atributo=Valor para todos)"
+        default: ""
       envio:
         description: "me2 = Mercado Envíos, not_specified = acordar con el vendedor"
         default: "me2"
@@ -51,6 +54,9 @@ jobs:
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           TIPO: ${{ github.event.inputs.tipo }}
           ENVIO: ${{ github.event.inputs.envio }}
+          EXTRA: ${{ github.event.inputs.extra }}
+          PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
+          PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
           DRIVE_FOTOS: "https://drive.google.com/drive/folders/1n-pnG6JIS5q1TBEWn3jS0BYY9I36xlra"
           DRIVE_FICHAS: "https://drive.google.com/drive/folders/1X55cdaq-c1zUjD6M158xQ7YjZRyxo17C"
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}

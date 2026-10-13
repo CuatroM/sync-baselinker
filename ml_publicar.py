@@ -51,6 +51,23 @@ bl = sync.BaseLinker(os.environ["BL_TOKEN"])
 cat_bl = bl.catalogo(int(b["inventory_id"]))
 por_sku = {sync.normalizar_codigo(p.get("sku")): p for p in cat_bl.values()}
 
+# ---------------- IVA por SKU desde el Excel de FEMA (columna IMPUESTOS)
+import io
+import pandas as pd
+_xls = pd.read_excel(io.BytesIO(sync.descargar_lista(cfg)), dtype=object)
+_xls.columns = [str(c).strip().upper() for c in _xls.columns]
+IVA = {sync.normalizar_codigo(r["SKU"]): r.get("IMPUESTOS") for _, r in _xls.iterrows()}
+
+# ---------------- datos extra por SKU (por nombre de atributo de Mercado Libre)
+EXTRA = {
+    "69504110": {"Tipo de grúa": "Plegable", "Requiere ensamblado": "Sí"},
+}
+for linea in (os.environ.get("EXTRA") or "").split(";"):
+    # formato: SKU|Atributo=Valor|Atributo=Valor ; SKU|...   o  *|Atributo=Valor para todos
+    partes = [x.strip() for x in linea.split("|") if x.strip()]
+    if len(partes) > 1:
+        EXTRA.setdefault(partes[0], {}).update(dict(x.split("=", 1) for x in partes[1:] if "=" in x))
+
 # ---------------- fotos y fichas en Drive
 fotos = [x for x in listar(os.environ["DRIVE_FOTOS"], profundidad=0) if not x["carpeta"]]
 fichas_img = [x for x in listar(os.environ["DRIVE_FICHAS"], profundidad=0) if not x["carpeta"]]
@@ -117,6 +134,19 @@ for sku in skus:
         attrs = fm.atributos_para(f, cat_attrs)
         attrs.update({"BRAND": "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
                       "EMPTY_GTIN_REASON": "El producto no tiene código registrado"})
+        iva = sync.a_numero(IVA.get(sync.normalizar_codigo(sku)))
+        if iva is not None:
+            attrs["VALUE_ADDED_TAX"] = f"{fm.fmt(iva)} %"
+        attrs["IMPORT_DUTY"] = "0 %"
+        por_nombre = {a["name"].lower(): a for a in cat_attrs}
+        for nom, val in {**EXTRA.get("*", {}), **EXTRA.get(sku, {})}.items():
+            a = por_nombre.get(nom.strip().lower())
+            if not a:
+                continue
+            opciones = [v["name"] for v in a.get("values") or []]
+            elegido = next((o for o in opciones if o.lower() == val.lower()), None) or \
+                next((o for o in opciones if val.lower() in o.lower()), None) or val
+            attrs[a["id"]] = elegido
         ids_cat = {a["id"] for a in cat_attrs}
         atributos = [{"id": k, "value_name": v} for k, v in attrs.items() if k in ids_cat]
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
@@ -124,6 +154,10 @@ for sku in skus:
         imgs = imagenes(sku)
         if not imgs:
             raise RuntimeError("no hay fotos en Drive para este SKU")
+        fila["iva"] = attrs.get("VALUE_ADDED_TAX")
+        fila["opciones_obligatorios"] = " || ".join(
+            f"{a['name']}: {', '.join(v['name'] for v in (a.get('values') or [])[:15])}"
+            for a in cat_attrs if a["name"] in faltan)
         fila.update({"titulo": t, "categoria": f"{cat} {cat_info.get('name')}", "precio_base": base,
                      "precio": precio, "stock": stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
                      "atributos": len(atributos), "obligatorios_sin_dato": ", ".join(faltan)})
@@ -147,7 +181,14 @@ for sku in skus:
             if r.status_code not in (200, 204) and "family_name" in r.text:
                 item["family_name"] = item.pop("title")
                 r = ml.pedir("POST", "/items/validate", json=item)
-            fila["resultado"] = "VALIDADO OK" if r.status_code in (200, 204) else f"VALIDACIÓN: {r.status_code} {r.text[:600]}"
+            if r.status_code in (200, 204):
+                fila["resultado"] = "VALIDADO OK"
+            else:
+                causas = (r.json().get("cause") or []) if r.headers.get("content-type", "").startswith("application/json") else []
+                errores = [c.get("message") for c in causas if c.get("type") == "error"]
+                avisos = [c.get("message") for c in causas if c.get("type") != "error"]
+                fila["resultado"] = ("VALIDACIÓN CON ERRORES: " + " / ".join(errores) if errores else "VALIDADO OK") + \
+                    (" | AVISOS: " + " / ".join(avisos) if avisos else "")
         else:
             item["pictures"] = [x for x in (subir(i) for i in imgs) if x]
             r = ml.pedir("POST", "/items", json=item)
@@ -170,7 +211,7 @@ for sku in skus:
 
 os.makedirs("salida", exist_ok=True)
 cols = ["sku", "resultado", "publicacion", "link", "titulo", "categoria", "precio_base", "precio", "stock",
-        "fotos", "atributos", "obligatorios_sin_dato"]
+        "iva", "fotos", "atributos", "obligatorios_sin_dato", "opciones_obligatorios"]
 with open("salida/ml-publicar-resultado.csv", "w", newline="", encoding="utf-8-sig") as fh:
     w = csv.DictWriter(fh, fieldnames=cols, delimiter=";", extrasaction="ignore")
     w.writeheader()
