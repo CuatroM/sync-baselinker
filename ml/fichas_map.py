@@ -395,7 +395,7 @@ RUBROS_FAM = {
 def descripcion(f):
     uso, rubros = USOS.get(f["familia"], ("", ""))
     if not uso:
-        uso = f.get("uso_pdf") or ""
+        uso = f.get("uso_pdf") or f"{f.get('titulo') or f['nombre']}, producto original {f.get('marca') or 'FEMA'} de calidad profesional."
         rubros = RUBROS_FAM.get(f["familia"], "talleres, industria, construcción y uso profesional")
     lineas = [f["nombre"].upper(), "", uso, f"Ideal para: {rubros}.", "", "CARACTERÍSTICAS TÉCNICAS"]
     for k, v in f["specs"].items():
