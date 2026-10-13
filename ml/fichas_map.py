@@ -386,8 +386,17 @@ def fmt_valor(v):
     return str(v).replace(".", ",") if re.fullmatch(r"\d+\.\d+", str(v)) else str(v)
 
 
+RUBROS_FAM = {
+    "Abrasivos": "talleres metalúrgicos, herrerías, carpinterías, chapa y pintura, construcción, mantenimiento industrial y uso profesional",
+    "Adhesivos y Selladores": "construcción, mantenimiento, talleres mecánicos, carpinterías, plomería, industria y hogar",
+}
+
+
 def descripcion(f):
     uso, rubros = USOS.get(f["familia"], ("", ""))
+    if not uso:
+        uso = f.get("uso_pdf") or ""
+        rubros = RUBROS_FAM.get(f["familia"], "talleres, industria, construcción y uso profesional")
     lineas = [f["nombre"].upper(), "", uso, f"Ideal para: {rubros}.", "", "CARACTERÍSTICAS TÉCNICAS"]
     for k, v in f["specs"].items():
         m = re.match(r"^(.*?)\s*\(([^)]+)\)$", k)
@@ -398,9 +407,11 @@ def descripcion(f):
             lineas.append(f"• {k}: {fmt_valor(v)}")
     for n in f.get("notas") or []:
         lineas.append(f"• {n}")
+    marca = f.get("marca") or "FEMA"
+    gancho = GANCHOS[sum(map(ord, f["sku"])) % len(GANCHOS)].replace("Producto original FEMA", f"Producto original {marca}")
     lineas += ["", "¿POR QUÉ COMPRARNOS?",
                "Somos distribuidores oficiales FEMA, con más de 70 años en el rubro. "
-               "Producto original con 6 MESES DE GARANTÍA y atención personalizada antes y después de la compra.",
-               GANCHOS[sum(map(ord, f["sku"])) % len(GANCHOS)],
+               f"Producto original {marca} con 6 MESES DE GARANTÍA y atención personalizada antes y después de la compra.",
+               gancho,
                "", "¡Consultanos antes de comprar, respondemos rápido!"]
     return "\n".join(lineas)

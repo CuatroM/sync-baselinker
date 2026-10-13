@@ -24,7 +24,11 @@ from ml import fichas_map as fm
 
 SUFIJO = "#FEMA"
 dry = os.environ.get("DRY_RUN", "1") == "1"
-skus = [s.strip() for s in os.environ["SKUS"].split(",") if s.strip()]
+_sk = os.environ["SKUS"].strip()
+if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
+    skus = json.load(open(f"datos/{_sk[1:]}.json", encoding="utf-8"))
+else:
+    skus = [s.strip() for s in _sk.split(",") if s.strip()]
 margen = float(os.environ["MARGEN"].replace(",", ".").replace("%", ""))
 tipo = os.environ.get("TIPO", "gold_special")            # gold_special = Clásica
 envio = os.environ.get("ENVIO", "me2")
@@ -45,7 +49,11 @@ CATEGORIAS = {   # categoría forzada por familia (si no, la sugiere Mercado Lib
     "Criquet Carro": "MLA433673",
 }
 
-fichas = {f["sku"]: f for f in json.load(open("datos/fichas_fema.json", encoding="utf-8"))}
+import glob
+fichas = {}
+for _arch in sorted(glob.glob("datos/fichas_*.json")):
+    for _f in json.load(open(_arch, encoding="utf-8")):
+        fichas.setdefault(_f["sku"], _f)
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
 b = cfg["baselinker"]
 
@@ -115,7 +123,7 @@ def texto_ml(t):
 
 
 def titulo(f):
-    t = TITULOS.get(f["sku"]) or f["nombre"]
+    t = TITULOS.get(f["sku"]) or f.get("titulo") or f["nombre"]
     if len(t) > 60:
         t = t[:60].rsplit(" ", 1)[0]
     return t
@@ -178,7 +186,7 @@ for sku in skus:
                       "values": [{"id": v.get("id"), "name": v.get("name")} for v in a.get("values") or []]}
                      for a in ml.get(f"/categories/{cat}/attributes")]
         attrs = fm.atributos_para(f, cat_attrs)
-        attrs.update({"BRAND": "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
+        attrs.update({"BRAND": f.get("marca") or "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
                       "PART_NUMBER": sku, "MPN": sku,
                       "EMPTY_GTIN_REASON": "El producto no tiene código registrado"})
         iva = sync.a_numero(IVA.get(sync.normalizar_codigo(sku)))

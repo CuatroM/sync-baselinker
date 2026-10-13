@@ -7,7 +7,7 @@ on:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
       skus:
-        description: "SKU a publicar, separados por coma (sin #FEMA). Solo se publican los que están en la lista de FEMA"
+        description: "SKU separados por coma (sin #FEMA), o @tanda1 para una tanda preparada"
         default: ""
       margen:
         description: "Margen % sobre el precio de BaseLinker (mayorista + 25 %). 150 = x2,5"
@@ -38,7 +38,7 @@ permissions:
 jobs:
   publicar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 150
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
