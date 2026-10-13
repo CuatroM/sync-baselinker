@@ -61,7 +61,19 @@ IVA = {sync.normalizar_codigo(r["SKU"]): r.get("IMPUESTOS") for _, r in _xls.ite
 # ---------------- datos extra por SKU (por nombre de atributo de Mercado Libre)
 EXTRA = {
     "69504110": {"Tipo de grúa": "Plegable", "Requiere ensamblado": "Sí"},
+    "69351050": {"Color": "Gris"}, "69351065": {"Color": "Gris"}, "69351110": {"Color": "Gris"},
 }
+COLORES = ["gris", "negro", "rojo", "azul", "amarillo", "naranja", "verde", "blanco", "plateado", "celeste",
+           "marrón", "violeta", "rosa"]
+
+
+def color_de(f, t):
+    """Color más aproximado según título o ficha; si no hay ninguno, Blanco."""
+    texto = (t + " " + f["nombre"] + " " + " ".join(f"{k} {v}" for k, v in f["specs"].items())).lower()
+    for c in COLORES:
+        if re.search(rf"\b{c}\b", texto):
+            return "Gris" if c == "plateado" else c.capitalize()
+    return "Blanco"
 for linea in (os.environ.get("EXTRA") or "").split(";"):
     # formato: SKU|Atributo=Valor|Atributo=Valor ; SKU|...   o  *|Atributo=Valor para todos
     partes = [x.strip() for x in linea.split("|") if x.strip()]
@@ -139,7 +151,10 @@ for sku in skus:
             attrs["VALUE_ADDED_TAX"] = f"{fm.fmt(iva)} %"
         attrs["IMPORT_DUTY"] = "0 %"
         por_nombre = {a["name"].lower(): a for a in cat_attrs}
-        for nom, val in {**EXTRA.get("*", {}), **EXTRA.get(sku, {})}.items():
+        extra = {**EXTRA.get("*", {}), **EXTRA.get(sku, {})}
+        if "COLOR" in {a["id"] for a in cat_attrs} and not any(k.lower() == "color" for k in extra):
+            extra["Color"] = color_de(f, t)
+        for nom, val in extra.items():
             a = por_nombre.get(nom.strip().lower())
             if not a:
                 continue
