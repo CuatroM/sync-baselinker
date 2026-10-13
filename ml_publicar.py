@@ -183,6 +183,14 @@ def titulo(f):
     return t
 
 
+DESCARTE_GTIN = "DESCARTADO: la categoría exige código de barras y no lo tenemos (no se publica)"
+
+
+def sin_gtin(r):
+    """Regla: si Mercado Libre exige GTIN y no tenemos código de barras, el producto no se publica."""
+    return r.status_code not in (200, 201, 204) and "[GTIN]" in r.text
+
+
 res = []
 for sku in skus:
     f = fichas.get(sku)
@@ -322,7 +330,9 @@ for sku in skus:
             # en simulación se sube solo la primera foto (no queda asociada a ninguna publicación)
             item["pictures"] = [x for x in [subir(imgs[0])] if x]
             r = enviar("/items/validate")
-            if r.status_code in (200, 204):
+            if sin_gtin(r):
+                fila["resultado"] = DESCARTE_GTIN
+            elif r.status_code in (200, 204):
                 fila["resultado"] = "VALIDADO OK"
             else:
                 causas = (r.json().get("cause") or []) if r.headers.get("content-type", "").startswith("application/json") else []
@@ -333,6 +343,11 @@ for sku in skus:
         else:
             item["pictures"] = [x for x in (subir(i) for i in imgs) if x]
             r = enviar("/items")
+            if sin_gtin(r):
+                fila["resultado"] = DESCARTE_GTIN
+                log(f"{sku}: {fila['resultado']}")
+                res.append(fila)
+                continue
             if r.status_code not in (200, 201):
                 raise RuntimeError(f"Mercado Libre rechazó la publicación: {r.status_code} {r.text[:600]}")
             nuevo = r.json()
