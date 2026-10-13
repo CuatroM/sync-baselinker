@@ -1,0 +1,42 @@
+name: Drive - Revisar carpetas de fotos y fichas
+
+on:
+  workflow_dispatch:
+    inputs:
+      skus:
+        description: "SKU a buscar (separados por coma)"
+        default: "69350850,69351050,69351110,69503874,69504110"
+
+permissions:
+  contents: write
+
+jobs:
+  revisar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Revisar
+        env:
+          DRIVE_FOTOS: "https://drive.google.com/drive/folders/1n-pnG6JIS5q1TBEWn3jS0BYY9I36xlra"
+          DRIVE_FICHAS: "https://drive.google.com/drive/folders/1X55cdaq-c1zUjD6M158xQ7YjZRyxo17C"
+          SKUS: ${{ github.event.inputs.skus }}
+        run: |
+          set -o pipefail
+          python drive_diagnostico.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          cp resultado.txt /tmp/diagnostico.txt
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan diagnostico
+          git rm -rfq .
+          cp /tmp/diagnostico.txt .
+          git add -A
+          git commit -qm "Revisión carpetas Drive"
+          git push -qf origin diagnostico
