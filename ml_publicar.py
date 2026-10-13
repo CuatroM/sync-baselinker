@@ -67,6 +67,12 @@ REGLAS_CAT = [
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
 ]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
+RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
+    "Electrobombas": {"Hogar, Muebles y Jardín"},
+    "Energía Solar": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
+    "Ventiladores": {"Electrodomésticos y Aires Ac.", "Hogar, Muebles y Jardín"},
+    "Pinturas": {"Hogar, Muebles y Jardín"},
+}
 CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de Pelo", "Rollos de Embalaje",
           "Sensitivas", "Frascos con Gotero", "Strass Autoadhesivos", "Porta Cds y Dvds"}
 GTIN = json.load(open("datos/gtin.json", encoding="utf-8")) if os.path.exists("datos/gtin.json") else {}
@@ -96,7 +102,7 @@ def elegir_categoria(f, t):
         for d in ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []:
             ci = info_cat(d["category_id"])
             raiz = ((ci.get("path_from_root") or [{}])[0]).get("name")
-            if raiz in RAICES_OK and ci.get("name") not in CAT_NO:
+            if (raiz in RAICES_OK or raiz in RAICES_FAM.get(f["familia"], set())) and ci.get("name") not in CAT_NO:
                 return d["category_id"]
     return None
 
