@@ -66,6 +66,13 @@ REGLAS_CAT = [
     (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
     # ---- tanda 2
+    (r"^(Acelerante de Fragüe|Anticongelante|Aditivo Vinílico|Desmoldante|Desencofrante|Infiltración)", "MLA435312", None),  # Aditivos
+    (r"^(Hormigón Impreso|Capa Color)", "MLA456027", None),                                       # Morteros
+    (r"^(Pintura Asfáltica|Imprimación Asfáltica)", "MLA372048", None),                           # Membrana Asfáltica
+    (r"^Llave T", "MLA30831", None),                                                             # Llaves
+    (r"^Grancilla|^Arena", "MLA393048", None),                                                   # Arena
+    (r"^Taco Diamantado", "MLA372119", None),                                                    # Discos y Piedras
+    (r"^Regla Vibradora", None, "regla vibradora para hormigon"),
     (r"^Isover Andina", "MLA372044", None),                                                      # Cielo Raso
     (r"^Isover (?!Herramientas|Escuadra|Repuesto|Cola|Clavos|Cinta)", "MLA434826", None),         # Rollos Aislantes
     (r"^Aislante Isolant|^Banda Acoustic|^Burlete Puertelete", "MLA434826", None),
@@ -92,7 +99,10 @@ RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
     "Pinturas": {"Hogar, Muebles y Jardín"},
 }
 CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de Pelo", "Rollos de Embalaje",
-          "Sensitivas", "Frascos con Gotero", "Strass Autoadhesivos", "Porta Cds y Dvds"}
+          "Sensitivas", "Frascos con Gotero", "Strass Autoadhesivos", "Porta Cds y Dvds", "Barras de Puntal",
+          "Bidón Lavamanos", "Vibradores de Inmersión", "Refrigerante y Anticongelante", "Bloques de Hormigón",
+          "Selladoras de Bolsas", "Tambores de Almacenamiento", "Matafuegos", "Llaves de Paso", "Motores", "Otros",
+          "Tanque Expansión Refrigerante", "Baldosas de Cemento", "Pisos de Madera", "Paneles de Puertas"}
 GTIN = json.load(open("datos/gtin.json", encoding="utf-8")) if os.path.exists("datos/gtin.json") else {}
 precio_minimo = float((os.environ.get("PRECIO_MINIMO") or "100000").replace(".", "").replace(",", "."))
 _cat_cache = {}
@@ -250,7 +260,16 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     m = re.search(r"(\d+(?:,\d+)?)\s*mm", tl)
     if m:
         poner("THICKNESS", f"{m.group(1)} mm")
+    if re.search(r"^(perfil pg[cu]|montante|solera|perfil omega)", tl):
+        poner("CONSTRUCTION_PROFILE_SHAPE", "U")
+    poner("TOOL_TYPE", "Máquina de pintar airless" if "airless" in tl else None)
+    poner("HAMMER_TYPE", "Maza" if "punta cuadrada" in tl else None)
+    if "hormigonera" in tl:
+        poner("POWER_SUPPLY_TYPE", "Diésel" if "diesel" in tl else "Nafta")
+    if "pistola para pintar" in tl:
+        poner("POWER_SUPPLY_TYPE", "Neumática")
     if "arena" in tl or "grancilla" in tl:
+        poner("CONSTRUCTION_SAND_YIELD_OF_SALES_UNIT", "0.01 m³")
         poner("SAND_THICKNESS", "Fina" if "fina" in tl else "Gruesa")
         poner("SALES_UNIT", "Bolsa")
 
