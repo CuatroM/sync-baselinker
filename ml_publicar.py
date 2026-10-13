@@ -57,6 +57,9 @@ for _arch in sorted(glob.glob("datos/fichas_*.json")):
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
 b = cfg["baselinker"]
 
+# ---------------- primero la autorización de Mercado Libre (el código vence en minutos)
+ml = ML(os.environ.get("ML_CODIGO"))
+
 # ---------------- precio y stock desde BaseLinker
 bl = sync.BaseLinker(os.environ["BL_TOKEN"])
 cat_bl = bl.catalogo(int(b["inventory_id"]))
@@ -129,7 +132,6 @@ def titulo(f):
     return t
 
 
-ml = ML(os.environ.get("ML_CODIGO"))
 res = []
 for sku in skus:
     f = fichas.get(sku)
