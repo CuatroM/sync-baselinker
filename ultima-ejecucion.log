@@ -1,8 +1,8 @@
-[2026-10-13 07:31:21] Login en el sitio del proveedor OK
-[2026-10-13 07:31:21] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
-[2026-10-13 07:31:27] Recibido: 589,015 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-131026.xlsx"
-[2026-10-13 07:31:29] Lista del proveedor: 18546 productos con datos válidos
-[2026-10-13 07:31:40] Catálogo BaseLinker: 16197 productos
-[2026-10-13 07:31:40] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
-[2026-10-13 07:31:40] Cambios detectados: 0 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2418
-[2026-10-13 07:31:40] Listo. 0 cambios, 2418 sin vincular, 0 advertencias.
+[2026-10-13 11:28:13] Login en el sitio del proveedor OK
+[2026-10-13 11:28:13] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-10-13 11:28:19] Recibido: 589,015 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-131026.xlsx"
+[2026-10-13 11:28:20] Lista del proveedor: 18546 productos con datos válidos
+[2026-10-13 11:28:31] Catálogo BaseLinker: 16197 productos
+[2026-10-13 11:28:31] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
+[2026-10-13 11:28:31] Cambios detectados: 0 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2418
+[2026-10-13 11:28:31] Listo. 0 cambios, 2418 sin vincular, 0 advertencias.
