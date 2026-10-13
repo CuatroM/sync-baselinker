@@ -27,6 +27,9 @@ on:
       envio:
         description: "me2 = Mercado Envíos, not_specified = acordar con el vendedor"
         default: "me2"
+      precio_minimo:
+        description: "Precio a usar cuando la categoría exige un mínimo (ML pide $1000)"
+        default: "100000"
 
 concurrency:
   group: mercadolibre
@@ -55,6 +58,7 @@ jobs:
           TIPO: ${{ github.event.inputs.tipo }}
           ENVIO: ${{ github.event.inputs.envio }}
           EXTRA: ${{ github.event.inputs.extra }}
+          PRECIO_MINIMO: ${{ github.event.inputs.precio_minimo }}
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
           DRIVE_FOTOS: "https://drive.google.com/drive/folders/1n-pnG6JIS5q1TBEWn3jS0BYY9I36xlra"

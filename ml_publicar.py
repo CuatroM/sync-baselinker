@@ -48,6 +48,58 @@ CATEGORIAS = {   # categoría forzada por familia (si no, la sugiere Mercado Lib
     "Aspiradora Polvo y Líquido": "MLA371973",
     "Criquet Carro": "MLA433673",
 }
+# reglas por tipo de producto (sobre el título): (expresión, categoría fija o None, búsqueda para Mercado Libre)
+REGLAS_CAT = [
+    (r"^(Lija|HOJA Lija|Bandas Tela|Rollos Tela|Tela Esmeril|Espuma Abrasiva|Fibra Abrasiva|Rollos de Fibra"
+     r"|Discos Speed Grip|Discos Speed Lok|Rueda Flap Lija)", "MLA384753", None),               # Lijas
+    (r"^(Disco|Ruedas? |Rueda Convoluta|Clipper)", "MLA372119", None),                         # Discos y Piedras
+    (r"^Lima (Rotativa|Plana|Media|Redonda|Triangular)|^Lima ", "MLA30832", None),             # Limas
+    (r"^Cinta Embalar", "MLA405117", None),                                                      # Cintas de Embalaje
+    (r"^Cinta (Doble|de Papel|Automotor|DUCT|Silver)|Enmascarar", "MLA105436", None),           # Cintas Adhesivas
+    (r"^Silicona|^Sellador de (Roscas|Juntas)", "MLA435294", None),                              # Selladores y Siliconas
+    (r"^Traba Roscas", None, "traba roscas anaerobico fijador de tornillos"),
+    (r"^(Pan Afilado|Afilador|Afilado de Sierras)", None, "piedra de afilar herramientas"),
+    (r"^Boina", None, "boina para pulidora"),
+    (r"^(Soporte|Adaptador Soporte)", None, "plato soporte velcro para lijadora amoladora"),
+    (r"^Bujes de Reduccion", None, "buje reduccion para piedra de amolar"),
+    (r"^Filtro de Pintura", None, "colador filtro de pintura para soplete"),
+    (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
+    (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
+    (r"^Gel Tekbond|^Kit Retrovisor", None, "adhesivo instantaneo"),
+]
+RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
+CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de Pelo", "Rollos de Embalaje",
+          "Sensitivas", "Frascos con Gotero", "Strass Autoadhesivos", "Porta Cds y Dvds"}
+GTIN = json.load(open("datos/gtin.json", encoding="utf-8")) if os.path.exists("datos/gtin.json") else {}
+precio_minimo = float((os.environ.get("PRECIO_MINIMO") or "100000").replace(".", "").replace(",", "."))
+_cat_cache = {}
+
+
+def info_cat(cat):
+    if cat not in _cat_cache:
+        _cat_cache[cat] = ml.get(f"/categories/{cat}")
+    return _cat_cache[cat]
+
+
+def elegir_categoria(f, t):
+    """Categoría: forzada por familia o por regla; si no, la primera sugerencia de ML que sea de herramientas."""
+    if CATEGORIAS.get(f["familia"]):
+        return CATEGORIAS[f["familia"]]
+    consultas = [t]
+    for exp, fija, q in REGLAS_CAT:
+        if re.search(exp, t, re.I):
+            if fija:
+                return fija
+            consultas = [q, t]
+            break
+    consultas.append(" ".join(f["nombre"].split()[:3]))
+    for q in consultas:
+        for d in ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []:
+            ci = info_cat(d["category_id"])
+            raiz = ((ci.get("path_from_root") or [{}])[0]).get("name")
+            if raiz in RAICES_OK and ci.get("name") not in CAT_NO:
+                return d["category_id"]
+    return None
 
 import glob
 fichas = {}
@@ -176,21 +228,22 @@ for sku in skus:
             raise RuntimeError("sin precio: no está en BaseLinker ni en el Excel de FEMA")
         precio = round(base * (1 + margen / 100), 2)
         t = titulo(f)
-        cat = CATEGORIAS.get(f["familia"])
+        cat = elegir_categoria(f, t)
         if not cat:
-            d = ml.get("/sites/MLA/domain_discovery/search", q=t, limit=1)
-            cat = d[0]["category_id"] if d else None
-        if not cat:
-            raise RuntimeError("Mercado Libre no sugirió categoría")
-        cat_info = ml.get(f"/categories/{cat}")
+            raise RuntimeError("Mercado Libre no sugirió una categoría de herramientas/construcción/vehículos")
+        cat_info = info_cat(cat)
         cat_attrs = [{"id": a.get("id"), "name": a.get("name"), "value_type": a.get("value_type"),
                       "tags": a.get("tags"), "allowed_units": [u.get("id") for u in a.get("allowed_units") or []],
                       "values": [{"id": v.get("id"), "name": v.get("name")} for v in a.get("values") or []]}
                      for a in ml.get(f"/categories/{cat}/attributes")]
         attrs = fm.atributos_para(f, cat_attrs)
         attrs.update({"BRAND": f.get("marca") or "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
-                      "PART_NUMBER": sku, "MPN": sku,
-                      "EMPTY_GTIN_REASON": "El producto no tiene código registrado"})
+                      "PART_NUMBER": sku, "MPN": sku})
+        if GTIN.get(sku):
+            attrs["GTIN"] = GTIN[sku]["gtin"]
+            fila["gtin"] = GTIN[sku]["gtin"]
+        else:
+            attrs["EMPTY_GTIN_REASON"] = "El producto no tiene código registrado"
         iva = sync.a_numero(IVA.get(sync.normalizar_codigo(sku)))
         if iva is not None:
             attrs["VALUE_ADDED_TAX"] = f"{fm.fmt(iva)} %"
@@ -240,13 +293,22 @@ for sku in skus:
             log(f"{sku}: no pude subir {x['nombre']}: {up.status_code} {up.text[:200]}")
             return None
 
+        def enviar(ruta):
+            r = ml.pedir("POST", ruta, json=item)
+            if r.status_code not in (200, 201, 204) and "family_name" in r.text:
+                item["family_name"] = item.pop("title")
+                r = ml.pedir("POST", ruta, json=item)
+            if r.status_code not in (200, 201, 204) and "minimum of price" in r.text and item["price"] < precio_minimo:
+                # la categoría exige un precio mínimo: se sube al precio de resguardo acordado
+                item["price"] = precio_minimo
+                fila["precio"] = f"{precio_minimo:.2f} (subido al mínimo; calculado {precio})"
+                r = ml.pedir("POST", ruta, json=item)
+            return r
+
         if dry:
             # en simulación se sube solo la primera foto (no queda asociada a ninguna publicación)
             item["pictures"] = [x for x in [subir(imgs[0])] if x]
-            r = ml.pedir("POST", "/items/validate", json=item)
-            if r.status_code not in (200, 204) and "family_name" in r.text:
-                item["family_name"] = item.pop("title")
-                r = ml.pedir("POST", "/items/validate", json=item)
+            r = enviar("/items/validate")
             if r.status_code in (200, 204):
                 fila["resultado"] = "VALIDADO OK"
             else:
@@ -257,10 +319,7 @@ for sku in skus:
                     (" | AVISOS: " + " / ".join(avisos) if avisos else "")
         else:
             item["pictures"] = [x for x in (subir(i) for i in imgs) if x]
-            r = ml.pedir("POST", "/items", json=item)
-            if r.status_code not in (200, 201) and "family_name" in r.text:
-                item["family_name"] = item.pop("title")
-                r = ml.pedir("POST", "/items", json=item)
+            r = enviar("/items")
             if r.status_code not in (200, 201):
                 raise RuntimeError(f"Mercado Libre rechazó la publicación: {r.status_code} {r.text[:600]}")
             nuevo = r.json()
@@ -276,7 +335,7 @@ for sku in skus:
     res.append(fila)
 
 os.makedirs("salida", exist_ok=True)
-cols = ["sku", "resultado", "publicacion", "link", "titulo", "categoria", "origen_precio", "precio_base", "precio", "stock",
+cols = ["sku", "resultado", "publicacion", "link", "titulo", "categoria", "gtin", "origen_precio", "precio_base", "precio", "stock",
         "iva", "fotos", "atributos", "obligatorios_sin_dato", "opciones_obligatorios"]
 with open("salida/ml-publicar-resultado.csv", "w", newline="", encoding="utf-8-sig") as fh:
     w = csv.DictWriter(fh, fieldnames=cols, delimiter=";", extrasaction="ignore")

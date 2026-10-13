@@ -35,7 +35,19 @@ def listar(carpeta, ruta="", profundidad=3):
     return out
 
 
-def descargar(file_id):
+def descargar(file_id, intentos=4):
+    """Descarga con reintentos ante errores 5xx o cortes de Drive."""
+    for i in range(intentos):
+        try:
+            return _descargar(file_id)
+        except (requests.ConnectionError, requests.Timeout, requests.HTTPError) as e:
+            resp = getattr(e, "response", None)
+            if i == intentos - 1 or (resp is not None and resp.status_code < 500):
+                raise
+            time.sleep(5 * (i + 1))
+
+
+def _descargar(file_id):
     s = requests.Session()
     s.headers.update(UA)
     url = "https://drive.usercontent.google.com/download"
