@@ -8,7 +8,7 @@ on:
         required: true
       skus:
         description: "SKU a publicar, separados por coma (sin #FEMA)"
-        default: "69351050,69351065,69351110,69503874,69504110"
+        default: "69350850,69350307,69350309,69310340,69310344,69310440,69310640,69310650,69310350,69310560,69310557,69310450,69310540,69310555,69310360,69310370,69310480,69310675,69310680,69503222,69503223,69503750"
       margen:
         description: "Margen % sobre el precio de BaseLinker (mayorista + 25 %). 150 = x2,5"
         default: "150"
