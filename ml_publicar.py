@@ -65,6 +65,24 @@ REGLAS_CAT = [
     (r"^Filtro de Pintura", None, "colador filtro de pintura para soplete"),
     (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
+    # ---- tanda 2
+    (r"^Isover Andina", "MLA372044", None),                                                      # Cielo Raso
+    (r"^Isover (?!Herramientas|Escuadra|Repuesto|Cola|Clavos|Cinta)", "MLA434826", None),         # Rollos Aislantes
+    (r"^Aislante Isolant|^Banda Acoustic|^Burlete Puertelete", "MLA434826", None),
+    (r"^Motocompresor", None, "motocompresor para compresor de aire"),
+    (r"^Escarificador", None, "escarificadora de pisos hormigon"),
+    (r"^Juego 4 Paletas Alisadora", None, "paletas para alisadora de hormigon helicoptero"),
+    (r"^Impermeabilizante Planiseal|^Impermeabilizante Mapelastic", None, "impermeabilizante cementicio"),
+    (r"^Desmoldante|^Desencofrante", None, "desmoldante para encofrados"),
+    (r"^Capa Color", None, "hormigon impreso color"),
+    (r"^Acelerante de Fragüe", None, "acelerante de fragüe hormigon"),
+    (r"^Malla de Fibra de Vidrio", None, "malla de fibra de vidrio para revoque"),
+    (r"^Esquinero de PVC|^Perfil Esquinero", None, "esquinero pvc para revoque"),
+    (r"^Cable Sumergible", None, "cable sumergible para bomba"),
+    (r"^Mezcla para Baldosas", None, "adhesivo para baldosas ceramicos"),
+    (r"^Martillo Hidráulico|^Punta para Martillo Hidráulico", None, "martillo hidraulico para retroexcavadora"),
+    (r"^(Velcro y Goma|Goma Porta Velcro)", None, "plato porta lija velcro pulidora"),
+    (r"^Pico Boquilla", None, "pico airless para maquina de pintar"),
 ]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
@@ -198,6 +216,45 @@ def sin_gtin(r):
     return r.status_code not in (200, 201, 204) and "[GTIN]" in r.text
 
 
+def completar_obligatorios(attrs, cat_attrs, f, t):
+    """Atributos obligatorios con opciones cerradas que se deducen del título / marca."""
+    tl = t.lower()
+    req = {a["id"]: a for a in cat_attrs if (a.get("tags") or {}).get("required")}
+    def poner(aid, val):
+        if aid in req and aid not in attrs and val:
+            ops = [v["name"] for v in req[aid].get("values") or []]
+            attrs[aid] = next((o for o in ops if o.lower() == val.lower()), val)
+    if "llave" in tl or "juego llaves" in tl:
+        poner("WRENCH_TYPE", "Francesa" if "francesa" in tl or "ajustable" in tl else
+              "Allen en T" if "allen" in tl and ("mango t" in tl or "llave t" in tl) else "Allen" if "allen" in tl else
+              "Tipo T" if "torx" in tl or "llave t" in tl else "Crique" if "crique" in tl else "Combinada")
+    poner("INSULATION_TYPES", "Acústico" if re.search(r"acusti|acoustic|panel pf|bajo piso|alfombra|andina|densus", tl) else "Térmico")
+    if "clavo" in tl:
+        poner("NAIL_HEAD_TYPE", "Plana")
+        poner("NAIL_BODY_TYPE", "Helicoidal" if "espiral" in tl else "Liso")
+    poner("MORTAR_TYPE", "Autonivelante" if "nivelad" in tl else "Reparador")
+    poner("PAINT_TYPE", "Látex" if "látex" in tl else None)
+    if re.search(r"membrana|impermeab|emulsi", tl):
+        poner("PAINT_TYPE", "Impermeabilizante")
+    poner("IS_FLAMMABLE", "Sí" if "solvente" in tl else "No")
+    poner("POWER_SUPPLY_TYPES", "Energía industrial" if "380" in tl else "Corriente doméstica")
+    poner("POWER_SUPPLY_TYPE", "Energía industrial" if "380" in tl else "Corriente doméstica" if re.search(r"220|controlador", tl) else None)
+    if "chapa" in tl:
+        poner("ROOF_PANEL_SHAPE", "Sinusoidal" if "sinusoidal" in tl else "Plana" if "lisa" in tl else "Trapezoidal")
+    m = re.search(r"(\d+)\s*litros", tl)
+    if m:
+        poner("VOLUME_CAPACITY", f"{m.group(1)} L")
+    poner("MANUFACTURER", f.get("marca") or "FEMA")
+    poner("IS_FACTORY_KIT", "Sí" if re.search(r"juego|kit|set", tl) else "No")
+    poner("FAN_TYPE", "De pared" if "pared" in tl else None)
+    m = re.search(r"(\d+(?:,\d+)?)\s*mm", tl)
+    if m:
+        poner("THICKNESS", f"{m.group(1)} mm")
+    if "arena" in tl or "grancilla" in tl:
+        poner("SAND_THICKNESS", "Fina" if "fina" in tl else "Gruesa")
+        poner("SALES_UNIT", "Bolsa")
+
+
 res = []
 for sku in skus:
     f = fichas.get(sku)
@@ -285,6 +342,7 @@ for sku in skus:
         attrs.setdefault("PRODUCT_NAME", t)
         if "es set" in por_nombre and not any(k.lower() == "es set" for k in extra):
             attrs.setdefault(por_nombre["es set"]["id"], "No")
+        completar_obligatorios(attrs, cat_attrs, f, t)
         ids_cat = {a["id"] for a in cat_attrs}
         atributos = [{"id": k, "value_name": v} for k, v in attrs.items() if k in ids_cat]
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
