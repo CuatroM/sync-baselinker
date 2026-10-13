@@ -129,6 +129,12 @@ for sku in skus:
     try:
         if not f:
             raise RuntimeError("no hay ficha cargada para este SKU")
+        # regla: solo se publica lo que existe en la lista de precios de FEMA (de donde salen precio y stock)
+        if sync.normalizar_codigo(sku) not in PRECIO_XLS:
+            fila["resultado"] = "EXCLUIDO: no figura en la lista de precios de FEMA"
+            log(f"{sku}: {fila['resultado']}")
+            res.append(fila)
+            continue
         # ¿ya publicado?
         ya = []
         for est in ("active", "paused"):

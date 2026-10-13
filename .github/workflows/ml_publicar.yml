@@ -7,8 +7,8 @@ on:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
       skus:
-        description: "SKU a publicar, separados por coma (sin #FEMA)"
-        default: "69350307,69350309,69310340,69310344,69310560,69310540,69310360,69310675,69310680,69503223,69503750,69503222"
+        description: "SKU a publicar, separados por coma (sin #FEMA). Solo se publican los que están en la lista de FEMA"
+        default: ""
       margen:
         description: "Margen % sobre el precio de BaseLinker (mayorista + 25 %). 150 = x2,5"
         default: "150"
