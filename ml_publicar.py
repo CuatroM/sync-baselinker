@@ -170,6 +170,11 @@ for sku in skus:
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
                   and a["id"] not in attrs and a["id"] not in ("ITEM_CONDITION",)]
         imgs = imagenes(sku)
+        if not [x for x in imgs if "_ficha" not in x["nombre"].lower()] and f["familia"].startswith("Accesorio"):
+            # accesorios sin foto propia: imagen genérica de la caja FEMA (+ ficha si existe)
+            caja = [x for x in fotos if os.path.splitext(x["nombre"])[0].lower() == "caja_fema"
+                    and os.path.splitext(x["nombre"])[1].lower() in EXT]
+            imgs = caja[:1] + imgs
         if not imgs:
             raise RuntimeError("no hay fotos en Drive para este SKU")
         fila["iva"] = attrs.get("VALUE_ADDED_TAX")
