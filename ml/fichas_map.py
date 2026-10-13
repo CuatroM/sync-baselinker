@@ -402,10 +402,5 @@ def descripcion(f):
                "Somos distribuidores oficiales FEMA, con más de 70 años en el rubro. "
                "Producto original con 6 MESES DE GARANTÍA y atención personalizada antes y después de la compra.",
                GANCHOS[sum(map(ord, f["sku"])) % len(GANCHOS)],
-               "", "ENVÍOS",
-               "Hacemos envíos a todo el país, sin cargo adicional.",
-               "IMPORTANTE: NO hacemos envíos gratis a TUCUMÁN ni MISIONES (no tenemos convenio de entrega por correo). "
-               "Si comprás desde esas provincias, se cobran los IMPUESTOS del Convenio Multilateral y/o la "
-               "discriminación que indique Mercado Libre.",
                "", "¡Consultanos antes de comprar, respondemos rápido!"]
     return "\n".join(lineas)
