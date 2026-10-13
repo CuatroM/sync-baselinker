@@ -4,7 +4,8 @@ Crea publicaciones nuevas en Mercado Libre a partir de las fichas FEMA.
 Por cada SKU:
   - título (máx. 60), categoría, atributos de la ficha + obligatorios, descripción con el formato acordado
   - fotos desde la carpeta de Drive (SKU.jpg, SKU_02.jpg…) y la imagen de ficha técnica al final
-  - precio = precio de BaseLinker (inventario COMPLETO FEMA) + MARGEN %, stock de BaseLinker
+  - precio = precio de BaseLinker (mayorista del Excel + 25 %) + MARGEN % encima; stock fijo STOCK (1)
+  - solo crea en Mercado Libre: no escribe nada en BaseLinker (la vinculación se hace a mano en BASE)
   - SKU = CÓDIGO#FEMA, publicación Clásica, Mercado Envíos, queda PAUSADA para revisar
 DRY_RUN=1: arma todo y lo valida contra Mercado Libre (/items/validate) sin crear nada.
 """
@@ -27,6 +28,7 @@ skus = [s.strip() for s in os.environ["SKUS"].split(",") if s.strip()]
 margen = float(os.environ["MARGEN"].replace(",", ".").replace("%", ""))
 tipo = os.environ.get("TIPO", "gold_special")            # gold_special = Clásica
 envio = os.environ.get("ENVIO", "me2")
+stock_fijo = int(os.environ.get("STOCK") or 1)
 
 TITULOS = {   # títulos cuidados (máx. 60 caracteres); si no hay, se arma desde la ficha
     "69351050": "Aspiradora Industrial Polvo Y Liquido 60 L 1200w Fema Inox",
@@ -123,10 +125,10 @@ for sku in skus:
         if not imgs:
             raise RuntimeError("no hay fotos en Drive para este SKU")
         fila.update({"titulo": t, "categoria": f"{cat} {cat_info.get('name')}", "precio_base": base,
-                     "precio": precio, "stock": stock, "fotos": " | ".join(x["nombre"] for x in imgs),
+                     "precio": precio, "stock": stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
                      "atributos": len(atributos), "obligatorios_sin_dato": ", ".join(faltan)})
         item = {"title": t, "category_id": cat, "price": precio, "currency_id": "ARS",
-                "available_quantity": max(stock, 1), "buying_mode": "buy_it_now", "condition": "new",
+                "available_quantity": stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
                 "listing_type_id": tipo, "attributes": atributos,
                 "sale_terms": [{"id": "WARRANTY_TYPE", "value_name": "Garantía de fábrica"},
                                {"id": "WARRANTY_TIME", "value_name": "6 meses"}],

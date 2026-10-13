@@ -10,8 +10,11 @@ on:
         description: "SKU a publicar, separados por coma (sin #FEMA)"
         default: "69351050,69351065,69351110,69503874,69504110"
       margen:
-        description: "Margen % sobre el precio de BaseLinker (ej. 26)"
-        required: true
+        description: "Margen % sobre el precio de BaseLinker (mayorista + 25 %). 150 = x2,5"
+        default: "150"
+      stock:
+        description: "Stock a publicar"
+        default: "1"
       dry_run:
         description: "1 = validar sin crear nada, 0 = crear (quedan pausadas)"
         default: "1"
@@ -44,6 +47,7 @@ jobs:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
           SKUS: ${{ github.event.inputs.skus }}
           MARGEN: ${{ github.event.inputs.margen }}
+          STOCK: ${{ github.event.inputs.stock }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           TIPO: ${{ github.event.inputs.tipo }}
           ENVIO: ${{ github.event.inputs.envio }}
