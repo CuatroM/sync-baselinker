@@ -52,20 +52,19 @@ CATEGORIAS = {   # categoría forzada por familia (si no, la sugiere Mercado Lib
 REGLAS_CAT = [
     (r"^(Lija|HOJA Lija|Bandas Tela|Rollos Tela|Tela Esmeril|Espuma Abrasiva|Fibra Abrasiva|Rollos de Fibra"
      r"|Discos Speed Grip|Discos Speed Lok|Rueda Flap Lija)", "MLA384753", None),               # Lijas
-    (r"^(Disco|Ruedas? |Rueda Convoluta|Clipper)", "MLA372119", None),                         # Discos y Piedras
-    (r"^Lima (Rotativa|Plana|Media|Redonda|Triangular)|^Lima ", "MLA30832", None),             # Limas
+    (r"^(Disco|Ruedas? |Rueda Convoluta|Clipper|Para Sensitiva|Bujes de Reduccion)", "MLA372119", None),  # Discos y Piedras
+    (r"^Lima ", "MLA30832", None),                                                               # Limas
     (r"^Cinta Embalar", "MLA405117", None),                                                      # Cintas de Embalaje
     (r"^Cinta (Doble|de Papel|Automotor|DUCT|Silver)|Enmascarar", "MLA105436", None),           # Cintas Adhesivas
     (r"^Silicona|^Sellador de (Roscas|Juntas)", "MLA435294", None),                              # Selladores y Siliconas
-    (r"^Traba Roscas", None, "traba roscas anaerobico fijador de tornillos"),
-    (r"^(Pan Afilado|Afilador|Afilado de Sierras)", None, "piedra de afilar herramientas"),
-    (r"^Boina", None, "boina para pulidora"),
-    (r"^(Soporte|Adaptador Soporte)", None, "plato soporte velcro para lijadora amoladora"),
-    (r"^Bujes de Reduccion", None, "buje reduccion para piedra de amolar"),
+    (r"^(Traba Roscas|Adhesivo Instant|Cola Vin|Cola Spray|Gel Tekbond|Kit Retrovisor)", "MLA105406", None),  # Pegamentos
+    (r"^(Pan Afilado|Afilador|Afilado de Sierras)", "MLA413465", None),                          # Afiladores Manuales
+    (r"^(Boina|Soporte|Adaptador Soporte)", "MLA424490", None),                                  # Pads
+    (r"^Repuesto Filtro", "MLA455478", None),                                                    # Cartuchos para Máscaras
+    (r"^(Grafito Seco|LUB )", "MLA392346", None),                                                # Lubricantes
     (r"^Filtro de Pintura", None, "colador filtro de pintura para soplete"),
     (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
-    (r"^Gel Tekbond|^Kit Retrovisor", None, "adhesivo instantaneo"),
 ]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de Pelo", "Rollos de Embalaje",
@@ -260,6 +259,17 @@ for sku in skus:
             elegido = next((o for o in opciones if o.lower() == val.lower()), None) or \
                 next((o for o in opciones if val.lower() in o.lower()), None) or val
             attrs[a["id"]] = elegido
+        # datos genéricos que algunas categorías exigen
+        cont = " ".join(str(v) for k, v in f["specs"].items() if k.lower().startswith("contenido")) + " " + t
+        mv = re.search(r"(\d+(?:[.,]\d+)?)\s*ml\b", cont, re.I)
+        mg = re.search(r"(\d+(?:[.,]\d+)?)\s*(g|gr|kg)\b", cont, re.I)
+        if "UNIT_VOLUME" not in attrs and mv:
+            attrs["UNIT_VOLUME"] = f"{mv.group(1).replace(',', '.')} mL"
+        if "UNIT_WEIGHT" not in attrs and mg:
+            attrs["UNIT_WEIGHT"] = f"{mg.group(1).replace(',', '.')} {'kg' if mg.group(2).lower() == 'kg' else 'g'}"
+        attrs.setdefault("PRODUCT_NAME", t)
+        if "es set" in por_nombre and not any(k.lower() == "es set" for k in extra):
+            attrs.setdefault(por_nombre["es set"]["id"], "No")
         ids_cat = {a["id"] for a in cat_attrs}
         atributos = [{"id": k, "value_name": v} for k, v in attrs.items() if k in ids_cat]
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
@@ -287,9 +297,12 @@ for sku in skus:
                                {"id": "WARRANTY_TIME", "value_name": "6 meses"}],
                 "shipping": {"mode": envio, "local_pick_up": False, "free_shipping": False}}
         def subir(x):
-            up = ml.pedir("POST", "/pictures/items/upload", files={"file": (x["nombre"], descargar(x["id"]))})
-            if up.status_code in (200, 201):
-                return {"id": up.json()["id"]}
+            import time
+            for intento in range(3):
+                up = ml.pedir("POST", "/pictures/items/upload", files={"file": (x["nombre"], descargar(x["id"]))})
+                if up.status_code in (200, 201):
+                    return {"id": up.json()["id"]}
+                time.sleep(3 * (intento + 1))
             log(f"{sku}: no pude subir {x['nombre']}: {up.status_code} {up.text[:200]}")
             return None
 
