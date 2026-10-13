@@ -60,6 +60,8 @@ import pandas as pd
 _xls = pd.read_excel(io.BytesIO(sync.descargar_lista(cfg)), dtype=object)
 _xls.columns = [str(c).strip().upper() for c in _xls.columns]
 IVA = {sync.normalizar_codigo(r["SKU"]): r.get("IMPUESTOS") for _, r in _xls.iterrows()}
+MULT = float(cfg.get("reglas", {}).get("multiplicador_precio", 1) or 1)
+PRECIO_XLS = {sync.normalizar_codigo(r["SKU"]): sync.a_numero(r.get("PRECIO MAYORISTA")) for _, r in _xls.iterrows()}
 
 # ---------------- datos extra por SKU (por nombre de atributo de Mercado Libre)
 EXTRA = {
@@ -105,6 +107,13 @@ def imagenes(sku):
     return unicas[:9] + ficha[:1]
 
 
+def texto_ml(t):
+    for a, b2 in (("≤", "hasta "), ("≥", "desde "), ("±", "+/-"), ("’", "'"), ("“", '"'), ("”", '"'),
+                  ("–", "-"), ("—", "-"), ("×", "x")):
+        t = t.replace(a, b2)
+    return t
+
+
 def titulo(f):
     t = TITULOS.get(f["sku"]) or f["nombre"]
     if len(t) > 60:
@@ -125,14 +134,30 @@ for sku in skus:
         for est in ("active", "paused"):
             ya += ml.get(f"/users/{ml.user_id}/items/search", seller_sku=sku + SUFIJO, status=est).get("results") or []
         if ya:
+            r = ml.pedir("GET", f"/items/{ya[0]}/description")
+            if r.status_code == 404 or not (r.json().get("plain_text") or "").strip():
+                if dry:
+                    fila["resultado"] = f"YA EXISTE {ya[0]} — se cargaría la descripción que falta"
+                else:
+                    rd = ml.pedir("POST", f"/items/{ya[0]}/description", json={"plain_text": texto_ml(fm.descripcion(f))})
+                    if rd.status_code not in (200, 201):
+                        rd = ml.pedir("PUT", f"/items/{ya[0]}/description", params={"api_version": 2},
+                                      json={"plain_text": texto_ml(fm.descripcion(f))})
+                    fila["resultado"] = (f"YA EXISTE {ya[0]} — descripción cargada" if rd.status_code in (200, 201)
+                                         else f"ERROR: descripción de {ya[0]}: {rd.status_code} {rd.text[:300]}")
+                fila["publicacion"] = ya[0]
+                log(f"{sku}: {fila['resultado']}")
+                res.append(fila)
+                continue
             raise RuntimeError(f"ya existe publicación con este SKU: {ya}")
         p = por_sku.get(sync.normalizar_codigo(sku + SUFIJO))
-        if not p:
-            raise RuntimeError("el SKU no está en el inventario de BaseLinker")
-        base = float((p.get("prices") or {}).get(str(b["price_group_id"])) or 0)
-        stock = int((p.get("stock") or {}).get(str(b["warehouse_id"])) or 0)
+        base = float(((p or {}).get("prices") or {}).get(str(b["price_group_id"])) or 0)
+        origen = "BaseLinker"
+        if base <= 0:   # no está en BaseLinker: mismo cálculo desde el Excel de FEMA (mayorista × 1,25)
+            m = PRECIO_XLS.get(sync.normalizar_codigo(sku))
+            base, origen = (round(m * MULT, 2), "Excel FEMA") if m else (0, "")
         if base <= 0:
-            raise RuntimeError("sin precio en BaseLinker")
+            raise RuntimeError("sin precio: no está en BaseLinker ni en el Excel de FEMA")
         precio = round(base * (1 + margen / 100), 2)
         t = titulo(f)
         cat = CATEGORIAS.get(f["familia"])
@@ -148,6 +173,7 @@ for sku in skus:
                      for a in ml.get(f"/categories/{cat}/attributes")]
         attrs = fm.atributos_para(f, cat_attrs)
         attrs.update({"BRAND": "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
+                      "PART_NUMBER": sku, "MPN": sku,
                       "EMPTY_GTIN_REASON": "El producto no tiene código registrado"})
         iva = sync.a_numero(IVA.get(sync.normalizar_codigo(sku)))
         if iva is not None:
@@ -178,6 +204,7 @@ for sku in skus:
         if not imgs:
             raise RuntimeError("no hay fotos en Drive para este SKU")
         fila["iva"] = attrs.get("VALUE_ADDED_TAX")
+        fila["origen_precio"] = origen
         fila["opciones_obligatorios"] = " || ".join(
             f"{a['name']}: {', '.join(v['name'] for v in (a.get('values') or [])[:15])}"
             for a in cat_attrs if a["name"] in faltan)
@@ -223,17 +250,17 @@ for sku in skus:
             nuevo = r.json()
             iid = nuevo["id"]
             ml.put(f"/items/{iid}", {"status": "paused"})
-            rd = ml.pedir("POST", f"/items/{iid}/description", json={"plain_text": fm.descripcion(f)})
+            rd = ml.pedir("POST", f"/items/{iid}/description", json={"plain_text": texto_ml(fm.descripcion(f))})
             fila.update({"publicacion": iid, "link": nuevo.get("permalink"),
                          "resultado": "CREADA (pausada)" + ("" if rd.status_code in (200, 201) else
-                                                            f" — descripción falló {rd.status_code}")})
+                                                            f" — descripción falló {rd.status_code}: {rd.text[:200]}")})
     except Exception as e:
         fila["resultado"] = f"ERROR: {e}"
     log(f"{sku}: {fila.get('resultado')}")
     res.append(fila)
 
 os.makedirs("salida", exist_ok=True)
-cols = ["sku", "resultado", "publicacion", "link", "titulo", "categoria", "precio_base", "precio", "stock",
+cols = ["sku", "resultado", "publicacion", "link", "titulo", "categoria", "origen_precio", "precio_base", "precio", "stock",
         "iva", "fotos", "atributos", "obligatorios_sin_dato", "opciones_obligatorios"]
 with open("salida/ml-publicar-resultado.csv", "w", newline="", encoding="utf-8-sig") as fh:
     w = csv.DictWriter(fh, fieldnames=cols, delimiter=";", extrasaction="ignore")
