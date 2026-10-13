@@ -114,10 +114,48 @@ def info_cat(cat):
     return _cat_cache[cat]
 
 
+_por_nombre = {}
+
+
+def categoria_por_nombre(nombres, raiz="MLA1500"):
+    """Busca en el árbol de 'Construcción' una categoría hoja cuyo nombre contenga alguno de los textos dados."""
+    clave = (tuple(nombres), raiz)
+    if clave in _por_nombre:
+        return _por_nombre[clave]
+    pend, vistos, encontrada = [raiz], 0, None
+    while pend and vistos < 120 and not encontrada:
+        cid = pend.pop(0)
+        vistos += 1
+        hijos = info_cat(cid).get("children_categories") or []
+        for h in hijos:
+            if any(n.lower() in h["name"].lower() for n in nombres):
+                encontrada = h["id"]
+                break
+        pend += [h["id"] for h in hijos]
+    # si no es hoja, bajar a "Otros" o al primer hijo
+    while encontrada and info_cat(encontrada).get("children_categories"):
+        hijos = info_cat(encontrada)["children_categories"]
+        encontrada = next((h["id"] for h in hijos if h["name"].lower().startswith("otros")), hijos[0]["id"])
+    _por_nombre[clave] = encontrada
+    log(f"categoría por nombre {nombres}: {encontrada} {info_cat(encontrada).get('name') if encontrada else ''}")
+    return encontrada
+
+
+CAT_NOMBRE = [   # (expresión sobre el título, nombres de categoría a buscar dentro de Construcción)
+    (r"^Juego 4 Paletas Alisadora", ["Equipos para la Construcción", "Equipos para Construcción", "Maquinaria", "Materiales de Construcción"]),
+    (r"^(Malla|Esquinero|Perfil Esquinero|Tela de Refuerzo)", ["Materiales de Construcción", "Materiales para Construcción", "Equipos para la Construcción"]),
+]
+
+
 def elegir_categoria(f, t):
     """Categoría: forzada por familia o por regla; si no, la primera sugerencia de ML que sea de herramientas."""
     if CATEGORIAS.get(f["familia"]):
         return CATEGORIAS[f["familia"]]
+    for exp, nombres in CAT_NOMBRE:
+        if re.search(exp, t, re.I):
+            c = categoria_por_nombre(nombres)
+            if c:
+                return c
     consultas = [t]
     for exp, fija, q in REGLAS_CAT:
         if re.search(exp, t, re.I):
@@ -263,11 +301,14 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     if re.search(r"^(perfil pg[cu]|montante|solera|perfil omega)", tl):
         poner("CONSTRUCTION_PROFILE_SHAPE", "U")
     poner("TOOL_TYPE", "Máquina de pintar airless" if "airless" in tl else None)
-    poner("HAMMER_TYPE", "Maza" if "punta cuadrada" in tl else None)
+    if "martillo" in tl:
+        poner("HAMMER_TYPE", "Bola")   # pedido del usuario para estos martillos
     if "hormigonera" in tl:
-        poner("POWER_SUPPLY_TYPE", "Diésel" if "diesel" in tl else "Nafta")
+        poner("POWER_SUPPLY_TYPE", "Corriente doméstica")   # sin opción a combustión: se carga como eléctrica (a corregir)
     if "pistola para pintar" in tl:
         poner("POWER_SUPPLY_TYPE", "Neumática")
+    if re.search(r"espuma|sellador", tl):
+        poner("UNIT_WEIGHT", "35 kg")   # valor provisorio indicado por el usuario (a corregir)
     if "arena" in tl or "grancilla" in tl:
         poner("CONSTRUCTION_SAND_YIELD_OF_SALES_UNIT", "0.01 m³")
         poner("SAND_THICKNESS", "Fina" if "fina" in tl else "Gruesa")
