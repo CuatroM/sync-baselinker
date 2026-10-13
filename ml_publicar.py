@@ -304,12 +304,30 @@ for sku in skus:
                 "sale_terms": [{"id": "WARRANTY_TYPE", "value_name": "Garantía de fábrica"},
                                {"id": "WARRANTY_TIME", "value_name": "6 meses"}],
                 "shipping": {"mode": envio, "local_pick_up": False, "free_shipping": False}}
+        def agrandar(datos):
+            """Mercado Libre pide mínimo 500 px: se amplía la imagen sobre fondo blanco a 800 px."""
+            import io as _io
+            from PIL import Image
+            im = Image.open(_io.BytesIO(datos)).convert("RGB")
+            esc = 800 / max(im.size)
+            im = im.resize((max(1, round(im.width * esc)), max(1, round(im.height * esc))), Image.LANCZOS)
+            lienzo = Image.new("RGB", (max(im.width, 600), max(im.height, 600)), "white")
+            lienzo.paste(im, ((lienzo.width - im.width) // 2, (lienzo.height - im.height) // 2))
+            out = _io.BytesIO()
+            lienzo.save(out, "JPEG", quality=92)
+            return out.getvalue()
+
         def subir(x):
             import time
+            datos = descargar(x["id"])
+            nombre = x["nombre"]
             for intento in range(3):
-                up = ml.pedir("POST", "/pictures/items/upload", files={"file": (x["nombre"], descargar(x["id"]))})
+                up = ml.pedir("POST", "/pictures/items/upload", files={"file": (nombre, datos)})
                 if up.status_code in (200, 201):
                     return {"id": up.json()["id"]}
+                if "500 p" in up.text and not nombre.endswith("_800.jpg"):
+                    datos, nombre = agrandar(datos), os.path.splitext(x["nombre"])[0] + "_800.jpg"
+                    continue
                 time.sleep(3 * (intento + 1))
             log(f"{sku}: no pude subir {x['nombre']}: {up.status_code} {up.text[:200]}")
             return None
