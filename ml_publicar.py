@@ -36,6 +36,9 @@ TITULOS = {   # títulos cuidados (máx. 60 caracteres); si no hay, se arma desd
     "69351110": "Aspiradora Industrial 80l 2000w 2 Motores Polvo Liquido Fema",
     "69503874": "Criquet Carro Hidraulico 2 Toneladas 125-300 Mm Fema",
     "69504110": "Guinche Pluma Plegable Hidraulico 2 Toneladas Taller Fema",
+    "69503222": "Elevador De Autos 2 Columnas 4000 Kg 3hp 220v Traba Manual",
+    "69503223": "Elevador De Autos 2 Columnas 4000 Kg 3hp 380v Traba Manual",
+    "69350850": "Aparejo Electrico Fema 800 Eco 800 Kg 220v Doble Gancho 30m",
 }
 CATEGORIAS = {   # categoría forzada por familia (si no, la sugiere Mercado Libre)
     "Aspiradora Polvo y Líquido": "MLA371973",
