@@ -412,6 +412,20 @@ for sku in skus:
                 if "500 p" in up.text and not nombre.endswith("_800.jpg"):
                     datos, nombre = agrandar(datos), os.path.splitext(x["nombre"])[0] + "_800.jpg"
                     continue
+                if (up.status_code == 413 or "not compatible" in up.text) and not nombre.endswith("_conv.jpg"):
+                    # imagen muy pesada o en un formato que ML no acepta: se reconvierte a JPEG de 1600 px
+                    import io as _io
+                    from PIL import Image
+                    im = Image.open(_io.BytesIO(datos)).convert("RGB")
+                    im.thumbnail((1600, 1600))
+                    if max(im.size) < 600:
+                        datos = agrandar(datos)
+                    else:
+                        buf = _io.BytesIO()
+                        im.save(buf, "JPEG", quality=88)
+                        datos = buf.getvalue()
+                    nombre = os.path.splitext(x["nombre"])[0] + "_conv.jpg"
+                    continue
                 time.sleep(3 * (intento + 1))
             log(f"{sku}: no pude subir {x['nombre']}: {up.status_code} {up.text[:200]}")
             return None
