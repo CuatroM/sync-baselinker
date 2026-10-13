@@ -6,8 +6,14 @@ import re
 from drive.carpeta import descargar, listar
 
 SKUS = [s.strip() for s in os.environ.get("SKUS", "").split(",") if s.strip()]
+import csv
+os.makedirs("salida", exist_ok=True)
 for nombre, link in (("FOTOS", os.environ["DRIVE_FOTOS"]), ("FICHAS", os.environ["DRIVE_FICHAS"])):
     items = listar(link)
+    with open(f"salida/drive-{nombre.lower()}.csv", "w", newline="", encoding="utf-8") as fh:
+        w = csv.writer(fh, delimiter=";")
+        w.writerow(["nombre", "id", "carpeta"])
+        w.writerows([[x["ruta"], x["id"], x["carpeta"]] for x in items])
     archivos = [x for x in items if not x["carpeta"]]
     print(f"\n===== {nombre}: {len(archivos)} archivos, {len(items) - len(archivos)} carpetas")
     ext = collections.Counter(os.path.splitext(x["nombre"])[1].lower() for x in archivos)
