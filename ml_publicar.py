@@ -175,8 +175,83 @@ CAT_NOMBRE = [   # (expresión sobre el título, nombres de categoría a buscar 
 ]
 
 
+import unicodedata
+
+# Repuestos: categorías que ML sugiere pero no corresponden a una pieza (máquinas enteras o rubros ajenos)
+CAT_NO_REP = {
+    "Cilindros para Tóner", "Compresores de Freno de Aire", "Anteojos y Antiparras", "Separadores de Clara y Yema",
+    "Canastos Freidores", "Cuenta Ganado", "Bares", "Visores para Cascos", "Manijas Levanta Vidrios",
+    "Depósitos de Líquido de Frenos", "Arnés de Seguridad", "Esponjas de Limpieza", "Cierres Centralizados",
+    "Defensas", "Alambrados", "Manijas para Puertas", "Barrales Organizadores", "Kits de Envoltura Térmica",
+    "Resortes de Bisagra", "Cajas para Térmicas", "Interruptores Automáticos", "Topes de Amortiguador",
+    "Pernos de Caliper", "Trabas de Discos", "Juntas de Válvula EGR", "Anillos Sincronizadores", "Lubricantes",
+    "Aditivos", "Grupos Electrógenos", "Motosierras a Explosión", "Motosierras Eléctricas", "Compresores",
+    "Motobombas a Combustión", "Motobombas", "Motocultivadores", "A Combustión", "Hoyadoras de Combustión",
+    "Bombas Centrífugas", "Motores Estacionarios", "Motores Eléctricos", "Cortacerco", "Fumigadores y Pulverizadores",
+    "De Banco", "Engrapadoras y Clavadoras", "Destornilladores", "Sierras", "Pads", "Discos y Piedras",
+    "Bancos de Trabajo", "Cortadoras de Cerámica", "Aparejos Manuales", "Rectificadoras", "Afiladores",
+    "Sopladores de Supercargador", "Tableros", "De Balizas", "Bolsas y Canastos Recolectores", "Colectores de Polvo",
+    "Tanques de Agua", "Grampas Prensa Cable", "Llaves", "Hidrolavadoras", "Soldadoras", "Hormigoneras",
+    "Cobertores de Caja", "Plaquetas", "Resortes a Gas", "Para Motor", "Soportes para Barrales", "Ventiladores",
+    "Generadores", "Desmalezadoras", "Bordeadoras", "Cortadoras de Césped", "Aspiradoras", "Sopladores",
+}
+CAT_GENERICA_REP = {"Kits de Repuestos", "Repuestos", "Repuestos y Accesorios", "Otros Repuestos"}
+MAQUINAS = [
+    (r"motosierra|\bespada\b|\bcadena\b", "motosierra"), (r"desmalezadora|bordeadora", "desmalezadora"),
+    (r"cortac[eé]sped|tractor|\bmtd\b|murray|poulan|stiga|cesped", "cortacesped"), (r"soplador", "soplador"),
+    (r"cortacerco", "cortacerco"), (r"generador|\bgen\.|\d+ ?kw\b|grupo electr", "grupo electrogeno"),
+    (r"compresor", "compresor"), (r"hidrolavadora", "hidrolavadora"), (r"soldadora|soldadura", "soldadora"),
+    (r"hormigonera", "hormigonera"), (r"motobomba|electrobomba|\bbomba\b", "bomba de agua"),
+    (r"aspiradora", "aspiradora"), (r"transpalet|autoelevador", "autoelevador"), (r"pisonador|vibroapisonador", "pisonador"),
+    (r"hoyadora", "motohoyadora"), (r"briggs|honda|\bgx ?\d|\bhp\b", "motor naftero"),
+]
+
+
+def _norm(s):
+    s = unicodedata.normalize("NFKD", s.lower()).encode("ascii", "ignore").decode()
+    return re.findall(r"[a-z]{3,}", s)
+
+
+def _raices(s):
+    return {w[:5] for w in _norm(s) if w not in {"para", "con", "los", "las", "del", "otros", "tipo"}}
+
+
+def categoria_repuesto(f, t):
+    """Repuestos: la categoría tiene que nombrar la pieza del título (no la máquina entera ni otro rubro).
+    Primero categorías de herramientas/hogar; si no hay, de vehículos; si no, una genérica de repuestos."""
+    tit = _raices(t)
+    maq = next((m for e, m in MAQUINAS if re.search(e, t, re.I)), "")
+    pieza = " ".join(f["nombre"].split()[:2])
+    consultas = [t, f"{pieza} {maq}".strip(), f"{f['nombre'].split()[0]} para {maq}" if maq else pieza]
+    vehiculo = None
+    for q in consultas:
+        for d in ml.get("/sites/MLA/domain_discovery/search", q=q, limit=8) or []:
+            ci = info_cat(d["category_id"])
+            nom = ci.get("name") or ""
+            raiz = ((ci.get("path_from_root") or [{}])[0]).get("name")
+            if raiz not in RAICES_OK and raiz not in RAICES_FAM["Repuestos"]:
+                continue
+            if nom in CAT_NO or nom in CAT_NO_REP:
+                continue
+            if not (nom in CAT_GENERICA_REP or (_raices(nom) & tit)):
+                continue
+            if raiz == "Accesorios para Vehículos":
+                vehiculo = vehiculo or d["category_id"]
+                continue
+            return d["category_id"]
+    if vehiculo:
+        return vehiculo
+    for raiz in ("MLA407134", "MLA1574", "MLA1500"):
+        c = categoria_por_nombre(["Repuestos"], raiz)
+        if c:
+            return c
+    return None
+
+
 def elegir_categoria(f, t):
     """Categoría: forzada por familia o por regla; si no, la primera sugerencia de ML que sea de herramientas."""
+    if f["familia"] == "Repuestos":
+        return categoria_repuesto(f, t)
     if CATEGORIAS.get(f["familia"]):
         return CATEGORIAS[f["familia"]]
     for exp, nombres in CAT_NOMBRE:
@@ -349,6 +424,9 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     if re.search(r"nafta|combustible", tl):
         poner("FUEL_TYPE", "Nafta" if "nafta" in tl else "Diésel")
     poner("FINISHING_TROWELS_TYPE", "Fratacho" if "fratach" in tl else None)
+    if re.search(r"v[aá]lvula|valbula|vavula", tl):
+        poner("ENGINE_VALVE_TYPE", "De escape" if re.search(r"escape|sal\.?gases", tl) else "De admisión" if re.search(r"admisi|\bad\.", tl) else None)
+    poner("SALE_FORMAT", "Unidad")
     poner("WHEELBARROW_TYPE", "Construcción" if "carretilla" in tl else None)
     poner("PRODUCT_TYPE", "Taladro/Destornillador" if "punta" in tl else None)
     poner("HAND_SAW_TYPE", "Poda curvo" if "poda" in tl else None)
