@@ -193,6 +193,11 @@ CAT_NO_REP = {
     "Sopladores de Supercargador", "Tableros", "De Balizas", "Bolsas y Canastos Recolectores", "Colectores de Polvo",
     "Tanques de Agua", "Grampas Prensa Cable", "Llaves", "Hidrolavadoras", "Soldadoras", "Hormigoneras",
     "Cobertores de Caja", "Plaquetas", "Resortes a Gas", "Para Motor", "Soportes para Barrales", "Ventiladores",
+    "Bobinadoras", "Pinzas para Anillos", "Llaves de Luz", "Porta Electrodos", "Taladros a Combustión",
+    "Prensas Mecánicas", "Llaves Saca Bujías", "Pinzas de Corte", "Acoples Rápidos", "Aceites para Motor", "Controles",
+    "Rodillos Compactadores", "Elevadores de Autos", "Aparejos Eléctricos", "A Gas", "Motores Nafteros",
+    "Pulverizadores a Explosión", "Llaves de Corte", "Secadores de Pasta", "Canastos de mimbre", "Carteles",
+    "Tableros para Herramientas", "Tapas de Tanques de Agua",
     "Generadores", "Desmalezadoras", "Bordeadoras", "Cortadoras de Césped", "Aspiradoras", "Sopladores",
 }
 CAT_GENERICA_REP = {"Kits de Repuestos", "Repuestos", "Repuestos y Accesorios", "Otros Repuestos"}
@@ -212,14 +217,31 @@ def _norm(s):
     return re.findall(r"[a-z]{3,}", s)
 
 
-def _raices(s):
-    return {w[:5] for w in _norm(s) if w not in {"para", "con", "los", "las", "del", "otros", "tipo"}}
+def _raiz(w):
+    if re.search(r"[^aeiou]es$", w) and len(w) > 5:
+        return w[:-2]
+    return w[:-1] if w.endswith("s") else w
 
+
+def _raices(s):
+    return {_raiz(w) for w in _norm(s) if w not in {"para", "con", "los", "las", "del", "otros", "tipo"}}
+
+
+def _cabeza(s):
+    """Primera palabra con contenido (la pieza): 'Juegos de Aros' -> 'juego'."""
+    ws = [w for w in _norm(s) if w not in {"para", "con", "los", "las", "del", "otros", "tipo", "kit", "kits", "juego", "juegos"}]
+    return _raiz(ws[0]) if ws else ""
+
+
+# palabras de rubros ajenos: si la categoría las tiene, no es para un repuesto de máquina
+AJENAS_REP = re.compile(r"cortina|port[oó]n|pileta|lavarropa|reloj|comestible|carne|pasta|mimbre|baño|mueble|robot|canilla|"
+                        r"cloro|precio|perchero|banqueta|aires ac|remoto|bocina|puerta|carrocer|jard[ií]n|neum[aá]tic|"
+                        r"hidroneum|presurizad|aire comprimido|respirador|portátil|calefacci|cascos|vidrio|toner|tóner", re.I)
 
 def categoria_repuesto(f, t):
     """Repuestos: la categoría tiene que nombrar la pieza del título (no la máquina entera ni otro rubro).
     Primero categorías de herramientas/hogar; si no hay, de vehículos; si no, una genérica de repuestos."""
-    tit = _raices(t)
+    tit = {_cabeza(f["nombre"])}   # la pieza: primera palabra del nombre
     maq = next((m for e, m in MAQUINAS if re.search(e, t, re.I)), "")
     pieza = " ".join(f["nombre"].split()[:2])
     consultas = [t, f"{pieza} {maq}".strip(), f"{f['nombre'].split()[0]} para {maq}" if maq else pieza]
@@ -233,7 +255,9 @@ def categoria_repuesto(f, t):
                 continue
             if nom in CAT_NO or nom in CAT_NO_REP:
                 continue
-            if not (nom in CAT_GENERICA_REP or (_raices(nom) & tit)):
+            if AJENAS_REP.search(nom):
+                continue
+            if not (nom in CAT_GENERICA_REP or _cabeza(nom) in tit and _cabeza(nom)):
                 continue
             if raiz == "Accesorios para Vehículos":
                 vehiculo = vehiculo or d["category_id"]
@@ -427,6 +451,7 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     if re.search(r"v[aá]lvula|valbula|vavula", tl):
         poner("ENGINE_VALVE_TYPE", "De escape" if re.search(r"escape|sal\.?gases", tl) else "De admisión" if re.search(r"admisi|\bad\.", tl) else None)
     poner("SALE_FORMAT", "Unidad")
+    poner("SCREW_TYPE", "Autoperforante" if "parker" in tl else None)
     poner("WHEELBARROW_TYPE", "Construcción" if "carretilla" in tl else None)
     poner("PRODUCT_TYPE", "Taladro/Destornillador" if "punta" in tl else None)
     poner("HAND_SAW_TYPE", "Poda curvo" if "poda" in tl else None)
