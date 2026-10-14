@@ -103,6 +103,13 @@ RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
     "Energía Solar": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
     "Ventiladores": {"Electrodomésticos y Aires Ac.", "Hogar, Muebles y Jardín"},
     "Pinturas": {"Hogar, Muebles y Jardín"},
+    "Jardinería": {"Hogar, Muebles y Jardín"},
+    "Acoples": {"Hogar, Muebles y Jardín"},
+    "Seguridad": {"Hogar, Muebles y Jardín"},
+    "Limpieza": {"Hogar, Muebles y Jardín"},
+    "Aire Libre": {"Hogar, Muebles y Jardín", "Deportes y Fitness"},
+    "Aspiradoras": {"Electrodomésticos y Aires Ac."},
+    "Escaleras": {"Hogar, Muebles y Jardín"},
 }
 CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de Pelo", "Rollos de Embalaje",
           "Sensitivas", "Frascos con Gotero", "Strass Autoadhesivos", "Porta Cds y Dvds", "Barras de Puntal",
