@@ -71,6 +71,18 @@ REGLAS_CAT = [
     (r"^Filtro de Pintura", None, "colador filtro de pintura para soplete"),
     (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
+    # ---- tanda 4
+    (r"^Nylon", "MLA429066", None),                                                              # Tanzas
+    (r"^(Cadena|Uniones para Cadena)", "MLA455588", None),                                       # Cadenas para Motosierras
+    (r"^Motor (Eléctrico )?WEG", "MLA413673", None),                                             # Motores Eléctricos
+    (r"^Motor (Nafta|Diesel|Briggs)", "MLA413316", None),                                        # Motores Estacionarios
+    (r"^(Caño Expelente|Caño Aspirante|Manga Plana|Caño Riego)", "MLA11040", None),              # Mangueras
+    (r"^Eje Vibrador", "MLA403878", None),                                                       # Vibradores de Inmersión
+    (r"^Antiempastante", "MLA384753", None),                                                     # Lijas
+    (r"^Adhesivo Calzadista", "MLA105406", None),                                                # Pegamentos
+    (r"^Limpiador Weber", None, "limpiador para ceramicos y porcelanato"),
+    (r"^Succionador", None, "bomba manual trasvase combustible"),
+    (r"^Funda para Pistola", None, "pico surtidor combustible"),
     # ---- tanda 2
     (r"^(Acelerante de Fragüe|Anticongelante|Aditivo Vinílico|Desmoldante|Desencofrante|Infiltración)", "MLA435312", None),  # Aditivos
     (r"^(Hormigón Impreso|Capa Color)", "MLA456027", None),                                       # Morteros
@@ -313,6 +325,31 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     m = re.search(r"(\d+(?:,\d+)?)\s*mm", tl)
     if m:
         poner("THICKNESS", f"{m.group(1)} mm")
+    if "aerosol" in tl:
+        poner("PAINT_TYPE", "Alta temperatura" if "alta temp" in tl else "Esmalte")
+    if re.search(r"caño|manga|manguera", tl):
+        poner("APPLICATION", "Industrial" if "combustible" in tl else "Agua")
+    m = re.search(r"(\d+)\s*peldaños", tl)
+    if m:
+        poner("STEPS_NUMBER", m.group(1))
+        poner("IS_FOLDABLE", "Sí")
+    if re.search(r"tijera de podar|serrucho", tl):
+        poner("POWER_SUPPLY_TYPE", "Operación manual")
+    if re.search(r"pulverizador|cuenta litros", tl):
+        poner("POWER_SUPPLY_TYPE", "Batería")
+    if "bosch" in tl and "batería" not in tl:
+        poner("POWER_SUPPLY_TYPE", "Corriente doméstica")
+    poner("INDUSTRIAL_SAW_TYPE", "Circular" if "sierra copa" in tl else None)
+    if re.search(r"nafta|combustible", tl):
+        poner("FUEL_TYPE", "Nafta" if "nafta" in tl else "Diésel")
+    poner("FINISHING_TROWELS_TYPE", "Fratacho" if "fratach" in tl else None)
+    poner("WHEELBARROW_TYPE", "Construcción" if "carretilla" in tl else None)
+    poner("PRODUCT_TYPE", "Taladro/Destornillador" if "punta" in tl else None)
+    poner("HAND_SAW_TYPE", "Poda curvo" if "poda" in tl else None)
+    poner("ORGANIZER_TYPE", "Caja" if "caja" in tl else None)
+    m = re.search(r"(\d+(?:,\d+)?)\s*m\b", tl)
+    if m:
+        poner("LENGTH", f"{m.group(1)} m")
     if re.search(r"^(perfil pg[cu]|montante|solera|perfil omega)", tl):
         poner("CONSTRUCTION_PROFILE_SHAPE", "U")
     poner("TOOL_TYPE", "Máquina de pintar airless" if "airless" in tl else None)
