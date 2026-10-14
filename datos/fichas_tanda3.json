@@ -1,0 +1,200 @@
+[
+ {
+  "sku": "69503751",
+  "familia": "Herramientas de Taller",
+  "titulo": "Soporte de Chasis para Moto hasta 160 kg con Porta Tuerca",
+  "nombre": "Soporte de Chasis para Moto hasta 160 kg con Porta Tuerca",
+  "marca": "FEMA",
+  "uso_pdf": "Equipamiento de taller robusto para trabajar cómodo y seguro.",
+  "rubros": "talleres mecánicos, motos, concesionarias y mantenimiento",
+  "specs": {
+   "Marca": "FEMA",
+   "Capacidad": "160 kg",
+   "Uso": "Motos",
+   "Accesorio": "Porta tuerca",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69510156",
+  "familia": "Máquinas para Construcción",
+  "titulo": "Corta Pisos FEMA 450 mm Motor 13 HP Servicio Pesado",
+  "nombre": "Corta Pisos FEMA 450 mm Motor 13 HP Servicio Pesado",
+  "marca": "FEMA",
+  "uso_pdf": "Equipo de construcción robusto para trabajo intensivo en obra.",
+  "rubros": "empresas constructoras, obras civiles, pisos industriales y alquiler de equipos",
+  "specs": {
+   "Marca": "FEMA",
+   "Diámetro de disco": "450 mm",
+   "Motor": "FEMA 188F 13 HP",
+   "Profundidad de corte": "170 mm",
+   "Tanque de agua": "30 L",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69511150",
+  "familia": "Máquinas para Construcción",
+  "titulo": "Disco Diamantado Corta Pisos 500 x 3,8 x 25,4 mm FEMA",
+  "nombre": "Disco Diamantado Corta Pisos 500 x 3,8 x 25,4 mm FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Equipo de construcción robusto para trabajo intensivo en obra.",
+  "rubros": "empresas constructoras, obras civiles, pisos industriales y alquiler de equipos",
+  "specs": {
+   "Marca": "FEMA",
+   "Medida": "500 x 3,8 x 25,4 mm",
+   "Uso": "Concreto",
+   "Línea": "Económica",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "VH38-6CH",
+  "familia": "Máquinas para Construcción",
+  "titulo": "Eje Vibrador de Hormigón 38 mm x 6 m FEMA",
+  "nombre": "Eje Vibrador de Hormigón 38 mm x 6 m FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Equipo de construcción robusto para trabajo intensivo en obra.",
+  "rubros": "empresas constructoras, obras civiles, pisos industriales y alquiler de equipos",
+  "specs": {
+   "Marca": "FEMA",
+   "Diámetro del vibrador": "38 mm",
+   "Largo del eje": "6 m",
+   "Tipo": "Chino",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "VHB02-",
+  "familia": "Máquinas para Construcción",
+  "titulo": "Bomba 2 Pulgadas para Eje Vibrador 38 mm FEMA",
+  "nombre": "Bomba 2 Pulgadas para Eje Vibrador 38 mm FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Equipo de construcción robusto para trabajo intensivo en obra.",
+  "rubros": "empresas constructoras, obras civiles, pisos industriales y alquiler de equipos",
+  "specs": {
+   "Marca": "FEMA",
+   "Boca": "2\"",
+   "Para eje de": "38 mm",
+   "Altura máx.": "20 m",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "VHB03-",
+  "familia": "Máquinas para Construcción",
+  "titulo": "Bomba 3 Pulgadas para Eje Vibrador 38 mm FEMA",
+  "nombre": "Bomba 3 Pulgadas para Eje Vibrador 38 mm FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Equipo de construcción robusto para trabajo intensivo en obra.",
+  "rubros": "empresas constructoras, obras civiles, pisos industriales y alquiler de equipos",
+  "specs": {
+   "Marca": "FEMA",
+   "Boca": "3\"",
+   "Para eje de": "38 mm",
+   "Altura máx.": "15 m",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69359855",
+  "familia": "Electrobombas",
+  "titulo": "Electrobomba 12 V para Fumigación 60 PSI 5 L/min FEMA",
+  "nombre": "Electrobomba 12 V para Fumigación 60 PSI 5 L/min FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Para bombear y elevar agua de forma eficiente y confiable.",
+  "rubros": "viviendas, campos, riego, pozos, cisternas, tanques e industria",
+  "specs": {
+   "Marca": "FEMA",
+   "Voltaje": "12 V",
+   "Presión": "60 PSI",
+   "Caudal": "5 L/min",
+   "Uso": "Fumigación",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69359892",
+  "familia": "Electrobombas",
+  "titulo": "Electrobomba Sumergible Solar FEMA 24 V 3 Pulgadas con Panel",
+  "nombre": "Electrobomba Sumergible Solar FEMA 24 V 3 Pulgadas con Panel",
+  "marca": "FEMA",
+  "uso_pdf": "Para bombear y elevar agua de forma eficiente y confiable.",
+  "rubros": "viviendas, campos, riego, pozos, cisternas, tanques e industria",
+  "specs": {
+   "Marca": "FEMA",
+   "Voltaje": "24 V",
+   "Diámetro": "3\"",
+   "Altura máx.": "55 m",
+   "Incluye": "Panel solar, autorregulada",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69435520",
+  "familia": "Herramientas Manuales",
+  "titulo": "Destornillador Aislado Phillips 2 x 100 mm Vanguard",
+  "nombre": "Destornillador Aislado Phillips 2 x 100 mm Vanguard",
+  "marca": "Vanguard",
+  "uso_pdf": "Herramienta manual de calidad profesional, fabricada en acero de alta resistencia para un trabajo preciso y duradero.",
+  "rubros": "talleres mecánicos, mantenimiento industrial, electricistas, plomeros, gomerías y uso en el hogar",
+  "specs": {
+   "Marca": "Vanguard",
+   "Tipo": "Phillips aislado",
+   "Medida": "2 x 100 mm",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69420510",
+  "familia": "Herramientas Manuales",
+  "titulo": "Tablero con Llaves Combinadas en Milímetros Vanguard",
+  "nombre": "Tablero con Llaves Combinadas en Milímetros Vanguard",
+  "marca": "Vanguard",
+  "uso_pdf": "Herramienta manual de calidad profesional, fabricada en acero de alta resistencia para un trabajo preciso y duradero.",
+  "rubros": "talleres mecánicos, mantenimiento industrial, electricistas, plomeros, gomerías y uso en el hogar",
+  "specs": {
+   "Marca": "Vanguard",
+   "Tipo": "Combinadas",
+   "Medidas": "Milimétricas",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69401167",
+  "familia": "Herramientas Manuales",
+  "titulo": "Set Destornillador con Puntas 67 Piezas Encastre 25 mm FEMA",
+  "nombre": "Set Destornillador con Puntas 67 Piezas Encastre 25 mm FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Herramienta manual de calidad profesional, fabricada en acero de alta resistencia para un trabajo preciso y duradero.",
+  "rubros": "talleres mecánicos, mantenimiento industrial, electricistas, plomeros, gomerías y uso en el hogar",
+  "specs": {
+   "Marca": "FEMA",
+   "Piezas": "67",
+   "Puntas": "25 mm",
+   "Presentación de venta": "Por unidad"
+  },
+  "dudas": [],
+  "notas": []
+ }
+]

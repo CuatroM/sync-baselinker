@@ -64,6 +64,7 @@ REGLAS_CAT = [
     (r"^Silicona|^Sellador de (Roscas|Juntas)", "MLA435294", None),                              # Selladores y Siliconas
     (r"^(Traba Roscas|Adhesivo Instant|Cola Vin|Cola Spray|Gel Tekbond|Kit Retrovisor)", "MLA105406", None),  # Pegamentos
     (r"^(Pan Afilado|Afilador|Afilado de Sierras)", "MLA413465", None),                          # Afiladores Manuales
+    (r"^Soporte de Chasis", None, "soporte caballete para moto taller"),
     (r"^(Boina|Soporte|Adaptador Soporte)", "MLA424490", None),                                  # Pads
     (r"^Repuesto Filtro", "MLA455478", None),                                                    # Cartuchos para Máscaras
     (r"^(Grafito Seco|LUB )", "MLA392346", None),                                                # Lubricantes
