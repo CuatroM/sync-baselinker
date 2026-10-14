@@ -72,6 +72,8 @@ REGLAS_CAT = [
     (r"^Sellador (Parabrisas|Carrocería)", None, "sellador poliuretano automotor"),
     (r"^Pasta para Pulir", None, "pasta para pulir automotor"),
     # ---- tanda 4
+    (r"^Piedra Partida", "MLA413514", None),                                                     # Piedra Partida
+    (r"^Adhesivo Cerámico", "MLA433729", None),                                                  # Adhesivos para Pisos y Muros
     (r"^Nylon", "MLA429066", None),                                                              # Tanzas
     (r"^(Cadena|Uniones para Cadena)", "MLA455588", None),                                       # Cadenas para Motosierras
     (r"^Motor (Eléctrico )?WEG", "MLA413673", None),                                             # Motores Eléctricos
@@ -325,6 +327,9 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     m = re.search(r"(\d+(?:,\d+)?)\s*mm", tl)
     if m:
         poner("THICKNESS", f"{m.group(1)} mm")
+    m = re.search(r"(\d+(?:,\d+)?)\s*kva", tl)
+    if m:
+        poner("MAX_POWER", f"{m.group(1).replace(',', '.')} kVA")
     if "aerosol" in tl:
         poner("PAINT_TYPE", "Alta temperatura" if "alta temp" in tl else "Esmalte")
     if re.search(r"caño|manga|manguera", tl):
