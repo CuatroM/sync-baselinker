@@ -114,6 +114,7 @@ REGLAS_CAT = [
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
     "Electrobombas": {"Hogar, Muebles y Jardín"},
+    "Repuestos": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
     "Energía Solar": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
     "Ventiladores": {"Electrodomésticos y Aires Ac.", "Hogar, Muebles y Jardín"},
     "Pinturas": {"Hogar, Muebles y Jardín"},
