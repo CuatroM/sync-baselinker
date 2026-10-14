@@ -16,6 +16,11 @@ import re
 import sys
 
 import yaml
+try:
+    from PIL import ImageFile
+    ImageFile.LOAD_TRUNCATED_IMAGES = True     # fotos de Drive con unos bytes de menos
+except ImportError:
+    pass
 
 import sync
 from drive.carpeta import descargar, listar
@@ -285,6 +290,8 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     if re.search(r"membrana|impermeab|emulsi", tl):
         poner("PAINT_TYPE", "Impermeabilizante")
     poner("IS_FLAMMABLE", "Sí" if "solvente" in tl else "No")
+    if re.search(r"\b18v\b|bater", tl):
+        poner("POWER_SUPPLY_TYPE", "Batería")
     poner("POWER_SUPPLY_TYPES", "Energía industrial" if "380" in tl else "Corriente doméstica")
     poner("POWER_SUPPLY_TYPE", "Energía industrial" if "380" in tl else "Corriente doméstica" if re.search(r"220|controlador", tl) else None)
     if "chapa" in tl:
