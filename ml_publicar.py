@@ -379,7 +379,7 @@ def imagenes(sku):
 def texto_ml(t):
     for a, b2 in (("≤", "hasta "), ("≥", "desde "), ("±", "+/-"), ("’", "'"), ("“", '"'), ("”", '"'),
                   ("–", "-"), ("—", "-"), ("×", "x"), ("Μm", "micrones"), ("µm", "micrones"), ("μm", "micrones"),
-                  ("Μ", "M"), ("µ", "u"), ("μ", "u")):
+                  ("Μ", "M"), ("µ", "u"), ("μ", "u"), ("<", "hasta "), (">", "desde ")):
         t = t.replace(a, b2)
     return t
 
