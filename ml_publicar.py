@@ -197,7 +197,8 @@ CAT_NO_REP = {
     "Prensas Mecánicas", "Llaves Saca Bujías", "Pinzas de Corte", "Acoples Rápidos", "Aceites para Motor", "Controles",
     "Rodillos Compactadores", "Elevadores de Autos", "Aparejos Eléctricos", "A Gas", "Motores Nafteros",
     "Pulverizadores a Explosión", "Llaves de Corte", "Secadores de Pasta", "Canastos de mimbre", "Carteles",
-    "Tableros para Herramientas", "Tapas de Tanques de Agua",
+    "Tableros para Herramientas", "Tapas de Tanques de Agua", "Conectores Eléctricos", "Arnés de Cables",
+    "Tapas de Estátores", "Disipadores", "Palancas de Caja de Cambios", "Varillas de Frenos",
     "Generadores", "Desmalezadoras", "Bordeadoras", "Cortadoras de Césped", "Aspiradoras", "Sopladores",
 }
 CAT_GENERICA_REP = {"Kits de Repuestos", "Repuestos", "Repuestos y Accesorios", "Otros Repuestos"}
@@ -237,7 +238,9 @@ def _cabeza(s):
 AJENAS_REP = re.compile(r"cortina|port[oó]n|pileta|lavarropa|reloj|comestible|carne|pasta|mimbre|baño|mueble|robot|canilla|"
                         r"cloro|precio|perchero|banqueta|aires ac|remoto|bocina|puerta|carrocer|jard[ií]n|neum[aá]tic|"
                         r"hidroneum|presurizad|aire comprimido|respirador|portátil|calefacci|cascos|vidrio|toner|tóner|licuadora|hornalla|"
-                        r"decorativ|ajo\b|bidon|bidón|monopat|punta y pala|seguridad|bobinas compresoras", re.I)
+                        r"decorativ|ajo\b|bidon|bidón|monopat|punta y pala|seguridad|bobinas compresoras|cocina|termo|solar|"
+                        r"hisopo|cierre centralizado|antip[aá]nico|sommier|enchufe|vehicular|^tazas$|desagote|frecuencia|"
+                        r"esclavo|distribuidor|residuales|caja de cambio|de freno|cajas de paso|faros", re.I)
 
 def categoria_repuesto(f, t):
     """Repuestos: la categoría tiene que nombrar la pieza del título (no la máquina entera ni otro rubro).
