@@ -236,7 +236,8 @@ def _cabeza(s):
 # palabras de rubros ajenos: si la categoría las tiene, no es para un repuesto de máquina
 AJENAS_REP = re.compile(r"cortina|port[oó]n|pileta|lavarropa|reloj|comestible|carne|pasta|mimbre|baño|mueble|robot|canilla|"
                         r"cloro|precio|perchero|banqueta|aires ac|remoto|bocina|puerta|carrocer|jard[ií]n|neum[aá]tic|"
-                        r"hidroneum|presurizad|aire comprimido|respirador|portátil|calefacci|cascos|vidrio|toner|tóner", re.I)
+                        r"hidroneum|presurizad|aire comprimido|respirador|portátil|calefacci|cascos|vidrio|toner|tóner|licuadora|hornalla|"
+                        r"decorativ|ajo\b|bidon|bidón|monopat|punta y pala|seguridad|bobinas compresoras", re.I)
 
 def categoria_repuesto(f, t):
     """Repuestos: la categoría tiene que nombrar la pieza del título (no la máquina entera ni otro rubro).
