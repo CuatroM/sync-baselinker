@@ -244,7 +244,9 @@ AJENAS_REP = re.compile(r"cortina|port[oó]n|pileta|lavarropa|reloj|comestible|c
                         r"navide|cepillo|basura|bombas de calor|ox[ií]geno|dispensador|protectores bra|sopapa|"
                         r"carcasas de controles|riego|electrodos para soldadura|separadores de ruedas|aros centradores|pistolas para pintar|"
                         r"estaciones de soldad|cartuchos para m|para mesas|antivuelco|c[aá]psula|molinete|prensas hidr|"
-                        r"patas de cajas|tubos de direcci|^a carb|rastrillo|cargadores de pared|^bandejas$", re.I)
+                        r"patas de cajas|tubos de direcci|^a carb|rastrillo|cargadores de pared|^bandejas$|"
+                        r"[oó]smosis|textil|carnicer|ropa|embalaje|ventana|amortiguador|terminales de direcci|suspensi|"
+                        r"aerodin|cilindros maestros|bolas de enganche|^asientos$", re.I)
 
 def categoria_repuesto(f, t):
     """Repuestos: la categoría tiene que nombrar la pieza del título (no la máquina entera ni otro rubro).
