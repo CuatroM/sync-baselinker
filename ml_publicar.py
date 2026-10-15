@@ -644,6 +644,11 @@ for sku in skus:
 
         def enviar(ruta):
             r = ml.pedir("POST", ruta, json=item)
+            for espera in (30, 60, 120):   # error momentáneo de ML ("Try in a few minutes")
+                if r.status_code in (200, 201, 204) or "normalization_unavailable" not in r.text:
+                    break
+                time.sleep(espera)
+                r = ml.pedir("POST", ruta, json=item)
             if r.status_code not in (200, 201, 204) and "family_name" in r.text:
                 item["family_name"] = item.pop("title")
                 r = ml.pedir("POST", ruta, json=item)
