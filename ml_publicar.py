@@ -463,6 +463,19 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     if re.search(r"v[aá]lvula|valbula|vavula", tl):
         poner("ENGINE_VALVE_TYPE", "De escape" if re.search(r"escape|sal\.?gases", tl) else "De admisión" if re.search(r"admisi|\bad\.", tl) else None)
     poner("SALE_FORMAT", "Unidad")
+    if re.search(r"\brueda|\bllanta", tl):   # medidas de rueda desde el título, en mm
+        def _mm(v, u):
+            v = float(v.replace(",", "."))
+            return v * 25.4 if u in ('"', "pulg") else v * 10 if u == "cm" else v
+        m = re.search(r"(\d+(?:[.,]\d+)?)\s*(mm|cm|\"|pulg)?\s*x\s*(\d+(?:[.,]\d+)?)\s*(mm|cm|\"|pulg)", tl)
+        if m:
+            u = m.group(4)
+            poner("WHEEL_DIAMETER", f"{round(_mm(m.group(1), m.group(2) or u))} mm")
+            poner("WHEEL_WIDTH", f"{round(_mm(m.group(3), u))} mm")
+        else:
+            m = re.search(r"(\d+(?:[.,]\d+)?)\s*(\"|pulg|mm)", tl)
+            if m:
+                poner("WHEEL_DIAMETER", f"{round(_mm(m.group(1), m.group(2)))} mm")
     poner("SCREW_TYPE", "Autoperforante" if "parker" in tl else None)
     poner("WHEELBARROW_TYPE", "Construcción" if "carretilla" in tl else None)
     poner("PRODUCT_TYPE", "Taladro/Destornillador" if "punta" in tl else None)
