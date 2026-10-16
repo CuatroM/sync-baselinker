@@ -1,4 +1,4 @@
-Mercado Libre - Fotos desde la web de FEMA
+name: Mercado Libre - Fotos desde la web de FEMA
 
 on:
   workflow_dispatch:
