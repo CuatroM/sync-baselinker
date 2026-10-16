@@ -18,6 +18,9 @@ for m in re.finditer(r'(?:src|data-src|data-zoom-image|data-large|href|content)=
 for m in re.finditer(r'srcset=["\']([^"\']+)["\']', html, re.I):
     for p in m.group(1).split(","):
         cands.add(urljoin(url, p.strip().split(" ")[0]))
+from urllib.parse import urlsplit
+raiz = "{0.scheme}://{0.netloc}/".format(urlsplit(url))
+cands |= {raiz + c.split("/mods/", 1)[1].join(["mods/", ""]) for c in list(cands) if "/mods/" in c}
 excl = re.compile(r"logo|banner|icon|refresh|sprite|flag|payment|tarjeta|whatsapp", re.I)
 fotos = sorted(c for c in cands if not excl.search(c))
 with open("salida/imagenes.txt", "w") as f:
