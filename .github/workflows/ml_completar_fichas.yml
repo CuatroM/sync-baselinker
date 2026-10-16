@@ -24,16 +24,16 @@ permissions:
   contents: write
 
 jobs:
-  fotos:
+  fichas:
     runs-on: ubuntu-24.04
-    timeout-minutes: 180
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Mercado Libre - Completar fichas técnicas #FEMA (datos seguros)
+      - name: Completar
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
@@ -44,7 +44,7 @@ jobs:
         run: |
           set -o pipefail
           python ml_completar_fichas.py 2>&1 | tee resultado.txt
-      - name: Mercado Libre - Completar fichas técnicas #FEMA (datos seguros)
+      - name: Guardar resultado en la rama "diagnostico"
         if: always()
         run: |
           mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
