@@ -11,6 +11,7 @@ DRY_RUN=1 solo informa; 0 escribe. DESDE / LIMITE para hacerlo por partes.
 import csv
 import os
 import re
+import unicodedata
 from collections import Counter
 
 from ml.cliente import ML, log, sku_de
@@ -40,7 +41,30 @@ def attrs_cat(cat):
             a["_importante"] = bool(tags.get("required") or tags.get("catalog_required")
                                     or tags.get("conditional_required") or a.get("relevance") == 1)
             _cats[cat][a["id"]] = a
+        rc = ml.pedir("GET", f"/categories/{cat}")
+        _cats[cat]["__nombre"] = {"name": rc.json().get("name", "") if rc.status_code == 200 else ""}
     return _cats[cat]
+
+
+def _raices(t):
+    t = unicodedata.normalize("NFKD", t.lower()).encode("ascii", "ignore").decode()
+    return {w[:5] for w in re.findall(r"[a-z]{4,}", t)}
+
+
+EMPAQUE = {"paque", "envas", "bolsa", "unida", "rollo", "cajas", "blist"}
+
+
+def es_cantidad_de_venta(nombre, cat_nombre):
+    """True si el campo cuenta unidades vendidas (paquetes, envases, o el mismo producto de la categoría),
+    no una característica del producto (dientes, aspas, celdas, agujeros...)."""
+    m = re.match(r"^(?:Cantidad de|Unidades por) (.+)$", nombre)
+    if not m:
+        return False
+    resto = m.group(1)
+    if re.search(r"\bpor (paquete|pack|envase|caja|bolsa|blister)\b", resto, re.I):
+        return True
+    r = _raices(resto)
+    return bool(r & EMPAQUE) or bool(r & _raices(cat_nombre))
 
 
 def num_unidad(a, valor, unidad):
@@ -65,15 +89,16 @@ def propuestas(it, sku, ca):
     cargados = {x["id"] for x in it.get("attributes") or [] if (x.get("value_name") or x.get("value_id"))
                 and str(x.get("value_id")) != "-1"}
     out = {}
+    cat_nombre = ca.get("__nombre", {}).get("name", "")
     for aid, a in ca.items():
-        if aid in cargados or not a["_importante"]:
+        if aid.startswith("__") or aid in cargados or not a["_importante"]:
             continue
         nombre = (a.get("name") or "").strip()
         v = None
         if aid == "SALE_FORMAT" or nombre == "Formato de venta":
             v = valor_permitido(a, "Unidad")
         elif re.match(r"^(Cantidad de |Unidades por )", nombre) and a.get("value_type") in ("number", "number_unit"):
-            if not VARIOS.search(tl):
+            if es_cantidad_de_venta(nombre, cat_nombre) and not VARIOS.search(tl):
                 v = num_unidad(a, "1", "u") if a.get("value_type") == "number_unit" else "1"
         elif aid == "OEM" or nombre in ("Código OEM", "Número de pieza", "Código de pieza"):
             v = sku
