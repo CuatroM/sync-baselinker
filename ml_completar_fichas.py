@@ -63,8 +63,11 @@ def es_cantidad_de_venta(nombre, cat_nombre):
     resto = m.group(1)
     if re.search(r"\bpor (paquete|pack|envase|caja|bolsa|blister)\b", resto, re.I):
         return True
+    if " para " in f" {resto} ":          # "compartimentos para billetes" es una característica
+        return False
     r = _raices(resto)
-    return bool(r & EMPAQUE) or bool(r & _raices(cat_nombre))
+    primera = _raices(resto.split()[0]) if resto.split() else set()
+    return bool(r & EMPAQUE) or bool(primera & _raices(cat_nombre))
 
 
 def num_unidad(a, valor, unidad):
@@ -106,10 +109,16 @@ def propuestas(it, sku, ca):
             m = re.search(r"\b(\d{2,3})\s?v\b", tl, re.I)
             v = num_unidad(a, m.group(1), "V") if m else None
         elif aid == "POWER" or nombre == "Potencia":
-            m = re.search(r"\b(\d+(?:[.,]\d+)?)\s?(kw|w|hp|cv)\b", tl, re.I)
-            if m:
+            fr = re.search(r"(?<![\d.,/])(?:(\d+)\s+)?(\d+)\s?/\s?(\d+)\s?(hp|cv)\b", tl, re.I)
+            m = re.search(r"(?<![\d/.,])(\d{1,3}(?:\.\d{3})+|\d+(?:[.,]\d+)?)\s?(kw|w|hp|cv)\b", tl, re.I)
+            if fr:                                   # "3/4 HP" -> 0.75 ; "1 1/2 HP" -> 1.5
+                val = int(fr.group(1) or 0) + int(fr.group(2)) / int(fr.group(3))
+                v = num_unidad(a, f"{val:g}", "hp")
+            elif m:
                 u = {"kw": "kW", "w": "W", "hp": "hp", "cv": "hp"}[m.group(2).lower()]
-                v = num_unidad(a, m.group(1).replace(",", "."), u)
+                num = m.group(1)
+                num = num.replace(".", "") if re.fullmatch(r"\d{1,3}(\.\d{3})+", num) else num.replace(",", ".")
+                v = num_unidad(a, num, u)
         elif aid == "DIAMETER" or nombre == "Diámetro":
             m = re.search(r"di[aá]m(?:etro)?\.?\s*(\d+(?:[.,]\d+)?)\s*(mm|cm|\"|pulg)", tl, re.I)
             if m:
