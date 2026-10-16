@@ -1,0 +1,47 @@
+name: Mercado Libre - Estado de publicaciones (solo lectura)
+
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  exportar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Revisar
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: |
+          set -o pipefail
+          python ml_estado_items.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan diagnostico
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Estado de publicaciones"
+          git push -qf origin diagnostico
