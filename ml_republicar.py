@@ -24,6 +24,14 @@ log(f"{len(lista)} publicaciones | {'SIMULACIÓN' if dry else 'REAL'}")
 NO_COPIAR = {"ITEM_CONDITION"}
 
 
+def enviar(ruta, item):
+    r = ml.pedir("POST", ruta, json=item)
+    if r.status_code not in (200, 201, 204) and "family_name" in r.text:
+        item["family_name"] = item.pop("title")
+        r = ml.pedir("POST", ruta, json=item)
+    return r
+
+
 def subir(sku, url, i):
     r = web.get(url, timeout=60)
     if r.status_code != 200 or len(r.content) < 3000:
@@ -35,12 +43,13 @@ def subir(sku, url, i):
 filas = []
 for x in lista:
     sku, viejo = x["sku"], x["item"]
-    fila = {"sku": sku, "vieja": viejo, "titulo": x["titulo"], "categoria": "", "nueva": "", "resultado": ""}
+    fila = {"sku": sku, "vieja": viejo, "titulo": x["titulo"], "cat_vieja": "", "categoria": "", "nueva": "", "resultado": ""}
     try:
         it = ml.get(f"/items/{viejo}")
         if sku_de(it).upper() not in (sku.upper(), (sku + "#FEMA").upper()):
             raise RuntimeError(f"el SKU en ML es {sku_de(it)!r}")
-        cat = it.get("category_id")
+        cat = x.get("categoria") or it.get("category_id")
+        fila["cat_vieja"] = it.get("category_id")
         rc = ml.pedir("GET", f"/categories/{cat}")
         fila["categoria"] = f"{cat} {rc.json().get('name', '') if rc.status_code == 200 else ''}".strip()
         _, fotos = buscar(sku)
@@ -62,7 +71,7 @@ for x in lista:
                              "free_shipping": bool(envio.get("free_shipping"))}}
         if dry:
             item["pictures"] = [p for p in [subir(sku, fotos[0], 1)] if p]
-            v = ml.pedir("POST", "/items/validate", json=item)
+            v = enviar("/items/validate", item)
             if v.status_code in (200, 204):
                 fila["resultado"] = f"SE REPUBLICARÍA ({len(fotos)} fotos)"
             else:
@@ -74,7 +83,7 @@ for x in lista:
             item["pictures"] = [p for p in (subir(sku, u, i + 1) for i, u in enumerate(fotos)) if p]
             if not item["pictures"]:
                 raise RuntimeError("no se pudo subir ninguna foto")
-            r = ml.pedir("POST", "/items", json=item)
+            r = enviar("/items", item)
             if r.status_code not in (200, 201):
                 raise RuntimeError(f"ML rechazó la nueva: {r.status_code} {r.text[:300]}")
             nueva = r.json()["id"]
