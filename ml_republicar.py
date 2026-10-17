@@ -27,7 +27,7 @@ NO_COPIAR = {"ITEM_CONDITION"}
 def enviar(ruta, item):
     r = ml.pedir("POST", ruta, json=item)
     if r.status_code not in (200, 201, 204) and "family_name" in r.text:
-        item["family_name"] = item.pop("title")
+        item["family_name"] = item.pop("title")[:60].strip()
         r = ml.pedir("POST", ruta, json=item)
     return r
 
@@ -67,6 +67,14 @@ for x in lista:
         attrs = [{"id": a["id"], **({"value_id": a["value_id"]} if a.get("value_id") else {"value_name": a.get("value_name")})}
                  for a in it.get("attributes") or []
                  if a.get("id") not in NO_COPIAR and (a.get("value_id") or a.get("value_name"))]
+        attrs = [a for a in attrs if not (a["id"] == "VEHICLE_TYPE" and a.get("value_id") and cat != it.get("category_id"))]
+        ya = {a["id"] for a in attrs}
+        marca = next((a.get("value_name") for a in it.get("attributes") or [] if a.get("id") == "BRAND"), None) or "FEMA"
+        extra = {"PART_NUMBER": sku, "MANUFACTURER": marca}
+        largo = re.search(r"(\d+(?:[.,]\d+)?)\s*(mts?|metros?)\b", it["title"], re.I)
+        if largo:
+            extra["LENGTH"] = f"{largo.group(1).replace(',', '.')} m"
+        attrs += [{"id": k, "value_name": v} for k, v in extra.items() if k not in ya]
         envio = it.get("shipping") or {}
         item = {"title": it["title"], "category_id": cat, "price": it["price"], "currency_id": it.get("currency_id", "ARS"),
                 "available_quantity": max(1, it.get("available_quantity") or 1),
