@@ -24,7 +24,12 @@ for est in ("active", "paused", "under_review"):
         lote = []
     log(f"{est}: {len(lote)}")
     ids += lote
-ids = list(dict.fromkeys(ids))
+# las que están en revisión no salen en la búsqueda por estado: se suman las que conocemos
+for f in ("revisar_estado", "con_caja", "caja_web", "reemplazo_fotos"):
+    if os.path.exists(f"datos/{f}.json"):
+        for x in json.load(open(f"datos/{f}.json", encoding="utf-8")):
+            ids.append(x if isinstance(x, str) else x.get("item"))
+ids = [i for i in dict.fromkeys(ids) if i]
 
 _cat = {}
 
@@ -53,22 +58,49 @@ for it in ml.publicaciones(ids, atributos="id,title,status,sub_status,price,avai
 log(f"{len(items)} publicaciones con detalle")
 
 lista = list(items)
+avisado = set()
+
+
+def registrar(nombre, r):
+    if nombre not in avisado:
+        avisado.add(nombre)
+        log(f"{nombre}: {r.status_code} {r.text[:200]}")
+
+
+multi_ok = True
 for i in range(0, len(lista), 50):
     grupo = lista[i:i + 50]
     r = ml.pedir("GET", "/visits/items", params={"ids": ",".join(grupo)})
-    if r.status_code == 200:
-        for k, v in (r.json() or {}).items():
+    if r.status_code == 200 and isinstance(r.json(), dict):
+        for k, v in r.json().items():
             if k in items:
                 items[k]["v_total"] = v or 0
+    else:
+        registrar("visits/items", r)
     for dias, campo in ((30, "v_30"), (7, "v_7")):
-        r = ml.pedir("GET", "/items/visits", params={"ids": ",".join(grupo), "date_from": str(hoy - timedelta(days=dias)),
-                                                     "date_to": str(hoy)})
-        if r.status_code == 200:
-            for x in r.json() or []:
+        r = ml.pedir("GET", "/items/visits", params={"ids": ",".join(grupo), "date_from": f"{hoy - timedelta(days=dias)}T00:00:00.000-03:00",
+                                                     "date_to": f"{hoy}T23:59:59.000-03:00"})
+        if r.status_code == 200 and isinstance(r.json(), list):
+            for x in r.json():
                 if x.get("item_id") in items:
                     items[x["item_id"]][campo] = x.get("total_visits") or 0
+        else:
+            registrar(f"items/visits {dias}d", r)
+            multi_ok = False
     if i % 1000 == 0:
         log(f"  visitas: {i}/{len(lista)}")
+
+if not multi_ok:   # alternativa de a una publicación
+    log("Visitas por período: consulta de a una publicación")
+    for n, k in enumerate(lista):
+        for dias, campo in ((30, "v_30"), (7, "v_7")):
+            r = ml.pedir("GET", f"/items/{k}/visits/time_window", params={"last": dias, "unit": "day"})
+            if r.status_code == 200:
+                items[k][campo] = r.json().get("total_visits") or 0
+            else:
+                registrar(f"time_window {dias}d", r)
+        if n % 1000 == 0:
+            log(f"  visitas por período: {n}/{len(lista)}")
 
 # preguntas recibidas (todas las del vendedor, contadas por publicación)
 cnt, offset = Counter(), 0
