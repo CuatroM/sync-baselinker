@@ -52,9 +52,16 @@ for x in lista:
         fila["cat_vieja"] = it.get("category_id")
         rc = ml.pedir("GET", f"/categories/{cat}")
         fila["categoria"] = f"{cat} {rc.json().get('name', '') if rc.status_code == 200 else ''}".strip()
-        _, fotos = buscar(sku)
+        viejas = [p.get("secure_url") or p.get("url") for p in it.get("pictures") or []]
+        viejas = [u for u in viejas if u]
+        fotos = []
+        if x.get("fotos") != "viejas":
+            _, fotos = buscar(sku)
+        usar_viejas = not fotos
+        if usar_viejas:
+            fotos = viejas
         if not fotos:
-            raise RuntimeError("no hay fotos en la web de FEMA")
+            raise RuntimeError("sin fotos (ni en la web de FEMA ni en la publicación vieja)")
         rd = ml.pedir("GET", f"/items/{viejo}/description")
         texto = rd.json().get("plain_text", "") if rd.status_code == 200 else ""
         attrs = [{"id": a["id"], **({"value_id": a["value_id"]} if a.get("value_id") else {"value_name": a.get("value_name")})}
@@ -70,17 +77,18 @@ for x in lista:
                 "shipping": {"mode": envio.get("mode", "me2"), "local_pick_up": False,
                              "free_shipping": bool(envio.get("free_shipping"))}}
         if dry:
-            item["pictures"] = [p for p in [subir(sku, fotos[0], 1)] if p]
+            item["pictures"] = [{"source": fotos[0]}] if usar_viejas else [p for p in [subir(sku, fotos[0], 1)] if p]
             v = enviar("/items/validate", item)
             if v.status_code in (200, 204):
-                fila["resultado"] = f"SE REPUBLICARÍA ({len(fotos)} fotos)"
+                fila["resultado"] = f"SE REPUBLICARÍA ({len(fotos)} fotos {'viejas' if usar_viejas else 'web'})"
             else:
                 causas = v.json().get("cause") or []
                 errores = [c.get("message") for c in causas if c.get("type") == "error"]
                 fila["resultado"] = ("VALIDACIÓN CON ERRORES: " + " / ".join(errores))[:400] if errores else \
-                    f"SE REPUBLICARÍA ({len(fotos)} fotos)"
+                    f"SE REPUBLICARÍA ({len(fotos)} fotos {'viejas' if usar_viejas else 'web'})"
         else:
-            item["pictures"] = [p for p in (subir(sku, u, i + 1) for i, u in enumerate(fotos)) if p]
+            item["pictures"] = ([{"source": u} for u in fotos[:12]] if usar_viejas else
+                                [p for p in (subir(sku, u, i + 1) for i, u in enumerate(fotos)) if p])
             if not item["pictures"]:
                 raise RuntimeError("no se pudo subir ninguna foto")
             r = enviar("/items", item)
@@ -94,6 +102,11 @@ for x in lista:
             c1 = ml.put(f"/items/{viejo}", {"status": "closed"})
             time.sleep(1)
             c2 = ml.put(f"/items/{viejo}", {"deleted": "true"})
+            for extra in x.get("extras") or []:
+                ml.put(f"/items/{extra}", {"status": "closed"})
+                time.sleep(1)
+                ce = ml.put(f"/items/{extra}", {"deleted": "true"})
+                log(f"  duplicada vieja {extra}: eliminar {ce.status_code}")
             if c2.status_code in (200, 201):
                 fila["resultado"] = "REPUBLICADA (pausada) y la vieja eliminada"
             else:

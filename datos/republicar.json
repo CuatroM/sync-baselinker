@@ -4,7 +4,13 @@
 "item": "MLA3769772930",
 "titulo": "Nylon 2,5 Mm Redonda 10kg Uso Profecional",
 "fotos": "viejas",
-"cat_actual": "MLA455444"
+"cat_actual": "MLA455444",
+"categoria": "MLA429066",
+"cat_nombre": "Jardín > Repuestos > Tanzas",
+"extras": [
+"MLA1998069873",
+"MLA1997956569"
+]
 },
 {
 "sku": "69359811",
@@ -12,28 +18,51 @@
 "titulo": "Electrobomba 12v Diesel Gasoil Cta Litros Pistola Práctica",
 "fotos": "web",
 "cat_actual": "MLA372052",
-"categoria": "MLA457206"
+"categoria": "MLA457206",
+"extras": [
+"MLA3798894078",
+"MLA1998069731",
+"MLA2190586769"
+]
 },
 {
 "sku": "57071410",
 "item": "MLA1977189227",
 "titulo": "Manga Plana De Riego Con Refuerzo Textil 50mm X 100mt 2",
 "fotos": "viejas",
-"cat_actual": "MLA455385"
+"cat_actual": "MLA455385",
+"categoria": "MLA11040",
+"cat_nombre": "Jardín > Riego > Mangueras",
+"extras": [
+"MLA3798894702",
+"MLA1998070433"
+]
 },
 {
 "sku": "69350850",
 "item": "MLA1977179633",
 "titulo": "Guinche Aparejo 800 Eco 2200w Cap. 800/400kg 15/30m",
 "fotos": "viejas",
-"cat_actual": "MLA412666"
+"cat_actual": "MLA412666",
+"categoria": "MLA412667",
+"cat_nombre": "Carga y Descarga > Aparejos Eléctricos",
+"extras": [
+"MLA1998070559",
+"MLA1997957291"
+]
 },
 {
 "sku": "8153877",
 "item": "MLA3769606896",
 "titulo": "Grasa 80 G Cable Engranaje Desmalezadora",
 "fotos": "viejas",
-"cat_actual": "MLA457101"
+"cat_actual": "MLA457101",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": [
+"MLA1998070181",
+"MLA1998070167"
+]
 },
 {
 "sku": "69359855",
@@ -41,28 +70,52 @@
 "titulo": "Electrobomba 12v Fumigar 5l/min Compacta Y Práctica",
 "fotos": "web",
 "cat_actual": "MLA372052",
-"categoria": "MLA456880"
+"categoria": "MLA456880",
+"extras": [
+"MLA1997957213",
+"MLA1997957201",
+"MLA4074204536"
+]
 },
 {
 "sku": "69504110",
 "item": "MLA1977111529",
 "titulo": "Guinche Pluma Para Motores 2tn Plegable Hidráulico",
 "fotos": "viejas",
-"cat_actual": "MLA412666"
+"cat_actual": "MLA412666",
+"categoria": "MLA412667",
+"cat_nombre": "Carga y Descarga > Aparejos Eléctricos",
+"extras": [
+"MLA3798894882",
+"MLA1998070595"
+]
 },
 {
 "sku": "W1000460",
 "item": "MLA1977011007",
 "titulo": "Tacurú 10 L Aditivo Vinílico Multiuso",
 "fotos": "viejas",
-"cat_actual": "MLA435312"
+"cat_actual": "MLA435312",
+"categoria": "MLA417101",
+"cat_nombre": "Construcción > Pinturería > Tacurúes",
+"extras": [
+"MLA1998070869",
+"MLA1997957607",
+"MLA4069988554"
+]
 },
 {
 "sku": "69502637",
 "item": "MLA1977111591",
 "titulo": "Transpalets 1200kg Batería Litio Alt. 4,5m P/hombre A Bordo",
 "fotos": "viejas",
-"cat_actual": "MLA11822"
+"cat_actual": "MLA11822",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": [
+"MLA1997957347",
+"MLA1997957339"
+]
 },
 {
 "sku": "W1000450",
@@ -70,7 +123,13 @@
 "titulo": "Tacurú 4 L Aditivo Vinílico Multiuso",
 "fotos": "web",
 "cat_actual": "MLA435312",
-"categoria": "MLA417101"
+"categoria": "MLA417101",
+"cat_nombre": "Construcción > Pinturería > Tacurúes",
+"extras": [
+"MLA1998070755",
+"MLA1997957509",
+"MLA4069988526"
+]
 },
 {
 "sku": "W1000440",
@@ -78,192 +137,13 @@
 "titulo": "Tacurú Aditivo Vinílico Multiuso 1 L",
 "fotos": "web",
 "cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "57071410",
-"item": "MLA3798894702",
-"titulo": "Manga Plana De Riego Con Refuerzo Textil 50mm X 100mt 2",
-"fotos": "viejas",
-"cat_actual": "MLA455385"
-},
-{
-"sku": "W1000440",
-"item": "MLA3798894984",
-"titulo": "Tacurú Aditivo Vinílico Multiuso 1 L",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "69504110",
-"item": "MLA3798894882",
-"titulo": "Guinche Pluma Para Motores 2tn Plegable Hidráulico",
-"fotos": "viejas",
-"cat_actual": "MLA412666"
-},
-{
-"sku": "69359811",
-"item": "MLA3798894078",
-"titulo": "Electrobomba 12v Diesel Gasoil Cta Litros Pistola Práctica",
-"fotos": "web",
-"cat_actual": "MLA372052",
-"categoria": "MLA457206"
-},
-{
-"sku": "W1000460",
-"item": "MLA1998070869",
-"titulo": "Tacurú 10 L Aditivo Vinílico Multiuso",
-"fotos": "viejas",
-"cat_actual": "MLA435312"
-},
-{
-"sku": "W1000450",
-"item": "MLA1998070755",
-"titulo": "Tacurú 4 L Aditivo Vinílico Multiuso",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "8153877",
-"item": "MLA1998070181",
-"titulo": "Grasa 80 G Cable Engranaje Desmalezadora",
-"fotos": "viejas",
-"cat_actual": "MLA457101"
-},
-{
-"sku": "8153877",
-"item": "MLA1998070167",
-"titulo": "Grasa 80 G Cable Engranaje Desmalezadora",
-"fotos": "viejas",
-"cat_actual": "MLA457101"
-},
-{
-"sku": "69504110",
-"item": "MLA1998070595",
-"titulo": "Guinche Pluma Para Motores 2tn Plegable Hidráulico",
-"fotos": "viejas",
-"cat_actual": "MLA412666"
-},
-{
-"sku": "69350850",
-"item": "MLA1998070559",
-"titulo": "Guinche Aparejo 800 Eco 2200w Cap. 800/400kg 15/30m",
-"fotos": "viejas",
-"cat_actual": "MLA412666"
-},
-{
-"sku": "W1000440",
-"item": "MLA1998070697",
-"titulo": "Tacurú Aditivo Vinílico Multiuso 1 L",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "57071410",
-"item": "MLA1998070433",
-"titulo": "Manga Plana De Riego Con Refuerzo Textil 50mm X 100mt 2",
-"fotos": "viejas",
-"cat_actual": "MLA455385"
-},
-{
-"sku": "69380628",
-"item": "MLA1998069873",
-"titulo": "Nylon 2,5 Mm Redonda 10kg Uso Profecional",
-"fotos": "viejas",
-"cat_actual": "MLA455444"
-},
-{
-"sku": "69359811",
-"item": "MLA1998069731",
-"titulo": "Electrobomba 12v Diesel Gasoil Cta Litros Pistola Práctica",
-"fotos": "web",
-"cat_actual": "MLA372052",
-"categoria": "MLA457206"
-},
-{
-"sku": "69502637",
-"item": "MLA1997957347",
-"titulo": "Transpalets 1200kg Batería Litio Alt. 4,5m P/hombre A Bordo",
-"fotos": "viejas",
-"cat_actual": "MLA11822"
-},
-{
-"sku": "69359855",
-"item": "MLA1997957213",
-"titulo": "Electrobomba 12v Fumigar 5l/min Compacta Y Práctica",
-"fotos": "web",
-"cat_actual": "MLA372052",
-"categoria": "MLA456880"
-},
-{
-"sku": "69350850",
-"item": "MLA1997957291",
-"titulo": "Guinche Aparejo 800 Eco 2200w Cap. 800/400kg 15/30m",
-"fotos": "viejas",
-"cat_actual": "MLA412666"
-},
-{
-"sku": "W1000460",
-"item": "MLA1997957607",
-"titulo": "Tacurú 10 L Aditivo Vinílico Multiuso",
-"fotos": "viejas",
-"cat_actual": "MLA435312"
-},
-{
-"sku": "69359855",
-"item": "MLA1997957201",
-"titulo": "Electrobomba 12v Fumigar 5l/min Compacta Y Práctica",
-"fotos": "web",
-"cat_actual": "MLA372052",
-"categoria": "MLA456880"
-},
-{
-"sku": "W1000450",
-"item": "MLA1997957509",
-"titulo": "Tacurú 4 L Aditivo Vinílico Multiuso",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "69502637",
-"item": "MLA1997957339",
-"titulo": "Transpalets 1200kg Batería Litio Alt. 4,5m P/hombre A Bordo",
-"fotos": "viejas",
-"cat_actual": "MLA11822"
-},
-{
-"sku": "69380628",
-"item": "MLA1997956569",
-"titulo": "Nylon 2,5 Mm Redonda 10kg Uso Profecional",
-"fotos": "viejas",
-"cat_actual": "MLA455444"
-},
-{
-"sku": "W1000440",
-"item": "MLA4070062868",
-"titulo": "Aditivo Vinílico Multiuso Tacurú 1 Litro Weber",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "W1000450",
-"item": "MLA4069988526",
-"titulo": "Aditivo Vinílico Multiuso Tacurú 4 Litros Weber",
-"fotos": "web",
-"cat_actual": "MLA435312",
-"categoria": "MLA417101"
-},
-{
-"sku": "W1000460",
-"item": "MLA4069988554",
-"titulo": "Aditivo Vinílico Multiuso Tacurú 10 Litros Weber",
-"fotos": "viejas",
-"cat_actual": "MLA435312"
+"categoria": "MLA417101",
+"cat_nombre": "Construcción > Pinturería > Tacurúes",
+"extras": [
+"MLA3798894984",
+"MLA1998070697",
+"MLA4070062868"
+]
 },
 {
 "sku": "69359213",
@@ -271,7 +151,8 @@
 "titulo": "Llave Allen Cabeza Bola 6 Mm Mango T 125 Mm Fema Blanco",
 "fotos": "web",
 "cat_actual": "MLA413410",
-"categoria": "MLA30831"
+"categoria": "MLA30831",
+"extras": []
 },
 {
 "sku": "4253300",
@@ -279,7 +160,8 @@
 "titulo": "Cabezal Automatico Castor 8.125 M Naranj 4253300",
 "fotos": "web",
 "cat_actual": "MLA416965",
-"categoria": "MLA413606"
+"categoria": "MLA413606",
+"extras": []
 },
 {
 "sku": "3100A04008",
@@ -287,7 +169,8 @@
 "titulo": "Cojinete Biela Fema 3100ad/20kw Juego.x3xbielas (3 Por Caja)",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442370"
+"categoria": "MLA442370",
+"extras": []
 },
 {
 "sku": "3500A01",
@@ -295,14 +178,18 @@
 "titulo": "Cilindro Fema 3500 /4000 Solo 3500a01",
 "fotos": "web",
 "cat_actual": "MLA45504",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "171001885GF",
 "item": "MLA4076405606",
 "titulo": "Porta Filtro Aire Completo Generador 5gf Nafta 171001885gf",
 "fotos": "viejas",
-"cat_actual": "MLA455147"
+"cat_actual": "MLA455147",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "398592",
@@ -310,7 +197,8 @@
 "titulo": "Soporte Filtro Gr 4400 8 Hp Horiz 398592",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA456908"
+"categoria": "MLA456908",
+"extras": []
 },
 {
 "sku": "4253420",
@@ -318,7 +206,8 @@
 "titulo": "Arnes Hobby Todas 4253420",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "3500A33",
@@ -326,7 +215,8 @@
 "titulo": "Mariposa Tapa Filtro Aire 3500 Fema 3500a33",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "281437",
@@ -334,7 +224,8 @@
 "titulo": "Eje Acelerador 5 Hp 281437",
 "fotos": "web",
 "cat_actual": "MLA455150",
-"categoria": "MLA442381"
+"categoria": "MLA442381",
+"extras": []
 },
 {
 "sku": "3500B06",
@@ -342,7 +233,8 @@
 "titulo": "Soprte Filtro Aire 3500 Fema 3500b06",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "105Z050005",
@@ -350,22 +242,18 @@
 "titulo": "Cojinete Biela Fema 105 Para Gener 100kw 105z050005",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442370"
+"categoria": "MLA442370",
+"extras": []
 },
 {
 "sku": "CAB-03-495",
 "item": "MLA4074389522",
 "titulo": "Nylon Con Carretel 2,6 Mm Para Desmalezadora Mcculloch Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA429066"
-},
-{
-"sku": "69359855",
-"item": "MLA4074204536",
-"titulo": "Electrobomba 12 V Para Fumigación 60 Psi 5 L/min Fema",
-"fotos": "web",
-"cat_actual": "MLA74622",
-"categoria": "MLA456880"
+"cat_actual": "MLA429066",
+"categoria": "MLA429066",
+"cat_nombre": "Jardín > Repuestos > Tanzas",
+"extras": []
 },
 {
 "sku": "490547",
@@ -373,7 +261,8 @@
 "titulo": "Escape 5 5.75 Hp Briggs & Stratton Vertical 490547",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442377"
+"categoria": "MLA442377",
+"extras": []
 },
 {
 "sku": "394644",
@@ -381,7 +270,8 @@
 "titulo": "Escape 5 Hp Briggs & Stratton 394644",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442377"
+"categoria": "MLA442377",
+"extras": []
 },
 {
 "sku": "1155091",
@@ -389,7 +279,8 @@
 "titulo": "Piedra Rectificadora Barra Guia 200 X 1,47 X 1,4 1155091",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "3500G03",
@@ -397,7 +288,8 @@
 "titulo": "Cobertor Barra Fema 3500 3500g03",
 "fotos": "web",
 "cat_actual": "MLA435342",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "32100-5GF3",
@@ -405,7 +297,8 @@
 "titulo": "Cable Coneccion Tablero Gr 6500w 32100-5gf3",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA457729"
+"categoria": "MLA457729",
+"extras": []
 },
 {
 "sku": "3500D17",
@@ -413,7 +306,8 @@
 "titulo": "Manija Superior Delantera 3500 Fema 3500d17",
 "fotos": "web",
 "cat_actual": "MLA430651",
-"categoria": "MLA413603"
+"categoria": "MLA413603",
+"extras": []
 },
 {
 "sku": "260695",
@@ -421,7 +315,8 @@
 "titulo": "Resorte Governador Briggs & Stratton 8 Hp 260695",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442381"
+"categoria": "MLA442381",
+"extras": []
 },
 {
 "sku": "137352",
@@ -429,7 +324,8 @@
 "titulo": "Escape 19.5 Briggs & Stratton Para Poulan 137352",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442377"
+"categoria": "MLA442377",
+"extras": []
 },
 {
 "sku": "316051000",
@@ -437,7 +333,8 @@
 "titulo": "Porta Carbones Alternador Fema 316051000",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA457729"
+"categoria": "MLA457729",
+"extras": []
 },
 {
 "sku": "3100A02018",
@@ -445,7 +342,8 @@
 "titulo": "Junta Cilindro Fema 3100ad/20kw 3100a02018",
 "fotos": "web",
 "cat_actual": "MLA455146",
-"categoria": "MLA442374"
+"categoria": "MLA442374",
+"extras": []
 },
 {
 "sku": "299948",
@@ -453,14 +351,18 @@
 "titulo": "Arranque Ensanblado Briggs & Stratton 3.5 Hp Nuevo 299948",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA455591"
+"categoria": "MLA455591",
+"extras": []
 },
 {
 "sku": "5362311",
 "item": "MLA2192305593",
 "titulo": "Soga Arranque 3.0 Mm. X 100 M Castel Garden 5362311 Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA459188"
+"cat_actual": "MLA459188",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "230127",
@@ -468,7 +370,8 @@
 "titulo": "Seguro Válvula 230127",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442381"
+"categoria": "MLA442381",
+"extras": []
 },
 {
 "sku": "138116",
@@ -476,36 +379,38 @@
 "titulo": "Escape Mtd Briggs & Stratton Para Ohv Mayor De 16 Hp 138116",
 "fotos": "web",
 "cat_actual": "MLA454954",
-"categoria": "MLA442377"
+"categoria": "MLA442377",
+"extras": []
 },
 {
 "sku": "69502565",
 "item": "MLA2190591017",
 "titulo": "Transpalet Eléctrico Fema 3000 Kg Todo Terreno Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA412667"
+"cat_actual": "MLA412667",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "69351274",
 "item": "MLA2190589813",
 "titulo": "Tacho De Basura 440 L Con 4 Ruedas Y Tapa Fema Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA121951"
-},
-{
-"sku": "69359811",
-"item": "MLA2190586769",
-"titulo": "Kit Surtidor De Combustible 12 V 60 L/min Fema",
-"fotos": "web",
-"cat_actual": "MLA455980",
-"categoria": "MLA457206"
+"cat_actual": "MLA121951",
+"categoria": "MLA413492",
+"cat_nombre": "Seguridad Laboral > Limpieza > Contenedores de Basura",
+"extras": []
 },
 {
 "sku": "CAB-03-496",
 "item": "MLA2190504095",
 "titulo": "Nylon Con Carretel 2,6 Mm 2 Líneas Para Mcculloch Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA429066"
+"cat_actual": "MLA429066",
+"categoria": "MLA429066",
+"cat_nombre": "Jardín > Repuestos > Tanzas",
+"extras": []
 },
 {
 "sku": "W1001400-10",
@@ -513,923 +418,1267 @@
 "titulo": "Capa Color Weber Microcolor Micropiso 25 Kg",
 "fotos": "web",
 "cat_actual": "MLA456027",
-"categoria": "MLA435292"
+"categoria": "MLA435292",
+"extras": []
 },
 {
 "sku": "25120168F",
 "item": "MLA4082165326",
 "titulo": "Engranaje Regul, Vel.fema 168f Honda Gx160 25120168f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457254",
+"cat_nombre": "Agro Motor > Engranajes",
+"extras": []
 },
 {
 "sku": "693015822",
 "item": "MLA4082163980",
 "titulo": "Fusible Transpalet Qba Qda 200 Amp Fig4 Contactor 693015822",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "11210802101",
 "item": "MLA4082163654",
 "titulo": "Carter Arranque Stihl 024 Ms240 026 Ms260 11210802101",
 "fotos": "viejas",
-"cat_actual": "MLA388622"
+"cat_actual": "MLA388622",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "68233450",
 "item": "MLA4082000944",
 "titulo": "Carter Arranque Stihl Fs120/200/250 68233450",
 "fotos": "viejas",
-"cat_actual": "MLA388622"
+"cat_actual": "MLA388622",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "693015715",
 "item": "MLA4082001264",
 "titulo": "Placa Controlador Transp.elec. Qba 12 15 693015715",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "1119358770",
 "item": "MLA4082000780",
 "titulo": "Manguera Combustible Stihl 034 1119358770 Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA455575"
+"cat_actual": "MLA455575",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "693015825",
 "item": "MLA4082001528",
 "titulo": "Fusible Transpalet Qba Qda 125 Amp Fig16 Largo 42 Mm",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "693017060",
 "item": "MLA4081999298",
 "titulo": "Rueda 8 X 2  Semi Neumatica Diame.1/2 X Altur.1,5/8 ",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA399136",
+"cat_nombre": "Hogar, Muebles y Jardín > Muebles para el Hogar > Accesorios y Repuestos > Ruedas para Carritos y Muebles",
+"extras": []
 },
 {
 "sku": "693017030",
 "item": "MLA4081999286",
 "titulo": "Rueda 7 X 3  Semi Neumatica Centro Diámetro 1/2 693017030",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA399136",
+"cat_nombre": "Hogar, Muebles y Jardín > Muebles para el Hogar > Accesorios y Repuestos > Ruedas para Carritos y Muebles",
+"extras": []
 },
 {
 "sku": "57000064",
 "item": "MLA4081999814",
 "titulo": "Potenciometro Soldadora Duca Igbt 250 57000064",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "693017065",
 "item": "MLA4081999306",
 "titulo": "Rueda 8 X 2,5  Semi Neumatica Diame.3/4 X Altur.3  693017065",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA399136",
+"cat_nombre": "Hogar, Muebles y Jardín > Muebles para el Hogar > Accesorios y Repuestos > Ruedas para Carritos y Muebles",
+"extras": []
 },
 {
 "sku": "57005390",
 "item": "MLA4081999648",
 "titulo": "Cobertor Torcha Plasma Sp 60 Plus 57005390",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA416710",
+"cat_nombre": "Accesorios para Herramientas > Kit de Consumibles para Plasma",
+"extras": []
 },
 {
 "sku": "68210601",
 "item": "MLA4081998660",
 "titulo": "Cilindro Husqvarna 236r Diámetro 36 Mm Completo 68210601",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "68212301",
 "item": "MLA4081996406",
 "titulo": "Cilindro Husqvarna 445 D.mm Completo 68212301",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "REP-03-265",
 "item": "MLA4081811568",
 "titulo": "Freno De Polea Torreta Mtd 12.5 14 16 18 Rep-03-265",
 "fotos": "viejas",
-"cat_actual": "MLA425083"
+"cat_actual": "MLA425083",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "27331168F",
 "item": "MLA4081606870",
 "titulo": "Trinquete Arranque Fema 168f 173f 188f 27331168f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457254",
+"cat_nombre": "Agro Motor > Engranajes",
+"extras": []
 },
 {
 "sku": "17235168",
 "item": "MLA4081606374",
 "titulo": "Base Filtro Aire Fema 168f Gx160 17235168",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "16240168",
 "item": "MLA4081606092",
 "titulo": "Aguja Carburador Fema 168 Gx160 16240168",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457244",
+"cat_nombre": "Agro Motor > Carburadores",
+"extras": []
 },
 {
 "sku": "1601388300",
 "item": "MLA4081605952",
 "titulo": "Flotante Honda G 150/200 3,5 / 5 Hp Valvulas Laterales",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "12281887AR",
 "item": "MLA4081604736",
 "titulo": "Junta Cilindro G150 Acero Fema 12281887ar",
 "fotos": "viejas",
-"cat_actual": "MLA417121"
+"cat_actual": "MLA417121",
+"categoria": "MLA442374",
+"cat_nombre": "Agro Motor > Juntas",
+"extras": []
 },
 {
 "sku": "16425168F",
 "item": "MLA4081545972",
 "titulo": "Chicler Aguja Regulable Carburador Fema 168 F 16425168f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457244",
+"cat_nombre": "Agro Motor > Carburadores",
+"extras": []
 },
 {
 "sku": "27501168",
 "item": "MLA4081544532",
 "titulo": "Volante Fema 168 Con Corona Arranque 27501168",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "1471188300",
 "item": "MLA4081543318",
 "titulo": "Válvula Admision G 200 5 Hp Valvulas Laterales 1471188300",
 "fotos": "viejas",
-"cat_actual": "MLA455089"
+"cat_actual": "MLA455089",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "18310ZL900",
 "item": "MLA4081524530",
 "titulo": "Escape Gc Gcv 160 18310zl900",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442377",
+"cat_nombre": "Agro Motor > Silenciadores",
+"extras": []
 },
 {
 "sku": "3119188F",
 "item": "MLA4081525090",
 "titulo": "Estator Y Rotor 188 5gf Monofasico Nafta 3119188f",
 "fotos": "viejas",
-"cat_actual": "MLA388608"
+"cat_actual": "MLA388608",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "16254188F",
 "item": "MLA4081526144",
 "titulo": "Chicler Carburador Fema 188 F 16254188f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457244",
+"cat_nombre": "Agro Motor > Carburadores",
+"extras": []
 },
 {
 "sku": "69368196",
 "item": "MLA4081522316",
 "titulo": "Motor Honda Gxv 620 Qxa3 20 Hp Eje Vertical 69368196",
 "fotos": "viejas",
-"cat_actual": "MLA373340"
+"cat_actual": "MLA373340",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "68210401",
 "item": "MLA4081477116",
 "titulo": "Cilindro Husqvarna 143 541 Diámetro 40 Mm 42 Cc Completo",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "DIA-01-033",
 "item": "MLA4081479468",
 "titulo": "Diafragma Wal D10 Mdc Mc Culloch 110 120(usa) Dia-01-033",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "520207",
 "item": "MLA4081447724",
 "titulo": "Soporte Cobertor Caja Engra Fema 520 2010 520207",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
-},
-{
-"sku": "PH2-02",
-"item": "MLA4081152708",
-"titulo": "Soporte Cobertor Garrafa Calefactor Fema Blanco Ph2-02",
-"fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0041A",
 "item": "MLA4081447834",
 "titulo": "Cobertor Volante Fema Bc415 Bc415m0041a",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA429067",
+"cat_nombre": "Jardín > Repuestos > Carcasas para Cortadoras",
+"extras": []
 },
 {
 "sku": "CO-01-0284",
 "item": "MLA4081122460",
 "titulo": "Aros Juego Compresor Td 2025 2050 Co-01-0284",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "56200007",
 "item": "MLA4081058458",
 "titulo": "Cable Acelerador Cortacesped Ayp/husqvarna Conducto63 ",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "693006053",
 "item": "MLA4081001128",
 "titulo": "Presostato Comp.fema 2,5 Hp 25/50 3 Salidas 693006053",
 "fotos": "viejas",
-"cat_actual": "MLA413690"
+"cat_actual": "MLA413690",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "4112292",
 "item": "MLA4080926716",
 "titulo": "Barra 16  40cm Sandvik Diston 1,3 Mm/050  ,375  60 Es.acc",
 "fotos": "viejas",
-"cat_actual": "MLA373429"
+"cat_actual": "MLA373429",
+"categoria": "MLA455610",
+"cat_nombre": "Jardín > Repuestos > Espadas para Motosierras",
+"extras": []
 },
 {
 "sku": "693007710",
 "item": "MLA4080920226",
 "titulo": "Resorte Válvula Compresor Tornillo 20 Hp 693007710",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-0213301",
 "item": "MLA4080491690",
 "titulo": "Junta Tapa Carter Compre 3 Hp 4 Hp Posterior Cuad",
 "fotos": "viejas",
-"cat_actual": "MLA456330"
+"cat_actual": "MLA456330",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "693007160",
 "item": "MLA4080490198",
 "titulo": "Válvula Solenoide Compresor Tornillo 15 Hp Comp 693007160",
 "fotos": "viejas",
-"cat_actual": "MLA455089"
+"cat_actual": "MLA455089",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-5510036",
 "item": "MLA4080488888",
 "titulo": "Regulador Presion Dos Salidas Con Filtro Compresor 55100/150",
 "fotos": "viejas",
-"cat_actual": "MLA435615"
+"cat_actual": "MLA435615",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "693007230",
 "item": "MLA4080490228",
 "titulo": "Pulsador Emergencia Compresor Tornillo 15 Hp Pt 100",
 "fotos": "viejas",
-"cat_actual": "MLA455030"
-},
-{
-"sku": "74029-900",
-"item": "MLA4080488094",
-"titulo": "Manija Emerg.allanadora Fema At36 900 Nuevo 74029-900",
-"fotos": "web",
-"cat_actual": "MLA430651"
+"cat_actual": "MLA455030",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "5500203",
 "item": "MLA4080488474",
 "titulo": "Manubrio Castel Garden 55 5500203 Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA388865"
+"cat_actual": "MLA388865",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "693003256",
 "item": "MLA4080315862",
 "titulo": "Tapa Lateral Cigüeñal Compresor Fema 3 Hp 2012 693003256",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "693007190",
 "item": "MLA4080315034",
 "titulo": "Visor Nivel Aceite Compresor Tornillo 15 Hp Comp 693007190",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-0122",
 "item": "MLA4080311480",
 "titulo": "Tablero Control Compresor A Tornillo 15/20/30 Hp 3 M3/m Blanco",
 "fotos": "viejas",
-"cat_actual": "MLA412413"
+"cat_actual": "MLA412413",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-02472",
 "item": "MLA4080310918",
 "titulo": "Presostato P 3 Hp Regul Val.seg.2manomet.2sal.(35 36 37 38",
 "fotos": "viejas",
-"cat_actual": "MLA413690"
+"cat_actual": "MLA413690",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "807735",
 "item": "MLA4080310720",
 "titulo": "Escape 26 Hp Briggs & Stratton Bicilindrico Universal 807735",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
-},
-{
-"sku": "PH2-18",
-"item": "MLA4080160270",
-"titulo": "Pico Inyector Calefactor Fema 1,8 Mm Ph2-18",
-"fotos": "viejas",
-"cat_actual": "MLA454954"
-},
-{
-"sku": "PH2-17",
-"item": "MLA4080160258",
-"titulo": "Pico Inyector Calefactor Fema 1,5 Mm Ph2-17",
-"fotos": "viejas",
-"cat_actual": "MLA454954"
-},
-{
-"sku": "CP63H01",
-"item": "MLA4079416684",
-"titulo": "Tanque Agua Para Placa Compactadora Cp63h Cp63h01",
-"fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442377",
+"cat_nombre": "Agro Motor > Silenciadores",
+"extras": []
 },
 {
 "sku": "CO-07-026500",
 "item": "MLA4079416394",
 "titulo": "Tapa Cilindro Compresor Fema 3 Hp Co-07-026500",
 "fotos": "viejas",
-"cat_actual": "MLA60937"
+"cat_actual": "MLA60937",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0082",
 "item": "MLA4079410752",
 "titulo": "Tapa Filtro Aire Bc 415 Bc415m0082",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0074",
 "item": "MLA4079410562",
 "titulo": "Soporte Filtro Aire Fema Bc 415 Bc415m0074",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0048",
 "item": "MLA4079410440",
 "titulo": "Patin Embrague Bc 415 Bc415m0048",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC260M0006",
 "item": "MLA4079409772",
 "titulo": "Patin Embrague Bc 260 Bc260m0006",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC260M0054",
 "item": "MLA4079409936",
 "titulo": "Tapa Filtro Aire Fema Bc260 Bc260m0054",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "691236",
 "item": "MLA4079407562",
 "titulo": "Copa Arranque 3.5 Hp Briggs & Stratton 691236",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "730661",
 "item": "MLA4079407766",
 "titulo": "Escape Tecumseh Bicilindrico 730661",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442377",
+"cat_nombre": "Agro Motor > Silenciadores",
+"extras": []
 },
 {
 "sku": "CS3631",
 "item": "MLA4079403956",
 "titulo": "Sin Fin Bomba Aceite Fema Cs 36 Cs3631",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-02424",
 "item": "MLA4079403386",
 "titulo": "Cobertor Rejilla Compresor Fema 3 4 Hp Co-07-02424",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-01-0420",
 "item": "MLA4079403190",
 "titulo": "Llave Termica 2025 50 Compresor Fema Co-01-0420",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-01-0245",
 "item": "MLA4079403034",
 "titulo": "Caño Conducto Aire Comp. Td2550 Tanque Co-01-0245",
 "fotos": "viejas",
-"cat_actual": "MLA455095"
+"cat_actual": "MLA455095",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "A136202101",
 "item": "MLA4079396708",
 "titulo": "Carbones Electrosierra Fema A136202101",
 "fotos": "viejas",
-"cat_actual": "MLA458711"
+"cat_actual": "MLA458711",
+"categoria": "MLA455621",
+"cat_nombre": "Accesorios para Herramientas > Escobillas de Carbón",
+"extras": []
 },
 {
 "sku": "CO-07-026475",
 "item": "MLA4079399848",
 "titulo": "Junta Base Flaper Compre 5,5 7,5 Hp Co-07-026475",
 "fotos": "viejas",
-"cat_actual": "MLA417121"
+"cat_actual": "MLA417121",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0048J",
 "item": "MLA4079397658",
 "titulo": "Patin Embrague Completos Con Resorte Bc415m0048j",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC260M0041",
 "item": "MLA4079397124",
 "titulo": "Escape Fema Bc260 Bc260m0041",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "REP-03-175",
 "item": "MLA4079399030",
 "titulo": "Adaptador Cuchilla Aluminio Diámetro 25 Mm Largo 41 Mm Fema",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413701",
+"cat_nombre": "Jardín > Repuestos > Cuchillas",
+"extras": []
 },
 {
 "sku": "BC260M0013",
 "item": "MLA4079396990",
 "titulo": "Volante Fema Bc260 Bc260m0013",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0001",
 "item": "MLA4079118412",
 "titulo": "Cilindro Fema Bc415 Solo Bc415m0001",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0053",
 "item": "MLA4079118730",
 "titulo": "Cobertor Motor Bc 415 Bc415m0053",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA429067",
+"cat_nombre": "Jardín > Repuestos > Carcasas para Cortadoras",
+"extras": []
 },
 {
 "sku": "5800A14",
 "item": "MLA4079115042",
 "titulo": "Escape Fema 5800 5800a14",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "7460614A",
 "item": "MLA4079030192",
 "titulo": "Cable Cebador Tractor Mtd Varios Mod 7460614a",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "5800B28",
 "item": "MLA4079029338",
 "titulo": "Polea Arranque Fema 5800 5800b28",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "68237634",
 "item": "MLA2197048621",
 "titulo": "Carter Arranque Stihl Ms260 68237634",
 "fotos": "viejas",
-"cat_actual": "MLA388622"
+"cat_actual": "MLA388622",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "520054",
 "item": "MLA4079003172",
 "titulo": "Aro Fema 520 2010 44 X 2 Mm 520054",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "520184",
 "item": "MLA4079003260",
 "titulo": "Engranaje Fema 520 2010 Juego Cuadrado 520184",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "5800B26",
 "item": "MLA4079003980",
 "titulo": "Cobertor Arranque Fema 5800 Sola 5800b26",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA429067",
+"cat_nombre": "Jardín > Repuestos > Carcasas para Cortadoras",
+"extras": []
 },
 {
 "sku": "693015821",
 "item": "MLA2197049105",
 "titulo": "Fusible Transpalet Qba Qda 30 Amp Fig 2 693015821",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "57000130",
 "item": "MLA2197047467",
 "titulo": "Plaqueta Diodos Superior Duca Igbt 160 57000130",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "68232655",
 "item": "MLA2197048535",
 "titulo": "Carter Arranque Stihl Fs160/220/280 68232655",
 "fotos": "viejas",
-"cat_actual": "MLA388622"
+"cat_actual": "MLA388622",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "1125162080",
 "item": "MLA2197048415",
 "titulo": "Patin Embrague Juego Stihl 034 1125162080",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "57000063",
 "item": "MLA2197047439",
 "titulo": "Potenciometro Soldadora Duca Igbt 200 57000063",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "1123195040",
 "item": "MLA2197048407",
 "titulo": "Polea Arranque Stihl 025/023/017 Plast 1123195040",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "693015846",
 "item": "MLA2197046827",
 "titulo": "Rueda Delantera Transp.elec. Qba Todos 110 55mm 52mm.interno",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA454956",
+"cat_nombre": "Herramientas Industriales > Carga y Descarga > Otros",
+"extras": []
 },
 {
 "sku": "1125195040",
 "item": "MLA2196926765",
 "titulo": "Polea Arranque Stihl 0.34 En 48 Mm Plast 1125195040",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "57000003",
 "item": "MLA2196925749",
 "titulo": "Integrado Soldadora Duca Pcr 200 Mos 57000003",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "68237136",
 "item": "MLA2196851487",
 "titulo": "Carter Arranque Stihl Ms170/180 68237136",
 "fotos": "viejas",
-"cat_actual": "MLA388622"
+"cat_actual": "MLA388622",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "57000011",
 "item": "MLA2196850605",
 "titulo": "Circuito Integrado Sold Duca 57000011",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "57001800",
 "item": "MLA2196850575",
 "titulo": "Microswitch Con Tornillos 57001800",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "57000928",
 "item": "MLA2196850535",
 "titulo": "Porta Electrodo Corto Tig Duca 2 Mm 57000928",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "57000924",
 "item": "MLA2196850525",
 "titulo": "Difusor Gas Torcha Tig Duca Para Porta Elect. Corto 57000924",
 "fotos": "viejas",
-"cat_actual": "MLA456968"
+"cat_actual": "MLA456968",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "69309212",
 "item": "MLA2196849401",
 "titulo": "Pulsador Walbro 188 12 Reemplazo 69309212",
 "fotos": "viejas",
-"cat_actual": "MLA455030"
+"cat_actual": "MLA455030",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "57000930",
 "item": "MLA2196850451",
 "titulo": "Porta Electrodo Largo 1,6 Mm(bronce) Pistola Tig Duca",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455232",
+"cat_nombre": "Accesorios para Herramientas > Soldado > Otros",
+"extras": []
 },
 {
 "sku": "BAR-01-046",
 "item": "MLA2196849243",
 "titulo": "Barra 20  3/8 Lp Homelite Usa Bar-01-046",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455610",
+"cat_nombre": "Jardín > Repuestos > Espadas para Motosierras",
+"extras": []
 },
 {
 "sku": "16425188F",
 "item": "MLA2196742679",
 "titulo": "Chicler Aguja Regulable Carburador Fema 188 F 16425188f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457244",
+"cat_nombre": "Agro Motor > Carburadores",
+"extras": []
 },
 {
 "sku": "178F04005",
 "item": "MLA2196740897",
 "titulo": "Cojinete Biela Fema 186f Motor Diesel 9/10 Hp Monocilindrico",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442370",
+"cat_nombre": "Agro Motor > Cojinetes",
+"extras": []
 },
 {
 "sku": "795076",
 "item": "MLA2196734663",
 "titulo": "Escape B&s14,5 16,5 17,5 Hp Con Multiple Ohv 795076",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442377",
+"cat_nombre": "Agro Motor > Silenciadores",
+"extras": []
 },
 {
 "sku": "DIA-01-290",
 "item": "MLA2196696695",
 "titulo": "Diafragma Nikki Trimer Y Blower Toro(usa) Dia-01-290",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "DIA-01-115",
 "item": "MLA2196696125",
 "titulo": "Diafragma Wal K20wyj Honda 431 422 Desma Kit (usa)",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "DIA-01-259",
 "item": "MLA2196696531",
 "titulo": "Diafragma Zama Gnd 7 C1s Ho240 Jet460 011 09 01 220 280",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "68250410",
 "item": "MLA2196686643",
 "titulo": "Cilindro Echo Cs350 Completo 68250410",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415B0021",
 "item": "MLA2196684277",
 "titulo": "Sierra Circular 200 X 25 X 1,8 Mm. 3 Dientes Fema Bc415",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "DIA-01-114",
 "item": "MLA2196685515",
 "titulo": "Diafragma Wal K20wat Kithq51 E4600 Cas Desma(usa) Dia-01-114",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "DIA-01-406",
 "item": "MLA2196685263",
 "titulo": "Pulsador Bomba Walbro 188 13 Usa Dia-01-406",
 "fotos": "viejas",
-"cat_actual": "MLA455030"
+"cat_actual": "MLA455030",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "DIA-01-279",
 "item": "MLA2196666547",
 "titulo": "Diafragma Zama Gnd 29 33 C1q Hqv45 Para St 025(usa)",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "DIA-01-265",
 "item": "MLA2196666797",
 "titulo": "Diafragma Zama Rb 100 C1q Kit Fs75 Fs80 Fs85 Ht70 Ht75(usa)",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "6930034720",
 "item": "MLA2196424283",
 "titulo": "Flaper Compresor 3,0 Hp Kit Con Base Acero Completo",
 "fotos": "web",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "DIA-01-281",
 "item": "MLA2196665569",
 "titulo": "Diafragma Zama Gnd 33 29 98 39 St Ms180 170 Fs450 Fs85 Fs108",
 "fotos": "viejas",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "DIA-01-273",
 "item": "MLA2196666485",
 "titulo": "Diafragma Zama Gnd 19 96 C3 C1q St 034 450(usa) Dia-01-273",
 "fotos": "web",
-"cat_actual": "MLA455088"
+"cat_actual": "MLA455088",
+"categoria": "MLA413715",
+"cat_nombre": "Jardín > Repuestos > Carburadores",
+"extras": []
 },
 {
 "sku": "56200002",
 "item": "MLA2196388649",
 "titulo": "Cable Acelerador Cortacesped Mtd Conducto48 2/9  56200002",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "495B11101",
 "item": "MLA2195853367",
 "titulo": "Corta Corriente Batería Gener. Fema Ison 495b11101",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "18001168F",
 "item": "MLA2195805035",
 "titulo": "Cobertor Escape Fema 168f 18001168f",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA442377",
+"cat_nombre": "Agro Motor > Silenciadores",
+"extras": []
 },
 {
 "sku": "CO-07-028642",
 "item": "MLA2195803125",
 "titulo": "Niple 90ª 1/8 Gasm 1/8 Gas 26h Conico Comp.3 Hp Co-07-028642",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "693007250",
 "item": "MLA2195804749",
 "titulo": "Bornera Coneccion Compresor Tornillo 15 Hp Con Disipador",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "REP-03-166",
 "item": "MLA2195798687",
 "titulo": "Adaptador Cuchilla Universalaluminio Corto Fema Rep-03-166",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413701",
+"cat_nombre": "Jardín > Repuestos > Cuchillas",
+"extras": []
 },
 {
 "sku": "CO-07-805011",
 "item": "MLA2195203791",
 "titulo": "Tapa Cilindro Compresor Carter Seco 800w Co-07-805011",
 "fotos": "viejas",
-"cat_actual": "MLA388606"
+"cat_actual": "MLA388606",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CS3641",
 "item": "MLA2195204035",
 "titulo": "Volante Magnetico Cs 36 Cs3641",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-805009",
 "item": "MLA2195203765",
 "titulo": "Oring Flapper Compr Carter Seco 800w Co-07-805009",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-805010",
 "item": "MLA2195104671",
 "titulo": "Oring Tapa Cilindro Carter Seco 800w Co-07-805010",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-02470",
 "item": "MLA2195100727",
 "titulo": "Presostato 2 Hp Y 2,5 Hp 25 Y 50l Regu 2 Llave Salida 2",
 "fotos": "viejas",
-"cat_actual": "MLA413690"
+"cat_actual": "MLA413690",
+"categoria": "MLA442381",
+"cat_nombre": "Agro Motor > Otros",
+"extras": []
 },
 {
 "sku": "BC260M0015",
 "item": "MLA2195101849",
 "titulo": "Cater Motor Bc260 Fem 15+21 Comp  Bc260m0015",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC415M0061",
 "item": "MLA2195098767",
 "titulo": "Resorte Arranque Fema Bc 415 Bc415m0061",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA455591",
+"cat_nombre": "Jardín > Repuestos > Tapas de Arranque",
+"extras": []
 },
 {
 "sku": "BC415M0077",
 "item": "MLA2195098953",
 "titulo": "Bulon Filtro Aire 5 X 55 Mm Bc415m0077",
 "fotos": "viejas",
-"cat_actual": "MLA413425"
+"cat_actual": "MLA413425",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "CO-07-0244975",
 "item": "MLA2195099843",
 "titulo": "Presostato 3 A 10 Hp Compresor Fema 2f Co-07-0244975",
 "fotos": "web",
-"cat_actual": "MLA413690"
+"cat_actual": "MLA413690",
+"categoria": "MLA455573",
+"cat_nombre": "Accesorios para Compresores > Otros",
+"extras": []
 },
 {
 "sku": "5800A01",
 "item": "MLA2194718987",
 "titulo": "Cilindro Fema 5800 Solo 5800a01",
 "fotos": "viejas",
-"cat_actual": "MLA45504"
+"cat_actual": "MLA45504",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "95525",
 "item": "MLA2195097387",
 "titulo": "Chicler Alta 8 Hp Briggs & Stratton 95525",
 "fotos": "web",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA457244",
+"cat_nombre": "Agro Motor > Carburadores",
+"extras": []
 },
 {
 "sku": "A059-621801",
 "item": "MLA2195097683",
 "titulo": "Engranaje Fema Cortacerco A059-621801",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "A208202101",
 "item": "MLA2195097955",
 "titulo": "Bomba Aceite Fema Electrosierra 1700w A208202101",
 "fotos": "viejas",
-"cat_actual": "MLA455156"
+"cat_actual": "MLA455156",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "BC260M0051A",
 "item": "MLA2195098205",
 "titulo": "Porta Filtro Aire Fema Bc260 Con Cebador Y Tapa Bc260m0051a",
 "fotos": "viejas",
-"cat_actual": "MLA455147"
+"cat_actual": "MLA455147",
+"categoria": "MLA413603",
+"cat_nombre": "Jardín > Repuestos > Otros",
+"extras": []
 },
 {
 "sku": "5800B36",
 "item": "MLA2194719189",
 "titulo": "Cobertor Ventilacion Fema 5800 5800b36",
 "fotos": "viejas",
-"cat_actual": "MLA454954"
+"cat_actual": "MLA454954",
+"categoria": "MLA429067",
+"cat_nombre": "Jardín > Repuestos > Carcasas para Cortadoras",
+"extras": []
 }
 ]
