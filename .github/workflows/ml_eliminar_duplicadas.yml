@@ -7,7 +7,7 @@ on:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
       dry_run:
-        description: "1 = solo validar, 0 = republicar y eliminar las viejas"
+        description: "1 = solo validar, 0 = eliminar de verdad"
         default: "1"
 
 concurrency:
