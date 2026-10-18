@@ -1,0 +1,2725 @@
+[
+{
+"item": "MLA3797437694",
+"sku": "69606799",
+"motivo": "20 vendidos",
+"v30": 0,
+"vendidos": 20
+},
+{
+"item": "MLA1996535085",
+"sku": "69501132",
+"motivo": "8 vendidos",
+"v30": 2,
+"vendidos": 8
+},
+{
+"item": "MLA1982647625",
+"sku": "69420608",
+"motivo": "3 visitas/30d, 4 vendidos",
+"v30": 3,
+"vendidos": 4
+},
+{
+"item": "MLA2041556083",
+"sku": "69370216",
+"motivo": "393 visitas/30d, 3 vendidos",
+"v30": 393,
+"vendidos": 3
+},
+{
+"item": "MLA3881392014",
+"sku": "69502706",
+"motivo": "203 visitas/30d, 2 vendidos",
+"v30": 203,
+"vendidos": 2
+},
+{
+"item": "MLA1986890811",
+"sku": "69510504",
+"motivo": "5 visitas/30d, 2 vendidos",
+"v30": 5,
+"vendidos": 2
+},
+{
+"item": "MLA3792896520",
+"sku": "69351113",
+"motivo": "2 vendidos",
+"v30": 0,
+"vendidos": 2
+},
+{
+"item": "MLA1992370953",
+"sku": "69370213",
+"motivo": "253 visitas/30d, 1 vendidos",
+"v30": 253,
+"vendidos": 1
+},
+{
+"item": "MLA3810063216",
+"sku": "69370216",
+"motivo": "129 visitas/30d, 1 vendidos",
+"v30": 129,
+"vendidos": 1
+},
+{
+"item": "MLA3792890968",
+"sku": "69510504",
+"motivo": "91 visitas/30d, 1 vendidos",
+"v30": 91,
+"vendidos": 1
+},
+{
+"item": "MLA3796663348",
+"sku": "69370216",
+"motivo": "33 visitas/30d, 1 vendidos",
+"v30": 33,
+"vendidos": 1
+},
+{
+"item": "MLA3792891370",
+"sku": "69330132",
+"motivo": "31 visitas/30d, 1 vendidos",
+"v30": 31,
+"vendidos": 1
+},
+{
+"item": "MLA3769767856",
+"sku": "693001440",
+"motivo": "25 visitas/30d, 1 vendidos",
+"v30": 25,
+"vendidos": 1
+},
+{
+"item": "MLA3919209034",
+"sku": "69502230-1",
+"motivo": "25 visitas/30d, 1 vendidos",
+"v30": 25,
+"vendidos": 1
+},
+{
+"item": "MLA1977104103",
+"sku": "69372070",
+"motivo": "14 visitas/30d, 1 vendidos",
+"v30": 14,
+"vendidos": 1
+},
+{
+"item": "MLA1998071053",
+"sku": "W1000880",
+"motivo": "10 visitas/30d, 1 vendidos",
+"v30": 10,
+"vendidos": 1
+},
+{
+"item": "MLA3769772628",
+"sku": "69359688",
+"motivo": "8 visitas/30d, 1 vendidos",
+"v30": 8,
+"vendidos": 1
+},
+{
+"item": "MLA1992366275",
+"sku": "69500946",
+"motivo": "4 visitas/30d, 1 vendidos",
+"v30": 4,
+"vendidos": 1
+},
+{
+"item": "MLA1986879449",
+"sku": "69350203",
+"motivo": "3 visitas/30d, 1 vendidos",
+"v30": 3,
+"vendidos": 1
+},
+{
+"item": "MLA3770865538",
+"sku": "69360230",
+"motivo": "1 vendidos",
+"v30": 1,
+"vendidos": 1
+},
+{
+"item": "MLA3769612320",
+"sku": "367236",
+"motivo": "1 vendidos",
+"v30": 1,
+"vendidos": 1
+},
+{
+"item": "MLA3792891078",
+"sku": "69411170",
+"motivo": "1 vendidos",
+"v30": 1,
+"vendidos": 1
+},
+{
+"item": "MLA2005342297",
+"sku": "69420718",
+"motivo": "1 vendidos",
+"v30": 1,
+"vendidos": 1
+},
+{
+"item": "MLA1977011837",
+"sku": "69335240",
+"motivo": "1 vendidos",
+"v30": 0,
+"vendidos": 1
+},
+{
+"item": "MLA3784073336",
+"sku": "69420617",
+"motivo": "1 vendidos",
+"v30": 0,
+"vendidos": 1
+},
+{
+"item": "MLA3787400974",
+"sku": "69420619",
+"motivo": "1 vendidos",
+"v30": 0,
+"vendidos": 1
+},
+{
+"item": "MLA3796666428",
+"sku": "69439927",
+"motivo": "1 vendidos",
+"v30": 0,
+"vendidos": 1
+},
+{
+"item": "MLA3903897508",
+"sku": "W1000020",
+"motivo": "99 visitas/30d",
+"v30": 99,
+"vendidos": 0
+},
+{
+"item": "MLA3778464522",
+"sku": "69382026",
+"motivo": "97 visitas/30d",
+"v30": 97,
+"vendidos": 0
+},
+{
+"item": "MLA1992378749",
+"sku": "69370217",
+"motivo": "86 visitas/30d",
+"v30": 86,
+"vendidos": 0
+},
+{
+"item": "MLA3796663034",
+"sku": "F126",
+"motivo": "70 visitas/30d",
+"v30": 70,
+"vendidos": 0
+},
+{
+"item": "MLA2040735421",
+"sku": "69439922",
+"motivo": "67 visitas/30d",
+"v30": 67,
+"vendidos": 0
+},
+{
+"item": "MLA3787390176",
+"sku": "69370029",
+"motivo": "55 visitas/30d",
+"v30": 55,
+"vendidos": 0
+},
+{
+"item": "MLA1996538813",
+"sku": "69366121",
+"motivo": "50 visitas/30d",
+"v30": 50,
+"vendidos": 0
+},
+{
+"item": "MLA3784298168",
+"sku": "69378916",
+"motivo": "35 visitas/30d",
+"v30": 35,
+"vendidos": 0
+},
+{
+"item": "MLA3769866102",
+"sku": "69367162",
+"motivo": "29 visitas/30d",
+"v30": 29,
+"vendidos": 0
+},
+{
+"item": "MLA3796662928",
+"sku": "69550155",
+"motivo": "29 visitas/30d",
+"v30": 29,
+"vendidos": 0
+},
+{
+"item": "MLA1996535383",
+"sku": "69550100",
+"motivo": "28 visitas/30d",
+"v30": 28,
+"vendidos": 0
+},
+{
+"item": "MLA3769494536",
+"sku": "69382380",
+"motivo": "25 visitas/30d",
+"v30": 25,
+"vendidos": 0
+},
+{
+"item": "MLA1986891597",
+"sku": "69382026",
+"motivo": "25 visitas/30d",
+"v30": 25,
+"vendidos": 0
+},
+{
+"item": "MLA1996534831",
+"sku": "69379188",
+"motivo": "24 visitas/30d",
+"v30": 24,
+"vendidos": 0
+},
+{
+"item": "MLA3792890652",
+"sku": "69351070",
+"motivo": "23 visitas/30d",
+"v30": 23,
+"vendidos": 0
+},
+{
+"item": "MLA2040741263",
+"sku": "69380580",
+"motivo": "23 visitas/30d",
+"v30": 23,
+"vendidos": 0
+},
+{
+"item": "MLA3796663158",
+"sku": "69550178",
+"motivo": "22 visitas/30d",
+"v30": 22,
+"vendidos": 0
+},
+{
+"item": "MLA1996535197",
+"sku": "69503328",
+"motivo": "22 visitas/30d",
+"v30": 22,
+"vendidos": 0
+},
+{
+"item": "MLA3769768080",
+"sku": "69380560",
+"motivo": "21 visitas/30d",
+"v30": 21,
+"vendidos": 0
+},
+{
+"item": "MLA1977014175",
+"sku": "69372250",
+"motivo": "20 visitas/30d",
+"v30": 20,
+"vendidos": 0
+},
+{
+"item": "MLA3797022720",
+"sku": "69510504",
+"motivo": "20 visitas/30d",
+"v30": 20,
+"vendidos": 0
+},
+{
+"item": "MLA3792891008",
+"sku": "69504160",
+"motivo": "20 visitas/30d",
+"v30": 20,
+"vendidos": 0
+},
+{
+"item": "MLA1982939473",
+"sku": "800060",
+"motivo": "19 visitas/30d",
+"v30": 19,
+"vendidos": 0
+},
+{
+"item": "MLA3792891260",
+"sku": "69330160",
+"motivo": "19 visitas/30d",
+"v30": 19,
+"vendidos": 0
+},
+{
+"item": "MLA3787390140",
+"sku": "69354518",
+"motivo": "18 visitas/30d",
+"v30": 18,
+"vendidos": 0
+},
+{
+"item": "MLA1992369659",
+"sku": "69350220",
+"motivo": "17 visitas/30d",
+"v30": 17,
+"vendidos": 0
+},
+{
+"item": "MLA3769867002",
+"sku": "69372077",
+"motivo": "16 visitas/30d",
+"v30": 16,
+"vendidos": 0
+},
+{
+"item": "MLA1977190349",
+"sku": "69530520",
+"motivo": "16 visitas/30d",
+"v30": 16,
+"vendidos": 0
+},
+{
+"item": "MLA1986920747",
+"sku": "69378980",
+"motivo": "16 visitas/30d",
+"v30": 16,
+"vendidos": 0
+},
+{
+"item": "MLA1985879629",
+"sku": "69370213-V",
+"motivo": "16 visitas/30d",
+"v30": 16,
+"vendidos": 0
+},
+{
+"item": "MLA3797022302",
+"sku": "69550120",
+"motivo": "16 visitas/30d",
+"v30": 16,
+"vendidos": 0
+},
+{
+"item": "MLA1977349523",
+"sku": "56105568",
+"motivo": "15 visitas/30d",
+"v30": 15,
+"vendidos": 0
+},
+{
+"item": "MLA3784269880",
+"sku": "69510064",
+"motivo": "15 visitas/30d",
+"v30": 15,
+"vendidos": 0
+},
+{
+"item": "MLA1996535351",
+"sku": "69510536",
+"motivo": "15 visitas/30d",
+"v30": 15,
+"vendidos": 0
+},
+{
+"item": "MLA2041556079",
+"sku": "69370216",
+"motivo": "15 visitas/30d",
+"v30": 15,
+"vendidos": 0
+},
+{
+"item": "MLA3881147980",
+"sku": "69420610",
+"motivo": "15 visitas/30d",
+"v30": 15,
+"vendidos": 0
+},
+{
+"item": "MLA3769868704",
+"sku": "69366152",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA3787777734",
+"sku": "66366304",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA3797022312",
+"sku": "69370213",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA3796666594",
+"sku": "69502131",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA3796663180",
+"sku": "69510058",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA1997958273",
+"sku": "69550178",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA1996535013",
+"sku": "69370226",
+"motivo": "14 visitas/30d",
+"v30": 14,
+"vendidos": 0
+},
+{
+"item": "MLA3792891416",
+"sku": "69370213-V",
+"motivo": "13 visitas/30d",
+"v30": 13,
+"vendidos": 0
+},
+{
+"item": "MLA3797021938",
+"sku": "69370042",
+"motivo": "13 visitas/30d",
+"v30": 13,
+"vendidos": 0
+},
+{
+"item": "MLA3796662870",
+"sku": "69382322",
+"motivo": "13 visitas/30d",
+"v30": 13,
+"vendidos": 0
+},
+{
+"item": "MLA2133100521",
+"sku": "56101409",
+"motivo": "13 visitas/30d",
+"v30": 13,
+"vendidos": 0
+},
+{
+"item": "MLA1983003689",
+"sku": "69354518",
+"motivo": "13 visitas/30d",
+"v30": 13,
+"vendidos": 0
+},
+{
+"item": "MLA3769609796",
+"sku": "69382600",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA3769357356",
+"sku": "69501132",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA1977180259",
+"sku": "69366360",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA1977100561",
+"sku": "W1001120",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA1977099909",
+"sku": "69354180",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA3797022056",
+"sku": "69382312",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA1997957857",
+"sku": "69379135",
+"motivo": "12 visitas/30d",
+"v30": 12,
+"vendidos": 0
+},
+{
+"item": "MLA3769764660",
+"sku": "W1000880",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA1977188317",
+"sku": "69366116",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA3787777724",
+"sku": "69365855",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA3792890576",
+"sku": "69504154",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA3798895228",
+"sku": "69515100",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA1996535819",
+"sku": "69351125",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA1992369341",
+"sku": "69354518",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA1996534701",
+"sku": "80035220",
+"motivo": "11 visitas/30d",
+"v30": 11,
+"vendidos": 0
+},
+{
+"item": "MLA3770436162",
+"sku": "69515010",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1977349475",
+"sku": "56105566",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1977185353",
+"sku": "69380466",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1977109825",
+"sku": "69439916",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1977017045",
+"sku": "69501232",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1986539785",
+"sku": "69351048",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA3797026286",
+"sku": "69382221",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA3797022218",
+"sku": "69510534",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA3770436264",
+"sku": "W1000020",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA1998072423",
+"sku": "69500976",
+"motivo": "10 visitas/30d",
+"v30": 10,
+"vendidos": 0
+},
+{
+"item": "MLA3769609536",
+"sku": "69510158",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA1977189925",
+"sku": "69378850",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA1986917091",
+"sku": "69370216",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA3797021700",
+"sku": "69379135",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA3796662840",
+"sku": "69367254",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA3796662396",
+"sku": "69367162",
+"motivo": "9 visitas/30d",
+"v30": 9,
+"vendidos": 0
+},
+{
+"item": "MLA3770519730",
+"sku": "69363584",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA3769766704",
+"sku": "69502580",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA3769497680",
+"sku": "367234",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA1977471641",
+"sku": "69515020",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA1977179491",
+"sku": "69360394",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA1977107057",
+"sku": "69502186",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA3777876588",
+"sku": "69516020",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA3798898648",
+"sku": "69530518",
+"motivo": "8 visitas/30d",
+"v30": 8,
+"vendidos": 0
+},
+{
+"item": "MLA3770432136",
+"sku": "69366610",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1977473685",
+"sku": "69360040",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1977183057",
+"sku": "69503212",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1977100517",
+"sku": "W1001220",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1977013877",
+"sku": "69501490",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3778074060",
+"sku": "69420611",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1983003679",
+"sku": "69370024",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1983040079",
+"sku": "69370216",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1981781107",
+"sku": "69377055",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1985883049",
+"sku": "69350233",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3792890320",
+"sku": "69501132",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1992371259",
+"sku": "57071350",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3797022290",
+"sku": "69377015",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3797021928",
+"sku": "69372103",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3796663498",
+"sku": "69370930",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3796663156",
+"sku": "69382221",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1996535691",
+"sku": "69370024",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA1996535213",
+"sku": "69510412",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA2005910355",
+"sku": "69420624",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3769761796",
+"sku": "W1001090",
+"motivo": "7 visitas/30d",
+"v30": 7,
+"vendidos": 0
+},
+{
+"item": "MLA3769773252",
+"sku": "69369135",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3769770274",
+"sku": "69381423",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3769770098",
+"sku": "69370902",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3769610748",
+"sku": "69502150",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1977179015",
+"sku": "69510540",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1977010439",
+"sku": "69370213",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3774671134",
+"sku": "69420612",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3787777758",
+"sku": "69364265",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1992370923",
+"sku": "69360940",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3797022388",
+"sku": "69370213-V",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3797022330",
+"sku": "69500805",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3797022328",
+"sku": "69382372",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3796662854",
+"sku": "80035225",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3796437354",
+"sku": "69370024",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1996535775",
+"sku": "69510215",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1996535097",
+"sku": "69366230",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA2005936497",
+"sku": "69370893",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3769605210",
+"sku": "69354237",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1977179089",
+"sku": "69504160",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3778076222",
+"sku": "69354518",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA1983014179",
+"sku": "80035210",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3797022106",
+"sku": "69504160",
+"motivo": "6 visitas/30d",
+"v30": 6,
+"vendidos": 0
+},
+{
+"item": "MLA3769495740",
+"sku": "ATS-15KW",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3769357198",
+"sku": "57071670",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1977347229",
+"sku": "69354198",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1977349237",
+"sku": "56105418",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1977108645",
+"sku": "W1001200",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1977107991",
+"sku": "69372075",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1977010907",
+"sku": "57072030",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3778086848",
+"sku": "69366035",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3774671070",
+"sku": "69420709",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1982939261",
+"sku": "69361080",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1982936993",
+"sku": "69382278",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1982939017",
+"sku": "69351113",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1986916959",
+"sku": "800230",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3787401156",
+"sku": "69366355",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1992364517",
+"sku": "69370211",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1992370199",
+"sku": "57072016",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3797022660",
+"sku": "57071079",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3797022214",
+"sku": "69510063",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3797021704",
+"sku": "69370370",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3796663028",
+"sku": "69510420",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3796663000",
+"sku": "69510120",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3796662448",
+"sku": "69351192",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1998074447",
+"sku": "69510048",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1998070577",
+"sku": "69550210",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1996535169",
+"sku": "W506551",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA1996534881",
+"sku": "69439924",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3810140508",
+"sku": "800070",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA2040735149",
+"sku": "69370064",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3903897388",
+"sku": "66366463",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3919209038",
+"sku": "69502230-1",
+"motivo": "5 visitas/30d",
+"v30": 5,
+"vendidos": 0
+},
+{
+"item": "MLA3770432676",
+"sku": "W1000960",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3769770320",
+"sku": "69381380",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3769770788",
+"sku": "57020021",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3769615864",
+"sku": "69438122",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977618509",
+"sku": "69363556",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977349273",
+"sku": "56105416",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977183191",
+"sku": "ATS-20KW",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977177833",
+"sku": "69372200",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977178291",
+"sku": "69504164",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977110137",
+"sku": "69370217",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977108151",
+"sku": "69364490",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977020421",
+"sku": "69360396",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1977016087",
+"sku": "69354736",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1983029065",
+"sku": "69606580",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1986552235",
+"sku": "69380736",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1986891531",
+"sku": "80035160",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1986527481",
+"sku": "69330110",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1985882755",
+"sku": "69502129",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1986527665",
+"sku": "69502131",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1992378631",
+"sku": "69381830",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3797022324",
+"sku": "69515175",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3797022224",
+"sku": "VHB02-38-6M",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3797022216",
+"sku": "69354180",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3797021670",
+"sku": "69359918",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3796666492",
+"sku": "M100040",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3796662838",
+"sku": "69366238",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA1996534563",
+"sku": "69510066",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA2041555011",
+"sku": "69502716",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA2196848847",
+"sku": "QUILMES01#ABASTOMARKET",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3770515902",
+"sku": "69502230-1",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3769764330",
+"sku": "69364494",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3796663184",
+"sku": "80035220",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3881391900",
+"sku": "69502720",
+"motivo": "4 visitas/30d",
+"v30": 4,
+"vendidos": 0
+},
+{
+"item": "MLA3770580832",
+"sku": "56105472",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3770010642",
+"sku": "0601072XG0-000",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3769765826",
+"sku": "69379188",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3769764570",
+"sku": "57072048",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3769607058",
+"sku": "69439927",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3769497754",
+"sku": "ATS-30KW",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977618871",
+"sku": "367235",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977475539",
+"sku": "69364054",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977473297",
+"sku": "69401121",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977347387",
+"sku": "56105110",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977347209",
+"sku": "69354195",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977347549",
+"sku": "56105115",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977183569",
+"sku": "VH38-6",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977184663",
+"sku": "69510412",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977111033",
+"sku": "VH50-6",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977105411",
+"sku": "69510120",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977107823",
+"sku": "69502706",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977103677",
+"sku": "69438120",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977020761",
+"sku": "69535078",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977016841",
+"sku": "800350",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977016605",
+"sku": "69364395",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977013019",
+"sku": "800240",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977009721",
+"sku": "69515175",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3778086658",
+"sku": "69440110",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1982945665",
+"sku": "69381207",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1982939393",
+"sku": "69360058",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1982648007",
+"sku": "69359375",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3784262960",
+"sku": "800144",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3783785630",
+"sku": "69382010",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3784073324",
+"sku": "69350225",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1986527341",
+"sku": "69382215",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1985858095",
+"sku": "69502138",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1985854957",
+"sku": "06011B50H0-000",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1992378623",
+"sku": "69354736",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3792892066",
+"sku": "69360070",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3792891002",
+"sku": "69360230",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1992370829",
+"sku": "69500805",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1992369599",
+"sku": "69335240",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1992369353",
+"sku": "69515016",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797022274",
+"sku": "69372250",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797022266",
+"sku": "69354736",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797022066",
+"sku": "69380582",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797021786",
+"sku": "69360118",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797021706",
+"sku": "69510400",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3796665180",
+"sku": "69502584",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3796663354",
+"sku": "06013A80H0-000",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3796663128",
+"sku": "69500803",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3796662922",
+"sku": "69510162",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3792896508",
+"sku": "69500950",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1998072373",
+"sku": "69530518",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1998069937",
+"sku": "VH160-50",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1997957151",
+"sku": "060194D0H0-000",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535801",
+"sku": "69330160",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535495",
+"sku": "69510215",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535449",
+"sku": "69381870",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535215",
+"sku": "69380331",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535191",
+"sku": "69370893",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535157",
+"sku": "69383810",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996534795",
+"sku": "69380580",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996534895",
+"sku": "69370228",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996534783",
+"sku": "69360177",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3810065320",
+"sku": "69370024",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA2006332841",
+"sku": "69382026",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3869816868",
+"sku": "69366035",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA2040735143",
+"sku": "69364131",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA2133100509",
+"sku": "56101413",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA4069937864",
+"sku": "69510542",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1977618581",
+"sku": "69501121",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797021940",
+"sku": "69501056",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA1996535811",
+"sku": "69320600-EF",
+"motivo": "3 visitas/30d",
+"v30": 3,
+"vendidos": 0
+},
+{
+"item": "MLA3797021900",
+"sku": "69503260",
+"motivo": "de mayor precio (activa)",
+"v30": 2,
+"vendidos": 0
+},
+{
+"item": "MLA1977185643",
+"sku": "69380460",
+"motivo": "de mayor precio (activa)",
+"v30": 2,
+"vendidos": 0
+},
+{
+"item": "MLA3919209012",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA1996534793",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA1996535211",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA3769864788",
+"sku": "69380468",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA3797024852",
+"sku": "69380466",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA1996535045",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA3797024396",
+"sku": "69380396",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA3797025078",
+"sku": "F126",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA1977100611",
+"sku": "F126",
+"motivo": "de mayor precio (activa)",
+"v30": 1,
+"vendidos": 0
+},
+{
+"item": "MLA1996534809",
+"sku": "69380516",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024610",
+"sku": "69503260",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797022086",
+"sku": "69503212",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797021604",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3919209014",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534889",
+"sku": "69510280",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769497032",
+"sku": "69503260",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024426",
+"sku": "69380516",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797022068",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2040735197",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537943",
+"sku": "69503212",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769767988",
+"sku": "69380516",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024386",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3919209016",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996535163",
+"sku": "69380496",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665196",
+"sku": "69510280",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797022060",
+"sku": "69380486",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769865366",
+"sku": "69380514",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797021654",
+"sku": "69380494",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769761970",
+"sku": "69510280",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024858",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2040735199",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534719",
+"sku": "69380484",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797021664",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA4063509650",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537853",
+"sku": "69380496",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977185501",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3869816896",
+"sku": "69380512",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534799",
+"sku": "69380478",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537899",
+"sku": "69380486",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534725",
+"sku": "69380468",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977190011",
+"sku": "69380496",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665156",
+"sku": "69380494",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797022082",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2040735113",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977185561",
+"sku": "69380486",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996535199",
+"sku": "69380460",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3881148180",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024384",
+"sku": "69380484",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769768390",
+"sku": "69380494",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796662876",
+"sku": "69380466",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769873120",
+"sku": "69382306",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769865172",
+"sku": "69380484",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796662402",
+"sku": "69380456",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665158",
+"sku": "69380478",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024424",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA4062823088",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534791",
+"sku": "69380444",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024390",
+"sku": "69380468",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769768038",
+"sku": "69380478",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769768002",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA4062823086",
+"sku": "69380482",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665554",
+"sku": "69380460",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024870",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3869816820",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2005910821",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537465",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3881148178",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534737",
+"sku": "69380396",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977183739",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3869816818",
+"sku": "69502632",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665106",
+"sku": "69380456",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769768304",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3881148182",
+"sku": "69380448",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1998965541",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024414",
+"sku": "69380444",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3798894828",
+"sku": "69550210",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534685",
+"sku": "69380382",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769865292",
+"sku": "69380456",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769768544",
+"sku": "69380444",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3799738928",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797024624",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977180689",
+"sku": "69550210",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537913",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2005936607",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3797021688",
+"sku": "69502638",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1977185019",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2005936605",
+"sku": "69380440",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769495794",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3792891106",
+"sku": "69510684",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769773000",
+"sku": "69380396",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996537411",
+"sku": "69380382",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996535359",
+"sku": "69502628",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996535193",
+"sku": "69382314",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996534993",
+"sku": "69502621",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA2040735217",
+"sku": "69502621",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA1996535005",
+"sku": "69502605",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3769869784",
+"sku": "69380382",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+},
+{
+"item": "MLA3796665178",
+"sku": "69379188",
+"motivo": "de mayor precio (activa)",
+"v30": 0,
+"vendidos": 0
+}
+]
