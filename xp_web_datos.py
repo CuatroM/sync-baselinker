@@ -62,13 +62,14 @@ def producto(u, cod):
     for k, v in re.findall(r'(?is)<th class="label">(.*?)</th>\s*<td class="data[^"]*">(.*?)</td>', t):
         adic[limpio(k)] = limpio(v)
     fotos = []
-    for f in re.findall(r'https?://[^"\'\s]+/media/catalog/product/cache/\d+/image/800x800/[0-9a-f]+/([^"\'\s]+\.(?:jpe?g|png))', t, re.I):
-        if f not in fotos:
-            fotos.append(f)
-    if not fotos:
-        for f in re.findall(r'https?://[^"\'\s]+/media/catalog/product/(?!cache)([^"\'\s]+\.(?:jpe?g|png))', t, re.I):
-            if f not in fotos:
-                fotos.append(f)
+    # todas las imágenes del producto (galería incluida), como original: /media/catalog/product/x/y/archivo
+    for d1, d2, f in re.findall(r'/media/catalog/product/(?:cache/\d+/(?:image|thumbnail)/(?:\d+x\d+/)?[0-9a-f]{32}/)?'
+                                r'([A-Za-z0-9_])/([A-Za-z0-9_])/([^"\'\s/]+\.(?:jpe?g|png))', t, re.I):
+        if "placeholder" in f.lower():
+            continue
+        k = f"{d1}/{d2}/{f}"
+        if k not in fotos:
+            fotos.append(k)
     return {"url": u, "nombre": nombre, "corta": corta, "detalle": det, "adicional": adic,
             "fotos": [f"{WEB}/media/catalog/product/{f}" for f in fotos]}
 
