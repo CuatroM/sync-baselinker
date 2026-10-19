@@ -17,7 +17,7 @@ for c in (os.environ.get("CODIGOS") or "B420").split(","):
     r = s.get(u, timeout=60)
     open(f"salida/busq_{c}.html", "w", encoding="utf-8").write(r.text)
     links = []
-    for m in re.finditer(r'<h2 class="product-name"><a href="([^"]+)"', r.text):
+    for m in re.finditer(r'<h3 class="product-name">\s*<a href="([^"]+)"', r.text):
         links.append(m.group(1))
     if not links:
         links = sorted(set(re.findall(rf'href="({re.escape(WEB)}/[a-z0-9\-]+\.html)"', r.text)))[:5]
