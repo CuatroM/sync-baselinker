@@ -1,0 +1,42 @@
+name: BaseLinker - Exportar inventario (solo lectura)
+
+on:
+  workflow_dispatch:
+    inputs:
+      buscar:
+        description: "Texto del nombre del inventario"
+        default: "EXTRAPOWER"
+
+permissions:
+  contents: write
+
+jobs:
+  exportar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Exportar
+        env:
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          BUSCAR: ${{ github.event.inputs.buscar }}
+        run: |
+          set -o pipefail
+          python bl_exportar_inventario.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan diagnostico
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Exportar inventario BaseLinker"
+          git push -qf origin diagnostico
