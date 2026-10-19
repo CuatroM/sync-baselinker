@@ -392,7 +392,27 @@ RUBROS_FAM = {
 }
 
 
+def descripcion_extrapower(f):
+    """Descripción para productos de EXTRAPOWER (sin textos de FEMA)."""
+    marca = f.get("marca") or ""
+    original = f" {marca}" if marca and marca != "Genérica" else ""
+    uso = f.get("uso_pdf") or f"{f.get('titulo') or f['nombre']}, producto{original} de calidad para uso profesional y hogar."
+    lineas = [f["nombre"].upper(), "", uso, "", "CARACTERÍSTICAS"]
+    for k, v in f["specs"].items():
+        if k == "Marca" and not original:
+            continue
+        lineas.append(f"• {k}: {fmt_valor(v)}")
+    lineas += ["", "¿POR QUÉ COMPRARNOS?",
+               "Somos una ferretería con más de 70 años en el rubro. Producto nuevo"
+               + (f" y original{original}" if original else "") + " con 6 MESES DE GARANTÍA y atención personalizada "
+               "antes y después de la compra.",
+               "", "¡Consultanos antes de comprar, respondemos rápido!"]
+    return "\n".join(lineas)
+
+
 def descripcion(f):
+    if f.get("proveedor") == "EXTRAPOWER":
+        return descripcion_extrapower(f)
     uso, rubros = USOS.get(f["familia"], ("", ""))
     if not uso:
         uso = f.get("uso_pdf") or f"{f.get('titulo') or f['nombre']}, producto original {f.get('marca') or 'FEMA'} de calidad profesional."
