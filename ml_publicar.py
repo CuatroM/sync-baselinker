@@ -28,7 +28,9 @@ from drive.carpeta import descargar, listar
 from ml.cliente import ML, log
 from ml import fichas_map as fm
 
-SUFIJO = "#FEMA"
+PROVEEDOR = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
+XP = PROVEEDOR == "EXTRAPOWER"
+SUFIJO = "#EXTRAPOWER" if XP else "#FEMA"
 dry = os.environ.get("DRY_RUN", "1") == "1"
 _sk = os.environ["SKUS"].strip()
 if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
@@ -113,6 +115,8 @@ REGLAS_CAT = [
     (r"^Pico Boquilla", None, "pico airless para maquina de pintar"),
 ]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
+if XP:   # EXTRAPOWER también vende hogar, camping y electro (anafes, calefones, iluminación)
+    RAICES_OK |= {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac.", "Deportes y Fitness"}
 RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
     "Electrobombas": {"Hogar, Muebles y Jardín"},
     "Repuestos": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
@@ -313,11 +317,11 @@ def elegir_categoria(f, t):
 
 import glob
 fichas = {}
-for _arch in sorted(glob.glob("datos/fichas_*.json")):
+for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/fichas_*.json")):
     for _f in json.load(open(_arch, encoding="utf-8")):
         fichas.setdefault(_f["sku"], _f)
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
-b = cfg["baselinker"]
+b = cfg["extrapower"] if XP else cfg["baselinker"]
 
 # ---------------- primero la autorización de Mercado Libre (el código vence en minutos)
 ml = ML(os.environ.get("ML_CODIGO"))
@@ -330,11 +334,17 @@ por_sku = {sync.normalizar_codigo(p.get("sku")): p for p in cat_bl.values()}
 # ---------------- IVA por SKU desde el Excel de FEMA (columna IMPUESTOS)
 import io
 import pandas as pd
-_xls = pd.read_excel(io.BytesIO(sync.descargar_lista(cfg)), dtype=object)
-_xls.columns = [str(c).strip().upper() for c in _xls.columns]
-IVA = {sync.normalizar_codigo(r["SKU"]): r.get("IMPUESTOS") for _, r in _xls.iterrows()}
-MULT = float(cfg.get("reglas", {}).get("multiplicador_precio", 1) or 1)
-PRECIO_XLS = {sync.normalizar_codigo(r["SKU"]): sync.a_numero(r.get("PRECIO MAYORISTA")) for _, r in _xls.iterrows()}
+if XP:   # EXTRAPOWER: lista de precios del proveedor (LISTA +IVA, IVA 21 %)
+    _lx = json.load(open("datos/extrapower_lista.json", encoding="utf-8"))
+    IVA = {sync.normalizar_codigo(x["cod"]): 21 for x in _lx}
+    PRECIO_XLS = {sync.normalizar_codigo(x["cod"]): float(x["lista"] or 0) for x in _lx}
+    MULT = 1
+else:
+    _xls = pd.read_excel(io.BytesIO(sync.descargar_lista(cfg)), dtype=object)
+    _xls.columns = [str(c).strip().upper() for c in _xls.columns]
+    IVA = {sync.normalizar_codigo(r["SKU"]): r.get("IMPUESTOS") for _, r in _xls.iterrows()}
+    MULT = float(cfg.get("reglas", {}).get("multiplicador_precio", 1) or 1)
+    PRECIO_XLS = {sync.normalizar_codigo(r["SKU"]): sync.a_numero(r.get("PRECIO MAYORISTA")) for _, r in _xls.iterrows()}
 
 # ---------------- datos extra por SKU (por nombre de atributo de Mercado Libre)
 EXTRA = {
@@ -359,12 +369,14 @@ for linea in (os.environ.get("EXTRA") or "").split(";"):
         EXTRA.setdefault(partes[0], {}).update(dict(x.split("=", 1) for x in partes[1:] if "=" in x))
 
 # ---------------- fotos y fichas en Drive
-fotos = [x for x in listar(os.environ["DRIVE_FOTOS"], profundidad=0) if not x["carpeta"]]
-fichas_img = [x for x in listar(os.environ["DRIVE_FICHAS"], profundidad=0) if not x["carpeta"]]
+fotos = [] if XP else [x for x in listar(os.environ["DRIVE_FOTOS"], profundidad=0) if not x["carpeta"]]
+fichas_img = [] if XP else [x for x in listar(os.environ["DRIVE_FICHAS"], profundidad=0) if not x["carpeta"]]
 EXT = (".jpg", ".jpeg", ".png", ".webp")
 
 
 def imagenes(sku):
+    if XP:   # EXTRAPOWER: fotos de la web del proveedor (guardadas en la ficha)
+        return [{"nombre": u.rsplit("/", 1)[-1], "url": u} for u in (fichas.get(sku) or {}).get("fotos") or []][:10]
     def ok(n, extra=""):
         base, ext = os.path.splitext(n)
         return ext.lower() in EXT and re.fullmatch(rf"{re.escape(sku)}{extra}", base, re.I)
@@ -510,7 +522,7 @@ for sku in skus:
             raise RuntimeError("no hay ficha cargada para este SKU")
         # regla: solo se publica lo que existe en la lista de precios de FEMA (de donde salen precio y stock)
         if sync.normalizar_codigo(sku) not in PRECIO_XLS:
-            fila["resultado"] = "EXCLUIDO: no figura en la lista de precios de FEMA"
+            fila["resultado"] = f"EXCLUIDO: no figura en la lista de precios de {PROVEEDOR}"
             log(f"{sku}: {fila['resultado']}")
             res.append(fila)
             continue
@@ -542,7 +554,7 @@ for sku in skus:
             m = PRECIO_XLS.get(sync.normalizar_codigo(sku))
             base, origen = (round(m * MULT, 2), "Excel FEMA") if m else (0, "")
         if base <= 0:
-            raise RuntimeError("sin precio: no está en BaseLinker ni en el Excel de FEMA")
+            raise RuntimeError(f"sin precio: no está en BaseLinker ni en la lista de {PROVEEDOR}")
         precio = round(base * (1 + margen / 100), 2)
         t = titulo(f)
         cat = elegir_categoria(f, t)
@@ -554,7 +566,7 @@ for sku in skus:
                       "values": [{"id": v.get("id"), "name": v.get("name")} for v in a.get("values") or []]}
                      for a in ml.get(f"/categories/{cat}/attributes")]
         attrs = fm.atributos_para(f, cat_attrs)
-        attrs.update({"BRAND": f.get("marca") or "FEMA", "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
+        attrs.update({"BRAND": f.get("marca") or PROVEEDOR.title(), "MODEL": f["specs"].get("Modelo") or sku, "SELLER_SKU": sku + SUFIJO,
                       "PART_NUMBER": sku, "MPN": sku})
         if GTIN.get(sku):
             attrs["GTIN"] = GTIN[sku]["gtin"]
@@ -594,13 +606,13 @@ for sku in skus:
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
                   and a["id"] not in attrs and a["id"] not in ("ITEM_CONDITION",)]
         imgs = imagenes(sku)
-        if not [x for x in imgs if "_ficha" not in x["nombre"].lower()]:
+        if not XP and not [x for x in imgs if "_ficha" not in x["nombre"].lower()]:
             # producto sin foto propia: imagen genérica de la caja FEMA (+ ficha si existe)
             caja = [x for x in fotos if os.path.splitext(x["nombre"])[0].lower() == "caja_fema"
                     and os.path.splitext(x["nombre"])[1].lower() in EXT]
             imgs = caja[:1] + imgs
         if not imgs:
-            raise RuntimeError("no hay fotos en Drive para este SKU")
+            raise RuntimeError("no hay fotos para este SKU" + ("" if XP else " en Drive"))
         fila["iva"] = attrs.get("VALUE_ADDED_TAX")
         fila["origen_precio"] = origen
         fila["opciones_obligatorios"] = " || ".join(
@@ -630,7 +642,15 @@ for sku in skus:
 
         def subir(x):
             import time
-            datos = descargar(x["id"])
+            if x.get("url"):
+                import requests as _rq
+                _r = _rq.get(x["url"], timeout=60, headers={"User-Agent": "Mozilla/5.0"})
+                if _r.status_code != 200 or len(_r.content) < 2000:
+                    log(f"{sku}: no pude bajar {x['url']}: {_r.status_code}")
+                    return None
+                datos = _r.content
+            else:
+                datos = descargar(x["id"])
             nombre = x["nombre"]
             for intento in range(3):
                 up = ml.pedir("POST", "/pictures/items/upload", files={"file": (nombre, datos)})

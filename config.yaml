@@ -59,3 +59,8 @@ baselinker:
   # La sincronización compara "SKU del Excel + sufijo" y agrega el sufijo a los que no lo tengan.
   sufijo_sku: "#FEMA"
   max_sufijos_por_ejecucion: 1500   # tope por corrida programada (~18 min a 85 pedidos/min)
+
+# Segundo proveedor: EXTRAPOWER (lo publica ml_publicar.py con PROVEEDOR=EXTRAPOWER; solo lee BaseLinker)
+extrapower:
+  inventory_id: 65209        # INVENTARIO COMPLETO EXTRAPOWER 2026 MATIAS
+  price_group_id: 66282      # precio LISTA +IVA del Excel del proveedor
