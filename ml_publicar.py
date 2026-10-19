@@ -37,6 +37,9 @@ if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
     skus = json.load(open(f"datos/{_sk[1:]}.json", encoding="utf-8"))
 else:
     skus = [s.strip() for s in _sk.split(",") if s.strip()]
+if not skus:
+    raise SystemExit("No se indicaron SKUs: completá el campo skus (por ejemplo @xp_prueba)")
+print(f"{len(skus)} SKUs a procesar ({PROVEEDOR})", flush=True)
 margen = float(os.environ["MARGEN"].replace(",", ".").replace("%", ""))
 tipo = os.environ.get("TIPO", "gold_special")            # gold_special = Clásica
 envio = os.environ.get("ENVIO", "me2")
