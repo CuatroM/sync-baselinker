@@ -652,6 +652,13 @@ for sku in skus:
                     log(f"{sku}: no pude bajar {x['url']}: {_r.status_code}")
                     return None
                 datos = _r.content
+                try:   # ML pide mínimo 500 px: las fotos chicas de la web se agrandan antes de subir
+                    import io as _io
+                    from PIL import Image
+                    if max(Image.open(_io.BytesIO(datos)).size) < 500:
+                        datos = agrandar(datos)
+                except Exception:
+                    pass
             else:
                 datos = descargar(x["id"])
             nombre = x["nombre"]
