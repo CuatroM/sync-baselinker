@@ -406,6 +406,11 @@ def imagenes(sku):
 
 
 def texto_ml(t):
+    for a, b2 in (("⁻¹", "-1"), ("⁻", "-"), ("¹", "1"), ("²", "2"), ("³", "3"), ("−", "-"), ("…", "..."),
+                  ("\u200b", ""), ("\xa0", " ")):
+        t = t.replace(a, b2)
+    # ML solo acepta texto plano: se descarta cualquier símbolo raro que quede (emojis, flechas, etc.)
+    t = "".join(c for c in t if c in "\n\t•" or (" " <= c <= "~") or ("\xa1" <= c <= "\xff"))
     for a, b2 in (("≤", "hasta "), ("≥", "desde "), ("±", "+/-"), ("’", "'"), ("“", '"'), ("”", '"'),
                   ("–", "-"), ("—", "-"), ("×", "x"), ("Μm", "micrones"), ("µm", "micrones"), ("μm", "micrones"),
                   ("Μ", "M"), ("µ", "u"), ("μ", "u"), ("<", "hasta "), (">", "desde ")):
