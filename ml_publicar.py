@@ -418,10 +418,46 @@ def sin_gtin(r):
     return r.status_code not in (200, 201, 204) and "[GTIN]" in r.text
 
 
+def _sa(x):
+    return unicodedata.normalize("NFKD", str(x).lower()).encode("ascii", "ignore").decode()
+
+
+# valor por defecto cuando el texto no dice nada (atributo: palabras a buscar entre las opciones, en orden)
+DEFECTO_OPC = {
+    "POWER_SUPPLY_TYPE": ["corriente", "electric", "cable"],
+    "HAND_SAW_TYPE": ["arco"], "FAUCET_CONTROL_TYPE": ["monocomando"], "UTILITY_KNIVE_TYPE": ["retractil", "trincheta"],
+    "HAND_PLANE_TYPE": ["manual", "carpinter"], "IS_THERMIC": ["no"], "INCLUDES_CARTRIDGE": ["no"],
+    "TOOL_TYPE": ["manual"], "BRICK_TYPE": ["comun", "macizo"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
+    "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": [], "CUTTING_BLADES_NUMBER": ["1"],
+}
+
+
+def completar_por_texto(attrs, req, f, t):
+    """EXTRAPOWER: obligatorios de lista cerrada. Elige la opción que aparece en el título/ficha;
+    si no aparece ninguna, usa el valor por defecto razonable de DEFECTO_OPC."""
+    texto = _sa(" ".join([t, f.get("nombre", ""), f.get("uso_pdf", ""), " ".join(f"{k} {v}" for k, v in f["specs"].items())]))
+    for aid, a in req.items():
+        if aid in attrs or not a.get("values"):
+            continue
+        ops = [v["name"] for v in a["values"] if v.get("name")]
+        if aid == "POWER_SUPPLY_TYPE":
+            pref = (["bateria", "recargable", "inalambric"] if re.search(r"recargable|bateria|inalambric|\b\d+\s*v\b(?!.*220)", texto)
+                    else ["neumatic"] if "neumatic" in texto else DEFECTO_OPC[aid])
+            el = next((o for p in pref for o in ops if p in _sa(o)), None)
+        else:
+            el = next((o for o in sorted(ops, key=len, reverse=True) if len(_sa(o)) > 2 and re.search(rf"\b{re.escape(_sa(o))}", texto)), None)
+            if not el:
+                el = next((o for p in DEFECTO_OPC.get(aid, []) for o in ops if _sa(o).startswith(p) or p in _sa(o)), None)
+        if el:
+            attrs[aid] = el
+
+
 def completar_obligatorios(attrs, cat_attrs, f, t):
     """Atributos obligatorios con opciones cerradas que se deducen del título / marca."""
     tl = t.lower()
     req = {a["id"]: a for a in cat_attrs if (a.get("tags") or {}).get("required")}
+    if XP:
+        completar_por_texto(attrs, req, f, t)
     def poner(aid, val):
         if aid in req and aid not in attrs and val:
             ops = [v["name"] for v in req[aid].get("values") or []]

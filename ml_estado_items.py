@@ -13,7 +13,7 @@ ids = [x["item"] for x in lista]
 info = {}
 for i in range(0, len(ids), 20):
     for x in ml.get("/items", ids=",".join(ids[i:i + 20]),
-                    attributes="id,status,sub_status,tags,title,category_id,attributes,seller_custom_field,last_updated"):
+                    attributes="id,status,sub_status,tags,title,category_id,attributes,seller_custom_field,last_updated,pictures"):
         b = x.get("body") or {}
         info[b.get("id")] = (x.get("code"), b)
 for x in lista:
@@ -21,7 +21,8 @@ for x in lista:
     filas.append({"publicacion": x["item"], "sku": x["sku"], "titulo": x["titulo"], "http": code,
                   "estado": b.get("status"), "sub_estado": ",".join(b.get("sub_status") or []),
                   "sku_ml": sku_de(b) if b else "", "tags": ",".join(t for t in (b.get("tags") or []) if "poor" in t or "review" in t or "moderat" in t),
-                  "ultima_modificacion": b.get("last_updated")})
+                  "ultima_modificacion": b.get("last_updated"), "fotos": len(b.get("pictures") or []),
+                  "fotos_ok": sum(1 for p in b.get("pictures") or [] if (p.get("max_size") or p.get("size")) and "-F" not in (p.get("id") or "")) })
 # motivo de la moderación (API de infracciones de ML)
 for x in filas:
     if x["estado"] != "under_review":
