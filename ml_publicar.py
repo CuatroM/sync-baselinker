@@ -455,10 +455,13 @@ DEFECTO_OPC = {
     "POWER_SUPPLY_TYPE": ["corriente", "electric", "cable"],
     "HAND_SAW_TYPE": ["carpintero"], "FAUCET_CONTROL_TYPE": ["monocomando"],
     "UTILITY_KNIVE_TYPE": ["hoja segmentada", "retractil"], "HAND_PLANE_TYPE": ["bolsillo"], "IS_THERMIC": ["no"],
-    "INCLUDES_CARTRIDGE": ["no"], "TOOL_TYPE": ["manual"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
-    "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": ["escobillon", "escoba"], "MOUNTING_TYPE": ["de pie"],
+    "INCLUDES_CARTRIDGE": ["no"], "TOOL_TYPE": ["cincel", "manual"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
+    "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": ["escobillon", "escoba", "regaton"], "MOUNTING_TYPE": ["de pie"],
     "REQUIRES_ASSEMBLY": ["no"], "INCLUDES_ASSEMBLY_MANUAL": ["no"], "IS_FOLDABLE": ["no"],
-    "AIR_PUMP_TYPE": ["mano", "manual", "pie"], "GENDER": ["unisex"],
+    "AIR_PUMP_TYPE": ["mano", "manual", "pie"], "GENDER": ["unisex", "sin genero"],
+    "SCREW_TYPE": ["autoperforante"], "APPLICATION": ["agua"], "WALL_ANCHOR_PLUG_TYPE": ["universal"],
+    "ORGANIZER_TYPE": ["caja"], "RODENT_TRAP_TYPE": ["de resorte"], "FAN_TYPE": ["de piso"],
+    "ELECTRIC_SHOWER_HEAD_TYPE": ["fijo"],
 }
 
 
@@ -481,6 +484,12 @@ def completar_por_texto(attrs, req, f, t):
             pref = (["bateria", "recargable", "inalambric"] if re.search(r"recargable|bateria|inalambric|\b\d+\s*v\b(?!.*220)", texto)
                     else ["neumatic"] if "neumatic" in texto else DEFECTO_OPC[aid])
             el = next((o for p in pref for o in ops if p in _sa(o)), None)
+        elif aid == "SCREW_TYPE" and "madera" in texto:
+            el = next((o for o in ops if "madera" in _sa(o)), None)
+        elif aid == "WALL_ANCHOR_PLUG_TYPE" and re.search(r"tope|expans", texto):
+            el = next((o for o in ops if "expans" in _sa(o)), None)
+        elif aid == "RODENT_TRAP_TYPE" and re.search(r"pega|adhes", texto):
+            el = next((o for o in ops if "adhes" in _sa(o)), None)
         elif aid == "UTILITY_KNIVE_TYPE" and "circular" in texto:
             el = next((o for o in ops if "rotativ" in _sa(o)), None)
         else:
