@@ -45,7 +45,8 @@ for x in filas:
     x["motivo"] = " || ".join(motivos)[:600]
 os.makedirs("salida", exist_ok=True)
 with open("salida/estado_items.csv", "w", newline="", encoding="utf-8-sig") as f:
-    w = csv.DictWriter(f, fieldnames=list(filas[0].keys()), delimiter=";")
+    campos = list(dict.fromkeys(k for x in filas for k in x))
+    w = csv.DictWriter(f, fieldnames=campos, delimiter=";", restval="")
     w.writeheader()
     w.writerows(filas)
 log("Estados: " + str(Counter(f"{x['estado']} / {x['sub_estado']}" for x in filas).most_common()))
