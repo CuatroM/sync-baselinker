@@ -34281,8 +34281,11 @@
 "Voltaje": "220 V",
 "Presentación de venta": "Por unidad"
 },
-"fotos": [],
-"excluir": "sin fotos en la web",
+"fotos": [
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/c/-/c-883.jpg",
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/c/-/c-883_otra.jpg"
+],
+"excluir": "",
 "web": "https://www.extrapowersa.com.ar/compresor-mini-para-vehiculo-220v.html",
 "catalogo": "VERSA p.32: COMPRESOR DE AIRE / Incluye: / - 3 picos diferentes. / - Pistola para inflar / con manómetro.",
 "stock_proveedor": 2,
@@ -50550,8 +50553,12 @@
 "Presentación": "Unidad",
 "Presentación de venta": "Por unidad"
 },
-"fotos": [],
-"excluir": "sin fotos en la web",
+"fotos": [
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8477-2.jpg",
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8477-1.jpg",
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8477-3.jpg"
+],
+"excluir": "",
 "web": "https://www.extrapowersa.com.ar/manija-ministerio-aluminio-blanco-extra-power.html",
 "catalogo": "",
 "stock_proveedor": 2,
@@ -50580,8 +50587,12 @@
 "Presentación": "Unidad",
 "Presentación de venta": "Por unidad"
 },
-"fotos": [],
-"excluir": "sin fotos en la web",
+"fotos": [
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8478-1.jpg",
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8478-2.jpg",
+"https://www.extrapowersa.com.ar/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/n/a/na8478-3.jpg"
+],
+"excluir": "",
 "web": "https://www.extrapowersa.com.ar/manija-ministerio-de-aluminio-negra-extra-power.html",
 "catalogo": "",
 "stock_proveedor": 2,
