@@ -28,6 +28,7 @@ jobs:
           DESDE: ${{ github.event.inputs.desde }}
           LIMITE: ${{ github.event.inputs.limite }}
           CODIGOS: ${{ github.event.inputs.codigos }}
+          CANDIDATOS: "1"
         run: python xp_web_datos.py 2>&1 | tee resultado.txt
       - name: Guardar resultado en la rama "xp-web"
         if: always()

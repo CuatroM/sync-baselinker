@@ -48,11 +48,12 @@ def bloque(t, clase):
     return limpio(m.group(1)) if m else ""
 
 
-def producto(u, cod):
+def producto(u, cod, exacto=True):
     t = get(u)
     m = re.search(r"(?is)C[oó]digo:\s*(?:<[^>]+>\s*)*([A-Za-z0-9\-/\.]+)", t)
-    if not m or m.group(1).strip().upper() != cod.upper():
+    if not m or (exacto and m.group(1).strip().upper() != cod.upper()):
         return None
+    codigo_web = m.group(1).strip()
     nombre = limpio((re.search(r'(?is)<div class="product-name">\s*<h1[^>]*>(.*?)</h1>', t) or
                      re.search(r"(?is)<h1[^>]*>(.*?)</h1>", t)).group(1)) if "<h1" in t else ""
     corta = bloque(t, "short-description")
@@ -73,7 +74,7 @@ def producto(u, cod):
         k = f"{d1}/{d2}/{f}"
         if k not in fotos:
             fotos.append(k)
-    return {"url": u, "nombre": nombre, "corta": corta, "detalle": det, "adicional": adic,
+    return {"url": u, "codigo_web": codigo_web, "nombre": nombre, "corta": corta, "detalle": det, "adicional": adic,
             "fotos": [f"{WEB}/media/catalog/product/{f}" for f in fotos]}
 
 
@@ -90,8 +91,13 @@ for i, x in enumerate(lista, 1):
         res = producto(u, cod)
         if res:
             break
+    if not res and os.environ.get("CANDIDATOS") and links:
+        # sin página con el mismo código: se guardan las páginas parecidas (otra variante/color) para revisar a mano
+        cands = [c for c in (producto(u, cod, exacto=False) for u in links[:3]) if c]
+        res = {"no_encontrado": True, "resultados": len(links), "candidatos": cands} if cands else None
+        n_ok -= 0
     out[cod] = res or {"no_encontrado": True, "resultados": len(links)}
-    n_ok += bool(res)
+    n_ok += bool(res) and not res.get("no_encontrado")
     if i % 100 == 0:
         print(f"{i}/{len(lista)} encontrados {n_ok}", flush=True)
         os.makedirs("salida", exist_ok=True)
