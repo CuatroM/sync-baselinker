@@ -8,6 +8,9 @@ on:
       limite:
         description: "Cantidad (0 = todos)"
         default: "0"
+      codigos:
+        description: "Solo estos códigos (separados por coma)"
+        default: ""
 permissions:
   contents: write
 jobs:
@@ -24,6 +27,7 @@ jobs:
         env:
           DESDE: ${{ github.event.inputs.desde }}
           LIMITE: ${{ github.event.inputs.limite }}
+          CODIGOS: ${{ github.event.inputs.codigos }}
         run: python xp_web_datos.py 2>&1 | tee resultado.txt
       - name: Guardar resultado en la rama "xp-web"
         if: always()

@@ -20,6 +20,9 @@ s.headers["User-Agent"] = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKi
 lista = json.load(open("datos/extrapower_lista.json", encoding="utf-8"))
 desde, limite = int(os.environ.get("DESDE") or 0), int(os.environ.get("LIMITE") or 0)
 lista = lista[desde:desde + limite] if limite else lista[desde:]
+if os.environ.get("CODIGOS"):
+    _c = {c.strip().upper() for c in os.environ["CODIGOS"].split(",")}
+    lista = [x for x in json.load(open("datos/extrapower_lista.json", encoding="utf-8")) if x["cod"].upper() in _c]
 
 
 def get(u):
@@ -64,7 +67,7 @@ def producto(u, cod):
     fotos = []
     # todas las imágenes del producto (galería incluida), como original: /media/catalog/product/x/y/archivo
     for d1, d2, f in re.findall(r'/media/catalog/product/(?:cache/\d+/(?:image|thumbnail)/(?:\d+x\d+/)?[0-9a-f]{32}/)?'
-                                r'([A-Za-z0-9_])/([A-Za-z0-9_])/([^"\'\s/]+\.(?:jpe?g|png))', t, re.I):
+                                r'([^/"\'\s])/([^/"\'\s])/([^"\'\s/]+\.(?:jpe?g|png))', t, re.I):
         if "placeholder" in f.lower():
             continue
         k = f"{d1}/{d2}/{f}"
