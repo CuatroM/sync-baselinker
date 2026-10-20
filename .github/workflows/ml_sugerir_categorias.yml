@@ -2,7 +2,10 @@ name: Mercado Libre - Sugerir categorías (solo lectura)
 
 on:
   workflow_dispatch:
-    inputs: {}
+    inputs:
+      lista:
+        description: "Archivo con [{sku, titulo}]"
+        default: "datos/republicar.json"
 
 permissions:
   contents: write
@@ -20,7 +23,7 @@ jobs:
       - name: Sugerir
         run: |
           set -o pipefail
-          python ml_sugerir_categorias.py 2>&1 | tee resultado.txt
+          LISTA="${{ github.event.inputs.lista }}" python ml_sugerir_categorias.py 2>&1 | tee resultado.txt
       - name: Sugerir
         if: always()
         run: |

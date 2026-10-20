@@ -10,7 +10,7 @@ out = {"rutas": {}, "sugerencias": {}}
 for c in ["MLA454954"]:
     r = s.get(f"{API}/categories/{c}", timeout=30)
     out["rutas"][c] = [p["name"] for p in (r.json().get("path_from_root") or [])] if r.ok else r.status_code
-for x in json.load(open("datos/republicar.json", encoding="utf-8")):
+for x in json.load(open(os.environ.get("LISTA") or "datos/republicar.json", encoding="utf-8")):
     r = s.get(f"{API}/sites/MLA/domain_discovery/search", params={"q": x["titulo"], "limit": 8}, timeout=30)
     sug = []
     if r.ok:
