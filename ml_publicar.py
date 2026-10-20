@@ -704,9 +704,13 @@ for sku in skus:
                 r = ml.pedir("POST", ruta, json=item)
             return r
 
+        if XP:
+            # EXTRAPOWER: Mercado Libre baja las fotos directo de la web del proveedor
+            # (la web bloquea las descargas desde GitHub después de muchas consultas)
+            item["pictures"] = [{"source": x["url"]} for x in imgs]
         if dry:
             # en simulación se sube solo la primera foto (no queda asociada a ninguna publicación)
-            item["pictures"] = [x for x in [subir(imgs[0])] if x]
+            item["pictures"] = item["pictures"][:1] if XP else [x for x in [subir(imgs[0])] if x]
             r = enviar("/items/validate")
             if sin_gtin(r):
                 fila["resultado"] = DESCARTE_GTIN
@@ -719,7 +723,8 @@ for sku in skus:
                 fila["resultado"] = ("VALIDACIÓN CON ERRORES: " + " / ".join(errores) if errores else "VALIDADO OK") + \
                     (" | AVISOS: " + " / ".join(avisos) if avisos else "")
         else:
-            item["pictures"] = [x for x in (subir(i) for i in imgs) if x]
+            if not XP:
+                item["pictures"] = [x for x in (subir(i) for i in imgs) if x]
             r = enviar("/items")
             if sin_gtin(r):
                 fila["resultado"] = DESCARTE_GTIN
