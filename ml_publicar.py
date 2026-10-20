@@ -291,6 +291,7 @@ def categoria_repuesto(f, t):
     return None
 
 
+CAT_FAMILIA = {}   # EXTRAPOWER: categoría ya elegida para cada familia (Espátula, Fresa…) en esta corrida
 XP_CAT = [   # EXTRAPOWER: categorías fijas donde la sugerencia de ML se equivoca
     (r"^Arco de Sierra", "MLA455250"),          # Corte y Desbaste > Otros (Serruchos pide tipo de serrucho)
     (r"^Corta ?Ladrillos", "MLA414196"),        # Cinceles y Formones
@@ -320,11 +321,23 @@ def elegir_categoria(f, t):
             consultas = [q, t]
             break
     consultas.append(" ".join(f["nombre"].split()[:3]))
+    if XP:   # la búsqueda de ML a veces vuelve vacía: más intentos con el nombre acortado y lo ya elegido por familia
+        pal = [w for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", f["nombre"]) if len(w) > 2]
+        consultas += [" ".join(pal[:4]), " ".join(pal[:2]), " ".join(pal[:1])]
+        if CAT_FAMILIA.get(f["familia"]) and f["familia"].lower() not in ("set", "kit", "juego", "accesorio", "accesorios", "repuesto", "pack"):
+            consultas.append(None)
     for q in consultas:
-        for d in ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []:
+        if q is None:
+            return CAT_FAMILIA[f["familia"]]
+        res = ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []
+        if XP and not res:
+            time.sleep(1)
+            res = ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []
+        for d in res:
             ci = info_cat(d["category_id"])
             raiz = ((ci.get("path_from_root") or [{}])[0]).get("name")
             if (raiz in RAICES_OK or raiz in RAICES_FAM.get(f["familia"], set())) and ci.get("name") not in CAT_NO:
+                CAT_FAMILIA.setdefault(f["familia"], d["category_id"])
                 return d["category_id"]
     return None
 
@@ -445,6 +458,7 @@ DEFECTO_OPC = {
     "INCLUDES_CARTRIDGE": ["no"], "TOOL_TYPE": ["manual"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
     "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": ["escobillon", "escoba"], "MOUNTING_TYPE": ["de pie"],
     "REQUIRES_ASSEMBLY": ["no"], "INCLUDES_ASSEMBLY_MANUAL": ["no"], "IS_FOLDABLE": ["no"],
+    "AIR_PUMP_TYPE": ["mano", "manual", "pie"], "GENDER": ["unisex"],
 }
 
 
@@ -458,6 +472,9 @@ def completar_por_texto(attrs, req, f, t):
         if not a.get("values"):
             if aid == "CUTTING_BLADES_NUMBER":
                 attrs[aid] = "1"
+            elif aid == "PIECES_NUMBER":
+                m = re.search(r"(?i)x\s*(\d+)\s*(?:piezas|pzas?|pcs)|(\d+)\s*(?:piezas|pzas?|pcs)", t)
+                attrs[aid] = (m.group(1) or m.group(2)) if m else "1"
             continue
         ops = [v["name"] for v in a["values"] if v.get("name")]
         if aid == "POWER_SUPPLY_TYPE":
