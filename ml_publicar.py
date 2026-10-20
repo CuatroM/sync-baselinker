@@ -291,8 +291,18 @@ def categoria_repuesto(f, t):
     return None
 
 
+XP_CAT = [   # EXTRAPOWER: categorías fijas donde la sugerencia de ML se equivoca
+    (r"^Arco de Sierra", "MLA455250"),          # Corte y Desbaste > Otros (Serruchos pide tipo de serrucho)
+    (r"^Corta ?Ladrillos", "MLA414196"),        # Cinceles y Formones
+]
+
+
 def elegir_categoria(f, t):
     """Categoría: forzada por familia o por regla; si no, la primera sugerencia de ML que sea de herramientas."""
+    if XP:
+        for exp, c in XP_CAT:
+            if re.search(exp, t, re.I):
+                return c
     if f["familia"] == "Repuestos":
         return categoria_repuesto(f, t)
     if CATEGORIAS.get(f["familia"]):
@@ -425,10 +435,11 @@ def _sa(x):
 # valor por defecto cuando el texto no dice nada (atributo: palabras a buscar entre las opciones, en orden)
 DEFECTO_OPC = {
     "POWER_SUPPLY_TYPE": ["corriente", "electric", "cable"],
-    "HAND_SAW_TYPE": ["arco"], "FAUCET_CONTROL_TYPE": ["monocomando"], "UTILITY_KNIVE_TYPE": ["retractil", "trincheta"],
-    "HAND_PLANE_TYPE": ["manual", "carpinter"], "IS_THERMIC": ["no"], "INCLUDES_CARTRIDGE": ["no"],
-    "TOOL_TYPE": ["manual"], "BRICK_TYPE": ["comun", "macizo"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
-    "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": [], "CUTTING_BLADES_NUMBER": ["1"],
+    "HAND_SAW_TYPE": ["carpintero"], "FAUCET_CONTROL_TYPE": ["monocomando"],
+    "UTILITY_KNIVE_TYPE": ["hoja segmentada", "retractil"], "HAND_PLANE_TYPE": ["bolsillo"], "IS_THERMIC": ["no"],
+    "INCLUDES_CARTRIDGE": ["no"], "TOOL_TYPE": ["manual"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
+    "ALGAECIDE_FORMAT": ["liquid"], "PRODUCT_TYPE": ["escobillon", "escoba"], "MOUNTING_TYPE": ["de pie"],
+    "REQUIRES_ASSEMBLY": ["no"], "INCLUDES_ASSEMBLY_MANUAL": ["no"], "IS_FOLDABLE": ["no"],
 }
 
 
@@ -437,13 +448,19 @@ def completar_por_texto(attrs, req, f, t):
     si no aparece ninguna, usa el valor por defecto razonable de DEFECTO_OPC."""
     texto = _sa(" ".join([t, f.get("nombre", ""), f.get("uso_pdf", ""), " ".join(f"{k} {v}" for k, v in f["specs"].items())]))
     for aid, a in req.items():
-        if aid in attrs or not a.get("values"):
+        if aid in attrs:
+            continue
+        if not a.get("values"):
+            if aid == "CUTTING_BLADES_NUMBER":
+                attrs[aid] = "1"
             continue
         ops = [v["name"] for v in a["values"] if v.get("name")]
         if aid == "POWER_SUPPLY_TYPE":
             pref = (["bateria", "recargable", "inalambric"] if re.search(r"recargable|bateria|inalambric|\b\d+\s*v\b(?!.*220)", texto)
                     else ["neumatic"] if "neumatic" in texto else DEFECTO_OPC[aid])
             el = next((o for p in pref for o in ops if p in _sa(o)), None)
+        elif aid == "UTILITY_KNIVE_TYPE" and "circular" in texto:
+            el = next((o for o in ops if "rotativ" in _sa(o)), None)
         else:
             el = next((o for o in sorted(ops, key=len, reverse=True) if len(_sa(o)) > 2 and re.search(rf"\b{re.escape(_sa(o))}", texto)), None)
             if not el:
