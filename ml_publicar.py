@@ -658,7 +658,11 @@ for sku in skus:
         por_nombre = {a["name"].lower(): a for a in cat_attrs}
         extra = {**EXTRA.get("*", {}), **EXTRA.get(sku, {})}
         if "COLOR" in {a["id"] for a in cat_attrs} and not any(k.lower() == "color" for k in extra):
-            extra["Color"] = color_de(f, t)
+            c_req = any(a["id"] == "COLOR" and (a.get("tags") or {}).get("required") for a in cat_attrs)
+            col = color_de(f, t)
+            # EXTRAPOWER: el color por defecto (Blanco) solo si ML lo exige; si no, no se inventa
+            if not XP or col != "Blanco" or c_req or re.search(r"\bblanc[oa]\b", (t + " " + f["nombre"]).lower()):
+                extra["Color"] = col
         for nom, val in extra.items():
             a = por_nombre.get(nom.strip().lower())
             if not a:
