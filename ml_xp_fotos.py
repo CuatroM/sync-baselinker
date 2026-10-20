@@ -20,8 +20,10 @@ ml = ML(os.environ.get("ML_CODIGO"))
 
 
 def arreglar(u):
+    """Versión de la web (800x800). A las que siguen pendientes se les aplica a todas las fotos:
+    la web también agranda las fotos chicas, que Mercado Libre rechaza (mínimo 500 px)."""
     base, rel = u.split("/media/catalog/product/", 1)
-    return base + CACHE + rel if rel[:1].isupper() else u
+    return u if rel.startswith("cache/") else base + CACHE + rel
 
 
 filas = []
