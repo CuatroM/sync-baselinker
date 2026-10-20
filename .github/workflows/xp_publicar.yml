@@ -8,7 +8,7 @@ on:
         required: true
       skus:
         description: "Códigos separados por coma (sin #EXTRAPOWER), o @xp_lote1 para un lote preparado"
-        default: "@xp_prueba"
+        default: "@xp_sinstock1"
       margen:
         description: "Margen % sobre el precio de BaseLinker (lista + IVA). 400 = x5"
         default: "400"
