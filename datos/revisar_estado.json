@@ -1,5 +1,4230 @@
 [
 {
+"item": "MLA2216365999",
+"sku": "NA8242",
+"titulo": "Sella-rosca 130 Grs"
+},
+{
+"item": "MLA2216315139",
+"sku": "NA8241",
+"titulo": "Sella-rosca 25 Grs"
+},
+{
+"item": "MLA2216378705",
+"sku": "C096",
+"titulo": "Serrucho Carpintero Mango Plástico 20\" Black Jack"
+},
+{
+"item": "MLA2216315177",
+"sku": "C097",
+"titulo": "Serrucho Carpintero Mango Plástico 22\" Black Jack"
+},
+{
+"item": "MLA2216315183",
+"sku": "C098",
+"titulo": "Serrucho Carpintero Mango Plástico 24\" Black Jack"
+},
+{
+"item": "MLA2216315193",
+"sku": "C090",
+"titulo": "Serrucho Amarillo Negro Power 16\""
+},
+{
+"item": "MLA2216378719",
+"sku": "C091",
+"titulo": "Serrucho Amarillo Negro Power 18\""
+},
+{
+"item": "MLA2216366059",
+"sku": "C092",
+"titulo": "Serrucho Amarillo Negro Power 20\""
+},
+{
+"item": "MLA2216378727",
+"sku": "C106",
+"titulo": "Serrucho de Costilla Black Jack M 12\""
+},
+{
+"item": "MLA2216366069",
+"sku": "C101",
+"titulo": "Serrucho Carpintero Mango de Madera 22\" Black Jack"
+},
+{
+"item": "MLA2216378737",
+"sku": "C103",
+"titulo": "Serrucho Mango Madera y Goma 20\" Black Jack"
+},
+{
+"item": "MLA2216366087",
+"sku": "C104",
+"titulo": "Serrucho Mango Madera y Goma 22\" Black Jack"
+},
+{
+"item": "MLA2216404553",
+"sku": "C105",
+"titulo": "Serrucho Mango Madera y Goma 24\" Black Jack"
+},
+{
+"item": "MLA2216366109",
+"sku": "C085",
+"titulo": "Serrucho Plegable 180mm Black Jack"
+},
+{
+"item": "MLA2216315261",
+"sku": "GPV-016",
+"titulo": "Set de Accesorios de Aire x 14 Piezas Versa Max"
+},
+{
+"item": "MLA2216366135",
+"sku": "R016",
+"titulo": "Set Aros Seguer x 148 Piezas Surtidos Power"
+},
+{
+"item": "MLA2216366149",
+"sku": "O460",
+"titulo": "Set de Pinceles x 4 Piezas Power"
+},
+{
+"item": "MLA2216315273",
+"sku": "A071",
+"titulo": "Set de Escuadras Magnéticas x6 Black Jack"
+},
+{
+"item": "MLA2216315275",
+"sku": "KLGS5200-1",
+"titulo": "Set Espada y Cadena Versa Max"
+},
+{
+"item": "MLA2216366173",
+"sku": "NEU150",
+"titulo": "Kit de Herramientas Neumáticas y Accesorios 62 Pcs Versa Max"
+},
+{
+"item": "MLA2216378811",
+"sku": "A072",
+"titulo": "Set para Osciladora x5 Piezas Black Jack"
+},
+{
+"item": "MLA2216315291",
+"sku": "KSTCS1013",
+"titulo": "Sierra Circular 1300W Versa Max"
+},
+{
+"item": "MLA2216378825",
+"sku": "KRSIE1801",
+"titulo": "Sierra Recargable 20V Versa Max"
+},
+{
+"item": "MLA2216404633",
+"sku": "J285",
+"titulo": "Sierras para Caladora x 5 Piezas Black Jack"
+},
+{
+"item": "MLA2216404641",
+"sku": "NA5071",
+"titulo": "Sifón Doble"
+},
+{
+"item": "MLA2216366207",
+"sku": "NA5070",
+"titulo": "Sifón Simple"
+},
+{
+"item": "MLA2216404655",
+"sku": "T880",
+"titulo": "Silicona en Barra Power 8 Mm x Kg"
+},
+{
+"item": "MLA2216366211",
+"sku": "S102",
+"titulo": "Silla de Playa Black Jack"
+},
+{
+"item": "MLA2216366233",
+"sku": "S101",
+"titulo": "Reposera Plegable para Camping Black Jack"
+},
+{
+"item": "MLA2216315337",
+"sku": "R060",
+"titulo": "Soga Elástica 36 Set x 4 Piezas Power"
+},
+{
+"item": "MLA2216315345",
+"sku": "R061",
+"titulo": "Soga Elástica 40 Set x 4 Piezas Power"
+},
+{
+"item": "MLA2216315351",
+"sku": "NA8247",
+"titulo": "Soga Polietileno 10 mm 100M"
+},
+{
+"item": "MLA2216366273",
+"sku": "NA8244",
+"titulo": "Soga Polietileno 5 mm 150M"
+},
+{
+"item": "MLA2216315375",
+"sku": "NA8245",
+"titulo": "Soga Polietileno 6 mm 100M"
+},
+{
+"item": "MLA2216315389",
+"sku": "NA8246",
+"titulo": "Soga Polietileno 8 mm 100M"
+},
+{
+"item": "MLA2216404727",
+"sku": "NA8250",
+"titulo": "Soga Polietileno Envainada 6 mm 100M"
+},
+{
+"item": "MLA2216404735",
+"sku": "NA8248",
+"titulo": "Soga Polietileno Envainada 4 mm 200M"
+},
+{
+"item": "MLA2216315409",
+"sku": "NA8249",
+"titulo": "Soga Polietileno Envainada 5 mm 150M"
+},
+{
+"item": "MLA2216404745",
+"sku": "NA8255",
+"titulo": "Soga Trenzada Polipropileno 10 mm 100M"
+},
+{
+"item": "MLA2216404765",
+"sku": "NA8251",
+"titulo": "Soga Trenzada Polipropileno 4 mm 150M"
+},
+{
+"item": "MLA2216404775",
+"sku": "NA8252",
+"titulo": "Soga Trenzada Polipropileno 5 mm 100M"
+},
+{
+"item": "MLA2216366355",
+"sku": "NA8254",
+"titulo": "Soga Trenzada Polipropileno 8 mm 100M"
+},
+{
+"item": "MLA2216315459",
+"sku": "NA8444",
+"titulo": "Soga Polipropileno Elastica 6mmx100m Trenzada"
+},
+{
+"item": "MLA2216404799",
+"sku": "R063",
+"titulo": "Soga Tender 10m Extra Power"
+},
+{
+"item": "MLA2216404805",
+"sku": "R064",
+"titulo": "Soga Tender 15m Extra Power"
+},
+{
+"item": "MLA2216315501",
+"sku": "R065",
+"titulo": "Soga Tender 20m Extra Power"
+},
+{
+"item": "MLA2216378995",
+"sku": "R062",
+"titulo": "Sogas de Poliester 5m x 3pcs Extra Power"
+},
+{
+"item": "MLA2216315511",
+"sku": "NA5080",
+"titulo": "Soldador para Gas Butano Enc Elec"
+},
+{
+"item": "MLA2216366407",
+"sku": "NA5086",
+"titulo": "Soldador a Gas Zinguero 10 Kg Black Jack"
+},
+{
+"item": "MLA2216366411",
+"sku": "MMA140K",
+"titulo": "Soldadora Eléctrica Inverter Igbt 140a Versa Max"
+},
+{
+"item": "MLA2216315537",
+"sku": "MMA160K",
+"titulo": "Soldadora Eléctrica Inverter Igbt 160a Versa Max"
+},
+{
+"item": "MLA2216315545",
+"sku": "MMA200K",
+"titulo": "Soldadora Eléctrica Inverter Igbt 200a Versa Max"
+},
+{
+"item": "MLA2216379021",
+"sku": "NA5092",
+"titulo": "Sopapa con Rejilla 2"
+},
+{
+"item": "MLA2216366441",
+"sku": "NA5267",
+"titulo": "Sopapa PVC a Codo 2\""
+},
+{
+"item": "MLA2216366457",
+"sku": "NA5088",
+"titulo": "Sopapa Ventosa Gigante"
+},
+{
+"item": "MLA2216404887",
+"sku": "NA5087",
+"titulo": "Sopapa Ventosa Negra"
+},
+{
+"item": "MLA2216379047",
+"sku": "A395",
+"titulo": "Soporte para Amoladora 115/125mm Black Jack"
+},
+{
+"item": "MLA2216315595",
+"sku": "A396",
+"titulo": "Soporte para Amoladora 180/230mm Black Jack"
+},
+{
+"item": "MLA2216379069",
+"sku": "W103",
+"titulo": "Soporte para Lcd con Brazo 14-42\" Black Jack"
+},
+{
+"item": "MLA2216379189",
+"sku": "NA2066",
+"titulo": "Tabla de Planchar Angosta"
+},
+{
+"item": "MLA2216315751",
+"sku": "KSTCD1713",
+"titulo": "Taladro Recargable 10mm 20V con Accesorios Versa Max"
+},
+{
+"item": "MLA2216315755",
+"sku": "KSTCD1908",
+"titulo": "Taladro 10mm Recargable 20V 1.3a Versa Max"
+},
+{
+"item": "MLA2216405063",
+"sku": "KSTCD1906",
+"titulo": "Taladro Recargable 10mm 8V Versa Max"
+},
+{
+"item": "MLA2216405109",
+"sku": "KSTCD1916",
+"titulo": "Taladro Recargable 10mm 8V con Accesorios Versa Max"
+},
+{
+"item": "MLA2216405123",
+"sku": "EPJ510",
+"titulo": "Taladro de Mano Power"
+},
+{
+"item": "MLA2216366671",
+"sku": "KSTHD0401-V",
+"titulo": "Taladro Electrico 10mm 380W Versa"
+},
+{
+"item": "MLA2216379317",
+"sku": "KSTID0400",
+"titulo": "Taladro Electrico 10mm 400W Versa Max"
+},
+{
+"item": "MLA2216405183",
+"sku": "KSTRH1001-V",
+"titulo": "Taladro Electrico 10mm 500W Versa"
+},
+{
+"item": "MLA2216379349",
+"sku": "KPCD0217-12V",
+"titulo": "Taladro Atornillador Recargable 12 V 10 Mm 1 Batería Versa"
+},
+{
+"item": "MLA2216315947",
+"sku": "KPID1955-V",
+"titulo": "Taladro de Impacto 13mm 910W Versa"
+},
+{
+"item": "MLA2216366777",
+"sku": "KSTRH1012-V",
+"titulo": "Taladro Electrico 13mm 850W Versa"
+},
+{
+"item": "MLA2216405233",
+"sku": "KPCD0217-V",
+"titulo": "Taladro de Impacto Recargable 18V 13 Mm Versa"
+},
+{
+"item": "MLA2216405239",
+"sku": "KSTRH1011-V",
+"titulo": "Taladro de Impacto 13mm 750W Versa"
+},
+{
+"item": "MLA2216405253",
+"sku": "KSTRH2005-V",
+"titulo": "Taladro Rotopercutor 32mm 1200W Versa"
+},
+{
+"item": "MLA2216366819",
+"sku": "KVTAL1001",
+"titulo": "Martillo Perforador 500W Versa Max"
+},
+{
+"item": "MLA2216316009",
+"sku": "NEU3010",
+"titulo": "Taladro Neumático 10mm Versa Max"
+},
+{
+"item": "MLA2216366851",
+"sku": "KSTCD0229",
+"titulo": "Taladro Recargable 12V 10mm Versa Max"
+},
+{
+"item": "MLA2216316027",
+"sku": "KPCD0217-12V/2",
+"titulo": "Taladro Atornillador Recargable 12V 10mm – 2 Baterías Versa"
+},
+{
+"item": "MLA2216379431",
+"sku": "KPCD0209-V/2",
+"titulo": "Taladro Atornillador Recargable 18 V 10mm 2 Baterías Versa"
+},
+{
+"item": "MLA2216316045",
+"sku": "KWCD2166-20ST",
+"titulo": "Taladro Recargable 10mm 20V Versa KWCD2166-20ST"
+},
+{
+"item": "MLA2216379453",
+"sku": "KSTCD1918",
+"titulo": "Taladro Recargable 10mm 20V Versa KSTCD1918"
+},
+{
+"item": "MLA2216366899",
+"sku": "KVTAL2002",
+"titulo": "Taladro Rotopercutor 1010W Versa Max"
+},
+{
+"item": "MLA2216366913",
+"sku": "KWCD1703-12",
+"titulo": "Taladro Atornillador Recargable 10mm 12V Versa"
+},
+{
+"item": "MLA2216316085",
+"sku": "NA8311",
+"titulo": "Tanza de Albañil 0.8 x 100 x 10 Unidades"
+},
+{
+"item": "MLA2216379493",
+"sku": "NA6031",
+"titulo": "Tanza para Bordeadora x Kg 2.5 mm NA6031"
+},
+{
+"item": "MLA2216379507",
+"sku": "NA8257",
+"titulo": "Tapa Acero Inoxidable 20x20"
+},
+{
+"item": "MLA2216316111",
+"sku": "NA8538",
+"titulo": "Tapa Ciega 12 x 12"
+},
+{
+"item": "MLA2216366963",
+"sku": "NA8365",
+"titulo": "Tapa Rejilla PVC"
+},
+{
+"item": "MLA2216366975",
+"sku": "NA5093",
+"titulo": "Tapón de Goma Universal"
+},
+{
+"item": "MLA2216316141",
+"sku": "NA5139",
+"titulo": "Tapón Retractil Universal PVC"
+},
+{
+"item": "MLA2216379557",
+"sku": "NA5140",
+"titulo": "Tapón Universal PVC"
+},
+{
+"item": "MLA2216367013",
+"sku": "NA8431",
+"titulo": "Tarugo Universal con Tope 8 Mm x 500"
+},
+{
+"item": "MLA2216316185",
+"sku": "NA8432",
+"titulo": "Tarugo Universal con Tope 10 Mm x 250"
+},
+{
+"item": "MLA2216379597",
+"sku": "NA8430",
+"titulo": "Tarugo Universal con Tope 6 Mm x 1000"
+},
+{
+"item": "MLA2216379611",
+"sku": "NA8429",
+"titulo": "Tarugo Universal 10 Mm x 250"
+},
+{
+"item": "MLA2216379619",
+"sku": "NA8427",
+"titulo": "Tarugo Universal 6 Mm x 1000"
+},
+{
+"item": "MLA2216367053",
+"sku": "NA8428",
+"titulo": "Tarugo Universal 8 Mm x 500"
+},
+{
+"item": "MLA2216379647",
+"sku": "I255",
+"titulo": "Tenaza Armador 10\" Corte Entero Black Jack"
+},
+{
+"item": "MLA2216367103",
+"sku": "I257",
+"titulo": "Tenaza Armador 12\" Corte Entero Black Jack"
+},
+{
+"item": "MLA2216405511",
+"sku": "I056",
+"titulo": "Tenaza de Armador 11\" 1/2 Corte Black Jack"
+},
+{
+"item": "MLA2216405517",
+"sku": "I057",
+"titulo": "Tenaza de Armador 12\" 1/2 Corte Black Jack"
+},
+{
+"item": "MLA2216367121",
+"sku": "I045",
+"titulo": "Tenaza de Carpintero 6\" Black Jack"
+},
+{
+"item": "MLA2216379705",
+"sku": "I046",
+"titulo": "Tenaza de Carpintero 7\" Black Jack"
+},
+{
+"item": "MLA2216367145",
+"sku": "I048",
+"titulo": "Tenaza de Carpintero 8\" Black Jack"
+},
+{
+"item": "MLA2216316299",
+"sku": "NA2069",
+"titulo": "Tender de Balcón Reforzado Extra Power 8"
+},
+{
+"item": "MLA2216316319",
+"sku": "NA2070",
+"titulo": "Tender de Balcón Reforzado Extra Power 9"
+},
+{
+"item": "MLA2216316347",
+"sku": "NA2071",
+"titulo": "Tender con Alas Rebatible Extra Power"
+},
+{
+"item": "MLA2216316361",
+"sku": "T132",
+"titulo": "Tender Reforzado Plegable con Alas Black Jack"
+},
+{
+"item": "MLA2216405603",
+"sku": "O715",
+"titulo": "Tensor de Cinta 6 Mts Black Jack"
+},
+{
+"item": "MLA2216405611",
+"sku": "NA7224",
+"titulo": "Termocupla con Roscado 8*1 500 mm"
+},
+{
+"item": "MLA2216379799",
+"sku": "D135",
+"titulo": "Termómetro Infrarrojo Black Jack"
+},
+{
+"item": "MLA2216367225",
+"sku": "T821",
+"titulo": "Tester de Voltaje Digital Black Jack"
+},
+{
+"item": "MLA2216405641",
+"sku": "T815",
+"titulo": "Tester Digital Black Jack"
+},
+{
+"item": "MLA2216379827",
+"sku": "T820",
+"titulo": "Tester Voltaje Profesional Black Jack"
+},
+{
+"item": "MLA2216367249",
+"sku": "N265",
+"titulo": "Tijera Podar Extensible 25 a 38 Black Jack"
+},
+{
+"item": "MLA2216379853",
+"sku": "L032",
+"titulo": "Tijera Cortachapa 10\" Corte Izquierdo Black Jack"
+},
+{
+"item": "MLA2216405665",
+"sku": "L031",
+"titulo": "Tijera Cortachapa 10\" Corte Derecho Black Jack"
+},
+{
+"item": "MLA2216316491",
+"sku": "L046",
+"titulo": "Tijera Corta PVC Black Jack"
+},
+{
+"item": "MLA2216405715",
+"sku": "N275",
+"titulo": "Tijera de Podar Larga 27” Black Jack"
+},
+{
+"item": "MLA2216316523",
+"sku": "N240",
+"titulo": "Tijera de Podar 8 Reforzada Power"
+},
+{
+"item": "MLA2216367337",
+"sku": "N245",
+"titulo": "Tijera de Podar Punta Recta Fina Pruner"
+},
+{
+"item": "MLA2216405741",
+"sku": "N267",
+"titulo": "Tijera de Podar Black Jack"
+},
+{
+"item": "MLA2216367347",
+"sku": "L035",
+"titulo": "Tijera de Hojalatero Reforzada 8\" Black Jack"
+},
+{
+"item": "MLA2216367353",
+"sku": "L001",
+"titulo": "Tijera Multiuso 10\" Black Jack"
+},
+{
+"item": "MLA2216379947",
+"sku": "L002",
+"titulo": "Tijera Multiuso 12\" Black Jack"
+},
+{
+"item": "MLA2216367365",
+"sku": "N260",
+"titulo": "Tijera para Cerco 10\" Power"
+},
+{
+"item": "MLA2216367379",
+"sku": "O238",
+"titulo": "Tijera Tipo Sastre 8\" Power"
+},
+{
+"item": "MLA2216316575",
+"sku": "O239",
+"titulo": "Tijera Uso Doméstico y Oficina 8\" Power"
+},
+{
+"item": "MLA2216316625",
+"sku": "NA5107",
+"titulo": "Toallero Aro Plástica Autoadhesivo"
+},
+{
+"item": "MLA2216367445",
+"sku": "NA5108",
+"titulo": "Toallero Barral Plástica Autoadhesivo"
+},
+{
+"item": "MLA2216380023",
+"sku": "NA2079",
+"titulo": "Tope Fieltro Cuadrado x 8 Piezas"
+},
+{
+"item": "MLA2216380037",
+"sku": "KSTOR2010",
+"titulo": "Torno Mini Drill 135W - 80 Pcs Versa Max"
+},
+{
+"item": "MLA2216316687",
+"sku": "KTOR2007",
+"titulo": "Torno Mini Drill 170W - 40 Accesorios Versa Max"
+},
+{
+"item": "MLA2216316689",
+"sku": "NA7174",
+"titulo": "Tortuga para Lampara Bajo Consumo Blanca"
+},
+{
+"item": "MLA2216316703",
+"sku": "NA7175",
+"titulo": "Tortuga para Lampara Bajo Consumo Negra"
+},
+{
+"item": "MLA2216380095",
+"sku": "Q410",
+"titulo": "Traba de Seguridad Tipo U Power 180 245 mm"
+},
+{
+"item": "MLA2216405893",
+"sku": "Q411",
+"titulo": "Traba de Seguridad Tipo U Power 180 320 mm"
+},
+{
+"item": "MLA2216367535",
+"sku": "Q250",
+"titulo": "Traba Reforzada con Protector Perno 50mm Black Jack"
+},
+{
+"item": "MLA2216367633",
+"sku": "B846",
+"titulo": "Tubo Sacabujía 1/2\" x 21mm Black Jack"
+},
+{
+"item": "MLA2216367717",
+"sku": "B810",
+"titulo": "Tubo Hexagonal 1/2\" 10mm Black Jack"
+},
+{
+"item": "MLA2216380291",
+"sku": "B811",
+"titulo": "Tubo Hexagonal 1/2\" 11mm Black Jack"
+},
+{
+"item": "MLA2216316933",
+"sku": "B812",
+"titulo": "Tubo Hexagonal 1/2\" 12mm Black Jack"
+},
+{
+"item": "MLA2216367791",
+"sku": "B813",
+"titulo": "Tubo Hexagonal 1/2\" 13mm Black Jack"
+},
+{
+"item": "MLA2216406163",
+"sku": "B814",
+"titulo": "Tubo Hexagonal 1/2\" 14mm Black Jack"
+},
+{
+"item": "MLA2216316977",
+"sku": "B815",
+"titulo": "Tubo Hexagonal 1/2\" 15mm Black Jack"
+},
+{
+"item": "MLA2216367811",
+"sku": "B816",
+"titulo": "Tubo Hexagonal 1/2\" 16mm Black Jack"
+},
+{
+"item": "MLA2216406179",
+"sku": "B817",
+"titulo": "Tubo Hexagonal 1/2\" 17mm Black Jack"
+},
+{
+"item": "MLA2216406189",
+"sku": "B820",
+"titulo": "Tubo Hexagonal 1/2\" 20 Mm Black Jack"
+},
+{
+"item": "MLA2216380383",
+"sku": "B823",
+"titulo": "Tubo Hexagonal 1/2\" 23mm Black Jack"
+},
+{
+"item": "MLA2216406209",
+"sku": "B824",
+"titulo": "Tubo Hexagonal 1/2\" 24mm Black Jack"
+},
+{
+"item": "MLA2216380403",
+"sku": "B825",
+"titulo": "Tubo Hexagonal 1/2\" 25mm Black Jack"
+},
+{
+"item": "MLA2216367861",
+"sku": "B826",
+"titulo": "Tubo Hexagonal 1/2\" 26mm Black Jack"
+},
+{
+"item": "MLA2216317051",
+"sku": "B827",
+"titulo": "Tubo Hexagonal 1/2\" 27mm Black Jack"
+},
+{
+"item": "MLA2216380433",
+"sku": "B829",
+"titulo": "Tubo Hexagonal 1/2\" 29mm Black Jack"
+},
+{
+"item": "MLA2216367893",
+"sku": "B830",
+"titulo": "Tubo Hexagonal 1/2\" 30mm Black Jack"
+},
+{
+"item": "MLA2216317093",
+"sku": "B831",
+"titulo": "Tubo Hexagonal 1/2\" 32mm Black Jack"
+},
+{
+"item": "MLA2216406275",
+"sku": "B809",
+"titulo": "Tubo Hexagonal 1/2\" 8mm Black Jack"
+},
+{
+"item": "MLA2216380453",
+"sku": "B8091",
+"titulo": "Tubo Hexagonal 1/2\" 9 Mm Black Jack"
+},
+{
+"item": "MLA2216367939",
+"sku": "A074",
+"titulo": "Tubo Universal de Acero Extra Power 2 A074"
+},
+{
+"item": "MLA2216380505",
+"sku": "A073",
+"titulo": "Tubo Universal de Acero Extra Power 2 A073"
+},
+{
+"item": "MLA2216317175",
+"sku": "B450",
+"titulo": "Juego de Tubos Crique x 40pcs Power"
+},
+{
+"item": "MLA2216380537",
+"sku": "B466",
+"titulo": "Juego de Tubos C/puntas Surtidas para Atornillar Set de 29"
+},
+{
+"item": "MLA2216317193",
+"sku": "NA7371",
+"titulo": "Unidad Magnética Standard"
+},
+{
+"item": "MLA2216406359",
+"sku": "NA6033",
+"titulo": "Union Plástica para Manguera 1/2\""
+},
+{
+"item": "MLA2216406371",
+"sku": "NA6034",
+"titulo": "Union Plástica para Manguera 3/4\""
+},
+{
+"item": "MLA2216368013",
+"sku": "NA6035",
+"titulo": "Union Reducción 3/4\" a 1/2\""
+},
+{
+"item": "MLA2216406407",
+"sku": "NA5170",
+"titulo": "Válvula Admision Lateral Hembra Dealer"
+},
+{
+"item": "MLA2216317235",
+"sku": "NA5168",
+"titulo": "Válvula Admision Eco Dealer"
+},
+{
+"item": "MLA2216368037",
+"sku": "NA5271",
+"titulo": "Valvula con Flotante para Tanque 1/2\""
+},
+{
+"item": "MLA2216368039",
+"sku": "NA5272",
+"titulo": "Valvula con Flotante para Tanque 3/4\""
+},
+{
+"item": "MLA2216380603",
+"sku": "NA5136",
+"titulo": "Válvula Esférica Bicapa MG 1\""
+},
+{
+"item": "MLA2216317321",
+"sku": "NA5134",
+"titulo": "Válvula Esférica Bicapa MG 1/2\""
+},
+{
+"item": "MLA2216368095",
+"sku": "NA5135",
+"titulo": "Válvula Esférica Bicapa MG 3/4\""
+},
+{
+"item": "MLA2216406497",
+"sku": "NA5197",
+"titulo": "Flotante para Tanque 3/4\""
+},
+{
+"item": "MLA2216317341",
+"sku": "B858",
+"titulo": "Set de Vasos Hexagonales Magnéticos 3/8\" x 65mm Black Jack"
+},
+{
+"item": "MLA2216380675",
+"sku": "B857",
+"titulo": "Set de Vasos Hexagonales Magnéticos 5/16\" x 65mm Black Jack"
+},
+{
+"item": "MLA2216406515",
+"sku": "B859",
+"titulo": "Set de Vasos Hexagonales Magnéticos 7/16\" x 65mm Black Jack"
+},
+{
+"item": "MLA2216380697",
+"sku": "B853",
+"titulo": "Set de Vasos Hexagonales Magnéticos 10x65mm Black Jack"
+},
+{
+"item": "MLA2216406525",
+"sku": "B854",
+"titulo": "Set de Vasos Hexagonales Magnéticos 11x65mm Black Jack"
+},
+{
+"item": "MLA2216368141",
+"sku": "B852",
+"titulo": "Set de Vasos Hexagonales Magnéticos 8x65mm Black Jack"
+},
+{
+"item": "MLA2216406557",
+"sku": "B851",
+"titulo": "Set de Vasos Hexagonales Magnéticos 6x65mm Black Jack"
+},
+{
+"item": "MLA2216406605",
+"sku": "NA7525",
+"titulo": "Ventilador de Pie 20\" 90W Indelplas"
+},
+{
+"item": "MLA2216317441",
+"sku": "NA4061",
+"titulo": "Vidrio Oscuro para Máscara Soldar"
+},
+{
+"item": "MLA2216406617",
+"sku": "H012",
+"titulo": "Vincha con Luz LED y Lupa Black Jack"
+},
+{
+"item": "MLA2216406625",
+"sku": "NA8272",
+"titulo": "Viruta Gruesa x 250 Grs"
+},
+{
+"item": "MLA2216317461",
+"sku": "NA8271",
+"titulo": "Viruta Mediana x 250 Grs"
+},
+{
+"item": "MLA2216406643",
+"sku": "NA8003",
+"titulo": "Abrazadera 9mm 16-27 mm x 100 Unidades"
+},
+{
+"item": "MLA2216317481",
+"sku": "NA8001",
+"titulo": "Abrazadera 9mm 8-16 mm x 100 Unidades"
+},
+{
+"item": "MLA2216368251",
+"sku": "NA8448",
+"titulo": "Abrelata de Pintura (tapa)"
+},
+{
+"item": "MLA2216317533",
+"sku": "NA5001",
+"titulo": "Accesorio Bocha Fleje Destapador"
+},
+{
+"item": "MLA2216406711",
+"sku": "NA5004",
+"titulo": "Accesorio Manija Fleje Destapador"
+},
+{
+"item": "MLA2216368311",
+"sku": "NA5003",
+"titulo": "Accesorio Sopapa Fleje Destapador"
+},
+{
+"item": "MLA2216317569",
+"sku": "J670",
+"titulo": "Afilador de Mechas Power"
+},
+{
+"item": "MLA2216317579",
+"sku": "NA2006",
+"titulo": "Anafe 2 Hornallas con Horno"
+},
+{
+"item": "MLA2216380953",
+"sku": "NA2096",
+"titulo": "Anafe 2 Hornallas Lujo Enlozado – Quemadores de Aluminio"
+},
+{
+"item": "MLA2216368343",
+"sku": "NA4156",
+"titulo": "Arnes Anticaidas Sky (sky 10404) Sky10404"
+},
+{
+"item": "MLA2216317611",
+"sku": "NA5158",
+"titulo": "Aro Base para Inodoro"
+},
+{
+"item": "MLA2216406753",
+"sku": "ASP123-1200W-15",
+"titulo": "Aspiradora Industrial 1200W 15l Versa Max"
+},
+{
+"item": "MLA2216406763",
+"sku": "NA4007",
+"titulo": "Barbijos x 50 Unidades Fravida"
+},
+{
+"item": "MLA2216381029",
+"sku": "BTI12L",
+"titulo": "Bolso Termico Impermeable 12l Black Jack"
+},
+{
+"item": "MLA2216381043",
+"sku": "QB60",
+"titulo": "Bomba de Agua Periferica qb60 Versa Max"
+},
+{
+"item": "MLA2216317701",
+"sku": "NA8046",
+"titulo": "Bonete Lana con Tirante 180 mm"
+},
+{
+"item": "MLA2216317705",
+"sku": "KPGT0101",
+"titulo": "Bordeadora a Explosión 25 Cc Versa"
+},
+{
+"item": "MLA2216381085",
+"sku": "NA6043",
+"titulo": "Bordeadora Eléctrica 600 W Versa"
+},
+{
+"item": "MLA2216406867",
+"sku": "NA6059",
+"titulo": "Boya Multiacción"
+},
+{
+"item": "MLA2216381113",
+"sku": "NA8352",
+"titulo": "Caja Plastica 16,5\" Tapa Alta con Bandeja Black Jack"
+},
+{
+"item": "MLA2216317795",
+"sku": "NA8484",
+"titulo": "Caja de Herramientas Plástica 19,5\" con Bandeja y Gavetero"
+},
+{
+"item": "MLA2216406985",
+"sku": "NA8325",
+"titulo": "Caja Plástica 17 Cierre Metálico"
+},
+{
+"item": "MLA2216381227",
+"sku": "NA7535",
+"titulo": "Calefon Electrico Diluvio Eco Black"
+},
+{
+"item": "MLA2216381231",
+"sku": "NA7036",
+"titulo": "Calefón Elect. 20L. Plástico"
+},
+{
+"item": "MLA2216368595",
+"sku": "NA7230",
+"titulo": "Calefón Eléctrico 25L. Plástica"
+},
+{
+"item": "MLA2216407019",
+"sku": "D056",
+"titulo": "Calibre Digital Profesional Black Jack"
+},
+{
+"item": "MLA2216407095",
+"sku": "NA8071",
+"titulo": "Carretilla de Albañil"
+},
+{
+"item": "MLA2216407103",
+"sku": "NA6203",
+"titulo": "Cebo Insecticida Cucarachicida x 6 Unidades"
+},
+{
+"item": "MLA2216368701",
+"sku": "NA2121",
+"titulo": "Cepillo Anden 60 cm NA2121"
+},
+{
+"item": "MLA2216368709",
+"sku": "NA1142",
+"titulo": "Cepillo Circular Rizado Acero 4"
+},
+{
+"item": "MLA2216381369",
+"sku": "NA2021",
+"titulo": "Chango de Caño Reforzado Extra Power"
+},
+{
+"item": "MLA2216407137",
+"sku": "NA2023",
+"titulo": "Chango de Caño Canadiense Extra Power"
+},
+{
+"item": "MLA2216407141",
+"sku": "NA2020",
+"titulo": "Chango de Caño Económico Extra Power"
+},
+{
+"item": "MLA2216317967",
+"sku": "NA4036",
+"titulo": "Cinta de Peligro 200 m"
+},
+{
+"item": "MLA2216381421",
+"sku": "NA4035",
+"titulo": "Cinta de Peligro 50 m"
+},
+{
+"item": "MLA2216381479",
+"sku": "A026",
+"titulo": "Cinta de Papel 36 Mm x 50 M Black Jack"
+},
+{
+"item": "MLA2216318065",
+"sku": "NA5026",
+"titulo": "Cinta Destapa Cañeria 5 M"
+},
+{
+"item": "MLA2216381495",
+"sku": "NA5238",
+"titulo": "Cinta Destapa Cañeria x 10 Metros"
+},
+{
+"item": "MLA2216368861",
+"sku": "NA5237",
+"titulo": "Cinta Destapa Cañerias 5 Metros"
+},
+{
+"item": "MLA2216368867",
+"sku": "A019",
+"titulo": "Cinta Doble Faz de Espuma 18 Mm x 2 M Black Jack"
+},
+{
+"item": "MLA2216368869",
+"sku": "A018",
+"titulo": "Cinta Doble Faz de Espuma 18 Mm x 5 M Black Jack"
+},
+{
+"item": "MLA2216318113",
+"sku": "NA8497",
+"titulo": "Cinta Teflon Alta Densidad 10 Metros 1/2\" Tacsa"
+},
+{
+"item": "MLA2216368891",
+"sku": "NA8321",
+"titulo": "Cinta Ptfe x 10m. Tacsa 3/4\""
+},
+{
+"item": "MLA2216318141",
+"sku": "A029",
+"titulo": "Cinta Siliconada Doble Faz 30 Mm x 3 M Black Jack"
+},
+{
+"item": "MLA2216318165",
+"sku": "NA8388",
+"titulo": "Clavo de Albañil 15 cm"
+},
+{
+"item": "MLA2216381617",
+"sku": "NA8389",
+"titulo": "Clavo de Albañil 20 cm"
+},
+{
+"item": "MLA2216368961",
+"sku": "NA8390",
+"titulo": "Clavo de Albañil 25 cm"
+},
+{
+"item": "MLA2216381647",
+"sku": "NA6143",
+"titulo": "Cloro en Pastillas Nataclor x 50 Kg (cuñete) C105c"
+},
+{
+"item": "MLA2216318215",
+"sku": "NA6140",
+"titulo": "Cloro Instantaneo Nataclor x 50 Kg (cuñete) C405b"
+},
+{
+"item": "MLA2216407399",
+"sku": "NA6192",
+"titulo": "Cloro Past Mult 50k Past 50g C106i"
+},
+{
+"item": "MLA2216407411",
+"sku": "NA6144",
+"titulo": "Cloro en Pastillas Multiaccion Nataclor Cuñete x 50 Kg C105s"
+},
+{
+"item": "MLA2216369073",
+"sku": "L065",
+"titulo": "Corta Caños Profesional 14-63mm Black Jack"
+},
+{
+"item": "MLA2216381771",
+"sku": "CUT-40",
+"titulo": "Cortador de Plasma inverter12mm Versa Max"
+},
+{
+"item": "MLA2216407493",
+"sku": "F235",
+"titulo": "Corta Hierro de Acero Forjado con Protector 19x300mm Black"
+},
+{
+"item": "MLA2216381793",
+"sku": "NA1004",
+"titulo": "Corta-hierro 3/4\" 300 mm"
+},
+{
+"item": "MLA2216318335",
+"sku": "NA1005",
+"titulo": "Corta-hierro 3/4\" 350 mm"
+},
+{
+"item": "MLA2216407527",
+"sku": "O270",
+"titulo": "Cortavidrio 6 Ruedas Power"
+},
+{
+"item": "MLA2216318367",
+"sku": "NA5149",
+"titulo": "Destapacañerias Gel x 1L Merclin"
+},
+{
+"item": "MLA2216318377",
+"sku": "NA5029",
+"titulo": "Destapacañerias x 1000 Cc"
+},
+{
+"item": "MLA2216381837",
+"sku": "J617",
+"titulo": "Disco Carburo Silicio Power 115 6 mm"
+},
+{
+"item": "MLA2216407595",
+"sku": "J315",
+"titulo": "Disco Flap 115mm Power 60"
+},
+{
+"item": "MLA2216381871",
+"sku": "J3151",
+"titulo": "Disco Flap 115mm Power 80"
+},
+{
+"item": "MLA2216381915",
+"sku": "P190",
+"titulo": "Embudo Plastico Grande Pico Flexible Power"
+},
+{
+"item": "MLA2216318471",
+"sku": "NA8542",
+"titulo": "Enduido Interior x 1 Lts Roma"
+},
+{
+"item": "MLA2216369297",
+"sku": "NA2032",
+"titulo": "Escalera Metálica Reforzada 2 Peldaños"
+},
+{
+"item": "MLA2216369315",
+"sku": "NA2035",
+"titulo": "Escalera Metálica Reforzada 5 Peldaños"
+},
+{
+"item": "MLA2216369349",
+"sku": "I095",
+"titulo": "Escofina Redonda de Acero Forjado 200mm Black Jack"
+},
+{
+"item": "MLA2216382013",
+"sku": "NA1175",
+"titulo": "Escuadra de Albañil 40 Cm"
+},
+{
+"item": "MLA2216318565",
+"sku": "NA1177",
+"titulo": "Escuadra de Albañil 60 Cm"
+},
+{
+"item": "MLA2216318579",
+"sku": "C155",
+"titulo": "Escuadra para Soldar de Aluminio Black Jack"
+},
+{
+"item": "MLA2216382063",
+"sku": "NA8108",
+"titulo": "Estopa de Lustre x 300 Grs"
+},
+{
+"item": "MLA2216318649",
+"sku": "NA7056",
+"titulo": "Interruptor Bipolar Externo 20"
+},
+{
+"item": "MLA2216382129",
+"sku": "X005",
+"titulo": "Purificador de Agua para Canilla de Mesada Power"
+},
+{
+"item": "MLA2216369493",
+"sku": "NA5035",
+"titulo": "Fleje Destapa Cañerias x Tramo"
+},
+{
+"item": "MLA2216382165",
+"sku": "NA5041",
+"titulo": "Flexible Gas 1/2\" 40 cm"
+},
+{
+"item": "MLA2216318701",
+"sku": "NA5248",
+"titulo": "Flexible para Agua Mallado Acero 50 Cm"
+},
+{
+"item": "MLA2216369551",
+"sku": "NA1147",
+"titulo": "Fratacho con Abrasivo 6 Unidades"
+},
+{
+"item": "MLA2216318735",
+"sku": "NA1078",
+"titulo": "Fratacho Plástico con Espuma 20 Cm"
+},
+{
+"item": "MLA2216318751",
+"sku": "NA8131",
+"titulo": "Gavetero 17 Divisiones B Jack"
+},
+{
+"item": "MLA2216369571",
+"sku": "NA8132",
+"titulo": "Gavetero 25 Divisiones B Jack"
+},
+{
+"item": "MLA2216407975",
+"sku": "NA8124",
+"titulo": "Gavetero Plástica Grande 5 Divisiones"
+},
+{
+"item": "MLA2216407987",
+"sku": "NA8127",
+"titulo": "Gavetero Plástica Chico 12 Divisiones"
+},
+{
+"item": "MLA2216408003",
+"sku": "NA8146",
+"titulo": "Grafito en Polvo x 23 Grs"
+},
+{
+"item": "MLA2216382271",
+"sku": "NA8147",
+"titulo": "Grafito en Polvo x 70 Grs"
+},
+{
+"item": "MLA2216408023",
+"sku": "NA8151",
+"titulo": "Grampas Chato Marfil 10 50"
+},
+{
+"item": "MLA2216408033",
+"sku": "NA8137",
+"titulo": "Grasa de Rodamiento 125 g"
+},
+{
+"item": "MLA2216318807",
+"sku": "NA8140",
+"titulo": "Grasa Grafitada 125 g"
+},
+{
+"item": "MLA2216382305",
+"sku": "NA8141",
+"titulo": "Grasa Grafitada 250 g"
+},
+{
+"item": "MLA2216382313",
+"sku": "NA8134",
+"titulo": "Grasa Multiuso Roja 125 g"
+},
+{
+"item": "MLA2216369683",
+"sku": "NA8135",
+"titulo": "Grasa Multiuso Roja 250 g"
+},
+{
+"item": "MLA2216318861",
+"sku": "NA8143",
+"titulo": "Grasa Vaselina Siliconada 125 g"
+},
+{
+"item": "MLA2216408107",
+"sku": "NA2240",
+"titulo": "Guante Doméstico Tacolatex 8"
+},
+{
+"item": "MLA2216318899",
+"sku": "NA8329",
+"titulo": "Guantes Latex Industrial Certificado Talle 11"
+},
+{
+"item": "MLA2216382379",
+"sku": "NA6012",
+"titulo": "Guantes Moteados Certificados Gamisol"
+},
+{
+"item": "MLA2216408141",
+"sku": "N326",
+"titulo": "Hacha con Mango de Fibra 600g Black Jack"
+},
+{
+"item": "MLA2216382419",
+"sku": "NA8164",
+"titulo": "Hilo de Albañil x 30 Mts"
+},
+{
+"item": "MLA2216382435",
+"sku": "NA8161",
+"titulo": "Hilo Polipropileno x 100 Gs"
+},
+{
+"item": "MLA2216382451",
+"sku": "NA6211",
+"titulo": "Hormiguidicida Talquera x 250g"
+},
+{
+"item": "MLA2216318979",
+"sku": "NA3005",
+"titulo": "Inflador Doble Válvula Mini 26.5 Cm Black Jack"
+},
+{
+"item": "MLA2216318993",
+"sku": "NA3003",
+"titulo": "Inflador de Pie con Adaptador Black Jack"
+},
+{
+"item": "MLA2216382477",
+"sku": "B766",
+"titulo": "Kit para Jardineria x 10 Pcs Black Jack"
+},
+{
+"item": "MLA2216369913",
+"sku": "F155",
+"titulo": "Lápiz de Widia Pta. Cambiable Black Jack"
+},
+{
+"item": "MLA2216319053",
+"sku": "NA8563",
+"titulo": "Latex Interior x 4L Power Tech"
+},
+{
+"item": "MLA2216408287",
+"sku": "NA5164",
+"titulo": "Limpia Grifería en Gel x 500 Ml Merclin"
+},
+{
+"item": "MLA2216408325",
+"sku": "NA7995",
+"titulo": "Limpiametales x 150 Grs"
+},
+{
+"item": "MLA2216319115",
+"sku": "T204",
+"titulo": "Linterna 9 LED Aluminio 3xaaa Black Jack"
+},
+{
+"item": "MLA2216382641",
+"sku": "NA1152",
+"titulo": "Llana Dentada 125x300 Mm 12 - 125"
+},
+{
+"item": "MLA2216319175",
+"sku": "F197",
+"titulo": "Llana Dentada Black Jack 10 10 mm 280 120"
+},
+{
+"item": "MLA2216408409",
+"sku": "B453",
+"titulo": "Llaves Hexagonales Plegables 8 Piezas Black Jack"
+},
+{
+"item": "MLA2216370097",
+"sku": "N098",
+"titulo": "Machete Mango Plástico 18\" Versa Max"
+},
+{
+"item": "MLA2216023779",
+"sku": "NA6064",
+"titulo": "Alguicida Pileta Lona 500 cm3"
+},
+{
+"item": "MLA2216023787",
+"sku": "KPAG0808-V",
+"titulo": "Amoladora Angular 115 Mm 800W Versa"
+},
+{
+"item": "MLA2215997705",
+"sku": "KPAG2002-V",
+"titulo": "Amoladora Angular 2400W 180-230mm Versa"
+},
+{
+"item": "MLA2216023807",
+"sku": "KPAG0911-V",
+"titulo": "Amoladora Angular 115mm 950W Versa"
+},
+{
+"item": "MLA2215997721",
+"sku": "KSTAG1202-V",
+"titulo": "Amoladora Angular 115/125mm 1200W Versa"
+},
+{
+"item": "MLA2216023825",
+"sku": "KPAG0607",
+"titulo": "Amoladora Angular 600W 115mm Versa Max"
+},
+{
+"item": "MLA2215997747",
+"sku": "KSTAG0912-A",
+"titulo": "Amoladora Angular 115/125mm 900 W Versa Max"
+},
+{
+"item": "MLA2215997757",
+"sku": "NEU4040",
+"titulo": "Amoladora Angular Neumatica 5\" Versa Max"
+},
+{
+"item": "MLA2215997765",
+"sku": "KRAMO1801",
+"titulo": "Amoladora Recargable 115mm 20V Versa"
+},
+{
+"item": "MLA2215972971",
+"sku": "KRAMO2102",
+"titulo": "Amoladora Recargable 115mm 20V Versa Max"
+},
+{
+"item": "MLA2216023857",
+"sku": "NA2008",
+"titulo": "Cocina 4 Hornallas con Horno"
+},
+{
+"item": "MLA2216023863",
+"sku": "C045",
+"titulo": "Arco de Sierra Mango de Aluminio 12\" Black Jack"
+},
+{
+"item": "MLA2216023867",
+"sku": "C010",
+"titulo": "Arco de Sierra Cromado con Hoja Power"
+},
+{
+"item": "MLA2216010615",
+"sku": "C060",
+"titulo": "Arco de Sierra Mango de Aluminio Reforzado 12\" Black Jack"
+},
+{
+"item": "MLA2215972997",
+"sku": "C040",
+"titulo": "Arco de Sierra Mango Naranja Power"
+},
+{
+"item": "MLA2215972999",
+"sku": "C024",
+"titulo": "Arco de Sierra Mini 12\" Black Jack"
+},
+{
+"item": "MLA2215973001",
+"sku": "C030",
+"titulo": "Arco de Sierra para Calar con 5hoja Power"
+},
+{
+"item": "MLA2216010653",
+"sku": "C062",
+"titulo": "Arco de Sierra Mango de Goma 12\" Black Jack"
+},
+{
+"item": "MLA2215997805",
+"sku": "C064",
+"titulo": "Arco de Sierra Mango Plástico 12\" Black Jack C064"
+},
+{
+"item": "MLA2215997813",
+"sku": "C063",
+"titulo": "Arco de Sierra Reforzado 12\" Black Jack"
+},
+{
+"item": "MLA2216010679",
+"sku": "KATO0710",
+"titulo": "Atornillador Drywall 710W Versa Max"
+},
+{
+"item": "MLA2215973031",
+"sku": "KSTCD1802",
+"titulo": "Atornillador de Impacto Recargable 20V 1/4\" Versa Max"
+},
+{
+"item": "MLA2215997873",
+"sku": "HDB5105L",
+"titulo": "Atornillador USB Recargable Pistola Hdb"
+},
+{
+"item": "MLA2216010725",
+"sku": "HDB5104L",
+"titulo": "Atornillador USB Recargable Hdb"
+},
+{
+"item": "MLA2216010751",
+"sku": "KRCAL1901",
+"titulo": "Caladora Recargable 20V Versa Max"
+},
+{
+"item": "MLA2215973075",
+"sku": "NA7037",
+"titulo": "Calentador Inmersion Plástico 220 V"
+},
+{
+"item": "MLA2215973085",
+"sku": "NA2013",
+"titulo": "Calentador a Gas Enlozado para Garrafa 2/3 Kg"
+},
+{
+"item": "MLA2216010769",
+"sku": "NA2014",
+"titulo": "Calentador a Gas para Garrafa de 10 Kg"
+},
+{
+"item": "MLA2216023967",
+"sku": "A057",
+"titulo": "Canilla Monocomando Recta Negra Black Jack"
+},
+{
+"item": "MLA2216023981",
+"sku": "A059",
+"titulo": "Canilla Monocomando Recta Plateada Black Jack"
+},
+{
+"item": "MLA2215997935",
+"sku": "A056",
+"titulo": "Canilla Monocomando Redondeada Negra Black Jack"
+},
+{
+"item": "MLA2216024011",
+"sku": "A058",
+"titulo": "Canilla Monocomando Redondeada Plateada Black Jack"
+},
+{
+"item": "MLA2215973149",
+"sku": "KPPL0701",
+"titulo": "Cepilladora Eléctrica 710W Versa Max"
+},
+{
+"item": "MLA2215997957",
+"sku": "NA2119",
+"titulo": "Cepillo Anden 60 cm NA2119"
+},
+{
+"item": "MLA2216010817",
+"sku": "NA2122",
+"titulo": "Cepillo Anden 80 cm NA2122"
+},
+{
+"item": "MLA2216010825",
+"sku": "NA2120",
+"titulo": "Cepillo Anden 80 cm NA2120"
+},
+{
+"item": "MLA2216024053",
+"sku": "NA2118",
+"titulo": "Cepillo Barrendero"
+},
+{
+"item": "MLA2215998025",
+"sku": "I111",
+"titulo": "Cepillo Carpintero Mini Power"
+},
+{
+"item": "MLA2216024105",
+"sku": "J797",
+"titulo": "Cepillo Doble Empuñadura 5x32 Black Jack"
+},
+{
+"item": "MLA2216010895",
+"sku": "J255",
+"titulo": "Cincel para Canaletas Black Jack"
+},
+{
+"item": "MLA2216024131",
+"sku": "GPV-001",
+"titulo": "Set de Cinceles para Picareta Versa Max"
+},
+{
+"item": "MLA2216024169",
+"sku": "NA8490",
+"titulo": "Cinta Metálica Reforzada"
+},
+{
+"item": "MLA2216010941",
+"sku": "NA6142",
+"titulo": "Cloro Granulado Nataclor x 50 Kg (cuñete) C105i"
+},
+{
+"item": "MLA2215973287",
+"sku": "NA6099",
+"titulo": "Cloro en Pastillas 50grs Multiac 1kg C503g"
+},
+{
+"item": "MLA2215998117",
+"sku": "O336",
+"titulo": "Cobertor PVC 3x4m Black Jack"
+},
+{
+"item": "MLA2216024215",
+"sku": "O335",
+"titulo": "Cobertor PVC 4x5m Black Jack"
+},
+{
+"item": "MLA2216010989",
+"sku": "KPMC1204-V",
+"titulo": "Cortadora Ingletadora 10” 2100W Versa"
+},
+{
+"item": "MLA2215998157",
+"sku": "O277",
+"titulo": "Cortante Circular Black Jack"
+},
+{
+"item": "MLA2215998165",
+"sku": "O278",
+"titulo": "Cortante Circular Reforzado Black Jack"
+},
+{
+"item": "MLA2215973347",
+"sku": "O275",
+"titulo": "Cortavidrio Circular Diámetro Máximo 60cm Black Jack"
+},
+{
+"item": "MLA2215998179",
+"sku": "O260",
+"titulo": "Cortavidrio Rueda con Aceite Power"
+},
+{
+"item": "MLA2215998189",
+"sku": "O212",
+"titulo": "Cutter Profesional Plateado 9mm Black Jack"
+},
+{
+"item": "MLA2216011027",
+"sku": "B765",
+"titulo": "Cutter Profesional 25mm Black Jack"
+},
+{
+"item": "MLA2215973363",
+"sku": "O214",
+"titulo": "Cutter Profesional 9mm Black Jack"
+},
+{
+"item": "MLA2215973377",
+"sku": "O217",
+"titulo": "Cutter Profesional de Aluminio Black Jack"
+},
+{
+"item": "MLA2216024305",
+"sku": "O205",
+"titulo": "Cutters Económico 9mm Power"
+},
+{
+"item": "MLA2215973425",
+"sku": "T940",
+"titulo": "Desoldador de Estaño Power"
+},
+{
+"item": "MLA4103479370",
+"sku": "I090",
+"titulo": "Escofinas Set x 3 Piezas Power"
+},
+{
+"item": "MLA4103479374",
+"sku": "C159",
+"titulo": "Escuadra Magnetica 25 Lb Black Jack"
+},
+{
+"item": "MLA4103466878",
+"sku": "NEU110",
+"titulo": "Amoladora Esmeriladora Compacta 1/4\" Neumática Versa Max"
+},
+{
+"item": "MLA4103479380",
+"sku": "F060",
+"titulo": "Espátula de Acero Mango Plástico 1\" Black Jack"
+},
+{
+"item": "MLA4103492166",
+"sku": "F061",
+"titulo": "Espátula de Acero Mango Plástico Black Jack"
+},
+{
+"item": "MLA4103454762",
+"sku": "I106",
+"titulo": "Espátula Larga 150x12mm Black Jack"
+},
+{
+"item": "MLA4103454770",
+"sku": "F045",
+"titulo": "Espátula Mango Plástico Black Jack 120 mm"
+},
+{
+"item": "MLA4103492174",
+"sku": "F041",
+"titulo": "Espátula Mango Plástico Black Jack 30 mm"
+},
+{
+"item": "MLA4103466898",
+"sku": "F043",
+"titulo": "Espátula Mango Plástico Black Jack 70 mm"
+},
+{
+"item": "MLA4103466906",
+"sku": "F301",
+"titulo": "Espátula para Enduir Power 170 mm"
+},
+{
+"item": "MLA4103479414",
+"sku": "B762",
+"titulo": "Extensión Flexible 1/4\" para Puntas Black Jack"
+},
+{
+"item": "MLA4103466936",
+"sku": "R400",
+"titulo": "Extractor de Poleas 3\" 3 Patas Power"
+},
+{
+"item": "MLA4103492212",
+"sku": "O610",
+"titulo": "Extractor de Tornillos Set de 5 Piezas Power"
+},
+{
+"item": "MLA4103454858",
+"sku": "NA7055",
+"titulo": "Interruptor Bipolar Externo 20 Negro"
+},
+{
+"item": "MLA4103454884",
+"sku": "NA7381",
+"titulo": "Protector Bebestop x 2 Unidades"
+},
+{
+"item": "MLA4103454898",
+"sku": "NA4067",
+"titulo": "Filtro para Gases 5300/22 - 2 Und"
+},
+{
+"item": "MLA4103454906",
+"sku": "NA5244",
+"titulo": "Flexible para Agua Mallado Acero 25 Cm"
+},
+{
+"item": "MLA4103454912",
+"sku": "NA2046",
+"titulo": "Flexible para Carga 1.80m para Lavabo"
+},
+{
+"item": "MLA4103492300",
+"sku": "NA7492",
+"titulo": "Floron Portalampara"
+},
+{
+"item": "MLA4103479510",
+"sku": "F198",
+"titulo": "Fratacho Profesional de Caucho Black Jack"
+},
+{
+"item": "MLA4103454932",
+"sku": "J033",
+"titulo": "Fresa Avellanadora 4x16mm Black Jack"
+},
+{
+"item": "MLA4103467054",
+"sku": "J034",
+"titulo": "Fresa Avellanadora 6x16mm Black Jack"
+},
+{
+"item": "MLA4103479528",
+"sku": "J018",
+"titulo": "Set de Fresas para Metal Carburo x 10 Piezas Black Jack"
+},
+{
+"item": "MLA4103467062",
+"sku": "KPER1203-V",
+"titulo": "Fresadora de Madera 1200W Versa"
+},
+{
+"item": "MLA4103479546",
+"sku": "L080",
+"titulo": "Fresadora para Canillas Black Jack"
+},
+{
+"item": "MLA4103479548",
+"sku": "KPST1018",
+"titulo": "Set de Fresas 15 Piezas Versa"
+},
+{
+"item": "MLA4103454996",
+"sku": "NA5128",
+"titulo": "Fuelle de Goma para Inodoro Largo"
+},
+{
+"item": "MLA4103467092",
+"sku": "NA8129",
+"titulo": "Gavetero 6 Divisiones B Jack"
+},
+{
+"item": "MLA4103467100",
+"sku": "NA8154",
+"titulo": "Grampas Taller Negro 15 20"
+},
+{
+"item": "MLA4103479580",
+"sku": "NA8706",
+"titulo": "Grasa de Litio en Aerosol 380 Cc Tri-nechi"
+},
+{
+"item": "MLA4103492410",
+"sku": "NA8138",
+"titulo": "Grasa de Rodamiento 250 g"
+},
+{
+"item": "MLA4103467114",
+"sku": "NA22411",
+"titulo": "Guante Domestico 10 Tacolatex"
+},
+{
+"item": "MLA4103479594",
+"sku": "NA22412",
+"titulo": "Guante Domestico 10.5 Tacolatex"
+},
+{
+"item": "MLA4103455078",
+"sku": "NA2241",
+"titulo": "Guante Doméstico Tacolatex 9"
+},
+{
+"item": "MLA4103455088",
+"sku": "DA25-011",
+"titulo": "Guantes Poliéster y Poliuretano Jiayo"
+},
+{
+"item": "MLA4103467172",
+"sku": "DA25-013",
+"titulo": "Guantes Algodón y Latex Rugoso Jiayo"
+},
+{
+"item": "MLA4103492456",
+"sku": "DA25-012",
+"titulo": "Guantes Poliéster y Nitrilo Jiayo"
+},
+{
+"item": "MLA4103479638",
+"sku": "J240",
+"titulo": "Guia Universal para Taladro Black Jack"
+},
+{
+"item": "MLA4103467210",
+"sku": "N336",
+"titulo": "Hacha Forjada Black Jack 1250 g"
+},
+{
+"item": "MLA4103492496",
+"sku": "N337",
+"titulo": "Hacha Forjada Black Jack 1600 g"
+},
+{
+"item": "MLA4103492506",
+"sku": "N338",
+"titulo": "Hacha Forjada Black Jack 2000 g"
+},
+{
+"item": "MLA4103455182",
+"sku": "O200",
+"titulo": "Hojas para Cutters Set x 10 Piezas Black Jack"
+},
+{
+"item": "MLA4103492558",
+"sku": "R105",
+"titulo": "Inflador con Fuelle Plástico Power"
+},
+{
+"item": "MLA4103492562",
+"sku": "R119",
+"titulo": "Inflador Cromado con Dep 250mm Power"
+},
+{
+"item": "MLA4103492566",
+"sku": "R120",
+"titulo": "Inflador Cromado con Dep 450mm Power"
+},
+{
+"item": "MLA4103455224",
+"sku": "R135",
+"titulo": "Inflador de Mano con Pico para Bici Black Jack"
+},
+{
+"item": "MLA4103479764",
+"sku": "NA3020",
+"titulo": "Inflador de Mano Mini para Bicicleta Black Jack"
+},
+{
+"item": "MLA4103492576",
+"sku": "R125",
+"titulo": "Inflador de Mano para Bici-negro Black Jack"
+},
+{
+"item": "MLA4103479772",
+"sku": "R110",
+"titulo": "Inflador de Pie Power"
+},
+{
+"item": "MLA4103479782",
+"sku": "NA3017",
+"titulo": "Inflador de Pie Compacto Mini Black Jack"
+},
+{
+"item": "MLA4103467322",
+"sku": "C110",
+"titulo": "Inglete con Serrucho 12 Power"
+},
+{
+"item": "MLA4103479798",
+"sku": "A069",
+"titulo": "Serrucho Costilla con Inglete Black Jack"
+},
+{
+"item": "MLA4103479800",
+"sku": "NA7072",
+"titulo": "Toma Externo para Teléfono 2 Salidas"
+},
+{
+"item": "MLA4103479806",
+"sku": "L090",
+"titulo": "Kit de Refrigeracion 5 Pcs Black Jack"
+},
+{
+"item": "MLA4103492598",
+"sku": "GPV-200",
+"titulo": "Kit para Compresor x 5 Piezas Versa Max"
+},
+{
+"item": "MLA4103455304",
+"sku": "NA8596",
+"titulo": "Latex Interior 1 Lts Power Tech"
+},
+{
+"item": "MLA4103479884",
+"sku": "O301-1",
+"titulo": "Papel de Lija N° 1 Power"
+},
+{
+"item": "MLA4103455324",
+"sku": "O302-1",
+"titulo": "Papel de Lija N° 1 1/2 Power"
+},
+{
+"item": "MLA4103455328",
+"sku": "O303-1",
+"titulo": "Papel de Lija N° 2 Power"
+},
+{
+"item": "MLA4103479910",
+"sku": "K065",
+"titulo": "Limas de Matricero Set de 10 Piezas 4 x 160 Mm Black Jack"
+},
+{
+"item": "MLA4103492694",
+"sku": "NA8704",
+"titulo": "Limpia Contacto 320 Cc Tri-nechi"
+},
+{
+"item": "MLA4103467400",
+"sku": "R241",
+"titulo": "Linga Acero para Remolque Power"
+},
+{
+"item": "MLA4103479928",
+"sku": "Q390",
+"titulo": "Linga para Bicicleta Power"
+},
+{
+"item": "MLA4103460866",
+"sku": "NA5028",
+"titulo": "Destapacañerias x 500 Cc"
+},
+{
+"item": "MLA4103460880",
+"sku": "B320",
+"titulo": "Destornillador T x 21 Piezas Power"
+},
+{
+"item": "MLA4103448920",
+"sku": "T875",
+"titulo": "Detector Multiple para Muros Black Jack"
+},
+{
+"item": "MLA4103486300",
+"sku": "J610",
+"titulo": "Disco 115 Mm de Amolar Power"
+},
+{
+"item": "MLA4103473652",
+"sku": "J601",
+"titulo": "Disco 115 Mm de Corte Power"
+},
+{
+"item": "MLA4103448966",
+"sku": "J616",
+"titulo": "Disco Carburo Silicio Power 115 3 mm"
+},
+{
+"item": "MLA4103473716",
+"sku": "J614",
+"titulo": "Disco Carburo Silicio Power 115 1.6 mm"
+},
+{
+"item": "MLA4103461064",
+"sku": "J619",
+"titulo": "Disco Carburo Silicio Power 180 6 mm"
+},
+{
+"item": "MLA4103461144",
+"sku": "J370",
+"titulo": "Disco Diamantado 115 Mm Corte Turbo Power"
+},
+{
+"item": "MLA4103473866",
+"sku": "R821",
+"titulo": "Set de Discos de Lija con Velcro 125mm x 5 Piezas g180"
+},
+{
+"item": "MLA4103473914",
+"sku": "R823",
+"titulo": "Set de Discos de Lija con Velcro 180mm x 5 Piezas g24 Black"
+},
+{
+"item": "MLA4103461254",
+"sku": "R826",
+"titulo": "Set de Discos de Lija con Velcro 180mm x 5 Piezas g50 Black"
+},
+{
+"item": "MLA4103449208",
+"sku": "J605",
+"titulo": "Disco Oxido Alum 115 x 1.0 Mm Power"
+},
+{
+"item": "MLA4103486628",
+"sku": "NA5191",
+"titulo": "Ducha Móvil Lujo Cromo Chica con Manguera MG"
+},
+{
+"item": "MLA4103461366",
+"sku": "NA5137",
+"titulo": "Ducha Móvil Lujo Cromo con Manguera MG"
+},
+{
+"item": "MLA4103449282",
+"sku": "NA7383",
+"titulo": "Duplo 2 Espigas Chato Richi"
+},
+{
+"item": "MLA4103486696",
+"sku": "NA7382",
+"titulo": "Duplo 2 Pernos Redondos Richi"
+},
+{
+"item": "MLA4103461408",
+"sku": "A290",
+"titulo": "Guinche Elevador de Motor Hidraulico 1 Tonelada Power"
+},
+{
+"item": "MLA4103449346",
+"sku": "O701",
+"titulo": "Encintadora para Durlok Black Jack"
+},
+{
+"item": "MLA4103449360",
+"sku": "NA8543",
+"titulo": "Enduido Interior x 4 Lts Roma"
+},
+{
+"item": "MLA4103486766",
+"sku": "R245",
+"titulo": "Enganche para Trailer Black Jack"
+},
+{
+"item": "MLA4103486794",
+"sku": "NA2033",
+"titulo": "Escalera Metálica Reforzada 3 Peldaños"
+},
+{
+"item": "MLA4103461556",
+"sku": "NA2034",
+"titulo": "Escalera Metálica Reforzada 4 Peldaños"
+},
+{
+"item": "MLA4103474174",
+"sku": "I097",
+"titulo": "Escofina Media Caña de Acero Forjado 200 Mm Black Jack"
+},
+{
+"item": "MLA4103486844",
+"sku": "I096",
+"titulo": "Escofina Plana de Acero Forjado 200 Mm Black Jack"
+},
+{
+"item": "MLA4103474204",
+"sku": "J015",
+"titulo": "Escofinas para Taladro Set x 5 Piezas Power"
+},
+{
+"item": "MLA4103449512",
+"sku": "D095",
+"titulo": "Escuadra con Ángulo 500 Mm Black Jack"
+},
+{
+"item": "MLA4103461726",
+"sku": "D096",
+"titulo": "Escuadra con Ángulo Reforzada 550mm Black Jack"
+},
+{
+"item": "MLA4103461738",
+"sku": "A036",
+"titulo": "Escuadra de Acero 3 en 1 Extra Power"
+},
+{
+"item": "MLA4103461790",
+"sku": "D081",
+"titulo": "Escuadra de Acero Ancha 300mm Black Jack"
+},
+{
+"item": "MLA4103487100",
+"sku": "D080",
+"titulo": "Escuadra de Acero Ancha 250 Mm Black Jack"
+},
+{
+"item": "MLA4103461820",
+"sku": "D070",
+"titulo": "Escuadra de Acero Angosta 250 Mm Power"
+},
+{
+"item": "MLA4103487146",
+"sku": "D113",
+"titulo": "Escuadra de Acero T 300x600mm Black Jack"
+},
+{
+"item": "MLA4103461860",
+"sku": "C158",
+"titulo": "Escuadra Magnetica 75 Lb Black Jack"
+},
+{
+"item": "MLA4103461894",
+"sku": "F055",
+"titulo": "Espátula de Acero Reforzada Power 2\""
+},
+{
+"item": "MLA4103487264",
+"sku": "F042",
+"titulo": "Espátula Mango Plástico Black Jack 50 mm"
+},
+{
+"item": "MLA4103474596",
+"sku": "F044",
+"titulo": "Espátula Mango Plástico Black Jack 90 mm"
+},
+{
+"item": "MLA4103487346",
+"sku": "R401",
+"titulo": "Extractor de Poleas 4\" 3 Patas Power"
+},
+{
+"item": "MLA4103474626",
+"sku": "R402",
+"titulo": "Extractor de Poleas 6\" 3 Patas Power"
+},
+{
+"item": "MLA4103474640",
+"sku": "R403",
+"titulo": "Extractor de Poleas 8\" 3 Patas Power"
+},
+{
+"item": "MLA4103487390",
+"sku": "R651",
+"titulo": "Extractor de Rodamientos 0-50mm Black Jack"
+},
+{
+"item": "MLA4103462104",
+"sku": "R650",
+"titulo": "Extractor de Rodamientos 80-120 Mm 2 Patas Black Jack"
+},
+{
+"item": "MLA4103450104",
+"sku": "NA4066",
+"titulo": "Filtro para Vapores 5300/20 2 Und"
+},
+{
+"item": "MLA4103487496",
+"sku": "ASP123FILTRO",
+"titulo": "Filtro para Aspiradora asp123-1200W-15l Versa Max"
+},
+{
+"item": "MLA4103474806",
+"sku": "GPV-09",
+"titulo": "Filtro de Aire, Regulador y Lubricador Versa Max"
+},
+{
+"item": "MLA4103450162",
+"sku": "NA5040",
+"titulo": "Flexible Gas 1/2\" 30 cm"
+},
+{
+"item": "MLA4103474900",
+"sku": "NA1186",
+"titulo": "Fratacho para Grueso"
+},
+{
+"item": "MLA4103487622",
+"sku": "NA1079",
+"titulo": "Fratacho Plástico con Espuma 25 Cm"
+},
+{
+"item": "MLA4103450258",
+"sku": "NA1080",
+"titulo": "Fratacho Plástica con Espuma"
+},
+{
+"item": "MLA4103474940",
+"sku": "J036",
+"titulo": "Fresa Avellanadora 10x16mm Black Jack"
+},
+{
+"item": "MLA4103474970",
+"sku": "J032",
+"titulo": "Fresa Avellanadora 3x16mm Black Jack"
+},
+{
+"item": "MLA4103450352",
+"sku": "NA5054",
+"titulo": "Fuelle de Goma para Inodoro"
+},
+{
+"item": "MLA4103450372",
+"sku": "NA5157",
+"titulo": "Fuelle para Inodoro Mochila Regulable"
+},
+{
+"item": "MLA4103450392",
+"sku": "NA8130",
+"titulo": "Gavetero 9 Divisiones B Jack"
+},
+{
+"item": "MLA4103462556",
+"sku": "NA8153",
+"titulo": "Grampas Taller Negro 12 25"
+},
+{
+"item": "MLA4103450440",
+"sku": "P180",
+"titulo": "Grasera Metálica Black Jack"
+},
+{
+"item": "MLA4103462606",
+"sku": "NA8493",
+"titulo": "Guantes Certificados de Descarne Combinado"
+},
+{
+"item": "MLA4103462620",
+"sku": "NA8491",
+"titulo": "Guante Certificado de Descarne Puño Corto"
+},
+{
+"item": "MLA4103475148",
+"sku": "NA8550",
+"titulo": "Guante Certificado Descarne Puno Largo"
+},
+{
+"item": "MLA4103487896",
+"sku": "NA8492",
+"titulo": "Guante Certificado de Soldador"
+},
+{
+"item": "MLA4103462682",
+"sku": "NA83271",
+"titulo": "Guante Goma Industrial S"
+},
+{
+"item": "MLA4103475230",
+"sku": "I105",
+"titulo": "Gubias Grandes Set x 4 Black Jack"
+},
+{
+"item": "MLA4103450562",
+"sku": "I080",
+"titulo": "Gubias x 6 Piezas Reforzadas 7 Power"
+},
+{
+"item": "MLA4103487986",
+"sku": "N335",
+"titulo": "Hacha Forjada 800 G Black Jack"
+},
+{
+"item": "MLA4103462786",
+"sku": "G055",
+"titulo": "Hachuela de Albañil 600 G Black Jack"
+},
+{
+"item": "MLA4103488146",
+"sku": "NA3001",
+"titulo": "Inflador para Pelota Black Jack"
+},
+{
+"item": "MLA4103450732",
+"sku": "NA7071",
+"titulo": "Toma Externo para Teléfono 1 Salida"
+},
+{
+"item": "MLA4103488204",
+"sku": "NA5057",
+"titulo": "Jabonera Plástica Autoadhesiva"
+},
+{
+"item": "MLA4103462948",
+"sku": "D410",
+"titulo": "Kit con Manguera 5 Pcs Extra Power"
+},
+{
+"item": "MLA4103488282",
+"sku": "R070",
+"titulo": "Kit para Reparar Bicicleta Power"
+},
+{
+"item": "MLA4103463112",
+"sku": "NA8598",
+"titulo": "Latex Exterior/interior 10 Lts Power Tech"
+},
+{
+"item": "MLA4103450932",
+"sku": "NA8597",
+"titulo": "Latex Exterior/interior 20 Lts Powertech Power Tech"
+},
+{
+"item": "MLA4103450952",
+"sku": "KSTSA1002-V",
+"titulo": "Lijadora Orbital de Palma 250W Versa"
+},
+{
+"item": "MLA4103450966",
+"sku": "KSTSA1008-V",
+"titulo": "Lijadora Orbital 400W Versa"
+},
+{
+"item": "MLA4103463164",
+"sku": "NEU4080",
+"titulo": "Lijadora Orbital Neumática Versa Max"
+},
+{
+"item": "MLA4103488462",
+"sku": "J322",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 100"
+},
+{
+"item": "MLA4103450996",
+"sku": "J323",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 120"
+},
+{
+"item": "MLA4103451012",
+"sku": "J324",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 180"
+},
+{
+"item": "MLA4103488514",
+"sku": "J325",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 240"
+},
+{
+"item": "MLA4103451028",
+"sku": "J326",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 400"
+},
+{
+"item": "MLA4103463232",
+"sku": "J321",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 60"
+},
+{
+"item": "MLA4103451062",
+"sku": "J327",
+"titulo": "Lijas al Agua x 10 Piezas Black Jack 600"
+},
+{
+"item": "MLA4103488582",
+"sku": "J303",
+"titulo": "Lijas con Velcro x 5 Piezas Black Jack 125 mm"
+},
+{
+"item": "MLA4103463256",
+"sku": "O325",
+"titulo": "Lijas de Banda 76x533mm x5 Piezas Power"
+},
+{
+"item": "MLA4103451104",
+"sku": "J305",
+"titulo": "Lijas Triangulo x 10 C/ Velcro Black Jack"
+},
+{
+"item": "MLA4103488634",
+"sku": "K034",
+"titulo": "Lima Bastarda Cuadrada de Acero Forjado 20 Mm Black Jack"
+},
+{
+"item": "MLA4103451140",
+"sku": "K035",
+"titulo": "Lima Bastarda Media Caña de Acero Forjado 200 Mm Black Jack"
+},
+{
+"item": "MLA4103451160",
+"sku": "K048",
+"titulo": "Lima Mini Media Caña de Acero Forjado 4\" Black Jack"
+},
+{
+"item": "MLA4103463332",
+"sku": "K047",
+"titulo": "Lima Mini Plana de Acero Forjado 4\" Black Jack"
+},
+{
+"item": "MLA4103475858",
+"sku": "K046",
+"titulo": "Lima Mini Redonda de Acero Forjado 4\" Black Jack"
+},
+{
+"item": "MLA4103451206",
+"sku": "K045",
+"titulo": "Lima Mini Triangular de Acero Forjado 4\" Black Jack"
+},
+{
+"item": "MLA4103488710",
+"sku": "K010",
+"titulo": "Lima para Metal 8 Media Caña Power"
+},
+{
+"item": "MLA4103451254",
+"sku": "K040",
+"titulo": "Lima para Metal 8 Plana Power"
+},
+{
+"item": "MLA4103451270",
+"sku": "K020",
+"titulo": "Lima para Metal 8 Redonda Power"
+},
+{
+"item": "MLA4103488750",
+"sku": "K030",
+"titulo": "Lima para Metal 8 Triangular Power"
+},
+{
+"item": "MLA4103488762",
+"sku": "K054",
+"titulo": "Lima Plana Bastarda de Acero Forjado 200 Mm Black Jack"
+},
+{
+"item": "MLA4103475950",
+"sku": "K055",
+"titulo": "Lima Plana Bastarda de Acero Forjado 250 Mm Black Jack"
+},
+{
+"item": "MLA4103463450",
+"sku": "K056",
+"titulo": "Lima Plana Bastarda de Acero Forjado 300 Mm Black Jack"
+},
+{
+"item": "MLA4103475962",
+"sku": "K031",
+"titulo": "Lima Bastarda Redonda de Acero Forjado 200 Mm Black Jack"
+},
+{
+"item": "MLA4103488790",
+"sku": "K032",
+"titulo": "Lima Bastarda Triangular de Acero Forjado 200mm Black Jack"
+},
+{
+"item": "MLA4103475988",
+"sku": "K050",
+"titulo": "Limas 8 x 3 Piezas Power"
+},
+{
+"item": "MLA4103476000",
+"sku": "K070",
+"titulo": "Limas x 6 Piezas Matricero con Cabo Power"
+},
+{
+"item": "MLA4103463500",
+"sku": "A042",
+"titulo": "Linga con Combinación Black Jack"
+},
+{
+"item": "MLA4103451338",
+"sku": "A043",
+"titulo": "Linga con Combinación 1.2m 6mm Black Jack"
+},
+{
+"item": "MLA4103463514",
+"sku": "Q393",
+"titulo": "Linga para Moto Eco 20mm x 1,05m Power"
+},
+{
+"item": "MLA4103451346",
+"sku": "Q440",
+"titulo": "Linga para Moto Reforzada Power"
+},
+{
+"item": "MLA4103451362",
+"sku": "T206",
+"titulo": "Linterna Aluminio 5 Elementos Black Jack"
+},
+{
+"item": "MLA4103488848",
+"sku": "A044",
+"titulo": "Linterna Llavero Recargable con Destapador Extra Power"
+},
+{
+"item": "MLA4103476034",
+"sku": "T208",
+"titulo": "Linterna para Cabeza con 12 Leds Black Jack"
+},
+{
+"item": "MLA4103488868",
+"sku": "A046",
+"titulo": "Linterna Vincha Recargable con Sensor Extra Power"
+},
+{
+"item": "MLA4103488870",
+"sku": "NA1151",
+"titulo": "Llana Dentada 125x300 Mm 10 10 - 125"
+},
+{
+"item": "MLA4103463546",
+"sku": "NA1149",
+"titulo": "Llana Dentada 125x300 Mm 6 6 - 125"
+},
+{
+"item": "MLA4103463558",
+"sku": "NA1150",
+"titulo": "Llana Dentada 125x300 Mm 8 8 - 125"
+},
+{
+"item": "MLA4103463570",
+"sku": "F193",
+"titulo": "Llana Dentada Black Jack 8 8 - 255 120 mm"
+},
+{
+"item": "MLA4103488896",
+"sku": "F195",
+"titulo": "Llana Dentada Black Jack 8 8 mm 280 120 mm"
+},
+{
+"item": "MLA4103476080",
+"sku": "F196",
+"titulo": "Llana Lisa Black Jack 280 120 mm"
+},
+{
+"item": "MLA4103476084",
+"sku": "F192",
+"titulo": "Llana Lisa Black Jack 400 120 mm"
+},
+{
+"item": "MLA4103488940",
+"sku": "B500",
+"titulo": "Llave Ajustable Fosfatizada Power"
+},
+{
+"item": "MLA4103489134",
+"sku": "DIS013",
+"titulo": "Llave Combinada 1 1/4\" Satinada Power"
+},
+{
+"item": "MLA4103463804",
+"sku": "DIS012",
+"titulo": "Llave Combinada 1\" Satinada Power"
+},
+{
+"item": "MLA4103463854",
+"sku": "DIS007",
+"titulo": "Llave Combinada 1/4\" Satinada Power"
+},
+{
+"item": "MLA4103476400",
+"sku": "DIS019",
+"titulo": "Llave Combinada Satinada 16 Mm Power"
+},
+{
+"item": "MLA4103489532",
+"sku": "DIS011",
+"titulo": "Llave Combinada 7/8\" Satinada Power"
+},
+{
+"item": "MLA4103452098",
+"sku": "DIS016",
+"titulo": "Llave Combinada 9mm Power"
+},
+{
+"item": "MLA4103452258",
+"sku": "B489",
+"titulo": "Llave Criquet Power 1/4\""
+},
+{
+"item": "MLA4103452316",
+"sku": "B490",
+"titulo": "Llave Criquet Power 3/8\""
+},
+{
+"item": "MLA4103489842",
+"sku": "NEU2020",
+"titulo": "Llave Crique Neumática 1/2\" Versa Max"
+},
+{
+"item": "MLA4103489866",
+"sku": "NEU2080",
+"titulo": "Llave Crique Neumática 3/8\" Versa Max"
+},
+{
+"item": "MLA4103477084",
+"sku": "R250",
+"titulo": "Llave Cruz Múltiple Power"
+},
+{
+"item": "MLA4103477252",
+"sku": "A048",
+"titulo": "Llave de Fuerza Telescópica Extra Power"
+},
+{
+"item": "MLA4103477286",
+"sku": "B498",
+"titulo": "Juego de Llaves Hexagonales de Doble Uso Set de 8 Pzas"
+},
+{
+"item": "MLA4103464806",
+"sku": "W519",
+"titulo": "Llave de Impacto Neumatica Encastre 1\" 3800Nm Versa"
+},
+{
+"item": "MLA4103452622",
+"sku": "KRLLA1904",
+"titulo": "Llave de Impacto Recargable Versa Max"
+},
+{
+"item": "MLA4103464908",
+"sku": "B209",
+"titulo": "Llave Tipo Bahco Power 140"
+},
+{
+"item": "MLA4103490268",
+"sku": "B436",
+"titulo": "Llaves Torx Set x 9 Piezas 180mm Power"
+},
+{
+"item": "MLA4103490296",
+"sku": "NA8707",
+"titulo": "Lubricante y Deslizante para Caños 380 Cc Tri-nechi"
+},
+{
+"item": "MLA4103490308",
+"sku": "NA8702",
+"titulo": "Lubricante Multipropósito 240 Cc Tri-nechi"
+},
+{
+"item": "MLA4103465048",
+"sku": "NA8701",
+"titulo": "Lubricante Multipropósito 400 Cc Tri-nechi"
+},
+{
+"item": "MLA4103490376",
+"sku": "NA8703",
+"titulo": "Lubricante Teflonado 380 Cc Tri-nechi"
+},
+{
+"item": "MLA4103465106",
+"sku": "NA7385",
+"titulo": "Luz de Emergencia 69 Leds Candela"
+},
+{
+"item": "MLA4103465122",
+"sku": "N097",
+"titulo": "Machete Mango Plástico 16\" Versa Max"
+},
+{
+"item": "MLA4103490450",
+"sku": "E149",
+"titulo": "Maletin para Herramientas 395x240x90mm Black Jack"
+},
+{
+"item": "MLA4103477644",
+"sku": "E148",
+"titulo": "Maletin para Herramientas 425x280x120mm Black Jack"
+},
+{
+"item": "MLA4103453006",
+"sku": "J636",
+"titulo": "Mandril Autoajustable 2-13 Mm Versa"
+},
+{
+"item": "MLA4103490504",
+"sku": "KSTSD1010-1",
+"titulo": "Mandril de 13 Mm para Atornillador Versa Industrial"
+},
+{
+"item": "MLA4103477688",
+"sku": "J635",
+"titulo": "Mandril Autoajustable 2-10mm Versa Max"
+},
+{
+"item": "MLA4103465214",
+"sku": "J630",
+"titulo": "Mandril para Taladro con Llave 2-10mm Versa Max"
+},
+{
+"item": "MLA4103477702",
+"sku": "J631",
+"titulo": "Mandril para Taladro con Llave 2-13mm Versa Max"
+},
+{
+"item": "MLA4103453064",
+"sku": "NAHL040",
+"titulo": "Manga para Canilla 1/2\" x 25 Unidades Pruner"
+},
+{
+"item": "MLA4103465246",
+"sku": "NA8168",
+"titulo": "Manguera Presión x50m"
+},
+{
+"item": "MLA4103477736",
+"sku": "R580",
+"titulo": "Manguera para Compresor 7.5 M Versa Max"
+},
+{
+"item": "MLA4103490586",
+"sku": "NA6018",
+"titulo": "Manguera Mallada x25m Verde 1/2\""
+},
+{
+"item": "MLA4103453136",
+"sku": "NA6106",
+"titulo": "Manguera Mallada x25m Verde 3/4\""
+},
+{
+"item": "MLA4103465266",
+"sku": "NA8167",
+"titulo": "Manguera para Gas 8mm x 25 Mts"
+},
+{
+"item": "MLA4103465268",
+"sku": "NA8172",
+"titulo": "Manguera Transparente 12 15 50m"
+},
+{
+"item": "MLA4103477792",
+"sku": "NA8357",
+"titulo": "Manguera Transparente 16 20 25m"
+},
+{
+"item": "MLA4103453156",
+"sku": "NA8170",
+"titulo": "Manguera Transparente 6 9 50m"
+},
+{
+"item": "MLA4103453162",
+"sku": "NA8171",
+"titulo": "Manguera Transparente 9 12 50m"
+},
+{
+"item": "MLA4103465300",
+"sku": "NA6017",
+"titulo": "Manguera Virgen x25 Mts 1/2\""
+},
+{
+"item": "MLA4103453172",
+"sku": "NA6107",
+"titulo": "Manguera Virgen x25 Mts 3/4\""
+},
+{
+"item": "MLA4103490632",
+"sku": "NA8175",
+"titulo": "Manija Ministerio de Aluminio"
+},
+{
+"item": "MLA4103477828",
+"sku": "NA8176",
+"titulo": "Manija Ministerio de Bronce Pulido"
+},
+{
+"item": "MLA4103465322",
+"sku": "U310",
+"titulo": "Máquina de Picar Carne nº12 Power"
+},
+{
+"item": "MLA4103477844",
+"sku": "U300",
+"titulo": "Máquina de Picar Carne nº8 Power"
+},
+{
+"item": "MLA4103456348",
+"sku": "G015",
+"titulo": "Martillo de Goma Power 12"
+},
+{
+"item": "MLA4103468326",
+"sku": "KPRH1507-V",
+"titulo": "Martillo Demoledor 1500W 15 Joules Versa"
+},
+{
+"item": "MLA4103456372",
+"sku": "KSTRH2202",
+"titulo": "Martillo Electrico 2100W 27 Joules Versa Max"
+},
+{
+"item": "MLA4103468370",
+"sku": "NA4049",
+"titulo": "Máscara para Soldar V/m Fravida"
+},
+{
+"item": "MLA4103468376",
+"sku": "G075",
+"titulo": "Maza de Albañil 5000 G Black Jack"
+},
+{
+"item": "MLA4103468388",
+"sku": "G076",
+"titulo": "Maza de Albañil 7200 G Black Jack"
+},
+{
+"item": "MLA4103481026",
+"sku": "G077",
+"titulo": "Maza de Albañil 9000 G Black Jack"
+},
+{
+"item": "MLA4103456484",
+"sku": "G085",
+"titulo": "Maza de Madera 40 Mm Black Jack"
+},
+{
+"item": "MLA4103481036",
+"sku": "G086",
+"titulo": "Maza de Madera 50 Mm Black Jack"
+},
+{
+"item": "MLA4103456490",
+"sku": "G087",
+"titulo": "Maza de Madera 60 Mm Black Jack"
+},
+{
+"item": "MLA4103481040",
+"sku": "G088",
+"titulo": "Maza de Madera 70 Mm Black Jack"
+},
+{
+"item": "MLA4103456500",
+"sku": "G123",
+"titulo": "Maza Octogonal Forjada 1250 G Versa Max"
+},
+{
+"item": "MLA4103468440",
+"sku": "G124",
+"titulo": "Maza Octogonal Forjada 1500 G Versa Max"
+},
+{
+"item": "MLA4103456508",
+"sku": "G125",
+"titulo": "Maza Octogonal Forjada 2000 G Versa Max"
+},
+{
+"item": "MLA4103493746",
+"sku": "G120",
+"titulo": "Maza Octogonal Forjada 500 G Versa Max"
+},
+{
+"item": "MLA4103481064",
+"sku": "G121",
+"titulo": "Maza Octogonal Forjada 750 G Versa Max"
+},
+{
+"item": "MLA4103481090",
+"sku": "J640",
+"titulo": "Mecha Copa 2 para Madera Set x7 Power"
+},
+{
+"item": "MLA4103481146",
+"sku": "NA1101",
+"titulo": "Mecha de Widia 10 120 mm"
+},
+{
+"item": "MLA4103481150",
+"sku": "NA1102",
+"titulo": "Mecha de Widia 12 120 mm"
+},
+{
+"item": "MLA4103493856",
+"sku": "NA1098",
+"titulo": "Mecha de Widia 5 85 mm"
+},
+{
+"item": "MLA4103456606",
+"sku": "NA1099",
+"titulo": "Mecha de Widia 6 100 mm"
+},
+{
+"item": "MLA4103468534",
+"sku": "NA1100",
+"titulo": "Mecha de Widia 8 120 mm"
+},
+{
+"item": "MLA4103456622",
+"sku": "A052",
+"titulo": "Set de Mechas Escalonadas Extra Power"
+},
+{
+"item": "MLA4103456628",
+"sku": "A053",
+"titulo": "Mecha Escalonada 4-32mm Extra Power"
+},
+{
+"item": "MLA4103456654",
+"sku": "J010",
+"titulo": "Mecha Madera x 5 Power"
+},
+{
+"item": "MLA4103456676",
+"sku": "D121",
+"titulo": "Medidor Distancia Ultrasonico Black Jack"
+},
+{
+"item": "MLA4103493948",
+"sku": "B769",
+"titulo": "Medidor de Distancia 0.05-40m Black Jack"
+},
+{
+"item": "MLA4103481254",
+"sku": "NA8684",
+"titulo": "Membrana Impermeabilizante con Aislante Termico 20k Power"
+},
+{
+"item": "MLA4103456684",
+"sku": "NA8178",
+"titulo": "Ménsula Aire Acondicionado 49 Cm"
+},
+{
+"item": "MLA4103456690",
+"sku": "O415",
+"titulo": "Mezclador Helicoidal 80x400x8mm Black Jack"
+},
+{
+"item": "MLA4103456696",
+"sku": "KRTOR1750",
+"titulo": "Kit Mini Torno Completo Recargable Versa Max"
+},
+{
+"item": "MLA4103456700",
+"sku": "Q080",
+"titulo": "Mirilla para Puerta Power"
+},
+{
+"item": "MLA4103468624",
+"sku": "R801",
+"titulo": "Mopa Acero Inox Pedal Metalico Power Clean"
+},
+{
+"item": "MLA4103481288",
+"sku": "R811",
+"titulo": "Mopa Repuesto Power Clean"
+},
+{
+"item": "MLA4103468646",
+"sku": "R810",
+"titulo": "Mopa Sprayer Power Clean"
+},
+{
+"item": "MLA4103494016",
+"sku": "C250",
+"titulo": "Morsa Fija con Yunque 3\" Black Jack"
+},
+{
+"item": "MLA4103456752",
+"sku": "C252",
+"titulo": "Morsa Fija con Yunque 5\" Black Jack"
+},
+{
+"item": "MLA4103494028",
+"sku": "C253",
+"titulo": "Morsa Fija con Yunque 6\" Black Jack"
+},
+{
+"item": "MLA4103456764",
+"sku": "C195",
+"titulo": "Morsa de Banco Giratoria con Yunque 3\" Black Jack"
+},
+{
+"item": "MLA4103468684",
+"sku": "C235",
+"titulo": "Morsa Plana Liberación Rápida 70mm Black Jack"
+},
+{
+"item": "MLA4103481336",
+"sku": "O023",
+"titulo": "Mosqueton Aluminio x 10piezas Power 4 cm"
+},
+{
+"item": "MLA4103481338",
+"sku": "O022",
+"titulo": "Mosqueton Aluminio x 10piezas Power 5 cm"
+},
+{
+"item": "MLA4103481344",
+"sku": "O021",
+"titulo": "Mosqueton Aluminio x 10piezas Power 6 cm"
+},
+{
+"item": "MLA4103481352",
+"sku": "O020",
+"titulo": "Mosqueton Aluminio 7cm Power"
+},
+{
+"item": "MLA4103494060",
+"sku": "KLGS5000",
+"titulo": "Motosierra a Explosión 52 Cc 2000W Versa Max"
+},
+{
+"item": "MLA4103456794",
+"sku": "D187",
+"titulo": "Nivel Profesional Aluminio Reforzado Black Jack 1m"
+},
+{
+"item": "MLA4103481362",
+"sku": "D185",
+"titulo": "Nivel Profesional Aluminio Reforzado Black Jack 400 mm"
+},
+{
+"item": "MLA4103468708",
+"sku": "D186",
+"titulo": "Nivel Profesional Aluminio Reforzado Black Jack 600 mm"
+},
+{
+"item": "MLA4103494074",
+"sku": "D198",
+"titulo": "Nivel Aluminio Amarillo Black Jack 1000 mm"
+},
+{
+"item": "MLA4103468714",
+"sku": "D199",
+"titulo": "Nivel Aluminio Amarillo Black Jack 1200 mm"
+},
+{
+"item": "MLA4103481372",
+"sku": "D196",
+"titulo": "Nivel Aluminio Amarillo Black Jack 600 mm"
+},
+{
+"item": "MLA4103456826",
+"sku": "D190",
+"titulo": "Nivel de Aluminio Reforzado 300 Mm Power"
+},
+{
+"item": "MLA4103481378",
+"sku": "D192",
+"titulo": "Nivel de Aluminio Reforzado 500 Mm Power"
+},
+{
+"item": "MLA4103456844",
+"sku": "D160",
+"titulo": "Nivel de Aluminio Base Magnética Black Jack"
+},
+{
+"item": "MLA4103494108",
+"sku": "D125",
+"titulo": "Nivel Mini con Láser y Trípode Black Jack"
+},
+{
+"item": "MLA4103468746",
+"sku": "D128",
+"titulo": "Nivel Mini Magnético Black Jack"
+},
+{
+"item": "MLA4103494114",
+"sku": "D182",
+"titulo": "Nivel Profesional Black Jack 1000 mm"
+},
+{
+"item": "MLA4103494120",
+"sku": "D180",
+"titulo": "Nivel Profesional Black Jack 600 mm"
+},
+{
+"item": "MLA4103481418",
+"sku": "D181",
+"titulo": "Nivel Profesional Black Jack 800 mm"
+},
+{
+"item": "MLA4103468792",
+"sku": "KOSC0250",
+"titulo": "Osciladora Electrica 250W Versa Max"
+},
+{
+"item": "MLA4103456904",
+"sku": "KROSC0327",
+"titulo": "Osciladora Recargable 20V Versa Max"
+},
+{
+"item": "MLA4103468804",
+"sku": "NA1180",
+"titulo": "Pala de Acero Soldada Cabo Metalico de Caño Ancha Power"
+},
+{
+"item": "MLA4103481454",
+"sku": "D300",
+"titulo": "Pala de Punta Versa Max"
+},
+{
+"item": "MLA4103481468",
+"sku": "NA1181",
+"titulo": "Pala Soldada Cabo Metalico de Caño Power de Punta"
+},
+{
+"item": "MLA4103456928",
+"sku": "NA1191",
+"titulo": "Pala Punta Estampada/templada Azzurra"
+},
+{
+"item": "MLA4103481476",
+"sku": "NA5060",
+"titulo": "Palito Plástica Porta Rollo"
+},
+{
+"item": "MLA4103468844",
+"sku": "NA2051",
+"titulo": "Pantalla Directa 1500 Calorías Gas Envasado"
+},
+{
+"item": "MLA4103481498",
+"sku": "NA20511",
+"titulo": "Pantalla Directa 3000 Calorías Gas Envasado"
+},
+{
+"item": "MLA4103456950",
+"sku": "NA2056",
+"titulo": "Pantalla Doble para Gas Natural 3000 Calorías con Cupla"
+},
+{
+"item": "MLA4103468878",
+"sku": "Q040",
+"titulo": "Pasador Dorado Suelto Power"
+},
+{
+"item": "MLA4103468892",
+"sku": "L346",
+"titulo": "Peine para Terrajas Black Jack"
+},
+{
+"item": "MLA4103494244",
+"sku": "B767",
+"titulo": "Pinza Pelacable Automatico Black Jack"
+},
+{
+"item": "MLA4103494252",
+"sku": "B160",
+"titulo": "Pinza Pela Cables Profesional Black Jack"
+},
+{
+"item": "MLA4103494270",
+"sku": "B166",
+"titulo": "Pinza Pela Cables 7\" Apriieta Terminales Black Jack"
+},
+{
+"item": "MLA4103481574",
+"sku": "NA2059",
+"titulo": "Percha Cuadrada Autoadhesiva x 2 Grand"
+},
+{
+"item": "MLA4103468918",
+"sku": "NA2058",
+"titulo": "Percha Cuadrada Autoadhesiva x 3 Chica"
+},
+{
+"item": "MLA4103481584",
+"sku": "NA2113",
+"titulo": "Percha Larga x 2"
+},
+{
+"item": "MLA4103494308",
+"sku": "NA2057",
+"titulo": "Percha Porta Toallon Autoadhesiva"
+},
+{
+"item": "MLA4103481602",
+"sku": "NA7073",
+"titulo": "Perilla Torpedo para Velador Blanco"
+},
+{
+"item": "MLA4103457044",
+"sku": "O645",
+"titulo": "Pescatornillo Imantado Flexible Black Jack"
+},
+{
+"item": "MLA4103468948",
+"sku": "O650",
+"titulo": "Pesca Tornillo Punta Imantada Power"
+},
+{
+"item": "MLA4103494342",
+"sku": "O655",
+"titulo": "Pescatornillo Telescópico Black Jack"
+},
+{
+"item": "MLA4103457060",
+"sku": "NA8411",
+"titulo": "Picaporte Polipropileno Blanco"
+},
+{
+"item": "MLA4103457066",
+"sku": "NA8412",
+"titulo": "Picaporte Polipropileno Negro"
+},
+{
+"item": "MLA4103481644",
+"sku": "B125",
+"titulo": "Pico de Loro 10\" Reforzado Black Jack"
+},
+{
+"item": "MLA4103457078",
+"sku": "B126",
+"titulo": "Pico de Loro 12\" Reforzado Black Jack"
+},
+{
+"item": "MLA4103468988",
+"sku": "NA3004",
+"titulo": "Pico Inflador de Cobre para Pelota Black Jack"
+},
+{
+"item": "MLA4103494378",
+"sku": "NA6079",
+"titulo": "Tapon de Desagote"
+},
+{
+"item": "MLA4103481670",
+"sku": "NA7219",
+"titulo": "Piezoeléctrico Volcan Stan con Rosca"
+},
+{
+"item": "MLA4103469016",
+"sku": "NA5260",
+"titulo": "Pileta Lavadero 35 Lts Blanca"
+},
+{
+"item": "MLA4103481684",
+"sku": "NA5262",
+"titulo": "Pileta Lavadero 35 Lts Gris"
+},
+{
+"item": "MLA4103457120",
+"sku": "NA5261",
+"titulo": "Pileta Lavadero 35 Lts Negra"
+},
+{
+"item": "MLA4103469028",
+"sku": "O467",
+"titulo": "Pincel de Cerda Blanca 1\" Black Jack"
+},
+{
+"item": "MLA4103481698",
+"sku": "O468",
+"titulo": "Pincel de Cerda Blanca 1 1/2\" Black Jack"
+},
+{
+"item": "MLA4103469050",
+"sku": "O469",
+"titulo": "Pincel de Cerda Blanca 2\" Black Jack"
+},
+{
+"item": "MLA4103494410",
+"sku": "O441",
+"titulo": "Pincel de Cerda Blanca Power 1 1/2\""
+},
+{
+"item": "MLA4103481730",
+"sku": "O440",
+"titulo": "Pincel de Cerda Blanca Power 1\""
+},
+{
+"item": "MLA4103469070",
+"sku": "O442",
+"titulo": "Pincel de Cerda Blanca 2\" Power"
+},
+{
+"item": "MLA4103494432",
+"sku": "O443",
+"titulo": "Pincel de Cerda Blanca Power 3\""
+},
+{
+"item": "MLA4103457190",
+"sku": "O475",
+"titulo": "Pinceles para Filetear Set de 5 Piezas Black Jack"
+},
+{
+"item": "MLA4103469100",
+"sku": "T855",
+"titulo": "Pinza Amperometrica Digital Black Jack"
+},
+{
+"item": "MLA4103481776",
+"sku": "B118",
+"titulo": "Pinza para Aro Seguer Punta Curva Externa Black Jack"
+},
+{
+"item": "MLA4103457212",
+"sku": "B116",
+"titulo": "Pinza para Aro Seguer Punta Recta Externa Black Jack"
+},
+{
+"item": "MLA4103494498",
+"sku": "F170",
+"titulo": "Pinza Cortacerámica Power"
+},
+{
+"item": "MLA4103457250",
+"sku": "F175",
+"titulo": "Pinza Cortacerámica con Guia Black Jack"
+},
+{
+"item": "MLA4103457266",
+"sku": "B167",
+"titulo": "Pinza Crimpeadora Black Jack"
+},
+{
+"item": "MLA4103469184",
+"sku": "B230",
+"titulo": "Pinza de Fuerza 9 con Punta Power"
+},
+{
+"item": "MLA4103469188",
+"sku": "B068",
+"titulo": "Pinza de Punta 8\" 1000V Black Jack"
+},
+{
+"item": "MLA4103494572",
+"sku": "B236",
+"titulo": "Pinza de Fuerza Reforzada 5\" Black Jack"
+},
+{
+"item": "MLA4103457328",
+"sku": "B237",
+"titulo": "Pinza de Fuerza Reforzada 7\" Black Jack"
+},
+{
+"item": "MLA4103469220",
+"sku": "B110",
+"titulo": "Pinza para Aro Seguer con 4 Puntas Black Jack"
+},
+{
+"item": "MLA4103481894",
+"sku": "B084",
+"titulo": "Pinza Punta Curva 6\" Black Jack"
+},
+{
+"item": "MLA4103469228",
+"sku": "B036",
+"titulo": "Pinza Punta Curva Mini 5\" Black Jack"
+},
+{
+"item": "MLA4103457344",
+"sku": "B037",
+"titulo": "Pinza Punta Plana Mini 4,5\" Black Jack"
+},
+{
+"item": "MLA4103481918",
+"sku": "B038",
+"titulo": "Pinza Punta Recta Mini 5\" Black Jack"
+},
+{
+"item": "MLA4103469256",
+"sku": "B085",
+"titulo": "Pinza Punta Recta Mango Ergonómico Black Jack"
+},
+{
+"item": "MLA4103457364",
+"sku": "B086",
+"titulo": "Pinza Punta Recta 8\" Black Jack"
+},
+{
+"item": "MLA4103469288",
+"sku": "B185",
+"titulo": "Pinza Tipo Ford 6\" Black Jack"
+},
+{
+"item": "MLA4103457384",
+"sku": "B186",
+"titulo": "Pinza Tipo Ford 8\" Black Jack"
+},
+{
+"item": "MLA4103457396",
+"sku": "B081",
+"titulo": "Pinza Universal 6\" Black Jack B081"
+},
+{
+"item": "MLA4103494646",
+"sku": "B096",
+"titulo": "Pinza Universal 7\" Black Jack"
+},
+{
+"item": "MLA4103469308",
+"sku": "B082",
+"titulo": "Pinza Universal Mango Ergonómico Black Jack 7\""
+},
+{
+"item": "MLA4103469312",
+"sku": "B097",
+"titulo": "Pinza Universal 8\" Black Jack"
+},
+{
+"item": "MLA4103469316",
+"sku": "B083",
+"titulo": "Pinza Universal Mango Ergonómico Black Jack 8\""
+},
+{
+"item": "MLA4103494674",
+"sku": "P016",
+"titulo": "Pistola Aplicadora de Silicona Black Jack"
+},
+{
+"item": "MLA4103469328",
+"sku": "HVLP600W",
+"titulo": "Pistola Hvlp Electrica 600W de Aluminio Versa Max"
+},
+{
+"item": "MLA4103457440",
+"sku": "P118",
+"titulo": "Pistola Aplicadora Silicona Plateada Black Jack"
+},
+{
+"item": "MLA4103481988",
+"sku": "R555",
+"titulo": "Pistola Baja Pres con Carga Superior Power"
+},
+{
+"item": "MLA4103481996",
+"sku": "R550",
+"titulo": "Pistola Baja Presión Power"
+},
+{
+"item": "MLA4103457452",
+"sku": "GPV-13",
+"titulo": "Pistola para Arenado Versa Max"
+},
+{
+"item": "MLA4103469354",
+"sku": "HVLP450W-A",
+"titulo": "Pistola Hvlp Electrica 450W con Compresor Versa Max"
+},
+{
+"item": "MLA4103482014",
+"sku": "GPV-203",
+"titulo": "Pistola Aplicadora Profesional Versa Max"
+},
+{
+"item": "MLA4103469362",
+"sku": "GPV-202",
+"titulo": "Pistola para Limpieza 1000 Cc Versa Max"
+},
+{
+"item": "MLA4103469370",
+"sku": "NEU4102",
+"titulo": "Pistola para Pintar Alta Presion 1000cc Versa Max"
+},
+{
+"item": "MLA4103457482",
+"sku": "R560",
+"titulo": "Pistola para Pintar Alta Presión Power"
+},
+{
+"item": "MLA4103457490",
+"sku": "NEU4100",
+"titulo": "Pistola para Pintar 600cc Versa Max"
+},
+{
+"item": "MLA4103494734",
+"sku": "NEU2008",
+"titulo": "Pistola para Pintar Hvlp 600cc Versa Max"
+},
+{
+"item": "MLA4103457498",
+"sku": "GPV-12",
+"titulo": "Pistola para Revestimientos Versa Max"
+},
+{
+"item": "MLA4103494742",
+"sku": "NEU2009",
+"titulo": "Pistola para Pintar Hvlp 600 Cc Versa"
+},
+{
+"item": "MLA4103469410",
+"sku": "J060",
+"titulo": "Plantilla Guia Taladrar Acero Black Jack"
+},
+{
+"item": "MLA4103482060",
+"sku": "E405",
+"titulo": "Bandeja Portaobjeto Magnética 14x24cm Black Jack"
+},
+{
+"item": "MLA2216312517",
+"sku": "E400",
+"titulo": "Plato Portaobjeto Magnético ø15cm Black Jack"
+},
+{
+"item": "MLA4103469418",
+"sku": "F037",
+"titulo": "Plomada con Chapa E Hilo Black Jack 300 g"
+},
+{
+"item": "MLA4103482084",
+"sku": "F038",
+"titulo": "Plomada con Chapa E Hilo Black Jack 400 g"
+},
+{
+"item": "MLA4103469450",
+"sku": "F039",
+"titulo": "Plomada con Chapa E Hilo Black Jack 500 g"
+},
+{
+"item": "MLA2216312611",
+"sku": "F035",
+"titulo": "Plomada Magnética 300grs-300cm Black Jack"
+},
+{
+"item": "MLA4103494938",
+"sku": "R247",
+"titulo": "Porta Bocha para Trailer Acero Forjado Black Jack"
+},
+{
+"item": "MLA4103482232",
+"sku": "NA5061",
+"titulo": "Porta Rollo Plástica Autoadhesiva"
+},
+{
+"item": "MLA4103494984",
+"sku": "NA5062",
+"titulo": "Porta Rollo Plástica Desmontab"
+},
+{
+"item": "MLA4103469624",
+"sku": "NA5063",
+"titulo": "Porta Vaso y Cepillo Plast"
+},
+{
+"item": "MLA4103482272",
+"sku": "NA7490",
+"titulo": "Portalámpara 2 Piezas"
+},
+{
+"item": "MLA2216312751",
+"sku": "NA7080",
+"titulo": "Portalampara 3 Piezas Bakelita"
+},
+{
+"item": "MLA4103469654",
+"sku": "NA7489",
+"titulo": "Portalampara con Chicote"
+},
+{
+"item": "MLA4103469656",
+"sku": "NA7082",
+"titulo": "Portalampara Receptac. Curvo"
+},
+{
+"item": "MLA4103469662",
+"sku": "NA7081",
+"titulo": "Portalampara Receptac. Recto"
+},
+{
+"item": "MLA2216312769",
+"sku": "T495",
+"titulo": "Precintos de Nylon 100 x 2,5 100 Pcs Black Jack"
+},
+{
+"item": "MLA2216312779",
+"sku": "T494",
+"titulo": "Precintos de Nylon 150 x 3,6 100 Pcs Black Jack"
+},
+{
+"item": "MLA4103495060",
+"sku": "T487",
+"titulo": "Precintos de Nylon Black Jack 150 3,6 -100"
+},
+{
+"item": "MLA4103469684",
+"sku": "T488",
+"titulo": "Precintos de Nylon Black Jack 180 4,6 -100"
+},
+{
+"item": "MLA4103469688",
+"sku": "T496",
+"titulo": "Precintos de Nylon Black Jack 200 3,6 -100"
+},
+{
+"item": "MLA4103482322",
+"sku": "T497",
+"titulo": "Precintos de Nylon Black Jack 250 3,6 -100"
+},
+{
+"item": "MLA4103495082",
+"sku": "T490",
+"titulo": "Precintos de Nylon 300 x 4,6 - 100 Pcs Black Jack"
+},
+{
+"item": "MLA4103482338",
+"sku": "T491",
+"titulo": "Precintos de Nylon 300 x 7,6 - 100 Pcs Black Jack"
+},
+{
+"item": "MLA4103495104",
+"sku": "T492",
+"titulo": "Precintos de Nylon Black Jack 350 4,6 -100"
+},
+{
+"item": "MLA4103469728",
+"sku": "T493",
+"titulo": "Precintos de Nylon 350 x 7,6 - 100 Pcs Black Jack"
+},
+{
+"item": "MLA2216312819",
+"sku": "T485",
+"titulo": "Precintos con Alicate Set 201 Piezas Power"
+},
+{
+"item": "MLA4103482372",
+"sku": "NA8190",
+"titulo": "Lubripower x 12 Unid"
+},
+{
+"item": "MLA4103482380",
+"sku": "NA4283",
+"titulo": "Protec Auditivo Copa Alta Aten"
+},
+{
+"item": "MLA4103495142",
+"sku": "NA4070",
+"titulo": "Protector Auditivo Endoural con Caja"
+},
+{
+"item": "MLA4103469760",
+"sku": "NA4046",
+"titulo": "Protector Facial con Arnes"
+},
+{
+"item": "MLA2216312853",
+"sku": "NA4045",
+"titulo": "Protector para Oidos (copa)"
+},
+{
+"item": "MLA4103469774",
+"sku": "NA4065",
+"titulo": "Protector Respiratorio 2f 5330"
+},
+{
+"item": "MLA4103482472",
+"sku": "B462",
+"titulo": "Tubos con Puntas para Atornillar Set de 11 Piezas Black Jack"
+},
+{
+"item": "MLA4103482498",
+"sku": "KAMO0850",
+"titulo": "Pulidora Electrica 850W Versa Max"
+},
+{
+"item": "MLA4103469854",
+"sku": "KRPUL2101",
+"titulo": "Pulidora Recargable 125mm 20V Versa Max"
+},
+{
+"item": "MLA4103482508",
+"sku": "N090",
+"titulo": "Pulverizador con Frasco 960ml Power"
+},
+{
+"item": "MLA4103469862",
+"sku": "K100",
+"titulo": "Punto de Marcar 3mm Black Jack"
+},
+{
+"item": "MLA2216312961",
+"sku": "B420",
+"titulo": "Juego de Puntas Surtidas para Atornillar x 24 Piezas Power"
+},
+{
+"item": "MLA4103469876",
+"sku": "B364",
+"titulo": "Destornilladores y Puntas de Precisión Set de 16 Piezas"
+},
+{
+"item": "MLA2216312979",
+"sku": "B362",
+"titulo": "Puntas Torx para Atornillar Set de 15 Piezas Black Jack"
+},
+{
+"item": "MLA2216312991",
+"sku": "B459",
+"titulo": "Juego de Tubos y Puntas C/accesorios Set de 46 Piezas Black"
+},
+{
+"item": "MLA4103469888",
+"sku": "K105",
+"titulo": "Punzones Set de 3 Piezas Black Jack"
+},
+{
+"item": "MLA4103482540",
+"sku": "O237",
+"titulo": "Raspin Soft Grip Reforzado Black Jack"
+},
+{
+"item": "MLA4103469898",
+"sku": "R390",
+"titulo": "Reflector Buscahuella 12V Black Jack"
+},
+{
+"item": "MLA4103495280",
+"sku": "NA7428",
+"titulo": "Reflector LED Tecnologia Smd Borus 1800 Lumens 20 W"
+},
+{
+"item": "MLA4103469906",
+"sku": "NA7454",
+"titulo": "Reflector LED Tecnologia Smd Borus 30 W 2550 Lumens"
+},
+{
+"item": "MLA4103495284",
+"sku": "RR62L",
+"titulo": "Reflector Recargable con USB Black Jack"
+},
+{
+"item": "MLA4103495294",
+"sku": "HL087",
+"titulo": "Regador 3 Lanzas con Pinche Pruner"
+},
+{
+"item": "MLA2216313019",
+"sku": "HL200",
+"titulo": "Regador 3 Lanzas con Ruedas Pruner"
+},
+{
+"item": "MLA4103469916",
+"sku": "HL011",
+"titulo": "Regador Aspersor con Pinche Pruner"
+},
+{
+"item": "MLA2216313059",
+"sku": "NA2367",
+"titulo": "Regulador Aprobado con Corte Manual + Manguera 1 Mt"
+},
+{
+"item": "MLA4103495356",
+"sku": "NA2369",
+"titulo": "Regulador Aprobado con Corte Manual + Manguera 2 Mt"
+},
+{
+"item": "MLA2216313065",
+"sku": "NA2366",
+"titulo": "Regulador Aprobado con Corte Manual – sin Manguera"
+},
+{
+"item": "MLA4103482608",
+"sku": "NA8558",
+"titulo": "Reja PVC 20 x 20 con Marco"
+},
+{
+"item": "MLA2216313071",
+"sku": "NA8346",
+"titulo": "Rejilla Ventilación Aprobada 15 15 cm"
+},
+{
+"item": "MLA2216313077",
+"sku": "NA8340",
+"titulo": "Rejilla Ventilación Aprobada 15 30 cm"
+},
+{
+"item": "MLA2216313095",
+"sku": "NA8200",
+"titulo": "Rejilla Ventilación Aprobada 20 20 cm"
+},
+{
+"item": "MLA4103482646",
+"sku": "NA8195",
+"titulo": "Rejilla de Acero Inoxidable 12 x 12 Cm"
+},
+{
+"item": "MLA4103470000",
+"sku": "NA8196",
+"titulo": "Rejilla de Acero Inoxidable 15 x 15 Cm"
+},
+{
+"item": "MLA4103470006",
+"sku": "NA8197",
+"titulo": "Rejilla de Acero Inoxidable 20 x 20 Cm"
+},
+{
+"item": "MLA4103482662",
+"sku": "NA8362",
+"titulo": "Rejilla Autoadhesiva 15"
+},
+{
+"item": "MLA2216313133",
+"sku": "NA8465",
+"titulo": "Rejilla Autoadhesiva 15 x 30 Cm"
+},
+{
+"item": "MLA2216313135",
+"sku": "NA8363",
+"titulo": "Rejilla Autoadhesiva 18"
+},
+{
+"item": "MLA2216313139",
+"sku": "NA8358",
+"titulo": "Rejilla Autoadhesiva 8"
+},
+{
+"item": "MLA2216313149",
+"sku": "NA8193",
+"titulo": "Rejilla Filtro de Acero Inoxidable"
+},
+{
+"item": "MLA2216313153",
+"sku": "NA8459",
+"titulo": "Rejillas de Fundicion 15 x 15 Cm"
+},
+{
+"item": "MLA4103470050",
+"sku": "NA8462",
+"titulo": "Rejilla de Fundicion 30 x 30 Cm"
+},
+{
+"item": "MLA4103482696",
+"sku": "NA8458",
+"titulo": "Rejilla de Ventilación Aprobada 20 x 20 Cm al 200%"
+},
+{
+"item": "MLA2216313165",
+"sku": "K110",
+"titulo": "Remachadora Profesional 10\" Black Jack"
+},
+{
+"item": "MLA4103482698",
+"sku": "K115",
+"titulo": "Remachadora Cabeza Giratoria 12\", 360° Black Jack"
+},
+{
+"item": "MLA4103470068",
+"sku": "K120",
+"titulo": "Remachadora Profesional 2 Vías 10\" Black Jack"
+},
+{
+"item": "MLA4103495458",
+"sku": "K116",
+"titulo": "Remachadora Larga 17\" Black Jack"
+},
+{
+"item": "MLA4103470072",
+"sku": "K112",
+"titulo": "Remachadora Profesional de Aluminio 10\" Black Jack"
+},
+{
+"item": "MLA4103495472",
+"sku": "NA8203",
+"titulo": "Remache Rápido de Aluminio 3,5 x 10 Mm Ribot"
+},
+{
+"item": "MLA4103470082",
+"sku": "NA8204",
+"titulo": "Remache Rápido de Aluminio 3,5 x 12 Mm Ribot"
+},
+{
+"item": "MLA4103495490",
+"sku": "NA8205",
+"titulo": "Remache Rápido de Aluminio 3,5 x 14 Mm Ribot"
+},
+{
+"item": "MLA4103482742",
+"sku": "NA8207",
+"titulo": "Remache Rápido de Aluminio 3,5 x 19 Mm Ribot"
+},
+{
+"item": "MLA4103470098",
+"sku": "NA8208",
+"titulo": "Remache Rápido de Aluminio 3,5 x 24 Mm Ribot"
+},
+{
+"item": "MLA2216313219",
+"sku": "NA8209",
+"titulo": "Remache Rápido de Aluminio 3,5 x 30 Mm Ribot"
+},
+{
+"item": "MLA4103495506",
+"sku": "NA8201",
+"titulo": "Remache Rápido de Aluminio 3,5 x 6 Mm Ribot"
+},
+{
+"item": "MLA4103470112",
+"sku": "NA8202",
+"titulo": "Remache Rápido de Aluminio 3,5 x 8 Mm Ribot"
+},
+{
+"item": "MLA4103495512",
+"sku": "NA8212",
+"titulo": "Remache Rápido de Aluminio 4 x 10 Mm Ribot"
+},
+{
+"item": "MLA4103482760",
+"sku": "NA8213",
+"titulo": "Remache Rápido de Aluminio 4 x 12 Mm Ribot"
+},
+{
+"item": "MLA2216313233",
+"sku": "NA8214",
+"titulo": "Remache Rápido de Aluminio 4 x 14 Mm Ribot"
+},
+{
+"item": "MLA4103495520",
+"sku": "NA8215",
+"titulo": "Remache Rápido de Aluminio 4 x 16 Mm Ribot"
+},
+{
+"item": "MLA4103482778",
+"sku": "NA8216",
+"titulo": "Remache Rápido de Aluminio 4 x 19 Mm Ribot"
+},
+{
+"item": "MLA4103495524",
+"sku": "NA8217",
+"titulo": "Remache Rápido de Aluminio 4 x 24 Mm Ribot"
+},
+{
+"item": "MLA2216313245",
+"sku": "NA8218",
+"titulo": "Remache Rápido de Aluminio 4 x 30 Mm Ribot"
+},
+{
+"item": "MLA4103482792",
+"sku": "NA8210",
+"titulo": "Remache Rápido de Aluminio 4 x 6 Mm Ribot"
+},
+{
+"item": "MLA4103482800",
+"sku": "NA8211",
+"titulo": "Remache Rápido de Aluminio 4 x 8 Mm Ribot"
+},
+{
+"item": "MLA2216313265",
+"sku": "NA8220",
+"titulo": "Remache Rápido de Aluminio 5 x 10 Mm Ribot"
+},
+{
+"item": "MLA2216313269",
+"sku": "NA8221",
+"titulo": "Remache Rápido de Aluminio 5 x 12 Mm Ribot"
+},
+{
+"item": "MLA4103482828",
+"sku": "NA8222",
+"titulo": "Remache Rápido de Aluminio 5 x 14 Mm Ribot"
+},
+{
+"item": "MLA4103482832",
+"sku": "NA8223",
+"titulo": "Remache Rápido de Aluminio 5 x 16 Mm Ribot"
+},
+{
+"item": "MLA4103495586",
+"sku": "NA8224",
+"titulo": "Remache Rápido de Aluminio 5 x 20 Mm Ribot"
+},
+{
+"item": "MLA4103495598",
+"sku": "NA8225",
+"titulo": "Remache Rápido de Aluminio 5 x 24 Mm Ribot"
+},
+{
+"item": "MLA4103470184",
+"sku": "NA8226",
+"titulo": "Remache Rápido de Aluminio 5 x 28 Mm Ribot"
+},
+{
+"item": "MLA4103482858",
+"sku": "NA8227",
+"titulo": "Remache Rápido de Aluminio 5 x 30 Mm Ribot"
+},
+{
+"item": "MLA4103482862",
+"sku": "NA8219",
+"titulo": "Remache Rápido de Aluminio 5 x 8 Mm Ribot"
+},
+{
+"item": "MLA4103495622",
+"sku": "NA5207",
+"titulo": "Removedor Quita Pintura Gel x 1 Kg Merclin"
+},
+{
+"item": "MLA4103495632",
+"sku": "NA5066",
+"titulo": "Repuesto para Mochila de Apoyo con Flapper"
+},
+{
+"item": "MLA4103470206",
+"sku": "S103",
+"titulo": "Reposera Plegable 3 Posiciones Black Jack"
+},
+{
+"item": "MLA2216313333",
+"sku": "R812",
+"titulo": "Repuesto Mopa Sprayer Power Clean"
+},
+{
+"item": "MLA4103482882",
+"sku": "NA7479",
+"titulo": "Resistencia para Termotanque 1500 W"
+},
+{
+"item": "MLA4103495646",
+"sku": "NA7087",
+"titulo": "Resistencia de Alumin para Calefacción x 10 Unidades"
+},
+{
+"item": "MLA4103482898",
+"sku": "NEU4060",
+"titulo": "Revocadora de Cemento Neumática 3500ml Versa"
+},
+{
+"item": "MLA4103482908",
+"sku": "NA6208",
+"titulo": "Rinconero 1 Pata para Caño 1\" 1/4"
+},
+{
+"item": "MLA2216313363",
+"sku": "NA6077",
+"titulo": "Base Doble 1 1/4 - 1"
+},
+{
+"item": "MLA4103470230",
+"sku": "NA8237",
+"titulo": "Rodillo de Lana Sintética 17 Cm"
+},
+{
+"item": "MLA4103482918",
+"sku": "NA8236",
+"titulo": "Rodillo Poliéster Mini Forrado 11 cm"
+},
+{
+"item": "MLA4103482924",
+"sku": "NA8234",
+"titulo": "Rodillo Poliéster Mini Forrado 5 cm"
+},
+{
+"item": "MLA4103470250",
+"sku": "NA8230",
+"titulo": "Rodillo Grande de Poliéster 22 Cm"
+},
+{
+"item": "MLA4103482950",
+"sku": "NA8233",
+"titulo": "Rodillo Mini de Poliéster 11 Cm"
+},
+{
+"item": "MLA2216313407",
+"sku": "NA8232",
+"titulo": "Rodillo Mini de Poliéster 8 Cm"
+},
+{
+"item": "MLA2216313419",
+"sku": "AC0062",
+"titulo": "Rollo de Alambre 0,6 x 0,5 Kg Versa Max"
+},
+{
+"item": "MLA4103482972",
+"sku": "A466",
+"titulo": "Rueda Doble Giratoria x 4 Piezas Power"
+},
+{
+"item": "MLA4103482978",
+"sku": "F145",
+"titulo": "Rueda para Cortacerámica 15x6x1.5 Power"
+},
+{
+"item": "MLA4103495724",
+"sku": "NA6038",
+"titulo": "Saca Hojas para Piletas"
+},
+{
+"item": "MLA2216313431",
+"sku": "B265",
+"titulo": "Sacabocado de Golpe Set de 9 Piezas Black Jack"
+},
+{
+"item": "MLA2216313433",
+"sku": "B250",
+"titulo": "Sacabocado Multiple Power"
+},
+{
+"item": "MLA2216313439",
+"sku": "B255",
+"titulo": "Pinza Sacabocado Black Jack"
+},
+{
+"item": "MLA2216313447",
+"sku": "R342",
+"titulo": "Sacafiltro de Banda Power"
+},
+{
+"item": "MLA2216313455",
+"sku": "R341",
+"titulo": "Sacafiltro Universal Power"
+},
+{
+"item": "MLA2216313467",
+"sku": "NA8553",
+"titulo": "Sellador Fijador x 1 Lts Roma"
+},
+{
+"item": "MLA4103470326",
+"sku": "NA8554",
+"titulo": "Sellador Fijador x 4 Lts Roma"
+},
+{
 "item": "MLA2213070389",
 "sku": "NA8009",
 "titulo": "Abrazadera 12mm 12-22 mm x 100 Unidades"
