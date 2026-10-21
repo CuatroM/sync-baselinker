@@ -1,0 +1,33 @@
+name: Descargar archivos públicos (solo lectura)
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "URLs separadas por espacio"
+        required: true
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests
+      - name: Bajar
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+        run: python descargar.py 2>&1 | tee resultado.txt
+      - name: Guardar en la rama "descargas"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/ && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan descargas
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Descargas"
+          git push -qf origin descargas
