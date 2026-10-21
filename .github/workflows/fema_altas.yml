@@ -1,0 +1,36 @@
+name: FEMA - Excel de altas para BaseLinker (solo lectura)
+on:
+  workflow_dispatch: {}
+permissions:
+  contents: write
+jobs:
+  altas:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Armar Excel
+        env:
+          PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
+          PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+        run: |
+          set -o pipefail
+          python fema_altas.py 2>&1 | tee resultado.txt
+      - name: Guardar en la rama "descargas"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/ && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan descargas
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Altas FEMA"
+          git push -qf origin descargas
