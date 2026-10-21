@@ -22,14 +22,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install requests
+      - run: pip install requests pillow
       - name: Probar
         env:
           DESDE: ${{ github.event.inputs.desde }}
           LIMITE: ${{ github.event.inputs.limite }}
           CODIGOS: ${{ github.event.inputs.codigos }}
           CANDIDATOS: "1"
-        run: python fema_nombres.py 2>&1 | tee resultado.txt
+        run: |
+          set -o pipefail
+          python fema_nombres.py 2>&1 | tee resultado.txt
       - name: Guardar resultado en la rama "fema-web"
         if: always()
         run: |
