@@ -18,6 +18,8 @@ contenido = sync.descargar_lista(cfg)
 lista = sync.leer_lista(contenido, cfg)
 df = pd.read_excel(io.BytesIO(contenido), dtype=object)
 df.columns = [str(c).strip().upper() for c in df.columns]
+col_desc = next((c for c in df.columns if c.startswith("DESCRIP")), None)
+sync.log(f"Columnas: {list(df.columns)}")
 bl = sync.BaseLinker(os.environ["BL_TOKEN"])
 cat = bl.catalogo(int(b["inventory_id"]))
 suf = (b.get("sufijo_sku") or "").upper()
@@ -28,7 +30,7 @@ for _, r in df.iterrows():
     if not cod or cod in en_bl or cod not in lista:
         continue
     it = lista[cod]
-    filas.append({"SKU": f"{str(r.get('SKU')).strip()}{b.get('sufijo_sku') or ''}", "NOMBRE": str(r.get("DESCRIPCION") or "").strip(),
+    filas.append({"SKU": f"{cod}{b.get('sufijo_sku') or ''}", "NOMBRE": str(r.get(col_desc) or "").strip() if col_desc else "",
                   "PRECIO": it.get("precio"), "STOCK": it.get("stock", 0), "IVA": r.get("IMPUESTOS"),
                   "UNIDAD DE VENTA": r.get("UNIDAD DE VENTA")})
 os.makedirs("salida", exist_ok=True)
