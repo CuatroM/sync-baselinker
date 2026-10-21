@@ -1,0 +1,45 @@
+name: FEMA - Nombres y fotos desde la web (solo lectura)
+on:
+  workflow_dispatch:
+    inputs:
+      desde:
+        description: "Desde la posición"
+        default: "0"
+      limite:
+        description: "Cantidad (0 = todos)"
+        default: "0"
+      codigos:
+        description: "Solo estos códigos (separados por coma)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  probar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Probar
+        env:
+          DESDE: ${{ github.event.inputs.desde }}
+          LIMITE: ${{ github.event.inputs.limite }}
+          CODIGOS: ${{ github.event.inputs.codigos }}
+          CANDIDATOS: "1"
+        run: python fema_nombres.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "fema-web"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan fema-web
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Nombres web FEMA"
+          git push -qf origin fema-web
