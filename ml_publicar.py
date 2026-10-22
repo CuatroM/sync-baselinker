@@ -337,6 +337,8 @@ def elegir_categoria(f, t):
         sin_m = " ".join(w for w in sin_m.split() if not re.search(r"\d{3,}", w))
         rubro = (f.get("categoria_tienda") or "").split(">")[-1].strip()
         consultas = [sin_m, f"{rubro} {' '.join(sin_m.split()[:2])}".strip()] + consultas
+        if re.match(r"(?i)(set de )?(broches?|pinzas? clip|colitas|hebillas?|scrunchies?|scunzi|vinchas?)\b", f["nombre"]):
+            consultas = ["broches para el pelo", "accesorios para el pelo"] + consultas
     if GEN:   # la búsqueda de ML a veces vuelve vacía: más intentos con el nombre acortado y lo ya elegido por familia
         pal = [w for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", f["nombre"]) if len(w) > 2]
         consultas += [" ".join(pal[:4]), " ".join(pal[:2]), " ".join(pal[:1])]
