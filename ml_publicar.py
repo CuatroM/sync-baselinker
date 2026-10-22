@@ -147,6 +147,8 @@ CAT_NO = {"Camillas para Mecánicos", "Cortadoras de Concreto", "Cortadoras de P
           "Selladoras de Bolsas", "Tambores de Almacenamiento", "Matafuegos", "Llaves de Paso", "Motores", "Otros",
           "Tanque Expansión Refrigerante", "Baldosas de Cemento", "Pisos de Madera", "Paneles de Puertas"}
 GTIN = json.load(open("datos/gtin.json", encoding="utf-8")) if os.path.exists("datos/gtin.json") else {}
+if JYA and os.path.exists("datos/jya_gtin.json"):   # códigos de barras de J&A (Excel SKU / EAN del usuario)
+    GTIN = json.load(open("datos/jya_gtin.json", encoding="utf-8"))
 precio_minimo = float((os.environ.get("PRECIO_MINIMO") or "100000").replace(".", "").replace(",", "."))
 _cat_cache = {}
 
@@ -328,6 +330,13 @@ def elegir_categoria(f, t):
             consultas = [q, t]
             break
     consultas.append(" ".join(f["nombre"].split()[:3]))
+    if JYA:   # J&A: ML se confunde con la marca en el título -> primero el nombre sin marca ni código, y el rubro de la tienda
+        sin_m = f["nombre"]
+        for w in (f.get("marca") or "").split() + ["Love", "Las"]:
+            sin_m = re.sub(rf"(?i)\b{re.escape(w)}\b", " ", sin_m)
+        sin_m = " ".join(w for w in sin_m.split() if not re.search(r"\d{3,}", w))
+        rubro = (f.get("categoria_tienda") or "").split(">")[-1].strip()
+        consultas = [sin_m, f"{rubro} {' '.join(sin_m.split()[:2])}".strip()] + consultas
     if GEN:   # la búsqueda de ML a veces vuelve vacía: más intentos con el nombre acortado y lo ya elegido por familia
         pal = [w for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", f["nombre"]) if len(w) > 2]
         consultas += [" ".join(pal[:4]), " ".join(pal[:2]), " ".join(pal[:1])]
@@ -473,6 +482,8 @@ DEFECTO_OPC = {
     "SCREW_TYPE": ["autoperforante"], "APPLICATION": ["agua"], "WALL_ANCHOR_PLUG_TYPE": ["universal"],
     "ORGANIZER_TYPE": ["caja"], "RODENT_TRAP_TYPE": ["de resorte"], "FAN_TYPE": ["de piso"],
     "ELECTRIC_SHOWER_HEAD_TYPE": ["fijo"],
+    "SIZE": ["unico", "u"], "HAT_AND_CAP_TYPE": ["gorra"], "MATE_GOURD_TYPE": ["acero", "mate"],
+    "DOCUMENT_TYPE": ["pasaporte"],
 }
 
 
@@ -486,6 +497,11 @@ def completar_por_texto(attrs, req, f, t):
         if not a.get("values"):
             if aid == "CUTTING_BLADES_NUMBER":
                 attrs[aid] = "1"
+            elif aid in ("THERMO_CAPACITY", "CAPACITY", "UNIT_VOLUME"):
+                m = re.search(r"(?i)(\d+(?:[.,]\d+)?)\s*(lts?|litros?|l|ml|cc)\b", t)
+                if m:
+                    u = m.group(2).lower()
+                    attrs[aid] = f"{m.group(1).replace(',', '.')} {'mL' if u in ('ml', 'cc') else 'L'}"
             elif aid == "PIECES_NUMBER":
                 m = re.search(r"(?i)x\s*(\d+)\s*(?:piezas|pzas?|pcs)|(\d+)\s*(?:piezas|pzas?|pcs)", t)
                 attrs[aid] = (m.group(1) or m.group(2)) if m else "1"
