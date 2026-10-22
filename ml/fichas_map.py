@@ -402,6 +402,14 @@ def descripcion_extrapower(f):
         if k == "Marca" and not original:
             continue
         lineas.append(f"• {k}: {fmt_valor(v)}")
+    for n in f.get("notas") or []:
+        lineas += ["", n]
+    if f.get("proveedor") == "JYA":
+        lineas += ["", "¿POR QUÉ COMPRARNOS?",
+                   "Producto nuevo" + (f" y original{original}" if original else "") +
+                   ". Despachamos rápido y te atendemos antes y después de la compra.",
+                   "", "¡Consultanos antes de comprar, respondemos rápido!"]
+        return "\n".join(lineas)
     lineas += ["", "¿POR QUÉ COMPRARNOS?",
                "Somos una ferretería con más de 70 años en el rubro. Producto nuevo"
                + (f" y original{original}" if original else "") + " con 6 MESES DE GARANTÍA y atención personalizada "
@@ -411,7 +419,7 @@ def descripcion_extrapower(f):
 
 
 def descripcion(f):
-    if f.get("proveedor") == "EXTRAPOWER":
+    if f.get("proveedor") in ("EXTRAPOWER", "JYA"):
         return descripcion_extrapower(f)
     uso, rubros = USOS.get(f["familia"], ("", ""))
     if not uso:

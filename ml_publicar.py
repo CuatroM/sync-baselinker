@@ -30,7 +30,9 @@ from ml import fichas_map as fm
 
 PROVEEDOR = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
 XP = PROVEEDOR == "EXTRAPOWER"
-SUFIJO = "#EXTRAPOWER" if XP else "#FEMA"
+JYA = PROVEEDOR == "JYA"
+GEN = XP or JYA          # proveedores con fichas armadas desde su web (reglas genéricas de categoría y obligatorios)
+SUFIJO = "#EXTRAPOWER" if XP else "#JYA" if JYA else "#FEMA"
 dry = os.environ.get("DRY_RUN", "1") == "1"
 _sk = os.environ["SKUS"].strip()
 if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
@@ -120,6 +122,11 @@ REGLAS_CAT = [
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 if XP:   # EXTRAPOWER también vende hogar, camping y electro (anafes, calefones, iluminación)
     RAICES_OK |= {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac.", "Deportes y Fitness"}
+if JYA:  # J&A: marroquinería, bazar, regalería, textil, librería, juguetes
+    RAICES_OK |= {"Hogar, Muebles y Jardín", "Ropa y Accesorios", "Deportes y Fitness", "Juegos y Juguetes",
+                  "Arte, Librería y Mercería", "Belleza y Cuidado Personal", "Bebés", "Electrodomésticos y Aires Ac.",
+                  "Animales y Mascotas", "Souvenirs, Cotillón y Fiestas", "Accesorios para Vehículos", "Computación",
+                  "Celulares y Teléfonos", "Electrónica, Audio y Video", "Salud y Equipamiento Médico"}
 RAICES_FAM = {   # familias que además pueden ir en otras categorías raíz
     "Electrobombas": {"Hogar, Muebles y Jardín"},
     "Repuestos": {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac."},
@@ -321,7 +328,7 @@ def elegir_categoria(f, t):
             consultas = [q, t]
             break
     consultas.append(" ".join(f["nombre"].split()[:3]))
-    if XP:   # la búsqueda de ML a veces vuelve vacía: más intentos con el nombre acortado y lo ya elegido por familia
+    if GEN:   # la búsqueda de ML a veces vuelve vacía: más intentos con el nombre acortado y lo ya elegido por familia
         pal = [w for w in re.findall(r"[A-Za-zÁÉÍÓÚáéíóúñÑ]+", f["nombre"]) if len(w) > 2]
         consultas += [" ".join(pal[:4]), " ".join(pal[:2]), " ".join(pal[:1])]
         if CAT_FAMILIA.get(f["familia"]) and f["familia"].lower() not in ("set", "kit", "juego", "accesorio", "accesorios", "repuesto", "pack"):
@@ -330,7 +337,7 @@ def elegir_categoria(f, t):
         if q is None:
             return CAT_FAMILIA[f["familia"]]
         res = ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []
-        if XP and not res:
+        if GEN and not res:
             time.sleep(1)
             res = ml.get("/sites/MLA/domain_discovery/search", q=q, limit=6) or []
         for d in res:
@@ -343,11 +350,11 @@ def elegir_categoria(f, t):
 
 import glob
 fichas = {}
-for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/fichas_*.json")):
+for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/jya_fichas*.json" if JYA else "datos/fichas_*.json")):
     for _f in json.load(open(_arch, encoding="utf-8")):
         fichas.setdefault(_f["sku"], _f)
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
-b = cfg["extrapower"] if XP else cfg["baselinker"]
+b = cfg["extrapower"] if XP else cfg["jya"] if JYA else cfg["baselinker"]
 
 # ---------------- primero la autorización de Mercado Libre (el código vence en minutos)
 ml = ML(os.environ.get("ML_CODIGO"))
@@ -360,7 +367,11 @@ por_sku = {sync.normalizar_codigo(p.get("sku")): p for p in cat_bl.values()}
 # ---------------- IVA por SKU desde el Excel de FEMA (columna IMPUESTOS)
 import io
 import pandas as pd
-if XP:   # EXTRAPOWER: lista de precios del proveedor (LISTA +IVA, IVA 21 %)
+if JYA:   # J&A: precio de la web (sin IVA) guardado en la ficha
+    IVA = {sync.normalizar_codigo(k): 21 for k in fichas}
+    PRECIO_XLS = {sync.normalizar_codigo(k): float(v.get("precio_web") or 0) for k, v in fichas.items()}
+    MULT = 1
+elif XP:   # EXTRAPOWER: lista de precios del proveedor (LISTA +IVA, IVA 21 %)
     _lx = json.load(open("datos/extrapower_lista.json", encoding="utf-8"))
     IVA = {sync.normalizar_codigo(x["cod"]): 21 for x in _lx}
     PRECIO_XLS = {sync.normalizar_codigo(x["cod"]): float(x["lista"] or 0) for x in _lx}
@@ -395,13 +406,13 @@ for linea in (os.environ.get("EXTRA") or "").split(";"):
         EXTRA.setdefault(partes[0], {}).update(dict(x.split("=", 1) for x in partes[1:] if "=" in x))
 
 # ---------------- fotos y fichas en Drive
-fotos = [] if XP else [x for x in listar(os.environ["DRIVE_FOTOS"], profundidad=0) if not x["carpeta"]]
-fichas_img = [] if XP else [x for x in listar(os.environ["DRIVE_FICHAS"], profundidad=0) if not x["carpeta"]]
+fotos = [] if GEN else [x for x in listar(os.environ["DRIVE_FOTOS"], profundidad=0) if not x["carpeta"]]
+fichas_img = [] if GEN else [x for x in listar(os.environ["DRIVE_FICHAS"], profundidad=0) if not x["carpeta"]]
 EXT = (".jpg", ".jpeg", ".png", ".webp")
 
 
 def imagenes(sku):
-    if XP:   # EXTRAPOWER: fotos de la web del proveedor (guardadas en la ficha)
+    if GEN:   # EXTRAPOWER / J&A: fotos de la web del proveedor (guardadas en la ficha)
         return [{"nombre": u.rsplit("/", 1)[-1], "url": u} for u in (fichas.get(sku) or {}).get("fotos") or []][:10]
     def ok(n, extra=""):
         base, ext = os.path.splitext(n)
@@ -504,7 +515,7 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     """Atributos obligatorios con opciones cerradas que se deducen del título / marca."""
     tl = t.lower()
     req = {a["id"]: a for a in cat_attrs if (a.get("tags") or {}).get("required")}
-    if XP:
+    if GEN:
         completar_por_texto(attrs, req, f, t)
     def poner(aid, val):
         if aid in req and aid not in attrs and val:
@@ -670,7 +681,7 @@ for sku in skus:
             c_req = any(a["id"] == "COLOR" and (a.get("tags") or {}).get("required") for a in cat_attrs)
             col = color_de(f, t)
             # EXTRAPOWER: el color por defecto (Blanco) solo si ML lo exige; si no, no se inventa
-            if not XP or col != "Blanco" or c_req or re.search(r"\bblanc[oa]\b", (t + " " + f["nombre"]).lower()):
+            if not GEN or col != "Blanco" or c_req or re.search(r"\bblanc[oa]\b", (t + " " + f["nombre"]).lower()):
                 extra["Color"] = col
         for nom, val in extra.items():
             a = por_nombre.get(nom.strip().lower())
@@ -697,13 +708,13 @@ for sku in skus:
         faltan = [a["name"] for a in cat_attrs if (a.get("tags") or {}).get("required")
                   and a["id"] not in attrs and a["id"] not in ("ITEM_CONDITION",)]
         imgs = imagenes(sku)
-        if not XP and not [x for x in imgs if "_ficha" not in x["nombre"].lower()]:
+        if not GEN and not [x for x in imgs if "_ficha" not in x["nombre"].lower()]:
             # producto sin foto propia: imagen genérica de la caja FEMA (+ ficha si existe)
             caja = [x for x in fotos if os.path.splitext(x["nombre"])[0].lower() == "caja_fema"
                     and os.path.splitext(x["nombre"])[1].lower() in EXT]
             imgs = caja[:1] + imgs
         if not imgs:
-            raise RuntimeError("no hay fotos para este SKU" + ("" if XP else " en Drive"))
+            raise RuntimeError("no hay fotos para este SKU" + ("" if GEN else " en Drive"))
         fila["iva"] = attrs.get("VALUE_ADDED_TAX")
         fila["origen_precio"] = origen
         fila["opciones_obligatorios"] = " || ".join(
@@ -743,13 +754,20 @@ for sku in skus:
                 try:   # ML pide mínimo 500 px: las fotos chicas de la web se agrandan antes de subir
                     import io as _io
                     from PIL import Image
-                    if max(Image.open(_io.BytesIO(datos)).size) < 500:
+                    _im = Image.open(_io.BytesIO(datos))
+                    if max(_im.size) < 500:
                         datos = agrandar(datos)
+                    elif (_im.format or "").upper() not in ("JPEG", "PNG"):   # webp de la tienda -> JPEG
+                        _b = _io.BytesIO()
+                        _im.convert("RGB").save(_b, "JPEG", quality=90)
+                        datos = _b.getvalue()
                 except Exception:
                     pass
             else:
                 datos = descargar(x["id"])
             nombre = x["nombre"]
+            if x.get("url"):
+                nombre = os.path.splitext(nombre)[0][:40] + ".jpg"
             for intento in range(3):
                 up = ml.pedir("POST", "/pictures/items/upload", files={"file": (nombre, datos)})
                 if up.status_code in (200, 201):
