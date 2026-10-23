@@ -19,7 +19,6 @@ import re
 import sys
 import time
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
 
@@ -47,11 +46,31 @@ web.headers["User-Agent"] = "Mozilla/5.0 (sincronización de stock)"
 RE_STOCK = re.compile(r"var\s+stock\s*=\s*(\[.*?\]);\s*\n", re.S)
 
 
+PAUSA = float(os.environ.get("PAUSA_WEB") or 1.3)   # la tienda bloquea (403) si se le piden páginas muy rápido
+_ultimo = [0.0]
+
+
+def pedir(url, **kw):
+    """GET respetando una pausa entre pedidos; si la tienda responde 403 (bloqueo por exceso), espera y reintenta."""
+    for espera in (0, 90, 180, 300):
+        if espera:
+            log(f"La tienda respondió 403: espero {espera} s")
+            time.sleep(espera)
+        falta = PAUSA - (time.time() - _ultimo[0])
+        if falta > 0:
+            time.sleep(falta)
+        _ultimo[0] = time.time()
+        r = web.get(url, timeout=40, **kw)
+        if r.status_code != 403:
+            return r
+    return r
+
+
 def leer(f):
     """(sku, {'stock', 'precio'} | 'no existe' | 'error: ...')"""
     for intento in range(3):
         try:
-            r = web.get(f["web"], timeout=40)
+            r = pedir(f["web"])
             if r.status_code == 404:
                 return f["sku"], "no existe"
             if r.status_code != 200:
@@ -75,8 +94,12 @@ def leer(f):
 
 
 t0 = time.time()
-with ThreadPoolExecutor(max_workers=6) as ex:
-    leidos = dict(ex.map(leer, fichas))
+leidos = {}
+for n, f in enumerate(fichas, 1):
+    k, v = leer(f)
+    leidos[k] = v
+    if n % 200 == 0:
+        log(f"  {n}/{len(fichas)} páginas leídas")
 fallas = [k for k, v in leidos.items() if isinstance(v, str) and v.startswith("error")]
 log(f"Leídos en {time.time() - t0:.0f} s | ok: {sum(isinstance(v, dict) for v in leidos.values())} | "
     f"ya no existen: {sum(v == 'no existe' for v in leidos.values())} | con error: {len(fallas)}")
@@ -99,7 +122,7 @@ conocidas = {f["web"].rstrip("/") for f in fichas}
 nuevos, vistos = [], set()
 for pag in range(1, 80):
     try:
-        r = web.get("https://www.jyadistribuidora.ar/productos", params={"page": pag}, timeout=40)
+        r = pedir("https://www.jyadistribuidora.ar/productos", params={"page": pag})
         links = set(re.findall(r'href="(https://www\.jyadistribuidora\.ar/[a-z0-9-]+/[a-z0-9-]+)"', r.text))
     except Exception as e:
         log(f"Listado página {pag}: {e}")
