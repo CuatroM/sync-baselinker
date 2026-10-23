@@ -486,6 +486,8 @@ DEFECTO_OPC = {
     "ELECTRIC_SHOWER_HEAD_TYPE": ["fijo"],
     "SIZE": ["unico", "u"], "HAT_AND_CAP_TYPE": ["gorra"], "MATE_GOURD_TYPE": ["acero", "mate"],
     "DOCUMENT_TYPE": ["pasaporte"],
+    "BACKPACK_TYPE": ["urbana"], "MATE_GOURD_TYPE": ["criollo"], "MATE_MATERIAL": ["acero"], "MATERIAL": ["plastico"],
+    "BOTTLE_MATERIAL": ["plastico"], "AGE_GROUP": ["adultos"], "WITH_STONE": ["no"], "WITH_BRAKES": ["no"],
 }
 
 
@@ -499,7 +501,7 @@ def completar_por_texto(attrs, req, f, t):
         if not a.get("values"):
             if aid == "CUTTING_BLADES_NUMBER":
                 attrs[aid] = "1"
-            elif aid in ("THERMO_CAPACITY", "CAPACITY", "UNIT_VOLUME"):
+            elif aid in ("THERMO_CAPACITY", "CAPACITY", "UNIT_VOLUME", "VOLUME_CAPACITY", "BOTTLE_CAPACITY"):
                 m = re.search(r"(?i)(\d+(?:[.,]\d+)?)\s*(lts?|litros?|l|ml|cc)\b", t)
                 if m:
                     u = m.group(2).lower()
@@ -513,6 +515,14 @@ def completar_por_texto(attrs, req, f, t):
             pref = (["bateria", "recargable", "inalambric"] if re.search(r"recargable|bateria|inalambric|\b\d+\s*v\b(?!.*220)", texto)
                     else ["neumatic"] if "neumatic" in texto else DEFECTO_OPC[aid])
             el = next((o for p in pref for o in ops if p in _sa(o)), None)
+        elif aid == "BACKPACK_TYPE" and re.search(r"escolar|carro|infantil|jardin", texto):
+            el = next((o for o in ops if "escolar" in _sa(o)), None)
+        elif aid == "BACKPACK_TYPE" and re.search(r"notebook", texto):
+            el = next((o for o in ops if "notebook" in _sa(o)), None)
+        elif aid in ("BOTTLE_MATERIAL", "MATE_MATERIAL") and re.search(r"acero|inox", texto):
+            el = next((o for o in ops if "acero" in _sa(o)), None)
+        elif aid == "AGE_GROUP" and re.search(r"infantil|niñ|nin|kids", texto):
+            el = next((o for o in ops if "nin" in _sa(o)), None)
         elif aid == "SCREW_TYPE" and "madera" in texto:
             el = next((o for o in ops if "madera" in _sa(o)), None)
         elif aid == "WALL_ANCHOR_PLUG_TYPE" and re.search(r"tope|expans", texto):
