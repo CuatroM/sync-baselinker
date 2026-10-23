@@ -44,9 +44,30 @@ def posible_logo(datos):
     return None
 
 
+def tamano_ml(datos):
+    """ML recorta los bordes blancos y pide 500 px como mínimo: si el producto queda chico, lo agranda."""
+    im = Image.open(io.BytesIO(datos)).convert("RGB")
+    a = np.asarray(im)
+    nb = np.argwhere(~((a.min(axis=2) > 235) & (np.ptp(a.astype(np.int16), axis=2) < 20)))
+    if not len(nb):
+        return datos
+    (y0, x0), (y1, x1) = nb.min(0), nb.max(0) + 1
+    if max(y1 - y0, x1 - x0) >= 560:
+        return datos
+    rec = im.crop((x0, y0, x1, y1))
+    f = 640 / max(rec.size)
+    rec = rec.resize((max(1, round(rec.width * f)), max(1, round(rec.height * f))), Image.LANCZOS)
+    lienzo = Image.new("RGB", (800, 800), "white")
+    lienzo.paste(rec, ((800 - rec.width) // 2, (800 - rec.height) // 2))
+    out = io.BytesIO()
+    lienzo.save(out, "JPEG", quality=92)
+    return out.getvalue()
+
+
 def bajar(p):
     """Foto de ML en su tamaño original; si esa versión no es una imagen válida, la publicada."""
-    for u in ((p.get("secure_url") or "").replace("-O.", "-F."), p.get("secure_url"), p.get("url")):
+    for u in ((p.get("secure_url") or "").replace("-O.", "-F."), p.get("secure_url"), p.get("url"),
+              f"https://http2.mlstatic.com/D_{p['id']}-F.jpg", f"https://http2.mlstatic.com/D_{p['id']}-O.jpg"):
         if not u:
             continue
         r = web.get(u, timeout=60)
@@ -68,6 +89,8 @@ for n, x in enumerate(lista, 1):
         for i, p in enumerate(pics):
             original = bajar(p)
             datos, c = quitar_logo(original)
+            if c:
+                datos = tamano_ml(datos)
             if not c and dudosas < 80:
                 caja = posible_logo(original)
                 if caja:
