@@ -1,0 +1,60 @@
+name: J&A - Sincronizar precio y stock con BaseLinker
+
+on:
+  # Se activa cuando esté confirmada la prueba (cada 4 horas, desfasado 30 min de FEMA):
+  # schedule:
+  #   - cron: "37 3,7,11,15,19,23 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Simular sin escribir en BaseLinker (1 = sí, 0 = no)"
+        default: "1"
+      stock_modo:
+        description: "real = el stock de la web, uno = 1 si hay stock y 0 si no"
+        default: "real"
+
+concurrency:
+  group: sync-baselinker    # nunca a la vez que la de FEMA (límite de la API de BaseLinker)
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Sincronizar J&A
+        env:
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          DRY_RUN: ${{ github.event.inputs.dry_run || '0' }}
+          STOCK_MODO: ${{ github.event.inputs.stock_modo || 'real' }}
+        run: |
+          set -o pipefail
+          python jya_sync.py 2>&1 | tee /tmp/jya.log
+      - name: Publicar reportes en la rama "reportes"
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          if git fetch -q origin reportes:reportes 2>/dev/null; then
+            git worktree add -q /tmp/pub reportes
+          else
+            git worktree add -q --orphan -b reportes /tmp/pub
+          fi
+          cd /tmp/pub
+          cp "$GITHUB_WORKSPACE"/reportes/jya-*.csv . 2>/dev/null || true
+          cp /tmp/jya.log jya-ultima-ejecucion.log 2>/dev/null || true
+          for pref in jya-cambios jya-sin-vincular jya-advertencias; do
+            ls ${pref}-*.csv 2>/dev/null | sort | head -n -30 | xargs -r rm -f
+          done
+          git add -A
+          git commit -qm "Reportes J&A ${{ github.run_number }}" || exit 0
+          git push -q origin reportes
