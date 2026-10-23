@@ -1,0 +1,3 @@
+[2026-10-23 17:06:52] Conectado a Mercado Libre (usuario 3591706005)
+[2026-10-23 17:06:52] 61 publicaciones | REAL
+[2026-10-23 17:07:12] Resumen: Counter({'GTIN AGREGADO': 61})
