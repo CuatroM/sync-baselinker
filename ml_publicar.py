@@ -410,6 +410,9 @@ def color_de(f, t):
         if re.search(rf"\b{c}\b", texto):
             return "Gris" if c == "plateado" else c.capitalize()
     return "Blanco"
+if JYA and os.path.exists("datos/jya_extra.json"):   # datos que exige ML y no están en la tienda (p. ej. Equipo en gorras)
+    for _k, _v in json.load(open("datos/jya_extra.json", encoding="utf-8")).items():
+        EXTRA.setdefault(_k, {}).update(_v)
 for linea in (os.environ.get("EXTRA") or "").split(";"):
     # formato: SKU|Atributo=Valor|Atributo=Valor ; SKU|...   o  *|Atributo=Valor para todos
     partes = [x.strip() for x in linea.split("|") if x.strip()]

@@ -1,0 +1,51 @@
+name: Mercado Libre - Agregar código de barras a publicaciones creadas
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      lista:
+        description: "Archivo con la lista"
+        default: "datos/jya_gtin_creadas.json"
+      dry_run:
+        description: "1 = solo revisar, 0 = agregar"
+        default: "0"
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  gtin:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Agregar GTIN
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          GTIN_LISTA: ${{ github.event.inputs.lista }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          set -o pipefail
+          python ml_agregar_gtin.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "gtin"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/gtin.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan gtin
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Agregar GTIN"
+          git push -qf origin gtin
