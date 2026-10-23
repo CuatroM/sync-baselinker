@@ -1,13 +1,15 @@
-[2026-10-23 18:01:04] 1482 productos J&A con página en la tienda | SIMULACIÓN | stock: real
-[2026-10-23 18:37:32] Leídos en 2188 s | ok: 704 | ya no existen: 61 | con error: 717
-[2026-10-23 18:37:32]   15850: error: HTTP 403
-[2026-10-23 18:37:32]   31353: error: HTTP 403
-[2026-10-23 18:37:32]   31352: error: HTTP 403
-[2026-10-23 18:37:32]   31351: error: HTTP 403
-[2026-10-23 18:37:32]   31153: error: HTTP 403
-[2026-10-23 18:37:32]   31152: error: HTTP 403
-[2026-10-23 18:37:32]   31151: error: HTTP 403
-[2026-10-23 18:37:32]   31150: error: HTTP 403
-[2026-10-23 18:37:32]   31149: error: HTTP 403
-[2026-10-23 18:37:32]   18797: error: HTTP 403
-[2026-10-23 18:37:32] Demasiadas páginas con error (¿la web está caída o bloqueó el acceso?): no se cambia nada.
+[2026-10-23 18:38:27] 1482 productos J&A con página en la tienda | SIMULACIÓN | stock: real
+[2026-10-23 18:42:46]   200/1482 páginas leídas
+[2026-10-23 18:47:06]   400/1482 páginas leídas
+[2026-10-23 18:51:26]   600/1482 páginas leídas
+[2026-10-23 18:55:46]   800/1482 páginas leídas
+[2026-10-23 19:00:07]   1000/1482 páginas leídas
+[2026-10-23 19:04:27]   1200/1482 páginas leídas
+[2026-10-23 19:08:47]   1400/1482 páginas leídas
+[2026-10-23 19:10:33] Leídos en 1926 s | ok: 1420 | ya no existen: 62 | con error: 0
+[2026-10-23 19:10:36] Listado de la tienda: 62 productos | nuevos (no publicados): 62
+[2026-10-23 19:10:38] Catálogo BaseLinker: 1482 productos
+[2026-10-23 19:10:38] Depósito de stock: bl_75994 (encontrados: {'bl_75994': 1482})
+[2026-10-23 19:10:38] Cambios: 236 de stock, 4 de precio | productos de la web que no están en BaseLinker: 0
+[2026-10-23 19:10:38] SIMULACIÓN: no se escribió nada en BaseLinker
+[2026-10-23 19:10:38] Listo.
