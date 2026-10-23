@@ -90,7 +90,8 @@ for n, it in enumerate(items, 1):
             raise RuntimeError("portada en blanco")
         lado = max(caja[2] - caja[0], caja[3] - caja[1])
         f["producto_px"] = f"{caja[2] - caja[0]}x{caja[3] - caja[1]}"
-        if lado >= MIN:
+        mala = "poor_quality_thumbnail" in (it.get("tags") or [])
+        if lado >= MIN and not (mala and lado < 720):
             f["resultado"] = "ok"
         elif dry:
             f["resultado"] = "SE AGRANDARÍA"
