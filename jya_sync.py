@@ -4,8 +4,9 @@ Sincroniza precio y stock de J&A Distribuidora (tienda Empretienda jyadistribuid
 1. Lee la página pública de cada producto (la dirección está en datos/jya_fichas.json, campo "web").
    La página trae el stock y el precio de cada variante (variable "stock" del HTML).
    - stock = suma de las variantes (ilimitado -> STOCK_ILIMITADO)
-   - precio = precio de la web sin IVA (s_precio; las ofertas temporales no se copian)
-   - producto que ya no existe en la web (404) -> stock 0
+   - precio = el que muestra la web sin IVA (si hay oferta activa, el de oferta)
+   - producto que ya no existe en la web (404) -> stock 0 (BaseLinker lo pasa a ML, que pausa la publicación)
+   - productos nuevos de la web (no están en las fichas): solo se informan, se agregan a mano
 2. Compara con el inventario J&A de BaseLinker (config.yaml, sección jya) y actualiza solo lo que cambió.
 
 Seguridad: si fallan muchas páginas (web caída o bloqueada) no escribe nada.
@@ -63,7 +64,9 @@ def leer(f):
                 return f["sku"], {"stock": 0, "precio": None}
             st = STOCK_ILIMITADO if any(v.get("s_ilimitado") for v in var) else \
                 sum(max(int(v.get("s_cantidad") or 0), 0) for v in var)
-            precios = [float(v["s_precio"]) for v in var if v.get("s_precio")]
+            # precio tal cual se ve en la web: si la variante tiene oferta activa, el precio de oferta
+            precios = [float(v["s_precio_oferta"]) if v.get("s_oferta") and float(v.get("s_precio_oferta") or 0) > 0
+                       else float(v["s_precio"]) for v in var if v.get("s_precio")]
             return f["sku"], {"stock": st, "precio": max(precios) if precios else None}
         except Exception as e:
             err = e
@@ -90,6 +93,23 @@ for k, v in leidos.items():
         web_datos[normalizar_codigo(k)] = {"stock": st, "precio": v["precio"]}
     elif v == "no existe":
         web_datos[normalizar_codigo(k)] = {"stock": 0, "precio": None}
+
+# ---------------- productos nuevos en la web (solo se informan)
+conocidas = {f["web"].rstrip("/") for f in fichas}
+nuevos, vistos = [], set()
+for pag in range(1, 80):
+    try:
+        r = web.get("https://www.jyadistribuidora.ar/productos", params={"page": pag}, timeout=40)
+        links = set(re.findall(r'href="(https://www\.jyadistribuidora\.ar/[a-z0-9-]+/[a-z0-9-]+)"', r.text))
+    except Exception as e:
+        log(f"Listado página {pag}: {e}")
+        break
+    links -= vistos
+    if not links:
+        break
+    vistos |= links
+nuevos = sorted(u for u in vistos if u.rstrip("/") not in conocidas)
+log(f"Listado de la tienda: {len(vistos)} productos | nuevos (no publicados): {len(nuevos)}")
 
 # ---------------- BaseLinker
 bl = BaseLinker(os.environ["BL_TOKEN"])
@@ -147,6 +167,8 @@ with open(carpeta / f"jya-sin-vincular-{sello}.csv", "w", newline="", encoding="
     w.writerow(["codigo_web", "motivo"])
     w.writerows([[c, "no está en BaseLinker"] for c in sorted(sin_vincular)] +
                 [[k, leidos[k]] for k in fallas])
+with open(carpeta / f"jya-nuevos-{sello}.csv", "w", newline="", encoding="utf-8-sig") as fh:
+    csv.writer(fh, delimiter=";").writerows([["link_producto_nuevo"]] + [[u] for u in nuevos])
 if advertencias:
     with open(carpeta / f"jya-advertencias-{sello}.csv", "w", newline="", encoding="utf-8-sig") as fh:
         csv.writer(fh, delimiter=";").writerows([["product_id", "metodo", "mensaje"]] + advertencias)

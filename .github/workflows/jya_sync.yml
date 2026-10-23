@@ -52,7 +52,7 @@ jobs:
           cd /tmp/pub
           cp "$GITHUB_WORKSPACE"/reportes/jya-*.csv . 2>/dev/null || true
           cp /tmp/jya.log jya-ultima-ejecucion.log 2>/dev/null || true
-          for pref in jya-cambios jya-sin-vincular jya-advertencias; do
+          for pref in jya-cambios jya-sin-vincular jya-advertencias jya-nuevos; do
             ls ${pref}-*.csv 2>/dev/null | sort | head -n -30 | xargs -r rm -f
           done
           git add -A
