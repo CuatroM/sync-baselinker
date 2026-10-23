@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt scipy numpy
+      - run: pip install -r requirements.txt scipy numpy opencv-python-headless
       - name: Quitar logo
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}

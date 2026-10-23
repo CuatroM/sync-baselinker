@@ -10,7 +10,12 @@ import os
 import time
 from collections import Counter
 
+import io
+
+import numpy as np
 import requests
+from PIL import Image
+from scipy import ndimage
 
 from ml.cliente import ML, log
 from sin_logo import quitar_logo
@@ -23,26 +28,58 @@ ml = ML(os.environ.get("ML_CODIGO"))
 web = requests.Session()
 os.makedirs("salida", exist_ok=True)
 log(f"{len(lista)} publicaciones | {'SIMULACIÓN' if dry else 'REAL'}")
-filas, ejemplos = [], 0
+filas, ejemplos, dudosas = [], 0, 0
+
+
+def posible_logo(datos):
+    """Sin coincidencia con las plantillas: ¿hay una mancha suelta abajo a la izquierda? (para revisar a mano)"""
+    a = np.asarray(Image.open(io.BytesIO(datos)).convert("RGB")).astype(np.int16)
+    h, w = a.shape[:2]
+    fondo = (a.min(axis=2) > 235) & (np.ptp(a, axis=2) < 20)
+    lab, n = ndimage.label(ndimage.binary_dilation(~fondo, iterations=3))
+    for sl in ndimage.find_objects(lab):
+        y0, y1, x0, x1 = sl[0].start, sl[0].stop, sl[1].start, sl[1].stop
+        if x0 < 70 and y0 > h * 0.45 and 60 < (x1 - x0) < 320 and (y1 - y0) < 160:
+            return (x0, y0, x1, y1)
+    return None
+
+
+def bajar(p):
+    """Foto de ML en su tamaño original; si esa versión no es una imagen válida, la publicada."""
+    for u in ((p.get("secure_url") or "").replace("-O.", "-F."), p.get("secure_url"), p.get("url")):
+        if not u:
+            continue
+        r = web.get(u, timeout=60)
+        if r.status_code == 200:
+            try:
+                Image.open(io.BytesIO(r.content)).verify()
+                return r.content
+            except Exception:
+                pass
+    raise RuntimeError("no pude bajar la foto")
 for n, x in enumerate(lista, 1):
-    f = {"sku": x["sku"], "publicacion": x["item"], "fotos": 0, "con_logo": 0, "resultado": ""}
+    f = {"sku": x["sku"], "publicacion": x["item"], "fotos": 0, "con_logo": 0, "logos": "", "resultado": "", "revisar": "", "fotos_anteriores": ""}
     try:
-        it = ml.get(f"/items/{x['item']}", attributes="id,pictures,status")
+        it = ml.get(f"/items/{x['item']}", attributes="id,pictures,status,sub_status,sold_quantity")
         pics = it.get("pictures") or []
         f["fotos"] = len(pics)
+        f["fotos_anteriores"] = ",".join(p["id"] for p in pics)   # para poder volver atrás
         nuevas, cambio = [], False
         for i, p in enumerate(pics):
-            u = p.get("secure_url") or p.get("url")
-            u = u.replace("-O.", "-F.") if u else u      # versión original de ML
-            r = web.get(u, timeout=60)
-            if r.status_code != 200:
-                r = web.get(p.get("secure_url") or p.get("url"), timeout=60)
-            datos, c = quitar_logo(r.content)
+            original = bajar(p)
+            datos, c = quitar_logo(original)
+            if not c and dudosas < 80:
+                caja = posible_logo(original)
+                if caja:
+                    f["revisar"] = f"posible logo en {caja}"
+                    open(f"salida/revisar_{x['sku']}_{i}.jpg", "wb").write(original)
+                    dudosas += 1
             if c:
                 f["con_logo"] += 1
+                f["logos"] += c + " "
                 cambio = True
                 if dry and ejemplos < 20:
-                    open(f"salida/{x['sku']}_{i}_antes.jpg", "wb").write(r.content)
+                    open(f"salida/{x['sku']}_{i}_antes.jpg", "wb").write(original)
                     open(f"salida/{x['sku']}_{i}_despues.jpg", "wb").write(datos)
                     ejemplos += 1
                 if not dry:
@@ -59,7 +96,12 @@ for n, x in enumerate(lista, 1):
             f["resultado"] = f"SE LIMPIARÍAN {f['con_logo']} fotos"
         else:
             r = ml.put(f"/items/{x['item']}", {"pictures": nuevas})
-            f["resultado"] = "FOTOS LIMPIAS" if r.status_code in (200, 201) else f"ERROR {r.status_code} {r.text[:200]}"
+            if r.status_code in (200, 201):
+                f["resultado"] = "FOTOS LIMPIAS"
+            elif "not modifiable" in r.text:
+                f["resultado"] = f"ML NO PERMITE CAMBIAR LAS FOTOS (estado {it.get('status')})"
+            else:
+                f["resultado"] = f"ERROR {r.status_code} {r.text[:200]}"
     except Exception as e:
         f["resultado"] = f"ERROR: {e}"[:300]
     if n % 50 == 0 or f["resultado"].startswith("ERROR"):
@@ -69,4 +111,6 @@ with open("salida/xp_sinlogo.csv", "w", newline="", encoding="utf-8-sig") as fh:
     w = csv.DictWriter(fh, fieldnames=list(filas[0].keys()), delimiter=";")
     w.writeheader()
     w.writerows(filas)
-log("Resumen: " + str(Counter(r["resultado"].split(":")[0].split(" fotos")[0] for r in filas)))
+log("Resumen: " + str(Counter(r["resultado"].split(":")[0].split(" fotos")[0].split(" (")[0] for r in filas)))
+log("Logos encontrados: " + str(Counter(l.split(":")[0] for r in filas for l in r["logos"].split())))
+log(f"Fotos sin logo reconocido pero con algo abajo a la izquierda (guardadas para revisar): {dudosas}")
