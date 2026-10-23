@@ -1,9 +1,9 @@
 name: J&A - Sincronizar precio y stock con BaseLinker
 
 on:
-  # Se activa cuando esté confirmada la prueba (cada 4 horas, desfasado 30 min de FEMA):
-  # schedule:
-  #   - cron: "37 3,7,11,15,19,23 * * *"
+  schedule:
+    # Cada 4 horas, 30 min después de la de FEMA (00:37, 04:37, 08:37, 12:37, 16:37 y 20:37 de Argentina)
+    - cron: "37 3,7,11,15,19,23 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
