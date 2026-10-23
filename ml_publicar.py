@@ -488,6 +488,7 @@ DEFECTO_OPC = {
     "DOCUMENT_TYPE": ["pasaporte"],
     "BACKPACK_TYPE": ["urbana"], "MATE_GOURD_TYPE": ["criollo"], "MATE_MATERIAL": ["acero"], "MATERIAL": ["plastico"],
     "BOTTLE_MATERIAL": ["plastico"], "AGE_GROUP": ["adultos"], "WITH_STONE": ["no"], "WITH_BRAKES": ["no"],
+    "MATE_GOURD_MATERIALS": ["acero"], "WITH_GEMSTONE": ["no"],
 }
 
 
@@ -501,7 +502,7 @@ def completar_por_texto(attrs, req, f, t):
         if not a.get("values"):
             if aid == "CUTTING_BLADES_NUMBER":
                 attrs[aid] = "1"
-            elif aid in ("THERMO_CAPACITY", "CAPACITY", "UNIT_VOLUME", "VOLUME_CAPACITY", "BOTTLE_CAPACITY"):
+            elif aid in ("THERMO_CAPACITY", "CAPACITY", "UNIT_VOLUME", "VOLUME_CAPACITY", "BOTTLE_CAPACITY", "SPORT_BOTTLE_CAPACITY"):
                 m = re.search(r"(?i)(\d+(?:[.,]\d+)?)\s*(lts?|litros?|l|ml|cc)\b", t)
                 if m:
                     u = m.group(2).lower()
