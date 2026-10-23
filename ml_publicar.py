@@ -307,8 +307,13 @@ XP_CAT = [   # EXTRAPOWER: categorías fijas donde la sugerencia de ML se equivo
 ]
 
 
+CAT_SKU = json.load(open("datos/jya_categorias.json", encoding="utf-8")) if JYA and os.path.exists("datos/jya_categorias.json") else {}
+
+
 def elegir_categoria(f, t):
     """Categoría: forzada por familia o por regla; si no, la primera sugerencia de ML que sea de herramientas."""
+    if CAT_SKU.get(f["sku"]):   # J&A: categoría elegida a mano para el SKU
+        return CAT_SKU[f["sku"]]
     if XP:
         for exp, c in XP_CAT:
             if re.search(exp, t, re.I):
@@ -765,8 +770,14 @@ for sku in skus:
             """Mercado Libre pide mínimo 500 px: se amplía la imagen sobre fondo blanco a 800 px."""
             import io as _io
             from PIL import Image
+            import numpy as _np
             im = Image.open(_io.BytesIO(datos)).convert("RGB")
-            esc = 800 / max(im.size)
+            _a = _np.asarray(im).astype(_np.int16)   # ML recorta el borde blanco antes de medir: se recorta acá también
+            _nb = _np.argwhere(~((_a.min(axis=2) > 235) & (_np.ptp(_a, axis=2) < 20)))
+            if len(_nb):
+                (_y0, _x0), (_y1, _x1) = _nb.min(0), _nb.max(0) + 1
+                im = im.crop((_x0, _y0, _x1, _y1))
+            esc = (640 if max(im.size) < 640 else 800) / max(im.size)
             im = im.resize((max(1, round(im.width * esc)), max(1, round(im.height * esc))), Image.LANCZOS)
             lienzo = Image.new("RGB", (max(im.width, 600), max(im.height, 600)), "white")
             lienzo.paste(im, ((lienzo.width - im.width) // 2, (lienzo.height - im.height) // 2))
@@ -786,8 +797,12 @@ for sku in skus:
                 try:   # ML pide mínimo 500 px: las fotos chicas de la web se agrandan antes de subir
                     import io as _io
                     from PIL import Image
+                    import numpy as _np
                     _im = Image.open(_io.BytesIO(datos))
-                    if max(_im.size) < 500:
+                    _a = _np.asarray(_im.convert("RGB")).astype(_np.int16)
+                    _nb = _np.argwhere(~((_a.min(axis=2) > 235) & (_np.ptp(_a, axis=2) < 20)))
+                    _lado = (_nb.max(0) - _nb.min(0) + 1).max() if len(_nb) else max(_im.size)
+                    if max(_im.size) < 500 or _lado < 520:
                         datos = agrandar(datos)
                     elif (_im.format or "").upper() not in ("JPEG", "PNG"):   # webp de la tienda -> JPEG
                         _b = _io.BytesIO()
