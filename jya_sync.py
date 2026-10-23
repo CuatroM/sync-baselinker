@@ -79,34 +79,70 @@ def leer(f):
             if not m:
                 raise RuntimeError("la página no trae el stock")
             var = json.loads(m.group(1))
-            if not var:
-                return f["sku"], {"stock": 0, "precio": None}
-            st = STOCK_ILIMITADO if any(v.get("s_ilimitado") for v in var) else \
-                sum(max(int(v.get("s_cantidad") or 0), 0) for v in var)
-            # precio tal cual se ve en la web: si la variante tiene oferta activa, el precio de oferta
-            precios = [float(v["s_precio_oferta"]) if v.get("s_oferta") and float(v.get("s_precio_oferta") or 0) > 0
-                       else float(v["s_precio"]) for v in var if v.get("s_precio")]
-            return f["sku"], {"stock": st, "precio": max(precios) if precios else None}
+            pp = re.search(r'var\s+s_producto\s*=\s*(\{.*?\});', r.text)
+            precio = None
+            if pp:
+                j = json.loads(pp.group(1))
+                precio = float(j.get("precio") or 0) or None
+            return f["sku"], stock_y_precio(var, precio)
         except Exception as e:
             err = e
             time.sleep(3 * (intento + 1))
     return f["sku"], f"error: {err}"
 
 
+def stock_y_precio(var, precio_web=None):
+    st = STOCK_ILIMITADO if any(v.get("s_ilimitado") for v in var) else \
+        sum(max(int(v.get("s_cantidad") or 0), 0) for v in var)
+    if not precio_web:
+        p = [float(v["s_precio_oferta"]) if v.get("s_oferta") and float(v.get("s_precio_oferta") or 0) > 0
+             else float(v["s_precio"]) for v in var if v.get("s_precio")]
+        precio_web = min(p) if p else None
+    return {"stock": st, "precio": precio_web}
+
+
+# 1) listado completo de la tienda (el mismo que usa la web al apretar "ver más": 12 productos por página)
 t0 = time.time()
+h = pedir("https://www.jyadistribuidora.ar/productos").text
+tok = re.search(r'csrf_token\s*=\s*["\']([^"\']+)', h)
+feed, pag = {}, 0
+while True:
+    r = pedir("https://www.jyadistribuidora.ar/v4/product", params={"filter_page": pag, "filter_order": 0},
+              headers={"X-CSRF-TOKEN": tok.group(1) if tok else "", "X-Requested-With": "XMLHttpRequest"})
+    if r.status_code != 200:
+        log(f"Listado página {pag}: HTTP {r.status_code}")
+        break
+    lote = r.json().get("data") or []
+    for p in lote:
+        precio = float(p["p_precio_oferta"]) if p.get("p_oferta") and float(p.get("p_precio_oferta") or 0) > 0 \
+            else float(p.get("p_precio") or 0) or None
+        feed[p["p_link"].strip("/").lower()] = {"nombre": p.get("p_nombre"), "datos": stock_y_precio(p.get("stock") or [], precio)}
+    if len(lote) < 12:
+        break
+    pag += 1
+log(f"Listado de la tienda: {len(feed)} productos en {pag + 1} páginas ({time.time() - t0:.0f} s)")
+if len(feed) < 0.8 * len(fichas):
+    log("El listado vino incompleto (¿la web está caída o bloqueó el acceso?): no se cambia nada.")
+    sys.exit(1)
+
+# 2) cada producto publicado: del listado; si no aparece, se mira su página (404 = ya no existe)
+slug = lambda u: u.rstrip("/").rsplit("/", 1)[-1].lower()
 leidos = {}
-for n, f in enumerate(fichas, 1):
-    k, v = leer(f)
-    leidos[k] = v
-    if n % 200 == 0:
-        log(f"  {n}/{len(fichas)} páginas leídas")
+for f in fichas:
+    d = feed.get(slug(f["web"]))
+    if d:
+        leidos[f["sku"]] = d["datos"]
+faltan = [f for f in fichas if f["sku"] not in leidos]
+log(f"En el listado: {len(leidos)} | no aparecen, se revisa su página: {len(faltan)}")
+for f in faltan:
+    leidos[f["sku"]] = leer(f)[1]
 fallas = [k for k, v in leidos.items() if isinstance(v, str) and v.startswith("error")]
-log(f"Leídos en {time.time() - t0:.0f} s | ok: {sum(isinstance(v, dict) for v in leidos.values())} | "
-    f"ya no existen: {sum(v == 'no existe' for v in leidos.values())} | con error: {len(fallas)}")
+log(f"ok: {sum(isinstance(v, dict) for v in leidos.values())} | ya no existen: "
+    f"{sum(v == 'no existe' for v in leidos.values())} | con error: {len(fallas)}")
 for k in fallas[:10]:
     log(f"  {k}: {leidos[k]}")
 if len(fallas) > MAX_FALLAS * len(fichas):
-    log("Demasiadas páginas con error (¿la web está caída o bloqueó el acceso?): no se cambia nada.")
+    log("Demasiadas páginas con error: no se cambia nada.")
     sys.exit(1)
 
 web_datos = {}
@@ -117,22 +153,10 @@ for k, v in leidos.items():
     elif v == "no existe":
         web_datos[normalizar_codigo(k)] = {"stock": 0, "precio": None}
 
-# ---------------- productos nuevos en la web (solo se informan)
-conocidas = {f["web"].rstrip("/") for f in fichas}
-nuevos, vistos = [], set()
-for pag in range(1, 80):
-    try:
-        r = pedir("https://www.jyadistribuidora.ar/productos", params={"page": pag})
-        links = set(re.findall(r'href="(https://www\.jyadistribuidora\.ar/[a-z0-9-]+/[a-z0-9-]+)"', r.text))
-    except Exception as e:
-        log(f"Listado página {pag}: {e}")
-        break
-    links -= vistos
-    if not links:
-        break
-    vistos |= links
-nuevos = sorted(u for u in vistos if u.rstrip("/") not in conocidas)
-log(f"Listado de la tienda: {len(vistos)} productos | nuevos (no publicados): {len(nuevos)}")
+# productos nuevos en la web (solo se informan; se agregan a mano)
+conocidos = {slug(f["web"]) for f in fichas}
+nuevos = sorted((v["nombre"], f"https://www.jyadistribuidora.ar/{k}") for k, v in feed.items() if k not in conocidos)
+log(f"Productos nuevos en la web (no publicados): {len(nuevos)}")
 
 # ---------------- BaseLinker
 bl = BaseLinker(os.environ["BL_TOKEN"])
@@ -191,7 +215,7 @@ with open(carpeta / f"jya-sin-vincular-{sello}.csv", "w", newline="", encoding="
     w.writerows([[c, "no está en BaseLinker"] for c in sorted(sin_vincular)] +
                 [[k, leidos[k]] for k in fallas])
 with open(carpeta / f"jya-nuevos-{sello}.csv", "w", newline="", encoding="utf-8-sig") as fh:
-    csv.writer(fh, delimiter=";").writerows([["link_producto_nuevo"]] + [[u] for u in nuevos])
+    csv.writer(fh, delimiter=";").writerows([["producto", "link"]] + [list(x) for x in nuevos])
 if advertencias:
     with open(carpeta / f"jya-advertencias-{sello}.csv", "w", newline="", encoding="utf-8-sig") as fh:
         csv.writer(fh, delimiter=";").writerows([["product_id", "metodo", "mensaje"]] + advertencias)
