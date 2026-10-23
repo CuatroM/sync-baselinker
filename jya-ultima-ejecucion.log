@@ -1,0 +1,13 @@
+[2026-10-23 18:01:04] 1482 productos J&A con página en la tienda | SIMULACIÓN | stock: real
+[2026-10-23 18:37:32] Leídos en 2188 s | ok: 704 | ya no existen: 61 | con error: 717
+[2026-10-23 18:37:32]   15850: error: HTTP 403
+[2026-10-23 18:37:32]   31353: error: HTTP 403
+[2026-10-23 18:37:32]   31352: error: HTTP 403
+[2026-10-23 18:37:32]   31351: error: HTTP 403
+[2026-10-23 18:37:32]   31153: error: HTTP 403
+[2026-10-23 18:37:32]   31152: error: HTTP 403
+[2026-10-23 18:37:32]   31151: error: HTTP 403
+[2026-10-23 18:37:32]   31150: error: HTTP 403
+[2026-10-23 18:37:32]   31149: error: HTTP 403
+[2026-10-23 18:37:32]   18797: error: HTTP 403
+[2026-10-23 18:37:32] Demasiadas páginas con error (¿la web está caída o bloqueó el acceso?): no se cambia nada.
