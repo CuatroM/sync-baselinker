@@ -1,0 +1,60 @@
+name: Mercado Libre - Sacar textos y logos de la portada
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      lista:
+        description: "datos/jya_creadas.json (J&A) o datos/xp_creadas.json (EXTRAPOWER)"
+        default: "datos/jya_creadas.json"
+      dry_run:
+        description: "1 = solo probar (guarda ejemplos), 0 = cambiar las portadas"
+        default: "1"
+      desde:
+        description: "Desde la posición"
+        default: "0"
+      limite:
+        description: "Cantidad (0 = todas)"
+        default: "0"
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  portada:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: sudo apt-get install -y -qq tesseract-ocr tesseract-ocr-spa > /dev/null
+      - run: pip install -r requirements.txt scipy numpy
+      - name: Limpiar portadas
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          LISTA: ${{ github.event.inputs.lista }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          DESDE: ${{ github.event.inputs.desde }}
+          LIMITE: ${{ github.event.inputs.limite }}
+        run: |
+          set -o pipefail
+          python ml_portada_texto.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "portada"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/portada_texto.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan portada
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Portadas sin texto"
+          git push -qf origin portada
