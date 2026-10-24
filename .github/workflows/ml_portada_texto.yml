@@ -6,7 +6,7 @@ on:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
       lista:
-        description: "datos/jya_creadas.json (J&A) o datos/xp_creadas.json (EXTRAPOWER)"
+        description: "datos/jya_creadas.json (J&A), datos/xp_creadas.json (EXTRAPOWER) o datos/portadas_rehacer.json"
         default: "datos/jya_creadas.json"
       dry_run:
         description: "1 = solo probar (guarda ejemplos), 0 = cambiar las portadas"

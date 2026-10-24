@@ -1,7 +1,7 @@
 """
 Portada sin textos: en fotos de producto sobre fondo blanco, borra lo que no es el producto
 (marca escrita arriba, medidas, "Incluye packaging", etiquetas con flechas, miniaturas sueltas)
-y deja el producto centrado. ML no acepta textos ni logos en la foto principal.
+sin mover ni recortar el producto. ML no acepta textos ni logos en la foto principal.
 
 Cómo decide: separa la foto en manchas (lo que no es fondo blanco). Se queda con la mancha más
 grande y con las que tengan un tamaño parecido (otras piezas del mismo producto). Las manchas bajas
@@ -69,14 +69,17 @@ def borrar_palabras(im, fondo):
             continue
         # el contorno de la palabra tiene que ser fondo blanco (si no, está impresa sobre el producto)
         anillo = np.concatenate([zona[0], zona[-1], zona[:, 0], zona[:, -1]])
+        # palabra de verdad: renglón bajo y con mucho blanco entre letras (el OCR a veces "lee" un producto)
+        if h > 0.08 * H or w > 0.6 * W:
+            continue
         if anillo.mean() >= 0.9 and zona.mean() >= 0.5:
-            a[y0:y1, x0:x1][~zona] = 255
+            a[y0:y1, x0:x1] = 255                         # toda la caja (sin dejar sombra de las letras)
             fondo[y0:y1, x0:x1] = True
             hechas.append((x0, y0, x1, y1))
     return Image.fromarray(a), hechas
 
 
-def limpiar(datos, lado=1000):
+def limpiar(datos):
     """Devuelve (bytes JPEG, cantidad de elementos borrados). 0 = sin cambios."""
     im = Image.open(io.BytesIO(datos)).convert("RGB")
     a = np.asarray(im).astype(np.int16)
@@ -109,7 +112,7 @@ def limpiar(datos, lado=1000):
     mayor = max(info, key=lambda c: c["area"])
     caja_mayor = mayor["ch"] * mayor["cw"]
     quedan, borrar = [], []
-    cerca = max(25, round(min(h, w) * 0.08))
+    cerca = max(12, round(min(h, w) * 0.03))   # la leyenda está pegada a su miniatura
 
     def junto_a_texto(c):
         x0, y0, x1, y1 = c["caja"]
@@ -117,35 +120,26 @@ def limpiar(datos, lado=1000):
                    for px0, py0, px1, py1 in hechas)
 
     for c in info:
-        texto = c["ch"] < 0.10 * h and c["cw"] > 1.8 * c["ch"]            # renglón: bajo y ancho
+        relleno = c["area"] / max(1, c["ch"] * c["cw"])                    # las letras dejan mucho blanco
+        texto = c["ch"] < 0.10 * h and c["cw"] > 1.8 * c["ch"] and relleno < 0.5   # renglón: bajo, ancho y calado
         chico = c["area"] < 0.12 * mayor["area"] and c["ch"] * c["cw"] < 0.25 * caja_mayor
         mancha = c["area"] < 0.004 * mayor["area"] or (c["ch"] < 0.035 * h and c["cw"] < 0.035 * w)  # restos, números sueltos
         x0, y0, x1, y1 = c["caja"]
         en_borde = (y1 < 0.22 * h or y0 > 0.82 * h) and c["cw"] < 0.5 * w              # logo de marca arriba / medidas abajo
         # solo se borra lo que acompaña a un texto (logo de marca, miniatura con leyenda) o restos mínimos
-        if c is mayor or not (mancha or (texto and en_borde) or ((texto or chico) and junto_a_texto(c))):
+        # solo se borran restos de texto (logos escritos, leyendas); las miniaturas y piezas del producto quedan
+        resto = relleno < 0.5 and c["area"] < 0.05 * mayor["area"] and c["ch"] < 0.10 * h   # "Love" en cursiva, "+", ícono de marca
+        if c is mayor or not ((texto and (en_borde or junto_a_texto(c))) or (resto and junto_a_texto(c))):
             quedan.append(c)
         else:
             borrar.append(c)
     if not borrar and not n_pal:
         return datos, 0
-    keep = np.isin(lab, [c["i"] for c in quedan])
-    b = np.full_like(np.asarray(im), 255)
-    sel = keep & ~fondo
-    b[sel] = np.asarray(im)[sel]
-    # dentro de la zona del producto se conserva todo (sombras, brillos claros)
-    for c in quedan:
-        x0, y0, x1, y1 = c["caja"]
-        zona = keep[y0:y1, x0:x1]
-        b[y0:y1, x0:x1][zona] = np.asarray(im)[y0:y1, x0:x1][zona]
-    # recortar al producto y centrar en un cuadrado blanco
-    ys, xs = np.where(keep & ~fondo)
-    x0, x1, y0, y1 = xs.min(), xs.max() + 1, ys.min(), ys.max() + 1
-    rec = Image.fromarray(b).crop((x0, y0, x1, y1))
-    f = (lado * 0.88) / max(rec.size)
-    rec = rec.resize((max(1, round(rec.width * f)), max(1, round(rec.height * f))), Image.LANCZOS)
-    lienzo = Image.new("RGB", (lado, lado), "white")
-    lienzo.paste(rec, ((lado - rec.width) // 2, (lado - rec.height) // 2))
+    # se parte de la foto original (con las palabras ya borradas) y solo se pinta de blanco lo que se saca:
+    # así los productos blancos o transparentes no pierden partes
+    sacar = np.isin(lab, [c["i"] for c in borrar])     # la mancha entera (incluye el borde suave de las letras)
+    b = np.asarray(im).copy()
+    b[sacar] = 255
     out = io.BytesIO()
-    lienzo.save(out, "JPEG", quality=92)
+    Image.fromarray(b).save(out, "JPEG", quality=92)
     return out.getvalue(), len(borrar) + n_pal

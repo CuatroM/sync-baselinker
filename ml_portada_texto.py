@@ -3,6 +3,7 @@ Saca los textos y logos escritos de la PORTADA (primera foto) de las publicacion
 marca arriba, medidas, "Incluye packaging", etiquetas con flechas (ver sin_texto.py).
 Solo cambia la primera foto; las demás quedan igual. Guarda el id de la portada anterior para volver atrás.
 LISTA: datos/jya_creadas.json o datos/xp_creadas.json [{item, sku}]. DESDE/LIMITE para partir.
+Con "original" en la lista (datos/portadas_rehacer.json) parte de esa foto y reemplaza la portada actual.
 DRY_RUN=1: procesa y guarda ejemplos antes/después en salida/ sin cambiar nada.
 """
 import csv
@@ -51,11 +52,18 @@ for n, x in enumerate(lista, 1):
         pics = it.get("pictures") or []
         if not pics:
             raise RuntimeError("sin fotos")
-        f["portada_anterior"] = pics[0]["id"]
-        original = bajar(pics[0])
+        rehacer = x.get("original")          # rehacer desde la portada original (antes de la primera limpieza)
+        f["portada_anterior"] = rehacer or pics[0]["id"]
+        original = bajar({"id": rehacer} if rehacer else pics[0])
         nueva, k = limpiar(original)
         f["borrados"] = k
-        if not k:
+        if not k and rehacer:
+            if dry:
+                f["resultado"] = "SE RESTAURARÍA LA ORIGINAL"
+            else:
+                r = ml.put(f"/items/{x['item']}", {"pictures": [{"id": rehacer}] + [{"id": p["id"]} for p in pics[1:]]})
+                f["resultado"] = "ORIGINAL RESTAURADA" if r.status_code in (200, 201) else f"ERROR {r.status_code} {r.text[:200]}"
+        elif not k:
             f["resultado"] = "sin textos"
         else:
             if dry and ejemplos < 40:
