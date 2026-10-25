@@ -1,0 +1,10 @@
+[2026-10-25 21:31:42] Conectado a Mercado Libre (usuario 3591706005)
+[2026-10-25 21:31:47] paused: 4431
+[2026-10-25 21:31:47] under_review: 0
+[2026-10-25 21:31:47] inactive: 0
+[2026-10-25 21:36:23] Marcadas por ML 'La portada incumple tamaño': 2
+[2026-10-25 21:36:23] 2 publicaciones no activas | REAL
+[2026-10-25 21:36:23] sub_status: [('out_of_stock', 2)]
+[2026-10-25 21:36:23] tags: [('poor_quality_thumbnail', 2), ('user_product_listing', 2), ('immediate_payment', 2), ('cart_eligible', 2)]
+[2026-10-25 21:36:26] Resumen: Counter({'PORTADA AGRANDADA': 2})
+[2026-10-25 21:36:26] Proveedor de las corregidas/pendientes: Counter({'EXTRAPOWER': 2})
