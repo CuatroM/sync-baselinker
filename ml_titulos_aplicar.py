@@ -14,11 +14,14 @@ from ml.cliente import ML, log, sku_de
 
 dry = (os.environ.get("DRY_RUN") or "0").strip() != "0"
 lista = json.load(open(os.environ.get("LISTA") or "datos/titulos_aprobados.json", encoding="utf-8"))
+desde, limite = int(os.environ.get("DESDE") or 0), int(os.environ.get("LIMITE") or 0)
+lista = lista[desde:desde + limite] if limite else lista[desde:]
 ml = ML(os.environ.get("ML_CODIGO"))
 log(f"{len(lista)} títulos | {'SIMULACIÓN' if dry else 'REAL'}")
 filas = []
 for n, x in enumerate(lista, 1):
-    f = {"sku": x["sku"], "publicacion": x["item"], "titulo_anterior": "", "titulo_nuevo": x["titulo"], "resultado": ""}
+    f = {"sku": x["sku"], "publicacion": x["item"], "titulo_anterior": "", "titulo_nuevo": x["titulo"],
+         "titulo_que_armo_ml": "", "resultado": ""}
     try:
         it = ml.get(f"/items/{x['item']}", attributes="id,title,status,sold_quantity,attributes,seller_custom_field")
         f["titulo_anterior"] = it.get("title")
@@ -32,6 +35,12 @@ for n, x in enumerate(lista, 1):
             f["resultado"] = "SE CAMBIARÍA"
         else:
             r = ml.put(f"/items/{x['item']}", {"title": x["titulo"]})
+            if r.status_code == 400 and "family_name" in r.text:
+                # publicaciones "producto de usuario": ML arma el título a partir del family_name
+                r = ml.put(f"/items/{x['item']}/family_name", {"family_name": x["titulo"]})
+                if r.status_code in (200, 201):
+                    time.sleep(1)
+                    f["titulo_que_armo_ml"] = ml.get(f"/items/{x['item']}", attributes="title").get("title")
             if r.status_code in (200, 201):
                 f["resultado"] = "TÍTULO CAMBIADO"
             else:
@@ -39,8 +48,8 @@ for n, x in enumerate(lista, 1):
             time.sleep(0.2)
     except Exception as e:
         f["resultado"] = f"ERROR: {e}"[:300]
-    if n % 100 == 0 or f["resultado"].startswith(("ERROR", "NO SE")):
-        log(f"{n}/{len(lista)} {x['sku']}: {f['resultado']}")
+    if n % 100 == 0 or n <= 5 or f["resultado"].startswith(("ERROR", "NO SE")):
+        log(f"{n}/{len(lista)} {x['sku']}: {f['resultado']} {f['titulo_que_armo_ml'] or ''}")
     filas.append(f)
 os.makedirs("salida", exist_ok=True)
 with open("salida/titulos_aplicados.csv", "w", newline="", encoding="utf-8-sig") as fh:

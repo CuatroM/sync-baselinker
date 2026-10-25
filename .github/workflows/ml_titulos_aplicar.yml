@@ -12,6 +12,12 @@ on:
       dry_run:
         description: "1 = solo revisar, 0 = cambiar los títulos"
         default: "0"
+      desde:
+        description: "Desde la posición"
+        default: "0"
+      limite:
+        description: "Cantidad (0 = todas)"
+        default: "0"
 
 concurrency:
   group: mercadolibre
@@ -37,6 +43,8 @@ jobs:
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           LISTA: ${{ github.event.inputs.lista }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
+          DESDE: ${{ github.event.inputs.desde }}
+          LIMITE: ${{ github.event.inputs.limite }}
         run: |
           set -o pipefail
           python ml_titulos_aplicar.py 2>&1 | tee resultado.txt
