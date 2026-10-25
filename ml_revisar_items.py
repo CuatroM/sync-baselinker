@@ -1,6 +1,6 @@
 """
 Revisa y arregla la portada de publicaciones puntuales que el usuario indica (ITEMS: números separados por espacio
-o coma, con o sin MLA). Para cada una: estado, stock, etiquetas, motivo de moderación y tamaño de la portada.
+o coma, con o sin MLA), o ITEMS=esperando: todas las "en revisión, esperando corrección". Para cada una: estado, stock, etiquetas, motivo de moderación y tamaño de la portada.
 Prepara la portada corregida según el motivo:
   - "logos y/o textos": saca textos y logos sueltos (sin_texto.limpiar)
   - "incumple tamaño" o foto chica: agranda el producto a 1100 px en 1200x1200 (con super-resolución)
@@ -22,8 +22,41 @@ import ml_portada_util as pu
 from sin_texto import limpiar
 
 dry = (os.environ.get("DRY_RUN") or "1").strip() != "0"
-ids = ["MLA" + re.sub(r"\D", "", x) for x in re.split(r"[\s,;]+", os.environ.get("ITEMS") or "") if re.sub(r"\D", "", x)]
 ml = ML(os.environ.get("ML_CODIGO"))
+ITEMS = (os.environ.get("ITEMS") or "").strip()
+
+
+def buscar_esperando():
+    """Publicaciones 'en revisión, esperando corrección' (under_review / waiting_for_patch).
+    La búsqueda con scroll no las devuelve, así que se prueban varias formas y se juntan."""
+    base = f"/users/{ml.user_id}/items/search"
+    r = ml.pedir("GET", base, params={"include_filters": "true", "limit": 1})
+    if r.status_code == 200:
+        for fl in (r.json().get("available_filters") or []) + (r.json().get("filters") or []):
+            log(f"Filtro {fl.get('id')}: " + ", ".join(f"{v.get('id')}({v.get('results')})" for v in fl.get("values") or []))
+    encontrados = []
+    for params in ({"status": "under_review"}, {"sub_status": "waiting_for_patch"},
+                   {"status": "under_review", "sub_status": "waiting_for_patch"}, {"tags": "waiting_for_patch"}):
+        off, lote = 0, []
+        while off < 1000:
+            r = ml.pedir("GET", base, params={**params, "limit": 50, "offset": off})
+            if r.status_code != 200:
+                log(f"{params}: {r.status_code} {r.text[:120]}")
+                break
+            res = r.json().get("results") or []
+            lote += res
+            if len(res) < 50:
+                break
+            off += 50
+        log(f"Búsqueda {params}: {len(lote)}")
+        encontrados += lote
+    return list(dict.fromkeys(encontrados))
+
+
+if ITEMS.lower() == "esperando":
+    ids = buscar_esperando()
+else:
+    ids = ["MLA" + re.sub(r"\D", "", x) for x in re.split(r"[\s,;]+", ITEMS) if re.sub(r"\D", "", x)]
 os.makedirs("salida", exist_ok=True)
 log(f"{len(ids)} publicaciones | {'SIMULACIÓN' if dry else 'REAL'}")
 
@@ -92,6 +125,11 @@ for iid in ids:
             f["producto_px"] = f"{caja[2] - caja[0]}x{caja[3] - caja[1]}"
         m = f["motivo"].lower()
         nueva, acciones = original, []
+        if ITEMS.lower() == "esperando" and not re.search(r"logo|texto|tamaño", m):
+            f["accion"], f["resultado"] = "otro motivo", "NO SE TOCA (el motivo no es la portada)"
+            log(f"{iid} {f['sku']} | {f['estado']} | motivo: {f['motivo'][:200]} -> {f['resultado']}")
+            filas.append(f)
+            continue
         if "logo" in m or "texto" in m:
             limpia, k = limpiar(original)
             if k:
@@ -111,8 +149,10 @@ for iid in ids:
                 nueva = pu.agrandar(im2, c2, 1100, 1200)
                 acciones.append("agrandé a 1200x1200")
         f["accion"] = "; ".join(acciones) or "nada para corregir"
-        open(f"salida/{iid}_antes.jpg", "wb").write(original)
-        if nueva is not original:
+        guardar = len(filas) < 60
+        if guardar:
+            open(f"salida/{iid}_antes.jpg", "wb").write(original)
+        if guardar and nueva is not original:
             open(f"salida/{iid}_despues.jpg", "wb").write(nueva)
         if nueva is original:
             f["resultado"] = "sin cambios"

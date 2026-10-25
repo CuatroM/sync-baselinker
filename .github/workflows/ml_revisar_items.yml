@@ -7,7 +7,7 @@ on:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
       items:
-        description: "Números de publicación separados por espacio (con o sin MLA)"
+        description: "Números de publicación separados por espacio (con o sin MLA), o la palabra esperando = todas las que esperan corrección"
         required: true
       dry_run:
         description: "1 = solo revisar (guarda la portada actual y la corregida), 0 = cambiar la portada y reactivar"
