@@ -5,9 +5,12 @@ on:
       codigo:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
+      modo:
+        description: "moderacion = solo las que ML marcó 'La portada incumple tamaño' (se regeneran más grandes y se reactivan); vacío = todas las pausadas chicas"
+        default: "moderacion"
       dry_run:
-        description: "1 = solo revisar, 0 = corregir"
-        default: "0"
+        description: "1 = solo revisar (guarda ejemplos antes/después), 0 = corregir"
+        default: "1"
 concurrency:
   group: mercadolibre-portada
   cancel-in-progress: false
@@ -22,13 +25,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt numpy
+      - run: pip install -r requirements.txt numpy opencv-contrib-python-headless==4.10.0.84
       - name: Revisar y corregir portadas
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
+          MODO: ${{ github.event.inputs.modo }}
         run: |
           set -o pipefail
           python ml_portada.py 2>&1 | tee resultado.txt
