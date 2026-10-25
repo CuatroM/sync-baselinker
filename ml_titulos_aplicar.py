@@ -51,8 +51,6 @@ for n, x in enumerate(lista, 1):
                 # sin conectores colgando al final ("Talle", "Color", "Con"...)
                 while fam.split() and fam.split()[-1].lower() in ("con", "color", "talle", "de", "para", "y", "x", "en"):
                     fam = fam.rsplit(" ", 1)[0]
-                while agregado and len(f"{fam} {agregado}") > 60 and len(fam.split()) > 3:
-                    fam = fam.rsplit(" ", 1)[0]
                 f["agregado_ml"] = agregado
                 r = ml.put(f"/items/{x['item']}/family_name", {"family_name": fam})
                 if r.status_code in (200, 201):
