@@ -74,6 +74,12 @@ for n, x in enumerate(lista, 1):
                 f["resultado"] = "SE LIMPIARÍA"
             else:
                 up = ml.pedir("POST", "/pictures/items/upload", files={"file": (f"{x['item']}_portada.jpg", nueva)})
+                if up.status_code not in (200, 201) and "500 p" in up.text and rehacer:
+                    # sin el texto el producto queda muy chico para ML: se vuelve a la original
+                    r = ml.put(f"/items/{x['item']}", {"pictures": [{"id": rehacer}] + [{"id": p["id"]} for p in pics[1:]]})
+                    f["resultado"] = "ORIGINAL RESTAURADA" if r.status_code in (200, 201) else f"ERROR {r.status_code} {r.text[:200]}"
+                    filas.append(f)
+                    continue
                 if up.status_code not in (200, 201):
                     raise RuntimeError(f"no pude subir: {up.status_code} {up.text[:150]}")
                 r = ml.put(f"/items/{x['item']}", {"pictures": [{"id": up.json()["id"]}] + [{"id": p["id"]} for p in pics[1:]]})
