@@ -13,7 +13,9 @@ import os
 import re
 import time
 
+import numpy as np
 from PIL import Image
+from scipy import ndimage as ndi
 
 from ml.cliente import ML, log, sku_de
 import ml_portada_util as pu
@@ -43,6 +45,34 @@ def motivo(item_id):
     return " || ".join(dict.fromkeys(t.strip() for t in textos if t.strip()))[:500]
 
 
+def sueltos(im, frac=0.08, fino=5):
+    """Saca lo que está suelto alrededor del producto: logos aparte (ej. MARVEL arriba), textos y flechas finas.
+    1) borra trazos finos (texto chico, flechas) que no forman parte de algo sólido;
+    2) borra los elementos separados que son mucho más chicos que el producto principal."""
+    a = np.asarray(im.convert("RGB")).astype(np.int16)
+    m = ~((a.min(axis=2) > 235) & (np.ptp(a, axis=2) < 20))
+    b = np.asarray(im.convert("RGB")).copy()
+    k = 0
+    solido = ndi.binary_opening(m, structure=np.ones((fino, fino)))
+    finos = m & ~ndi.binary_dilation(solido, iterations=fino + 1)
+    if finos.sum():
+        b[ndi.binary_dilation(finos, iterations=2) & ~solido] = 255
+        k += 1
+    a2 = b.astype(np.int16)
+    m2 = ~((a2.min(axis=2) > 235) & (np.ptp(a2, axis=2) < 20))
+    lab, n = ndi.label(ndi.binary_dilation(m2, iterations=1))
+    if n > 1:
+        areas = ndi.sum(m2, lab, range(1, n + 1))
+        quitar = [i + 1 for i, ar in enumerate(areas) if ar < frac * areas.max()]
+        if quitar:
+            quedan = np.isin(lab, [i for i in range(1, n + 1) if i not in quitar])
+            b[ndi.binary_dilation(np.isin(lab, quitar), iterations=3) & ~quedan] = 255
+            k += len(quitar)
+    out = io.BytesIO()
+    Image.fromarray(b).save(out, "JPEG", quality=93)
+    return out.getvalue(), k
+
+
 filas = []
 for iid in ids:
     f = {"publicacion": iid, "sku": "", "titulo": "", "estado": "", "stock": "", "tags": "", "motivo": "",
@@ -67,8 +97,12 @@ for iid in ids:
             if k:
                 nueva = limpia
                 acciones.append(f"saqué {k} textos/logos")
-            else:
-                acciones.append("no encontré textos sueltos para sacar")
+            otra, k2 = sueltos(Image.open(io.BytesIO(nueva)))
+            if k2:
+                nueva = otra
+                acciones.append(f"saqué {k2} elementos sueltos (logos aparte, textos y flechas)")
+            if not k and not k2:
+                acciones.append("no encontré textos ni logos sueltos para sacar")
         chica = not caja or max(caja[2] - caja[0], caja[3] - caja[1]) < 720 or min(im.size) < 500
         if "tamaño" in m or "poor_quality_thumbnail" in f["tags"] or chica or nueva is not original:
             im2 = Image.open(io.BytesIO(nueva)).convert("RGB")
