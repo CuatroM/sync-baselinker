@@ -2,7 +2,7 @@
 Saca los textos y logos escritos de la PORTADA (primera foto) de las publicaciones de un proveedor:
 marca arriba, medidas, "Incluye packaging", etiquetas con flechas (ver sin_texto.py).
 Solo cambia la primera foto; las demás quedan igual. Guarda el id de la portada anterior para volver atrás.
-LISTA: datos/jya_creadas.json o datos/xp_creadas.json [{item, sku}]. DESDE/LIMITE para partir.
+LISTA: datos/jya_creadas.json o datos/xp_creadas.json [{item, sku}], o "moderacion" (pausadas por logos/textos). DESDE/LIMITE para partir.
 Con "original" en la lista (datos/portadas_rehacer.json) parte de esa foto y reemplaza la portada actual.
 DRY_RUN=1: procesa y guarda ejemplos antes/después en salida/ sin cambiar nada.
 """
@@ -21,9 +21,28 @@ from sin_texto import IDIOMA, limpiar
 
 dry = (os.environ.get("DRY_RUN") or "1").strip() != "0"
 desde, limite = int(os.environ.get("DESDE") or 0), int(os.environ.get("LIMITE") or 0)
-lista = json.load(open(os.environ.get("LISTA") or "datos/jya_creadas.json", encoding="utf-8"))
-lista = lista[desde:desde + limite] if limite else lista[desde:]
 ml = ML(os.environ.get("ML_CODIGO"))
+LISTA = (os.environ.get("LISTA") or "datos/jya_creadas.json").strip()
+if LISTA == "moderacion":
+    # pausadas por ML con el motivo "La portada tiene logos y/o textos" (todas las marcas)
+    from ml.cliente import sku_de
+    ids = ml.ids_publicaciones(status="paused")
+    lista = []
+    for it in ml.publicaciones(ids, atributos="id,status,sub_status,seller_custom_field,attributes"):
+        r = ml.pedir("GET", f"/moderations/infractions/{ml.user_id}", params={"related_item_id": it["id"]})
+        if r.status_code != 200:
+            continue
+        d = r.json()
+        lst = d.get("infractions") if isinstance(d, dict) else d
+        txt = " ".join(str(i.get("reason") or "") for i in lst or [] if isinstance(i, dict))
+        if "logos y/o textos" in txt.lower():
+            lista.append({"item": it["id"], "sku": sku_de(it) or it["id"]})
+    log(f"Pausadas revisadas: {len(ids)} | con 'logos y/o textos' en la portada: {len(lista)}")
+    os.makedirs("salida", exist_ok=True)
+    json.dump(lista, open("salida/lista_moderacion.json", "w", encoding="utf-8"), ensure_ascii=False, indent=0)
+else:
+    lista = json.load(open(LISTA, encoding="utf-8"))
+lista = lista[desde:desde + limite] if limite else lista[desde:]
 web = requests.Session()
 os.makedirs("salida", exist_ok=True)
 log(f"{len(lista)} publicaciones | {'SIMULACIÓN' if dry else 'REAL'} | OCR: {IDIOMA}")
