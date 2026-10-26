@@ -1,0 +1,74 @@
+name: BaseLinker - Descuento a una lista de SKU
+
+on:
+  workflow_dispatch:
+    inputs:
+      lista:
+        description: "Archivo con los códigos (uno por línea)"
+        default: "datos/xp_descuento_5.txt"
+      porcentaje:
+        description: "Descuento en %"
+        default: "5"
+      inventario:
+        description: "extrapower | jya | fema"
+        default: "extrapower"
+      dry_run:
+        description: "1 = solo mostrar precios actuales y nuevos, 0 = aplicar en BaseLinker"
+        default: "1"
+      revertir:
+        description: "1 = volver a los precios anteriores guardados de este descuento"
+        default: "0"
+      forzar:
+        description: "1 = aplicar aunque ya se haya aplicado antes (se descontaría dos veces)"
+        default: "0"
+
+concurrency:
+  group: sync-baselinker
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  descuento:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Descuento
+        env:
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          LISTA: ${{ github.event.inputs.lista }}
+          PORCENTAJE: ${{ github.event.inputs.porcentaje }}
+          INVENTARIO: ${{ github.event.inputs.inventario }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          REVERTIR: ${{ github.event.inputs.revertir }}
+          FORZAR: ${{ github.event.inputs.forzar }}
+        run: |
+          set -o pipefail
+          python bl_descuento.py 2>&1 | tee resultado.txt
+      - name: Guardar el registro de descuentos aplicados
+        if: always()
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          if [ -n "$(git status --porcelain datos/descuentos_aplicados.json)" ]; then
+            git add datos/descuentos_aplicados.json
+            git commit -qm "Registro de descuentos aplicados"
+            git pull -q --rebase && git push -q
+          fi
+      - name: Guardar resultado en la rama "descuentos"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/ && cp salida/* /tmp/out/ 2>/dev/null || true
+          git checkout -q --orphan descuentos
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Descuento"
+          git push -qf origin descuentos
