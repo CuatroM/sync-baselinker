@@ -1,10 +1,10 @@
-[2026-10-26 13:55:24] 1482 productos J&A con página en la tienda | REAL | stock: real
-[2026-10-26 13:58:09] Listado de la tienda: 1520 productos en 127 páginas (165 s)
-[2026-10-26 13:58:09] En el listado: 1390 | no aparecen, se revisa su página: 92
-[2026-10-26 14:00:09] ok: 1390 | ya no existen: 92 | con error: 0
-[2026-10-26 14:00:09] Productos nuevos en la web (no publicados): 130
-[2026-10-26 14:00:10] Catálogo BaseLinker: 1482 productos
-[2026-10-26 14:00:10] Depósito de stock: bl_75994 (encontrados: {'bl_75994': 1482})
-[2026-10-26 14:00:10] Cambios: 16 de stock, 0 de precio | productos de la web que no están en BaseLinker: 0
-[2026-10-26 14:00:12] updateInventoryProductsStock: 16 actualizados
-[2026-10-26 14:00:12] Listo.
+[2026-10-26 16:25:37] 1482 productos J&A con página en la tienda | REAL | stock: real
+[2026-10-26 16:28:23] Listado de la tienda: 1522 productos en 127 páginas (165 s)
+[2026-10-26 16:28:23] En el listado: 1389 | no aparecen, se revisa su página: 93
+[2026-10-26 16:30:25] ok: 1389 | ya no existen: 93 | con error: 0
+[2026-10-26 16:30:25] Productos nuevos en la web (no publicados): 133
+[2026-10-26 16:30:27] Catálogo BaseLinker: 1482 productos
+[2026-10-26 16:30:27] Depósito de stock: bl_75994 (encontrados: {'bl_75994': 1482})
+[2026-10-26 16:30:27] Cambios: 27 de stock, 0 de precio | productos de la web que no están en BaseLinker: 0
+[2026-10-26 16:30:28] updateInventoryProductsStock: 27 actualizados
+[2026-10-26 16:30:28] Listo.
