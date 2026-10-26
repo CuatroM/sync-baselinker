@@ -13,8 +13,8 @@ on:
         description: "extrapower | jya | fema"
         default: "extrapower"
       grupo:
-        description: "Grupo de precio (vacío = el del inventario en config.yaml)"
-        default: ""
+        description: "todos = todos los grupos con precio (recomendado), o el número de un grupo"
+        default: "todos"
       dry_run:
         description: "1 = solo mostrar precios actuales y nuevos, 0 = aplicar en BaseLinker"
         default: "1"

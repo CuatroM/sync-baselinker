@@ -2,7 +2,8 @@
 Aplica un descuento (%) al precio actual en BaseLinker de una lista de SKU. Pedido por el usuario.
 - INVENTARIO: extrapower | jya | fema (de config.yaml). Se busca el SKU con el sufijo (#EXTRAPOWER, #JYA, #FEMA).
 - LISTA: archivo de texto con un código por línea (sin sufijo). PORCENTAJE: por ejemplo 5.
-- Toca solo el grupo de precio del inventario en config.yaml (EXTRAPOWER: 66282).
+- GRUPO: un grupo de precio, o "todos" (por defecto): todos los grupos con precio del producto,
+  así se mantiene la proporción entre el precio base y los de Mercado Libre (+15%, +16%, +31%).
 - Protección contra aplicarlo dos veces: guarda en datos/descuentos_aplicados.json lo aplicado
   (lista + porcentaje + precio antes/después). Si ya se aplicó esa misma lista con ese %, no hace nada
   salvo que se pida FORZAR=1. REVERTIR=1 vuelve a los precios "antes" guardados.
@@ -29,7 +30,7 @@ pct = float((os.environ.get("PORCENTAJE") or "5").replace(",", "."))
 cfg = yaml.safe_load(open(BASE / "config.yaml", encoding="utf-8"))
 sec = {"extrapower": "extrapower", "jya": "jya", "fema": "baselinker"}[nombre_inv]
 sufijo = {"extrapower": "#EXTRAPOWER", "jya": "#JYA", "fema": "#FEMA"}[nombre_inv]
-inv, grupo = int(cfg[sec]["inventory_id"]), str(os.environ.get("GRUPO") or cfg[sec]["price_group_id"]).strip()
+inv, grupo = int(cfg[sec]["inventory_id"]), str(os.environ.get("GRUPO") or "todos").strip()
 codigos = [normalizar_codigo(l) for l in open(BASE / lista_f, encoding="utf-8") if l.strip()]
 codigos = [c[:-len(sufijo)] if c.endswith(sufijo) else c for c in codigos]
 clave = f"{nombre_inv}|{lista_f}|{pct:g}"
@@ -62,25 +63,23 @@ for c in codigos:
         filas.append([c + sufijo, "", "", "", "NO ESTÁ EN BASELINKER"])
         continue
     pid, p = indice[c]
-    precios = p.get("prices") or {}
-    actual = precios.get(grupo)
-    otros = {k: v for k, v in precios.items() if k != grupo}
+    precios = {k: v for k, v in (p.get("prices") or {}).items() if v not in (None, "", 0)}
+    usar = list(precios) if grupo.lower() == "todos" else [grupo]
     if revertir:
         if c not in anterior:
-            filas.append([c + sufijo, pid, actual, "", "sin precio guardado para revertir"])
+            filas.append([c + sufijo, pid, json.dumps(precios), "", "sin precio guardado para revertir"])
             continue
-        nuevo = anterior[c]["antes"]
+        nuevos = {k: v for k, v in anterior[c]["antes"].items()}
     else:
-        if actual in (None, "", 0):
-            filas.append([c + sufijo, pid, actual, "", f"sin precio en el grupo {grupo}; precios: {precios}"])
-            log(f"{c}{sufijo}: sin precio en el grupo {grupo} | precios que tiene: {precios}")
+        nuevos = {k: round(float(precios[k]) * (1 - pct / 100), 2) for k in usar if k in precios}
+        if not nuevos:
+            filas.append([c + sufijo, pid, json.dumps(precios), "", f"sin precio en el grupo {grupo}"])
             continue
-        nuevo = round(float(actual) * (1 - pct / 100), 2)
-    cambios[pid] = {grupo: nuevo}
-    anterior.setdefault(c, {"antes": actual})
-    anterior[c]["despues"] = nuevo
-    filas.append([c + sufijo, pid, actual, nuevo, f"otros grupos: {otros}" if otros else ""])
-    log(f"{c}{sufijo}: {actual} -> {nuevo}" + (f" | otros grupos de precio: {otros}" if otros else ""))
+    cambios[pid] = nuevos
+    anterior.setdefault(c, {"antes": {k: precios.get(k) for k in nuevos}})
+    anterior[c]["despues"] = nuevos
+    filas.append([c + sufijo, pid, json.dumps({k: precios.get(k) for k in nuevos}), json.dumps(nuevos), ""])
+    log(f"{c}{sufijo}: " + " | ".join(f"grupo {k}: {precios.get(k)} -> {v}" for k, v in nuevos.items()))
 
 from collections import Counter
 log("Grupos con precio en estos productos: " + str(Counter(k for p in catalogo.values()
