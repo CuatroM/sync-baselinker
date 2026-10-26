@@ -35,6 +35,12 @@ def buscar_esperando():
         for fl in (r.json().get("available_filters") or []) + (r.json().get("filters") or []):
             log(f"Filtro {fl.get('id')}: " + ", ".join(f"{v.get('id')}({v.get('results')})" for v in fl.get("values") or []))
     encontrados = []
+    try:
+        todos = ml.ids_publicaciones(sub_status="waiting_for_patch")
+        log(f"Búsqueda completa (scroll) waiting_for_patch: {len(todos)}")
+        encontrados += todos
+    except Exception as e:
+        log(f"scroll waiting_for_patch: {e}")
     for params in ({"status": "under_review"}, {"sub_status": "waiting_for_patch"},
                    {"status": "under_review", "sub_status": "waiting_for_patch"}, {"tags": "waiting_for_patch"}):
         off, lote = 0, []
@@ -125,12 +131,12 @@ for iid in ids:
             f["producto_px"] = f"{caja[2] - caja[0]}x{caja[3] - caja[1]}"
         m = f["motivo"].lower()
         nueva, acciones = original, []
-        if ITEMS.lower() == "esperando" and not re.search(r"logo|texto|tamaño", m):
+        if ITEMS.lower() == "esperando" and not re.search(r"logos y/o textos|incumple tamaño", m):
             f["accion"], f["resultado"] = "otro motivo", "NO SE TOCA (el motivo no es la portada)"
             log(f"{iid} {f['sku']} | {f['estado']} | motivo: {f['motivo'][:200]} -> {f['resultado']}")
             filas.append(f)
             continue
-        if "logo" in m or "texto" in m:
+        if "logos y/o textos" in m:
             limpia, k = limpiar(original)
             if k:
                 nueva = limpia
