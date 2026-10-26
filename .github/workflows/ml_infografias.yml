@@ -10,8 +10,8 @@ on:
         description: "1 = simulación (no cambia nada), 0 = subir las imágenes"
         default: "1"
       limite:
-        description: "Cantidad de publicaciones a procesar (vacío = todas)"
-        default: "10"
+        description: "Cantidad de publicaciones a procesar (vacío o 0 = todas)"
+        default: ""
         required: false
       desde:
         description: "Empezar desde la publicación número (0 = desde el principio)"
