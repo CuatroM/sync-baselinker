@@ -29,7 +29,7 @@ pct = float((os.environ.get("PORCENTAJE") or "5").replace(",", "."))
 cfg = yaml.safe_load(open(BASE / "config.yaml", encoding="utf-8"))
 sec = {"extrapower": "extrapower", "jya": "jya", "fema": "baselinker"}[nombre_inv]
 sufijo = {"extrapower": "#EXTRAPOWER", "jya": "#JYA", "fema": "#FEMA"}[nombre_inv]
-inv, grupo = int(cfg[sec]["inventory_id"]), str(cfg[sec]["price_group_id"])
+inv, grupo = int(cfg[sec]["inventory_id"]), str(os.environ.get("GRUPO") or cfg[sec]["price_group_id"]).strip()
 codigos = [normalizar_codigo(l) for l in open(BASE / lista_f, encoding="utf-8") if l.strip()]
 codigos = [c[:-len(sufijo)] if c.endswith(sufijo) else c for c in codigos]
 clave = f"{nombre_inv}|{lista_f}|{pct:g}"
@@ -72,7 +72,8 @@ for c in codigos:
         nuevo = anterior[c]["antes"]
     else:
         if actual in (None, "", 0):
-            filas.append([c + sufijo, pid, actual, "", "sin precio en el grupo"])
+            filas.append([c + sufijo, pid, actual, "", f"sin precio en el grupo {grupo}; precios: {precios}"])
+            log(f"{c}{sufijo}: sin precio en el grupo {grupo} | precios que tiene: {precios}")
             continue
         nuevo = round(float(actual) * (1 - pct / 100), 2)
     cambios[pid] = {grupo: nuevo}
@@ -81,6 +82,9 @@ for c in codigos:
     filas.append([c + sufijo, pid, actual, nuevo, f"otros grupos: {otros}" if otros else ""])
     log(f"{c}{sufijo}: {actual} -> {nuevo}" + (f" | otros grupos de precio: {otros}" if otros else ""))
 
+from collections import Counter
+log("Grupos con precio en estos productos: " + str(Counter(k for p in catalogo.values()
+    if normalizar_codigo(p.get("sku"))[:-len(sufijo)] in set(codigos) for k, v in (p.get("prices") or {}).items() if v)))
 log(f"A cambiar: {len(cambios)} | no están en BaseLinker: {len(faltan)} {faltan}")
 if not dry and cambios:
     ids, n = list(cambios), 0

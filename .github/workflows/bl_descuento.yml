@@ -12,6 +12,9 @@ on:
       inventario:
         description: "extrapower | jya | fema"
         default: "extrapower"
+      grupo:
+        description: "Grupo de precio (vacío = el del inventario en config.yaml)"
+        default: ""
       dry_run:
         description: "1 = solo mostrar precios actuales y nuevos, 0 = aplicar en BaseLinker"
         default: "1"
@@ -48,6 +51,7 @@ jobs:
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           REVERTIR: ${{ github.event.inputs.revertir }}
           FORZAR: ${{ github.event.inputs.forzar }}
+          GRUPO: ${{ github.event.inputs.grupo }}
         run: |
           set -o pipefail
           python bl_descuento.py 2>&1 | tee resultado.txt
