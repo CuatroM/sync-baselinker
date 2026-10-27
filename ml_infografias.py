@@ -89,7 +89,9 @@ for k, (p, iid) in enumerate(tareas, desde + 1):
             quedan = pics[1:][:libres - 2]
             afuera = len(pics) - 1 - len(quedan)
             nota = f" (quedan afuera las últimas {afuera} fotos: la categoría admite {tope})" if afuera else ""
-            if dry:
+            if afuera:
+                f["resultado"] = f"OMITIDA: no hay lugar para las 2 imágenes sin sacar {afuera} fotos tuyas (la categoría admite {tope})"
+            elif dry:
                 f["fotos_despues"] = 1 + 2 + len(quedan)
                 f["resultado"] = "SE AGREGARÍAN como fotos 2 y 3" + nota
             else:
