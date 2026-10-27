@@ -98,11 +98,15 @@ for k, (p, iid) in enumerate(tareas, desde + 1):
                     for v in vars_:
                         vp = [x for x in (v.get("picture_ids") or []) if x in todas] or [pics[0]]
                         cuerpo["variations"].append({"id": v["id"], "picture_ids": vp[:1] + nuevas + [x for x in vp[1:] if x not in nuevas]})
-                for intento in range(5):
-                    r = ml.put(f"/items/{iid}", cuerpo)
-                    if r.status_code != 409:
-                        break
-                    time.sleep(4 * (intento + 1))   # 409 = ML está procesando otro cambio de esa publicación
+                r = ml.put(f"/items/{iid}", cuerpo)
+                if r.status_code == 409:
+                    # ML a veces responde 409 pero igual aplica el cambio: se verifica antes de reintentar
+                    time.sleep(8)
+                    ahora = [x["id"] for x in ml.get(f"/items/{iid}", attributes="pictures").get("pictures") or []]
+                    if all(x in ahora for x in nuevas):
+                        r.status_code = 200
+                    else:
+                        r = ml.put(f"/items/{iid}", cuerpo)
                 if r.status_code not in (200, 201):
                     raise RuntimeError(f"ML rechazó el cambio: {r.status_code} {r.text[:250]}")
                 f["fotos_despues"] = len(todas)
