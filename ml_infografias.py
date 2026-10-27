@@ -81,6 +81,9 @@ for k, (p, iid) in enumerate(tareas, desde + 1):
             f["resultado"] = "OMITIDA: no tiene portada"
         elif ya and any(x in pics for x in ya):
             f["resultado"] = "OMITIDA: ya tiene las imágenes informativas"
+        elif ya:
+            # ya se subieron antes y después se cambiaron a mano (ej. duplicadas corregidas): no se vuelve a subir
+            f["resultado"] = "OMITIDA: ya se subieron antes (registro) y se modificaron a mano"
         else:
             tope = maximo(it["category_id"])
             libres = tope - 1
