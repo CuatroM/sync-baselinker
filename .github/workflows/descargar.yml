@@ -3,20 +3,24 @@ on:
   workflow_dispatch:
     inputs:
       urls:
-        description: "URLs separadas por espacio"
-        required: true
+        description: "URLs separadas por espacio (o vacío si se usa una lista)"
+        required: false
+      lista:
+        description: "Archivo del repositorio con una URL por línea (opcional)"
+        required: false
 permissions:
   contents: write
 jobs:
   bajar:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - run: pip install requests
       - name: Bajar
         env:
           URLS: ${{ github.event.inputs.urls }}
+          LISTA: ${{ github.event.inputs.lista }}
         run: python descargar.py 2>&1 | tee resultado.txt
       - name: Guardar en la rama "descargas"
         if: always()

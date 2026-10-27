@@ -4,7 +4,10 @@ import time
 import requests
 from urllib.parse import unquote
 os.makedirs("salida", exist_ok=True)
-for u in (os.environ.get("URLS") or "").split():
+urls = (os.environ.get("URLS") or "").split()
+if os.environ.get("LISTA"):
+    urls += open(os.environ["LISTA"], encoding="utf-8").read().split()
+for u in urls:
     n = unquote(u.split("?")[0].rsplit("/", 1)[-1]).replace(" ", "_")
     for intento in range(4):
         try:
