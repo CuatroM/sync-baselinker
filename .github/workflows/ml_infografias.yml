@@ -18,8 +18,8 @@ on:
         default: "0"
         required: false
       lista:
-        description: "Lista de trabajo"
-        default: "datos/infografias_t1.json"
+        description: "Dejar en: todas (carga todas las tandas; las que ya tienen las imágenes se saltean)"
+        default: "todas"
 
 concurrency:
   group: mercadolibre

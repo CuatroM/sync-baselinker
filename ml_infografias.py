@@ -9,6 +9,7 @@ Sube las 2 imágenes informativas (ficha técnica + partes/usos) a las publicaci
 - DRY_RUN=1 (por defecto): solo informa qué haría. DESDE / LIMITE para hacer por partes (cuentan publicaciones).
 """
 import csv
+import glob
 import json
 import os
 import time
@@ -17,13 +18,16 @@ from collections import Counter
 from ml.cliente import ML, log, sku_de
 
 dry = (os.environ.get("DRY_RUN") or "1").strip() != "0"
-lista_f = (os.environ.get("LISTA") or "datos/infografias_t1.json").strip()
+lista_f = (os.environ.get("LISTA") or "todas").strip()
 desde = int(os.environ.get("DESDE") or 0)
 limite = int(os.environ.get("LIMITE") or 0)
 CARPETA = "infografias"
 REG = "datos/infografias_subidas.json"
 
-lista = json.load(open(lista_f, encoding="utf-8"))
+if lista_f.lower() in ("", "todas"):
+    lista = [p for f in sorted(glob.glob("datos/infografias_t*.json")) for p in json.load(open(f, encoding="utf-8"))]
+else:
+    lista = json.load(open(lista_f, encoding="utf-8"))
 tareas = [(p, iid) for p in lista for iid in p["items"]][desde:]
 if limite:
     tareas = tareas[:limite]
