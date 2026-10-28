@@ -402,7 +402,8 @@
 "fotos": [
 "t3/41_69354198_1_ficha.jpg",
 "t3/41_69354198_2_usos.jpg"
-]
+],
+"permitir_sacar": true
 },
 {
 "id": "42_69354210",

@@ -5,6 +5,7 @@ Sube las 2 imágenes informativas (ficha técnica + partes/usos) a las publicaci
 - La portada NO se toca: las nuevas quedan como fotos 2 y 3 y las demás siguen detrás.
   Si la categoría no admite tantas fotos, se dejan afuera las últimas (queda anotado).
 - Publicaciones con variantes: las 2 imágenes se agregan también a cada variante (después de su primera foto).
+- Si no hay lugar, se omite (no se sacan fotos tuyas), salvo que la entrada tenga "permitir_sacar": true.
 - Se saltean las de catálogo y las que ya tienen las imágenes (registro en datos/infografias_subidas.json).
 - DRY_RUN=1 (por defecto): solo informa qué haría. DESDE / LIMITE para hacer por partes (cuentan publicaciones).
 """
@@ -92,7 +93,7 @@ for k, (p, iid) in enumerate(tareas, desde + 1):
             quedan = pics[1:][:libres - 2]
             afuera = len(pics) - 1 - len(quedan)
             nota = f" (quedan afuera las últimas {afuera} fotos: la categoría admite {tope})" if afuera else ""
-            if afuera:
+            if afuera and not p.get("permitir_sacar"):
                 f["resultado"] = f"OMITIDA: no hay lugar para las 2 imágenes sin sacar {afuera} fotos tuyas (la categoría admite {tope})"
             elif dry:
                 f["fotos_despues"] = 1 + 2 + len(quedan)
