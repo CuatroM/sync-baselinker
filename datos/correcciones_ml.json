@@ -1,6 +1,3 @@
 [
- {"sku": "69370042#FEMA", "items": ["MLA3769493842", "MLA3797021938", "MLA3796665386"], "titulo_reemplazar": ["120 Lts", "180 Lts"]},
- {"sku": "06112A60H0-000#FEMA", "items": ["MLA3774670890", "MLA3797025346", "MLA3797022476"], "atributos": {"Potencia": "720 W"}},
- {"sku": "69366130#FEMA", "items": ["MLA1977189071", "MLA1996537871", "MLA1996535171"], "titulo_reemplazar": ["13hp", "9hp"], "atributos": {"Potencia": "9 hp"}},
- {"sku": "69366230#FEMA", "items": ["MLA1977670075", "MLA3797024676", "MLA1996535097"], "titulo": "Motor Diesel 18 Hp Bicilíndrico Eje 25mm Con Tanque Y Escape", "atributos": {"Potencia": "18 hp"}}
+ {"sku": "69366130#FEMA", "items": ["MLA1977189071"], "familia_reemplazar": ["13hp", "9hp"]}
 ]

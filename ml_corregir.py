@@ -1,6 +1,6 @@
 """
 Corrige títulos y atributos puntuales de publicaciones (lista en datos/correcciones_ml.json).
-Cada entrada: items, y opcionalmente titulo (nuevo completo), titulo_reemplazar [viejo, nuevo], atributos {"Nombre": "valor"}.
+Cada entrada: items, y opcionalmente familia_reemplazar [viejo, nuevo] (publicaciones con nombre de familia), titulo (nuevo completo), titulo_reemplazar [viejo, nuevo], atributos {"Nombre": "valor"}.
 Los atributos se buscan por nombre en la categoría de la publicación.
 DRY_RUN=1 (por defecto): solo muestra qué cambiaría.
 """
@@ -29,7 +29,7 @@ def attr_id(cat, nombre):
 for e in lista:
     for iid in e["items"]:
         try:
-            it = ml.get(f"/items/{iid}", attributes="id,title,category_id,attributes,sold_quantity,seller_custom_field,status")
+            it = ml.get(f"/items/{iid}", attributes="id,title,family_name,category_id,attributes,sold_quantity,seller_custom_field,status")
             sku = sku_de(it).upper()
             if sku and sku not in (e["sku"].upper(), e["sku"].split("#")[0].upper()):
                 log(f"{iid} OMITIDA: el SKU es {sku!r}")
@@ -43,6 +43,19 @@ for e in lista:
             if nuevo and nuevo != tit:
                 cuerpo["title"] = nuevo
                 cambios.append(f"título: '{tit}' -> '{nuevo}'")
+            fam = it.get("family_name")
+            if e.get("familia_reemplazar"):
+                viejo, nv = e["familia_reemplazar"]
+                nf = re.sub(re.escape(viejo), nv, fam or "", flags=re.I)
+                if not fam:
+                    cambios.append("nombre de familia: la publicación no tiene")
+                elif nf != fam:
+                    cuerpo["family_name"] = nf
+                    cambios.append(f"nombre de familia: '{fam}' -> '{nf}'")
+                else:
+                    cambios.append(f"nombre de familia: '{fam}' (no contiene '{viejo}')")
+            elif fam:
+                cambios.append(f"nombre de familia actual: '{fam}'")
             attrs = []
             for nombre, valor in (e.get("atributos") or {}).items():
                 aid = attr_id(it["category_id"], nombre)
@@ -63,7 +76,8 @@ for e in lista:
                 continue
             r = ml.put(f"/items/{iid}", cuerpo)
             if r.status_code in (200, 201):
-                log(f"{iid} {e['sku']} | CAMBIADO: " + " ; ".join(cambios))
+                ver = ml.get(f"/items/{iid}", attributes="title,family_name")
+                log(f"{iid} {e['sku']} | CAMBIADO: " + " ; ".join(cambios) + f" | ahora título='{ver.get('title')}' familia='{ver.get('family_name')}'")
             elif "title" in cuerpo and attrs:
                 # si ML no deja cambiar el título (p. ej. por ventas), se intenta solo con los atributos
                 r2 = ml.put(f"/items/{iid}", {"attributes": attrs})
