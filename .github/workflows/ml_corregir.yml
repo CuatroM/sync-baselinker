@@ -1,0 +1,50 @@
+name: Mercado Libre - Corregir títulos y datos
+
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      dry_run:
+        description: "1 = simulación (no cambia nada), 0 = aplicar"
+        default: "1"
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  corregir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Corregir
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: |
+          set -o pipefail
+          python ml_corregir.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan diagnostico
+          git rm -rfq .
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Corregir títulos y datos"
+          git push -qf origin diagnostico
