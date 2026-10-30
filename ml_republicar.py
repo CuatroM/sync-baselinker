@@ -46,7 +46,7 @@ for x in lista:
     fila = {"sku": sku, "vieja": viejo, "titulo": x["titulo"], "cat_vieja": "", "categoria": "", "nueva": "", "resultado": ""}
     try:
         it = ml.get(f"/items/{viejo}")
-        if sku_de(it).upper() not in (sku.upper(), (sku + "#FEMA").upper()):
+        if sku_de(it).upper() not in (sku.upper(), (sku + "#FEMA").upper(), sku.split("#")[0].upper()):
             raise RuntimeError(f"el SKU en ML es {sku_de(it)!r}")
         cat = x.get("categoria") or it.get("category_id")
         fila["cat_vieja"] = it.get("category_id")
@@ -56,7 +56,7 @@ for x in lista:
         viejas = [u for u in viejas if u]
         fotos = []
         if x.get("fotos") != "viejas":
-            _, fotos = buscar(sku)
+            _, fotos = buscar(sku.split("#")[0])
         usar_viejas = not fotos
         if usar_viejas:
             fotos = viejas
@@ -69,8 +69,10 @@ for x in lista:
                  if a.get("id") not in NO_COPIAR and (a.get("value_id") or a.get("value_name"))]
         attrs = [a for a in attrs if not (a["id"] == "VEHICLE_TYPE" and a.get("value_id") and cat != it.get("category_id"))]
         ya = {a["id"] for a in attrs}
-        marca = next((a.get("value_name") for a in it.get("attributes") or [] if a.get("id") == "BRAND"), None) or "FEMA"
-        extra = {"PART_NUMBER": sku, "MANUFACTURER": marca}
+        marca = next((a.get("value_name") for a in it.get("attributes") or [] if a.get("id") == "BRAND"), None) or ("FEMA" if sku.upper().endswith("#FEMA") or "#" not in sku else "")
+        extra = {"PART_NUMBER": sku.split("#")[0]}
+        if marca:
+            extra["MANUFACTURER"] = marca
         largo = re.search(r"(\d+(?:[.,]\d+)?)\s*(mts?|metros?)\b", it["title"], re.I)
         if largo:
             extra["LENGTH"] = f"{largo.group(1).replace(',', '.')} m"
