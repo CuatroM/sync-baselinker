@@ -83,7 +83,7 @@ for x in lista:
                 "buying_mode": it.get("buying_mode", "buy_it_now"), "listing_type_id": it.get("listing_type_id"),
                 "condition": it.get("condition", "new"), "attributes": attrs,
                 "sale_terms": [{"id": s["id"], "value_name": s.get("value_name")} for s in it.get("sale_terms") or []
-                               if s.get("value_name")],
+                               if s.get("value_name") and s.get("id") != "INSTALLMENTS_CAMPAIGN"],
                 "shipping": {"mode": envio.get("mode", "me2"), "local_pick_up": False,
                              "free_shipping": bool(envio.get("free_shipping"))}}
         if dry:

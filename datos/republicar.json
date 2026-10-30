@@ -1,27 +1,5 @@
 [
 {
-"sku": "69510150#FEMA",
-"item": "MLA1977108821",
-"titulo": "Cortadora De Pisos 500 Mm Motor Honda 13 Hp Sin Disco Obra",
-"cat_actual": "MLA403702",
-"categoria": "MLA429000",
-"cat_nombre": "Herramientas > Herramientas Eléctricas > Corte > Sierras > Cortadoras de Concreto",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "5709000#FEMA",
-"item": "MLA1998069691",
-"titulo": "Ventilador Turbo 20 PLG Cabezal Ajustable 3 Velocidades 59.2 Cm Negro 5",
-"cat_actual": "MLA1645",
-"categoria": "MLA1645",
-"cat_nombre": "Electrodomésticos y Aires Ac. > Climatización > Ventiladores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "5709000#FEMA",
 "item": "MLA3770522038",
 "titulo": "Ventilador Turbo 20 PLG Cabezal Ajustable 3 Velocidades 59.2 Cm Negro 5",
@@ -33,67 +11,12 @@
 "extras": []
 },
 {
-"sku": "5709000#FEMA",
-"item": "MLA1998069707",
-"titulo": "Ventilador Turbo 20 PLG Cabezal Ajustable 3 Velocidades 59.2 Cm Negro 5",
-"cat_actual": "MLA1645",
-"categoria": "MLA1645",
-"cat_nombre": "Electrodomésticos y Aires Ac. > Climatización > Ventiladores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "69510150#FEMA",
-"item": "MLA3797024980",
-"titulo": "Cortadora De Pisos 500 Mm Motor Honda 13 Hp Sin Disco Obra",
-"cat_actual": "MLA403702",
-"categoria": "MLA429000",
-"cat_nombre": "Herramientas > Herramientas Eléctricas > Corte > Sierras > Cortadoras de Concreto",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "W1006110#FEMA",
 "item": "MLA4070063672",
 "titulo": "Yeso Placomix Interior 3,6 Kg Masilla Para Placas Placo",
 "cat_actual": "MLA395947",
 "categoria": "MLA413336",
 "cat_nombre": "Construcción > Pinturería > Terminación de Superficies > Enduídos y Masillas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "69510150#FEMA",
-"item": "MLA3797022150",
-"titulo": "Cortadora De Pisos 500 Mm Motor Honda 13 Hp Sin Disco Obra",
-"cat_actual": "MLA403702",
-"categoria": "MLA429000",
-"cat_nombre": "Herramientas > Herramientas Eléctricas > Corte > Sierras > Cortadoras de Concreto",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "69370810#FEMA",
-"item": "MLA4070061068",
-"titulo": "Secador Refrigerador De Aire Comprimido 2,3 M3/min 1 Hp Fema",
-"cat_actual": "MLA455731",
-"categoria": "MLA412627",
-"cat_nombre": "Computación > Limpieza y Cuidado de PCs > Aires Comprimidos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "4250100#FEMA",
-"item": "MLA4076407562",
-"titulo": "Colector Aspiracion Castor 600 4250100",
-"cat_actual": "MLA457969",
-"categoria": "MLA431055",
-"cat_nombre": "Herramientas > Herramientas Industriales > Colectores de Polvo",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -160,17 +83,6 @@
 "cat_actual": "MLA22687",
 "categoria": "MLA60626",
 "cat_nombre": "Accesorios para Vehículos > Repuestos Autos y Camionetas > Motor > Bombas > Bombas de Aceite",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "32230009#FEMA",
-"item": "MLA4080311336",
-"titulo": "Cuchilla Móvil N° 5 Para Cizalla Corta Chapa Repuesto Fema",
-"cat_actual": "MLA413701",
-"categoria": "MLA430209",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Comercial y Oficina > Pegamentos y Cortantes > Cortadoras de Papel > Manuales",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -407,28 +319,6 @@
 "extras": []
 },
 {
-"sku": "693003248#FEMA",
-"item": "MLA2195852695",
-"titulo": "Válvula Escape Gases Compresor Fema 3 Hp 2012 693003248",
-"cat_actual": "MLA455089",
-"categoria": "MLA456311",
-"cat_nombre": "Accesorios para Vehículos > Repuestos de Línea Pesada > Motor > Componentes de Motor > Topes de Cilindros > Válvulas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "80041646#FEMA",
-"item": "MLA2196736695",
-"titulo": "Pestillo De Liberacion Completo Engrampadora Duca 12,5 Mm 4 Blanco",
-"cat_actual": "MLA458610",
-"categoria": "MLA371993",
-"cat_nombre": "Herramientas > Herramientas Manuales > Fijación > Engrapadoras y Clavadoras",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "PH2-62#FEMA",
 "item": "MLA2195801013",
 "titulo": "Unión Redonda De Tapa Para Calefactor A Gas Repuesto Fema",
@@ -484,17 +374,6 @@
 "extras": []
 },
 {
-"sku": "69366506#FEMA",
-"item": "MLA2196848951",
-"titulo": "Bomba De Aluminio 3 Pulgadas Kit Con Acople Chaveta Fema",
-"cat_actual": "MLA455156",
-"categoria": "MLA457161",
-"cat_nombre": "Agro > Repuestos Maquinaria Agrícola > Motor > Bombas > Bombas de Combustible",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "11231201612#FEMA",
 "item": "MLA2196927033",
 "titulo": "Filtro De Aire Para Motosierra Stihl 025 Repuesto",
@@ -517,17 +396,6 @@
 "extras": []
 },
 {
-"sku": "5500064#FEMA",
-"item": "MLA2195801395",
-"titulo": "Cobertor Escape Castel Garden 55 Completo 5500064",
-"cat_actual": "MLA454954",
-"categoria": "MLA74607",
-"cat_nombre": "Hogar, Muebles y Jardín > Jardin y Aire Libre > Piletas y Accesorios > Limpieza y Mantenimiento > Cubrepiletas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "68237944#FEMA",
 "item": "MLA2196927013",
 "titulo": "Filtro De Aire Para Motosierra Stihl Ms361 Repuesto",
@@ -545,61 +413,6 @@
 "cat_actual": "MLA22687",
 "categoria": "MLA455614",
 "cat_nombre": "Herramientas > Herramientas para Jardín > Repuestos > Kits de Repuestos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "57065122#FEMA",
-"item": "MLA2196208885",
-"titulo": "Carbon Afiladora Fema 71205 57065122",
-"cat_actual": "MLA373519",
-"categoria": "MLA440801",
-"cat_nombre": "Herramientas > Herramientas para Jardín > Sopladoras > A Nafta",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "CO-07-8012061#FEMA",
-"item": "MLA2196230453",
-"titulo": "Tapa Capacitor Carter Seco 1100w Co-07-8012061",
-"cat_actual": "MLA388606",
-"categoria": "MLA417848",
-"cat_nombre": "Electrodomésticos y Aires Ac. > Climatización > Repuestos y Accesorios > Para Ventiladores > Capacitores para Ventiladores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "32230007#FEMA",
-"item": "MLA2195629497",
-"titulo": "Cuchilla Móvil N° 4 Para Cizalla Corta Chapa Repuesto Fema",
-"cat_actual": "MLA413701",
-"categoria": "MLA430209",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Comercial y Oficina > Pegamentos y Cortantes > Cortadoras de Papel > Manuales",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "P650106030000#FEMA",
-"item": "MLA2195205141",
-"titulo": "Regulador De Velocidad Externo Motor Vertical 475 Fema",
-"cat_actual": "MLA435615",
-"categoria": "MLA457285",
-"cat_nombre": "Agro > Repuestos Maquinaria Agrícola > Motor > Sistema de Arranque > Alternadores y Piezas > Reguladores de Voltaje",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "P65070307000#FEMA",
-"item": "MLA2195205375",
-"titulo": "Switch Corta Corriente Fema 475 Vert P65070307000",
-"cat_actual": "MLA454954",
-"categoria": "MLA458056",
-"cat_nombre": "Accesorios para Vehículos > Repuestos de Línea Pesada > Encendido > Llaves de Corte",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -638,17 +451,6 @@
 "extras": []
 },
 {
-"sku": "HOM-BA9891#FEMA",
-"item": "MLA2195204509",
-"titulo": "Cabezal Nylon Para Homelite .con Nylon Hom-ba9891",
-"cat_actual": "MLA416965",
-"categoria": "MLA430379",
-"cat_nombre": "Cámaras y Accesorios > Accesorios para Cámaras > Soportes y Estabilizadores > Cabezales",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "BC260M0040#FEMA",
 "item": "MLA2195098185",
 "titulo": "Junta De Escape Para Desmalezadora Fema Bc260 Repuesto",
@@ -666,28 +468,6 @@
 "cat_actual": "MLA442374",
 "categoria": "MLA455614",
 "cat_nombre": "Herramientas > Herramientas para Jardín > Repuestos > Kits de Repuestos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "CO-07-024810#FEMA",
-"item": "MLA2195099881",
-"titulo": "Pistón Para Compresor De Aire 10 Hp Repuesto Fema",
-"cat_actual": "MLA456302",
-"categoria": "MLA418456",
-"cat_nombre": "Accesorios para Vehículos > Repuestos de Línea Pesada > Frenos > Compresores de Freno de Aire",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "BP415009#FEMA",
-"item": "MLA2195099437",
-"titulo": "Bobina Fema Bp415 Pulverizador Bp415009",
-"cat_actual": "MLA376609",
-"categoria": "MLA380661",
-"cat_nombre": "Electrónica, Audio y Video > Componentes Electrónicos > Semiconductores > Bobinas",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -715,28 +495,6 @@
 "extras": []
 },
 {
-"sku": "A1902023#FEMA",
-"item": "MLA2195097919",
-"titulo": "Estator Para Electrosierra Motosierra Eléctrica Fema",
-"cat_actual": "MLA456509",
-"categoria": "MLA433101",
-"cat_nombre": "Herramientas > Accesorios para Herramientas > Inducidos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "BP415152#FEMA",
-"item": "MLA2195201705",
-"titulo": "Placa Separadora Polvo Bp415152",
-"cat_actual": "MLA454954",
-"categoria": "MLA431055",
-"cat_nombre": "Herramientas > Herramientas Industriales > Colectores de Polvo",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "BC415M0035#FEMA",
 "item": "MLA2195098715",
 "titulo": "Pistón Completo 40 Mm Para Desmalezadora Fema Bc415",
@@ -759,89 +517,12 @@
 "extras": []
 },
 {
-"sku": "32230004#FEMA",
-"item": "MLA2195629487",
-"titulo": "Cuchilla Móvil N° 3 Para Cizalla Corta Chapa Repuesto Fema",
-"cat_actual": "MLA413701",
-"categoria": "MLA430209",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Comercial y Oficina > Pegamentos y Cortantes > Cortadoras de Papel > Manuales",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "490547#FEMA",
-"item": "MLA4091966088",
-"titulo": "Escape 5 5.75 Hp Briggs & Stratton Vertical 490547",
-"cat_actual": "MLA442377",
-"categoria": "MLA455596",
-"cat_nombre": "Herramientas > Herramientas para Jardín > Repuestos > Motores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "1471188300#FEMA",
-"item": "MLA4091966270",
-"titulo": "Válvula Admision G 200 5 Hp Valvulas Laterales 1471188300",
-"cat_actual": "MLA442381",
-"categoria": "MLA47123",
-"cat_nombre": "Accesorios para Vehículos > Repuestos Autos y Camionetas > Motor > Componentes de Motor > Válvulas > Válvulas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "495B11101#FEMA",
-"item": "MLA4092004910",
-"titulo": "Corta Corriente Batería Gener. Fema Ison 495b11101",
-"cat_actual": "MLA442381",
-"categoria": "MLA458056",
-"cat_nombre": "Accesorios para Vehículos > Repuestos de Línea Pesada > Encendido > Llaves de Corte",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "520054#FEMA",
-"item": "MLA4092004764",
-"titulo": "Aro De Pistón 44 X 2 Mm Para Motosierra Fema 520 Repuesto",
-"cat_actual": "MLA45551",
-"categoria": "MLA455614",
-"cat_nombre": "Herramientas > Herramientas para Jardín > Repuestos > Kits de Repuestos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "693015846#FEMA",
-"item": "MLA4092004806",
-"titulo": "Rueda Delantera Transp.elec. Qba Todos 110 55mm 52mm.interno",
-"cat_actual": "MLA454956",
-"categoria": "MLA371623",
-"cat_nombre": "Deportes y Fitness > Ciclismo > Repuestos > Ruedas de Bicicleta",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "12281887AR#FEMA",
 "item": "MLA4091966256",
 "titulo": "Junta De Cilindro De Acero Para Motor Honda G150 Fema",
 "cat_actual": "MLA442381",
 "categoria": "MLA373322",
 "cat_nombre": "Accesorios para Vehículos > Repuestos Autos y Camionetas > Motor > Juntas, Sellos y Herrajes > Juntas y Sellos > Juntas de Motor",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "105Z050005#FEMA",
-"item": "MLA2205678431",
-"titulo": "Cojinete Biela Fema 105 Para Gener 100kw 105z050005",
-"cat_actual": "MLA442381",
-"categoria": "MLA442370",
-"cat_nombre": "Agro > Repuestos Maquinaria Agrícola > Motor > Cojinetes",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -858,56 +539,12 @@
 "extras": []
 },
 {
-"sku": "57000011#FEMA",
-"item": "MLA4092004822",
-"titulo": "Circuito Integrado Sold Duca 57000011",
-"cat_actual": "MLA455232",
-"categoria": "MLA380668",
-"cat_nombre": "Electrónica, Audio y Video > Componentes Electrónicos > Semiconductores > Circuitos Integrados",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "3119188F#FEMA",
-"item": "MLA4091903128",
-"titulo": "Estator Y Rotor 188 5gf Monofasico Nafta 3119188f",
-"cat_actual": "MLA442381",
-"categoria": "MLA433101",
-"cat_nombre": "Herramientas > Accesorios para Herramientas > Inducidos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "495A01018#FEMA",
 "item": "MLA2194718045",
 "titulo": "Resorte De Válvula Exterior Para Motor Diésel 495 Repuesto",
 "cat_actual": "MLA454954",
 "categoria": "MLA374969",
 "cat_nombre": "Accesorios para Vehículos > Repuestos Autos y Camionetas > Motor > Componentes de Motor > Válvulas > Resortes de Válvulas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "57000924#FEMA",
-"item": "MLA4092004836",
-"titulo": "Difusor De Gas Para Torcha Tig Porta Electrodo Corto Duca",
-"cat_actual": "MLA455232",
-"categoria": "MLA392339",
-"cat_nombre": "Herramientas > Accesorios para Herramientas > Puntas y Adaptadores > Boquillas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "69502637#FEMA",
-"item": "MLA4091928746",
-"titulo": "Transpalets 1200kg Batería Litio Alt. 4,5m P/hombre A Bordo",
-"cat_actual": "MLA454956",
-"categoria": "MLA455509",
-"cat_nombre": "Juegos y Juguetes > Vehículos Montables para Niños > Vehículos a Batería",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -935,28 +572,6 @@
 "extras": []
 },
 {
-"sku": "A003#EXTRAPOWER",
-"item": "MLA4100121512",
-"titulo": "Afilador De Mechas Black Jack Blanco",
-"cat_actual": "MLA413465",
-"categoria": "MLA371913",
-"cat_nombre": "Herramientas > Herramientas Eléctricas > Afiladores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "NA7527#EXTRAPOWER",
-"item": "MLA2213133301",
-"titulo": "Adaptador Cubo 5 Tomas 3 Patas Multitoma Para Enchufes Blanco",
-"cat_actual": "MLA417026",
-"categoria": "MLA420161",
-"cat_nombre": "Construcción > Electricidad > Interruptores y Enchufes > Tomacorrientes y Enchufes > Adaptadores de Enchufes",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "A023#EXTRAPOWER",
 "item": "MLA2213133049",
 "titulo": "Cinta De Papel 12 Mm X 50 M Black Jack Blanco",
@@ -974,17 +589,6 @@
 "cat_actual": "MLA456172",
 "categoria": "MLA456172",
 "cat_nombre": "Construcción > Materiales de Obra > Adhesivos y Selladores > Tapagoteras",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "B476#EXTRAPOWER",
-"item": "MLA4103962258",
-"titulo": "Set Tubos Y Llaves 52 Piezas Hasta 22 Mm Con Crique Power",
-"cat_actual": "MLA372024",
-"categoria": "MLA372028",
-"cat_nombre": "Herramientas > Herramientas Manuales > Sets de Herramientas > Combinadas",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1023,28 +627,6 @@
 "extras": []
 },
 {
-"sku": "I060#EXTRAPOWER",
-"item": "MLA2213132737",
-"titulo": "Barrenitos Set X4 Piezas Para Madera Carpintería Power",
-"cat_actual": "MLA414112",
-"categoria": "MLA30097",
-"cat_nombre": "Hogar, Muebles y Jardín > Bazar y Cocina > Vajilla y Artículos de Servir > Cubiertos > Sets de Cubiertos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "B477#EXTRAPOWER",
-"item": "MLA4103974894",
-"titulo": "Tubo Set X 52 Piezas Hasta 30mm Power",
-"cat_actual": "MLA372024",
-"categoria": "MLA432220",
-"cat_nombre": "Salud y Equipamiento Médico > Equipamiento Médico > Material de Laboratorio > Microtubos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "NA8463#EXTRAPOWER",
 "item": "MLA4103943694",
 "titulo": "Rueda Neumatica Para Carreta Extra Power",
@@ -1062,39 +644,6 @@
 "cat_actual": "MLA105436",
 "categoria": "MLA435339",
 "cat_nombre": "Construcción > Pinturería > Accesorios para Pintura > Cintas de Papel",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "B425#EXTRAPOWER",
-"item": "MLA4103898980",
-"titulo": "Tubo Set X 25 Piezas Hasta 22mm Power",
-"cat_actual": "MLA372024",
-"categoria": "MLA432220",
-"cat_nombre": "Salud y Equipamiento Médico > Equipamiento Médico > Material de Laboratorio > Microtubos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "B426#EXTRAPOWER",
-"item": "MLA4103949304",
-"titulo": "Set Tubos Y Llaves 25 Piezas Hasta 32 Mm Con Crique Power",
-"cat_actual": "MLA372024",
-"categoria": "MLA372028",
-"cat_nombre": "Herramientas > Herramientas Manuales > Sets de Herramientas > Combinadas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "J060#EXTRAPOWER",
-"item": "MLA4103469410",
-"titulo": "Plantilla Guía Para Taladrar Acero Black Jack",
-"cat_actual": "MLA372032",
-"categoria": "MLA414224",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Escolar > Geometría > Plantillas para Dibujo Técnico",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1122,34 +671,12 @@
 "extras": []
 },
 {
-"sku": "DA25-013#EXTRAPOWER",
-"item": "MLA4103467172",
-"titulo": "Guantes Algodón Y Latex Rugoso Jiayo Blanco",
-"cat_actual": "MLA416857",
-"categoria": "MLA412050",
-"cat_nombre": "Ropa y Accesorios > Accesorios de Moda > Guantes y Mitones",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "NA8704#EXTRAPOWER",
 "item": "MLA4103492694",
 "titulo": "Limpia Contacto 320 Cc Tri-nechi",
 "cat_actual": "MLA437826",
 "categoria": "MLA412662",
 "cat_nombre": "Computación > Limpieza y Cuidado de PCs > Limpia Contactos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "W101#EXTRAPOWER",
-"item": "MLA4103893256",
-"titulo": "Soporte Basculante Para Lcd Black Jack 14-55 ",
-"cat_actual": "MLA424490",
-"categoria": "MLA41925",
-"cat_nombre": "Electrónica, Audio y Video > Accesorios para TV > Soportes",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1199,45 +726,12 @@
 "extras": []
 },
 {
-"sku": "L090#EXTRAPOWER",
-"item": "MLA4103479806",
-"titulo": "Kit De Refrigeracion 5 Pcs Black Jack",
-"cat_actual": "MLA455733",
-"categoria": "MLA30756",
-"cat_nombre": "Herramientas > Testers y Equipos de Medición > Otros",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "B498#EXTRAPOWER",
-"item": "MLA4103477286",
-"titulo": "Juego De Llaves Hexagonales De Doble Uso Set De 8 Pzas Negro",
-"cat_actual": "MLA371943",
-"categoria": "MLA371943",
-"cat_nombre": "Deportes y Fitness > Ciclismo > Accesorios para Bicicletas > Herramientas > Llaves",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "NA5230#EXTRAPOWER",
 "item": "MLA4103892980",
 "titulo": "Punta Albañil 3/4  X 30cm",
 "cat_actual": "MLA384755",
 "categoria": "MLA457002",
 "cat_nombre": "Agro > Herramientas de Trabajo > Herramientas Manuales > Palas de Punta",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "RR62L#EXTRAPOWER",
-"item": "MLA4103495284",
-"titulo": "Reflector Recargable Con Usb Black Jack",
-"cat_actual": "MLA373504",
-"categoria": "MLA413549",
-"cat_nombre": "Cámaras y Accesorios > Accesorios para Cámaras > Estudio e Iluminación > Reflectores",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1254,67 +748,12 @@
 "extras": []
 },
 {
-"sku": "NA5248#EXTRAPOWER",
-"item": "MLA2216318701",
-"titulo": "Flexible Para Agua Mallado De Acero 50 Cm Canilla",
-"cat_actual": "MLA277571",
-"categoria": "MLA435323",
-"cat_nombre": "Construcción > Plomería > Conexiones > Tubos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "693015821#FEMA",
 "item": "MLA2217672921",
 "titulo": "Fusible Transpalet Qba Qda 30 Amp Fig 2 693015821",
 "cat_actual": "MLA431456",
 "categoria": "MLA431456",
 "cat_nombre": "Accesorios para Vehículos > Repuestos Autos y Camionetas > Instalaciones Eléctricas > Fusibles > Módulos de Fusibles",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "125590015/0#FEMA",
-"item": "MLA2217672515",
-"titulo": "Cubierta Trasera 18  Tractor Fema 125590015/0",
-"cat_actual": "MLA45529",
-"categoria": "MLA45529",
-"cat_nombre": "Accesorios para Vehículos > Neumáticos > Neumáticos para Motos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "69231370#FEMA",
-"item": "MLA2217685373",
-"titulo": "Rolo Barredora D230 X 480 Mm Empuje Fema 69231370",
-"cat_actual": "MLA459553",
-"categoria": "MLA414132",
-"cat_nombre": "Deportes y Fitness > Fitness y Musculación > Funcional, Pilates y Yoga > Foam Roller",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "EPJ510#EXTRAPOWER",
-"item": "MLA2216405123",
-"titulo": "Taladro De Mano Manual Para Madera Carpintería Power",
-"cat_actual": "MLA5232",
-"categoria": "MLA432838",
-"cat_nombre": "Juegos y Juguetes > Juguetes de Oficios > Taller de Herramientas > Kits de Herramientas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "W103#EXTRAPOWER",
-"item": "MLA2216379069",
-"titulo": "Soporte Para Lcd Con Brazo 14-42  Black Jack",
-"cat_actual": "MLA424490",
-"categoria": "MLA41925",
-"cat_nombre": "Electrónica, Audio y Video > Accesorios para TV > Soportes",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1364,83 +803,6 @@
 "extras": []
 },
 {
-"sku": "44203#JYA",
-"item": "MLA4116300056",
-"titulo": "Bolso Dogo Skora Transportador Para Mascotas 44203",
-"cat_actual": "MLA430153",
-"categoria": "MLA416964",
-"cat_nombre": "Mascotas > Perros > Viaje y Paseo > Bolsos y Transportadoras",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6675#JYA",
-"item": "MLA4116299528",
-"titulo": "Set Para Pintar Selección Argentina Flow Pack Vértice",
-"cat_actual": "MLA416698",
-"categoria": "MLA436797",
-"cat_nombre": "Arte, Librería y Mercería > Arte y Manualidades > Adornos y Objetos para Pintar",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "J670#EXTRAPOWER",
-"item": "MLA2216317569",
-"titulo": "Afilador De Mechas Power",
-"cat_actual": "MLA413465",
-"categoria": "MLA371913",
-"cat_nombre": "Herramientas > Herramientas Eléctricas > Afiladores",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6668#JYA",
-"item": "MLA4116299622",
-"titulo": "Set Lápices De Colores Toy Story 5 Flow Pack Vértice",
-"cat_actual": "MLA416698",
-"categoria": "MLA429735",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Escolar > Útiles Escolares > Lápices",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "12UM6085#JYA",
-"item": "MLA4116769608",
-"titulo": "Sobre De Fiesta La Chapelle 12um6085",
-"cat_actual": "MLA30785",
-"categoria": "MLA120353",
-"cat_nombre": "Ropa y Accesorios > Equipaje, Bolsos y Carteras > Carteras",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "44202#JYA",
-"item": "MLA4116300072",
-"titulo": "Bolso Dogo Skora Transportador Para Mascotas 44202",
-"cat_actual": "MLA430153",
-"categoria": "MLA416964",
-"cat_nombre": "Mascotas > Perros > Viaje y Paseo > Bolsos y Transportadoras",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6704#JYA",
-"item": "MLA4116299518",
-"titulo": "Block De Dibujo Escolar Selección Argentina Vértice Infantil",
-"cat_actual": "MLA374968",
-"categoria": "MLA412650",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Artística y Pintura > Blocks para Bocetos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "M031#JYA",
 "item": "MLA4115878336",
 "titulo": "Mochila Ng Combinada Leblu M031 Azul",
@@ -1452,89 +814,12 @@
 "extras": []
 },
 {
-"sku": "M032#JYA",
-"item": "MLA4115831188",
-"titulo": "Mochila Urbana Combinada Leblu Amplia Con Bolsillos Azul",
-"cat_actual": "MLA49547",
-"categoria": "MLA120350",
-"cat_nombre": "Ropa y Accesorios > Equipaje, Bolsos y Carteras > Mochilas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "DMI8519#JYA",
-"item": "MLA4115800854",
-"titulo": "Vaso Minnie Ac Inox ( Clandy) Dmi8519",
-"cat_actual": "MLA39964",
-"categoria": "MLA1594",
-"cat_nombre": "Hogar, Muebles y Jardín > Bazar y Cocina > Vajilla y Artículos de Servir > Vajilla > Vasos y Copas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6661#JYA",
-"item": "MLA2227393583",
-"titulo": "Flow Pack Colores Toy Syory 5 Vertice",
-"cat_actual": "MLA416698",
-"categoria": "MLA416698",
-"cat_nombre": "Industrias y Oficinas > Embalaje y Logística > Envasadoras > Envasadoras Flow-Pack",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "WE4269#JYA",
-"item": "MLA2227480381",
-"titulo": "Eternal Pencil Kuromi ( Wero) X 2 Unidades",
-"cat_actual": "MLA29902",
-"categoria": "MLA29902",
-"cat_nombre": "Belleza y Cuidado Personal > Maquillaje > Ojos, Pestañas y Cejas > Delineadores de Ojos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "BJ14#JYA",
-"item": "MLA2227484867",
-"titulo": "Sets De Pulseras Pepi Lima",
-"cat_actual": "MLA433427",
-"categoria": "MLA433427",
-"cat_nombre": "Industrias y Oficinas > Publicidad y Promoción > Identificación para Eventos > Pulseras de Identificación",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "BJ19#JYA",
 "item": "MLA2227400933",
 "titulo": "Cadena Amor Lima",
 "cat_actual": "MLA455588",
 "categoria": "MLA455695",
 "cat_nombre": "Arte, Librería y Mercería > Mercería > Cadenas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "125206#JYA",
-"item": "MLA2227487503",
-"titulo": "Mochila Urbana Degradé Floating Escolar Juvenil Con Cierre",
-"cat_actual": "MLA49547",
-"categoria": "MLA120350",
-"cat_nombre": "Ropa y Accesorios > Equipaje, Bolsos y Carteras > Mochilas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "44201#JYA",
-"item": "MLA2227394015",
-"titulo": "Bolso Dogo Skora Transportador Para Mascotas 44201",
-"cat_actual": "MLA430153",
-"categoria": "MLA416964",
-"cat_nombre": "Mascotas > Perros > Viaje y Paseo > Bolsos y Transportadoras",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
@@ -1573,78 +858,12 @@
 "extras": []
 },
 {
-"sku": "6682#JYA",
-"item": "MLA2227393449",
-"titulo": "Set Para Pintar Super Toy Story 5 Flow Pack Vértice",
-"cat_actual": "MLA416698",
-"categoria": "MLA436797",
-"cat_nombre": "Arte, Librería y Mercería > Arte y Manualidades > Adornos y Objetos para Pintar",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
 "sku": "6237#JYA",
 "item": "MLA2227393523",
 "titulo": "Flow Pack Diversion Seleccion Argentina ( Vertice)",
 "cat_actual": "MLA416698",
 "categoria": "MLA31770",
 "cat_nombre": "Antigüedades y Colecciones > Coleccionables de Deportes",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6677#JYA",
-"item": "MLA2227368637",
-"titulo": "Set Para Pintar Minions Flow Pack Vértice Arte Infantil",
-"cat_actual": "MLA416698",
-"categoria": "MLA436797",
-"cat_nombre": "Arte, Librería y Mercería > Arte y Manualidades > Adornos y Objetos para Pintar",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "8865#JYA",
-"item": "MLA2226971197",
-"titulo": "Vaso Ac Inox Spiderman ( Clandy) Dsm",
-"cat_actual": "MLA39964",
-"categoria": "MLA430155",
-"cat_nombre": "Electrodomésticos y Aires Ac. > Pequeños Electrodomésticos > Para Cocina > Repuestos y Accesorios > Para Licuadoras > Vasos",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6689#JYA",
-"item": "MLA2227368665",
-"titulo": "Set Diversión Toy Story 5 Flow Pack Vértice Arte Infantil",
-"cat_actual": "MLA416698",
-"categoria": "MLA414164",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Escolar > Kits Escolares",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "DMI8514#JYA",
-"item": "MLA2226971463",
-"titulo": "Vaso Minnie Ac Inox ( Clandy) Dmi8514",
-"cat_actual": "MLA39964",
-"categoria": "MLA1594",
-"cat_nombre": "Hogar, Muebles y Jardín > Bazar y Cocina > Vajilla y Artículos de Servir > Vajilla > Vasos y Copas",
-"vendidos": 0,
-"fotos": "viejas",
-"extras": []
-},
-{
-"sku": "6556#JYA",
-"item": "MLA2227368737",
-"titulo": "Set Arte Flúo Sellos Marvel Flow Pack Vértice Infantil",
-"cat_actual": "MLA416698",
-"categoria": "MLA414164",
-"cat_nombre": "Arte, Librería y Mercería > Librería > Escolar > Kits Escolares",
 "vendidos": 0,
 "fotos": "viejas",
 "extras": []
