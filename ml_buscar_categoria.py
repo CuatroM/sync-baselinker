@@ -11,8 +11,17 @@ from collections import Counter
 from ml.cliente import ML, log, sku_de
 
 ml = ML(os.environ.get("ML_CODIGO"))
-ids = ml.ids_publicaciones(status="under_review")
-log(f"Publicaciones en revisión: {len(ids)}")
+ids = []
+for filtro in ({"sub_status": "forbidden"}, {"sub_status": "waiting_for_patch"}, {"status": "under_review"}, {"status": "inactive"}):
+    try:
+        lote = ml.ids_publicaciones(**filtro)
+    except Exception as e:
+        lote = []
+        log(f"{filtro}: {e}")
+    log(f"Búsqueda {filtro}: {len(lote)}")
+    ids += lote
+ids = list(dict.fromkeys(ids))
+log(f"Publicaciones en revisión (total): {len(ids)}")
 cats = {}
 
 
