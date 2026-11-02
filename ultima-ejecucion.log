@@ -1,8 +1,21 @@
-[2026-11-02 08:27:16] Login en el sitio del proveedor OK
-[2026-11-02 08:27:16] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
-[2026-11-02 08:27:20] Recibido: 589,883 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-021126.xlsx"
-[2026-11-02 08:27:21] Lista del proveedor: 18568 productos con datos válidos
-[2026-11-02 08:27:35] Catálogo BaseLinker: 16483 productos
-[2026-11-02 08:27:35] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
-[2026-11-02 08:27:35] Cambios detectados: 0 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2155
-[2026-11-02 08:27:35] Listo. 0 cambios, 2155 sin vincular, 0 advertencias.
+[2026-11-02 11:56:31] Login en el sitio del proveedor OK
+[2026-11-02 11:56:31] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-11-02 11:56:36] Recibido: 586,355 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-021126.xlsx"
+[2026-11-02 11:56:37] Lista del proveedor: 18569 productos con datos válidos
+[2026-11-02 11:56:49] Catálogo BaseLinker: 16483 productos
+[2026-11-02 11:56:49] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
+[2026-11-02 11:56:49] Cambios detectados: 0 de stock, 12280 de precio. Códigos del proveedor sin vincular en BaseLinker: 2156
+[2026-11-02 11:57:11] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:57:31] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:57:47] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:58:05] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:58:23] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:58:41] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:58:58] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:59:15] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:59:32] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 11:59:49] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 12:00:08] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 12:00:32] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-02 12:00:38] updateInventoryProductsPrices: 280 actualizados
+[2026-11-02 12:00:38] Listo. 12280 cambios, 2156 sin vincular, 0 advertencias.
