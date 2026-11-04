@@ -64,7 +64,7 @@ for x in lista:
             raise RuntimeError("sin fotos (ni en la web de FEMA ni en la publicación vieja)")
         rd = ml.pedir("GET", f"/items/{viejo}/description")
         texto = rd.json().get("plain_text", "") if rd.status_code == 200 else ""
-        attrs = [{"id": a["id"], **({"value_id": a["value_id"]} if a.get("value_id") else {"value_name": a.get("value_name")})}
+        attrs = [{"id": a["id"], **({"value_name": a["value_name"]} if a.get("value_name") else {"value_id": a["value_id"]})}
                  for a in it.get("attributes") or []
                  if a.get("id") not in NO_COPIAR and (a.get("value_id") or a.get("value_name"))]
         attrs = [a for a in attrs if not (a["id"] == "VEHICLE_TYPE" and a.get("value_id") and cat != it.get("category_id"))]
