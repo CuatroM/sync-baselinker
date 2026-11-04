@@ -159,7 +159,37 @@ ids = list(dict.fromkeys(ids))
 log(f"Publicaciones activas y pausadas: {len(ids)} | {'SIMULACIÓN' if dry else 'REAL'}")
 
 filas, cambios, n_cambios = [], {"mayorista": 0, "envios": 0, "errores": 0}, 0
-for it in ml.publicaciones(ids, "id,title,status,price,currency_id,shipping,seller_custom_field,attributes,tags"):
+ATR = "id,title,status,price,currency_id,shipping,seller_custom_field,attributes,tags"
+
+
+def publicaciones(ids):
+    """Como ml.publicaciones, pero si ML corta un pedido (403/429 pasajero) espera y reintenta; si sigue, las pide de a una."""
+    for i in range(0, len(ids), 20):
+        lote = ids[i:i + 20]
+        for espera in (0, 20, 60, 120):
+            if espera:
+                log(f"ML respondió {r.status_code} al pedir publicaciones: espero {espera} s y reintento")
+                time.sleep(espera)
+            r = ml.pedir("GET", "/items", params={"ids": ",".join(lote), "attributes": ATR})
+            if r.status_code == 200:
+                break
+        if r.status_code == 200:
+            for x in r.json():
+                if x.get("code") == 200:
+                    yield x["body"]
+            continue
+        for iid in lote:
+            r1 = ml.pedir("GET", f"/items/{iid}", params={"attributes": ATR})
+            if r1.status_code == 200:
+                yield r1.json()
+            else:
+                log(f"  {iid}: no se pudo leer ({r1.status_code}), se deja como está en la planilla")
+                if iid in previo:
+                    saltadas.append(iid)
+
+
+saltadas = []
+for it in publicaciones(ids):
     iid, sku = it["id"], sku_de(it)
     p = previo.get(iid, {})
     modo = (it.get("shipping") or {}).get("mode")
@@ -239,6 +269,11 @@ for it in ml.publicaciones(ids, "id,title,status,price,currency_id,shipping,sell
     fila["ESTADO"] = " | ".join(estado)
     filas.append(fila)
 
+# las que ML no dejó leer esta vez quedan en la planilla como estaban
+for iid in saltadas:
+    f = {k: previo[iid].get(k, "") for k in COLS}
+    f["ESTADO"] = f"no se pudo leer en esta corrida ({ahora}); queda como estaba"
+    filas.append(f)
 filas.sort(key=lambda f: (f["TIPO DE ENVÍO"] != "A acordar (envío personalizado)" and f["TIPO DE ENVÍO"] != "A acordar", str(f["SKU"])))
 escribir("Publicaciones!A1:S", [COLS] + [[f.get(k, "") for k in COLS] for f in filas], crudo=True)
 # formato: encabezado en negrita y congelado, columnas de estado interno ocultas
