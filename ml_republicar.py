@@ -84,7 +84,7 @@ for x in lista:
                 "condition": it.get("condition", "new"), "attributes": attrs,
                 "sale_terms": [{"id": s["id"], "value_name": s.get("value_name")} for s in it.get("sale_terms") or []
                                if s.get("value_name") and s.get("id") != "INSTALLMENTS_CAMPAIGN"],
-                "shipping": {"mode": envio.get("mode", "me2"), "local_pick_up": False,
+                "shipping": {"mode": "not_specified" if envio.get("mode") == "custom" else envio.get("mode", "me2"), "local_pick_up": False,
                              "free_shipping": bool(envio.get("free_shipping"))}}
         if dry:
             item["pictures"] = [{"source": fotos[0]}] if usar_viejas else [p for p in [subir(sku, fotos[0], 1)] if p]
