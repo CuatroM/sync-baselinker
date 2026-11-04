@@ -1,0 +1,43 @@
+name: Mercado Libre - Planilla mayorista y envíos
+
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      dry_run:
+        description: "1 = solo escribe la planilla con lo que haría, 0 = aplica en Mercado Libre"
+        default: "1"
+      limite:
+        description: "Aplicar cambios en ML solo a las primeras N publicaciones (vacío = todas)"
+        required: false
+        default: ""
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  planilla:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Planilla
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          LIMITE: ${{ github.event.inputs.limite }}
+          BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+        run: python ml_planilla.py

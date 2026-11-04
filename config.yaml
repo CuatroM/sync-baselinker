@@ -69,3 +69,7 @@ extrapower:
 jya:
   inventory_id: 65457        # INVENTARIO JYA DISTRIBUIDORA 2026
   price_group_id: 65271      # precio de la web (sin IVA)
+
+# Planilla de Google "Mayorista y envíos ML" (ml_planilla.py). Compartida solo con la cuenta de servicio (GOOGLE_SA_JSON).
+planilla_ml:
+  sheet_id: "19Qc9nhi-xiiCskU8th9Iwe7jqW2hYbyH6-C34aWV-QI"
