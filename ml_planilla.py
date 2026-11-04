@@ -206,7 +206,9 @@ for it in ml.publicaciones(ids, "id,title,status,price,currency_id,shipping,sell
                 fila[col] = v
                 costos.append({"description": desc, "cost": v})
             else:   # supera el máximo (ML anula envíos de $280.000 o más): esa opción no se ofrece
-                fila[col] = "no se ofrece (supera el máximo)" if v else ""
+                fila[col] = f"NO SE OFRECE (daría ${v:,.0f})".replace(",", ".") if v else ""
+                if v:
+                    estado.append(f"{k[2:].title()} no se ofrece: supera el máximo")
         firma_e = json.dumps(costos, ensure_ascii=False) if costos else ""
         if not c:
             estado.append("envíos: sin costo en BaseLinker")
@@ -248,4 +250,12 @@ gs.post(f"{GS}:batchUpdate", json={"requests": [
                                                    "backgroundColor": {"red": 0.008, "green": 0.337, "blue": 0.102}}}, "fields": "userEnteredFormat(textFormat,backgroundColor)"}},
     {"updateDimensionProperties": {"range": {"sheetId": sid, "dimension": "COLUMNS", "startIndex": 17, "endIndex": 19},
                                    "properties": {"hiddenByUser": True}, "fields": "hiddenByUser"}}]}).raise_for_status()
+# envíos que no se ofrecen por superar el máximo: celda en naranja (se rehace la regla en cada corrida)
+cf = gs.get(GS, params={"fields": "sheets(properties.sheetId,conditionalFormats)"}).json()
+n_cf = next((len(x.get("conditionalFormats") or []) for x in cf["sheets"] if x["properties"]["sheetId"] == sid), 0)
+gs.post(f"{GS}:batchUpdate", json={"requests": [{"deleteConditionalFormatRule": {"sheetId": sid, "index": 0}} for _ in range(n_cf)] + [
+    {"addConditionalFormatRule": {"index": 0, "rule": {
+        "ranges": [{"sheetId": sid, "startColumnIndex": i, "endColumnIndex": i + 1, "startRowIndex": 1} for i in (9, 11, 13)],
+        "booleanRule": {"condition": {"type": "TEXT_STARTS_WITH", "values": [{"userEnteredValue": "NO SE OFRECE"}]},
+                        "format": {"backgroundColor": {"red": 1, "green": 0.55, "blue": 0}, "textFormat": {"bold": True}}}}}}]}).raise_for_status()
 log(f"Planilla escrita: {len(filas)} filas | cambios en ML: {cambios}")
