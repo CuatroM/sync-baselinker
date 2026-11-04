@@ -1,0 +1,48 @@
+name: Mercado Libre - Agregar una foto a una publicación
+
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      item:
+        description: "Publicación (MLA...)"
+        required: true
+      archivo:
+        description: "Foto en el repositorio (ej. datos/fotos_extra/CO-07-026500_medidas.jpg)"
+        required: true
+      posicion:
+        description: "final = al final; 2 = después de la portada"
+        default: "final"
+      dry_run:
+        description: "1 = simulación, 0 = agregar"
+        default: "1"
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  agregar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Agregar foto
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          ITEM: ${{ github.event.inputs.item }}
+          ARCHIVO: ${{ github.event.inputs.archivo }}
+          POSICION: ${{ github.event.inputs.posicion }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: python ml_agregar_foto.py
