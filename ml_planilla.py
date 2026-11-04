@@ -114,7 +114,7 @@ def num(v, d=0.0):
 ENVIOS = [("% CREDIFIN", "Correo Credifin a domicilio/sucursal"), ("% VÍA CARGO", "Vía Cargo a sucursal"),
           ("% CRUZ DEL SUR", "Cruz del Sur R. Negro/Patagonia")]
 MINIMO = {k: num(R.get(k, ("", 0))[1]) for k, _ in ENVIOS}
-MAXIMO = {k: min(num(MAXIMO_R.get(k), 279999) or 279999, 279999) for k, _ in ENVIOS}   # Mercado Libre anula envíos de $280.000 o más
+MAXIMO = {k: min(num(MAXIMO_R.get(k), 279999) or 279999, 279999) for k, _ in ENVIOS}   # si el envío calculado supera esto, esa opción no se ofrece (ML anula envíos de $280.000 o más)
 DEF = {"CANT. MAYORISTA": num(R.get("CANT. MAYORISTA", (2, ""))[0], 2), "% DESC. MAYORISTA": pct(R.get("% DESC. MAYORISTA", ("2%", ""))[0])}
 DEF.update({k: pct(R.get(k, ("", ""))[0]) for k, _ in ENVIOS})
 log(f"Reglas: {DEF} | mínimos: {MINIMO} | máximos: {MAXIMO}")
@@ -201,12 +201,12 @@ for it in ml.publicaciones(ids, "id,title,status,price,currency_id,shipping,sell
             pk = pct(val(k))
             fila[k] = f"{pk * 100:g}%" if pk else ""
             col = "ENVÍO " + k[2:]
-            if pk and c:
-                v = round(min(max(c * pk, MINIMO[k]), MAXIMO[k]), 2)
+            v = round(max(c * pk, MINIMO[k]), 2) if pk and c else 0
+            if v and v <= MAXIMO[k]:
                 fila[col] = v
                 costos.append({"description": desc, "cost": v})
-            else:
-                fila[col] = ""
+            else:   # supera el máximo (ML anula envíos de $280.000 o más): esa opción no se ofrece
+                fila[col] = "no se ofrece (supera el máximo)" if v else ""
         firma_e = json.dumps(costos, ensure_ascii=False) if costos else ""
         if not c:
             estado.append("envíos: sin costo en BaseLinker")
