@@ -72,17 +72,22 @@ ml = cliente.ML(os.environ.get("ML_CODIGO"))
 
 # ---------------- reglas
 asegurar("Reglas")
-REGLAS_DEF = [["REGLA", "VALOR", "MÍNIMO ($)", "NOTA"],
+REGLAS_DEF = [["REGLA", "VALOR", "MÍNIMO ($)", "NOTA", "MÁXIMO ($)"],
               ["CANT. MAYORISTA", 2, "", "desde cuántas unidades (para publicaciones nuevas)"],
               ["% DESC. MAYORISTA", "2%", "", "descuento sobre el precio de ML (para publicaciones nuevas)"],
-              ["% CREDIFIN", "7%", 20000, "Correo Credifin a domicilio/sucursal: % del costo en BaseLinker"],
-              ["% VÍA CARGO", "20%", 40000, "Vía Cargo a sucursal"],
-              ["% CRUZ DEL SUR", "12%", 30000, "Cruz del Sur R. Negro/Patagonia"]]
-rg = leer("Reglas!A1:D10")
+              ["% CREDIFIN", "7%", 20000, "Correo Credifin a domicilio/sucursal: % del costo en BaseLinker", 279999],
+              ["% VÍA CARGO", "20%", 40000, "Vía Cargo a sucursal", 279999],
+              ["% CRUZ DEL SUR", "12%", 30000, "Cruz del Sur R. Negro/Patagonia", 279999]]
+rg = leer("Reglas!A1:E10")
 if len(rg) < 6:
-    escribir("Reglas!A1:D10", REGLAS_DEF)
-    rg = leer("Reglas!A1:D10")
+    escribir("Reglas!A1:E10", REGLAS_DEF)
+    rg = leer("Reglas!A1:E10")
+elif len(rg[0]) < 5 or rg[0][4] != "MÁXIMO ($)":   # planilla anterior: se agrega la columna de máximo (ML anula envíos de $280.000 o más)
+    gs.put(f"{GS}/values/Reglas!E1:E6", params={"valueInputOption": "RAW"},
+           json={"values": [["MÁXIMO ($)"], [""], [""], [279999], [279999], [279999]]}).raise_for_status()
+    rg = leer("Reglas!A1:E10")
 R = {fila[0]: (fila[1] if len(fila) > 1 else "", fila[2] if len(fila) > 2 else "") for fila in rg[1:] if fila}
+MAXIMO_R = {fila[0]: (fila[4] if len(fila) > 4 else "") for fila in rg[1:] if fila}
 
 
 def pct(v):
@@ -109,9 +114,10 @@ def num(v, d=0.0):
 ENVIOS = [("% CREDIFIN", "Correo Credifin a domicilio/sucursal"), ("% VÍA CARGO", "Vía Cargo a sucursal"),
           ("% CRUZ DEL SUR", "Cruz del Sur R. Negro/Patagonia")]
 MINIMO = {k: num(R.get(k, ("", 0))[1]) for k, _ in ENVIOS}
+MAXIMO = {k: min(num(MAXIMO_R.get(k), 279999) or 279999, 279999) for k, _ in ENVIOS}   # Mercado Libre anula envíos de $280.000 o más
 DEF = {"CANT. MAYORISTA": num(R.get("CANT. MAYORISTA", (2, ""))[0], 2), "% DESC. MAYORISTA": pct(R.get("% DESC. MAYORISTA", ("2%", ""))[0])}
 DEF.update({k: pct(R.get(k, ("", ""))[0]) for k, _ in ENVIOS})
-log(f"Reglas: {DEF} | mínimos: {MINIMO}")
+log(f"Reglas: {DEF} | mínimos: {MINIMO} | máximos: {MAXIMO}")
 
 # ---------------- planilla actual (lo que editó el usuario + último aplicado)
 COLS = ["MLA", "SKU", "TÍTULO", "COSTO (BASE)", "PRECIO ML", "CANT. MAYORISTA", "% DESC. MAYORISTA", "PRECIO MAYORISTA",
@@ -196,7 +202,7 @@ for it in ml.publicaciones(ids, "id,title,status,price,currency_id,shipping,sell
             fila[k] = f"{pk * 100:g}%" if pk else ""
             col = "ENVÍO " + k[2:]
             if pk and c:
-                v = round(max(c * pk, MINIMO[k]), 2)
+                v = round(min(max(c * pk, MINIMO[k]), MAXIMO[k]), 2)
                 fila[col] = v
                 costos.append({"description": desc, "cost": v})
             else:
