@@ -75,9 +75,9 @@ asegurar("Reglas")
 REGLAS_DEF = [["REGLA", "VALOR", "MÍNIMO ($)", "NOTA", "MÁXIMO ($)"],
               ["CANT. MAYORISTA", 2, "", "desde cuántas unidades (para publicaciones nuevas)"],
               ["% DESC. MAYORISTA", "2%", "", "descuento sobre el precio de ML (para publicaciones nuevas)"],
-              ["% CREDIFIN", "7%", 20000, "Correo Credifin a domicilio/sucursal: % del costo en BaseLinker", 279999],
-              ["% VÍA CARGO", "20%", 40000, "Vía Cargo a sucursal", 279999],
-              ["% CRUZ DEL SUR", "12%", 30000, "Cruz del Sur R. Negro/Patagonia", 279999]]
+              ["% CREDIFIN", "7%", 35000, "Correo Credifin a domicilio/sucursal: % del costo en BaseLinker", 279999],
+              ["% VÍA CARGO", "20%", 50000, "Vía Cargo a sucursal", 279999],
+              ["% CRUZ DEL SUR", "12%", 35000, "Cruz del Sur R. Negro/Patagonia", 279999]]
 rg = leer("Reglas!A1:E10")
 if len(rg) < 6:
     escribir("Reglas!A1:E10", REGLAS_DEF)
