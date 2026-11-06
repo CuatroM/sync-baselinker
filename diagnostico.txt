@@ -1,0 +1,7 @@
+[2026-11-06 02:40:14] Login en el sitio del proveedor OK
+[2026-11-06 02:40:14] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-11-06 02:40:20] Recibido: 586,380 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-051126.xlsx"
+[2026-11-06 02:40:22] Lista del proveedor: 18569 productos con datos válidos
+[2026-11-06 02:40:23] Columnas de la lista: ['SKU', 'DESCRIPCION', 'STOCK', 'PRECIO MAYORISTA', 'PRECIO SUGERIDO ML', 'IMPUESTOS', 'UNIDAD DE VENTA']
+[2026-11-06 02:40:36] Catálogo BaseLinker: 16483 productos
+[2026-11-06 02:42:43] Sin BaseLinker: 2156 | con stock: 275 | nuevos desde 04/10: 42 (con stock: 7)
