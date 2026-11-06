@@ -1,0 +1,46 @@
+"""
+Solo lectura: productos de la lista de FEMA que NO están en BaseLinker.
+Descarga la lista del proveedor (igual que la sincronización), la compara con el catálogo FEMA de BaseLinker y
+arma salida/fema_nuevos.csv + salida/FEMA_nuevos_para_BaseLinker.xlsx con SKU, descripción, precio, stock, unidad,
+y si el código es NUEVO (no estaba sin vincular el 04/10/2026) o es de los que ya faltaban antes.
+"""
+import io
+import json
+import os
+
+import pandas as pd
+import yaml
+
+import sync
+
+cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
+cont = sync.descargar_lista(cfg)
+lista = sync.leer_lista(cont, cfg)
+df = pd.read_excel(io.BytesIO(cont), dtype=object) if cont[:2] in (b"PK", b"\xd0\xcf") else \
+    pd.read_csv(io.StringIO(cont.decode("utf-8-sig", errors="replace")), sep=None, engine="python", dtype=object)
+df.columns = [str(c).strip() for c in df.columns]
+bl = sync.BaseLinker(os.environ["BL_TOKEN"])
+b = cfg["baselinker"]
+skus = set()
+for p in bl.catalogo(int(b["inventory_id"])).values():
+    s = sync.normalizar_codigo(p.get("sku"))
+    skus.add(s)
+    skus.add(s.split("#")[0])
+antes = set(json.load(open("datos/fema_sin_vincular_20261004.json")))
+filas = []
+for _, f in df.iterrows():
+    c = sync.normalizar_codigo(f.get("SKU"))
+    if not c or c in ("-", "N/A", "NAN") or c in skus or c + "#FEMA" in skus:
+        continue
+    d = lista.get(c, {})
+    filas.append({"SKU": c + "#FEMA", "CODIGO FEMA": c, "DESCRIPCION": str(f.get("DESCRIPCION") or "").strip(),
+                  "PRECIO MAYORISTA": d.get("precio", ""), "STOCK": d.get("stock", 0),
+                  "PRECIO SUGERIDO ML": f.get("PRECIO SUGERIDO ML", ""), "UNIDAD DE VENTA": f.get("UNIDAD DE VENTA", ""),
+                  "NUEVO": "SI (apareció después del 04/10)" if c not in antes else "no (ya faltaba)"})
+os.makedirs("salida", exist_ok=True)
+out = pd.DataFrame(filas).sort_values(["NUEVO", "STOCK"], ascending=[False, False])
+out.to_csv("salida/fema_nuevos.csv", sep=";", index=False, encoding="utf-8-sig")
+out.to_excel("salida/FEMA_sin_BaseLinker.xlsx", index=False)
+con = out[out["STOCK"].astype(float) > 0]
+sync.log(f"Sin BaseLinker: {len(out)} | con stock: {len(con)} | nuevos desde 04/10: {(out['NUEVO'].str.startswith('SI')).sum()} "
+         f"(con stock: {(con['NUEVO'].str.startswith('SI')).sum()})")
