@@ -8,10 +8,66 @@ import io
 import json
 import os
 
+import html as H
+import re
+import time
+
 import pandas as pd
+import requests
 import yaml
 
 import sync
+
+WEB = "https://www.femacba.com.ar/"
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
+
+
+web = requests.Session()
+web.headers.update(UA)
+
+
+def get(url):
+    for i in range(3):
+        try:
+            r = web.get(url, timeout=40)
+            if r.status_code == 200:
+                return r.text
+        except requests.RequestException:
+            pass
+        time.sleep(2 * (i + 1))
+    return ""
+
+
+def texto(h):
+    return H.unescape(re.sub(r"<[^>]+>", " ", h))
+
+
+def buscar(sku):
+    """Devuelve (url_pagina, [urls de fotos]) o (None, [])."""
+    res = get(f"{WEB}resultado-busqueda.htm?keywords={requests.utils.quote(sku)}")
+    cands = []
+    for m in re.finditer(r'href="([^"]+\.html)"', res):
+        u = m.group(1)
+        u = u if u.startswith("http") else WEB + u.lstrip("/")
+        if "femacba.com.ar" in u and u not in cands and not re.search(r"/(contacto|nosotros|login|registro|carrito)", u):
+            cands.append(u)
+    patron = re.compile(rf"(?<![A-Za-z0-9]){re.escape(sku)}(?![A-Za-z0-9])", re.I)
+    for u in cands[:6]:
+        pag = get(u)
+        if not pag or not patron.search(texto(pag)):
+            continue
+        og = re.search(r'property="og:image" content="([^"]+)"', pag)
+        carpeta = re.search(r"Model/Product/(\d+)/", og.group(1)) if og else None
+        if not carpeta:
+            continue
+        nums = []
+        for f in re.findall(rf"Model/Product/{carpeta.group(1)}/([^\"'\s)>]+?\.(?:jpe?g|png|webp)(?:\.webp)?)", pag, re.I):
+            if f not in nums and not f.startswith("thumb_"):
+                nums.append(f)
+        return u, [f"{WEB}mods/html/fil/Model/Product/{carpeta.group(1)}/{f}" for f in nums][:8]
+    return None, []
+
+
 
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
 cont = sync.descargar_lista(cfg)
@@ -36,10 +92,24 @@ for _, f in df.iterrows():
     if not c or c in ("-", "N/A", "NAN") or c in skus or c + "#FEMA" in skus:
         continue
     d = lista.get(c, {})
-    filas.append({"SKU": c + "#FEMA", "CODIGO FEMA": c, "DESCRIPCION": str(f.get(C_DESC) or "").strip() if C_DESC else "",
+    filas.append({"SKU": c + "#FEMA", "CODIGO FEMA": c, "DESCRIPCION": ("" if pd.isna(f.get(C_DESC)) else str(f.get(C_DESC)).strip()) if C_DESC else "",
                   "PRECIO MAYORISTA": d.get("precio", ""), "STOCK": d.get("stock", 0),
                   "PRECIO SUGERIDO ML": f.get(C_SUG, "") if C_SUG else "", "UNIDAD DE VENTA": f.get(C_UNI, "") if C_UNI else "",
                   "NUEVO": "SI (apareció después del 04/10)" if c not in antes else "no (ya faltaba)"})
+# los que tienen stock y precio: se buscan en la web de FEMA (nombre y fotos), porque la lista no trae descripción
+for f in filas:
+    if float(f["STOCK"] or 0) > 0 and f["PRECIO MAYORISTA"] not in ("", None):
+        try:
+            url, fotos = buscar(f["CODIGO FEMA"])
+        except Exception as e:
+            url, fotos = None, []
+        f["WEB FEMA"], f["FOTOS WEB"] = url or "", len(fotos)
+        if url:
+            pag = get(url)
+            m = re.search(r'property="og:title" content="([^"]+)"', pag or "") or re.search(r"<h1[^>]*>(.*?)</h1>", pag or "", re.S)
+            if m and not f["DESCRIPCION"]:
+                f["DESCRIPCION"] = re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip()
+        time.sleep(0.5)
 os.makedirs("salida", exist_ok=True)
 out = pd.DataFrame(filas).sort_values(["NUEVO", "STOCK"], ascending=[False, False])
 out.to_csv("salida/fema_nuevos.csv", sep=";", index=False, encoding="utf-8-sig")
