@@ -19,6 +19,9 @@ lista = sync.leer_lista(cont, cfg)
 df = pd.read_excel(io.BytesIO(cont), dtype=object) if cont[:2] in (b"PK", b"\xd0\xcf") else \
     pd.read_csv(io.StringIO(cont.decode("utf-8-sig", errors="replace")), sep=None, engine="python", dtype=object)
 df.columns = [str(c).strip() for c in df.columns]
+sync.log(f"Columnas de la lista: {list(df.columns)}")
+colde = lambda *k: next((c for c in df.columns if any(x in c.upper() for x in k)), None)
+C_DESC, C_SUG, C_UNI = colde("DESCRIP", "NOMBRE", "TITULO", "DETALLE"), colde("SUGERIDO"), colde("UNIDAD")
 bl = sync.BaseLinker(os.environ["BL_TOKEN"])
 b = cfg["baselinker"]
 skus = set()
@@ -33,9 +36,9 @@ for _, f in df.iterrows():
     if not c or c in ("-", "N/A", "NAN") or c in skus or c + "#FEMA" in skus:
         continue
     d = lista.get(c, {})
-    filas.append({"SKU": c + "#FEMA", "CODIGO FEMA": c, "DESCRIPCION": str(f.get("DESCRIPCION") or "").strip(),
+    filas.append({"SKU": c + "#FEMA", "CODIGO FEMA": c, "DESCRIPCION": str(f.get(C_DESC) or "").strip() if C_DESC else "",
                   "PRECIO MAYORISTA": d.get("precio", ""), "STOCK": d.get("stock", 0),
-                  "PRECIO SUGERIDO ML": f.get("PRECIO SUGERIDO ML", ""), "UNIDAD DE VENTA": f.get("UNIDAD DE VENTA", ""),
+                  "PRECIO SUGERIDO ML": f.get(C_SUG, "") if C_SUG else "", "UNIDAD DE VENTA": f.get(C_UNI, "") if C_UNI else "",
                   "NUEVO": "SI (apareció después del 04/10)" if c not in antes else "no (ya faltaba)"})
 os.makedirs("salida", exist_ok=True)
 out = pd.DataFrame(filas).sort_values(["NUEVO", "STOCK"], ascending=[False, False])
