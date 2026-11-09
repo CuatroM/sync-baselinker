@@ -5,7 +5,7 @@ Solo lectura: no modifica nada en ML ni en MP.
 
 Entradas (variables de entorno):
   PERIODO     vacío = mes en curso hasta hoy · "2026-10" = un mes · "2026-10-01:2026-10-15" = rango
-              "ayer" · "hoy"
+              "ayer" · "hoy" · "completo" = últimos 12 meses (lo máximo que da ML por API)
   ML_CODIGO   código TG-... de Mercado Libre (opcional: sin código se arma solo la parte de MP)
   MP_ACCESS_TOKEN, ML_CLIENT_ID, ML_CLIENT_SECRET (secrets)
 
@@ -34,6 +34,12 @@ def periodo(texto):
     hoy = datetime.now(AR).replace(hour=0, minute=0, second=0, microsecond=0)
     if t in ("", "mes"):
         return hoy.replace(day=1), hoy + timedelta(days=1), f"{hoy:%Y-%m}"
+    if t in ("completo", "todo", "12 meses"):
+        # Mercado Libre solo devuelve por API las ventas de los últimos 12 meses
+        d = hoy.replace(day=1)
+        for _ in range(12):
+            d = (d - timedelta(days=1)).replace(day=1)
+        return d, hoy + timedelta(days=1), f"completo_{d:%Y-%m}_a_{hoy:%Y-%m-%d}"
     if t == "hoy":
         return hoy, hoy + timedelta(days=1), f"{hoy:%Y-%m-%d}"
     if t == "ayer":

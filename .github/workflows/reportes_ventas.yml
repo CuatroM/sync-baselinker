@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       periodo:
-        description: "Período: vacío = mes en curso · 2026-10 = un mes · 2026-10-01:2026-10-15 = rango · ayer · hoy"
+        description: "Período: vacío = mes en curso · 2026-10 = un mes · 2026-10-01:2026-10-15 = rango · ayer · hoy · completo (12 meses)"
         required: false
         default: ""
       codigo:
