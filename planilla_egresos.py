@@ -27,6 +27,13 @@ ENCAB_EGR = ["FECHA", "TIPO", "MONTO", "ID OPERACIÓN", "DESCRIPCIÓN", "CUENTA 
              "PROVEEDOR ✎", "ALIAS / CBU ✎", "TITULAR (auto)", "NOTAS ✎"]
 
 
+def _txt(x):
+    """Texto limpio para Google Sheets (sin NaN ni None)."""
+    if x is None or (isinstance(x, float) and x != x):
+        return ""
+    return str(x).strip()
+
+
 def _norm(x):
     return str(x or "").strip().lower().replace(" ", "")
 
@@ -100,11 +107,13 @@ def sincronizar(egresos, log):
     for _, e in egresos.iterrows():
         idop = str(e["ID operación"])
         ant = previos.get(idop, [""] * 10)
-        filas[idop] = [str(e["Fecha"])[:16], e["Categoría"].replace("Egreso · ", ""),
-                       round(float(e["Egreso"]), 2), idop, e.get("Descripción") or "",
-                       e.get("Cuenta destino") or "", ant[6], ant[7], "", ant[9]]
+        monto = pd.to_numeric(e.get("Egreso"), errors="coerce")
+        filas[idop] = [_txt(e.get("Fecha"))[:16], _txt(e.get("Categoría")).replace("Egreso · ", ""),
+                       round(float(monto), 2) if pd.notna(monto) else 0, idop,
+                       _txt(e.get("Descripción")), _txt(e.get("Cuenta destino")),
+                       _txt(ant[6]), _txt(ant[7]), "", _txt(ant[9])]
     for idop, f in previos.items():          # egresos de corridas anteriores fuera del período
-        filas.setdefault(idop, f)
+        filas.setdefault(idop, [x if isinstance(x, (int, float)) and x == x else _txt(x) for x in f])
 
     asignados = 0
     for idop, f in filas.items():
