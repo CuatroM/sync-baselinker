@@ -111,6 +111,9 @@ class MP:
         """Reporte de dinero liberado del período. MP acepta hasta 90 días por pedido, así que
         se pide en tramos de 85 días y se juntan."""
         self._config_liberaciones()
+        # MP no acepta fechas futuras: el último tramo termina en este momento
+        ahora = datetime.now(desde.tzinfo) - timedelta(minutes=5)
+        hasta = min(hasta, ahora)
         partes, ini = [], desde
         while ini < hasta:
             fin = min(ini + timedelta(days=85), hasta)

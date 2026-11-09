@@ -146,7 +146,7 @@ def datos_ml(codigo):
     # Facturación de ML (lo que ML le cobra a la cuenta)
     cargos = []
     r = ml.pedir("GET", "/billing/integration/monthly/periods",
-                 params={"group": "ML", "document_type": "BILL", "offset": 0, "limit": 24})
+                 params={"group": "ML", "document_type": "BILL", "offset": 0, "limit": 12})
     if r.status_code != 200:
         log(f"Facturación ML no disponible ({r.status_code}): {r.text[:300]}")
     else:
