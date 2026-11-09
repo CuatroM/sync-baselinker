@@ -77,4 +77,4 @@ planilla_ml:
 # Planilla de Google "Proveedores y egresos MP" (Reportes VENTAS): identifica a quién fue cada egreso.
 # Crear una planilla vacía, compartirla como Editor con la cuenta de servicio y pegar acá su ID.
 planilla_egresos:
-  sheet_id: ""
+  sheet_id: "1dhCX-WaZL7PRdKbxgZf6zsh7eUpwtXZ8ddxWn7kzQHg"
