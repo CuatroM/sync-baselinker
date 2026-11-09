@@ -88,7 +88,9 @@ class MP:
                   "file_name_prefix": "reportes-ventas", "display_timezone": "GMT-03",
                   "report_translation": "en", "separator": ",",
                   "include_withdrawal_at_end": False, "execute_after_withdrawal": False,
-                  "scheduled": False}
+                  "scheduled": False,
+                  # MP exige una frecuencia aunque no se programe nada (scheduled = False)
+                  "frequency": {"type": "monthly", "value": 1, "hour": 6}}
         actual = self.pedir("GET", "/v1/account/release_report/config")
         metodo = "PUT" if actual.status_code == 200 else "POST"
         r = self.pedir(metodo, "/v1/account/release_report/config", json=cuerpo)
