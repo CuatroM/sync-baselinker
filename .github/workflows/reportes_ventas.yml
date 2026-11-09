@@ -36,6 +36,7 @@ jobs:
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           MP_ACCESS_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: |
           set -o pipefail
           python reporte_ventas.py 2>&1 | tee resultado.txt

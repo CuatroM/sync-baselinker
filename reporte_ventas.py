@@ -19,6 +19,7 @@ import os
 from datetime import datetime, timedelta, timezone
 
 import pandas as pd
+import requests
 
 AR = timezone(timedelta(hours=-3))
 os.makedirs("salida", exist_ok=True)
@@ -265,9 +266,20 @@ def datos_mp():
             "Ingreso": neto if neto > 0 else 0.0, "Egreso": -neto if neto < 0 else 0.0,
             "Comisiones": num(x.get("FEE_AMOUNT")) + num(x.get("MKP_FEE_AMOUNT")),
             "Retenciones": num(x.get("TAXES_AMOUNT")), "Orden ML": orden,
-            "ID operación": str(x.get("SOURCE_ID") or ""), "Origen dato": "Transacciones MP",
+            "ID operación": str(x.get("SOURCE_ID") or ""), "Cuenta destino": "",
+            "Origen dato": "Transacciones MP",
         })
-    enviados = 0
+    enviados, apodos = 0, {}
+
+    def apodo(cid):
+        if cid not in apodos:
+            try:
+                r = requests.get(f"https://api.mercadolibre.com/users/{cid}", timeout=20)
+                apodos[cid] = (r.json().get("nickname") or "") if r.status_code == 200 else ""
+            except Exception:
+                apodos[cid] = ""
+        return apodos[cid]
+
     for p in mp.pagos_enviados(DESDE, HASTA):
         if p.get("status") not in ("approved", "authorized"):
             continue
@@ -281,11 +293,13 @@ def datos_mp():
             "Categoría": ("Egreso · Transferencia enviada a cuenta MP"
                           if p.get("operation_type") == "money_transfer" else "Egreso · Pago realizado"),
             "Tipo MP": p.get("operation_type"), "Descripción": p.get("description"),
-            "Contraparte": f"cuenta MP {p.get('collector_id')}", "Documento": "",
+            "Contraparte": apodo(p.get("collector_id")), "Documento": "",
             "Banco / billetera origen": "", "Canal": "", "Medio": p.get("payment_type_id"),
             "Monto bruto": monto, "Ingreso": 0.0, "Egreso": monto, "Comisiones": 0.0,
             "Retenciones": 0.0, "Orden ML": str((p.get("order") or {}).get("id") or ""),
-            "ID operación": str(p.get("id")), "Origen dato": "Pagos enviados MP",
+            "ID operación": str(p.get("id")),
+            "Cuenta destino": f"{p.get('collector_id')} {apodo(p.get('collector_id'))}".strip(),
+            "Origen dato": "Pagos enviados MP",
         })
     log(f"Pagos/transferencias enviados desde la cuenta: {enviados}")
     mov = pd.DataFrame(mov)
@@ -380,9 +394,33 @@ def main():
         res["RESULTADO"] = res["TOTAL INGRESOS"] - res["TOTAL EGRESOS"]
         hojas["Resumen de dinero"] = res.astype(float).reset_index()
         hojas["Movimientos de dinero"] = mov
-        egr = mov[mov["Egreso"] > 0]
+        egr = mov[mov["Egreso"] > 0].copy()
         if not egr.empty:
-            hojas["Egresos"] = egr
+            # clave única por egreso (un mismo ID puede tener reclamo y devolución)
+            dup = egr.duplicated("ID operación", keep=False)
+            egr.loc[dup, "ID operación"] = egr.loc[dup, "ID operación"] + "·" + egr.loc[dup, "Tipo MP"]
+            a_identificar = egr[~egr["Categoría"].str.contains("Devolución")]
+            ident = None
+            try:
+                import planilla_egresos
+                ident = planilla_egresos.sincronizar(a_identificar, log)
+            except Exception as e:
+                log(f"Planilla de proveedores: no se pudo actualizar ({type(e).__name__}: {str(e)[:200]})")
+            if ident is not None and not ident.empty:
+                egr = egr.merge(ident, on="ID operación", how="left")
+            else:
+                egr["Proveedor"] = egr["Alias / CBU"] = egr["Titular"] = ""
+            cols = ["Fecha", "Día", "Mes", "Categoría", "Proveedor", "Alias / CBU", "Titular",
+                    "Egreso", "Descripción", "Cuenta destino", "Contraparte", "Medio", "Tipo MP",
+                    "ID operación", "Origen dato"]
+            hojas["Egresos"] = egr[[c for c in cols if c in egr.columns]]
+            pp = egr[~egr["Categoría"].str.contains("Devolución")].copy()
+            pp["Proveedor"] = pp["Proveedor"].fillna("").replace("", "(sin identificar)")
+            hojas["Egresos por proveedor"] = (pp.pivot_table(index="Proveedor", columns="Mes",
+                                              values="Egreso", aggfunc="sum", fill_value=0)
+                                              .assign(TOTAL=lambda d: d.sum(axis=1))
+                                              .sort_values("TOTAL", ascending=False)
+                                              .astype(float).reset_index())
         ent = mov[(mov["Ingreso"] > 0) & (mov["Categoría"] != "Ingreso · Venta Mercado Libre")]
         if not ent.empty:
             hojas["Ingresos fuera de ML"] = ent

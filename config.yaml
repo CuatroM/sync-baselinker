@@ -73,3 +73,8 @@ jya:
 # Planilla de Google "Mayorista y envíos ML" (ml_planilla.py). Compartida solo con la cuenta de servicio (GOOGLE_SA_JSON).
 planilla_ml:
   sheet_id: "19Qc9nhi-xiiCskU8th9Iwe7jqW2hYbyH6-C34aWV-QI"
+
+# Planilla de Google "Proveedores y egresos MP" (Reportes VENTAS): identifica a quién fue cada egreso.
+# Crear una planilla vacía, compartirla como Editor con la cuenta de servicio y pegar acá su ID.
+planilla_egresos:
+  sheet_id: ""
