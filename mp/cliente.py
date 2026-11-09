@@ -54,6 +54,18 @@ def leer_csv(contenido):
     return df
 
 
+COLUMNAS_TRANSACCIONES = [
+    "TRANSACTION_DATE", "SOURCE_ID", "EXTERNAL_REFERENCE", "TRANSACTION_TYPE", "DESCRIPTION",
+    "BUSINESS_UNIT", "SUB_UNIT", "PAYMENT_METHOD_TYPE", "PAYMENT_METHOD",
+    "TRANSACTION_AMOUNT", "SETTLEMENT_NET_AMOUNT", "FEE_AMOUNT", "MKP_FEE_AMOUNT",
+    "TAXES_AMOUNT", "PAYER_NAME", "PAYER_ID_TYPE", "PAYER_ID_NUMBER", "POI_BANK_NAME",
+    "POI_WALLET_NAME", "ORDER_ID", "MONEY_RELEASE_DATE", "IS_RELEASED",
+]
+COLUMNAS_TRANSACCIONES_MIN = ["TRANSACTION_DATE", "SOURCE_ID", "EXTERNAL_REFERENCE",
+                              "TRANSACTION_TYPE", "TRANSACTION_AMOUNT", "SETTLEMENT_NET_AMOUNT",
+                              "PAYMENT_METHOD_TYPE"]
+
+
 class MP:
     def __init__(self):
         token = (os.environ.get("MP_ACCESS_TOKEN") or "").strip()
@@ -119,16 +131,16 @@ class MP:
             if r.status_code >= 400:
                 log(f"No se pudo configurar el reporte ({r.status_code}): {r.text[:300]}")
 
-    def _listar(self):
-        r = self.pedir("GET", "/v1/account/release_report/list")
+    def _listar(self, tipo="release_report"):
+        r = self.pedir("GET", f"/v1/account/{tipo}/list")
         if r.status_code != 200:
-            r = self.pedir("POST", "/v1/account/release_report/list")
+            r = self.pedir("POST", f"/v1/account/{tipo}/list")
         return r.json() if r.status_code == 200 else []
 
-    def liberaciones(self, desde, hasta):
+    def liberaciones(self, desde, hasta, tipo="release_report"):
         """Reporte de dinero liberado del período. MP acepta hasta 90 días por pedido, así que
         se pide en tramos de 85 días y se juntan."""
-        self._config_liberaciones()
+        (self._config_liberaciones if tipo == "release_report" else self._config_transacciones)()
         # MP no acepta fechas futuras: el último tramo termina en este momento
         ahora = datetime.now(desde.tzinfo) - timedelta(minutes=5)
         hasta = min(hasta, ahora)
@@ -136,7 +148,7 @@ class MP:
         while ini < hasta:
             fin = min(ini + timedelta(days=85), hasta)
             try:
-                df = self._liberaciones_tramo(ini, fin)
+                df = self._liberaciones_tramo(ini, fin, tipo=tipo)
             except Exception as e:
                 log(f"Tramo {ini:%Y-%m-%d} a {fin:%Y-%m-%d}: no se pudo leer ({type(e).__name__})")
                 df = pd.DataFrame()
@@ -146,31 +158,31 @@ class MP:
         if not partes:
             return pd.DataFrame()
         todo = pd.concat(partes, ignore_index=True).drop_duplicates()
-        log(f"Dinero liberado: {len(todo)} movimientos en total")
+        log(f"{tipo}: {len(todo)} movimientos en total")
         return todo
 
-    def _liberaciones_tramo(self, desde, hasta, espera_max=900):
-        previos = {x.get("file_name") for x in self._listar()}
+    def _liberaciones_tramo(self, desde, hasta, espera_max=900, tipo="release_report"):
+        previos = {x.get("file_name") for x in self._listar(tipo)}
         fmt = "%Y-%m-%dT%H:%M:%SZ"
         cuerpo = {"begin_date": pd.Timestamp(desde).tz_convert("UTC").strftime(fmt),
                   "end_date": pd.Timestamp(hasta).tz_convert("UTC").strftime(fmt)}
         for _ in range(3):
-            r = self.pedir("POST", "/v1/account/release_report", json=cuerpo)
+            r = self.pedir("POST", f"/v1/account/{tipo}", json=cuerpo)
             if r.status_code in (200, 201, 202):
                 break
             time.sleep(10)
         else:
             log(f"Mercado Pago no aceptó el pedido del reporte ({r.status_code}): {r.text[:300]}")
             return pd.DataFrame()
-        log("Reporte de dinero liberado pedido; esperando a que Mercado Pago lo genere…")
+        log(f"Reporte {tipo} pedido; esperando a que Mercado Pago lo genere…")
         inicio = time.time()
         while time.time() - inicio < espera_max:
             time.sleep(20)
-            nuevos = [x for x in self._listar() if x.get("file_name") not in previos
+            nuevos = [x for x in self._listar(tipo) if x.get("file_name") not in previos
                       and str(x.get("file_name", "")).endswith(".csv")]
             if nuevos:
                 nombre = nuevos[-1]["file_name"]
-                d = self.pedir("GET", f"/v1/account/release_report/{nombre}")
+                d = self.pedir("GET", f"/v1/account/{tipo}/{nombre}")
                 if d.status_code == 200 and d.content:
                     df = leer_csv(d.content)
                     df.columns = [str(c).strip().upper().replace(" ", "_") for c in df.columns]
@@ -178,3 +190,42 @@ class MP:
                     return df
         log("El reporte no estuvo listo a tiempo; probá correrlo de nuevo en unos minutos.")
         return pd.DataFrame()
+
+
+    # ---------- Reporte de todas las transacciones (asincrónico) ----------
+    def _config_transacciones(self):
+        cuerpo = {"columns": [{"key": k} for k in COLUMNAS_TRANSACCIONES],
+                  "file_name_prefix": "reportes-transacciones", "display_timezone": "GMT-03",
+                  "report_translation": "en", "separator": ",", "include_withdraw": True,
+                  "frequency": {"type": "monthly", "value": 1, "hour": 6}}
+        actual = self.pedir("GET", "/v1/account/settlement_report/config")
+        metodo = "PUT" if actual.status_code == 200 else "POST"
+        r = self.pedir(metodo, "/v1/account/settlement_report/config", json=cuerpo)
+        if r.status_code >= 400:
+            log(f"Config de transacciones rechazada ({r.status_code}): {r.text[:200]}; "
+                "pruebo con columnas mínimas")
+            cuerpo["columns"] = [{"key": k} for k in COLUMNAS_TRANSACCIONES_MIN]
+            r = self.pedir(metodo, "/v1/account/settlement_report/config", json=cuerpo)
+            if r.status_code >= 400:
+                log(f"No se pudo configurar transacciones ({r.status_code}): {r.text[:300]}")
+
+    def transacciones(self, desde, hasta):
+        return self.liberaciones(desde, hasta, tipo="settlement_report")
+
+    # ---------- Pagos y transferencias que hizo la cuenta ----------
+    def pagos_enviados(self, desde, hasta):
+        offset = 0
+        while True:
+            r = self.pedir("GET", "/v1/payments/search", params={
+                "payer.id": self.user_id, "range": "date_created",
+                "begin_date": desde.isoformat(timespec="milliseconds"),
+                "end_date": hasta.isoformat(timespec="milliseconds"),
+                "sort": "date_created", "criteria": "asc", "limit": 100, "offset": offset})
+            if r.status_code != 200:
+                log(f"Pagos enviados: error {r.status_code}")
+                return
+            lote = r.json().get("results") or []
+            yield from (p for p in lote if str(p.get("collector_id")) != str(self.user_id))
+            if len(lote) < 100 or offset >= 9900:
+                return
+            offset += 100

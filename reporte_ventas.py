@@ -220,12 +220,81 @@ def datos_mp():
     for c in IMPORTES_MP:
         if c in lib.columns:
             lib[c] = pd.to_numeric(lib[c], errors="coerce").fillna(0)
-    return pagos, lib, mp.user_id
+
+    # Movimientos de dinero: todas las transacciones + pagos/transferencias que hizo la cuenta
+    mov = []
+    tr = mp.transacciones(DESDE, HASTA)
+    for _, x in tr.iterrows():
+        tipo = str(x.get("TRANSACTION_TYPE") or "").upper()
+        neto = num(x.get("SETTLEMENT_NET_AMOUNT"))
+        bruto = num(x.get("TRANSACTION_AMOUNT"))
+        medio = str(x.get("PAYMENT_METHOD_TYPE") or "")
+        unidad = str(x.get("BUSINESS_UNIT") or "")
+        orden = str(x.get("ORDER_ID") or x.get("EXTERNAL_REFERENCE") or "")
+        if tipo in ("WITHDRAWAL", "PAYOUT"):
+            cat = "Egreso · Transferencia/retiro a cuenta bancaria"
+        elif tipo == "WITHDRAWAL_CANCEL":
+            cat = "Ingreso · Transferencia cancelada (vuelve a la cuenta)"
+        elif tipo in ("REFUND", "CHARGEBACK", "DISPUTE"):
+            cat = "Egreso · Devolución / reclamo / contracargo"
+        elif neto < 0:
+            cat = "Egreso · Otros débitos"
+        elif "mercado libre" in unidad.lower() or "MERCADOLIBRE" in unidad.upper().replace(" ", ""):
+            cat = "Ingreso · Venta Mercado Libre"
+        elif medio in ("bank_transfer", "account_money") and x.get("PAYER_NAME"):
+            cat = "Ingreso · Transferencia recibida"
+        elif medio in ("bank_transfer", "account_money"):
+            cat = "Ingreso · Transferencia / ingreso de dinero"
+        else:
+            cat = "Ingreso · Cobro directo (QR, link, tarjeta)"
+        fecha = pd.to_datetime(x.get("TRANSACTION_DATE"), errors="coerce", utc=True)
+        fecha = fecha.tz_convert("America/Argentina/Buenos_Aires") if pd.notna(fecha) else None
+        mov.append({
+            "Fecha": fecha.tz_localize(None) if fecha is not None else None,
+            "Día": fecha.strftime("%Y-%m-%d") if fecha is not None else "",
+            "Mes": fecha.strftime("%Y-%m") if fecha is not None else "",
+            "Categoría": cat, "Tipo MP": tipo, "Descripción": x.get("DESCRIPTION"),
+            "Contraparte": x.get("PAYER_NAME") or "",
+            "Documento": " ".join(str(v) for v in (x.get("PAYER_ID_TYPE"), x.get("PAYER_ID_NUMBER"))
+                                 if pd.notna(v) and v),
+            "Banco / billetera origen": x.get("POI_BANK_NAME") or x.get("POI_WALLET_NAME") or "",
+            "Canal": unidad, "Medio": medio, "Monto bruto": bruto,
+            "Ingreso": neto if neto > 0 else 0.0, "Egreso": -neto if neto < 0 else 0.0,
+            "Comisiones": num(x.get("FEE_AMOUNT")) + num(x.get("MKP_FEE_AMOUNT")),
+            "Retenciones": num(x.get("TAXES_AMOUNT")), "Orden ML": orden,
+            "ID operación": str(x.get("SOURCE_ID") or ""), "Origen dato": "Transacciones MP",
+        })
+    enviados = 0
+    for p in mp.pagos_enviados(DESDE, HASTA):
+        if p.get("status") not in ("approved", "authorized"):
+            continue
+        enviados += 1
+        fecha = pd.Timestamp(p.get("date_created")).tz_convert("America/Argentina/Buenos_Aires")
+        ad = p.get("additional_info") or {}
+        monto = num(p.get("transaction_amount"))
+        mov.append({
+            "Fecha": fecha.tz_localize(None), "Día": fecha.strftime("%Y-%m-%d"),
+            "Mes": fecha.strftime("%Y-%m"),
+            "Categoría": ("Egreso · Transferencia enviada a cuenta MP"
+                          if p.get("operation_type") == "money_transfer" else "Egreso · Pago realizado"),
+            "Tipo MP": p.get("operation_type"), "Descripción": p.get("description"),
+            "Contraparte": f"cuenta MP {p.get('collector_id')}", "Documento": "",
+            "Banco / billetera origen": "", "Canal": "", "Medio": p.get("payment_type_id"),
+            "Monto bruto": monto, "Ingreso": 0.0, "Egreso": monto, "Comisiones": 0.0,
+            "Retenciones": 0.0, "Orden ML": str((p.get("order") or {}).get("id") or ""),
+            "ID operación": str(p.get("id")), "Origen dato": "Pagos enviados MP",
+        })
+    log(f"Pagos/transferencias enviados desde la cuenta: {enviados}")
+    mov = pd.DataFrame(mov)
+    if not mov.empty:
+        mov = mov.drop_duplicates("ID operación", keep="first").sort_values("Fecha")
+    log(f"Movimientos de dinero: {len(mov)}")
+    return pagos, lib, mov, mp.user_id
 
 
 # ------------------------------------------------------------------ armado del Excel
 def main():
-    ventas = cargos = pagos = lib = pd.DataFrame()
+    ventas = cargos = pagos = lib = mov = pd.DataFrame()
     ml_user = mp_user = None
 
     codigo = os.environ.get("ML_CODIGO", "").strip()
@@ -235,7 +304,7 @@ def main():
         log("Sin código de Mercado Libre: se arma solo la parte de Mercado Pago.")
 
     if os.environ.get("MP_ACCESS_TOKEN"):
-        pagos, lib, mp_user = datos_mp()
+        pagos, lib, mov, mp_user = datos_mp()
     else:
         log("Sin MP_ACCESS_TOKEN: se arma solo la parte de Mercado Libre.")
 
@@ -298,6 +367,22 @@ def main():
         hojas["Por producto"] = prod.sort_values("Bruto", ascending=False)
     if not cargos.empty:
         hojas["Cargos ML"] = cargos
+    if not mov.empty:
+        res = mov.pivot_table(index="Mes", columns="Categoría", values=["Ingreso", "Egreso"],
+                              aggfunc="sum", fill_value=0)
+        res = pd.concat([res["Ingreso"].loc[:, lambda d: d.columns.str.startswith("Ingreso")],
+                         res["Egreso"].loc[:, lambda d: d.columns.str.startswith("Egreso")]], axis=1)
+        res["TOTAL INGRESOS"] = mov.groupby("Mes")["Ingreso"].sum()
+        res["TOTAL EGRESOS"] = mov.groupby("Mes")["Egreso"].sum()
+        res["RESULTADO"] = res["TOTAL INGRESOS"] - res["TOTAL EGRESOS"]
+        hojas["Resumen de dinero"] = res.astype(float).reset_index()
+        hojas["Movimientos de dinero"] = mov
+        egr = mov[mov["Egreso"] > 0]
+        if not egr.empty:
+            hojas["Egresos"] = egr
+        ent = mov[(mov["Ingreso"] > 0) & (mov["Categoría"] != "Ingreso · Venta Mercado Libre")]
+        if not ent.empty:
+            hojas["Ingresos fuera de ML"] = ent
     if not lib.empty:
         hojas["Dinero liberado MP"] = lib.rename(columns=NOMBRES_MP)
     if not pagos.empty:
