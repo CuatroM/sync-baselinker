@@ -148,8 +148,7 @@ def datos_ml(codigo):
     r = ml.pedir("GET", "/billing/integration/monthly/periods",
                  params={"group": "ML", "document_type": "BILL", "offset": 0, "limit": 24})
     if r.status_code != 200:
-        log(f"Facturación ML no disponible ({r.status_code}): revisá el permiso de Facturación "
-            "en la app del DevCenter.")
+        log(f"Facturación ML no disponible ({r.status_code}): {r.text[:300]}")
     else:
         for p in r.json().get("results") or []:
             per = p.get("period") or {}

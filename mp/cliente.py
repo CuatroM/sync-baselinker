@@ -87,14 +87,14 @@ class MP:
         cuerpo = {"columns": [{"key": k} for k in COLUMNAS_LIBERACIONES],
                   "file_name_prefix": "reportes-ventas", "display_timezone": "GMT-03",
                   "report_translation": "en", "separator": ",",
-                  "include_withdrawal_at_end": True, "refund_detailed": True}
+                  "include_withdrawal_at_end": False, "execute_after_withdrawal": False,
+                  "scheduled": False}
         actual = self.pedir("GET", "/v1/account/release_report/config")
         metodo = "PUT" if actual.status_code == 200 else "POST"
         r = self.pedir(metodo, "/v1/account/release_report/config", json=cuerpo)
         if r.status_code >= 400:
             log(f"Config del reporte rechazada ({r.status_code}); pruebo con columnas mínimas")
             cuerpo["columns"] = [{"key": k} for k in COLUMNAS_MINIMAS]
-            cuerpo.pop("refund_detailed", None)
             r = self.pedir(metodo, "/v1/account/release_report/config", json=cuerpo)
             if r.status_code >= 400:
                 log(f"No se pudo configurar el reporte ({r.status_code}): {r.text[:300]}")
@@ -105,9 +105,24 @@ class MP:
             r = self.pedir("POST", "/v1/account/release_report/list")
         return r.json() if r.status_code == 200 else []
 
-    def liberaciones(self, desde, hasta, espera_max=900):
-        """Pide el reporte de dinero liberado del período y lo devuelve como DataFrame."""
+    def liberaciones(self, desde, hasta):
+        """Reporte de dinero liberado del período. MP acepta hasta 90 días por pedido, así que
+        se pide en tramos de 85 días y se juntan."""
         self._config_liberaciones()
+        partes, ini = [], desde
+        while ini < hasta:
+            fin = min(ini + timedelta(days=85), hasta)
+            df = self._liberaciones_tramo(ini, fin)
+            if not df.empty:
+                partes.append(df)
+            ini = fin
+        if not partes:
+            return pd.DataFrame()
+        todo = pd.concat(partes, ignore_index=True).drop_duplicates()
+        log(f"Dinero liberado: {len(todo)} movimientos en total")
+        return todo
+
+    def _liberaciones_tramo(self, desde, hasta, espera_max=900):
         previos = {x.get("file_name") for x in self._listar()}
         fmt = "%Y-%m-%dT%H:%M:%SZ"
         cuerpo = {"begin_date": pd.Timestamp(desde).tz_convert("UTC").strftime(fmt),
@@ -132,7 +147,7 @@ class MP:
                 if d.status_code == 200 and d.content:
                     df = pd.read_csv(io.BytesIO(d.content), sep=None, engine="python", dtype=str)
                     df.columns = [str(c).strip().upper().replace(" ", "_") for c in df.columns]
-                    log(f"Reporte descargado: {len(df)} movimientos")
+                    log(f"Tramo {desde:%Y-%m-%d} a {hasta:%Y-%m-%d}: {len(df)} movimientos")
                     return df
         log("El reporte no estuvo listo a tiempo; probá correrlo de nuevo en unos minutos.")
         return pd.DataFrame()
