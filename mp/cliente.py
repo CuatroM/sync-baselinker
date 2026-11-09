@@ -36,6 +36,22 @@ COLUMNAS_MINIMAS = ["DATE", "SOURCE_ID", "EXTERNAL_REFERENCE", "RECORD_TYPE", "D
                     "NET_CREDIT_AMOUNT", "NET_DEBIT_AMOUNT", "GROSS_AMOUNT"]
 
 
+def leer_csv(contenido):
+    """El reporte viene separado por comas, pero algunos campos (detalle de impuestos)
+    traen separadores adentro; se prueba en orden y, como último recurso, se saltean
+    las filas mal formadas avisando cuántas fueron."""
+    for sep in (",", ";"):
+        try:
+            return pd.read_csv(io.BytesIO(contenido), sep=sep, dtype=str)
+        except Exception:
+            pass
+    total = contenido.count(b"\n")
+    df = pd.read_csv(io.BytesIO(contenido), sep=",", dtype=str, engine="python",
+                     on_bad_lines="skip")
+    log(f"⚠️  {max(total - 1 - len(df), 0)} filas del reporte de MP venían mal formadas y se saltearon")
+    return df
+
+
 class MP:
     def __init__(self):
         token = (os.environ.get("MP_ACCESS_TOKEN") or "").strip()
@@ -117,7 +133,11 @@ class MP:
         partes, ini = [], desde
         while ini < hasta:
             fin = min(ini + timedelta(days=85), hasta)
-            df = self._liberaciones_tramo(ini, fin)
+            try:
+                df = self._liberaciones_tramo(ini, fin)
+            except Exception as e:
+                log(f"Tramo {ini:%Y-%m-%d} a {fin:%Y-%m-%d}: no se pudo leer ({type(e).__name__})")
+                df = pd.DataFrame()
             if not df.empty:
                 partes.append(df)
             ini = fin
@@ -150,7 +170,7 @@ class MP:
                 nombre = nuevos[-1]["file_name"]
                 d = self.pedir("GET", f"/v1/account/release_report/{nombre}")
                 if d.status_code == 200 and d.content:
-                    df = pd.read_csv(io.BytesIO(d.content), sep=None, engine="python", dtype=str)
+                    df = leer_csv(d.content)
                     df.columns = [str(c).strip().upper().replace(" ", "_") for c in df.columns]
                     log(f"Tramo {desde:%Y-%m-%d} a {hasta:%Y-%m-%d}: {len(df)} movimientos")
                     return df
