@@ -231,12 +231,14 @@ def datos_mp():
         medio = str(x.get("PAYMENT_METHOD_TYPE") or "")
         unidad = str(x.get("BUSINESS_UNIT") or "")
         orden = str(x.get("ORDER_ID") or x.get("EXTERNAL_REFERENCE") or "")
-        if tipo in ("WITHDRAWAL", "PAYOUT"):
+        if tipo in ("WITHDRAWAL", "PAYOUT", "PAYOUTS"):
             cat = "Egreso · Transferencia/retiro a cuenta bancaria"
         elif tipo == "WITHDRAWAL_CANCEL":
             cat = "Ingreso · Transferencia cancelada (vuelve a la cuenta)"
         elif tipo in ("REFUND", "CHARGEBACK", "DISPUTE"):
             cat = "Egreso · Devolución / reclamo / contracargo"
+        elif neto < 0 and tipo == "SETTLEMENT":
+            cat = "Egreso · Transferencia/pago desde el saldo"
         elif neto < 0:
             cat = "Egreso · Otros débitos"
         elif "mercado libre" in unidad.lower() or "MERCADOLIBRE" in unidad.upper().replace(" ", ""):
@@ -254,7 +256,8 @@ def datos_mp():
             "Día": fecha.strftime("%Y-%m-%d") if fecha is not None else "",
             "Mes": fecha.strftime("%Y-%m") if fecha is not None else "",
             "Categoría": cat, "Tipo MP": tipo, "Descripción": x.get("DESCRIPTION"),
-            "Contraparte": x.get("PAYER_NAME") or "",
+            # en los egresos PAYER_NAME es la propia cuenta, no el destinatario
+            "Contraparte": (x.get("PAYER_NAME") or "") if neto >= 0 else "",
             "Documento": " ".join(str(v) for v in (x.get("PAYER_ID_TYPE"), x.get("PAYER_ID_NUMBER"))
                                  if pd.notna(v) and v),
             "Banco / billetera origen": x.get("POI_BANK_NAME") or x.get("POI_WALLET_NAME") or "",
@@ -287,7 +290,7 @@ def datos_mp():
     log(f"Pagos/transferencias enviados desde la cuenta: {enviados}")
     mov = pd.DataFrame(mov)
     if not mov.empty:
-        mov = mov.drop_duplicates("ID operación", keep="first").sort_values("Fecha")
+        mov = mov.drop_duplicates().sort_values("Fecha")
     log(f"Movimientos de dinero: {len(mov)}")
     return pagos, lib, mov, mp.user_id
 
