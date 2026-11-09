@@ -1,0 +1,50 @@
+name: Reportes VENTAS (Mercado Libre + Mercado Pago)
+
+on:
+  workflow_dispatch:
+    inputs:
+      periodo:
+        description: "Período: vacío = mes en curso · 2026-10 = un mes · 2026-10-01:2026-10-15 = rango · ayer · hoy"
+        required: false
+        default: ""
+      codigo:
+        description: "Código TG-... de Mercado Libre (vacío = solo Mercado Pago)"
+        required: false
+        default: ""
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  reporte:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Armar reporte
+        env:
+          PERIODO: ${{ github.event.inputs.periodo }}
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          MP_ACCESS_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
+        run: |
+          set -o pipefail
+          python reporte_ventas.py 2>&1 | tee resultado.txt
+      # El Excel se entrega como artefacto (no se sube a ninguna rama) y se borra a los 5 días.
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reporte-ventas
+          path: |
+            salida/reporte_ventas_*.xlsx
+            resultado.txt
+          retention-days: 5

@@ -8,6 +8,8 @@
 
 https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=2635478937867404&redirect_uri=https://github.com/CuatroM/sync-baselinker
 
+**Reportes VENTAS (ML + Mercado Pago):** Actions → *Reportes VENTAS* → Run workflow. Período (`2026-10`, `2026-10-01:2026-10-15`, `ayer`, `hoy` o vacío = mes en curso) y, si querés las ventas de ML, el código TG‑ (sin código arma solo Mercado Pago). El Excel queda en el artefacto **reporte-ventas** de la ejecución (se borra a los 5 días). Usa el secret `MP_ACCESS_TOKEN` (Access Token de producción de la app "Reportes VENTAS" de Mercado Pago, misma cuenta que vende en ML).
+
 **Diagnóstico:** el proceso "Diagnóstico del sitio del proveedor" (Actions → Run workflow) prueba el login y la descarga sin tocar BaseLinker; con `solo_baselinker = 1` lista catálogos, grupos de precio y depósitos.
 
 Descarga la lista de precios y stock del proveedor (Excel o CSV) cada 4 horas y actualiza BaseLinker por API. Solo envía los productos que cambiaron.
