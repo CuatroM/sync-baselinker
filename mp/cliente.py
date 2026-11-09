@@ -42,7 +42,9 @@ def leer_csv(contenido):
     las filas mal formadas avisando cuántas fueron."""
     for sep in (",", ";"):
         try:
-            return pd.read_csv(io.BytesIO(contenido), sep=sep, dtype=str)
+            df = pd.read_csv(io.BytesIO(contenido), sep=sep, dtype=str)
+            if len(df.columns) > 1:
+                return df
         except Exception:
             pass
     total = contenido.count(b"\n")
