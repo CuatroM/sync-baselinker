@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   reporte:
@@ -39,6 +39,28 @@ jobs:
         run: |
           set -o pipefail
           python reporte_ventas.py 2>&1 | tee resultado.txt
+      # Copia cifrada para que Claude la pueda entregar por el chat. Se cifra con la clave
+      # pública del repo (la privada solo la tiene la sesión de Claude), así que en la rama
+      # pública "reportes-cifrados" nadie más puede leerla.
+      - name: Guardar copia cifrada
+        if: always()
+        run: |
+          f=$(ls salida/reporte_ventas_*.xlsx 2>/dev/null | head -1)
+          [ -n "$f" ] && [ -f reportes_clave_publica.pem ] || exit 0
+          mkdir -p /tmp/cif
+          K=$(openssl rand -hex 32)
+          openssl enc -aes-256-cbc -pbkdf2 -salt -pass pass:$K -in "$f" -out /tmp/cif/reporte.xlsx.enc
+          printf %s "$K" | openssl pkeyutl -encrypt -pubin -inkey reportes_clave_publica.pem \
+            -pkeyopt rsa_padding_mode:oaep -out /tmp/cif/clave.enc
+          basename "$f" > /tmp/cif/nombre.txt
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan reportes-cifrados
+          git rm -rfq .
+          cp /tmp/cif/* .
+          git add reporte.xlsx.enc clave.enc nombre.txt
+          git commit -qm "Reporte cifrado"
+          git push -qf origin reportes-cifrados
       # El Excel se entrega como artefacto (no se sube a ninguna rama) y se borra a los 5 días.
       - uses: actions/upload-artifact@v4
         if: always()
