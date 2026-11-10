@@ -175,3 +175,15 @@ def sincronizar(egresos, log):
     log(f"Planilla de proveedores: {len(orden)} egresos, {asignados} con proveedor identificado, "
         f"{len(proveedores)} proveedores cargados")
     return pd.DataFrame(resultado)
+
+
+def leer_hoja(rango):
+    """Lectura simple de la planilla (para diagnóstico)."""
+    cfg = yaml.safe_load(open("config.yaml", encoding="utf-8")) or {}
+    sheet = (cfg.get("planilla_egresos") or {}).get("sheet_id")
+    gs = AuthorizedSession(service_account.Credentials.from_service_account_info(
+        json.loads(os.environ["GOOGLE_SA_JSON"]), scopes=["https://www.googleapis.com/auth/spreadsheets"]))
+    r = gs.get(f"https://sheets.googleapis.com/v4/spreadsheets/{sheet}/values/{rango}",
+               params={"valueRenderOption": "UNFORMATTED_VALUE"})
+    r.raise_for_status()
+    return r.json().get("values") or []

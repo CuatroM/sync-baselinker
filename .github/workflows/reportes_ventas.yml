@@ -11,6 +11,10 @@ on:
         description: "Código TG-... de Mercado Libre (vacío = solo Mercado Pago)"
         required: false
         default: ""
+      diagnostico:
+        description: "Diagnóstico de egresos (si/no) — uso interno"
+        required: false
+        default: "no"
 
 concurrency:
   group: mercadolibre
@@ -37,6 +41,7 @@ jobs:
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
           MP_ACCESS_TOKEN: ${{ secrets.MP_ACCESS_TOKEN }}
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+          DIAGNOSTICO: ${{ github.event.inputs.diagnostico }}
         run: |
           set -o pipefail
           python reporte_ventas.py 2>&1 | tee resultado.txt
@@ -54,12 +59,15 @@ jobs:
           printf %s "$K" | openssl pkeyutl -encrypt -pubin -inkey reportes_clave_publica.pem \
             -pkeyopt rsa_padding_mode:oaep -out /tmp/cif/clave.enc
           basename "$f" > /tmp/cif/nombre.txt
+          if [ -f salida/diag.json ]; then
+            openssl enc -aes-256-cbc -pbkdf2 -salt -pass pass:$K -in salida/diag.json -out /tmp/cif/diag.json.enc
+          fi
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git checkout -q --orphan reportes-cifrados
           git rm -rfq .
           cp /tmp/cif/* .
-          git add reporte.xlsx.enc clave.enc nombre.txt
+          git add reporte.xlsx.enc clave.enc nombre.txt $(ls diag.json.enc 2>/dev/null)
           git commit -qm "Reporte cifrado"
           git push -qf origin reportes-cifrados
       # El Excel se entrega como artefacto (no se sube a ninguna rama) y se borra a los 5 días.
@@ -69,5 +77,6 @@ jobs:
           name: reporte-ventas
           path: |
             salida/reporte_ventas_*.xlsx
+            !salida/diag.json
             resultado.txt
           retention-days: 5

@@ -192,6 +192,41 @@ IMPORTES_MP = ["NET_CREDIT_AMOUNT", "NET_DEBIT_AMOUNT", "GROSS_AMOUNT", "MP_FEE_
                "BALANCE_AMOUNT"]
 
 
+def diagnostico(mp, tr, mov):
+    """Detalle completo de cada egreso para identificar destinatarios. Se guarda en
+    salida/diag.json, que el workflow cifra (nunca se imprime en el log)."""
+    import json
+    egr = mov[mov["Egreso"] > 0] if not mov.empty else mov
+    detalle = {}
+    for idop in sorted(set(egr["ID operación"].astype(str))) if not egr.empty else []:
+        out = {}
+        for ruta in (f"/v1/payments/{idop}", f"/v1/money_requests/{idop}",
+                     f"/v1/account/movements/{idop}"):
+            r = mp.pedir("GET", ruta, reintentos=2)
+            if r.status_code == 200:
+                out[ruta] = r.json()
+            else:
+                out[ruta] = {"status": r.status_code}
+        detalle[idop] = out
+    extra = {}
+    for ruta in ("/v1/account/bank_report/list", "/users/me", "/v1/account/balance"):
+        r = mp.pedir("GET", ruta, reintentos=2)
+        extra[ruta] = r.json() if r.status_code == 200 else {"status": r.status_code}
+    prov = []
+    try:
+        import planilla_egresos
+        prov = planilla_egresos.leer_hoja("Proveedores!A1:F") + [["--- Egresos ---"]] + \
+            planilla_egresos.leer_hoja("Egresos!A1:J")
+    except Exception as e:
+        prov = [[f"error {type(e).__name__}: {str(e)[:200]}"]]
+    tr_egr = tr[pd.to_numeric(tr.get("SETTLEMENT_NET_AMOUNT"), errors="coerce") < 0] \
+        if not tr.empty and "SETTLEMENT_NET_AMOUNT" in tr.columns else tr
+    json.dump({"detalle": detalle, "extra": extra, "planilla": prov,
+               "transacciones_egreso": tr_egr.fillna("").to_dict("records")},
+              open("salida/diag.json", "w", encoding="utf-8"), ensure_ascii=False, default=str)
+    log(f"Diagnóstico guardado: {len(detalle)} egresos consultados")
+
+
 def datos_mp():
     from mp.cliente import MP
     mp = MP()
@@ -305,6 +340,8 @@ def datos_mp():
     mov = pd.DataFrame(mov)
     if not mov.empty:
         mov = mov.drop_duplicates().sort_values("Fecha")
+    if os.environ.get("DIAGNOSTICO", "").lower() in ("si", "sí", "1", "true"):
+        diagnostico(mp, tr, mov)
     log(f"Movimientos de dinero: {len(mov)}")
     return pagos, lib, mov, mp.user_id
 
