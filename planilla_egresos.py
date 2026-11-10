@@ -34,6 +34,36 @@ def _txt(x):
     return str(x).strip()
 
 
+# Pagos de servicios que se reconocen por la descripción (no son proveedores de mercadería)
+SERVICIOS = [("baselinker", "BaseLinker (servicio)"),
+             ("facturas con cargos por operar", "Mercado Libre (cargos facturados)"),
+             ("marketplace_shipment", "Mercado Libre (envíos)")]
+
+
+def _clave_nombre(x):
+    """Nombre normalizado para buscarlo dentro de una descripción."""
+    import unicodedata, re
+    t = unicodedata.normalize("NFKD", _txt(x).lower()).encode("ascii", "ignore").decode()
+    t = re.sub(r"[^a-z0-9 ]", " ", t)
+    palabras = [w for w in t.split() if w not in ("sa", "srl", "s", "a", "r", "l", "sas", "de", "del")]
+    return " ".join(palabras)
+
+
+def por_descripcion(desc, proveedores):
+    d = " " + _clave_nombre(desc) + " "
+    if not d.strip():
+        return ""
+    for p in sorted(proveedores, key=lambda p: -len(_clave_nombre(p["prov"]))):
+        k = _clave_nombre(p["prov"])
+        if len(k) >= 5 and f" {k} " in d:
+            return p["prov"]
+    crudo = _txt(desc).lower()
+    for patron, nombre in SERVICIOS:
+        if patron in crudo:
+            return nombre
+    return ""
+
+
 def _norm(x):
     return str(x or "").strip().lower().replace(" ", "")
 
@@ -122,6 +152,8 @@ def sincronizar(egresos, log):
             prov_ = por_cuenta[_norm(cta)]["prov"]
         if not prov_ and str(f[5]).strip() in por_destino:
             prov_ = por_destino[str(f[5]).strip()]
+        if not prov_:
+            prov_ = por_descripcion(f[4], proveedores)
         p = por_nombre.get(_norm(prov_)) or (por_cuenta.get(_norm(cta)) if cta else None)
         if p and not cta:
             cta = p["alias"] or p["cbu"]
