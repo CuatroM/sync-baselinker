@@ -1,9 +1,31 @@
-[2026-11-11 10:47:19] Login en el sitio del proveedor OK
-[2026-11-11 10:47:19] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
-[2026-11-11 10:47:25] Recibido: 587,018 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-111126.xlsx"
-[2026-11-11 10:47:26] Lista del proveedor: 18586 productos con datos válidos
-[2026-11-11 10:47:37] Catálogo BaseLinker: 16483 productos
-[2026-11-11 10:47:37] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
-[2026-11-11 10:47:37] Cambios detectados: 1 de stock, 0 de precio. Códigos del proveedor sin vincular en BaseLinker: 2173
-[2026-11-11 10:47:38] updateInventoryProductsStock: 1 actualizados
-[2026-11-11 10:47:38] Listo. 1 cambios, 2173 sin vincular, 0 advertencias.
+[2026-11-11 16:06:53] Login en el sitio del proveedor OK
+[2026-11-11 16:06:53] Descargando lista: http://admineco.tatl0idwxj-ez94d7m1z4mr.p.temp-site.link/utilidades_info_sellers.php
+[2026-11-11 16:06:58] Recibido: 586,889 bytes | application/vnd.ms-excel | attachment; filename="lista-precios-fema-111126.xlsx"
+[2026-11-11 16:07:00] Lista del proveedor: 18588 productos con datos válidos
+[2026-11-11 16:07:13] Catálogo BaseLinker: 16483 productos
+[2026-11-11 16:07:13] SKU sin '#FEMA': 0 pendientes; en esta ejecución hasta 1500
+[2026-11-11 16:07:13] Cambios detectados: 75 de stock, 16413 de precio. Códigos del proveedor sin vincular en BaseLinker: 2175
+[2026-11-11 16:07:19] updateInventoryProductsStock: 75 actualizados
+[2026-11-11 16:08:17] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:09:18] updateInventoryProductsPrices: error de conexión (504 Server Error: Gateway Timeout for url: https://api.baselinker.com/connector.php), intento 1/3
+[2026-11-11 16:09:29] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:10:18] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:10:47] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:11:48] updateInventoryProductsPrices: error de conexión (504 Server Error: Gateway Timeout for url: https://api.baselinker.com/connector.php), intento 1/3
+[2026-11-11 16:12:10] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:12:46] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:13:23] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:13:50] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:14:50] updateInventoryProductsPrices: error de conexión (504 Server Error: Gateway Timeout for url: https://api.baselinker.com/connector.php), intento 1/3
+[2026-11-11 16:15:00] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:15:34] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:16:00] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:16:40] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:17:01] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:17:51] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:18:52] updateInventoryProductsPrices: error de conexión (504 Server Error: Gateway Timeout for url: https://api.baselinker.com/connector.php), intento 1/3
+[2026-11-11 16:19:24] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:20:25] updateInventoryProductsPrices: error de conexión (504 Server Error: Gateway Timeout for url: https://api.baselinker.com/connector.php), intento 1/3
+[2026-11-11 16:20:35] updateInventoryProductsPrices: 1000 actualizados
+[2026-11-11 16:20:55] updateInventoryProductsPrices: 413 actualizados
+[2026-11-11 16:20:55] Listo. 16488 cambios, 2175 sin vincular, 0 advertencias.
