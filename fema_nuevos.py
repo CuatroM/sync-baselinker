@@ -111,6 +111,28 @@ for f in filas:
                 f["DESCRIPCION"] = re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", " ", m.group(1)))).strip()
         time.sleep(0.5)
 os.makedirs("salida", exist_ok=True)
+# códigos puntuales pedidos (CODIGOS="a,b,c"): estado en la lista, en BaseLinker y en la web de FEMA
+pedidos = [sync.normalizar_codigo(x) for x in (os.environ.get("CODIGOS") or "").replace(";", ",").split(",") if x.strip()]
+if pedidos:
+    filas_df = {sync.normalizar_codigo(r.get("SKU")): r for _, r in df.iterrows()}
+    res = []
+    for c in pedidos:
+        r = filas_df.get(c)
+        d = lista.get(c, {})
+        url, fotos = buscar(c)
+        nombre = ""
+        if url:
+            m = re.search(r'property="og:title" content="([^"]+)"', get(url) or "")
+            nombre = H.unescape(m.group(1)).strip() if m else ""
+        res.append({"CODIGO": c, "EN LISTA FEMA": "SI" if r is not None else "NO",
+                    "DESCRIPCION LISTA": "" if r is None or pd.isna(r.get(C_DESC)) else str(r.get(C_DESC)).strip(),
+                    "PRECIO MAYORISTA": d.get("precio", ""), "STOCK": d.get("stock", ""),
+                    "EN BASELINKER": "SI" if (c in skus or c + "#FEMA" in skus) else "NO",
+                    "WEB FEMA": url or "", "NOMBRE WEB": nombre, "FOTOS WEB": len(fotos), "URLS FOTOS": " ".join(fotos)})
+        sync.log(f"{c}: lista={res[-1]['EN LISTA FEMA']} precio={res[-1]['PRECIO MAYORISTA']} stock={res[-1]['STOCK']} "
+                 f"BL={res[-1]['EN BASELINKER']} web={'SI' if url else 'NO'} fotos={len(fotos)} | {nombre or res[-1]['DESCRIPCION LISTA']}")
+        time.sleep(0.5)
+    pd.DataFrame(res).to_csv("salida/fema_codigos.csv", sep=";", index=False, encoding="utf-8-sig")
 out = pd.DataFrame(filas).sort_values(["NUEVO", "STOCK"], ascending=[False, False])
 out.to_csv("salida/fema_nuevos.csv", sep=";", index=False, encoding="utf-8-sig")
 out.to_excel("salida/FEMA_sin_BaseLinker.xlsx", index=False)

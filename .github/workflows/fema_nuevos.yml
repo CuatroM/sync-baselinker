@@ -2,6 +2,11 @@ name: FEMA - Productos nuevos que no están en BaseLinker (solo lectura)
 
 on:
   workflow_dispatch:
+    inputs:
+      codigos:
+        description: "Códigos puntuales a revisar, separados por coma (opcional)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -21,6 +26,7 @@ jobs:
           BL_TOKEN: ${{ secrets.BL_TOKEN }}
           PROVEEDOR_USER: ${{ secrets.PROVEEDOR_USER }}
           PROVEEDOR_PASS: ${{ secrets.PROVEEDOR_PASS }}
+          CODIGOS: ${{ github.event.inputs.codigos }}
         run: |
           set -o pipefail
           python fema_nuevos.py 2>&1 | tee resultado.txt
