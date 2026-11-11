@@ -445,6 +445,8 @@ def imagenes(sku):
             unicas.append(x)
     ficha = [x for x in fichas_img if os.path.splitext(x["nombre"])[1].lower() in EXT
              and re.fullmatch(rf"{re.escape(sku)}_ficha(nueva)?", os.path.splitext(x["nombre"])[0], re.I)]
+    if not unicas and (fichas.get(sku) or {}).get("fotos"):   # producto nuevo sin foto en Drive: fotos de la web de FEMA
+        unicas = [{"nombre": u.rsplit("/", 1)[-1], "url": u} for u in fichas[sku]["fotos"]]
     return unicas[:9] + ficha[:1]
 
 
