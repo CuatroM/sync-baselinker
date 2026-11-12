@@ -310,6 +310,26 @@ XP_CAT = [   # EXTRAPOWER: categorías fijas donde la sugerencia de ML se equivo
 ]
 
 
+DEL_CAT = [   # DELFABRO: búsquedas de categoría para lo que ML sugiere mal (antes de las reglas de FEMA)
+    (r"^Destalonadora", "destalonadora de neumaticos"),
+    (r"Sacacaja", "gato elevador para caja de transmision"),
+    (r"^Banco de Motor", "soporte giratorio para motor banco de motor"),
+    (r"Soporte (Para|P/) ?Chasis|Soporte Debajo Del Elevador", "caballete torreta soporte para auto"),
+    (r"^Soporte para Trailer", "rueda de apoyo para trailer"),
+    (r"^Rueda Giratoria", "rueda giratoria con crapodina"),
+    (r"^Cadena y Gancho", "cadena con gancho para aparejo"),
+    (r"^Silla Banco Mec|^Camilla", "camilla para mecanico"),
+    (r"^Elevador Transportador Ruedas", "carro para desmontar ruedas de tractor"),
+    (r"^Inclinador De Motor", "nivelador de motor para grua"),
+    (r"^Equipo Hidr\w* Para Guinche", "cilindro hidraulico para grua"),
+    (r"^Estaca Comederos|Guachera", "comedero para terneros"),
+    (r"^Balde Recolector", "recolector de aceite usado"),
+    (r"^Bomba El[ée]ctrica de transferencia", "bomba de transferencia de aceite 12v"),
+    (r"^Corrector de comba", "corrector de camber hidraulico"),
+    (r"^Expansor Hidr", "kit chapista hidraulico portapower"),
+]
+
+
 CAT_SKU = json.load(open("datos/jya_categorias.json", encoding="utf-8")) if JYA and os.path.exists("datos/jya_categorias.json") else {}
 
 
@@ -325,13 +345,17 @@ def elegir_categoria(f, t):
         return categoria_repuesto(f, t)
     if CATEGORIAS.get(f["familia"]):
         return CATEGORIAS[f["familia"]]
-    for exp, nombres in CAT_NOMBRE:
+    for exp, nombres in ([] if DEL else CAT_NOMBRE):
         if re.search(exp, t, re.I):
             c = categoria_por_nombre(nombres)
             if c:
                 return c
     consultas = [t]
-    for exp, fija, q in REGLAS_CAT:
+    for exp, q in (DEL_CAT if DEL else []):
+        if re.search(exp, t, re.I):
+            consultas = [q]
+            break
+    for exp, fija, q in ([] if DEL else REGLAS_CAT):
         if re.search(exp, t, re.I):
             if fija:
                 return fija
@@ -362,7 +386,7 @@ def elegir_categoria(f, t):
         for d in res:
             ci = info_cat(d["category_id"])
             raiz = ((ci.get("path_from_root") or [{}])[0]).get("name")
-            if (raiz in RAICES_OK or raiz in RAICES_FAM.get(f["familia"], set())) and ci.get("name") not in CAT_NO:
+            if (raiz in RAICES_OK or raiz in RAICES_FAM.get(f["familia"], set())) and (ci.get("name") not in CAT_NO or (DEL and ci.get("name") == "Camillas para Mecánicos")):
                 CAT_FAMILIA.setdefault(f["familia"], d["category_id"])
                 return d["category_id"]
     return None
@@ -645,6 +669,8 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     poner("TOOL_TYPE", "Máquina de pintar airless" if "airless" in tl else None)
     if "martillo" in tl:
         poner("HAMMER_TYPE", "Bola")   # pedido del usuario para estos martillos
+    if DEL and re.search(r"guinche|grúa", tl):
+        poner("FLOOR_CRANE_TYPE", "Hidráulica")
     if "hormigonera" in tl:
         poner("POWER_SUPPLY_TYPE", "Corriente doméstica")   # sin opción a combustión: se carga como eléctrica (a corregir)
     if "pistola para pintar" in tl:
