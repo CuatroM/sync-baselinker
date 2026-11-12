@@ -319,14 +319,14 @@ DEL_CAT = [   # DELFABRO: búsquedas de categoría para lo que ML sugiere mal (a
     (r"^Rueda Giratoria", "rueda giratoria con crapodina"),
     (r"^Cadena y Gancho", "cadena con gancho para aparejo"),
     (r"^Silla Banco Mec|^Camilla", "camilla para mecanico"),
-    (r"^Elevador Transportador Ruedas", "carro para desmontar ruedas de tractor"),
-    (r"^Inclinador De Motor", "nivelador de motor para grua"),
+    (r"^Elevador Transportador Ruedas", "MLA371994"),          # Carros Zorra
+    (r"^Inclinador De Motor", "MLA429061"),                     # Grúas de Piso (accesorio del guinche)
     (r"^Equipo Hidr\w* Para Guinche", "cilindro hidraulico para grua"),
     (r"^Estaca Comederos|Guachera", "comedero para terneros"),
     (r"^Balde Recolector", "recolector de aceite usado"),
     (r"^Bomba El[ée]ctrica de transferencia", "bomba de transferencia de aceite 12v"),
     (r"^Corrector de comba", "corrector de camber hidraulico"),
-    (r"^Expansor Hidr", "kit chapista hidraulico portapower"),
+    (r"^Expansor Hidr", "MLA437839"),                           # Equipos Hidráulicos
 ]
 
 
@@ -353,6 +353,8 @@ def elegir_categoria(f, t):
     consultas = [t]
     for exp, q in (DEL_CAT if DEL else []):
         if re.search(exp, t, re.I):
+            if re.fullmatch(r"MLA\d+", q):
+                return q
             consultas = [q]
             break
     for exp, fija, q in ([] if DEL else REGLAS_CAT):
@@ -669,7 +671,7 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
     poner("TOOL_TYPE", "Máquina de pintar airless" if "airless" in tl else None)
     if "martillo" in tl:
         poner("HAMMER_TYPE", "Bola")   # pedido del usuario para estos martillos
-    if DEL and re.search(r"guinche|grúa", tl):
+    if DEL and re.search(r"guinche|grúa|inclinador de motor", tl):
         poner("FLOOR_CRANE_TYPE", "Hidráulica")
     if "hormigonera" in tl:
         poner("POWER_SUPPLY_TYPE", "Corriente doméstica")   # sin opción a combustión: se carga como eléctrica (a corregir)
