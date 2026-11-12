@@ -25,8 +25,8 @@ on:
         description: "Datos extra: SKU|Atributo=Valor;SKU|Atributo=Valor (o *|Atributo=Valor para todos)"
         default: ""
       envio:
-        description: "me2 = Mercado Envíos, not_specified = acordar con el vendedor"
-        default: "me2"
+        description: "not_specified = acordar con el vendedor (DELFABRO: después se cargan Credifin / Vía Cargo / Cruz del Sur con la planilla), me2 = Mercado Envíos"
+        default: "not_specified"
       precio_minimo:
         description: "Precio a usar cuando la categoría exige un mínimo (ML pide $1000)"
         default: "100000"
