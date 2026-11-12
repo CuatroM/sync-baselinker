@@ -403,7 +403,7 @@ def descripcion_extrapower(f):
             continue
         lineas.append(f"• {k}: {fmt_valor(v)}")
     for n in f.get("notas") or []:
-        lineas += ["", n]
+        lineas += [f"• {n}"] if f.get("proveedor") == "DELFABRO" else ["", n]
     if f.get("proveedor") == "JYA":
         lineas += ["", "¿POR QUÉ COMPRARNOS?",
                    "Producto nuevo" + (f" y original{original}" if original else "") +
@@ -419,7 +419,7 @@ def descripcion_extrapower(f):
 
 
 def descripcion(f):
-    if f.get("proveedor") in ("EXTRAPOWER", "JYA"):
+    if f.get("proveedor") in ("EXTRAPOWER", "JYA", "DELFABRO"):
         return descripcion_extrapower(f)
     uso, rubros = USOS.get(f["familia"], ("", ""))
     if not uso:

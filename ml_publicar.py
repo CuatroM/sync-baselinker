@@ -31,8 +31,9 @@ from ml import fichas_map as fm
 PROVEEDOR = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
 XP = PROVEEDOR == "EXTRAPOWER"
 JYA = PROVEEDOR == "JYA"
-GEN = XP or JYA          # proveedores con fichas armadas desde su web (reglas genéricas de categoría y obligatorios)
-SUFIJO = "#EXTRAPOWER" if XP else "#JYA" if JYA else "#FEMA"
+DEL = PROVEEDOR == "DELFABRO"
+GEN = XP or JYA or DEL          # proveedores con fichas armadas desde su web (reglas genéricas de categoría y obligatorios)
+SUFIJO = "#EXTRAPOWER" if XP else "#JYA" if JYA else "#DELFABRO" if DEL else "#FEMA"
 dry = os.environ.get("DRY_RUN", "1") == "1"
 _sk = os.environ["SKUS"].strip()
 if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
@@ -122,6 +123,8 @@ REGLAS_CAT = [
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 if XP:   # EXTRAPOWER también vende hogar, camping y electro (anafes, calefones, iluminación)
     RAICES_OK |= {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac.", "Deportes y Fitness"}
+if DEL:  # DELFABRO: hidráulica, taller, construcción y agro (vasos de filtro de tractor, estacas, lamedores)
+    RAICES_OK |= {"Agro", "Hogar, Muebles y Jardín"}
 if JYA:  # J&A: marroquinería, bazar, regalería, textil, librería, juguetes
     RAICES_OK |= {"Hogar, Muebles y Jardín", "Ropa y Accesorios", "Deportes y Fitness", "Juegos y Juguetes",
                   "Arte, Librería y Mercería", "Belleza y Cuidado Personal", "Bebés", "Electrodomésticos y Aires Ac.",
@@ -366,24 +369,28 @@ def elegir_categoria(f, t):
 
 import glob
 fichas = {}
-for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/jya_fichas*.json" if JYA else "datos/fichas_*.json")):
+for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/jya_fichas*.json" if JYA else "datos/delfabro_fichas*.json" if DEL else "datos/fichas_*.json")):
     for _f in json.load(open(_arch, encoding="utf-8")):
         fichas.setdefault(_f["sku"], _f)
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
-b = cfg["extrapower"] if XP else cfg["jya"] if JYA else cfg["baselinker"]
+b = cfg["extrapower"] if XP else cfg["jya"] if JYA else (cfg.get("delfabro") or {}) if DEL else cfg["baselinker"]
 
 # ---------------- primero la autorización de Mercado Libre (el código vence en minutos)
 ml = ML(os.environ.get("ML_CODIGO"))
 
 # ---------------- precio y stock desde BaseLinker
 bl = sync.BaseLinker(os.environ["BL_TOKEN"])
-cat_bl = bl.catalogo(int(b["inventory_id"]))
+cat_bl = bl.catalogo(int(b["inventory_id"])) if b.get("inventory_id") else {}   # DELFABRO: sin inventario configurado -> precio de la ficha (lista PDF)
 por_sku = {sync.normalizar_codigo(p.get("sku")): p for p in cat_bl.values()}
 
 # ---------------- IVA por SKU desde el Excel de FEMA (columna IMPUESTOS)
 import io
 import pandas as pd
-if JYA:   # J&A: precio de la web (sin IVA) guardado en la ficha
+if DEL:   # DELFABRO: precio de la lista PDF (sin IVA) e IVA de la sección, guardados en la ficha
+    IVA = {sync.normalizar_codigo(k): v.get("iva") for k, v in fichas.items()}
+    PRECIO_XLS = {sync.normalizar_codigo(k): float(v.get("precio_lista") or 0) for k, v in fichas.items()}
+    MULT = 1
+elif JYA:   # J&A: precio de la web (sin IVA) guardado en la ficha
     IVA = {sync.normalizar_codigo(k): 21 for k in fichas}
     PRECIO_XLS = {sync.normalizar_codigo(k): float(v.get("precio_web") or 0) for k, v in fichas.items()}
     MULT = 1
@@ -685,11 +692,11 @@ for sku in skus:
                 continue
             raise RuntimeError(f"ya existe publicación con este SKU: {ya}")
         p = por_sku.get(sync.normalizar_codigo(sku + SUFIJO))
-        base = float(((p or {}).get("prices") or {}).get(str(b["price_group_id"])) or 0)
+        base = float(((p or {}).get("prices") or {}).get(str(b.get("price_group_id"))) or 0)
         origen = "BaseLinker"
         if base <= 0:   # no está en BaseLinker: mismo cálculo desde el Excel de FEMA (mayorista × 1,25)
             m = PRECIO_XLS.get(sync.normalizar_codigo(sku))
-            base, origen = (round(m * MULT, 2), "Excel FEMA") if m else (0, "")
+            base, origen = (round(m * MULT, 2), "Lista PDF" if DEL else "Excel FEMA") if m else (0, "")
         if base <= 0:
             raise RuntimeError(f"sin precio: no está en BaseLinker ni en la lista de {PROVEEDOR}")
         precio = round(base * (1 + margen / 100), 2)
