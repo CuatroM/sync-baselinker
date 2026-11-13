@@ -8,6 +8,10 @@
 
 https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=2635478937867404&redirect_uri=https://github.com/CuatroM/sync-baselinker
 
+**Mercado Libre (cuenta CLABUTOR, separada de ABASTOTOOLS):** usa su propia app de ML y sus propios secrets (`CLABUTOR_ML_CLIENT_ID`, `CLABUTOR_ML_CLIENT_SECRET`, `CLABUTOR_ML_USER_ID`). Solo corren con ellos los procesos que empiezan con "CLABUTOR - …"; si se autoriza con la cuenta equivocada, el proceso se corta sin tocar nada. Autorizar siempre en ventana de incógnito con la sesión de Clabutor:
+
+https://auth.mercadolibre.com.ar/authorization?response_type=code&client_id=APP_ID_CLABUTOR&redirect_uri=https://github.com/CuatroM/sync-baselinker
+
 **Reportes VENTAS (ML + Mercado Pago):** Actions → *Reportes VENTAS* → Run workflow. Período (`2026-10`, `2026-10-01:2026-10-15`, `ayer`, `hoy`, `completo` = últimos 12 meses, o vacío = mes en curso) y, si querés las ventas de ML, el código TG‑ (sin código arma solo Mercado Pago). El Excel queda en el artefacto **reporte-ventas** de la ejecución (se borra a los 5 días). Usa el secret `MP_ACCESS_TOKEN` (Access Token de producción de la app "Reportes VENTAS" de Mercado Pago, misma cuenta que vende en ML).
 
 **Diagnóstico:** el proceso "Diagnóstico del sitio del proveedor" (Actions → Run workflow) prueba el login y la descarga sin tocar BaseLinker; con `solo_baselinker = 1` lista catálogos, grupos de precio y depósitos.

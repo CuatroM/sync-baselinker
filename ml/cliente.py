@@ -41,6 +41,11 @@ def access_token(codigo):
                          "El código vale ~10 minutos y un solo uso: autorizá de nuevo y "
                          "corré el proceso enseguida.")
     t = r.json()
+    esperado = (os.environ.get("ML_USER_ESPERADO") or "").strip()
+    if esperado and str(t.get("user_id")) != esperado:
+        raise SystemExit(f"Cuenta equivocada: se autorizó el usuario {t.get('user_id')} y este "
+                         f"proceso es para el usuario {esperado}. No se tocó nada. Autorizá de "
+                         "nuevo iniciando sesión con la cuenta correcta (ventana de incógnito).")
     log(f"Conectado a Mercado Libre (usuario {t.get('user_id')})")
     return t["access_token"], t["user_id"]
 
