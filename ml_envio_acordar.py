@@ -21,7 +21,19 @@ ml = ML(os.environ.get("ML_CODIGO"))
 log(f"{len(ids)} publicaciones de {lista} | {'SIMULACIÓN' if dry else 'REAL'}")
 res, cuenta = [], Counter()
 for k, iid in enumerate(ids, 1):
-    it = ml.get(f"/items/{iid}")
+    it = {}
+    for intento in range(4):
+        try:
+            it = ml.get(f"/items/{iid}")
+            break
+        except Exception as e:
+            log(f"  no se pudo leer {iid} ({e}); reintento en 20 s")
+            time.sleep(20)
+    if not it:
+        res.append({"sku": sku.get(iid, ""), "mla": iid, "estado_pub": "", "envio_antes": "", "envio_gratis": "", "precio": "",
+                    "resultado": "no se pudo leer"})
+        cuenta["no se pudo leer"] += 1
+        continue
     sh = it.get("shipping") or {}
     modo = sh.get("mode")
     fila = {"sku": sku.get(iid, ""), "mla": iid, "estado_pub": it.get("status"), "envio_antes": modo,
