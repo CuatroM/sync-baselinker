@@ -137,8 +137,15 @@ log(f"Planilla actual: {len(previo)} publicaciones")
 # ---------------- costos de BaseLinker
 bl = sync.BaseLinker(os.environ["BL_TOKEN"])
 costo = {}
-for sec in ("baselinker", "extrapower", "jya"):
-    b = cfg[sec]
+# DELFABRO: mientras no tenga inventario configurado en BaseLinker, el costo es el precio de la lista PDF guardado en la ficha
+if os.path.exists("datos/delfabro_fichas.json"):
+    for f in json.load(open("datos/delfabro_fichas.json", encoding="utf-8")):
+        if float(f.get("precio_lista") or 0) > 0:
+            costo[sync.normalizar_codigo(f["sku"] + "#DELFABRO")] = float(f["precio_lista"])
+for sec in ("baselinker", "extrapower", "jya", "delfabro"):
+    b = cfg.get(sec)
+    if not b or not b.get("inventory_id"):
+        continue
     for p in bl.catalogo(int(b["inventory_id"])).values():
         v = float((p.get("prices") or {}).get(str(b["price_group_id"])) or 0)
         if v > 0:
@@ -148,7 +155,7 @@ for sec in ("baselinker", "extrapower", "jya"):
 def costo_de(sku):
     s = sync.normalizar_codigo(sku)
     base = s.split("#")[0]
-    return costo.get(s) or next((costo[base + x] for x in ("#FEMA", "#EXTRAPOWER", "#JYA") if base + x in costo), None) or costo.get(base)
+    return costo.get(s) or next((costo[base + x] for x in ("#FEMA", "#EXTRAPOWER", "#JYA", "#DELFABRO") if base + x in costo), None) or costo.get(base)
 
 
 # ---------------- publicaciones
