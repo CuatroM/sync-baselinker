@@ -1,5 +1,5 @@
 """
-Auditoría (solo lectura) de la ficha técnica de todas las publicaciones #FEMA (activas y pausadas).
+Auditoría (solo lectura) de la ficha técnica de las publicaciones de un proveedor (PROVEEDOR, por defecto FEMA) (activas y pausadas).
 Para cada publicación compara los atributos cargados con los que admite su categoría.
 Salida: salida/auditoria_fichas.csv (una fila por publicación) y salida/auditoria_resumen.csv.
 """
@@ -9,13 +9,18 @@ from collections import Counter
 
 from ml.cliente import ML, log, sku_de
 
-SUFIJO = "#FEMA"
+PROV = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
+SUFIJO = "#" + PROV
 ml = ML(os.environ.get("ML_CODIGO"))
 NO_CUENTAN = {"hidden", "read_only", "fixed", "others", "inferred", "restricted_values"}
 IGNORAR = {"SELLER_SKU", "ITEM_CONDITION", "GTIN", "EMPTY_GTIN_REASON", "PRODUCT_FEATURES", "ADDITIONAL_INFO"}
 
 ids = []
-for estado in ("active", "paused"):
+if PROV == "DELFABRO" and os.path.exists("datos/delfabro_publicadas.json"):   # solo las publicaciones creadas para Delfabro
+    import json
+    ids = list(json.load(open("datos/delfabro_publicadas.json")).values())
+    log(f"DELFABRO: {len(ids)} publicaciones")
+for estado in (() if ids else ("active", "paused")):
     lote = ml.ids_publicaciones(status=estado)
     log(f"{estado}: {len(lote)} publicaciones")
     ids += lote
@@ -85,6 +90,6 @@ with open("salida/auditoria_resumen.csv", "w", newline="", encoding="utf-8-sig")
     for (c, a), k in falta_rec.most_common():
         w.writerow(["recomendado", c, a, k])
 completas = sum(1 for x in filas if x["faltan_obligatorios"] == 0 and x["faltan_recomendados"] == 0)
-log(f"#FEMA: {len(filas)} | completas (obligatorios y recomendados): {completas} | "
+log(f"{SUFIJO}: {len(filas)} | completas (obligatorios y recomendados): {completas} | "
     f"con obligatorios faltantes: {sum(1 for x in filas if x['faltan_obligatorios'])} | "
     f"con recomendados faltantes: {sum(1 for x in filas if x['faltan_recomendados'])}")

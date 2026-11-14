@@ -1,4 +1,4 @@
-name: Mercado Libre - Auditar fichas técnicas #FEMA (solo lectura)
+name: Mercado Libre - Auditar fichas técnicas (solo lectura)
 
 on:
   workflow_dispatch:
@@ -6,6 +6,9 @@ on:
       codigo:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
+      proveedor:
+        description: "FEMA | DELFABRO | EXTRAPOWER | JYA"
+        default: "FEMA"
 
 concurrency:
   group: mercadolibre
@@ -24,15 +27,16 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Mercado Libre - Auditar fichas técnicas #FEMA (solo lectura)
+      - name: Mercado Libre - Auditar fichas técnicas (solo lectura)
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
+          PROVEEDOR: ${{ github.event.inputs.proveedor }}
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
         run: |
           set -o pipefail
           python ml_auditar_fichas.py 2>&1 | tee resultado.txt
-      - name: Mercado Libre - Auditar fichas técnicas #FEMA (solo lectura)
+      - name: Mercado Libre - Auditar fichas técnicas (solo lectura)
         if: always()
         run: |
           mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
