@@ -6,8 +6,8 @@ on:
       codigo:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
-      seller_id:
-        description: "ID del vendedor (vacío = lo busca solo)"
+      skus:
+        description: "SKUs separados por coma (vacío = las 147 publicadas)"
         default: ""
         required: false
 
@@ -31,7 +31,7 @@ jobs:
       - name: Leer tienda
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
-          SELLER_ID: ${{ github.event.inputs.seller_id }}
+          SKUS: ${{ github.event.inputs.skus }}
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
         run: |
