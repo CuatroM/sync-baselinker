@@ -323,7 +323,12 @@ DEL_CAT = [   # DELFABRO: búsquedas de categoría para lo que ML sugiere mal (a
     (r"^Inclinador De Motor", "MLA429061"),                     # Grúas de Piso (accesorio del guinche)
     (r"^Equipo Hidr\w* Para Guinche", "cilindro hidraulico para grua"),
     (r"^Estaca Comederos|Guachera", "comedero para terneros"),
-    (r"^Balde Recolector", "recolector de aceite usado"),
+    (r"^(Balde )?Recolector", "recolector de aceite usado"),
+    (r"^Comprimidor", "compresor de espirales resortes amortiguador"),
+    (r"lava ?piezas", "lavadora de piezas batea taller"),
+    (r"Tubo Oxigeno", "carro porta tubo de oxigeno"),
+    (r"^Tanque balon inflador", "tanque inflador de neumaticos"),
+    (r"^Tap[oó]n .*Hidr|^Soporte Bdo", "MLA431314"),                  # Acoples Rápidos
     (r"^Bomba El[ée]ctrica de transferencia", "bomba de transferencia de aceite 12v"),
     (r"^Corrector de comba", "corrector de camber hidraulico"),
     (r"^Expansor Hidr", "MLA437839"),                           # Equipos Hidráulicos
