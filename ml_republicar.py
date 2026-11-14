@@ -18,7 +18,7 @@ from femaweb import a_jpeg, buscar, web
 from ml.cliente import ML, log, sku_de
 
 dry = (os.environ.get("DRY_RUN") or "1").strip() != "0"
-lista = json.load(open("datos/republicar.json", encoding="utf-8"))
+lista = json.load(open((os.environ.get("LISTA") or "datos/republicar.json").strip(), encoding="utf-8"))
 ml = ML(os.environ.get("ML_CODIGO"))
 log(f"{len(lista)} publicaciones | {'SIMULACIÓN' if dry else 'REAL'}")
 NO_COPIAR = {"ITEM_CONDITION"}
