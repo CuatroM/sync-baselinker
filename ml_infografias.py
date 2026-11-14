@@ -6,6 +6,7 @@ Sube las 2 imágenes informativas (ficha técnica + partes/usos) a las publicaci
   Si la categoría no admite tantas fotos, se dejan afuera las últimas (queda anotado).
 - Publicaciones con variantes: las 2 imágenes se agregan también a cada variante (después de su primera foto).
 - Si no hay lugar, se omite (no se sacan fotos tuyas), salvo que la entrada tenga "permitir_sacar": true.
+- Entrada con "reemplazar": true -> cambia las imágenes informativas ya subidas por las nuevas (correcciones).
 - Se saltean las de catálogo y las que ya tienen las imágenes (registro en datos/infografias_subidas.json).
 - DRY_RUN=1 (por defecto): solo informa qué haría. DESDE / LIMITE para hacer por partes (cuentan publicaciones).
 """
@@ -80,6 +81,22 @@ for k, (p, iid) in enumerate(tareas, desde + 1):
             f["resultado"] = "OMITIDA: finalizada"
         elif not pics:
             f["resultado"] = "OMITIDA: no tiene portada"
+        elif ya and any(x in pics for x in ya) and p.get("reemplazar") and not it.get("variations"):
+            # corrección: se cambian las imágenes informativas anteriores por las nuevas, en el mismo lugar
+            if dry:
+                f["fotos_despues"] = len(pics)
+                f["resultado"] = "SE REEMPLAZARÍAN las imágenes informativas"
+            else:
+                nuevas = [subir(r) for r in p["fotos"]]
+                cambio = dict(zip(ya, nuevas))
+                todas = [cambio.get(x, x) for x in pics]
+                r = ml.put(f"/items/{iid}", {"pictures": [{"id": x} for x in todas]})
+                if r.status_code not in (200, 201):
+                    raise RuntimeError(f"ML rechazó el cambio: {r.status_code} {r.text[:250]}")
+                f["fotos_despues"] = len(todas)
+                f["resultado"] = "REEMPLAZADAS las imágenes informativas"
+                registro[iid] = {"sku": p["sku"], "fotos": [cambio.get(x, x) for x in ya], "archivos": p["fotos"]}
+                json.dump(registro, open(REG, "w", encoding="utf-8"), ensure_ascii=False, indent=0)
         elif ya and any(x in pics for x in ya):
             f["resultado"] = "OMITIDA: ya tiene las imágenes informativas"
         elif ya:
