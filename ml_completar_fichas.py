@@ -170,13 +170,19 @@ def _a_unidad(a, valor, u):
     if a.get("value_type") == "number":
         return f"{valor:g}"
     perm = [(x.get("name") or "") for x in a.get("allowed_units") or []]
+    fmt = lambda x: (f"{round(x, 2):.2f}").rstrip("0").rstrip(".")
     for pu in perm:
         if pu.lower() == u:
-            return f"{round(valor, 2):g} {pu}"
+            return f"{fmt(valor)} {pu}"
+    cands = []
     for pu in perm:
         k = pu.lower()
         if k in CONV and FAM.get(k) == FAM.get(u):
-            return f"{round(valor * CONV[u] / CONV[k], 2):g} {pu}"
+            x = valor * CONV[u] / CONV[k]
+            cands.append((not (1 <= x < 100000), x, pu))
+    if cands:
+        _, x, pu = sorted(cands)[0]
+        return f"{fmt(x)} {pu}"
     return None
 
 
@@ -201,6 +207,12 @@ def _lista(a, *opciones):
 
 def desde_ficha(a, nombre, f, tl):
     n = nombre.lower()
+    if re.match(r"rueda|equipo|cadena", tl, re.I) and n in ("peso máximo soportado", "con ruedas"):
+        return None                        # repuestos: la capacidad del título es la del guinche, no la de la pieza
+    if re.match(r"prensa", tl, re.I) and n in ("largo total", "largo"):
+        return None                        # en la web de prensas el "Largo" no es el largo total del equipo
+    if re.search(r"arenadora", tl, re.I) and n in ("altura", "altura total"):
+        return None
     if a.get("value_type") in ("number_unit", "number"):
         if n in ("peso máximo soportado", "capacidad máxima", "fuerza de presión", "capacidad de carga", "capacidad"):
             return _num(a, f, tl, [r"capacidad", r"carga"], capacidad=True)
