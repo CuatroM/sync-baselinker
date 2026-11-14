@@ -16,7 +16,8 @@ from collections import Counter
 
 from ml.cliente import ML, log, sku_de
 
-SUFIJO = "#FEMA"
+PROV = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
+SUFIJO = "#" + PROV
 dry = (os.environ.get("DRY_RUN") or "1").strip() != "0"
 desde = int(os.environ.get("DESDE") or 0)
 limite = int(os.environ.get("LIMITE") or 0)
@@ -24,7 +25,13 @@ NO_CUENTAN = {"hidden", "read_only", "fixed", "others", "inferred"}
 VARIOS = re.compile(r"\b(juego|jgo|kit|set|pack|par|pares|x\s?\d+|\d+\s?(unid|u\.|pzs|piezas))\b", re.I)
 
 ml = ML(os.environ.get("ML_CODIGO"))
-ids = sorted(ml.ids_publicaciones(status="active") + ml.ids_publicaciones(status="paused"))
+FICHAS = {}
+if PROV == "DELFABRO":   # solo sus publicaciones, y los datos técnicos de la web guardados en las fichas
+    import json
+    ids = sorted(json.load(open("datos/delfabro_publicadas.json")).values())
+    FICHAS = {f["sku"]: f for f in json.load(open("datos/delfabro_fichas.json", encoding="utf-8"))}
+else:
+    ids = sorted(ml.ids_publicaciones(status="active") + ml.ids_publicaciones(status="paused"))
 log(f"{len(ids)} publicaciones en la cuenta")
 
 _cats = {}
@@ -124,9 +131,134 @@ def propuestas(it, sku, ca):
             if m:
                 u = {"\"": "\"", "pulg": "\""}.get(m.group(2).lower(), m.group(2).lower())
                 v = num_unidad(a, m.group(1).replace(",", "."), u)
+        if v is None and FICHAS.get(sku):
+            v = desde_ficha(a, nombre, FICHAS[sku], tl)
         if v:
             out[aid] = (nombre, v)
     return out
+
+
+# ---------- DELFABRO: datos técnicos de la web (fichas) -> atributos de ML ----------
+CONV = {"mm": 1, "cm": 10, "m": 1000, "g": 0.001, "kg": 1, "t": 1000, "tn": 1000, "ton": 1000,
+        "psi": 1, "bar": 14.5038, "mpa": 145.038, "v": 1, "w": 1, "kw": 1000, "hp": 745.7, "l": 1, "lts": 1, "lt": 1, "litros": 1}
+FAM = {"mm": "L", "cm": "L", "m": "L", "g": "P", "kg": "P", "t": "P", "tn": "P", "ton": "P", "psi": "B", "bar": "B", "mpa": "B",
+       "v": "V", "w": "W", "kw": "W", "hp": "W", "l": "C", "lts": "C", "lt": "C", "litros": "C"}
+
+
+def _spec(f, *rx):
+    for k, v in (f.get("specs") or {}).items():
+        if any(re.search(r, k, re.I) for r in rx):
+            return str(v)
+    return None
+
+
+def _medida(texto, cual=0):
+    """'146/420 mm' -> (146, 'mm') o (420, 'mm') según cual; '2.3 kg' -> (2.3, 'kg')."""
+    if not texto:
+        return None
+    m = re.search(r"(\d+(?:[.,]\d+)?)(?:\s*(?:/|a|-)\s*(\d+(?:[.,]\d+)?))?\s*(mm|cm|m|kgs?|g|tn|ton|t|psi|bar|mpa|kw|w|hp|v|lts?|litros|l)\b",
+                  texto.replace("Kgs", "kg"), re.I)
+    if not m:
+        return None
+    n = m.group(2) if (cual and m.group(2)) else m.group(1)
+    u = m.group(3).lower().rstrip("s") if m.group(3).lower() not in ("lts", "psi") else m.group(3).lower()
+    return float(n.replace(",", ".")), u
+
+
+def _a_unidad(a, valor, u):
+    """Convierte a una unidad permitida por la categoría (misma familia)."""
+    if a.get("value_type") == "number":
+        return f"{valor:g}"
+    perm = [(x.get("name") or "") for x in a.get("allowed_units") or []]
+    for pu in perm:
+        if pu.lower() == u:
+            return f"{round(valor, 2):g} {pu}"
+    for pu in perm:
+        k = pu.lower()
+        if k in CONV and FAM.get(k) == FAM.get(u):
+            return f"{round(valor * CONV[u] / CONV[k], 2):g} {pu}"
+    return None
+
+
+def _num(a, f, tl, rx, cual=0, capacidad=False):
+    if capacidad:
+        m = re.search(r"(\d+(?:[.,]\d+)?)\s*(tn|toneladas|t|kg)\b", tl, re.I)
+        if m:
+            u = "kg" if m.group(2).lower() == "kg" else "t"
+            return _a_unidad(a, float(m.group(1).replace(",", ".")), u)
+    m = _medida(_spec(f, *rx), cual) if rx else None
+    return _a_unidad(a, *m) if m else None
+
+
+def _lista(a, *opciones):
+    for o in opciones:
+        if o:
+            v = valor_permitido(a, o)
+            if v:
+                return v
+    return None
+
+
+def desde_ficha(a, nombre, f, tl):
+    n = nombre.lower()
+    if a.get("value_type") in ("number_unit", "number"):
+        if n in ("peso máximo soportado", "capacidad máxima", "fuerza de presión", "capacidad de carga", "capacidad"):
+            return _num(a, f, tl, [r"capacidad", r"carga"], capacidad=True)
+        if n in ("máxima altura levantada", "elevación máxima", "altura máxima"):
+            return _num(a, f, tl, [r"altura m[aá]x"]) or _num(a, f, tl, [r"altura m[ií]n.*m[aá]x|m[ií]n ?/ ?m[aá]x"], cual=1)
+        if n in ("mínima altura levantada", "altura mínima"):
+            return _num(a, f, tl, [r"altura m[ií]n(?!.*m[aá]x)"]) or _num(a, f, tl, [r"altura m[ií]n.*m[aá]x|m[ií]n ?/ ?m[aá]x"])
+        if n in ("altura total", "altura"):
+            return _num(a, f, tl, [r"altura total|^alto"])
+        if n in ("ancho total", "ancho"):
+            return _num(a, f, tl, [r"ancho total|^ancho$"])
+        if n in ("largo total", "largo"):
+            return _num(a, f, tl, [r"largo total|^largo$"])
+        if n == "peso":
+            return _num(a, f, tl, [r"^peso"])
+        if n == "apertura de mordaza":
+            return _num(a, f, tl, [r"apertura"])
+        if n == "ancho de la mandíbula":
+            return _num(a, f, tl, [r"ancho de mordaza"])
+        if n in ("presión de trabajo", "presión máxima soportada", "presión máxima"):
+            return _num(a, f, tl, [r"presi[oó]n"])
+        if n == "voltaje":
+            return _num(a, f, tl, [r"voltaje"])
+        if n == "cantidad de ruedas" and re.match(r"rueda", tl, re.I):
+            return _a_unidad(a, 1, "u") or "1"
+        return None
+    if n == "formato del gato":
+        return _lista(a, "Botella" if re.search(r"botella|hidroneum", tl, re.I) else None,
+                      "Carrito" if re.search(r"carrito", tl, re.I) else None)
+    if n == "con yunque":
+        return _lista(a, "Sí") if re.search(r"yunque", tl, re.I) else None
+    if n == "con ruedas":
+        return _lista(a, "Sí") if re.search(r"guinche|gr[uú]a|carrito|zorra", tl, re.I) else None
+    if n == "es plegable":
+        return _lista(a, "Sí") if re.search(r"desarmable|plegable", tl, re.I) else None
+    if n == "tipo de conector":
+        m = re.search(r"\b(macho|hembra)\b", tl, re.I)
+        return _lista(a, m.group(1).capitalize()) if m else None
+    if n in ("tipo de morsa de banco", "tipo de base"):
+        b = (_spec(f, r"^base") or "") + " " + tl
+        return _lista(a, "Giratoria" if re.search(r"girator", b, re.I) else "Fija" if re.search(r"\bfija\b", b, re.I) else None)
+    if n == "material":
+        mat = _spec(f, r"^material")
+        if not mat:
+            return None
+        if a.get("values"):
+            return next((v["name"] for v in a["values"] if v["name"].lower() in mat.lower()), None)
+        return mat[:60]
+    if n == "tipo de producto":
+        if re.match(r"tap[oó]n", tl, re.I):
+            return _lista(a, "Tapón") or (None if a.get("values") else "Tapón hidráulico")
+        if re.match(r"acople", tl, re.I):
+            return _lista(a, "Acople rápido") or (None if a.get("values") else "Acople rápido hidráulico")
+        if re.match(r"soporte", tl, re.I):
+            return None if a.get("values") else "Soporte con acople"
+        if re.match(r"llave", tl, re.I):
+            return _lista(a, "Llave de impacto") or (None if a.get("values") else "Llave de impacto")
+    return None
 
 
 filas, n_fema = [], 0
@@ -137,7 +269,7 @@ for it in ml.publicaciones(ids, atributos="id,title,status,category_id,attribute
         continue
     n_fema += 1
     cola.append((it, sku[: -len(SUFIJO)]))
-log(f"#FEMA: {n_fema}")
+log(f"{SUFIJO}: {n_fema}")
 cola = cola[desde:]
 if limite:
     cola = cola[:limite]

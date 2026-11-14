@@ -6,6 +6,9 @@ on:
       codigo:
         description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
         required: true
+      proveedor:
+        description: "FEMA | DELFABRO"
+        default: "FEMA"
       dry_run:
         description: "1 = solo informar, 0 = cargar los datos"
         default: "1"
@@ -36,6 +39,7 @@ jobs:
       - name: Completar
         env:
           ML_CODIGO: ${{ github.event.inputs.codigo }}
+          PROVEEDOR: ${{ github.event.inputs.proveedor }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
           DESDE: ${{ github.event.inputs.desde }}
           LIMITE: ${{ github.event.inputs.limite }}
