@@ -763,7 +763,7 @@ for sku in skus:
             if not GEN or col != "Blanco" or c_req or re.search(r"\bblanc[oa]\b", (t + " " + f["nombre"]).lower()):
                 extra["Color"] = col
         for nom, val in extra.items():
-            a = por_nombre.get(nom.strip().lower())
+            a = por_nombre.get(nom.strip().lower()) or next((x for x in cat_attrs if x["id"] == nom.strip().upper()), None)
             if not a:
                 continue
             opciones = [v["name"] for v in a.get("values") or []]
