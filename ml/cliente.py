@@ -62,6 +62,9 @@ class ML:
             if r.status_code == 429 or r.status_code >= 500:
                 time.sleep(5 * intento)
                 continue
+            if r.status_code == 403 and metodo == "GET" and intento < reintentos:   # bloqueo pasajero de ML al leer mucho
+                time.sleep(20 * intento)
+                continue
             return r
         return r
 
