@@ -106,6 +106,7 @@ REGLAS_CAT = [
     (r"^Isover (?!Herramientas|Escuadra|Repuesto|Cola|Clavos|Cinta)", "MLA434826", None),         # Rollos Aislantes
     (r"^Aislante Isolant|^Banda Acoustic|^Burlete Puertelete", "MLA434826", None),
     (r"^Motocompresor", None, "motocompresor para compresor de aire"),
+    (r"^Compresor Aire Duca", "MLA30839", None),                                                 # Herramientas Eléctricas > Compresores
     (r"^Escarificador", None, "escarificadora de pisos hormigon"),
     (r"^Juego 4 Paletas Alisadora", None, "paletas para alisadora de hormigon helicoptero"),
     (r"^Impermeabilizante Planiseal|^Impermeabilizante Mapelastic", None, "impermeabilizante cementicio"),
@@ -643,7 +644,7 @@ def completar_obligatorios(attrs, cat_attrs, f, t):
         poner("POWER_SUPPLY_TYPE", "Batería")
     if "bosch" in tl and "batería" not in tl:
         poner("POWER_SUPPLY_TYPE", "Corriente doméstica")
-    poner("INDUSTRIAL_SAW_TYPE", "Circular" if "sierra copa" in tl else None)
+    poner("INDUSTRIAL_SAW_TYPE", "Circular" if re.search(r"sierra copa|corta todo", tl) else None)
     if re.search(r"nafta|combustible", tl):
         poner("FUEL_TYPE", "Nafta" if "nafta" in tl else "Diésel")
     poner("FINISHING_TROWELS_TYPE", "Fratacho" if "fratach" in tl else None)
