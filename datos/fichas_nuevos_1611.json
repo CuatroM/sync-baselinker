@@ -1,0 +1,122 @@
+[
+ {
+  "sku": "69350270",
+  "familia": "Sierras",
+  "titulo": "Sierra Corta Todo Alta Frecuencia 5000w Disco 500mm Fema",
+  "nombre": "Sierra Corta Todo de Alta Frecuencia FEMA 5000 W",
+  "marca": "FEMA",
+  "uso_pdf": "Sierra de alta frecuencia para corte de hormigón, ladrillo, piedra y mampostería en obra, con bomba de agua para corte en húmedo.",
+  "specs": {
+   "Marca": "FEMA",
+   "Modelo": "Corta Todo Alta Frecuencia",
+   "Potencia": "5000 W",
+   "Diámetro del disco": "500 mm",
+   "Profundidad de corte": "390 mm",
+   "Velocidad": "1800 RPM",
+   "Voltaje": "220 V",
+   "Medidas (largo x alto x ancho)": "100 x 60 x 25 cm",
+   "Peso neto": "12 kg",
+   "Incluye": "Disco 500 mm, caja inversora, controladora de tensión, bomba de agua y adaptador de enchufe 20 A"
+  },
+  "rubros": "obras, demoliciones, construcción y reformas",
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/24743/693502700963-1.jpeg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/24743/69350270-11629-2.jpeg.webp"
+  ],
+  "excluir": "",
+  "seccion": "NUEVOS 16-11-2026",
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69370420",
+  "familia": "Compresores",
+  "titulo": "Compresor Aire Duca 25l Sin Aceite Brushless 2200w 350 L/min",
+  "nombre": "Compresor DUCA 25 L sin aceite ni escobillas 2200 W",
+  "marca": "DUCA",
+  "uso_pdf": "Compresor sin aceite ni escobillas, ideal para calibración de ruedas de camiones, talleres y gomerías.",
+  "specs": {
+   "Marca": "DUCA",
+   "Modelo": "25LT 2200W",
+   "Potencia": "2200 W",
+   "Caudal de aire": "350 L/min",
+   "Capacidad del tanque": "25 L",
+   "Material del tanque": "Aluminio",
+   "Presión máxima": "145 PSI (10 bar)",
+   "Tipo": "Sin aceite (cárter seco), sin escobillas",
+   "Voltaje": "220 V",
+   "Peso neto": "17 kg"
+  },
+  "rubros": "gomerías, talleres, camiones y flotas",
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/24741/69370420-1.jpg.webp"
+  ],
+  "excluir": "",
+  "seccion": "NUEVOS 16-11-2026",
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69370431",
+  "familia": "Compresores",
+  "titulo": "Compresor Aire Duca 39l Sin Aceite Brushless 4000w 700 L/min",
+  "nombre": "Compresor DUCA 39 L sin aceite ni escobillas 4000 W",
+  "marca": "DUCA",
+  "uso_pdf": "Compresor sin aceite ni escobillas de alto caudal, ideal para calibración de ruedas de camiones, talleres y gomerías.",
+  "specs": {
+   "Marca": "DUCA",
+   "Modelo": "39LT 4000W",
+   "Potencia": "4000 W",
+   "Caudal de aire": "700 L/min",
+   "Capacidad del tanque": "39 L",
+   "Material del tanque": "Acero",
+   "Presión máxima": "145 PSI (10 bar)",
+   "Tipo": "Sin aceite (cárter seco), sin escobillas",
+   "Voltaje": "220 V",
+   "Peso neto": "31 kg"
+  },
+  "rubros": "gomerías, talleres, camiones y flotas",
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/24742/69370431-1.jpg.webp"
+  ],
+  "excluir": "",
+  "seccion": "NUEVOS 16-11-2026",
+  "dudas": [],
+  "notas": []
+ },
+ {
+  "sku": "69380574",
+  "familia": "Generadores",
+  "titulo": "Generador Fema 6600 5500w 13hp Arranque Eléctrico Rojo Nafta",
+  "nombre": "Generador FEMA 6600 rojo 5500 W arranque eléctrico",
+  "marca": "FEMA",
+  "uso_pdf": "Generador naftero para trabajar o tener respaldo eléctrico donde lo necesites.",
+  "specs": {
+   "Marca": "FEMA",
+   "Modelo": "6600",
+   "Potencia del motor": "13 HP OHV",
+   "Potencia": "5500 W",
+   "Potencia aparente": "6,5 KVA",
+   "Fase": "Monofásico 220 V",
+   "Factor de potencia": "0,8",
+   "AVR": "Sí",
+   "Arranque": "Eléctrico",
+   "Batería": "Incluida",
+   "Tanque": "25 L",
+   "Panel": "Analógico",
+   "Autonomía": "15 hs",
+   "Cabina": "Abierta",
+   "Medidas": "52 x 68 x 58 cm",
+   "Peso": "79 kg",
+   "Color": "Rojo"
+  },
+  "rubros": "obras, campos, comercios, eventos, viviendas e industria",
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/785/69380574-1.jpg.webp"
+  ],
+  "excluir": "",
+  "seccion": "NUEVOS 16-11-2026",
+  "dudas": [],
+  "notas": []
+ }
+]

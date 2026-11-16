@@ -5636,20 +5636,37 @@
  {
   "sku": "69380584",
   "familia": "Generadores",
-  "titulo": "Generador FEMA 8000 Trifásico 6,5 kW 16 HP 380 V con ATS",
+  "titulo": "Generador Fema 8000 Trifásico 380v 6500w 16hp Con Ats Nafta",
   "nombre": "Generador FEMA 8000 Trifásico 6,5 kW 16 HP 380 V con ATS",
   "marca": "FEMA",
   "uso_pdf": "Generador de energía para trabajar o tener respaldo eléctrico donde lo necesites.",
   "specs": {
    "Marca": "FEMA",
-   "Producto": "Generador FEMA 8000 Trifásico 6,5 kW 16 HP 380 V con ATS",
-   "Presentación de venta": "Por unidad"
+   "Modelo": "8000",
+   "Potencia del motor": "16 HP",
+   "Potencia": "6500 W",
+   "Potencia aparente": "8 KVA",
+   "Fase": "Trifásico 380 V",
+   "Factor de potencia": "0,8",
+   "AVR": "Sí",
+   "Arranque": "Eléctrico",
+   "Transferencia automática": "Sí (ATS)",
+   "Batería": "Incluida",
+   "Tanque": "25 L",
+   "Panel": "Analógico",
+   "Autonomía": "13 hs",
+   "Cabina": "Abierta",
+   "Medidas": "79 x 54 x 60 cm",
+   "Peso": "81 kg"
   },
   "excluir": "",
   "seccion": "GENERADORES > Generadores FEMA nafteros",
   "dudas": [],
   "notas": [],
-  "rubros": "obras, campos, comercios, eventos, viviendas e industria"
+  "rubros": "obras, campos, comercios, eventos, viviendas e industria",
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/18949/69380584-1.jpg.webp"
+  ]
  },
  {
   "sku": "69380590",
