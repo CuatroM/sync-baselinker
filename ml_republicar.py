@@ -73,6 +73,10 @@ for x in lista:
         extra = {"PART_NUMBER": sku.split("#")[0]}
         if marca:
             extra["MANUFACTURER"] = marca
+        for k, v in (x.get("atributos") or {}).items():      # datos que pide la categoría nueva (por ID de atributo)
+            attrs = [a for a in attrs if a["id"] != k]
+            ya.discard(k)
+            extra[k] = v
         largo = re.search(r"(\d+(?:[.,]\d+)?)\s*(mts?|metros?)\b", it["title"], re.I)
         if largo:
             extra["LENGTH"] = f"{largo.group(1).replace(',', '.')} m"
