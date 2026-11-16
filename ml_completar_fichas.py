@@ -239,6 +239,8 @@ def desde_ficha(a, nombre, f, tl):
         if n == "cantidad de ruedas" and re.match(r"rueda", tl, re.I):
             return _a_unidad(a, 1, "u") or "1"
         return None
+    if n == "incluye manual de ensamblado" and re.search(r"guinche|gr[uú]a", tl, re.I):
+        return _lista(a, "Sí")             # confirmado por el usuario: los guinches Delfabro traen manual
     if n == "formato del gato":
         return _lista(a, "Botella" if re.search(r"botella|hidroneum", tl, re.I) else None,
                       "Carrito" if re.search(r"carrito", tl, re.I) else None)
