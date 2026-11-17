@@ -11,7 +11,7 @@ from html import unescape
 
 import requests
 
-lista = json.load(open("datos/jya_nuevos.json", encoding="utf-8"))
+lista = json.load(open((os.environ.get("LISTA") or "datos/jya_nuevos.json").strip(), encoding="utf-8"))
 web = requests.Session()
 web.headers["User-Agent"] = "Mozilla/5.0 (lectura de productos)"
 RE_STOCK = re.compile(r"var\s+stock\s*=\s*(\[.*?\]);\s*\n", re.S)

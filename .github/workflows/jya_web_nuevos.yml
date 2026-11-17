@@ -2,6 +2,10 @@ name: J&A - Leer productos nuevos de la tienda (solo lectura)
 
 on:
   workflow_dispatch:
+    inputs:
+      lista:
+        description: "Archivo con los productos nuevos"
+        default: "datos/jya_nuevos_1611.json"
 
 permissions:
   contents: write
@@ -17,6 +21,8 @@ jobs:
           python-version: "3.12"
       - run: pip install requests
       - name: Leer
+        env:
+          LISTA: ${{ github.event.inputs.lista }}
         run: |
           set -o pipefail
           python jya_web_nuevos.py 2>&1 | tee resultado.txt
