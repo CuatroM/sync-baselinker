@@ -118,5 +118,44 @@
   "seccion": "NUEVOS 16-11-2026",
   "dudas": [],
   "notas": []
+ },
+ {
+  "sku": "69383247",
+  "familia": "Jardín",
+  "titulo": "Robot Cortacésped Inteligente Sin Cable Wifi App 5ah Fema",
+  "nombre": "Robot Corta Césped FEMA",
+  "marca": "FEMA",
+  "uso_pdf": "Robot cortacésped autónomo para el mantenimiento del césped en casas, quintas y jardines. No necesita cableado perimetral ni antena: navega con cámara VSLAM e IMU, esquiva obstáculos con IA y se controla desde la app por Wi-Fi y Bluetooth.",
+  "specs": {
+   "Marca": "FEMA",
+   "Modelo": "Robot Corta Césped",
+   "Navegación": "VSLAM (cámara) + IMU, sin cable perimetral ni antena",
+   "Evitación de obstáculos": "Cámara con IA y parachoques",
+   "Pendiente máxima": "36 %",
+   "Protección": "IPX6",
+   "Batería": "Ion de litio 5 Ah",
+   "Alimentación del cargador": "100–240 V CA / salida 24 V CC 3 A",
+   "Tiempo de carga": "hasta 70 min",
+   "Autonomía de corte": "hasta 150 min",
+   "Nivel de ruido": "hasta 56 dB",
+   "Cuchillas": "3",
+   "Altura de corte": "30 - 80 mm (ajuste eléctrico)",
+   "Ancho de corte": "200 mm",
+   "Corte": "Hasta el borde y sobre el borde, disco flotante, corte localizado manual, giro horario/antihorario",
+   "Pantalla": "LCD",
+   "Conectividad": "Wi-Fi + Bluetooth 2,4 GHz, control por app, actualización OTA",
+   "Seguridad": "Sensor de lluvia e iluminación nocturna",
+   "Medidas del robot (largo x ancho x alto)": "62 x 41 x 29 cm",
+   "Medidas de la caja": "77 x 54 x 37 cm",
+   "Peso": "20 kg"
+  },
+  "rubros": "casas, quintas, countries y jardines",
+  "fotos": [],
+  "excluir": "",
+  "seccion": "NUEVOS 18-11-2026",
+  "dudas": [],
+  "notas": [
+   "No necesita cableado perimetral ni antena."
+  ]
  }
 ]
