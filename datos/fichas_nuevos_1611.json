@@ -121,7 +121,7 @@
  },
  {
   "sku": "69383247",
-  "familia": "Jardín",
+  "familia": "Jardinería",
   "titulo": "Robot Cortacésped Inteligente Sin Cable Wifi App 5ah Fema",
   "nombre": "Robot Corta Césped FEMA",
   "marca": "FEMA",
@@ -150,12 +150,21 @@
    "Peso": "20 kg"
   },
   "rubros": "casas, quintas, countries y jardines",
-  "fotos": [],
+  "fotos": [
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/693832473691-1.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-24519-2.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-71883-3.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-63937-4.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-52080-5.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-40305-6.jpg.webp",
+   "https://www.femacba.com.ar/mods/html/fil/Model/Product/25426/69383247-32975-7.jpg.webp"
+  ],
   "excluir": "",
   "seccion": "NUEVOS 18-11-2026",
   "dudas": [],
   "notas": [
    "No necesita cableado perimetral ni antena."
-  ]
+  ],
+  "web": "https://www.femacba.com.ar/jardineria/cortacesped/cortadora-cesped-robot-fema-c-camara-bateria-5ha.html"
  }
 ]
