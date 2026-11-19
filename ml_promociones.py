@@ -117,11 +117,6 @@ for p in promos:
                     num(ben.get("meli_percent")), num(ben.get("seller_percent")), len(items),
                     sum(1 for i in items if i.get("status") == "candidate"),
                     sum(1 for i in items if i.get("status") in ("started", "pending"))])
-    if not items:
-        continue
-    det = {x["id"]: x for x in ml.publicaciones([i["id"] for i in items if i.get("id")],
-                                                atributos="id,title,status,price,available_quantity,"
-                                                          "seller_custom_field,attributes,variations")}
     pct_c = num(p.get("fixed_percentage")) or num(p.get("discount_percentage"))
     if pct_c is None:
         m = re.search(r"(\d+(?:[.,]\d+)?)\s*%", p.get("name") or "")
@@ -129,6 +124,11 @@ for p in promos:
     promos_x.append({"id": pid, "tipo": tipo, "nombre": p.get("name") or "", "estado": p.get("status") or "",
                      "inicio": fecha(p.get("start_date")), "fin": fecha(p.get("finish_date")),
                      "adherir_hasta": fecha(p.get("deadline_date")), "pct": pct_c})
+    if not items:
+        continue
+    det = {x["id"]: x for x in ml.publicaciones([i["id"] for i in items if i.get("id")],
+                                                atributos="id,title,status,price,available_quantity,"
+                                                          "seller_custom_field,attributes,variations")}
     for i in items:
         it = det.get(i.get("id")) or {}
         sku = sku_de(it) if it else ""
@@ -148,4 +148,9 @@ os.makedirs("salida", exist_ok=True)
 with open("salida/promociones_filas.json", "w", encoding="utf-8") as fh:
     json.dump({"promos": promos_x, "filas": filas_i}, fh, ensure_ascii=False)
 cuenta = promos_excel.armar(promos_x, filas_i, "salida/promociones.xlsx", MARGEN_MIN, MARGEN_REVISAR)
+if os.environ.get("GOOGLE_SA_JSON"):
+    import promos_sheet
+    promos_sheet.subir(cfg["planilla_ml"]["sheet_id"], promos_x, filas_i, MARGEN_MIN, MARGEN_REVISAR, log)
+else:
+    log("AVISO: sin GOOGLE_SA_JSON, no se actualizó la planilla de Google")
 log(f"Listo: {len(promos_x)} promociones, {len(filas_i)} filas de publicaciones | sugerencias {cuenta}")

@@ -1,4 +1,4 @@
-name: Mercado Libre - Excel de promociones (solo lectura)
+name: Mercado Libre - Promociones a la planilla (solo lectura en ML)
 
 on:
   workflow_dispatch:
@@ -40,6 +40,7 @@ jobs:
           MARGEN_REVISAR: ${{ github.event.inputs.margen_revisar }}
           SOLO: ${{ github.event.inputs.solo }}
           BL_TOKEN: ${{ secrets.BL_TOKEN }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
           ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
           ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
         run: |
