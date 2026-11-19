@@ -107,6 +107,9 @@ for p in promos:
         if not lote or not search_after:
             break
     log(f"{pid} | {tipo} | {p.get('name')} | {p.get('status')} | {len(items)} ítems")
+    log(f"   datos promo: {json.dumps({k: v for k, v in p.items() if k not in ('name',)}, ensure_ascii=False)[:400]}")
+    if items:
+        log(f"   ejemplo ítem: {json.dumps(items[0], ensure_ascii=False)[:400]}")
     filas_p.append([pid, tipo, p.get("name") or "", p.get("status") or "", fecha(p.get("start_date")),
                     fecha(p.get("finish_date")), fecha(p.get("deadline_date")),
                     num(ben.get("meli_percent")), num(ben.get("seller_percent")), len(items),
@@ -125,11 +128,16 @@ for p in promos:
         sug = num(i.get("suggested_discounted_price"))
         promo_precio = num(i.get("price")) if i.get("status") in ("started", "pending") else None
         precio_eval = promo_precio or sug or num(i.get("max_discounted_price")) or num(i.get("price"))
+        if not precio_eval and actual:   # cupones y otras sin precio propuesto: precio actual menos el % de la campaña
+            pc = num(ben.get("seller_percent")) or num((p.get("discount") or {}).get("percent") if isinstance(p.get("discount"), dict) else None)
+            precio_eval = round(actual * (1 - (pc or 0) / 100), 2)
         desc = round((1 - precio_eval / original) * 100, 1) if precio_eval and original else None
         c = costo_de(sku)
         x = round(precio_eval / c, 2) if c and precio_eval else None
         if not c:
             rec = "SIN COSTO"
+        elif not x:
+            rec = "SIN PRECIO"
         elif x >= MARGEN_MIN:
             rec = "SÍ"
         elif x >= MARGEN_REVISAR:
@@ -179,7 +187,7 @@ hoja(ws2, ["ID PROMO", "TIPO", "PROMOCIÓN", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "% DESCUENTO", "% APORTA ML", "% APORTÁS VOS", "COSTO (BASE)", "PRECIO / COSTO", "SUGERENCIA", "DECISIÓN (SI/NO)"],
      filas_i, [20, 18, 30, 15, 18, 50, 12, 8, 12, 13, 13, 13, 13, 14, 10, 9, 9, 13, 10, 12, 12],
      moneda=(10, 11, 12, 13, 14, 18), pct=(15, 16, 17))
-COLOR = {"SÍ": "C6EFCE", "REVISAR": "FFEB9C", "NO": "FFC7CE", "SIN COSTO": "E7E6E6"}
+COLOR = {"SIN PRECIO": "E7E6E6", "SÍ": "C6EFCE", "REVISAR": "FFEB9C", "NO": "FFC7CE", "SIN COSTO": "E7E6E6"}
 for fila in ws2.iter_rows(min_row=2):
     c = fila[19]
     if c.value in COLOR:
