@@ -12,6 +12,7 @@ Sugerencia (configurable con MARGEN_MIN y MARGEN_REVISAR, multiplicadores sobre 
 """
 import json
 import os
+import re
 from datetime import datetime, timezone, timedelta
 
 import yaml
@@ -130,7 +131,10 @@ for p in promos:
         precio_eval = promo_precio or sug or num(i.get("max_discounted_price")) or num(i.get("price"))
         if not precio_eval and actual:   # cupones y otras sin precio propuesto: precio actual menos el % de la campaña
             pc = num(ben.get("seller_percent")) or num((p.get("discount") or {}).get("percent") if isinstance(p.get("discount"), dict) else None)
-            precio_eval = round(actual * (1 - (pc or 0) / 100), 2)
+            if not pc:
+                m = re.search(r"(\d+(?:[.,]\d+)?)\s*%", p.get("name") or "")
+                pc = float(m.group(1).replace(",", ".")) if m else 0
+            precio_eval = round(actual * (1 - pc / 100), 2)
         desc = round((1 - precio_eval / original) * 100, 1) if precio_eval and original else None
         c = costo_de(sku)
         x = round(precio_eval / c, 2) if c and precio_eval else None
