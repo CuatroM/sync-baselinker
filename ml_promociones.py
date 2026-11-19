@@ -20,6 +20,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 from openpyxl.utils import get_column_letter
 
+import promos_excel
 import sync
 from ml.cliente import ML, log, sku_de
 
@@ -88,7 +89,7 @@ if SOLO:
     promos = [p for p in promos if p.get("id") in quiero]
 log(f"Promociones encontradas: {len(promos)}")
 
-filas_p, filas_i = [], []
+filas_p, filas_i, promos_x = [], [], []
 for p in promos:
     pid, tipo = p.get("id"), p.get("type")
     ben = p.get("benefits") or {}
@@ -121,99 +122,30 @@ for p in promos:
     det = {x["id"]: x for x in ml.publicaciones([i["id"] for i in items if i.get("id")],
                                                 atributos="id,title,status,price,available_quantity,"
                                                           "seller_custom_field,attributes,variations")}
+    pct_c = num(p.get("fixed_percentage")) or num(p.get("discount_percentage"))
+    if pct_c is None:
+        m = re.search(r"(\d+(?:[.,]\d+)?)\s*%", p.get("name") or "")
+        pct_c = float(m.group(1).replace(",", ".")) if m else 0
+    promos_x.append({"id": pid, "tipo": tipo, "nombre": p.get("name") or "", "estado": p.get("status") or "",
+                     "inicio": fecha(p.get("start_date")), "fin": fecha(p.get("finish_date")),
+                     "adherir_hasta": fecha(p.get("deadline_date")), "pct": pct_c})
     for i in items:
         it = det.get(i.get("id")) or {}
         sku = sku_de(it) if it else ""
         actual = num(it.get("price")) or num(i.get("original_price"))
         original = num(i.get("original_price")) or actual
-        sug = num(i.get("suggested_discounted_price"))
-        promo_precio = num(i.get("price")) if i.get("status") in ("started", "pending") else None
-        precio_eval = promo_precio or sug or num(i.get("max_discounted_price")) or num(i.get("price"))
-        if not precio_eval and actual:   # cupones y otras sin precio propuesto: precio actual menos el % de la campaña
-            pc = num(ben.get("seller_percent")) or num((p.get("discount") or {}).get("percent") if isinstance(p.get("discount"), dict) else None)
-            if not pc:
-                m = re.search(r"(\d+(?:[.,]\d+)?)\s*%", p.get("name") or "")
-                pc = float(m.group(1).replace(",", ".")) if m else 0
-            precio_eval = round(actual * (1 - pc / 100), 2)
-        desc = round((1 - precio_eval / original) * 100, 1) if precio_eval and original else None
-        c = costo_de(sku)
-        x = round(precio_eval / c, 2) if c and precio_eval else None
-        if not c:
-            rec = "SIN COSTO"
-        elif not x:
-            rec = "SIN PRECIO"
-        elif x >= MARGEN_MIN:
-            rec = "SÍ"
-        elif x >= MARGEN_REVISAR:
-            rec = "REVISAR"
-        else:
-            rec = "NO"
-        filas_i.append([pid, tipo, p.get("name") or "", i.get("id"), sku, it.get("title") or "",
-                        it.get("status") or "", it.get("available_quantity"), i.get("status") or "",
-                        original, sug, num(i.get("min_discounted_price")), num(i.get("max_discounted_price")),
-                        promo_precio, desc, num(i.get("meli_percentage")), num(i.get("seller_percentage")),
-                        c, x, rec, ""])
-
-# ---------------- Excel
-wb = Workbook()
-VERDE, NAR = "02561A", "FF8C00"
-
-
-def hoja(ws, enc, filas, anchos, moneda=(), pct=()):
-    ws.append(enc)
-    for f in filas:
-        ws.append(f)
-    for c in ws[1]:
-        c.font = Font(bold=True, color="FFFFFF")
-        c.fill = PatternFill("solid", fgColor=VERDE)
-        c.alignment = Alignment(wrap_text=True, vertical="center")
-    ws.row_dimensions[1].height = 32
-    ws.freeze_panes = "A2"
-    ws.auto_filter.ref = ws.dimensions
-    for k, a in enumerate(anchos, 1):
-        ws.column_dimensions[get_column_letter(k)].width = a
-    for fila in ws.iter_rows(min_row=2):
-        for c in fila:
-            if c.column in moneda:
-                c.number_format = '"$"#,##0'
-            elif c.column in pct:
-                c.number_format = '0.0"%"'
-
-
-ws = wb.active
-ws.title = "Promociones"
-hoja(ws, ["ID PROMO", "TIPO", "NOMBRE", "ESTADO", "INICIO", "FIN", "ADHERIR HASTA", "% APORTA ML", "% APORTÁS VOS",
-          "ÍTEMS", "CANDIDATOS", "YA ADHERIDOS"], filas_p, [22, 22, 40, 12, 17, 17, 17, 11, 11, 9, 11, 11], pct=(8, 9))
-
-ws2 = wb.create_sheet("Publicaciones")
-hoja(ws2, ["ID PROMO", "TIPO", "PROMOCIÓN", "MLA", "SKU", "TÍTULO", "ESTADO PUBLICACIÓN", "STOCK", "ESTADO EN PROMO",
-           "PRECIO ACTUAL", "PRECIO SUGERIDO ML", "PRECIO MÍNIMO", "PRECIO MÁXIMO", "PRECIO EN PROMO (ADHERIDO)",
-           "% DESCUENTO", "% APORTA ML", "% APORTÁS VOS", "COSTO (BASE)", "PRECIO / COSTO", "SUGERENCIA", "DECISIÓN (SI/NO)"],
-     filas_i, [20, 18, 30, 15, 18, 50, 12, 8, 12, 13, 13, 13, 13, 14, 10, 9, 9, 13, 10, 12, 12],
-     moneda=(10, 11, 12, 13, 14, 18), pct=(15, 16, 17))
-COLOR = {"SIN PRECIO": "E7E6E6", "SÍ": "C6EFCE", "REVISAR": "FFEB9C", "NO": "FFC7CE", "SIN COSTO": "E7E6E6"}
-for fila in ws2.iter_rows(min_row=2):
-    c = fila[19]
-    if c.value in COLOR:
-        c.fill = PatternFill("solid", fgColor=COLOR[c.value])
-
-ws3 = wb.create_sheet("Cómo leerlo")
-for linea in [
-    "Excel generado " + datetime.now(AR).strftime("%d/%m/%Y %H:%M") + " (solo lectura: no se adhirió ni quitó nada).",
-    "",
-    "PRECIO / COSTO = precio con la promo ÷ costo en BaseLinker. Hoy publicamos a costo × 2,5.",
-    f"SUGERENCIA: SÍ si precio/costo ≥ {MARGEN_MIN} · REVISAR si ≥ {MARGEN_REVISAR} · NO si es menor.",
-    "Para evaluar se usa el precio en promo si ya está adherido; si no, el precio sugerido por ML (o el máximo permitido).",
-    "Ojo: la comisión de ML y el envío se descuentan aparte; el multiplicador ya lo contempla de forma aproximada.",
-    "% APORTA ML: parte del descuento que pone Mercado Libre (no la pagás vos).",
-    "DECISIÓN: completala con SI / NO para indicar en qué entrar.",
-]:
-    ws3.append([linea])
-ws3.column_dimensions["A"].width = 110
+        aporte = num(i.get("suggestion_meli_amount"))
+        if aporte is None and num(i.get("meli_percentage")) and original:
+            aporte = round(original * num(i.get("meli_percentage")) / 100, 2)
+        filas_i.append({"promo_id": pid, "tipo": tipo, "promo": p.get("name") or "", "estado_item": i.get("status") or "",
+                        "mla": i.get("id"), "sku": sku, "titulo": it.get("title") or "", "estado_pub": it.get("status") or "",
+                        "stock": it.get("available_quantity"), "actual": actual, "original": original,
+                        "sugerido": num(i.get("suggested_discounted_price")), "minimo": num(i.get("min_discounted_price")),
+                        "maximo": num(i.get("max_discounted_price")), "precio_ml": num(i.get("price")),
+                        "aporte_ml": aporte, "costo": costo_de(sku), "pct_campania": pct_c})
 
 os.makedirs("salida", exist_ok=True)
-wb.save("salida/promociones.xlsx")
-cuenta = {}
-for f in filas_i:
-    cuenta[f[19]] = cuenta.get(f[19], 0) + 1
-log(f"Listo: {len(filas_p)} promociones, {len(filas_i)} filas de publicaciones | sugerencias {cuenta}")
+with open("salida/promociones_filas.json", "w", encoding="utf-8") as fh:
+    json.dump({"promos": promos_x, "filas": filas_i}, fh, ensure_ascii=False)
+cuenta = promos_excel.armar(promos_x, filas_i, "salida/promociones.xlsx", MARGEN_MIN, MARGEN_REVISAR)
+log(f"Listo: {len(promos_x)} promociones, {len(filas_i)} filas de publicaciones | sugerencias {cuenta}")
