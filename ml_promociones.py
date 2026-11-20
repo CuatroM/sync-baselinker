@@ -243,8 +243,12 @@ def costo_envio(mla):
 decidir = [f for f in filas_i if f["tipo"] not in promos_excel.CAMPANIAS_PROPIAS]
 if bl:
     iva_de({f["sku"] for f in decidir if f["sku"]})
-for f in decidir:
-    f["iva"] = iva_sku(f["sku"])
+for f in decidir:   # J&A siempre 10,5 %; el resto: BaseLinker (o la ficha en Delfabro) y, si no tiene, 21 %
+    if "#JYA" in str(f["sku"]).upper():
+        f["iva"] = 10.5
+    else:
+        v = iva_sku(f["sku"])
+        f["iva"] = v if v else 21.0
 envio = {}
 from concurrent.futures import ThreadPoolExecutor
 pend = sorted({f["mla"] for f in decidir if f["envio_modo"] == "me2" and f["envio_gratis"]})
