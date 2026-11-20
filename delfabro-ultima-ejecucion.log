@@ -1,11 +1,13 @@
-[2026-11-19 16:51:17] 218 productos DELFABRO con página en la web | REAL
-[2026-11-19 16:55:15]   50/218 páginas leídas
-[2026-11-19 16:58:28]   100/218 páginas leídas
-[2026-11-19 17:01:31]   150/218 páginas leídas
-[2026-11-19 17:05:00]   200/218 páginas leídas
-[2026-11-19 17:06:08] Web: {'sin existencias': 73, 'disponible': 145}
-[2026-11-19 17:06:08] Inventario: 66518 'INVENTARIO COMPLETO DELFABRO 2026 MATIAS' | depósito por defecto: bl_75994
-[2026-11-19 17:06:09] Catálogo BaseLinker: 218 productos
-[2026-11-19 17:06:09] 218 productos en BaseLinker | depósito de stock: bl_75994 (encontrados: {'bl_75994': 218})
-[2026-11-19 17:06:09] Cambios de stock: 0 (a 0: 0, a 10: 0) | no están en BaseLinker: 0
-[2026-11-19 17:06:09] Listo.
+[2026-11-20 01:28:01] 218 productos DELFABRO con página en la web | REAL
+[2026-11-20 01:29:06]   50/218 páginas leídas
+[2026-11-20 01:30:51]   100/218 páginas leídas
+[2026-11-20 01:32:43]   150/218 páginas leídas
+[2026-11-20 01:34:24]   200/218 páginas leídas
+[2026-11-20 01:35:01] Web: {'sin existencias': 72, 'disponible': 146}
+[2026-11-20 01:35:01] Inventario: 66518 'INVENTARIO COMPLETO DELFABRO 2026 MATIAS' | depósito por defecto: bl_75994
+[2026-11-20 01:35:02] Catálogo BaseLinker: 218 productos
+[2026-11-20 01:35:02] 218 productos en BaseLinker | depósito de stock: bl_75994 (encontrados: {'bl_75994': 218})
+[2026-11-20 01:35:02] Cambios de stock: 1 (a 0: 0, a 10: 1) | no están en BaseLinker: 0
+[2026-11-20 01:35:02]   SPB30#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
+[2026-11-20 01:35:03] updateInventoryProductsStock: 1 actualizados
+[2026-11-20 01:35:03] Listo.
