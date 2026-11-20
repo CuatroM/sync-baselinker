@@ -128,7 +128,8 @@ for p in promos:
         continue
     det = {x["id"]: x for x in ml.publicaciones([i["id"] for i in items if i.get("id")],
                                                 atributos="id,title,status,price,available_quantity,"
-                                                          "seller_custom_field,attributes,variations")}
+                                                          "seller_custom_field,attributes,variations,category_id,"
+                                                          "listing_type_id,tags,shipping")}
     for i in items:
         it = det.get(i.get("id")) or {}
         sku = sku_de(it) if it else ""
@@ -142,7 +143,87 @@ for p in promos:
                         "stock": it.get("available_quantity"), "actual": actual, "original": original,
                         "sugerido": num(i.get("suggested_discounted_price")), "minimo": num(i.get("min_discounted_price")),
                         "maximo": num(i.get("max_discounted_price")), "precio_ml": num(i.get("price")),
-                        "aporte_ml": aporte, "costo": costo_de(sku), "pct_campania": pct_c})
+                        "aporte_ml": aporte, "costo": costo_de(sku), "pct_campania": pct_c,
+                        "cat": it.get("category_id"), "lt": it.get("listing_type_id"), "tags": it.get("tags") or [],
+                        "envio_modo": (it.get("shipping") or {}).get("mode"),
+                        "envio_gratis": bool((it.get("shipping") or {}).get("free_shipping"))})
+
+# ---------------- costos de vender (solo para las ofertas a decidir): envío, comisión, financiación, cargo fijo
+CUOTAS_TAGS = ("3x_campaign", "9x_campaign", "12x_campaign", "pcj-co-funded")
+_fee = {}
+
+
+def tarifa(cat, lt, tags, precio):
+    """(% comisión, % financiación, cargo fijo $) de ML para esa categoría, tipo de publicación y precio."""
+    tag = next((t for t in CUOTAS_TAGS if t in tags), None)
+    clave = (cat, lt, tag, round(precio, -1) if precio < 60000 else 0)   # el cargo fijo solo cambia en precios bajos
+    if clave in _fee:
+        return _fee[clave]
+
+    def pedir(lt_, tag_):
+        params = {"price": precio, "listing_type_id": lt_, "category_id": cat}
+        if tag_:
+            params["tags"] = tag_
+        r = ml.pedir("GET", "/sites/MLA/listing_prices", reintentos=3, params=params)
+        if r.status_code != 200:
+            return None
+        j = r.json()
+        j = j[0] if isinstance(j, list) and j else j
+        return j or None
+
+    j = pedir(lt, tag)
+    res = ("", "", "")
+    if j:
+        d = j.get("sale_fee_details") or {}
+        total = num(d.get("percentage_fee"))
+        if total is None and num(j.get("sale_fee_amount")) and precio:
+            total = round(100 * num(j["sale_fee_amount"]) / precio, 2)
+        fin = num(d.get("financing_add_on_fee"))
+        if fin is None and total is not None:
+            if lt == "gold_special" and not tag:
+                fin = 0.0
+            else:   # diferencia contra la publicación clásica sin cuotas
+                b = pedir("gold_special", None)
+                bt = num(((b or {}).get("sale_fee_details") or {}).get("percentage_fee")) if b else None
+                fin = round(total - bt, 2) if bt is not None else None
+        com = round(total - (fin or 0), 2) if total is not None else ""
+        res = (com, "" if fin is None else fin, num(d.get("fixed_fee")) or 0.0)
+        if len(_fee) < 2:
+            log(f"   ejemplo tarifa {clave}: {json.dumps(j, ensure_ascii=False)[:400]}")
+    _fee[clave] = res
+    return res
+
+
+def costo_envio(mla):
+    r = ml.pedir("GET", f"/users/{ml.user_id}/shipping_options/free", reintentos=3, params={"item_id": mla})
+    if r.status_code != 200:
+        return None
+    return num(((r.json().get("coverage") or {}).get("all_country") or {}).get("list_cost"))
+
+
+decidir = [f for f in filas_i if f["tipo"] not in promos_excel.CAMPANIAS_PROPIAS]
+envio = {}
+from concurrent.futures import ThreadPoolExecutor
+pend = sorted({f["mla"] for f in decidir if f["envio_modo"] == "me2" and f["envio_gratis"]})
+with ThreadPoolExecutor(6) as ex:
+    for mla, v in zip(pend, ex.map(costo_envio, pend)):
+        envio[mla] = v
+log(f"Costos de envío leídos: {sum(1 for v in envio.values() if v is not None)} de {len(pend)}")
+for f in decidir:
+    promos_excel.evaluar(f, MARGEN_MIN, MARGEN_REVISAR)
+    if f["envio_modo"] == "me2":
+        f["envio_costo"] = envio.get(f["mla"]) if f["envio_gratis"] else "Lo paga el comprador"
+    else:
+        f["envio_costo"] = "A acordar"
+    f["precio_final"] = f.get("recomendado") or f.get("precio_eval")
+con_tarifa = [f for f in decidir if f["precio_final"] and f.get("cat") and f.get("lt")]
+with ThreadPoolExecutor(6) as ex:
+    res = list(ex.map(lambda f: tarifa(f["cat"], f["lt"], f["tags"], f["precio_final"]), con_tarifa))
+for f in decidir:
+    f["com_pct"] = f["fin_pct"] = f["cargo_fijo"] = ""
+for f, (c_, fi, fx) in zip(con_tarifa, res):
+    f["com_pct"], f["fin_pct"], f["cargo_fijo"] = c_, fi, fx
+log(f"Tarifas de ML consultadas: {len(_fee)}")
 
 os.makedirs("salida", exist_ok=True)
 with open("salida/promociones_filas.json", "w", encoding="utf-8") as fh:

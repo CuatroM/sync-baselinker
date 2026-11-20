@@ -20,6 +20,11 @@ DEC_ENC = ["ID PROMO", "PROMOCIÓN", "TIPO", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "RECIBÍS / COSTO", "% DESCUENTO", "PRECIO RECOMENDADO", "SUGERENCIA", "DECISIÓN (SI/NO)", "PRECIO A PONER",
            "ESTADO EN PROMO"]
 I_DEC, I_PRE = DEC_ENC.index("DECISIÓN (SI/NO)"), DEC_ENC.index("PRECIO A PONER")
+LIBRES = 4   # columnas W a Z: libres para tus notas, se conservan
+EXTRA_ENC = ["COSTO ENVÍO ML ($)", "% COMISIÓN ML", "% FINANCIACIÓN (CUOTAS)", "CARGO FIJO ML ($)",
+             "TE QUEDA (NETO $)", "NETO / COSTO"]   # columnas AA a AF
+I_EXTRA = len(DEC_ENC) + LIBRES          # 26 = columna AA
+FIN_SIS = I_EXTRA + len(EXTRA_ENC)       # desde AG en adelante: también libres, se conservan
 
 
 class Hoja:
@@ -76,6 +81,25 @@ def _v(x):
     return "" if x is None else x
 
 
+def _n(x):
+    try:
+        return float(str(x).replace("$", "").replace(".", "").replace(",", ".")) if isinstance(x, str) else float(x)
+    except (TypeError, ValueError):
+        return None
+
+
+def extras(f, precio_a_poner=""):
+    """AA–AF: envío, % comisión, % financiación, cargo fijo, neto y neto/costo al precio final de la promo."""
+    p = _n(precio_a_poner) if str(precio_a_poner).strip() and f["tipo"] == "DEAL" else f.get("precio_final")
+    env, com, fin, fijo = f.get("envio_costo", ""), f.get("com_pct", ""), f.get("fin_pct", ""), f.get("cargo_fijo", "")
+    neto = x = ""
+    if p and com != "":
+        e = env if isinstance(env, (int, float)) else 0
+        neto = round(p + (f.get("aporte_ml") or 0) - p * (float(com) + float(fin or 0)) / 100 - float(fijo or 0) - e, 2)
+        x = round(neto / f["costo"], 2) if f.get("costo") else ""
+    return [_v(env), _v(com), _v(fin), _v(fijo), neto, x]
+
+
 def formato(h, sid, n_cf, ncols, col_sug=None, col_dec=None, anchos=None, editables=()):
     req = [{"deleteConditionalFormatRule": {"sheetId": sid, "index": 0}} for _ in range(n_cf)]
     req += [{"updateSheetProperties": {"properties": {"sheetId": sid, "gridProperties": {"frozenRowCount": 1}},
@@ -117,10 +141,11 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
     ahora = datetime.now(AR).strftime("%d/%m/%Y %H:%M")
 
     # decisiones ya cargadas
-    prev = {}
+    prev, libres, enc_libres = {}, {}, None
     viejo = h.leer(f"'{T_DEC}'")
     if viejo:
         enc = viejo[0]
+        enc_libres = (enc + [""] * FIN_SIS)[len(DEC_ENC):I_EXTRA] + enc[FIN_SIS:]
         ip, im = enc.index("ID PROMO"), enc.index("MLA")
         idd = enc.index("DECISIÓN (SI/NO)") if "DECISIÓN (SI/NO)" in enc else None
         ipp = enc.index("PRECIO A PONER") if "PRECIO A PONER" in enc else None
@@ -130,26 +155,38 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
             pp = r[ipp] if ipp is not None else ""
             if str(d).strip() or str(pp).strip():
                 prev[(r[ip], r[im])] = (d, pp)
+            lib = (r + [""] * FIN_SIS)[len(DEC_ENC):I_EXTRA] + r[FIN_SIS:]
+            if any(str(x).strip() for x in lib):
+                libres[(r[ip], r[im])] = lib
     log(f"Planilla: {len(prev)} decisiones ya cargadas se conservan")
 
     # Decidir
     orden = {"SÍ": 0, "REVISAR": 1, "NO": 2, "YA ADHERIDA": 3, "COSTO DUDOSO": 4, "SIN COSTO": 5, "SIN PRECIO": 6}
     dec = sorted((f for f in filas if f["tipo"] not in CAMPANIAS_PROPIAS),
                  key=lambda f: (f["promo"], orden.get(f["sugerencia"], 9), -(f["x"] or 0)))
-    filas_dec = [DEC_ENC]
+    if not enc_libres or not any(str(x).strip() for x in enc_libres):
+        enc_libres = [""] * LIBRES
+    n_lib = max(len(enc_libres), LIBRES)
+    enc_libres = enc_libres + [""] * (n_lib - len(enc_libres))
+    enc_total = DEC_ENC + enc_libres[:LIBRES] + EXTRA_ENC + enc_libres[LIBRES:]
+    filas_dec = [enc_total]
     for f in dec:
         d, pp = prev.get((f["promo_id"], f["mla"]), ("", ""))
+        lib = libres.get((f["promo_id"], f["mla"]), [])
+        lib = lib + [""] * (n_lib - len(lib))
         filas_dec.append([f["promo_id"], f["promo"], f["tipo"], f["mla"], f["sku"], f["titulo"], f["estado_pub"],
                           _v(f["stock"]), _v(f["actual"]), _v(f["costo"]),
                           round(f["actual"] / f["costo"], 2) if f["actual"] and f["costo"] else "",
                           _v(f.get("minimo")), _v(f.get("maximo")), _v(f["precio_eval"]), _v(f.get("aporte_ml")),
                           _v(f["x"]),
                           round((1 - f["precio_eval"] / f["original"]) * 100, 1) if f["precio_eval"] and f.get("original") else "",
-                          _v(f["recomendado"]), f["sugerencia"], d, pp, f.get("estado_item") or ""])
-    sid, ncf = h.asegurar(T_DEC, len(filas_dec) + 50, len(DEC_ENC))
+                          _v(f["recomendado"]), f["sugerencia"], d, pp, f.get("estado_item") or "",
+                          *lib[:LIBRES], *extras(f, pp), *lib[LIBRES:]])
+    sid, ncf = h.asegurar(T_DEC, len(filas_dec) + 50, len(enc_total))
     h.escribir(T_DEC, filas_dec)
-    formato(h, sid, ncf, len(DEC_ENC), col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC, editables=(I_DEC, I_PRE),
-            anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90])
+    formato(h, sid, ncf, len(enc_total), col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC, editables=(I_DEC, I_PRE),
+            anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90,
+                    90, 90, 90, 90, 110, 90, 110, 100, 110, 90])
 
     # Cupones (campañas propias ya activas): una fila por publicación
     propias = [p for p in promos if p["tipo"] in CAMPANIAS_PROPIAS]
