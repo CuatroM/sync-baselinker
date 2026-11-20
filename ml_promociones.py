@@ -33,33 +33,72 @@ cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
 ml = ML(os.environ.get("ML_CODIGO"))
 
 # ---------------- costos de BaseLinker (igual que la planilla)
-costo = {}
+costo, pid_bl, iva = {}, {}, {}   # pid_bl: sku -> (inventario, product_id) para leer el IVA
+bl = None
 if os.path.exists("datos/delfabro_fichas.json"):
     for f in json.load(open("datos/delfabro_fichas.json", encoding="utf-8")):
         if float(f.get("precio_lista") or 0) > 0:
             costo[sync.normalizar_codigo(f["sku"] + "#DELFABRO")] = float(f["precio_lista"])
+        if f.get("iva") not in (None, ""):
+            iva[sync.normalizar_codigo(f["sku"] + "#DELFABRO")] = float(str(f["iva"]).replace(",", ".").rstrip("%"))
 try:
     bl = sync.BaseLinker(os.environ["BL_TOKEN"])
     for sec in ("baselinker", "extrapower", "jya", "delfabro"):
         b = cfg.get(sec)
         if not b or not b.get("inventory_id"):
             continue
-        for p in bl.catalogo(int(b["inventory_id"])).values():
+        for k, p in bl.catalogo(int(b["inventory_id"])).items():
             v = float((p.get("prices") or {}).get(str(b["price_group_id"])) or 0)
             if v > 0:
                 costo[sync.normalizar_codigo(p.get("sku"))] = v
+            if p.get("sku"):
+                pid_bl[sync.normalizar_codigo(p["sku"])] = (int(b["inventory_id"]), int(k))
 except Exception as e:  # sin costos igual se arma el Excel
     log(f"AVISO: no se pudieron leer los costos de BaseLinker ({e})")
 log(f"Costos cargados: {len(costo)}")
 
 
-def costo_de(sku):
+def _clave(sku, dic):
     if not sku:
         return None
     s = sync.normalizar_codigo(sku)
     base = s.split("#")[0]
-    return costo.get(s) or next((costo[base + x] for x in ("#FEMA", "#EXTRAPOWER", "#JYA", "#DELFABRO", "#CALLONE")
-                                 if base + x in costo), None) or costo.get(base)
+    if s in dic:
+        return s
+    return next((base + x for x in ("#FEMA", "#EXTRAPOWER", "#JYA", "#DELFABRO", "#CALLONE") if base + x in dic),
+                base if base in dic else None)
+
+
+def costo_de(sku):
+    k = _clave(sku, costo)
+    return costo[k] if k else None
+
+
+def iva_de(skus):
+    """% de IVA de BaseLinker (tax_rate) para esos SKUs; Delfabro sale de la ficha."""
+    falta = {}
+    for s in skus:
+        k = _clave(s, pid_bl)
+        if k and k not in iva:
+            falta.setdefault(pid_bl[k][0], {})[pid_bl[k][1]] = k
+    for inv, ids in falta.items():
+        lista = list(ids)
+        for i in range(0, len(lista), 500):
+            try:
+                d = bl.llamar("getInventoryProductsData", {"inventory_id": inv, "products": lista[i:i + 500]})
+            except Exception as e:
+                log(f"AVISO: no se pudo leer el IVA de BaseLinker ({e})")
+                return
+            for k, p in (d.get("products") or {}).items():
+                t = p.get("tax_rate")
+                if t not in (None, "", -1):
+                    iva[ids[int(k)]] = float(t)
+    log(f"IVA leído de BaseLinker: {sum(len(v) for v in falta.values())} productos")
+
+
+def iva_sku(sku):
+    k = _clave(sku, iva)
+    return iva[k] if k else None
 
 
 def fecha(v):
@@ -202,6 +241,10 @@ def costo_envio(mla):
 
 
 decidir = [f for f in filas_i if f["tipo"] not in promos_excel.CAMPANIAS_PROPIAS]
+if bl:
+    iva_de({f["sku"] for f in decidir if f["sku"]})
+for f in decidir:
+    f["iva"] = iva_sku(f["sku"])
 envio = {}
 from concurrent.futures import ThreadPoolExecutor
 pend = sorted({f["mla"] for f in decidir if f["envio_modo"] == "me2" and f["envio_gratis"]})

@@ -21,10 +21,10 @@ DEC_ENC = ["ID PROMO", "PROMOCIÓN", "TIPO", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "ESTADO EN PROMO"]
 I_DEC, I_PRE = DEC_ENC.index("DECISIÓN (SI/NO)"), DEC_ENC.index("PRECIO A PONER")
 LIBRES = 4   # columnas W a Z: libres para tus notas, se conservan
-EXTRA_ENC = ["COSTO ENVÍO ML ($)", "% COMISIÓN ML", "% FINANCIACIÓN (CUOTAS)", "CARGO FIJO ML ($)",
-             "TE QUEDA (NETO $)", "NETO / COSTO"]   # columnas AA a AF
+EXTRA_ENC = ["COSTO ENVÍO ML ($)", "% COMISIÓN ML", "% FINANCIACIÓN (CUOTAS)", "% IVA", "CARGO FIJO ML ($)",
+             "TE QUEDA (NETO $)", "NETO / COSTO"]   # columnas AA a AG
 I_EXTRA = len(DEC_ENC) + LIBRES          # 26 = columna AA
-FIN_SIS = I_EXTRA + len(EXTRA_ENC)       # desde AG en adelante: también libres, se conservan
+FIN_SIS = I_EXTRA + len(EXTRA_ENC)       # desde AH en adelante: también libres, se conservan
 
 
 class Hoja:
@@ -89,7 +89,7 @@ def _n(x):
 
 
 def extras(f, precio_a_poner=""):
-    """AA–AF: envío, % comisión, % financiación, cargo fijo, neto y neto/costo al precio final de la promo."""
+    """AA–AG: envío, % comisión, % financiación, % IVA, cargo fijo, neto y neto/costo al precio final de la promo."""
     p = _n(precio_a_poner) if str(precio_a_poner).strip() and f["tipo"] == "DEAL" else f.get("precio_final")
     env, com, fin, fijo = f.get("envio_costo", ""), f.get("com_pct", ""), f.get("fin_pct", ""), f.get("cargo_fijo", "")
     neto = x = ""
@@ -97,7 +97,7 @@ def extras(f, precio_a_poner=""):
         e = env if isinstance(env, (int, float)) else 0
         neto = round(p + (f.get("aporte_ml") or 0) - p * (float(com) + float(fin or 0)) / 100 - float(fijo or 0) - e, 2)
         x = round(neto / f["costo"], 2) if f.get("costo") else ""
-    return [_v(env), _v(com), _v(fin), _v(fijo), neto, x]
+    return [_v(env), _v(com), _v(fin), _v(f.get("iva")), _v(fijo), neto, x]
 
 
 def formato(h, sid, n_cf, ncols, col_sug=None, col_dec=None, anchos=None, editables=()):
@@ -186,7 +186,7 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
     h.escribir(T_DEC, filas_dec)
     formato(h, sid, ncf, len(enc_total), col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC, editables=(I_DEC, I_PRE),
             anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90,
-                    90, 90, 90, 90, 110, 90, 110, 100, 110, 90])
+                    90, 90, 90, 90, 110, 90, 110, 60, 100, 110, 90])
 
     # Cupones (campañas propias ya activas): una fila por publicación
     propias = [p for p in promos if p["tipo"] in CAMPANIAS_PROPIAS]
