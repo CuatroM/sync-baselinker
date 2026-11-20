@@ -1,0 +1,47 @@
+[2026-11-20 01:35:37] Conectado a Mercado Libre (usuario 3591706005)
+[2026-11-20 01:35:49] Catálogo BaseLinker: 16483 productos
+[2026-11-20 01:35:51] Catálogo BaseLinker: 2845 productos
+[2026-11-20 01:35:52] Catálogo BaseLinker: 1873 productos
+[2026-11-20 01:35:52] Costos cargados: 18574
+[2026-11-20 01:35:52] Promociones encontradas: 11
+[2026-11-20 01:35:56] P-MLA18063014 | DEAL | Precio tachado | started | 106 ítems
+[2026-11-20 01:35:56]    datos promo: {"id": "P-MLA18063014", "type": "DEAL", "status": "started", "start_date": "2026-09-12T01:00:00Z", "finish_date": "2026-12-11T02:00:00Z", "deadline_date": "2026-12-11T01:00:00Z"}
+[2026-11-20 01:35:56]    ejemplo ítem: {"id": "MLA4167339830", "status": "candidate", "original_price": 29726.05, "min_discounted_price": 10135.11, "max_discounted_price": 28239.74, "suggested_discounted_price": 27347.96}
+[2026-11-20 01:35:57] P-MLA18015134 | DEAL | MK T3 AO BELLEZA Q4 2026 | started | 7 ítems
+[2026-11-20 01:35:57]    datos promo: {"id": "P-MLA18015134", "type": "DEAL", "status": "started", "start_date": "2026-09-18T03:00:00Z", "finish_date": "2026-12-11T03:00:00Z", "deadline_date": "2026-12-11T03:00:00Z"}
+[2026-11-20 01:35:57]    ejemplo ítem: {"id": "MLA4120002728", "status": "candidate", "original_price": 28022.64, "min_discounted_price": 5604.53, "max_discounted_price": 26621.5, "suggested_discounted_price": 26621.5}
+[2026-11-20 01:35:57] P-MLA18215026 | PRICE_MATCHING | ¡Gánale a la competencia! | started | 3 ítems
+[2026-11-20 01:35:57]    datos promo: {"id": "P-MLA18215026", "type": "PRICE_MATCHING", "status": "started", "start_date": "2026-10-30T14:25:00Z", "finish_date": "2026-12-03T02:50:00Z", "deadline_date": "2026-12-03T02:50:00Z"}
+[2026-11-20 01:35:57]    ejemplo ítem: {"flex_available": false, "id": "MLA3796437688", "status": "candidate", "price": 146317.52, "original_price": 185165.94, "offer_id": "CANDIDATE-MLA3796437688-71905456893", "meli_percentage": 5.5, "seller_percentage": 15.4, "start_date": "2026-11-19T03:00:00Z", "end_date": "2026-11-29T02:59:59Z"}
+[2026-11-20 01:36:04] P-MLA18167004 | SMART | Potencia tus ventas | started | 653 ítems
+[2026-11-20 01:36:04]    datos promo: {"id": "P-MLA18167004", "type": "SMART", "status": "started", "start_date": "2026-11-01T03:50:00Z", "finish_date": "2026-12-03T02:50:00Z", "deadline_date": "2026-12-03T02:50:00Z"}
+[2026-11-20 01:36:04]    ejemplo ítem: {"flex_available": false, "id": "MLA4167352896", "status": "candidate", "price": 102040, "original_price": 209566.27, "offer_id": "CANDIDATE-MLA4167352896-71867153980", "meli_percentage": 1.5, "seller_percentage": 49.8, "start_date": "2026-11-01T03:50:00Z", "end_date": "2026-12-03T02:50:00Z"}
+[2026-11-20 01:39:22] C-MLA1836321 | SELLER_COUPON_CAMPAIGN | 5% OFF - DESC 36K | started | 6775 ítems
+[2026-11-20 01:39:22]    datos promo: {"id": "C-MLA1836321", "type": "SELLER_COUPON_CAMPAIGN", "sub_type": "FIXED_PERCENTAGE", "fixed_percentage": 5, "min_purchase_amount": 718000, "max_purchase_amount": 36000, "status": "started", "start_date": "2026-11-03T03:00:00Z", "finish_date": "2026-12-01T02:59:59Z"}
+[2026-11-20 01:39:22]    ejemplo ítem: {"id": "MLA4219640208", "status": "candidate", "original_price": 5548038.5, "fixed_percentage": 5, "start_date": "2026-11-03T00:00:00", "end_date": "2026-11-30T23:59:59", "sub_type": "FIXED_PERCENTAGE"}
+[2026-11-20 01:46:29] C-MLA1836558 | VOLUME | 10% OFF 4 UNIDADES DIF | started | 6776 ítems
+[2026-11-20 01:46:29]    datos promo: {"id": "C-MLA1836558", "type": "VOLUME", "sub_type": "BNSP", "status": "started", "start_date": "2026-11-03T03:00:00Z", "finish_date": "2026-12-01T02:59:59Z", "buy_quantity": 4, "discount_percentage": 10, "allow_combination": true}
+[2026-11-20 01:46:29]    ejemplo ítem: {"id": "MLA4219653128", "status": "candidate", "original_price": 3527196.5, "sub_type": "BNSP", "buy_quantity": 4, "discount_percentage": 10, "allow_combination": true, "start_date": "2026-11-03T03:00:00Z", "end_date": "2026-12-01T02:59:59Z"}
+[2026-11-20 01:55:27] C-MLA1836646 | SELLER_COUPON_CAMPAIGN | Cupón para carritos abandonados | started | 6776 ítems
+[2026-11-20 01:55:27]    datos promo: {"id": "C-MLA1836646", "type": "SELLER_COUPON_CAMPAIGN", "sub_type": "FIXED_PERCENTAGE", "fixed_percentage": 5, "min_purchase_amount": 5000, "max_purchase_amount": 40000, "status": "started", "start_date": "2026-11-03T03:00:00Z", "finish_date": "2026-12-01T02:59:59Z"}
+[2026-11-20 01:55:27]    ejemplo ítem: {"id": "MLA4219653128", "status": "candidate", "original_price": 3527196.5, "fixed_percentage": 5, "start_date": "2026-11-03T00:00:00", "end_date": "2026-11-30T23:59:59", "sub_type": "FIXED_PERCENTAGE"}
+[2026-11-20 02:02:51] C-MLA1836725 | SELLER_COUPON_CAMPAIGN | SEGUIDORES 6000 | started | 6776 ítems
+[2026-11-20 02:02:51]    datos promo: {"id": "C-MLA1836725", "type": "SELLER_COUPON_CAMPAIGN", "sub_type": "FIXED_PERCENTAGE", "fixed_percentage": 5, "min_purchase_amount": 50000, "max_purchase_amount": 6000, "status": "started", "start_date": "2026-11-03T03:00:00Z", "finish_date": "2026-12-01T02:59:59Z"}
+[2026-11-20 02:02:51]    ejemplo ítem: {"id": "MLA4219653128", "status": "candidate", "original_price": 3527196.5, "fixed_percentage": 5, "start_date": "2026-11-03T00:00:00", "end_date": "2026-11-30T23:59:59", "sub_type": "FIXED_PERCENTAGE"}
+[2026-11-20 02:14:28] P-MLA18169256 | DEAL | BLACK FRIDAY NOV DIC 26 | pending | 6222 ítems
+[2026-11-20 02:14:28]    datos promo: {"id": "P-MLA18169256", "type": "DEAL", "status": "pending", "start_date": "2026-11-25T03:00:00Z", "finish_date": "2026-12-03T03:00:00Z", "deadline_date": "2026-12-03T02:00:00Z"}
+[2026-11-20 02:14:28]    ejemplo ítem: {"id": "MLA4219653128", "status": "candidate", "original_price": 3527196.5, "min_discounted_price": 705439.25, "max_discounted_price": 3421380.8, "max_top_discounted_price": 3245020.8, "suggested_discounted_price": 3068661}
+[2026-11-20 02:21:52] P-MLA18257050 | SMART | Ofertas Compartidas BF | pending | 17 ítems
+[2026-11-20 02:21:52]    datos promo: {"id": "P-MLA18257050", "type": "SMART", "status": "pending", "start_date": "2026-11-25T03:00:00Z", "finish_date": "2026-12-03T03:00:00Z", "deadline_date": "2026-12-03T02:00:00Z"}
+[2026-11-20 02:21:52]    ejemplo ítem: {"ratio_meli": 0.64, "suggestion_final_price": 1638452.61, "suggestion_meli_amount": 55189.98, "suggestion_seller_amount": 31044.37, "flex_max_seller_amount": 749663.98, "flex_min_seller_amount": 31044.37, "flex_max_price": 1638452.61, "flex_min_price": 919833, "id": "MLA4074390988", "status": "candidate", "price": 1638452.6, "original_price": 1724687, "offer_id": "CANDIDATE-MLA4074390988-71871994
+[2026-11-20 02:21:52] P-MLA18261074 | SMART | Ofertas Compartidas BF | pending | 15 ítems
+[2026-11-20 02:21:52]    datos promo: {"id": "P-MLA18261074", "type": "SMART", "status": "pending", "start_date": "2026-11-25T03:00:00Z", "finish_date": "2026-12-03T03:00:00Z", "deadline_date": "2026-12-03T02:00:00Z"}
+[2026-11-20 02:21:52]    ejemplo ítem: {"ratio_meli": 0.64, "suggestion_final_price": 1638452.61, "suggestion_meli_amount": 55189.98, "suggestion_seller_amount": 31044.37, "flex_max_seller_amount": 443052.98, "flex_min_seller_amount": 31044.37, "flex_max_price": 1638452.61, "flex_min_price": 1226444, "id": "MLA4074390988", "status": "candidate", "price": 1638452.6, "original_price": 1724687, "offer_id": "CANDIDATE-MLA4074390988-7188082
+[2026-11-20 02:21:57] IVA leído de BaseLinker: 2956 productos
+[2026-11-20 02:22:43] Costos de envío leídos: 3864 de 3864
+[2026-11-20 02:22:43]    ejemplo tarifa ('MLA36552', 'gold_special', None, 27350.0): {"currency_id": "ARS", "free_relist": false, "listing_exposure": "highest", "listing_fee_amount": 0, "listing_fee_details": {"fixed_fee": 0, "gross_amount": 0}, "listing_type_id": "gold_special", "listing_type_name": "Clásica", "requires_picture": true, "sale_fee_amount": 7230.61, "sale_fee_details": {"financing_add_on_fee": 0, "fixed_fee": 3320, "gross_amount": 7230.61, "meli_percentage_fee": 14.
+[2026-11-20 02:22:43]    ejemplo tarifa ('MLA36552', 'gold_special', None, 12500.0): {"currency_id": "ARS", "free_relist": false, "listing_exposure": "highest", "listing_fee_amount": 0, "listing_fee_details": {"fixed_fee": 0, "gross_amount": 0}, "listing_type_id": "gold_special", "listing_type_name": "Clásica", "requires_picture": true, "sale_fee_amount": 3118.04, "sale_fee_details": {"financing_add_on_fee": 0, "fixed_fee": 1330, "gross_amount": 3118.04, "meli_percentage_fee": 14.
+[2026-11-20 02:23:06] Tarifas de ML consultadas: 2847
+[2026-11-20 02:23:14] Planilla: 0 decisiones ya cargadas se conservan
+[2026-11-20 02:23:23] Planilla actualizada: 7023 filas en «Promos - Decidir», 6776 en «Promos - Cupones», 11 promociones
+[2026-11-20 02:23:23] Listo: 11 promociones, 34126 filas de publicaciones | sugerencias {'SIN COSTO': 5575, 'SÍ': 16388, 'REVISAR': 11148, 'NO': 459, 'COSTO DUDOSO': 556}
