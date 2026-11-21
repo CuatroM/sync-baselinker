@@ -20,12 +20,25 @@ DEC_ENC = ["ID PROMO", "PROMOCIÓN", "TIPO", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "RECIBÍS / COSTO", "% DESCUENTO", "PRECIO RECOMENDADO", "SUGERENCIA", "DECISIÓN (SI/NO)", "PRECIO A PONER",
            "ESTADO EN PROMO"]
 I_DEC, I_PRE = DEC_ENC.index("DECISIÓN (SI/NO)"), DEC_ENC.index("PRECIO A PONER")
-LIBRES = 4   # columnas W a Z: libres para tus notas, se conservan
-EXTRA_ENC = ["COSTO ENVÍO ML ($)", "% COMISIÓN ML", "% FINANCIACIÓN (CUOTAS)", "% IVA", "CARGO FIJO ML ($)",
-             "TE QUEDA (NETO $)", "NETO / COSTO"]   # columnas AA a AG
-I_EXTRA = len(DEC_ENC) + LIBRES          # 26 = columna AA
-FIN_SIS = I_EXTRA + len(EXTRA_ENC)       # desde AH en adelante: también libres, se conservan
-
+# Desde la columna W (índice 22): posiciones fijas. Las que tienen nombre acá las escribe el sistema;
+# todas las demás (W–Z, AK–AM, AY, BB y desde BD) son tuyas y se conservan en cada actualización.
+IMP = {"IIBB": 4.75, "COMERCIO": 1.5, "CHEQUE": 1.2, "GANANCIAS": 5.0}   # % sobre el precio sin IVA
+SIS = {
+    26: "TIPO DE ENVÍO ML", 27: "COSTO ENVÍO ML ($)", 28: "% COMISIÓN ML", 29: "COMISIÓN ML ($)",
+    30: "% FINANCIACIÓN (CUOTAS)", 31: "FINANCIACIÓN ($)", 32: "% IVA", 33: "CARGO FIJO ML ($)",
+    34: "TE QUEDA (NETO $)", 35: "NETO / COSTO",
+    39: "IVA NETO VENTA EN MERCADO LIBRE", 40: "PRECIO DE VENTA EN MELI SIN IVA",
+    41: f"INGRESOS BRUTOS PRECIO SIN IVA {str(IMP['IIBB']).rstrip('0').rstrip('.').replace('.', ',')}%", 42: f"COMERCIO E INDUSTRIA PRECIO SIN IVA {str(IMP['COMERCIO']).rstrip('0').rstrip('.').replace('.', ',')}%",
+    43: f"CRÉDITO Y DÉBITO PRECIO SIN IVA {str(IMP['CHEQUE']).rstrip('0').rstrip('.').replace('.', ',')}%", 44: "MARGEN DE IMPUESTO RENTAS PRECIO SIN IVA",
+    45: f"IMPUESTO A LAS GANANCIAS {str(IMP['GANANCIAS']).rstrip('0').rstrip('.').replace('.', ',')}%", 46: "COSTO EXTRA EN IMPUESTOS",
+    47: "CONTROL DE LO QUE RECIBO EN MELI: COMISIÓN + ENVÍOS MELI (NO APLICA EN LA VENTA)",
+    48: "NETO MELI (− COMISIÓN, FINANCIACIÓN Y ENVÍOS MELI)",
+    49: "UTILIDAD NETA: VENTA SIN IVA − MELI − COSTO PRODUCTO − IMPUESTOS", 51: "PORCENTAJE UTILIDAD (SOBRE COSTO)",
+    52: "ENVÍO A COBRAR (CREDIFIN)", 54: "GANANCIA",
+}
+I_CREDIFIN_PROM = 53   # BB: costo promedio del envío Credifin (lo completás vos)
+ENC_LIBRE_DEF = {I_CREDIFIN_PROM: "COSTO PROMEDIO DEL ENVÍO CREDIFIN (completalo vos)"}
+ULTIMA = max(SIS) + 1   # 55 = columnas hasta BC
 
 class Hoja:
     def __init__(self, sheet_id):
@@ -88,17 +101,37 @@ def _n(x):
         return None
 
 
-def extras(f, precio_a_poner=""):
-    """AA–AG: envío, % comisión, % financiación, % IVA, cargo fijo, neto y neto/costo al precio final de la promo."""
+def extras(f, precio_a_poner="", envio_cobrar=None, credifin_prom=None):
+    """{posición: valor} de AA–AJ y AN–BC al precio final de la promo."""
     p = _n(precio_a_poner) if str(precio_a_poner).strip() and f["tipo"] == "DEAL" else f.get("precio_final")
     env, com, fin, fijo = f.get("envio_costo", ""), f.get("com_pct", ""), f.get("fin_pct", ""), f.get("cargo_fijo", "")
-    neto = x = ""
-    if p and com != "":
-        e = env if isinstance(env, (int, float)) else 0
-        neto = round(p + (f.get("aporte_ml") or 0) - p * (float(com) + float(fin or 0)) / 100 - float(fijo or 0) - e, 2)
-        x = round(neto / f["costo"], 2) if f.get("costo") else ""
-    return [_v(env), _v(com), _v(fin), _v(f.get("iva")), _v(fijo), neto, x]
-
+    if isinstance(env, (int, float)):
+        tipo, env_n = "Mercado Envíos", float(env)
+    else:
+        tipo, env_n = ({"A acordar": "A acordar", "Lo paga el comprador": "Mercado Envíos (lo paga el comprador)"}
+                       .get(env, env or ""), 0.0)
+    out = {26: tipo, 27: env_n, 28: _v(com), 30: _v(fin), 32: _v(f.get("iva")), 33: _v(fijo)}
+    if not p or com == "":
+        return out
+    aporte, costo = f.get("aporte_ml") or 0, f.get("costo")
+    com_n, fin_n = round(p * float(com) / 100, 2), round(p * float(fin or 0) / 100, 2)
+    cargos = round(com_n + fin_n + float(fijo or 0) + env_n, 2)
+    neto = round(p + aporte - cargos, 2)
+    out.update({29: com_n, 31: fin_n, 34: neto, 35: round(neto / costo, 2) if costo else ""})
+    iva = float(f.get("iva") or 21)
+    sin_iva = round(p / (1 + iva / 100), 2)
+    iibb, cei, chq = (round(sin_iva * IMP[k] / 100, 2) for k in ("IIBB", "COMERCIO", "CHEQUE"))
+    rentas = round(iibb + cei + chq, 2)
+    gan = round(sin_iva * IMP["GANANCIAS"] / 100, 2)
+    extra = round(rentas + gan, 2)
+    out.update({39: round(p - sin_iva, 2), 40: sin_iva, 41: iibb, 42: cei, 43: chq, 44: rentas, 45: gan, 46: extra,
+                47: cargos, 48: neto})
+    if costo:
+        util = round(sin_iva + aporte - cargos - costo - extra, 2)
+        cobrar = _n(envio_cobrar) if tipo == "A acordar" and envio_cobrar not in (None, "") else 0.0
+        prom = _n(credifin_prom) or 0.0
+        out.update({49: util, 51: round(util / costo * 100, 1), 52: cobrar, 54: round(util + (cobrar or 0) - prom, 2)})
+    return out
 
 def formato(h, sid, n_cf, ncols, col_sug=None, col_dec=None, anchos=None, editables=()):
     req = [{"deleteConditionalFormatRule": {"sheetId": sid, "index": 0}} for _ in range(n_cf)]
@@ -140,53 +173,68 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
     h = Hoja(sheet_id)
     ahora = datetime.now(AR).strftime("%d/%m/%Y %H:%M")
 
-    # decisiones ya cargadas
-    prev, libres, enc_libres = {}, {}, None
+    # lo ya cargado: DECISIÓN, PRECIO A PONER y toda columna que no sea del sistema (por posición)
+    prev, libres, enc_viejo = {}, {}, []
     viejo = h.leer(f"'{T_DEC}'")
     if viejo:
-        enc = viejo[0]
-        enc_libres = (enc + [""] * FIN_SIS)[len(DEC_ENC):I_EXTRA] + enc[FIN_SIS:]
-        ip, im = enc.index("ID PROMO"), enc.index("MLA")
-        idd = enc.index("DECISIÓN (SI/NO)") if "DECISIÓN (SI/NO)" in enc else None
-        ipp = enc.index("PRECIO A PONER") if "PRECIO A PONER" in enc else None
+        enc_viejo = viejo[0]
+        ip, im = enc_viejo.index("ID PROMO"), enc_viejo.index("MLA")
+        idd = enc_viejo.index("DECISIÓN (SI/NO)") if "DECISIÓN (SI/NO)" in enc_viejo else None
+        ipp = enc_viejo.index("PRECIO A PONER") if "PRECIO A PONER" in enc_viejo else None
         for r in viejo[1:]:
-            r = r + [""] * (len(enc) - len(r))
+            r = r + [""] * (len(enc_viejo) - len(r))
             d = r[idd] if idd is not None else ""
             pp = r[ipp] if ipp is not None else ""
             if str(d).strip() or str(pp).strip():
                 prev[(r[ip], r[im])] = (d, pp)
-            lib = (r + [""] * FIN_SIS)[len(DEC_ENC):I_EXTRA] + r[FIN_SIS:]
-            if any(str(x).strip() for x in lib):
+            lib = {i: v for i, v in enumerate(r) if i >= len(DEC_ENC) and i not in SIS and str(v).strip()}
+            if lib:
                 libres[(r[ip], r[im])] = lib
     log(f"Planilla: {len(prev)} decisiones ya cargadas se conservan")
+
+    # envío a cobrar (Credifin) de la pestaña Publicaciones
+    cobrar = {}
+    pub = h.leer("'Publicaciones'")
+    if pub and "MLA" in pub[0] and "ENVÍO CREDIFIN" in pub[0]:
+        a_, b_ = pub[0].index("MLA"), pub[0].index("ENVÍO CREDIFIN")
+        cobrar = {r[a_]: r[b_] for r in pub[1:] if len(r) > b_ and r[b_] not in ("", None)}
 
     # Decidir
     orden = {"SÍ": 0, "REVISAR": 1, "NO": 2, "YA ADHERIDA": 3, "COSTO DUDOSO": 4, "SIN COSTO": 5, "SIN PRECIO": 6}
     dec = sorted((f for f in filas if f["tipo"] not in CAMPANIAS_PROPIAS),
                  key=lambda f: (f["promo"], orden.get(f["sugerencia"], 9), -(f["x"] or 0)))
-    if not enc_libres or not any(str(x).strip() for x in enc_libres):
-        enc_libres = [""] * LIBRES
-    n_lib = max(len(enc_libres), LIBRES)
-    enc_libres = enc_libres + [""] * (n_lib - len(enc_libres))
-    enc_total = DEC_ENC + enc_libres[:LIBRES] + EXTRA_ENC + enc_libres[LIBRES:]
+    ancho = max([ULTIMA, len(enc_viejo)] + [max(l) + 1 for l in libres.values()])
+    enc_total = DEC_ENC + [""] * (ancho - len(DEC_ENC))
+    for i in range(len(DEC_ENC), ancho):
+        if i in SIS:
+            enc_total[i] = SIS[i]
+        else:
+            v = enc_viejo[i] if i < len(enc_viejo) else ""
+            enc_total[i] = v if str(v).strip() and v not in SIS.values() else ENC_LIBRE_DEF.get(i, "")
     filas_dec = [enc_total]
     for f in dec:
-        d, pp = prev.get((f["promo_id"], f["mla"]), ("", ""))
-        lib = libres.get((f["promo_id"], f["mla"]), [])
-        lib = lib + [""] * (n_lib - len(lib))
-        filas_dec.append([f["promo_id"], f["promo"], f["tipo"], f["mla"], f["sku"], f["titulo"], f["estado_pub"],
-                          _v(f["stock"]), _v(f["actual"]), _v(f["costo"]),
-                          round(f["actual"] / f["costo"], 2) if f["actual"] and f["costo"] else "",
-                          _v(f.get("minimo")), _v(f.get("maximo")), _v(f["precio_eval"]), _v(f.get("aporte_ml")),
-                          _v(f["x"]),
-                          round((1 - f["precio_eval"] / f["original"]) * 100, 1) if f["precio_eval"] and f.get("original") else "",
-                          _v(f["recomendado"]), f["sugerencia"], d, pp, f.get("estado_item") or "",
-                          *lib[:LIBRES], *extras(f, pp), *lib[LIBRES:]])
-    sid, ncf = h.asegurar(T_DEC, len(filas_dec) + 50, len(enc_total))
+        k = (f["promo_id"], f["mla"])
+        d, pp = prev.get(k, ("", ""))
+        lib = libres.get(k, {})
+        fila = [f["promo_id"], f["promo"], f["tipo"], f["mla"], f["sku"], f["titulo"], f["estado_pub"],
+                _v(f["stock"]), _v(f["actual"]), _v(f["costo"]),
+                round(f["actual"] / f["costo"], 2) if f["actual"] and f["costo"] else "",
+                _v(f.get("minimo")), _v(f.get("maximo")), _v(f["precio_eval"]), _v(f.get("aporte_ml")),
+                _v(f["x"]),
+                round((1 - f["precio_eval"] / f["original"]) * 100, 1) if f["precio_eval"] and f.get("original") else "",
+                _v(f["recomendado"]), f["sugerencia"], d, pp, f.get("estado_item") or ""]
+        fila += [""] * (ancho - len(fila))
+        for i, v in lib.items():
+            fila[i] = v
+        for i, v in extras(f, pp, cobrar.get(f["mla"]), lib.get(I_CREDIFIN_PROM)).items():
+            fila[i] = v
+        filas_dec.append(fila)
+    sid, ncf = h.asegurar(T_DEC, len(filas_dec) + 50, ancho)
     h.escribir(T_DEC, filas_dec)
-    formato(h, sid, ncf, len(enc_total), col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC, editables=(I_DEC, I_PRE),
-            anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90,
-                    90, 90, 90, 90, 110, 90, 110, 60, 100, 110, 90])
+    formato(h, sid, ncf, ancho, col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC,
+            editables=(I_DEC, I_PRE, I_CREDIFIN_PROM),
+            anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90]
+            + [90] * 4 + [130, 100, 80, 100, 90, 100, 60, 90, 110, 80] + [90] * 3 + [110] * 16)
 
     # Cupones (campañas propias ya activas): una fila por publicación
     propias = [p for p in promos if p["tipo"] in CAMPANIAS_PROPIAS]
