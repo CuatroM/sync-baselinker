@@ -36,5 +36,10 @@ for r in form[1:]:
         if isinstance(c, str) and c.startswith("="):
             cols[j] = cols.get(j, 0) + 1
 out["columnas_con_formula"] = {str(k): v for k, v in sorted(cols.items())}
+# fórmulas sueltas: en columnas donde casi ninguna fila tiene fórmula
+out["formulas_sueltas"] = [{"fila": n, "columna": j, "mla": r[3] if len(r) > 3 else "", "formula": c}
+                           for n, r in enumerate(form[1:], 2) for j, c in enumerate(r)
+                           if isinstance(c, str) and c.startswith("=") and cols.get(j, 0) < (len(form) - 1) / 2]
 json.dump(out, open("promos_planilla.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-print(json.dumps({k: out[k] for k in ("locale", "filas", "decisiones", "columnas_con_formula")}, ensure_ascii=False))
+print(json.dumps({k: out[k] for k in ("locale", "filas", "decisiones", "columnas_con_formula", "formulas_sueltas")},
+                 ensure_ascii=False))

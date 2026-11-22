@@ -5,6 +5,7 @@ Se conservan entre corridas (se cruzan por ID PROMO + MLA); el resto lo reescrib
 """
 import json
 import os
+import re
 from datetime import datetime, timezone, timedelta
 
 from google.auth.transport.requests import AuthorizedSession
@@ -20,24 +21,24 @@ DEC_ENC = ["ID PROMO", "PROMOCIÓN", "TIPO", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "RECIBÍS / COSTO", "% DESCUENTO", "PRECIO RECOMENDADO", "SUGERENCIA", "DECISIÓN (SI/NO)", "PRECIO A PONER",
            "ESTADO EN PROMO"]
 I_DEC, I_PRE = DEC_ENC.index("DECISIÓN (SI/NO)"), DEC_ENC.index("PRECIO A PONER")
-# Desde la columna W (índice 22): posiciones fijas. Las que tienen nombre acá las escribe el sistema;
-# todas las demás (W–Z, AK–AM, AX, BA y desde BC) son tuyas y se conservan en cada actualización.
-IMP = {"IIBB": 4.75, "COMERCIO": 1.5, "CHEQUE": 1.2, "GANANCIAS": 5.0}   # % sobre el precio sin IVA
+# Desde la columna W (índice 22): posiciones fijas. Las que tienen nombre en SIS las escribe el sistema.
+# Todas las demás son tuyas: los valores se conservan y las columnas con fórmulas (AN–BB) se copian
+# en cada fila, también en las filas nuevas, ajustando el número de fila.
 SIS = {
     26: "TIPO DE ENVÍO ML", 27: "COSTO ENVÍO ML ($)", 28: "% COMISIÓN ML", 29: "COMISIÓN ML ($)",
     30: "% FINANCIACIÓN (CUOTAS)", 31: "FINANCIACIÓN ($)", 32: "% IVA", 33: "CARGO FIJO ML ($)",
     34: "TE QUEDA (NETO $)", 35: "NETO / COSTO",
-    39: "IVA NETO VENTA EN MERCADO LIBRE", 40: "PRECIO DE VENTA EN MELI SIN IVA",
-    41: f"INGRESOS BRUTOS PRECIO SIN IVA {str(IMP['IIBB']).rstrip('0').rstrip('.').replace('.', ',')}%", 42: f"COMERCIO E INDUSTRIA PRECIO SIN IVA {str(IMP['COMERCIO']).rstrip('0').rstrip('.').replace('.', ',')}%",
-    43: f"CRÉDITO Y DÉBITO PRECIO SIN IVA {str(IMP['CHEQUE']).rstrip('0').rstrip('.').replace('.', ',')}%", 44: "MARGEN DE IMPUESTO RENTAS PRECIO SIN IVA",
-    45: f"IMPUESTO A LAS GANANCIAS {str(IMP['GANANCIAS']).rstrip('0').rstrip('.').replace('.', ',')}%", 46: "COSTO EXTRA EN IMPUESTOS",
-    47: "NETO MELI (− COMISIÓN, FINANCIACIÓN Y ENVÍOS MELI)",
-    48: "UTILIDAD NETA: VENTA SIN IVA − MELI − COSTO PRODUCTO − IMPUESTOS", 50: "PORCENTAJE UTILIDAD (SOBRE COSTO)",
-    51: "ENVÍO A COBRAR (CREDIFIN)", 53: "GANANCIA",
+    51: "ENVÍO A COBRAR (CREDIFIN)", 52: "COSTO PROMEDIO DEL ENVÍO CREDIFIN",
 }
-I_CREDIFIN_PROM = 52   # BA: costo promedio del envío Credifin (lo completás vos); AX queda libre
-ENC_LIBRE_DEF = {I_CREDIFIN_PROM: "COSTO PROMEDIO DEL ENVÍO CREDIFIN (completalo vos)"}
-ULTIMA = max(SIS) + 1   # 54 = columnas hasta BB
+CREDIFIN_PCT, CREDIFIN_MIN = 4.5, 15000.0   # BA: costo real estimado del envío Credifin (% del precio N, con mínimo)
+ENC_LIBRE_DEF = {
+    39: "IVA NETO VENTA EN MERCADO LIBRE", 40: "PRECIO DE VENTA EN MELI SIN IVA",
+    41: "INGRESOS BRUTOS PRECIO SIN IVA 4,75%", 42: "COMERCIO E INDUSTRIA PRECIO SIN IVA 1,5%",
+    43: "CRÉDITO Y DÉBITO PRECIO SIN IVA 1,2%", 44: "MARGEN DE IMPUESTO RENTAS PRECIO SIN IVA",
+    45: "IMPUESTO A LAS GANANCIAS 5%", 46: "COSTO EXTRA EN IMPUESTOS", 47: "NETO MELI", 48: "UTILIDAD NETA",
+    50: "PORCENTAJE UTILIDAD (SOBRE COSTO)", 53: "GANANCIA",
+}
+ULTIMA = 54   # columnas hasta BB
 
 class Hoja:
     def __init__(self, sheet_id):
@@ -89,6 +90,15 @@ class Hoja:
                 raise RuntimeError(f"Google Sheets {r.status_code}: {r.text[:300]}")
 
 
+def _col(i):
+    s_ = ""
+    i += 1
+    while i:
+        i, r = divmod(i - 1, 26)
+        s_ = chr(65 + r) + s_
+    return s_
+
+
 def _v(x):
     return "" if x is None else x
 
@@ -100,37 +110,34 @@ def _n(x):
         return None
 
 
-def extras(f, precio_a_poner="", envio_cobrar=None, credifin_prom=None):
-    """{posición: valor} de AA–AJ y AN–BC al precio final de la promo."""
-    p = _n(precio_a_poner) if str(precio_a_poner).strip() and f["tipo"] == "DEAL" else f.get("precio_final")
+def extras(f, envio_cobrar=None):
+    """{posición: valor} de AA–AJ, AZ y BA, sobre el PRECIO QUE PROPONE ML (columna N)."""
+    p = f.get("precio_eval")
     env, com, fin, fijo = f.get("envio_costo", ""), f.get("com_pct", ""), f.get("fin_pct", ""), f.get("cargo_fijo", "")
     if isinstance(env, (int, float)):
         tipo, env_n = "Mercado Envíos", float(env)
     else:
         tipo, env_n = ({"A acordar": "A acordar", "Lo paga el comprador": "Mercado Envíos (lo paga el comprador)"}
                        .get(env, env or ""), 0.0)
-    out = {26: tipo, 27: env_n, 28: _v(com), 30: _v(fin), 32: _v(f.get("iva")), 33: _v(fijo)}
+    a_acordar = tipo == "A acordar"
+    out = {26: tipo, 27: env_n, 28: _v(com), 30: _v(fin), 32: _v(f.get("iva")), 33: _v(fijo),
+           51: (_n(envio_cobrar) or 0.0) if a_acordar and envio_cobrar not in (None, "") else 0.0,
+           52: round(max(p * CREDIFIN_PCT / 100, CREDIFIN_MIN), 2) if a_acordar and p else 0.0}
     if not p or com == "":
         return out
-    aporte, costo = f.get("aporte_ml") or 0, f.get("costo")
     com_n, fin_n = round(p * float(com) / 100, 2), round(p * float(fin or 0) / 100, 2)
-    cargos = round(com_n + fin_n + float(fijo or 0) + env_n, 2)
-    neto = round(p + aporte - cargos, 2)
-    out.update({29: com_n, 31: fin_n, 34: neto, 35: round(neto / costo, 2) if costo else ""})
-    iva = float(f.get("iva") or 21)
-    sin_iva = round(p / (1 + iva / 100), 2)
-    iibb, cei, chq = (round(sin_iva * IMP[k] / 100, 2) for k in ("IIBB", "COMERCIO", "CHEQUE"))
-    rentas = round(iibb + cei + chq, 2)
-    gan = round(sin_iva * IMP["GANANCIAS"] / 100, 2)
-    extra = round(rentas + gan, 2)
-    out.update({39: round(p - sin_iva, 2), 40: sin_iva, 41: iibb, 42: cei, 43: chq, 44: rentas, 45: gan, 46: extra,
-                47: neto})
-    if costo:
-        util = round(sin_iva + aporte - cargos - costo - extra, 2)
-        cobrar = _n(envio_cobrar) if tipo == "A acordar" and envio_cobrar not in (None, "") else 0.0
-        prom = _n(credifin_prom) or 0.0
-        out.update({48: util, 50: round(util / costo * 100, 1), 51: cobrar, 53: round(util + (cobrar or 0) - prom, 2)})
+    neto = round(p + (f.get("aporte_ml") or 0) - com_n - fin_n - float(fijo or 0) - env_n, 2)
+    out.update({29: com_n, 31: fin_n, 34: neto, 35: round(neto / f["costo"], 2) if f.get("costo") else ""})
     return out
+
+
+_REF = re.compile(r"(\$?)([A-Z]{1,3})(\$?)(\d+)(?![\d(])")
+
+
+def plantilla(formula, fila):
+    """'=N7620/(1+AG7620/100)' en la fila 7620 -> '=N{r}/(1+AG{r}/100)'."""
+    return _REF.sub(lambda m: f"{m[1]}{m[2]}{m[3]}{{r}}" if int(m[4]) == fila and not m[3] else m[0],
+                    formula.replace("{", "{{").replace("}", "}}"))
 
 def formato(h, sid, n_cf, ncols, col_sug=None, col_dec=None, anchos=None, editables=()):
     req = [{"deleteConditionalFormatRule": {"sheetId": sid, "index": 0}} for _ in range(n_cf)]
@@ -190,12 +197,27 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
             if lib:
                 libres[(r[ip], r[im])] = lib
     log(f"Planilla: {len(prev)} decisiones ya cargadas se conservan")
-    # protección: si cargaste fórmulas a mano en «Promos - Decidir», no se reescribe esa pestaña (se perderían)
+    # fórmulas cargadas a mano: una columna con fórmula en la mayoría de las filas se copia a todas las filas
+    plant, sueltas = {}, []
     rf = h.gs.get(f"{h.url}/values/'{T_DEC}'", params={"valueRenderOption": "FORMULA"})
-    if rf.status_code == 200 and any(isinstance(c, str) and c.startswith("=")
-                                     for r in (rf.json().get("values") or [])[1:] for c in r):
-        log("AVISO: «Promos - Decidir» tiene fórmulas cargadas a mano: NO se reescribe esa pestaña para no borrarlas")
-        return
+    fv = (rf.json().get("values") or []) if rf.status_code == 200 else []
+    cuenta = {}
+    for n, r in enumerate(fv[1:], 2):
+        for j, c in enumerate(r):
+            if isinstance(c, str) and c.startswith("="):
+                cuenta[j] = cuenta.get(j, 0) + 1
+                plant.setdefault(j, plantilla(c, n))
+                if j < len(DEC_ENC) or j in SIS:
+                    sueltas.append((n, j))
+    datos = max(len(fv) - 1, 1)
+    plant = {j: t for j, t in plant.items() if cuenta[j] >= datos / 2 and j >= len(DEC_ENC)}
+    for n, j in sueltas:
+        if j not in plant:
+            r = fv[n - 1]
+            log(f"   fórmula suelta en fila {n}, columna {_col(j)} (MLA {r[3] if len(r) > 3 else '?'}): {r[j]} -> se reemplaza por el valor")
+    if plant:
+        log("Fórmulas tuyas que se copian a todas las filas: " + ", ".join(f"{_col(j)} {t.replace('{r}', 'n')}"
+                                                                         for j, t in sorted(plant.items())))
 
     # envío a cobrar (Credifin) de la pestaña Publicaciones
     cobrar = {}
@@ -218,26 +240,38 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
             enc_total[i] = v if str(v).strip() and v not in SIS.values() else ENC_LIBRE_DEF.get(i, "")
     filas_dec = [enc_total]
     for f in dec:
+        c = f["costo"]
+        if c and "#FEMA" in str(f["sku"]).upper():   # FEMA: el costo de BaseLinker trae IVA; acá va sin IVA
+            c = round(c / (1 + float(f.get("iva") or 21) / 100), 2)
         k = (f["promo_id"], f["mla"])
         d, pp = prev.get(k, ("", ""))
         lib = libres.get(k, {})
         fila = [f["promo_id"], f["promo"], f["tipo"], f["mla"], f["sku"], f["titulo"], f["estado_pub"],
-                _v(f["stock"]), _v(f["actual"]), _v(f["costo"]),
-                round(f["actual"] / f["costo"], 2) if f["actual"] and f["costo"] else "",
+                _v(f["stock"]), _v(f["actual"]), _v(c),
+                round(f["actual"] / c, 2) if f["actual"] and c else "",
                 _v(f.get("minimo")), _v(f.get("maximo")), _v(f["precio_eval"]), _v(f.get("aporte_ml")),
-                _v(f["x"]),
+                round(f["recibis"] / c, 2) if f.get("recibis") and c else "",
                 round((1 - f["precio_eval"] / f["original"]) * 100, 1) if f["precio_eval"] and f.get("original") else "",
                 _v(f["recomendado"]), f["sugerencia"], d, pp, f.get("estado_item") or ""]
         fila += [""] * (ancho - len(fila))
         for i, v in lib.items():
             fila[i] = v
-        for i, v in extras(f, pp, cobrar.get(f["mla"]), lib.get(I_CREDIFIN_PROM)).items():
+        for i, v in extras(dict(f, costo=c), cobrar.get(f["mla"])).items():
             fila[i] = v
+        for j in plant:
+            fila[j] = ""   # se escriben aparte, como fórmulas
         filas_dec.append(fila)
     sid, ncf = h.asegurar(T_DEC, len(filas_dec) + 50, ancho)
     h.escribir(T_DEC, filas_dec)
+    if plant:
+        n = len(filas_dec)
+        datos_f = [{"range": f"'{T_DEC}'!{_col(j)}2:{_col(j)}{n}", "values": [[t.format(r=r)] for r in range(2, n + 1)]}
+                   for j, t in plant.items()]
+        r = h.gs.post(f"{h.url}/values:batchUpdate", json={"valueInputOption": "USER_ENTERED", "data": datos_f})
+        if r.status_code != 200:
+            raise RuntimeError(f"Google Sheets (fórmulas) {r.status_code}: {r.text[:300]}")
     formato(h, sid, ncf, ancho, col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC,
-            editables=(I_DEC, I_PRE, I_CREDIFIN_PROM),
+            editables=(I_DEC, I_PRE),
             anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90]
             + [90] * 4 + [130, 100, 80, 100, 90, 100, 60, 90, 110, 80] + [90] * 3 + [110] * 15)
 

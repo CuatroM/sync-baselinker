@@ -262,7 +262,7 @@ for f in decidir:
         f["envio_costo"] = envio.get(f["mla"]) if f["envio_gratis"] else "Lo paga el comprador"
     else:
         f["envio_costo"] = "A acordar"
-    f["precio_final"] = f.get("recomendado") or f.get("precio_eval")
+    f["precio_final"] = f.get("precio_eval")   # comisión y financiación sobre el PRECIO QUE PROPONE ML (N)
 con_tarifa = [f for f in decidir if f["precio_final"] and f.get("cat") and f.get("lt")]
 with ThreadPoolExecutor(6) as ex:
     res = list(ex.map(lambda f: tarifa(f["cat"], f["lt"], f["tags"], f["precio_final"]), con_tarifa))
