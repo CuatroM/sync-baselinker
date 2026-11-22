@@ -190,6 +190,12 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
             if lib:
                 libres[(r[ip], r[im])] = lib
     log(f"Planilla: {len(prev)} decisiones ya cargadas se conservan")
+    # protección: si cargaste fórmulas a mano en «Promos - Decidir», no se reescribe esa pestaña (se perderían)
+    rf = h.gs.get(f"{h.url}/values/'{T_DEC}'", params={"valueRenderOption": "FORMULA"})
+    if rf.status_code == 200 and any(isinstance(c, str) and c.startswith("=")
+                                     for r in (rf.json().get("values") or [])[1:] for c in r):
+        log("AVISO: «Promos - Decidir» tiene fórmulas cargadas a mano: NO se reescribe esa pestaña para no borrarlas")
+        return
 
     # envío a cobrar (Credifin) de la pestaña Publicaciones
     cobrar = {}
