@@ -21,7 +21,7 @@ DEC_ENC = ["ID PROMO", "PROMOCIÓN", "TIPO", "MLA", "SKU", "TÍTULO", "ESTADO PU
            "ESTADO EN PROMO"]
 I_DEC, I_PRE = DEC_ENC.index("DECISIÓN (SI/NO)"), DEC_ENC.index("PRECIO A PONER")
 # Desde la columna W (índice 22): posiciones fijas. Las que tienen nombre acá las escribe el sistema;
-# todas las demás (W–Z, AK–AM, AY, BB y desde BD) son tuyas y se conservan en cada actualización.
+# todas las demás (W–Z, AK–AM, AX, BA y desde BC) son tuyas y se conservan en cada actualización.
 IMP = {"IIBB": 4.75, "COMERCIO": 1.5, "CHEQUE": 1.2, "GANANCIAS": 5.0}   # % sobre el precio sin IVA
 SIS = {
     26: "TIPO DE ENVÍO ML", 27: "COSTO ENVÍO ML ($)", 28: "% COMISIÓN ML", 29: "COMISIÓN ML ($)",
@@ -31,14 +31,13 @@ SIS = {
     41: f"INGRESOS BRUTOS PRECIO SIN IVA {str(IMP['IIBB']).rstrip('0').rstrip('.').replace('.', ',')}%", 42: f"COMERCIO E INDUSTRIA PRECIO SIN IVA {str(IMP['COMERCIO']).rstrip('0').rstrip('.').replace('.', ',')}%",
     43: f"CRÉDITO Y DÉBITO PRECIO SIN IVA {str(IMP['CHEQUE']).rstrip('0').rstrip('.').replace('.', ',')}%", 44: "MARGEN DE IMPUESTO RENTAS PRECIO SIN IVA",
     45: f"IMPUESTO A LAS GANANCIAS {str(IMP['GANANCIAS']).rstrip('0').rstrip('.').replace('.', ',')}%", 46: "COSTO EXTRA EN IMPUESTOS",
-    47: "CONTROL DE LO QUE RECIBO EN MELI: COMISIÓN + ENVÍOS MELI (NO APLICA EN LA VENTA)",
-    48: "NETO MELI (− COMISIÓN, FINANCIACIÓN Y ENVÍOS MELI)",
-    49: "UTILIDAD NETA: VENTA SIN IVA − MELI − COSTO PRODUCTO − IMPUESTOS", 51: "PORCENTAJE UTILIDAD (SOBRE COSTO)",
-    52: "ENVÍO A COBRAR (CREDIFIN)", 54: "GANANCIA",
+    47: "NETO MELI (− COMISIÓN, FINANCIACIÓN Y ENVÍOS MELI)",
+    48: "UTILIDAD NETA: VENTA SIN IVA − MELI − COSTO PRODUCTO − IMPUESTOS", 50: "PORCENTAJE UTILIDAD (SOBRE COSTO)",
+    51: "ENVÍO A COBRAR (CREDIFIN)", 53: "GANANCIA",
 }
-I_CREDIFIN_PROM = 53   # BB: costo promedio del envío Credifin (lo completás vos)
+I_CREDIFIN_PROM = 52   # BA: costo promedio del envío Credifin (lo completás vos); AX queda libre
 ENC_LIBRE_DEF = {I_CREDIFIN_PROM: "COSTO PROMEDIO DEL ENVÍO CREDIFIN (completalo vos)"}
-ULTIMA = max(SIS) + 1   # 55 = columnas hasta BC
+ULTIMA = max(SIS) + 1   # 54 = columnas hasta BB
 
 class Hoja:
     def __init__(self, sheet_id):
@@ -125,12 +124,12 @@ def extras(f, precio_a_poner="", envio_cobrar=None, credifin_prom=None):
     gan = round(sin_iva * IMP["GANANCIAS"] / 100, 2)
     extra = round(rentas + gan, 2)
     out.update({39: round(p - sin_iva, 2), 40: sin_iva, 41: iibb, 42: cei, 43: chq, 44: rentas, 45: gan, 46: extra,
-                47: cargos, 48: neto})
+                47: neto})
     if costo:
         util = round(sin_iva + aporte - cargos - costo - extra, 2)
         cobrar = _n(envio_cobrar) if tipo == "A acordar" and envio_cobrar not in (None, "") else 0.0
         prom = _n(credifin_prom) or 0.0
-        out.update({49: util, 51: round(util / costo * 100, 1), 52: cobrar, 54: round(util + (cobrar or 0) - prom, 2)})
+        out.update({48: util, 50: round(util / costo * 100, 1), 51: cobrar, 53: round(util + (cobrar or 0) - prom, 2)})
     return out
 
 def formato(h, sid, n_cf, ncols, col_sug=None, col_dec=None, anchos=None, editables=()):
@@ -234,7 +233,7 @@ def subir(sheet_id, promos, filas, mmin, mrev, log=print):
     formato(h, sid, ncf, ancho, col_sug=DEC_ENC.index("SUGERENCIA"), col_dec=I_DEC,
             editables=(I_DEC, I_PRE, I_CREDIFIN_PROM),
             anchos=[110, 180, 110, 110, 120, 320, 90, 60, 100, 100, 80, 100, 100, 110, 90, 90, 80, 110, 100, 90, 100, 90]
-            + [90] * 4 + [130, 100, 80, 100, 90, 100, 60, 90, 110, 80] + [90] * 3 + [110] * 16)
+            + [90] * 4 + [130, 100, 80, 100, 90, 100, 60, 90, 110, 80] + [90] * 3 + [110] * 15)
 
     # Cupones (campañas propias ya activas): una fila por publicación
     propias = [p for p in promos if p["tipo"] in CAMPANIAS_PROPIAS]
