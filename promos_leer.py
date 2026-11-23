@@ -62,7 +62,7 @@ if iu is not None:
     resumen = {}
     for nombre, cond in (("SI con pérdida", lambda d, u: d == "SI" and u is not None and u < 0),
                          ("NO con ganancia", lambda d, u: d == "NO" and u is not None and u > 0),
-                         ("Sin dato", lambda d, u: u is None)):
+                         ("Sin costo", None)):
         ws = wb.active if nombre == "SI con pérdida" else wb.create_sheet(nombre)
         ws.title = nombre
         ws.append(["FILA"] + [enc[i] if i is not None and i < len(enc) else "" for i in cols_out])
@@ -73,7 +73,7 @@ if iu is not None:
         por_promo = {}
         for k, r in enumerate(val[1:], 2):
             d, u = str(g(r, idd)).strip().upper(), num(g(r, iu))
-            if cond(d, u):
+            if (cond(d, u) if cond else g(r, 9) in ("", None)):
                 n += 1
                 por_promo[g(r, 1)] = por_promo.get(g(r, 1), 0) + 1
                 ws.append([k] + [g(r, i) if i is not None else "" for i in cols_out])
@@ -86,4 +86,9 @@ if iu is not None:
         d, u = str(g(r, idd)).strip().upper(), num(g(r, iu))
         k = (d or "(vacío)", "positiva" if u and u > 0 else "negativa" if u is not None and u < 0 else "cero/sin dato")
         tot[" / ".join(k)] = tot.get(" / ".join(k), 0) + 1
-    print("CONTROL", json.dumps({"decision_vs_utilidad": tot, **resumen}, ensure_ascii=False))
+    sc = {}
+    for r in val[1:]:
+        if g(r, 9) in ("", None):
+            k = str(g(r, 4)).split("#")[-1].upper() if "#" in str(g(r, 4)) else "SIN SUFIJO"
+            sc[k] = sc.get(k, 0) + 1
+    print("CONTROL", json.dumps({"decision_vs_utilidad": tot, **resumen, "sin_costo_por_proveedor": sc}, ensure_ascii=False))
