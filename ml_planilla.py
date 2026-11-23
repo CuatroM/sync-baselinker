@@ -301,3 +301,20 @@ gs.post(f"{GS}:batchUpdate", json={"requests": [{"deleteConditionalFormatRule": 
         "booleanRule": {"condition": {"type": "TEXT_STARTS_WITH", "values": [{"userEnteredValue": "NO SE OFRECE"}]},
                         "format": {"backgroundColor": {"red": 1, "green": 0.55, "blue": 0}, "textFormat": {"bold": True}}}}}}]}).raise_for_status()
 log(f"Planilla escrita: {len(filas)} filas | cambios en ML: {cambios}")
+# resumen de envíos por marca (sufijo del SKU)
+res = {}
+for f in filas:
+    sku = str(f.get("SKU") or "")
+    m = sku.split("#")[-1].upper() if "#" in sku else "SIN SUFIJO"
+    d = res.setdefault(m, {"mercado envíos": 0, "a acordar con envío": 0, "a acordar sin costo en Base": 0,
+                           "a acordar supera máximo": 0})
+    if not str(f.get("TIPO DE ENVÍO", "")).startswith("A acordar"):
+        d["mercado envíos"] += 1
+    elif not f.get("COSTO (BASE)"):
+        d["a acordar sin costo en Base"] += 1
+    elif isinstance(f.get("ENVÍO CREDIFIN"), (int, float)):
+        d["a acordar con envío"] += 1
+    else:
+        d["a acordar supera máximo"] += 1
+for m, d in sorted(res.items(), key=lambda x: -sum(x[1].values())):
+    log(f"ENVÍOS {m}: {d}")
