@@ -104,8 +104,10 @@ for pid, filas in pedidos.items():
                 continue
             res_txt, precio = "SE QUITA", ""
             if not DRY:
-                rr = ml.pedir("DELETE", f"/seller-promotions/items/{mla}", reintentos=2,
-                              params={"promotion_type": tipo, "promotion_id": pid, "app_version": "v2"})
+                prm = {"promotion_type": tipo, "promotion_id": pid, "app_version": "v2"}
+                if it.get("offer_id"):   # en las ofertas de ML (SMART, PRICE_MATCHING) hay que indicar cuál
+                    prm["offer_id"] = it["offer_id"]
+                rr = ml.pedir("DELETE", f"/seller-promotions/items/{mla}", reintentos=2, params=prm)
                 res_txt = "QUITADA" if rr.status_code in (200, 204) else f"ERROR {rr.status_code}"
                 det = "" if rr.status_code in (200, 204) else rr.text[:250]
                 time.sleep(0.3)
