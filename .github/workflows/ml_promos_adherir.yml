@@ -1,0 +1,64 @@
+name: Mercado Libre - Adherir promociones marcadas SI
+
+on:
+  workflow_dispatch:
+    inputs:
+      codigo:
+        description: "Código TG-... (o la dirección completa) de una autorización recién hecha"
+        required: true
+      dry_run:
+        description: "1 = prueba (no cambia nada) · 0 = adherir de verdad"
+        default: "1"
+      quitar_no:
+        description: "1 = también sacar de la promo las marcadas NO que ya estén adheridas"
+        default: "0"
+      solo:
+        description: "Opcional: IDs de promoción separados por coma (vacío = todas)"
+        default: ""
+      limite:
+        description: "Opcional: máximo de publicaciones a procesar (vacío = todas)"
+        default: ""
+
+concurrency:
+  group: mercadolibre
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  adherir:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Adherir
+        env:
+          ML_CODIGO: ${{ github.event.inputs.codigo }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+          QUITAR_NO: ${{ github.event.inputs.quitar_no }}
+          SOLO: ${{ github.event.inputs.solo }}
+          LIMITE: ${{ github.event.inputs.limite }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+        run: |
+          set -o pipefail
+          python ml_promos_adherir.py 2>&1 | tee resultado.txt
+      - name: Guardar resultado en la rama "diagnostico"
+        if: always()
+        run: |
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp salida/* /tmp/out/ 2>/dev/null || true
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git checkout -q --orphan diagnostico
+          git rm -rfq .
+          rm -rf salida
+          cp /tmp/out/* .
+          git add -A
+          git commit -qm "Adhesión a promociones"
+          git push -qf origin diagnostico
