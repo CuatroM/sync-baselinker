@@ -43,3 +43,47 @@ out["formulas_sueltas"] = [{"fila": n, "columna": j, "mla": r[3] if len(r) > 3 e
 json.dump(out, open("promos_planilla.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(json.dumps({k: out[k] for k in ("locale", "filas", "decisiones", "columnas_con_formula", "formulas_sueltas")},
                  ensure_ascii=False))
+
+# ---------------- control: SI con utilidad negativa y NO con utilidad positiva (según tu columna AW)
+from openpyxl import Workbook
+from openpyxl.styles import Font, PatternFill
+
+iu = next((i for i, t in enumerate(enc) if str(t).upper().startswith("UTILIDAD NETA")), None)
+ig = next((i for i, t in enumerate(enc) if str(t).strip().upper() == "GANANCIA"), None)
+if iu is not None:
+    def g(r, i):
+        return r[i] if len(r) > i else ""
+
+    def num(x):
+        return x if isinstance(x, (int, float)) else None
+
+    cols_out = [0, 1, 3, 4, 5, 8, 9, 13, 17, 18, 19, 26, iu, iu + 2, ig]
+    wb = Workbook()
+    resumen = {}
+    for nombre, cond in (("SI con pérdida", lambda d, u: d == "SI" and u is not None and u < 0),
+                         ("NO con ganancia", lambda d, u: d == "NO" and u is not None and u > 0),
+                         ("Sin dato", lambda d, u: u is None)):
+        ws = wb.active if nombre == "SI con pérdida" else wb.create_sheet(nombre)
+        ws.title = nombre
+        ws.append(["FILA"] + [enc[i] if i is not None and i < len(enc) else "" for i in cols_out])
+        for c in ws[1]:
+            c.font = Font(bold=True, color="FFFFFF")
+            c.fill = PatternFill("solid", fgColor="02561A")
+        n = 0
+        por_promo = {}
+        for k, r in enumerate(val[1:], 2):
+            d, u = str(g(r, idd)).strip().upper(), num(g(r, iu))
+            if cond(d, u):
+                n += 1
+                por_promo[g(r, 1)] = por_promo.get(g(r, 1), 0) + 1
+                ws.append([k] + [g(r, i) if i is not None else "" for i in cols_out])
+        ws.freeze_panes = "A2"
+        ws.auto_filter.ref = ws.dimensions
+        resumen[nombre] = {"total": n, "por_promocion": por_promo}
+    wb.save("promos_control.xlsx")
+    tot = {}
+    for r in val[1:]:
+        d, u = str(g(r, idd)).strip().upper(), num(g(r, iu))
+        k = (d or "(vacío)", "positiva" if u and u > 0 else "negativa" if u is not None and u < 0 else "cero/sin dato")
+        tot[" / ".join(k)] = tot.get(" / ".join(k), 0) + 1
+    print("CONTROL", json.dumps({"decision_vs_utilidad": tot, **resumen}, ensure_ascii=False))

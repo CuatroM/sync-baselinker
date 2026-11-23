@@ -25,7 +25,7 @@ jobs:
       - name: Guardar resultado en la rama "diagnostico"
         if: always()
         run: |
-          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp promos_planilla.json /tmp/out/ 2>/dev/null || true
+          mkdir -p /tmp/out && cp resultado.txt /tmp/out/diagnostico.txt && cp promos_planilla.json promos_control.xlsx /tmp/out/ 2>/dev/null || true
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git checkout -q --orphan diagnostico
