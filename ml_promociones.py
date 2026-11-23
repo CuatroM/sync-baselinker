@@ -118,6 +118,33 @@ def num(v):
 
 
 # ---------------- promociones
+ATR = ("id,title,status,price,available_quantity,seller_custom_field,attributes,variations,category_id,"
+       "listing_type_id,tags,shipping")
+_det_cache = {}
+
+
+def detalles(ids):
+    """Datos de las publicaciones, de a 1.000; si ML rechaza un tramo (403 pasajero), espera y reintenta,
+    y si sigue fallando lo saltea en lugar de cortar todo."""
+    import time
+    falta = [i for i in dict.fromkeys(ids) if i not in _det_cache]
+    for k in range(0, len(falta), 1000):
+        tramo = falta[k:k + 1000]
+        for intento in range(4):
+            try:
+                for x in ml.publicaciones(tramo, atributos=ATR):
+                    _det_cache[x["id"]] = x
+                break
+            except Exception as e:
+                log(f"   aviso: ML rechazó un tramo de {len(tramo)} publicaciones ({e.__class__.__name__}); "
+                    f"reintento {intento + 1}/3 en {60 * (intento + 1)} s")
+                if intento == 3:
+                    log("   se saltea ese tramo (esas filas quedan sin título/SKU/costo)")
+                else:
+                    time.sleep(60 * (intento + 1))
+    return {i: _det_cache[i] for i in ids if i in _det_cache}
+
+
 r = ml.pedir("GET", f"/seller-promotions/users/{ml.user_id}", reintentos=2, params={"app_version": "v2"})
 if r.status_code != 200:
     log(f"ERROR: Mercado Libre no deja leer la Central de Promociones ({r.status_code}): {r.text[:400]}")
@@ -165,10 +192,7 @@ for p in promos:
                      "adherir_hasta": fecha(p.get("deadline_date")), "pct": pct_c})
     if not items:
         continue
-    det = {x["id"]: x for x in ml.publicaciones([i["id"] for i in items if i.get("id")],
-                                                atributos="id,title,status,price,available_quantity,"
-                                                          "seller_custom_field,attributes,variations,category_id,"
-                                                          "listing_type_id,tags,shipping")}
+    det = detalles([i["id"] for i in items if i.get("id")])
     for i in items:
         it = det.get(i.get("id")) or {}
         sku = sku_de(it) if it else ""
