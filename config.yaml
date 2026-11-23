@@ -63,7 +63,7 @@ baselinker:
 # Segundo proveedor: EXTRAPOWER (lo publica ml_publicar.py con PROVEEDOR=EXTRAPOWER; solo lee BaseLinker)
 extrapower:
   inventory_id: 65209        # INVENTARIO COMPLETO EXTRAPOWER 2026 MATIAS
-  price_group_id: 66282      # precio LISTA +IVA del Excel del proveedor
+  price_group_id: 65271      # precio LISTA +IVA del Excel del proveedor (el grupo 66282 ya no existe en este inventario)
 
 # Tercer proveedor: J&A Distribuidora (tienda Empretienda). ml_publicar.py con PROVEEDOR=JYA; solo lee BaseLinker
 jya:
