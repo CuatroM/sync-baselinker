@@ -32,8 +32,9 @@ PROVEEDOR = (os.environ.get("PROVEEDOR") or "FEMA").strip().upper()
 XP = PROVEEDOR == "EXTRAPOWER"
 JYA = PROVEEDOR == "JYA"
 DEL = PROVEEDOR == "DELFABRO"
-GEN = XP or JYA or DEL          # proveedores con fichas armadas desde su web (reglas genéricas de categoría y obligatorios)
-SUFIJO = "#EXTRAPOWER" if XP else "#JYA" if JYA else "#DELFABRO" if DEL else "#FEMA"
+TOR = PROVEEDOR == "TORREON"   # herramientas neumáticas TORREON y VTB: fichas de la web, precio web −30 %
+GEN = XP or JYA or DEL or TOR          # proveedores con fichas armadas desde su web (reglas genéricas de categoría y obligatorios)
+SUFIJO = "#EXTRAPOWER" if XP else "#JYA" if JYA else "#DELFABRO" if DEL else "#TORREON" if TOR else "#FEMA"
 dry = os.environ.get("DRY_RUN", "1") == "1"
 _sk = os.environ["SKUS"].strip()
 if _sk.startswith("@"):                      # @tanda1 -> datos/tanda1.json
@@ -351,7 +352,7 @@ def elegir_categoria(f, t):
         return categoria_repuesto(f, t)
     if CATEGORIAS.get(f["familia"]):
         return CATEGORIAS[f["familia"]]
-    for exp, nombres in ([] if DEL else CAT_NOMBRE):
+    for exp, nombres in ([] if DEL or TOR else CAT_NOMBRE):
         if re.search(exp, t, re.I):
             c = categoria_por_nombre(nombres)
             if c:
@@ -363,7 +364,7 @@ def elegir_categoria(f, t):
                 return q
             consultas = [q]
             break
-    for exp, fija, q in ([] if DEL else REGLAS_CAT):
+    for exp, fija, q in ([] if DEL or TOR else REGLAS_CAT):
         if re.search(exp, t, re.I):
             if fija:
                 return fija
@@ -401,11 +402,11 @@ def elegir_categoria(f, t):
 
 import glob
 fichas = {}
-for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/jya_fichas*.json" if JYA else "datos/delfabro_fichas*.json" if DEL else "datos/fichas_*.json")):
+for _arch in sorted(glob.glob("datos/xp_fichas*.json" if XP else "datos/jya_fichas*.json" if JYA else "datos/delfabro_fichas*.json" if DEL else "datos/torreon_fichas*.json" if TOR else "datos/fichas_*.json")):
     for _f in json.load(open(_arch, encoding="utf-8")):
         fichas.setdefault(_f["sku"], _f)
 cfg = yaml.safe_load(open("config.yaml", encoding="utf-8"))
-b = cfg["extrapower"] if XP else cfg["jya"] if JYA else (cfg.get("delfabro") or {}) if DEL else cfg["baselinker"]
+b = cfg["extrapower"] if XP else cfg["jya"] if JYA else (cfg.get("delfabro") or {}) if DEL else (cfg.get("torreon") or {}) if TOR else cfg["baselinker"]
 
 # ---------------- primero la autorización de Mercado Libre (el código vence en minutos)
 ml = ML(os.environ.get("ML_CODIGO"))
@@ -418,7 +419,7 @@ por_sku = {sync.normalizar_codigo(p.get("sku")): p for p in cat_bl.values()}
 # ---------------- IVA por SKU desde el Excel de FEMA (columna IMPUESTOS)
 import io
 import pandas as pd
-if DEL:   # DELFABRO: precio de la lista PDF (sin IVA) e IVA de la sección, guardados en la ficha
+if DEL or TOR:   # DELFABRO: lista PDF (sin IVA) · TORREON: precio web −30 % (con IVA 10,5 %); los dos guardados en la ficha
     IVA = {sync.normalizar_codigo(k): v.get("iva") for k, v in fichas.items()}
     PRECIO_XLS = {sync.normalizar_codigo(k): float(v.get("precio_lista") or 0) for k, v in fichas.items()}
     MULT = 1
@@ -523,7 +524,7 @@ def _sa(x):
 
 # valor por defecto cuando el texto no dice nada (atributo: palabras a buscar entre las opciones, en orden)
 DEFECTO_OPC = {
-    "POWER_SUPPLY_TYPE": ["corriente", "electric", "cable"],
+    "POWER_SUPPLY_TYPE": (["neumat", "aire"] if TOR else []) + ["corriente", "electric", "cable"],
     "HAND_SAW_TYPE": ["carpintero"], "FAUCET_CONTROL_TYPE": ["monocomando"],
     "UTILITY_KNIVE_TYPE": ["hoja segmentada", "retractil"], "HAND_PLANE_TYPE": ["bolsillo"], "IS_THERMIC": ["no"],
     "INCLUDES_CARTRIDGE": ["no"], "TOOL_TYPE": ["cincel", "manual"], "CHLORINE_FORMAT": ["granulad", "pastilla", "liquid"],
@@ -730,7 +731,7 @@ for sku in skus:
         origen = "BaseLinker"
         if base <= 0:   # no está en BaseLinker: mismo cálculo desde el Excel de FEMA (mayorista × 1,25)
             m = PRECIO_XLS.get(sync.normalizar_codigo(sku))
-            base, origen = (round(m * MULT, 2), "Lista PDF" if DEL else "Excel FEMA") if m else (0, "")
+            base, origen = (round(m * MULT, 2), "Lista PDF" if DEL else "Web −30 %" if TOR else "Excel FEMA") if m else (0, "")
         if base <= 0:
             raise RuntimeError(f"sin precio: no está en BaseLinker ni en la lista de {PROVEEDOR}")
         precio = round(base * (1 + margen / 100), 2)
@@ -804,7 +805,7 @@ for sku in skus:
                      "precio": precio, "stock": stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
                      "atributos": len(atributos), "obligatorios_sin_dato": ", ".join(faltan)})
         item = {"title": t, "category_id": cat, "price": precio, "currency_id": "ARS",
-                "available_quantity": stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
+                "available_quantity": max(int(f.get("stock_web") or 0), 1) if TOR else stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
                 "listing_type_id": tipo, "attributes": atributos,
                 "sale_terms": [{"id": "WARRANTY_TYPE", "value_name": "Garantía de fábrica"},
                                {"id": "WARRANTY_TIME", "value_name": "6 meses"}],
