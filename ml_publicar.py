@@ -805,7 +805,7 @@ for sku in skus:
                      "precio": precio, "stock": stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
                      "atributos": len(atributos), "obligatorios_sin_dato": ", ".join(faltan)})
         item = {"title": t, "category_id": cat, "price": precio, "currency_id": "ARS",
-                "available_quantity": max(int(f.get("stock_web") or 0), 1) if TOR else stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
+                "available_quantity": ((int(f.get("stock_web") or 0) + 5) if int(f.get("stock_web") or 0) >= 1 else 1) if TOR else stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
                 "listing_type_id": tipo, "attributes": atributos,
                 "sale_terms": [{"id": "WARRANTY_TYPE", "value_name": "Garantía de fábrica"},
                                {"id": "WARRANTY_TIME", "value_name": "6 meses"}],
