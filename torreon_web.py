@@ -66,7 +66,7 @@ def urls_productos():
 
 
 def foto_grande(u):
-    u = "https:" + u if u.startswith("//") else u
+    u = "https:" + u if u.startswith("//") else u.replace("http://", "https://")
     return re.sub(r"-(\d+)-(\d+)\.(webp|jpg|jpeg|png)", r"-1024-1024.\3", u)
 
 
@@ -123,13 +123,23 @@ def leer(url):
     # fotos
     fotos = []
     for u in re.findall(r'(?:https?:)?//[a-z0-9.-]*mitiendanube\.com/stores/[^"\'\s,)]+?/products/[^"\'\s,)]+?\.(?:webp|jpg|jpeg|png)', h):
-        f = foto_grande(u)
+        f = foto_grande(u).replace("http://", "https://")
         if f not in fotos:
             fotos.append(f)
     # descripción
-    d = s.select_one("[data-store='product-description'], .product-description, .js-product-description, "
-                     "#product-description, .description")
+    d = s.select_one("[data-store^='product-description'], .product-description, .js-product-description, "
+                     "#product-description, .user-content")
+    if not d:   # tema sin clases: el bloque que sigue al título «Descripción»
+        t = s.find(lambda x: x.name in ("h2", "h3", "h4", "div", "span", "p") and x.get_text(strip=True) == "Descripción")
+        while t is not None and len(t.parent.get_text(strip=True)) <= len("Descripción") + 5:
+            t = t.parent
+        d = t.parent if t is not None else None
     desc = d.get_text("\n", strip=True) if d else ""
+    desc = re.sub(r"^Descripci[oó]n\s*", "", desc)
+    if len(desc) < 40:   # último recurso: el bloque de texto más largo que hable de RPM, peso o presión
+        cands = [x.get_text("\n", strip=True) for x in s.find_all(["div", "section"])
+                 if re.search(r"RPM|Peso|Presi[oó]n|Consumo", x.get_text(" ", strip=True)) and len(x.find_all(["div", "section"])) < 4]
+        desc = max(cands, key=len) if cands else desc
     tablas = []
     for t in (d.find_all("table") if d else []):
         for tr in t.find_all("tr"):
