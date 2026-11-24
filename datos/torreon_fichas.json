@@ -1,0 +1,2661 @@
+[
+ {
+  "sku": "ACEITE-1L",
+  "proveedor": "TORREON",
+  "familia": "Aceite para herramientas neumáticas",
+  "titulo": "Aceite para herramientas neumaticas",
+  "nombre": "Aceite para herramientas neumaticas",
+  "marca": "TORREON",
+  "uso_pdf": "Botella de 1 litro Aceite especial para herramientas neumaticas  Densidad 37  Anticorrosivo  Antioxidante   ",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "ACEITE-1L"
+  },
+  "notas": [
+   "Botella de 1 litro",
+   "Aceite especial para herramientas neumaticas",
+   "Densidad 37",
+   "Anticorrosivo",
+   "Antioxidante"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/botella_de_aceite-7d15826a1124fc7bad17920940743680-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/aceite-para-herramientas-neumaticas/",
+  "stock_web": 1,
+  "precio_web": 121000.0,
+  "precio_lista": 84700,
+  "iva": 10.5,
+  "descripcion": "Botella de 1 litro\nAceite especial para herramientas neumaticas\nDensidad 37\nAnticorrosivo\nAntioxidante"
+ },
+ {
+  "sku": "AR24",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo AR24",
+  "nombre": "Amoladora industrial TORREON modelo AR24",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON AR24, 3 HP, 6000 RPM, peso 5.3 kg. Ideal para trabajo pesado en piedra. ¡Compra ahora y potencia tu industria!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "AR24",
+   "Para": "piedra de 6\" x 1\"",
+   "Peso": "5.30 Kg",
+   "Velocidad": "6000 RPM",
+   "Potencia": "3 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "800 l/m",
+   "Entrada de aire": "1/2\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial pesado"
+  },
+  "notas": [],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-ar24/",
+  "stock_web": 0,
+  "precio_web": 1093548.39,
+  "precio_lista": 765484,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo AR24\nPara piedra de 6\" x 1\"\nPeso 5.30 Kg\nVelocidad 6000 RPM\nPotencia 3 HP\nPresion de trabajo 7 kg / cm2\nConsumo 800 l/m\nEntrada de aire 1/2\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial pesado\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LN20/80",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo LN20/80",
+  "nombre": "Amoladora industrial TORREON modelo LN20/80",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON LN20/80 para disco 7\", 2 HP, 8000 RPM, 4.95 Kg. Potencia y durabilidad para servicio pesado. ¡Compra ahora!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LN20/80",
+   "Para": "disco de 7\"",
+   "Peso": "4.95 Kg",
+   "Velocidad": "8000 RPM",
+   "Potencia": "2 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "800 l/m",
+   "Entrada de aire": "1/2\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial pesado"
+  },
+  "notas": [],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-ln20-80/",
+  "stock_web": 1,
+  "precio_web": 887096.77,
+  "precio_lista": 620968,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo LN20/80\nPara disco de 7\"\nPeso 4.95 Kg\nVelocidad 8000 RPM\nPotencia 2 HP\nPresion de trabajo 7 kg / cm2\nConsumo 800 l/m\nEntrada de aire 1/2\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial pesado\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LN20/60",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo LN20/60",
+  "nombre": "Amoladora industrial TORREON modelo LN20/60",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON LN20/60, 2.5 HP, 6000 RPM, ideal para piedra de 9\". Servicio pesado y rendimiento superior. ¡Compra ya!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LN20/60",
+   "Para": "piedra de 9\"",
+   "Peso": "4.95 Kg",
+   "Velocidad": "6000 RPM",
+   "Potencia": "2.5 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "800 l/m",
+   "Entrada de aire": "1/2\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial pesado"
+  },
+  "notas": [],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-ln20-60/",
+  "stock_web": 1,
+  "precio_web": 874193.55,
+  "precio_lista": 611935,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo LN20/60\nPara piedra de 9\"\nPeso 4.95 Kg\nVelocidad 6000 RPM\nPotencia 2.5 HP\nPresion de trabajo 7 kg / cm2\nConsumo 800 l/m\nEntrada de aire 1/2\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial pesado\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "AV25",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo AV25",
+  "nombre": "Amoladora industrial TORREON modelo AV25",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON AV25 para piedra copa 6\", 5000 RPM, 2 HP, peso 5 Kg. Ideal para servicio pesado. ¡Compra ya!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "AV25",
+   "Para": "piedra copa de 6\"",
+   "Velocidad": "5000 RPM",
+   "Potencia": "2 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "800 l/m",
+   "Entrada de aire": "1/2\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial pesado"
+  },
+  "notas": [
+   "Peso: 5 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-av25/",
+  "stock_web": 0,
+  "precio_web": 896774.19,
+  "precio_lista": 627742,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo AV25\nPara piedra copa de 6\"\nVelocidad 5000 RPM\nPeso: 5 Kg.\nPotencia 2 HP\nPresion de trabajo 7 kg / cm2\nConsumo 800 l/m\nEntrada de aire 1/2\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial pesado\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LN178",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo LN 178",
+  "nombre": "Amoladora industrial TORREON modelo LN 178",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON LN 178, 1.5 HP, disco 7\", 8000 RPM, 2.7 Kg. Potencia y rendimiento para trabajos industriales. ¡Compra ya!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LN178",
+   "Para": "disco de corte de 7\"",
+   "Peso": "2.7 Kg.",
+   "Potencia": "1.5 HP",
+   "Consumo de aire": "500 l/m",
+   "Entrada de aire": "3/8\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Velocidad: 8000 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-ln-178/",
+  "stock_web": 0,
+  "precio_web": 612903.23,
+  "precio_lista": 429032,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo LN178\nPara disco de corte de 7\"\nVelocidad: 8000 RPM\nPeso 2.7 Kg.\nPotencia 1.5 HP\nConsumo 500 l/m\nEntrada de aire 3/8\"\nPresion de trabajo 7 kg / cm2\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LN115",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Mini amoladora industrial TORREON modelo LN 115",
+  "nombre": "Mini amoladora industrial TORREON modelo LN 115",
+  "marca": "TORREON",
+  "uso_pdf": "Mini amoladora Torreon LN 115 con disco 4 1/2\", 12500 RPM, 1 HP. Ideal para trabajo industrial. ¡Compra ahora y potencia tu taller!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LN115",
+   "Para": "disco de corte de 4 1/2\"",
+   "Peso": "1.35 Kg.",
+   "Potencia": "1 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Mini Amoladora industrial marca Torreon modelo LN115",
+   "Velocidad: 12500 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/mini-amoladora-modelo-ln-115/",
+  "stock_web": 0,
+  "precio_web": 383870.97,
+  "precio_lista": 268710,
+  "iva": 10.5,
+  "descripcion": "Mini Amoladora industrial marca Torreon modelo LN115\nPara disco de corte de 4 1/2\"\nVelocidad: 12500 RPM\nPeso 1.35 Kg.\nPotencia 1 HP\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LN127",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Mini amoladora industrial TORREON modelo LN 127",
+  "nombre": "Mini amoladora industrial TORREON modelo LN 127",
+  "marca": "TORREON",
+  "uso_pdf": "Mini amoladora industrial TORREON LN 127, 1 HP, 5\" disco, 12500 RPM. Potente y ligera para uso industrial. ¡Compra ya!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LN127",
+   "Para": "disco de corte de 5\"",
+   "Peso": "1.40 Kg.",
+   "Potencia": "1 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Velocidad: 12500 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/mini-amoladora-modelo-ln-127/",
+  "stock_web": 0,
+  "precio_web": 387096.77,
+  "precio_lista": 270968,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo LN127\nPara disco de corte de 5\"\nVelocidad: 12500 RPM\nPeso 1.40 Kg.\nPotencia 1 HP\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "DC22L",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo DC22L",
+  "nombre": "Amoladora industrial TORREON modelo DC22L",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial TORREON DC22L, 2200 RPM, 0.7 HP, ligera y potente. Ideal para piedra. ¡Compra ahora y mejora tu taller!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "DC22L",
+   "Para": "piedra de 3\" x 1\"",
+   "Peso": "1.75 Kg.",
+   "Potencia": "0.7 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Velocidad: 2200 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-dc22l/",
+  "stock_web": 1,
+  "precio_web": 700000.0,
+  "precio_lista": 490000,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo DC22L\nPara piedra de 3\" x 1\"\nVelocidad: 2200 RPM\nPeso 1.75 Kg.\nPotencia 0.7 HP\nPresion de trabajo 7 kg / cm2\nConsumo 300 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "DCA22L",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras industriales",
+  "titulo": "Amoladora industrial TORREON modelo DCA22L",
+  "nombre": "Amoladora industrial TORREON modelo DCA22L",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora industrial Torreon DCA22L, 22.000 RPM, 0.7 HP, ligera y eficiente. Ideal para trabajos con piedra. ¡Compra ahora!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "DCA22L",
+   "Para": "piedra de 3\" x 1\"",
+   "Peso": "1.20 Kg.",
+   "Potencia": "0.7 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Velocidad: 22.000 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dca-22l-57858d7b34df3fa05a17920797381627-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/herramienta-neumatica-dc-22l-58a2eafe1d025a1d7217920807334508-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2080-fdae0cb5f037ec0bb017925263877195-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-2060-ae9fe26c2511df7f6c17925264041071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-ar-24-bde507c249d6a8aee517920792952698-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-115-9c47d97c4553de60f917925263478163-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-av25-58020a7d235ad89d1a17920791188957-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-127-b948716ec9e6977a1b17925263278394-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-neumatica-torrean-ln-178-a53ecde10d814c08a617925263674902-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-dca22l/",
+  "stock_web": 1,
+  "precio_web": 680645.16,
+  "precio_lista": 476452,
+  "iva": 10.5,
+  "descripcion": "Amoladora industrial marca Torreon modelo DCA22L\nPara piedra de 3\" x 1\"\nVelocidad: 22.000 RPM\nPeso 1.20 Kg.\nPotencia 0.7 HP\nPresion de trabajo 7 kg / cm2\nConsumo 300 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "PMR100",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta industrial TORREON modelo PMR100",
+  "nombre": "Amoladora recta industrial TORREON modelo PMR100",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora recta TORREON PMR100, 30000 RPM, 0.3 HP, ligera y potente para uso industrial. ¡Compra la herramienta ideal y mejora tu trabajo!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "PMR100",
+   "Velocidad": "30000 RPM",
+   "Peso": "0.33 Kg.",
+   "Potencia": "0.3 HP",
+   "Para": "boquilla de 1/8\" - 6mm - 1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Amoladora recta industrial marca Torreon modelo PMR100"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-pmr100/",
+  "stock_web": 3,
+  "precio_web": 314516.13,
+  "precio_lista": 220161,
+  "iva": 10.5,
+  "descripcion": "Amoladora recta industrial marca Torreon modelo PMR100\nVelocidad 30000 RPM\nPeso 0.33 Kg.\nPotencia 0.3 HP\nPara boquilla de 1/8\" - 6mm - 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo 300 l/m\nEntrada de aire 1/4\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "PMA22",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta industrial TORREON modelo PMA22",
+  "nombre": "Amoladora recta industrial TORREON modelo PMA22",
+  "marca": "TORREON",
+  "uso_pdf": "Pulidora Torreon PMA22 con 22000 RPM, peso ligero y potencia 0.5 HP. Ideal para uso industrial. Compra ahora y mejora tu trabajo.",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "PMA22",
+   "Velocidad": "22000 RPM",
+   "Peso": "0.8 Kg.",
+   "Potencia": "0.5 HP",
+   "Para": "boquilla de 1/8\" - 6mm - 1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Amoladora recta industrial marca Torreon modelo PMA22"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-pma22/",
+  "stock_web": 3,
+  "precio_web": 432258.06,
+  "precio_lista": 302581,
+  "iva": 10.5,
+  "descripcion": "Amoladora recta industrial marca Torreon modelo PMA22\nVelocidad 22000 RPM\nPeso 0.8 Kg.\nPotencia 0.5 HP\nPara boquilla de 1/8\" - 6mm - 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "PM22",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta industrial TORREON modelo PM22",
+  "nombre": "Amoladora recta industrial TORREON modelo PM22",
+  "marca": "TORREON",
+  "uso_pdf": "Pulidora Torreon PM22 con 22000 RPM, peso 1.25 kg y potencia 0.5 HP. Ideal para trabajos industriales. ¡Compra ahora!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "PM22",
+   "Velocidad": "22000 RPM",
+   "Peso": "1.25 Kg.",
+   "Potencia": "0.5 HP",
+   "Para": "boquilla de 1/8\" - 6mm - 1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Amoladora recta industrial marca Torreon modelo PM22"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-pm22/",
+  "stock_web": 3,
+  "precio_web": 412903.23,
+  "precio_lista": 289032,
+  "iva": 10.5,
+  "descripcion": "Amoladora recta industrial marca Torreon modelo PM22\nVelocidad 22000 RPM\nPeso 1.25 Kg.\nPotencia 0.5 HP\nPara boquilla de 1/8\" - 6mm - 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "PM22L",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta industrial TORREON modelo PM22L",
+  "nombre": "Amoladora recta industrial TORREON modelo PM22L",
+  "marca": "TORREON",
+  "uso_pdf": "Pulidora Torreon PM22L con 22000 RPM, 0.7 HP y diseño ligero. Ideal para uso industrial. ¡Compra ya y mejora tu trabajo!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "PM22L",
+   "Velocidad": "22000 RPM",
+   "Peso": "1.7 Kg.",
+   "Potencia": "0.7 HP",
+   "Para": "boquilla de 1/8\" - 6mm - 1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Pulidora marca Torreon modelo PM22L"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-pm22l/",
+  "stock_web": 1,
+  "precio_web": 624193.55,
+  "precio_lista": 436935,
+  "iva": 10.5,
+  "descripcion": "Pulidora marca Torreon modelo PM22L\nVelocidad 22000 RPM\nPeso 1.7 Kg.\nPotencia 0.7 HP\nPara boquilla de 1/8\" - 6mm - 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "ZZ6P",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial TORREON modelo ZZ6P",
+  "nombre": "Taladro industrial TORREON modelo ZZ6P",
+  "marca": "TORREON",
+  "uso_pdf": "Taladro Torreon ZZ6P con capacidad 10mm, velocidad 2300 RPM y peso 0.95 Kg. Ideal para uso industrial. ¡Compra ahora y potencia tu trabajo!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "ZZ6P",
+   "Capacidad": "hasta 10 mm",
+   "Velocidad": "2300 RPM",
+   "Peso": "0.95 Kg.",
+   "Potencia": "0.4 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial marca Torreon modelo ZZ6P"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-zz6p/",
+  "stock_web": 0,
+  "precio_web": 448387.1,
+  "precio_lista": 313871,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial marca Torreon modelo ZZ6P\nCapacidad hasta 10 mm\nVelocidad 2300 RPM\nPeso 0.95 Kg.\nPotencia 0.4 HP\nPresion de trabajo 7 kg / cm2\nConsumo 300 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "ZZ6R",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial TORREON modelo ZZ6R",
+  "nombre": "Taladro industrial TORREON modelo ZZ6R",
+  "marca": "TORREON",
+  "uso_pdf": "Taladro industrial marca Torreon modelo ZZ6R Capacidad hasta 10 mm Velocidad 2300 RPM Peso 0.85 Kg. Potencia 0.4 HP  Presion de trabajo 7 kg / cm2 Consumo 30...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "ZZ6R",
+   "Capacidad": "hasta 10 mm",
+   "Velocidad": "2300 RPM",
+   "Peso": "0.85 Kg.",
+   "Potencia": "0.4 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial marca Torreon modelo ZZ6R"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-zz6r/",
+  "stock_web": 0,
+  "precio_web": 430645.16,
+  "precio_lista": 301452,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial marca Torreon modelo ZZ6R\nCapacidad hasta 10 mm\nVelocidad 2300 RPM\nPeso 0.85 Kg.\nPotencia 0.4 HP\nPresion de trabajo 7 kg / cm2\nConsumo 300 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SAPRE PARTS"
+ },
+ {
+  "sku": "TP13",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial TORREON modelo TP13",
+  "nombre": "Taladro industrial TORREON modelo TP13",
+  "marca": "TORREON",
+  "uso_pdf": "Taladro industrial marca Torreon modelo TP13 Capacidad hasta 13 mm Velocidad 750 RPM Peso 2.9 Kg. Potencia 0.6 HP  Presion de trabajo 7 kg / cm2 Consumo 400 ...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "TP13",
+   "Capacidad": "hasta 13 mm",
+   "Velocidad": "750 RPM",
+   "Peso": "2.9 Kg.",
+   "Potencia": "0.6 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial marca Torreon modelo TP13"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-tp13/",
+  "stock_web": 1,
+  "precio_web": 874193.55,
+  "precio_lista": 611935,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial marca Torreon modelo TP13\nCapacidad hasta 13 mm\nVelocidad 750 RPM\nPeso 2.9 Kg.\nPotencia 0.6 HP\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "TP16",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial TORREON modelo TP16",
+  "nombre": "Taladro industrial TORREON modelo TP16",
+  "marca": "TORREON",
+  "uso_pdf": "Taladro Torreon TP16 con capacidad de 16mm y 400 RPM, ideal para uso industrial. Potente y confiable. ¡Compra ahora!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "TP16",
+   "Capacidad": "hasta 16 mm",
+   "Velocidad": "400 RPM",
+   "Peso": "2.95 Kg.",
+   "Potencia": "0.7 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "95 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial marca Torreon modelo TP16"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-tp16/",
+  "stock_web": 1,
+  "precio_web": 916129.03,
+  "precio_lista": 641290,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial marca Torreon modelo TP16\nCapacidad hasta 16 mm\nVelocidad 400 RPM\nPeso 2.95 Kg.\nPotencia 0.7 HP\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 95 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LL2000",
+  "proveedor": "TORREON",
+  "familia": "Lustralijadoras industriales",
+  "titulo": "Lustralijadora TORREON modelo LL2000",
+  "nombre": "Lustralijadora TORREON modelo LL2000",
+  "marca": "TORREON",
+  "uso_pdf": "Lustralijadora marca Torreon modelo LL2000 Soporte de lija de 7\" Velocidad 2000 RPM Peso 1.80 Kg Presion de trabajo 7 kg / cm2 Consumo 400 l/m Entrada de air...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LL2000",
+   "Velocidad": "2000 RPM",
+   "Peso": "1.80 Kg",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "85 dBA",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Lustralijadora marca Torreon modelo LL2000",
+   "Soporte de lija de 7\""
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lustalijadora-torreon-ll2000-con-corderito-d6f6cdd8aa782e284717925274530016-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lustalijadora-torreon-ll3600-con-corderito-e23b0ad260290c996717925273744794-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/lustralijadora-modelo-ll2000/",
+  "stock_web": 2,
+  "precio_web": 609677.42,
+  "precio_lista": 426774,
+  "iva": 10.5,
+  "descripcion": "Lustralijadora marca Torreon modelo LL2000\nSoporte de lija de 7\"\nVelocidad 2000 RPM\nPeso 1.80 Kg\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 85 dBA\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "IP20",
+  "proveedor": "TORREON",
+  "familia": "Impulsor para pulir industrial",
+  "titulo": "Impulsor para pulir TORREON modelo IP20",
+  "nombre": "Impulsor para pulir TORREON modelo IP20",
+  "marca": "TORREON",
+  "uso_pdf": "Impulsor para pulir marca Torreon modelo IP20 Velocidad 2000 RPM Peso 2.40 Kg Potencia 1 HP Presion de trabajo 7 kg / cm2 Consumo 400 l/m Entrada de aire 1/4...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "IP20",
+   "Velocidad": "2000 RPM",
+   "Peso": "2.40 Kg",
+   "Potencia": "1 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Impulsor para pulir marca Torreon modelo IP20"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/impulsor-para-pulir-torreon-ip20-con-polea-b4fae0de514b26130c17925284914979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/impulsor-para-pulir-torreon-ip40-con-polea-799fcbe644f4aeae9d17925285092296-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/impulsor-para-pulir-modelo-ip20/",
+  "stock_web": 2,
+  "precio_web": 701612.9,
+  "precio_lista": 491129,
+  "iva": 10.5,
+  "descripcion": "Impulsor para pulir marca Torreon modelo IP20\nVelocidad 2000 RPM\nPeso 2.40 Kg\nPotencia 1 HP\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "TN178",
+  "proveedor": "TORREON",
+  "familia": "Lijadoras industriales",
+  "titulo": "Lijadora industrial TORREON modelo TN178",
+  "nombre": "Lijadora industrial TORREON modelo TN178",
+  "marca": "TORREON",
+  "uso_pdf": "Lijadora orbital marca Torreon modelo TN178Soporte de lija de 7\"Velocidad 8000 rpmPeso 2.7 Kg Presion de trabajo 7 kg / cm2 Consumo 500 l/m Entrada de aire 3...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "TN178",
+   "Velocidad": "8000 rpm",
+   "Peso": "2.7 Kg",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "500 l/m",
+   "Entrada de aire": "3/8\"",
+   "Nivel sonoro": "85 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Lijadora orbital marca Torreon modelo TN178",
+   "Soporte de lija de 7\""
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora-torreon-tn178-5396d1c3cad9eea7b817920907184834-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep3150-1aca4069fa2d236c2617920906516679-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep8151-d6814c398f1ea2cee417920906725463-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/lijadora-modelo-tn178/",
+  "stock_web": 0,
+  "precio_web": 629032.26,
+  "precio_lista": 440323,
+  "iva": 10.5,
+  "descripcion": "Lijadora orbital marca Torreon modelo TN178\nSoporte de lija de 7\"\nVelocidad 8000 rpm\nPeso 2.7 Kg\nPresion de trabajo 7 kg / cm2\nConsumo 500 l/m\nEntrada de aire 3/8\"\nNivel sonoro 85 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "PMA22L",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta industrial TORREON modelo PMA22L",
+  "nombre": "Amoladora recta industrial TORREON modelo PMA22L",
+  "marca": "TORREON",
+  "uso_pdf": "Amoladora recta industrial TORREON PMA22L, 22000 RPM, 0.7 HP, para boquilla de 1/8\" a 1/4\". Ideal para servicio industrial. ¡Compra ya!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "PMA22L",
+   "Velocidad": "22000 RPM",
+   "Peso": "Kg.",
+   "Potencia": "0.7 HP",
+   "Para": "boquilla de 1/8\" - 6mm - 1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 l/m",
+   "Entrada de aire": "1/4\"",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Amoladora recta industrial marca Torreon modelo PMA22L"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-pma22l/",
+  "stock_web": 1,
+  "precio_web": 633870.97,
+  "precio_lista": 443710,
+  "iva": 10.5,
+  "descripcion": "Amoladora recta industrial marca Torreon modelo PMA22L\nVelocidad 22000 RPM\nPeso Kg.\nPotencia 0.7 HP\nPara boquilla de 1/8\" - 6mm - 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo 400 l/m\nEntrada de aire 1/4\"\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "LL3600",
+  "proveedor": "TORREON",
+  "familia": "Lustralijadoras industriales",
+  "titulo": "Lustralijadora industrial TORREON modelo LL3600",
+  "nombre": "Lustralijadora industrial TORREON modelo LL3600",
+  "marca": "TORREON",
+  "uso_pdf": "Lustralijadora Torreon LL3600 con soporte de 7\", 3600 RPM y bajo peso. Ideal para trabajos industriales. ¡Compra ahora y mejora tu acabado!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "LL3600",
+   "Velocidad": "3600 RPM",
+   "Peso": "1.80 Kg",
+   "Presión de trabajo": "7 kg / cm2",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "400 l/m",
+   "Nivel sonoro": "90 dBA",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Lustralijadora industrial marca Torreon modelo LL3600",
+   "Soporte de lija de 7\""
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lustalijadora-torreon-ll3600-con-corderito-e23b0ad260290c996717925273744794-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lustalijadora-torreon-ll2000-con-corderito-d6f6cdd8aa782e284717925274530016-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/lustralijadora-modelo-ll3600/",
+  "stock_web": 1,
+  "precio_web": 616129.03,
+  "precio_lista": 431290,
+  "iva": 10.5,
+  "descripcion": "Lustralijadora industrial marca Torreon modelo LL3600\nSoporte de lija de 7\"\nVelocidad 3600 RPM\nPeso 1.80 Kg\nPresion de trabajo 7 kg / cm2\nEntrada de aire 1/4\"\nConsumo 400 l/m\nNivel sonoro 90 dBA\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "IP40",
+  "proveedor": "TORREON",
+  "familia": "Impulsor para pulir industrial",
+  "titulo": "Impulsor para pulir industrial TORREON modelo IP40",
+  "nombre": "Impulsor para pulir industrial TORREON modelo IP40",
+  "marca": "TORREON",
+  "uso_pdf": "Impulsor para pulir industrial marca Torreon modelo IP40 Velocidad 3600 RPM Peso 2.40 Kg Potencia 1 HP Presion de trabajo 7 kg / cm2 Entrada de aire 1/4\" Con...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "IP40",
+   "Velocidad": "3600 RPM",
+   "Peso": "2.40 Kg",
+   "Potencia": "1 HP",
+   "Presión de trabajo": "7 kg / cm2",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "400 l/min",
+   "Nivel sonoro": "85 dBA",
+   "Servicio": "industrial",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Impulsor para pulir industrial marca Torreon modelo IP40"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/impulsor-para-pulir-torreon-ip40-con-polea-799fcbe644f4aeae9d17925285092296-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/impulsor-para-pulir-torreon-ip20-con-polea-b4fae0de514b26130c17925284914979-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/impulsor-para-pulir-modelo-ip40/",
+  "stock_web": 0,
+  "precio_web": 717741.94,
+  "precio_lista": 502419,
+  "iva": 10.5,
+  "descripcion": "Impulsor para pulir industrial marca Torreon modelo IP40\nVelocidad 3600 RPM\nPeso 2.40 Kg\nPotencia 1 HP\nPresion de trabajo 7 kg / cm2\nEntrada de aire 1/4\"\nConsumo 400 l/min\nNivel Sonoro 85 dBA\nServicio industrial\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MOTOR-200RPM-R",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 200 RPM reversible",
+  "nombre": "Motor neumatico TORREON de 200 RPM reversible",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumatico de 200 RPM reversible  Largo 197 mm  Base de 60 x 82 mm  Presion de trabajo 7 kg / cm2 Consumo 400 litros/min  Potencia 1.2 HP  Diametro del ...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-200RPM-R",
+   "Largo": "197 mm",
+   "Base": "60 x 82 mm",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 litros/min",
+   "Potencia": "1.2 HP",
+   "Diámetro del eje": "1/2\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 200 RPM reversible"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-200-rpm-reversible/",
+  "stock_web": 0,
+  "precio_web": 1015887.1,
+  "precio_lista": 711121,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 200 RPM reversible\nLargo 197 mm\nBase de 60 x 82 mm\nPresion de trabajo 7 kg / cm2\nConsumo 400 litros/min\nPotencia 1.2 HP\nDiametro del eje 1/2\" NF\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MOTOR-400RPM-R",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 400 RPM reversible",
+  "nombre": "Motor neumatico TORREON de 400 RPM reversible",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumático reversible de 420 RPM, 1 HP, eficiente y robusto. Ideal para trabajos industriales. ¡Compra ahora!",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-400RPM-R",
+   "Largo": "197 mm",
+   "Base": "60 x 82 mm",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 litros/min",
+   "Potencia": "1 HP",
+   "Diámetro del eje": "1/2\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 400 RPM reversible"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-400-rpm-reversible/",
+  "stock_web": 0,
+  "precio_web": 1015887.1,
+  "precio_lista": 711121,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 400 RPM reversible\nLargo 197 mm\nBase de 60 x 82 mm\nPresion de trabajo 7 kg / cm2\nConsumo 400 litros/min\nPotencia 1 HP\nDiametro del eje 1/2\" NF\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MOTOR-30RPM",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 30 RPM",
+  "nombre": "Motor neumatico TORREON de 30 RPM",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumatico de 30 RPM   Largo 245 mm  Diametro 50 mm  Presion de trabajo 7 kg / cm2 Consumo 300 litros/min  Potencia 1,4 HP  Diametro del eje 1/2\" NF  12...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-30RPM",
+   "Largo": "245 mm",
+   "Diámetro": "50 mm",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "300 litros/min",
+   "Potencia": "1,4 HP",
+   "Diámetro del eje": "1/2\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 30 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-30-rpm/",
+  "stock_web": 0,
+  "precio_web": 1559483.87,
+  "precio_lista": 1091639,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 30 RPM\nLargo 245 mm\nDiametro 50 mm\nPresion de trabajo 7 kg / cm2\nConsumo 300 litros/min\nPotencia 1,4 HP\nDiametro del eje 1/2\" NF\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MOTOR-2300RPM",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 2300 RPM",
+  "nombre": "Motor neumatico TORREON de 2300 RPM",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumatico de 2300 RPM   Largo 170 mm  Diametro 38 mm  Presion de trabajo 7 kg / cm2 Consumo 400 litros/min  Potencia 0.4 HP  Diametro del eje 3/8\" NF  ...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-2300RPM",
+   "Largo": "170 mm",
+   "Diámetro": "38 mm",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 litros/min",
+   "Potencia": "0.4 HP",
+   "Diámetro del eje": "3/8\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 2300 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-2300-rpm/",
+  "stock_web": 0,
+  "precio_web": 570322.58,
+  "precio_lista": 399226,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 2300 RPM\nLargo 170 mm\nDiametro 38 mm\nPresion de trabajo 7 kg / cm2\nConsumo 400 litros/min\nPotencia 0.4 HP\nDiametro del eje 3/8\" NF\n12 meses de garantia"
+ },
+ {
+  "sku": "MOTOR-400RPM",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 400 RPM",
+  "nombre": "Motor neumatico TORREON de 400 RPM",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumatico de 400 RPM   Largo 200 mm  Diametro 50.8 mm  Presion de trabajo 7 kg / cm2 Consumo 400 litros/min  Potencia 0.7 HP  Diametro del eje 1/2\" NF ...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-400RPM",
+   "Largo": "200 mm",
+   "Diámetro": "50.8 mm",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "400 litros/min",
+   "Potencia": "0.7 HP",
+   "Diámetro del eje": "1/2\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 400 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-400-rpm/",
+  "stock_web": 0,
+  "precio_web": 908951.61,
+  "precio_lista": 636266,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 400 RPM\nLargo 200 mm\nDiametro 50.8 mm\nPresion de trabajo 7 kg / cm2\nConsumo 400 litros/min\nPotencia 0.7 HP\nDiametro del eje 1/2\" NF\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MOTOR-750RPM",
+  "proveedor": "TORREON",
+  "familia": "Motores industriales",
+  "titulo": "Motor neumatico TORREON de 750 RPM",
+  "nombre": "Motor neumatico TORREON de 750 RPM",
+  "marca": "TORREON",
+  "uso_pdf": "Motor neumatico de 750 RPM   Largo 200 mm  Diametro 50.8 mm  Consumo 400 litros/min  Presion de trabajo 7 kg / cm2 Potencia 0.6 HP  Diametro del eje 1/2\" NF ...",
+  "specs": {
+   "Marca": "TORREON",
+   "Modelo": "MOTOR-750RPM",
+   "Largo": "200 mm",
+   "Diámetro": "50.8 mm",
+   "Consumo de aire": "400 litros/min",
+   "Presión de trabajo": "7 kg / cm2",
+   "Potencia": "0.6 HP",
+   "Diámetro del eje": "1/2\" NF",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Motor neumatico de 750 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-cedd7061bc28768cad17920954278845-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreon-de-30-rpm-991083e5d7a920d18d17920953911071-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-2300rpm-e3dd50b1d0ec3c381617920957575103-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-d39d2521b089acb4ab17920953781180-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-reversible-torreon-498dad161929e2945217920953643927-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/motor-torreonde-450-rpm-4d1c1ebc03160243c417920954087205-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/motor-neumatico-de-750-rpm/",
+  "stock_web": 0,
+  "precio_web": 855483.87,
+  "precio_lista": 598839,
+  "iva": 10.5,
+  "descripcion": "Motor neumatico de 750 RPM\nLargo 200 mm\nDiametro 50.8 mm\nConsumo 400 litros/min\nPresion de trabajo 7 kg / cm2\nPotencia 0.6 HP\nDiametro del eje 1/2\" NF\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SETUBO34",
+  "proveedor": "TORREON",
+  "familia": "Juego de tubos alto impacto",
+  "titulo": "Juego de tubos VTB de 3/4\"",
+  "nombre": "Juego de tubos VTB de 3/4\"",
+  "marca": "VTB",
+  "uso_pdf": "Kit de 8 tubos 3/4\" en cromo molibdeno, alto impacto y medidas variadas. Ideal para trabajos industriales. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SETUBO34"
+  },
+  "notas": [
+   "Juego de tubos de alto impacto 3/4\" – Kit completo de 8 piezas",
+   "Cromo Molibdeno",
+   "Características principales:",
+   "Material:",
+   "Cromo Molibdeno, para máxima durabilidad y resistencia.",
+   "Medidas incluidas:",
+   "24, 27, 30, 32, 33, 34, 36 y 38 mm.",
+   "Uso:"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-3-4-d255bcc4cad18a567417920933742870-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-35d0cc1d9e3ee6b50917920932290442-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-largos-b47137a5eec734b6ae17920932625360-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-cortos-b2267e76ce99ba652e17920932495637-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/juego-de-tubos-de-3-4/",
+  "stock_web": 0,
+  "precio_web": 185403.23,
+  "precio_lista": 129782,
+  "iva": 10.5,
+  "descripcion": "Juego de tubos de alto impacto 3/4\" – Kit completo de 8 piezas\nEste\nkit de 8 tubos de alto impacto de 3/4\"\nes ideal para trabajos exigentes y profesionales que requieren herramientas resistentes y duraderas. Cada tubo está fabricado en\nCromo Molibdeno\n, un material reconocido por su alta resistencia a la torsión y al desgaste, garantizando un rendimiento óptimo en aplicaciones industriales y mecánicas.\nCaracterísticas principales:\nMaterial:\nCromo Molibdeno, para máxima durabilidad y resistencia.\nMedidas incluidas:\n24, 27, 30, 32, 33, 34, 36 y 38 mm.\nUso:\nEspecialmente diseñado para impactos fuertes y uso intensivo.\nCuadrante de salida:\n3/4\", compatible con herramientas estándar de esta medida.\nEste juego te ofrece una amplia variedad de tamaños para que puedas trabajar con diferentes tipos de tuercas y pernos sin necesidad de cambiar de herramienta constantemente. La combinación de tubos robustos y un diseño pensado para soportar impactos hace que este kit sea una excelente inversión para talleres, industrias y profesionales de la mecánica.\n¿Por qué elegir este kit?\nAlta resistencia:\nEl Cromo Molibdeno asegura que los tubos soporten el uso continuo sin deformarse.\nVersatilidad:\nCon ocho medidas diferentes, cubre la mayoría de las necesidades en el taller.\nCalidad profesional:\nIdeal para trabajos que requieren herramientas confiables y duraderas.\nRenová tu caja de herramientas con este\nkit de tubos de alto impacto 3/4\"\ny experimenta la diferencia en calidad, resistencia y funcionalidad.\n¡No esperes más y optimiza tu trabajo con este completo set de tubos!"
+ },
+ {
+  "sku": "SA8235",
+  "proveedor": "TORREON",
+  "familia": "Sierra de corte industrial",
+  "titulo": "Sierra de corte industrial VTB modelo SA8235",
+  "nombre": "Sierra de corte industrial VTB modelo SA8235",
+  "marca": "VTB",
+  "uso_pdf": "Sierra de corte VTB SA8235 con 9000 impactos por minuto y capacidad de corte 1.6mm en acero. Ideal para servicio industrial. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA8235",
+   "Capacidad": "corte 1.6 mm (acero)",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses",
+   "Presión de trabajo": "7 kg/ cm2",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Sierra marca industrial VTB modelo SA 8235",
+   "9000 impactos por minuto",
+   "Recorrido por impacto 10mm"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/sierra-vtb-sa8235-4a671270573e7ec5a817920892977615-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/sierra-de-corte-modelo-sa8235/",
+  "stock_web": 0,
+  "precio_web": 281596.77,
+  "precio_lista": 197118,
+  "iva": 10.5,
+  "descripcion": "Sierra marca industrial VTB modelo SA 8235\n9000 impactos por minuto\nRecorrido por impacto 10mm\nCapacidad de corte 1.6 mm (acero)\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nPresion de trabajo 7 kg/ cm2\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA7103K1",
+  "proveedor": "TORREON",
+  "familia": "Cincelador industrial",
+  "titulo": "Cincelador industrial VTB modelo SA7103K1",
+  "nombre": "Cincelador industrial VTB modelo SA7103K1",
+  "marca": "VTB",
+  "uso_pdf": "Cincelador VTB SA7103K1, 2200 impactos por minuto, 1.93 kg, ideal para uso industrial. ¡Compra ahora con garantía de 6 meses!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA7103K1",
+   "Consumo de aire": "170 litros/ minuto",
+   "Entrada de aire": "1/4\"",
+   "Presión de trabajo": "7 kg/ cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Cincelador industrial marca VTB modelo SA 7103K1",
+   "2200 impactos por minuto",
+   "1.93 kg.",
+   "Consumo de aire 200 litros/minuto"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/martillo-neumatico-vtb-sa7103k1-1745c733a981b075ef17920940366710-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/cincelador-modelo-sa7103k1/",
+  "stock_web": 3,
+  "precio_web": 384967.74,
+  "precio_lista": 269477,
+  "iva": 10.5,
+  "descripcion": "Cincelador industrial marca VTB modelo SA 7103K1\n2200 impactos por minuto\nConsumo 170 litros/ minuto\n1.93 kg.\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg/ cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD7285",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1/2\" modelo FD 728",
+  "nombre": "LLave de impactos industrial VTB encastre 1/2\" modelo FD 7285",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial VTB FD 7285 con encastre 1/2\", doble martillo y torque de 650Nm. Ideal para uso industrial. ¡Compra ahora y mejora tu trabajo!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD7285",
+   "Encastre": "de 1/2\"",
+   "Torque": "650Nm",
+   "Velocidad": "10000 RPM",
+   "Peso": "1,28 kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Llave de impactos industrial marca VTB modelo FD 7285",
+   "Doble Martillo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-2-modelo-fd-7285/",
+  "stock_web": 3,
+  "precio_web": 263774.19,
+  "precio_lista": 184642,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial marca VTB modelo FD 7285\nEncastre de 1/2\"\nDoble Martillo\nTorque maximo 650Nm\nVelocidad 10000 RPM\nPeso 1,28 kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD7286",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1/2\" modelo FD 728",
+  "nombre": "LLave de impactos industrial VTB encastre 1/2\" modelo FD 7286",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos VTB FD 7286 con encastre 1/2\", torque de 1500 Nm y doble martillo. Ideal para uso industrial. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD7286",
+   "Encastre": "de 1/2\"",
+   "Torque": "1500 Nm",
+   "Velocidad": "8500 RPM",
+   "Peso": "2 kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Llave de impactos industrial marca VTB modelo FD 7286",
+   "Doble Martillo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-2-modelo-fd-7286/",
+  "stock_web": 0,
+  "precio_web": 274467.74,
+  "precio_lista": 192127,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial marca VTB modelo FD 7286\nEncastre de 1/2\"\nDoble Martillo\nTorque maximo 1500 Nm\nVelocidad 8500 RPM\nPeso 2 kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD2600",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1/2\" modelo FD 260",
+  "nombre": "LLave de impactos industrial VTB encastre 1/2\" modelo FD 2600",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial VTB FD 2600, encastre 1/2\", doble martillo, torque hasta 680 Nm. Ideal para servicio industrial. Compra ahora.",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD2600",
+   "Encastre": "de 1/2\"",
+   "Torque": "680 Nm",
+   "Velocidad": "7000 RPM",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses",
+   "Peso": "2.7 kg",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Llave de impactos industrial marca VTB modelo FD 2600",
+   "Doble Martillo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-2-modelo-fd-2600/",
+  "stock_web": 5,
+  "precio_web": 245951.61,
+  "precio_lista": 172166,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial marca VTB modelo FD 2600\nEncastre de 1/2\"\nDoble Martillo\nTorque maximo 680 Nm\nVelocidad 7000 RPM\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nPeso 2.7 kg\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD020C",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 3/4\" modelo FD020C",
+  "nombre": "Llave de impactos industrial VTB encastre 3/4\" modelo FD020C",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial 3/4\" VTB FD020C con 1200 Nm, doble martillo y 6 meses garantía. Ideal para industria. ¡Compra ahora y potencia tu trabajo!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD020C",
+   "Entrada de aire": "3/8\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Llave de impactos industrial encastre de 3/4\" marca VTB modelo FD020C",
+   "1200 Nm",
+   "4600 RPM",
+   "4.9 Kg",
+   "Doble Martillo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-3-4-modelo-fd020c/",
+  "stock_web": 5,
+  "precio_web": 582790.32,
+  "precio_lista": 407953,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial encastre de 3/4\" marca VTB modelo FD020C\n1200 Nm\n4600 RPM\n4.9 Kg\nDoble Martillo\nEntrada de aire 3/8\"\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD11801",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 3/8\" modelo FD1180",
+  "nombre": "Llave de impactos industrial VTB encastre 3/8\" modelo FD11801",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial encastre 3/8\" VTB FD11801 con 520 Nm, doble martillo y 9800 RPM. Ideal para uso industrial. ¡Compra ahora con garantía!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD11801",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Llave de impactos industrial encstre de 3/8\" marca VTB modelo FD11801",
+   "520 Nm",
+   "9800 RPM",
+   "Doble martillo",
+   "1.6 Kg"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-3-8-modelo-fd11801/",
+  "stock_web": 0,
+  "precio_web": 302983.87,
+  "precio_lista": 212089,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial encstre de 3/8\" marca VTB modelo FD11801\n520 Nm\n9800 RPM\nDoble martillo\n1.6 Kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD5301",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1\" modelo FD5301",
+  "nombre": "Llave de impactos industrial VTB encastre 1\" modelo FD5301",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial VTB FD5301, 1\", 2600 Nm, 4000 RPM, martillo simple. Ideal para servicio industrial y Gomerias ¡Compra ya con garantía!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD5301",
+   "Entrada de aire": "1/2\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "LLave de impactos industrial encastre de 1\" marca VTB modelo FD5301",
+   "2600 Nm",
+   "4000 RPM",
+   "Martiilo simple",
+   "12 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-modelo-fd5301/",
+  "stock_web": 0,
+  "precio_web": 805580.65,
+  "precio_lista": 563906,
+  "iva": 10.5,
+  "descripcion": "LLave de impactos industrial encastre de 1\" marca VTB modelo FD5301\n2600 Nm\n4000 RPM\nMartiilo simple\n12 Kg.\nEntrada de aire 1/2\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA3305",
+  "proveedor": "TORREON",
+  "familia": "Llave crique industrial",
+  "titulo": "Llave crique industrial VTB modelo SA3305",
+  "nombre": "Llave crique industrial VTB modelo SA3305",
+  "marca": "VTB",
+  "uso_pdf": "Llave crique VTB SA3305 1/2\", 81 Nm, 200 RPM, 1.13 kg. Ideal para uso industrial. Garantía 6 meses. Compra ahora y mejora tu trabajo.",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA3305",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Llave crique industrial encastre de 1/2\" marca VTB modelo SA3305",
+   "81 Nm",
+   "200 RPM",
+   "1.13 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave_crique-vtb-sa3305-ab09b6b9eadccb56af17920892771635-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-crique-modelo-sa3305/",
+  "stock_web": 1,
+  "precio_web": 301193.55,
+  "precio_lista": 210835,
+  "iva": 10.5,
+  "descripcion": "Llave crique industrial encastre de 1/2\" marca VTB modelo SA3305\n81 Nm\n200 RPM\n1.13 Kg.\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "EP8151-6S",
+  "proveedor": "TORREON",
+  "familia": "Lijadoras industriales",
+  "titulo": "Lijadora rotorbital VTB modelo EP8151-6S",
+  "nombre": "Lijadora rotorbital VTB modelo EP8151-6S",
+  "marca": "VTB",
+  "uso_pdf": "Lijadora rotorbital VTB EP8151-6S de 6\" con sistema de aspiración y 12000 RPM. Ligera y potente, ideal para uso industrial. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "EP8151-6S",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Lijadora rotorbital para disco de 6\" marca VTB modelo EP8151-6S",
+   "12000 RPM",
+   "1.92 Kg.",
+   "Sistema de aspiracion",
+   "0.2 HP"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep8151-d6814c398f1ea2cee417920906725463-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep3150-1aca4069fa2d236c2617920906516679-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora-torreon-tn178-5396d1c3cad9eea7b817920907184834-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/lijadora-rotorbital-modelo-ep8151-6s/",
+  "stock_web": 0,
+  "precio_web": 342193.55,
+  "precio_lista": 239535,
+  "iva": 10.5,
+  "descripcion": "Lijadora rotorbital para disco de 6\" marca VTB modelo EP8151-6S\n12000 RPM\n1.92 Kg.\nSistema de aspiracion\n0.2 HP\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "EP5104",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras rectas industriales",
+  "titulo": "Amoladora recta VTB modelo EP5104",
+  "nombre": "Amoladora recta VTB modelo EP5104",
+  "marca": "VTB",
+  "uso_pdf": "Pulidora VTB EP5104 con boquilla de 6-6.35 mm, 20000 RPM, ideal para matricería. Ligera y potente. ¡Compra ahora con garantía!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "EP5104",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Pulidora para matriceria con boquilla de 6-6.35 mm marca VTB modelo EP5104",
+   "20000 RPM",
+   "171 mm de largo",
+   "1.10 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-vtb-sa5104-742409ebd4923ef3a017920865229209-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22-ee0571badc7ee894ec17920862464979-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22l-a2baf0cb2a7c8564a217920862181617-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pmr100-d04d518b6e527f4b7817920862603329-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pm22-9f0ab564ef4fcfc7f017920862320667-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-recta-torreon-pma22l-a7f1d944f5ff21773217920886775376-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/pulidora-modelo-ep5104/",
+  "stock_web": 0,
+  "precio_web": 101596.77,
+  "precio_lista": 71118,
+  "iva": 10.5,
+  "descripcion": "Pulidora para matriceria con boquilla de 6-6.35 mm marca VTB modelo EP5104\n20000 RPM\n171 mm de largo\n1.10 Kg.\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6102",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial VTB modelo SA6102",
+  "nombre": "Taladro industrial VTB modelo SA6102",
+  "marca": "VTB",
+  "uso_pdf": "Taladro VTB modelo SA6102 con capacidad de 10 mm, 1800 RPM y 1.10 kg. Ideal para uso industrial. Garantía 6 meses. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6102",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial capacidad 10 mm marca VTB modelo SA6102",
+   "1800 RPM",
+   "1.10 Kg"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-sa6102/",
+  "stock_web": 0,
+  "precio_web": 297645.16,
+  "precio_lista": 208352,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial capacidad 10 mm marca VTB modelo SA6102\n1800 RPM\n1.10 Kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "AV4818",
+  "proveedor": "TORREON",
+  "familia": "Remachadoras industriales",
+  "titulo": "Remachadora industrial tipo pop VTB modelo AV4818",
+  "nombre": "Remachadora industrial tipo pop VTB modelo AV4818",
+  "marca": "VTB",
+  "uso_pdf": "Remachadora tipo pop VTB AV4818 con capacidad de remache de 5 mm, ideal para uso industrial. ¡Compra ahora con garantía de 6 meses!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "AV4818",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Remachadora industrial tipo pop para remache de 5 mm marca VTB modelo AV4818",
+   "1.38 Kg.",
+   "5mm capacidad maxima"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/remachadora-vtb-av4818-8cf42515debc5431bc17920893474920-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/remachadora-vtb-br8701-5868d056b21400b7c017920891697552-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/remachadora-tipo-pop-modelo-av4818/",
+  "stock_web": 0,
+  "precio_web": 402209.68,
+  "precio_lista": 281547,
+  "iva": 10.5,
+  "descripcion": "Remachadora industrial tipo pop para remache de 5 mm marca VTB modelo AV4818\n1.38 Kg.\n5mm capacidad maxima\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA7303K",
+  "proveedor": "TORREON",
+  "familia": "Desincrustador de agujas industrial",
+  "titulo": "Desincrustador de agujas industrial VTB modelo SA7303K",
+  "nombre": "Desincrustador de agujas industrial VTB modelo SA7303K",
+  "marca": "VTB",
+  "uso_pdf": "Desincrustador de agujas VTB modelo SA7303K, 4600 impactos por minuto, 460mm y 2.8kg. Ideal para servicio industrial. ¡Compra ahora con garantía!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA7303K",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "Desincrustador de agujas industrial marca VTB modelo SA7303K",
+   "4600 impactos por minuto",
+   "460 mm de largo",
+   "2.8 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/desincrustador-vtb-sa7303k-c83e8cc58fdae05d8517920892582556-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/desincrustador-de-agujas-modelo-sa7303k/",
+  "stock_web": 0,
+  "precio_web": 867967.74,
+  "precio_lista": 607577,
+  "iva": 10.5,
+  "descripcion": "Desincrustador de agujas industrial marca VTB modelo SA7303K\n4600 impactos por minuto\n460 mm de largo\n2.8 Kg.\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD5300Q",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1\" modelo FD5300Q",
+  "nombre": "Llave de impactos industrial VTB encastre 1\" modelo FD5300Q",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos industrial 1\" VTB FD5300Q con 2400 Nm, 5000 RPM y martillo simple. Ideal para uso industrial. ¡Compra ahora con garantía de 12 meses!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD5300Q",
+   "Entrada de aire": "1/2\"",
+   "Consumo de aire": "300 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "Industrial"
+  },
+  "notas": [
+   "LLave de impactos industrial encastre de 1\" marca VTB modelo FD5300Q",
+   "2400 Nm",
+   "5000 RPM",
+   "Martiilo simple",
+   "10 Kg."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-modelo-fd5300q/",
+  "stock_web": 0,
+  "precio_web": 912516.13,
+  "precio_lista": 638761,
+  "iva": 10.5,
+  "descripcion": "LLave de impactos industrial encastre de 1\" marca VTB modelo FD5300Q\n2400 Nm\n5000 RPM\nMartiilo simple\n10 Kg.\nEntrada de aire 1/2\"\nConsumo de aire 300 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6117",
+  "proveedor": "TORREON",
+  "familia": "Taladros industriales",
+  "titulo": "Taladro industrial VTB modelo SA6117",
+  "nombre": "Taladro industrial VTB modelo SA6117",
+  "marca": "VTB",
+  "uso_pdf": "Taladro VTB SA6117 con capacidad 13mm, 800 RPM y 6 meses garantía. Ideal para uso industrial. ¡Compra ahora y potencia tu trabajo!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6117",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Taladro industrial capacidad 13 mm marca VTB modelo SA6102",
+   "800 RPM",
+   "1.95 Kg"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6117-58babdffbd3b21f10a17920824158242-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp13-76207eacd4922e22ed17920828399489-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-tp16-180e510302a8cd2f0e17920829037240-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6p-814d5941e649410dbb17920809748065-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-zz6r-bb13cd95fe5ee287fe17920958876942-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/taladro-neumatico-vtb-sa6102-0e101af16839882c7017920824770604-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/taladro-modelo-sa6117/",
+  "stock_web": 0,
+  "precio_web": 376064.52,
+  "precio_lista": 263245,
+  "iva": 10.5,
+  "descripcion": "Taladro industrial capacidad 13 mm marca VTB modelo SA6102\n800 RPM\n1.95 Kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6203",
+  "proveedor": "TORREON",
+  "familia": "Atornilladores industriales",
+  "titulo": "Atornillador industrial VTB modelo SA6203",
+  "nombre": "Atornillador industrial VTB modelo SA6203",
+  "marca": "VTB",
+  "uso_pdf": "Atornillador industrial tipo pistola marca VTB modelo SA6203 Rango de torque 5 - 16 Nm Velocidad 800 RPM Peso 1.1 Kg  Reversible  Entrada de aire 1/4\" Consum...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6203",
+   "Velocidad": "800 RPM",
+   "Peso": "1.1 Kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Atornillador industrial tipo pistola marca VTB modelo SA6203",
+   "Rango de torque 5 - 16 Nm",
+   "Reversible",
+   "Uso Industrial"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6203-09871c2198c381a9db17920892381530-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6208-87eb89d53d8b8c67f117920891957935-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6210-4e493d0531ad3b501117920892110116-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6202-989a89650b8c43a00d17920892253160-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/atornillador-modelo-sa6203/",
+  "stock_web": 3,
+  "precio_web": 406354.84,
+  "precio_lista": 284448,
+  "iva": 10.5,
+  "descripcion": "Atornillador industrial tipo pistola marca VTB modelo SA6203\nRango de torque 5 - 16 Nm\nVelocidad 800 RPM\nPeso 1.1 Kg\nReversible\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nUso Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6202",
+  "proveedor": "TORREON",
+  "familia": "Atornilladores industriales",
+  "titulo": "Atornillador industrial VTB modelo SA6202",
+  "nombre": "Atornillador industrial VTB modelo SA6202",
+  "marca": "VTB",
+  "uso_pdf": "Atornillador tipo pistola marca VTB modelo SA6202 Rango de torque 5 - 13 Nm Velocidad 1800 RPM Peso 1.1 Kg  Reversible  Entrada de aire 1/4\" Consumo de aire ...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6202",
+   "Velocidad": "1800 RPM",
+   "Peso": "1.1 Kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Atornillador tipo pistola marca VTB modelo SA6202",
+   "Rango de torque 5 - 13 Nm",
+   "Reversible",
+   "Uso Industrial"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6202-989a89650b8c43a00d17920892253160-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6208-87eb89d53d8b8c67f117920891957935-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6203-09871c2198c381a9db17920892381530-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6210-4e493d0531ad3b501117920892110116-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/atornillador-modelo-sa6202/",
+  "stock_web": 0,
+  "precio_web": 379629.03,
+  "precio_lista": 265740,
+  "iva": 10.5,
+  "descripcion": "Atornillador tipo pistola marca VTB modelo SA6202\nRango de torque 5 - 13 Nm\nVelocidad 1800 RPM\nPeso 1.1 Kg\nReversible\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nUso Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6210",
+  "proveedor": "TORREON",
+  "familia": "Atornilladores industriales",
+  "titulo": "Atornillador industrial VTB modelo SA6210",
+  "nombre": "Atornillador industrial VTB modelo SA6210",
+  "marca": "VTB",
+  "uso_pdf": "Atornillador industrial tipo recto marca VTB modelo SA6210 Rango de torque 5 - 16 Nm Velocidad 800 RPM Peso 1.1 Kg  Reversible  Entrada de aire 1/4\" Presion ...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6210",
+   "Velocidad": "800 RPM",
+   "Peso": "1.1 Kg",
+   "Entrada de aire": "1/4\"",
+   "Presión de trabajo": "7 kg / cm2",
+   "Consumo de aire": "200 litros/minuto",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Atornillador industrial tipo recto marca VTB modelo SA6210",
+   "Rango de torque 5 - 16 Nm",
+   "Reversible",
+   "Uso Industrial"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6210-4e493d0531ad3b501117920892110116-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6208-87eb89d53d8b8c67f117920891957935-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6203-09871c2198c381a9db17920892381530-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6202-989a89650b8c43a00d17920892253160-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/atornillador-modelo-sa6210/",
+  "stock_web": 3,
+  "precio_web": 392096.77,
+  "precio_lista": 274468,
+  "iva": 10.5,
+  "descripcion": "Atornillador industrial tipo recto marca VTB modelo SA6210\nRango de torque 5 - 16 Nm\nVelocidad 800 RPM\nPeso 1.1 Kg\nReversible\nEntrada de aire 1/4\"\nPresion de trabajo 7 kg / cm2\nConsumo de aire 200 litros/minuto\n12 meses de garantia\nUso Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SA6208",
+  "proveedor": "TORREON",
+  "familia": "Atornilladores industriales",
+  "titulo": "Atornillador industrial VTB modelo SA6208",
+  "nombre": "Atornillador industrial VTB modelo SA6208",
+  "marca": "VTB",
+  "uso_pdf": "Atornillador industrial tipo recto marca VTB modelo SA6208 Rango de torque 5 - 13 Nm Velocidad 1800 RPM Peso 1.1 Kg  Reversible  Entrada de aire 1/4\" Consumo...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA6208",
+   "Velocidad": "1800 RPM",
+   "Peso": "1.1 Kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Atornillador industrial tipo recto marca VTB modelo SA6208",
+   "Rango de torque 5 - 13 Nm",
+   "Reversible",
+   "Uso Industrial"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6208-87eb89d53d8b8c67f117920891957935-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6203-09871c2198c381a9db17920892381530-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6210-4e493d0531ad3b501117920892110116-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/atornillador-vtb-sa6202-989a89650b8c43a00d17920892253160-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/atornillador-modelo-sa6208/",
+  "stock_web": 3,
+  "precio_web": 390306.45,
+  "precio_lista": 273215,
+  "iva": 10.5,
+  "descripcion": "Atornillador industrial tipo recto marca VTB modelo SA6208\nRango de torque 5 - 13 Nm\nVelocidad 1800 RPM\nPeso 1.1 Kg\nReversible\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nUso Industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "SB1",
+  "proveedor": "TORREON",
+  "familia": "Balanceadores",
+  "titulo": "Balanceador VTB modelo SB1",
+  "nombre": "Balanceador VTB modelo SB1",
+  "marca": "VTB",
+  "uso_pdf": "Balanceador modelo SB1 de la marca VTB: Precisión y rendimiento para uso industrial El Balanceador VTB modelo SB1 es la herramienta ideal para quienes buscan...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SB1",
+   "Capacidad": "carga:",
+   "Servicio": "industrial:"
+  },
+  "notas": [
+   "Balanceador modelo SB1 de la marca VTB: Precisión y rendimiento para uso industrial",
+   "Balanceador VTB modelo SB1",
+   "Características principales:",
+   "Soporta piezas desde 0.5 hasta 1.5 kg, ofreciendo versatilidad para distintos tipos de componentes."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-178b37313e25221c5917920933092794-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-061e28011952e553e817920932962997-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-eaf98728ce68aaec9f17920932831291-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/balanceador-modelo-sb1/",
+  "stock_web": 3,
+  "precio_web": 136612.9,
+  "precio_lista": 95629,
+  "iva": 10.5,
+  "descripcion": "Balanceador modelo SB1 de la marca VTB: Precisión y rendimiento para uso industrial\nEl\nBalanceador VTB modelo SB1\nes la herramienta ideal para quienes buscan alta precisión y capacidad en el equilibrio de piezas pequeñas. Diseñado para aplicaciones industriales, este balanceador destaca por su robustez y funcionalidad adaptada a las exigencias del trabajo profesional.\nCaracterísticas principales:\nCapacidad de carga:\nSoporta piezas desde 0.5 hasta 1.5 kg, ofreciendo versatilidad para distintos tipos de componentes.\nServicio industrial:\nFabricado para cumplir con los estándares más altos, garantizando durabilidad y fiabilidad en ambientes de trabajo intensivos.\nEste balanceador es una pieza fundamental para talleres y plantas industriales que requieren mantener la precisión y estabilidad de sus componentes rotativos, optimizando así el rendimiento de sus máquinas y prolongando su vida útil."
+ },
+ {
+  "sku": "SB2",
+  "proveedor": "TORREON",
+  "familia": "Balanceadores",
+  "titulo": "Balanceador VTB modelo SB2",
+  "nombre": "Balanceador VTB modelo SB2",
+  "marca": "VTB",
+  "uso_pdf": "Balanceador modelo SB2 - Marca VTB El Balanceador modelo SB2 de la prestigiosa marca VTB es la solución ideal para aplicaciones industriales que requieren pr...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SB2"
+  },
+  "notas": [
+   "Balanceador modelo SB2 - Marca VTB",
+   "Balanceador modelo SB2",
+   "1 a 2 kg",
+   "Características principales:",
+   "Capacidad:",
+   "Soporta cargas entre 1 y 2 kilogramos, ideal para herramientas ligeras y medianas.",
+   "Diseño robusto:",
+   "Construido para uso industrial, garantizando resistencia y larga vida útil en ambientes exigentes."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-061e28011952e553e817920932962997-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-eaf98728ce68aaec9f17920932831291-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-178b37313e25221c5917920933092794-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/balanceador-modelo-sb2/",
+  "stock_web": 3,
+  "precio_web": 140516.13,
+  "precio_lista": 98361,
+  "iva": 10.5,
+  "descripcion": "Balanceador modelo SB2 - Marca VTB\nEl\nBalanceador modelo SB2\nde la prestigiosa marca VTB es la solución ideal para aplicaciones industriales que requieren precisión y durabilidad. Con una capacidad de carga de\n1 a 2 kg\n, este balanceador está diseñado para optimizar la manipulación de herramientas y equipos, facilitando tareas que demandan un manejo equilibrado y controlado.\nCaracterísticas principales:\nCapacidad:\nSoporta cargas entre 1 y 2 kilogramos, ideal para herramientas ligeras y medianas.\nDiseño robusto:\nConstruido para uso industrial, garantizando resistencia y larga vida útil en ambientes exigentes.\nBeneficios de usar el Balanceador SB2:\nMayor eficiencia y seguridad\nal reducir la fatiga del operador.\nFacilita el posicionamiento\nde herramientas, mejorando la productividad.\nAumenta la precisión\nen tareas específicas que requieren estabilidad y balance.\nEste equipo es indispensable para talleres, fábricas y cualquier entorno industrial donde el manejo de herramientas con peso moderado sea frecuente."
+ },
+ {
+  "sku": "SB3",
+  "proveedor": "TORREON",
+  "familia": "Balanceadores",
+  "titulo": "Balanceador VTB modelo SB3",
+  "nombre": "Balanceador VTB modelo SB3",
+  "marca": "VTB",
+  "uso_pdf": "Balanceador modelo SB3 – Precisión y eficiencia en servicio industrial El Balanceador mrca VTB modelo SB3 está diseñado para optimizar tu trabajo en ambiente...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SB3",
+   "Capacidad": "carga:",
+   "Servicio": "industrial, pensado para exigencias profesionales."
+  },
+  "notas": [
+   "Balanceador modelo SB3 – Precisión y eficiencia en servicio industrial",
+   "Balanceador mrca VTB modelo SB3",
+   "está diseñado para optimizar tu trabajo en ambientes industriales, brindando una capacidad de carga de",
+   "2 a 3 kg",
+   "Características principales:",
+   "2 a 3 kilogramos, adecuado para diversas herramientas y equipos.",
+   "Uso:",
+   "¿Por qué elegir el Balanceador SB3?"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-eaf98728ce68aaec9f17920932831291-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-178b37313e25221c5917920933092794-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/balanceador-vtb-061e28011952e553e817920932962997-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/balanceador-modelo-sb3/",
+  "stock_web": 3,
+  "precio_web": 158080.65,
+  "precio_lista": 110656,
+  "iva": 10.5,
+  "descripcion": "Balanceador modelo SB3 – Precisión y eficiencia en servicio industrial\nEl\nBalanceador mrca VTB modelo SB3\nestá diseñado para optimizar tu trabajo en ambientes industriales, brindando una capacidad de carga de\n2 a 3 kg\n. Ideal para aplicaciones que requieren precisión y durabilidad, este balanceador se destaca por su robustez y confiabilidad.\nCaracterísticas principales:\nCapacidad de carga:\n2 a 3 kilogramos, adecuado para diversas herramientas y equipos.\nUso:\nServicio industrial, pensado para exigencias profesionales.\n¿Por qué elegir el Balanceador SB3?\nEste balanceador es la herramienta perfecta para mantener el equilibrio y facilitar el manejo de cargas en entornos industriales. Su diseño robusto y eficiente asegura un funcionamiento seguro y prolongado, reduciendo la fatiga y mejorando la productividad en tu taller o planta."
+ },
+ {
+  "sku": "FD9999G",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 1 1/2\" modelo FD99",
+  "nombre": "Llave de impactos industrial VTB encastre 1 1/2\" modelo FD9999G",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos VTB FD9999G, encastre 1 1/2\", 4800 Nm, 4500 RPM, 21 kg. Ideal para servicio industrial pesado. ¡La más potente del mercado!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD9999G",
+   "Encastre": "de 1 1/2\"",
+   "Torque": "4800 Nm",
+   "Velocidad": "4500 RPM",
+   "Peso": "21 kg",
+   "Entrada de aire": "1/2\"",
+   "Consumo de aire": "300 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial pesado"
+  },
+  "notas": [
+   "Llave de impactos industrial marca VTB modelo FD9999G"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-1-1-2-modelo-fd9999g/",
+  "stock_web": 0,
+  "precio_web": 3892451.61,
+  "precio_lista": 2724716,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos industrial marca VTB modelo FD9999G\nEncastre de 1 1/2\"\nTorque maximo 4800 Nm\nVelocidad 4500 RPM\nPeso 21 kg\nEntrada de aire 1/2\"\nConsumo de aire 300 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial pesado\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "MANG-6.5X6",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 6.5 x 6",
+  "nombre": "Manguera espiralada VTB de poliuretano 6.5 x 6",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 6 mts  Diametro 6.5 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-6.5X6",
+   "Largo": "6 mts",
+   "Diámetro": "6.5 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-6-5-x-6/",
+  "stock_web": 0,
+  "precio_web": 62451.61,
+  "precio_lista": 43716,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 6 mts\nDiametro 6.5 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-6.5X8",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 6.5 x 8",
+  "nombre": "Manguera espiralada VTB de poliuretano 6.5 x 8",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 8 mts  Diametro 6.5 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-6.5X8",
+   "Largo": "8 mts",
+   "Diámetro": "6.5 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-6-5-x-8/",
+  "stock_web": 5,
+  "precio_web": 76112.9,
+  "precio_lista": 53279,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 8 mts\nDiametro 6.5 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-6.5X12",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 6.5 x 12",
+  "nombre": "Manguera espiralada VTB de poliuretano 6.5 x 12",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 12 mts  Diametro 6.5 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-6.5X12",
+   "Largo": "12 mts",
+   "Diámetro": "6.5 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-6-5-x-12/",
+  "stock_web": 5,
+  "precio_web": 99532.26,
+  "precio_lista": 69673,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 12 mts\nDiametro 6.5 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-8X6",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 8 x 6",
+  "nombre": "Manguera espiralada VTB de poliuretano 8 x 6",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 6 mts  Diametro 8 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-8X6",
+   "Largo": "6 mts",
+   "Diámetro": "8 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-8-x-6/",
+  "stock_web": 5,
+  "precio_web": 89774.19,
+  "precio_lista": 62842,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 6 mts\nDiametro 8 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-8X8",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 8 x 8",
+  "nombre": "Manguera espiralada VTB de poliuretano 8 x 8",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 8 mts  Diametro 8 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-8X8",
+   "Largo": "8 mts",
+   "Diámetro": "8 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-8-x-8/",
+  "stock_web": 5,
+  "precio_web": 103435.48,
+  "precio_lista": 72405,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 8 mts\nDiametro 8 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-8X12",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 8 x 12",
+  "nombre": "Manguera espiralada VTB de poliuretano 8 x 12",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 12 mts  Diametro 8 mm  Apta para aire y fluidos  Incluye terminal de 1/4\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-8X12",
+   "Largo": "12 mts",
+   "Diámetro": "8 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 1/4\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-8-x-12/",
+  "stock_web": 5,
+  "precio_web": 122951.61,
+  "precio_lista": 86066,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 12 mts\nDiametro 8 mm\nApta para aire y fluidos\nIncluye terminal de 1/4\" en ambos lados"
+ },
+ {
+  "sku": "MANG-11X6",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 11 x 6",
+  "nombre": "Manguera espiralada VTB de poliuretano 11 x 6",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 6 mts  Diametro 11 mm  Apta para aire y fluidos  Incluye terminal de 3/8\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-11X6",
+   "Largo": "6 mts",
+   "Diámetro": "11 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 3/8\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-11-x-6/",
+  "stock_web": 5,
+  "precio_web": 210774.19,
+  "precio_lista": 147542,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 6 mts\nDiametro 11 mm\nApta para aire y fluidos\nIncluye terminal de 3/8\" en ambos lados"
+ },
+ {
+  "sku": "MANG-11X8",
+  "proveedor": "TORREON",
+  "familia": "Mangueras espiraladas de poliuretano",
+  "titulo": "Manguera espiralada VTB de poliuretano 11x 8",
+  "nombre": "Manguera espiralada VTB de poliuretano 11x 8",
+  "marca": "VTB",
+  "uso_pdf": "Manguera espiralada de poliuretano  Largo 8 mts  Diametro 11 mm  Apta para aire y fluidos  Incluye terminal de 3/8\" en ambos lados ",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "MANG-11X8",
+   "Largo": "8 mts",
+   "Diámetro": "11 mm"
+  },
+  "notas": [
+   "Manguera espiralada de poliuretano",
+   "Apta para aire y fluidos",
+   "Incluye terminal de 3/8\" en ambos lados"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ef7f272396c186115017920937025096-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-2182cb1d4cf0c5280c17920937523803-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-a70f74b62337dacc2d17920937853672-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-ffe07b65f2153b5f6717920937715626-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-e48af82bbb267b7ec917920937378258-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-94983b38607a9ea10417920937991141-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-cc130b53372243066517920937178025-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/manguera-azul-en-espiral-vtb-91e47ca3c6916fe64d17920938157608-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/manguera-espiralada-de-poliuretano-11x-8/",
+  "stock_web": 0,
+  "precio_web": 240048.39,
+  "precio_lista": 168034,
+  "iva": 10.5,
+  "descripcion": "Manguera espiralada de poliuretano\nLargo 8 mts\nDiametro 11 mm\nApta para aire y fluidos\nIncluye terminal de 3/8\" en ambos lados"
+ },
+ {
+  "sku": "SA5022",
+  "proveedor": "TORREON",
+  "familia": "Amoladoras de alta velocidad industrial",
+  "titulo": "Amoladora industrial VTB modelo SA5022",
+  "nombre": "Amoladora industrial VTB modelo SA5022",
+  "marca": "VTB",
+  "uso_pdf": "Amoladora industrial VTB SA5022, 60,000 RPM, compacta y ligera. Ideal para uso industrial. ¡Compra ahora y potencia tu taller!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SA5022",
+   "Velocidad": "60.000 RPM",
+   "Largo": "total 170mm",
+   "Peso": "0.24 Kg",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Amoladora de alta velocidad industrial marca VTB modelo SA5022"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/amoladora-tipo-lapiz-vtb-sa5022-7722e055d04982834717920935747997-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/amoladora-modelo-sa5022/",
+  "stock_web": 3,
+  "precio_web": 515064.52,
+  "precio_lista": 360545,
+  "iva": 10.5,
+  "descripcion": "Amoladora de alta velocidad industrial marca VTB modelo SA5022\nVelocidad 60.000 RPM\nLargo total 170mm\nPeso 0.24 Kg\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "EP3150-6",
+  "proveedor": "TORREON",
+  "familia": "Lijadoras industriales",
+  "titulo": "Lijadora rotorbital industrial VTB modelo EP3150-6",
+  "nombre": "Lijadora rotorbital industrial VTB modelo EP3150-6",
+  "marca": "VTB",
+  "uso_pdf": "Lijadora rotorbital VTB EP3150-6 con soporte de 6\", 12000 RPM y movimiento orbital de 5 mm. Ideal para servicio industrial. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "EP3150-6",
+   "Velocidad": "12000 RPM",
+   "Peso": "1.92 Kg",
+   "Potencia": "0.2 HP",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Garantía": "12 meses",
+   "Servicio": "industrial"
+  },
+  "notas": [
+   "Lijadora rotorbital marca VTB modelo EP3150-6",
+   "Soporte de lija de 6\"",
+   "Movimiento orbital 5 mm"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep3150-1aca4069fa2d236c2617920906516679-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora-torreon-tn178-5396d1c3cad9eea7b817920907184834-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/lijadora_rotorbital-vtb-ep8151-d6814c398f1ea2cee417920906725463-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/lijadora-rotorbital-modelo-ep3150-6/",
+  "stock_web": 2,
+  "precio_web": 329709.68,
+  "precio_lista": 230797,
+  "iva": 10.5,
+  "descripcion": "Lijadora rotorbital marca VTB modelo EP3150-6\nSoporte de lija de 6\"\nVelocidad 12000 RPM\nPeso 1.92 Kg\nPotencia 0.2 HP\nMovimiento orbital 5 mm\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\n12 meses de garantia\nServicio industrial\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FRL-VTB",
+  "proveedor": "TORREON",
+  "familia": "Filtro regulador y lubricador",
+  "titulo": "Filtro regulador y lubricador marca VTB",
+  "nombre": "Filtro regulador y lubricador marca VTB",
+  "marca": "VTB",
+  "uso_pdf": "Filtro regulador y lubricador marca VTB  Entrada y salida de 1/2\" Uso industrial",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FRL-VTB"
+  },
+  "notas": [
+   "Filtro regulador y lubricador marca VTB",
+   "Entrada y salida de 1/2\"",
+   "Uso industrial"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/afrl80-05323d234f0c43c90b17920836070200-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/filtro-regulador-y-lubricador-marca-vtb/",
+  "stock_web": 3,
+  "precio_web": 109290.32,
+  "precio_lista": 76503,
+  "iva": 10.5,
+  "descripcion": "Filtro regulador y lubricador marca VTB\nEntrada y salida de 1/2\"\nUso industrial"
+ },
+ {
+  "sku": "SETUBO12C",
+  "proveedor": "TORREON",
+  "familia": "Juego de tubos alto impacto",
+  "titulo": "Juego de tubos VTB de 1/2\" cortos",
+  "nombre": "Juego de tubos VTB de 1/2\" cortos",
+  "marca": "VTB",
+  "uso_pdf": "Kit de 14 tubos 1/2\" en cromo molibdeno, resistente y duradero. Ideal para trabajos mecánicos. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SETUBO12C"
+  },
+  "notas": [
+   "Juego de tubos de 1/2\" cortos – Kit de 14 piezas de alto impacto",
+   "Descubrí la resistencia y precisión que necesitás para tus trabajos con este",
+   ", especialmente diseñado para aplicaciones exigentes en el taller o la industria.",
+   "Características destacadas:",
+   "Material",
+   ": Cromo Molibdeno, reconocido por su alta durabilidad y resistencia al desgaste y torsión.",
+   "Medidas incluidas",
+   "Largo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-cortos-b2267e76ce99ba652e17920932495637-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-35d0cc1d9e3ee6b50917920932290442-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-largos-b47137a5eec734b6ae17920932625360-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-3-4-d255bcc4cad18a567417920933742870-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/juego-de-tubos-de-1-2/",
+  "stock_web": 3,
+  "precio_web": 103435.48,
+  "precio_lista": 72405,
+  "iva": 10.5,
+  "descripcion": "Juego de tubos de 1/2\" cortos – Kit de 14 piezas de alto impacto\nDescubrí la resistencia y precisión que necesitás para tus trabajos con este\nkit completo de tubos de alto impacto de 1/2\"\n, especialmente diseñado para aplicaciones exigentes en el taller o la industria.\nCaracterísticas destacadas:\nMaterial\n: Cromo Molibdeno, reconocido por su alta durabilidad y resistencia al desgaste y torsión.\nMedidas incluidas\n: 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 26 y 27 mm, brindando versatilidad para distintos tamaños de tuercas y pernos.\nLargo\n: 38 mm, ideales para espacios reducidos y accesos complicados.\nCuadrante de salida\n: 1/2\", compatible con la mayoría de las herramientas estándar.\n¿Por qué elegir este juego de tubos?\nEste kit ofrece una combinación perfecta entre\nresistencia y funcionalidad\n. Los tubos fabricados en Cromo Molibdeno garantizan una larga vida útil, soportando impactos fuertes y uso intensivo sin deformarse ni perder eficacia. Además, su tamaño compacto facilita el trabajo en lugares con poco espacio.\nIdeal para:\nTalleres mecánicos y profesionales.\nUso industrial y doméstico.\nTécnicos que requieren herramientas confiables y duraderas."
+ },
+ {
+  "sku": "SETUBO1",
+  "proveedor": "TORREON",
+  "familia": "Juego de tubos alto impacto",
+  "titulo": "Juego de tubos VTB de 1\"",
+  "nombre": "Juego de tubos VTB de 1\"",
+  "marca": "VTB",
+  "uso_pdf": "Kit de 8 tubos resistentes de 1\" en cromo molibdeno. Ideal para trabajos industriales. ¡Compra ahora y mejora tu herramienta!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SETUBO1"
+  },
+  "notas": [
+   "Juego de tubos de alto impacto 1\" - Kit completo de 8 piezas",
+   "está diseñado para quienes buscan herramientas de alta resistencia y durabilidad en cada tarea. Fabricados en",
+   "Cromo Molibdeno",
+   "Características destacadas:",
+   "Material:",
+   "Cromo Molibdeno, que asegura una resistencia excepcional al desgaste y a la torsión.",
+   "Medidas incluidas:",
+   "24, 27, 30, 32, 33, 36, 38 y 41 mm, cubriendo una amplia variedad de necesidades."
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-35d0cc1d9e3ee6b50917920932290442-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-largos-b47137a5eec734b6ae17920932625360-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-cortos-b2267e76ce99ba652e17920932495637-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-3-4-d255bcc4cad18a567417920933742870-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/juego-de-tubos-de-1/",
+  "stock_web": 3,
+  "precio_web": 282983.87,
+  "precio_lista": 198089,
+  "iva": 10.5,
+  "descripcion": "Juego de tubos de alto impacto 1\" - Kit completo de 8 piezas\nEste\nkit de 8 tubos de alto impacto de 1\"\nestá diseñado para quienes buscan herramientas de alta resistencia y durabilidad en cada tarea. Fabricados en\nCromo Molibdeno\n, un material reconocido por su capacidad para soportar esfuerzos extremos, estos tubos garantizan un rendimiento superior en aplicaciones mecánicas y profesionales.\nCaracterísticas destacadas:\nMaterial:\nCromo Molibdeno, que asegura una resistencia excepcional al desgaste y a la torsión.\nMedidas incluidas:\n24, 27, 30, 32, 33, 36, 38 y 41 mm, cubriendo una amplia variedad de necesidades.\nUso:\nIdeal para trabajos de alta exigencia y aplicaciones con herramientas de impacto.\nCuadrante de salida:\n1\", compatible con la mayoría de herramientas profesionales de esta medida.\n¿Por qué elegir este juego?\nDurabilidad garantizada:\nEl Cromo Molibdeno proporciona una vida útil prolongada aún bajo usos intensivos.\nVersatilidad:\nLas ocho medidas permiten adaptarse a múltiples tipos de tuercas y pernos sin cambiar constantemente de herramienta.\nCalidad profesional:\nPerfecto para talleres, industrias y usuarios que requieren precisión y confiabilidad."
+ },
+ {
+  "sku": "SETUBO12L",
+  "proveedor": "TORREON",
+  "familia": "Juego de tubos alto impacto",
+  "titulo": "Juego de tubos VTB de 1/2\" largos",
+  "nombre": "Juego de tubos VTB de 1/2\" largos",
+  "marca": "VTB",
+  "uso_pdf": "Kit de 13 tubos 1/2\" largos en cromo molibdeno para trabajos resistentes. ¡Mejora tu taller con calidad y durabilidad!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "SETUBO12L"
+  },
+  "notas": [
+   "Juego de tubos de 1/2\" largos – Kit completo de 13 piezas",
+   "Descubrí la calidad y resistencia que necesitás para tus proyectos con este",
+   "Características principales:",
+   "Material:",
+   "Cromo Molibdeno, que garantiza máxima durabilidad y resistencia contra la torsión y el desgaste.",
+   "Medidas incluidas:",
+   "10, 11, 12, 13, 15, 16, 17, 19, 21, 22, 24, 27 y 32 mm.",
+   "Longitud:"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-largos-b47137a5eec734b6ae17920932625360-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-35d0cc1d9e3ee6b50917920932290442-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-1-2-cortos-b2267e76ce99ba652e17920932495637-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/tubos-de-impacto-vtb-3-4-d255bcc4cad18a567417920933742870-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/juego-de-tubos-de-1-2-largos/",
+  "stock_web": 1,
+  "precio_web": 158080.65,
+  "precio_lista": 110656,
+  "iva": 10.5,
+  "descripcion": "Juego de tubos de 1/2\" largos – Kit completo de 13 piezas\nDescubrí la calidad y resistencia que necesitás para tus proyectos con este\nkit de tubos de alto impacto de 1/2\"\ndiseñado para trabajos profesionales y exigentes. Cada tubo cuenta con una longitud de 78 mm, ideal para alcanzar tuercas y pernos en espacios difíciles, brindando mayor comodidad y eficiencia.\nCaracterísticas principales:\nMaterial:\nCromo Molibdeno, que garantiza máxima durabilidad y resistencia contra la torsión y el desgaste.\nMedidas incluidas:\n10, 11, 12, 13, 15, 16, 17, 19, 21, 22, 24, 27 y 32 mm.\nLongitud:\n78 mm, para un mejor acceso en lugares profundos.\nUso:\nEspecialmente diseñado para soportar impactos fuertes y uso intensivo.\n¿Por qué elegir este juego de tubos?\nAlta resistencia:\nEl Cromo Molibdeno asegura que los tubos mantengan su forma y funcionalidad incluso tras un uso continuo y exigente.\nVersatilidad:\nCon 13 tamaños diferentes, cubre una amplia variedad de necesidades en tu taller o industria.\nDiseño profesional:\nLa longitud extra de los tubos facilita el trabajo en espacios estrechos y proporciona mayor torque."
+ },
+ {
+  "sku": "BR8701",
+  "proveedor": "TORREON",
+  "familia": "Remachadoras industriales",
+  "titulo": "Remachadora de tuerca industrial VTB modelo BR8701",
+  "nombre": "Remachadora de tuerca industrial VTB modelo BR8701",
+  "marca": "VTB",
+  "uso_pdf": "Remachadora de tuercas para para tuercas de 6,8 y 10 mm marca VTB modelo BR8701 1 Kg. 450 RPM Entrada de aire 1/4\" Consumo de aire 200 litros/minuto  Presion...",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "BR8701",
+   "Entrada de aire": "1/4\"",
+   "Consumo de aire": "200 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Servicio": "industrial",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Remachadora de tuercas para para tuercas de 6,8 y 10 mm marca VTB modelo BR8701",
+   "1 Kg.",
+   "450 RPM"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/remachadora-vtb-br8701-5868d056b21400b7c017920891697552-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/remachadora-vtb-av4818-8cf42515debc5431bc17920893474920-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/remachadora-de-tuerca-modelo-br8701/",
+  "stock_web": 0,
+  "precio_web": 597048.39,
+  "precio_lista": 417934,
+  "iva": 10.5,
+  "descripcion": "Remachadora de tuercas para para tuercas de 6,8 y 10 mm marca VTB modelo BR8701\n1 Kg.\n450 RPM\nEntrada de aire 1/4\"\nConsumo de aire 200 litros/minuto\nPresion de trabajo 7 kg / cm2\nServicio industrial\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ },
+ {
+  "sku": "FD3401",
+  "proveedor": "TORREON",
+  "familia": "Llave de impactos industriales",
+  "titulo": "Llave de impactos industrial VTB encastre 3/4\" modelo FD3401",
+  "nombre": "Llave de impactos industrial VTB encastre 3/4\" modelo FD3401",
+  "marca": "VTB",
+  "uso_pdf": "Llave de impactos 3/4\" VTB FD3401, 2000 Nm, 5500 RPM, doble martillo. Ideal para industria. Garantía 6 meses. ¡Compra ahora!",
+  "specs": {
+   "Marca": "VTB",
+   "Modelo": "FD3401",
+   "Entrada de aire": "1/2\"",
+   "Consumo de aire": "250 litros/minuto",
+   "Presión de trabajo": "7 kg / cm2",
+   "Servicio": "Industria",
+   "Garantía": "12 meses"
+  },
+  "notas": [
+   "Llave de impactos encastre de 3/4\" marca VTB modelo FD3401",
+   "2000 Nm",
+   "5500 RPM",
+   "3.85 Kg",
+   "Doble Martillo"
+  ],
+  "fotos": [
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd3401-e9c1aa5aed6736eb8117920853097113-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd2600-074da81d954073760017920843059179-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd020c-e2520d479b6ecbf53a17920848112164-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7285-fc5892a32c46d23b2317920845239362-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5300q-4ff5e71f66c2f4f9c917920849611430-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd9999g-a907ff4bb9c3a3b1bf17920852551453-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd5301-1bdd03991351f3428317920851547010-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd11801-0deef5c3c625195d2117920855212893-1024-1024.webp",
+   "https://dcdn-us.mitiendanube.com/stores/651/094/products/llave-de-impactos-vtb-fd7286-70832ae104a817518917920844149837-1024-1024.webp"
+  ],
+  "web": "https://www.torreon.com.ar/productos/llave-de-impactos-encastre-3-4-marca-vtb-modelo-fd3401/",
+  "stock_web": 3,
+  "precio_web": 597048.39,
+  "precio_lista": 417934,
+  "iva": 10.5,
+  "descripcion": "Llave de impactos encastre de 3/4\" marca VTB modelo FD3401\n2000 Nm\n5500 RPM\n3.85 Kg\nEntrada de aire 1/2\"\nConsumo de aire 250 litros/minuto\nPresion de trabajo 7 kg / cm2\nDoble Martillo\nServicio Industria\n12 meses de garantia\nDESPIECE / SPARE PARTS"
+ }
+]
