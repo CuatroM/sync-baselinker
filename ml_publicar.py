@@ -122,20 +122,20 @@ REGLAS_CAT = [
     (r"^(Velcro y Goma|Goma Porta Velcro)", None, "plato porta lija velcro pulidora"),
     (r"^Pico Boquilla", None, "pico airless para maquina de pintar"),
 ]
-TOR_CAT = [   # TORREON / VTB: categorías fijas o búsquedas (la sugerencia de ML se equivoca en varias)
+TOR_CAT = [   # TORREON / VTB: categoría fija, o "arbol:RAÍZ:Nombre1|Nombre2" = hija de esa raíz cuyo nombre
+    # contenga Nombre1 (si no hay, Nombre2…). MLA437789 = Herramientas > Herramientas Neumáticas
     (r"^(Mini )?Amoladora", "MLA455290"),            # Amoladoras Neumáticas
     (r"^Lijadora", "MLA455291"),                     # Lijadoras Neumáticas
-    (r"^(Lustralijadora|Impulsor Neumático Para Pulir)", "pulidora lustradora neumatica"),
+    (r"^(Lustralijadora|Impulsor Neumático Para Pulir)", "arbol:MLA437789:Pulid|Lustr|Otr"),
     (r"^Taladro", "MLA455288"),                      # Taladros Neumáticos
     (r"^Llave De Impacto", "MLA457298"),             # Llaves de Impacto
-    (r"^Atornillador", "atornillador neumatico"),
-    (r"^Motor Neumático", "motor neumatico"),
-    (r"^Sierra De Corte", "sierra neumatica"),
-    (r"^Martillo Cincelador", "martillo cincelador neumatico"),
-    (r"^Desincrustador", "martillo de agujas neumatico desincrustador"),
-    (r"^Balanceador", "balanceador de herramientas a resorte"),
-    (r"^Aceite", "aceite para herramientas neumaticas"),
-    (r"^Filtro Regulador", "filtro regulador lubricador aire comprimido"),
+    (r"^Atornillador", "arbol:MLA437789:Atornill|Otr"),
+    (r"^Motor Neumático", "arbol:MLA437789:Motor|Otr"),
+    (r"^Sierra De Corte", "arbol:MLA437789:Sierra|Otr"),
+    (r"^(Martillo Cincelador|Desincrustador)", "arbol:MLA437789:Martill|Cincel|Otr"),
+    (r"^Balanceador", "arbol:MLA437789:Balance|Otr"),
+    (r"^Aceite", "arbol:MLA437789:Aceite|Lubric|Otr"),
+    (r"^Filtro Regulador", "arbol:MLA437789:Filtro|Otr"),
 ]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 if XP:   # EXTRAPOWER también vende hogar, camping y electro (anafes, calefones, iluminación)
@@ -377,6 +377,13 @@ def elegir_categoria(f, t):
         if re.search(exp, t, re.I):
             if re.fullmatch(r"MLA\d+", q):
                 return q
+            if q.startswith("arbol:"):
+                _, raiz, nombres = q.split(":", 2)
+                for nom in nombres.split("|"):
+                    c = categoria_por_nombre([nom], raiz)
+                    if c:
+                        return c
+                continue
             consultas = [q]
             break
     for exp, fija, q in ([] if DEL or TOR else REGLAS_CAT):
