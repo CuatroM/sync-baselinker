@@ -142,12 +142,13 @@ if os.path.exists("datos/delfabro_fichas.json"):
     for f in json.load(open("datos/delfabro_fichas.json", encoding="utf-8")):
         if float(f.get("precio_lista") or 0) > 0:
             costo[sync.normalizar_codigo(f["sku"] + "#DELFABRO")] = float(f["precio_lista"])
-for sec in ("baselinker", "extrapower", "jya", "delfabro"):
+for sec in ("baselinker", "extrapower", "jya", "delfabro", "torreon"):
     b = cfg.get(sec)
     if not b or not b.get("inventory_id"):
         continue
+    _grupo = sync.grupo_precio(bl, b)
     for p in bl.catalogo(int(b["inventory_id"])).values():
-        v = float((p.get("prices") or {}).get(str(b["price_group_id"])) or 0)
+        v = float((p.get("prices") or {}).get(_grupo) or 0)
         if v > 0:
             costo[sync.normalizar_codigo(p.get("sku"))] = v
 

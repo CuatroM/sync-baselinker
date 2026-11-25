@@ -240,6 +240,16 @@ class BaseLinker:
 # 3. Comparar y actualizar
 # ----------------------------------------------------------------------------
 
+def grupo_precio(bl, b):
+    """price_group_id de la sección del config, o el grupo de precio por defecto de su inventario."""
+    if b.get("price_group_id"):
+        return str(b["price_group_id"])
+    for i in bl.llamar("getInventories", {}).get("inventories", []):
+        if int(i["inventory_id"]) == int(b["inventory_id"]):
+            return str(i.get("default_price_group") or (i.get("price_groups") or [""])[0])
+    return ""
+
+
 def sincronizar(cfg, lista, bl, dry_run):
     b = cfg["baselinker"]
     inv = int(b["inventory_id"])

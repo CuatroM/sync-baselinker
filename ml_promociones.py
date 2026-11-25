@@ -43,12 +43,13 @@ if os.path.exists("datos/delfabro_fichas.json"):
             iva[sync.normalizar_codigo(f["sku"] + "#DELFABRO")] = float(str(f["iva"]).replace(",", ".").rstrip("%"))
 try:
     bl = sync.BaseLinker(os.environ["BL_TOKEN"])
-    for sec in ("baselinker", "extrapower", "jya", "delfabro"):
+    for sec in ("baselinker", "extrapower", "jya", "delfabro", "torreon"):
         b = cfg.get(sec)
         if not b or not b.get("inventory_id"):
             continue
+        _grupo = sync.grupo_precio(bl, b)
         for k, p in bl.catalogo(int(b["inventory_id"])).items():
-            v = float((p.get("prices") or {}).get(str(b["price_group_id"])) or 0)
+            v = float((p.get("prices") or {}).get(_grupo) or 0)
             if v > 0:
                 costo[sync.normalizar_codigo(p.get("sku"))] = v
             if p.get("sku"):
