@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/runner/work/sync-baselinker/sync-baselinker/torreon_sync.py", line 25, in <module>
+    from torreon_web import leer
+  File "/home/runner/work/sync-baselinker/sync-baselinker/torreon_web.py", line 14, in <module>
+    from bs4 import BeautifulSoup
+ModuleNotFoundError: No module named 'bs4'
