@@ -1,0 +1,59 @@
+{
+ "LN20/80": {
+  "Tipo de amoladora": "Angular"
+ },
+ "LN20/60": {
+  "Tipo de amoladora": "Angular"
+ },
+ "AV25": {
+  "Tipo de amoladora": "Angular"
+ },
+ "LN178": {
+  "Tipo de amoladora": "Angular"
+ },
+ "LN115": {
+  "Tipo de amoladora": "Angular"
+ },
+ "LN127": {
+  "Tipo de amoladora": "Angular"
+ },
+ "AR24": {
+  "Tipo de amoladora": "Recta"
+ },
+ "DC22L": {
+  "Tipo de amoladora": "Recta"
+ },
+ "DCA22L": {
+  "Tipo de amoladora": "Recta"
+ },
+ "PMR100": {
+  "Tipo de amoladora": "Recta"
+ },
+ "PMA22": {
+  "Tipo de amoladora": "Recta"
+ },
+ "PM22": {
+  "Tipo de amoladora": "Recta"
+ },
+ "PM22L": {
+  "Tipo de amoladora": "Recta"
+ },
+ "PMA22L": {
+  "Tipo de amoladora": "Recta"
+ },
+ "EP5104": {
+  "Tipo de amoladora": "Recta"
+ },
+ "SA5022": {
+  "Tipo de amoladora": "Recta"
+ },
+ "TN178": {
+  "Tipo de lijadora": "Orbital"
+ },
+ "EP8151-6S": {
+  "Tipo de lijadora": "Excéntrica"
+ },
+ "EP3150-6": {
+  "Tipo de lijadora": "Excéntrica"
+ }
+}

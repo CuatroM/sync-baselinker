@@ -122,6 +122,21 @@ REGLAS_CAT = [
     (r"^(Velcro y Goma|Goma Porta Velcro)", None, "plato porta lija velcro pulidora"),
     (r"^Pico Boquilla", None, "pico airless para maquina de pintar"),
 ]
+TOR_CAT = [   # TORREON / VTB: categorías fijas o búsquedas (la sugerencia de ML se equivoca en varias)
+    (r"^(Mini )?Amoladora", "MLA455290"),            # Amoladoras Neumáticas
+    (r"^Lijadora", "MLA455291"),                     # Lijadoras Neumáticas
+    (r"^(Lustralijadora|Impulsor Neumático Para Pulir)", "pulidora lustradora neumatica"),
+    (r"^Taladro", "MLA455288"),                      # Taladros Neumáticos
+    (r"^Llave De Impacto", "MLA457298"),             # Llaves de Impacto
+    (r"^Atornillador", "atornillador neumatico"),
+    (r"^Motor Neumático", "motor neumatico"),
+    (r"^Sierra De Corte", "sierra neumatica"),
+    (r"^Martillo Cincelador", "martillo cincelador neumatico"),
+    (r"^Desincrustador", "martillo de agujas neumatico desincrustador"),
+    (r"^Balanceador", "balanceador de herramientas a resorte"),
+    (r"^Aceite", "aceite para herramientas neumaticas"),
+    (r"^Filtro Regulador", "filtro regulador lubricador aire comprimido"),
+]
 RAICES_OK = {"Herramientas", "Construcción", "Accesorios para Vehículos", "Industrias y Oficinas"}
 if XP:   # EXTRAPOWER también vende hogar, camping y electro (anafes, calefones, iluminación)
     RAICES_OK |= {"Hogar, Muebles y Jardín", "Electrodomésticos y Aires Ac.", "Deportes y Fitness"}
@@ -358,7 +373,7 @@ def elegir_categoria(f, t):
             if c:
                 return c
     consultas = [t]
-    for exp, q in (DEL_CAT if DEL else []):
+    for exp, q in (DEL_CAT if DEL else TOR_CAT if TOR else []):
         if re.search(exp, t, re.I):
             if re.fullmatch(r"MLA\d+", q):
                 return q
@@ -455,6 +470,9 @@ def color_de(f, t):
         if re.search(rf"\b{c}\b", texto):
             return "Gris" if c == "plateado" else c.capitalize()
     return "Blanco"
+if TOR and os.path.exists("datos/torreon_extra.json"):   # datos que exige ML (tipo de amoladora, de lijadora…)
+    for _k, _v in json.load(open("datos/torreon_extra.json", encoding="utf-8")).items():
+        EXTRA.setdefault(_k, {}).update(_v)
 if JYA and os.path.exists("datos/jya_extra.json"):   # datos que exige ML y no están en la tienda (p. ej. Equipo en gorras)
     for _k, _v in json.load(open("datos/jya_extra.json", encoding="utf-8")).items():
         EXTRA.setdefault(_k, {}).update(_v)
@@ -564,7 +582,7 @@ def completar_por_texto(attrs, req, f, t):
         ops = [v["name"] for v in a["values"] if v.get("name")]
         if aid == "POWER_SUPPLY_TYPE":
             pref = (["bateria", "recargable", "inalambric"] if re.search(r"recargable|bateria|inalambric|\b\d+\s*v\b(?!.*220)", texto)
-                    else ["neumatic"] if "neumatic" in texto else DEFECTO_OPC[aid])
+                    else ["neumatic", "energia industrial"] if "neumatic" in texto or TOR else DEFECTO_OPC[aid])
             el = next((o for p in pref for o in ops if p in _sa(o)), None)
         elif aid == "BACKPACK_TYPE" and re.search(r"escolar|carro|infantil|jardin", texto):
             el = next((o for o in ops if "escolar" in _sa(o)), None)
@@ -802,7 +820,7 @@ for sku in skus:
             f"{a['name']}: {', '.join(v['name'] for v in (a.get('values') or [])[:15])}"
             for a in cat_attrs if a["name"] in faltan)
         fila.update({"titulo": t, "categoria": f"{cat} {cat_info.get('name')}", "precio_base": base,
-                     "precio": precio, "stock": stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
+                     "precio": precio, "stock": ((int(f.get("stock_web") or 0) + 5) if int(f.get("stock_web") or 0) >= 1 else 1) if TOR else stock_fijo, "fotos": " | ".join(x["nombre"] for x in imgs),
                      "atributos": len(atributos), "obligatorios_sin_dato": ", ".join(faltan)})
         item = {"title": t, "category_id": cat, "price": precio, "currency_id": "ARS",
                 "available_quantity": ((int(f.get("stock_web") or 0) + 5) if int(f.get("stock_web") or 0) >= 1 else 1) if TOR else stock_fijo, "buying_mode": "buy_it_now", "condition": "new",
