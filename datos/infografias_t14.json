@@ -1,0 +1,783 @@
+[
+{
+"id": "ACEITE-1L",
+"sku": "ACEITE-1L#TORREON",
+"items": [
+"MLA4237555394"
+],
+"fotos": [
+"t14/ACEITE-1L_1_ficha.jpg",
+"t14/ACEITE-1L_2_usos.jpg"
+]
+},
+{
+"id": "AR24",
+"sku": "AR24#TORREON",
+"items": [
+"MLA4237504002"
+],
+"fotos": [
+"t14/AR24_1_ficha.jpg",
+"t14/AR24_2_usos.jpg"
+]
+},
+{
+"id": "LN20/80",
+"sku": "LN20/80#TORREON",
+"items": [
+"MLA2318947123"
+],
+"fotos": [
+"t14/LN20-80_1_ficha.jpg",
+"t14/LN20-80_2_usos.jpg"
+]
+},
+{
+"id": "LN20/60",
+"sku": "LN20/60#TORREON",
+"items": [
+"MLA4237504054"
+],
+"fotos": [
+"t14/LN20-60_1_ficha.jpg",
+"t14/LN20-60_2_usos.jpg"
+]
+},
+{
+"id": "AV25",
+"sku": "AV25#TORREON",
+"items": [
+"MLA2318947165"
+],
+"fotos": [
+"t14/AV25_1_ficha.jpg",
+"t14/AV25_2_usos.jpg"
+]
+},
+{
+"id": "LN178",
+"sku": "LN178#TORREON",
+"items": [
+"MLA4237504098"
+],
+"fotos": [
+"t14/LN178_1_ficha.jpg",
+"t14/LN178_2_usos.jpg"
+]
+},
+{
+"id": "LN115",
+"sku": "LN115#TORREON",
+"items": [
+"MLA4237504126"
+],
+"fotos": [
+"t14/LN115_1_ficha.jpg",
+"t14/LN115_2_usos.jpg"
+]
+},
+{
+"id": "LN127",
+"sku": "LN127#TORREON",
+"items": [
+"MLA4237555602"
+],
+"fotos": [
+"t14/LN127_1_ficha.jpg",
+"t14/LN127_2_usos.jpg"
+]
+},
+{
+"id": "DC22L",
+"sku": "DC22L#TORREON",
+"items": [
+"MLA4237555634"
+],
+"fotos": [
+"t14/DC22L_1_ficha.jpg",
+"t14/DC22L_2_usos.jpg"
+]
+},
+{
+"id": "DCA22L",
+"sku": "DCA22L#TORREON",
+"items": [
+"MLA4237504244"
+],
+"fotos": [
+"t14/DCA22L_1_ficha.jpg",
+"t14/DCA22L_2_usos.jpg"
+]
+},
+{
+"id": "PMR100",
+"sku": "PMR100#TORREON",
+"items": [
+"MLA4237504250"
+],
+"fotos": [
+"t14/PMR100_1_ficha.jpg",
+"t14/PMR100_2_usos.jpg"
+]
+},
+{
+"id": "PMA22",
+"sku": "PMA22#TORREON",
+"items": [
+"MLA4237504262"
+],
+"fotos": [
+"t14/PMA22_1_ficha.jpg",
+"t14/PMA22_2_usos.jpg"
+]
+},
+{
+"id": "PM22",
+"sku": "PM22#TORREON",
+"items": [
+"MLA2318947413"
+],
+"fotos": [
+"t14/PM22_1_ficha.jpg",
+"t14/PM22_2_usos.jpg"
+]
+},
+{
+"id": "PM22L",
+"sku": "PM22L#TORREON",
+"items": [
+"MLA4237504292"
+],
+"fotos": [
+"t14/PM22L_1_ficha.jpg",
+"t14/PM22L_2_usos.jpg"
+]
+},
+{
+"id": "ZZ6P",
+"sku": "ZZ6P#TORREON",
+"items": [
+"MLA2318947443"
+],
+"fotos": [
+"t14/ZZ6P_1_ficha.jpg",
+"t14/ZZ6P_2_usos.jpg"
+]
+},
+{
+"id": "ZZ6R",
+"sku": "ZZ6R#TORREON",
+"items": [
+"MLA2319008609"
+],
+"fotos": [
+"t14/ZZ6R_1_ficha.jpg",
+"t14/ZZ6R_2_usos.jpg"
+]
+},
+{
+"id": "TP13",
+"sku": "TP13#TORREON",
+"items": [
+"MLA4237504384"
+],
+"fotos": [
+"t14/TP13_1_ficha.jpg",
+"t14/TP13_2_usos.jpg"
+]
+},
+{
+"id": "TP16",
+"sku": "TP16#TORREON",
+"items": [
+"MLA4237555872"
+],
+"fotos": [
+"t14/TP16_1_ficha.jpg",
+"t14/TP16_2_usos.jpg"
+]
+},
+{
+"id": "LL2000",
+"sku": "LL2000#TORREON",
+"items": [
+"MLA4237555876"
+],
+"fotos": [
+"t14/LL2000_1_ficha.jpg",
+"t14/LL2000_2_usos.jpg"
+]
+},
+{
+"id": "IP20",
+"sku": "IP20#TORREON",
+"items": [
+"MLA4237555882"
+],
+"fotos": [
+"t14/IP20_1_ficha.jpg",
+"t14/IP20_2_usos.jpg"
+]
+},
+{
+"id": "TN178",
+"sku": "TN178#TORREON",
+"items": [
+"MLA4237604576"
+],
+"fotos": [
+"t14/TN178_1_ficha.jpg",
+"t14/TN178_2_usos.jpg"
+]
+},
+{
+"id": "PMA22L",
+"sku": "PMA22L#TORREON",
+"items": [
+"MLA4237504474"
+],
+"fotos": [
+"t14/PMA22L_1_ficha.jpg",
+"t14/PMA22L_2_usos.jpg"
+]
+},
+{
+"id": "LL3600",
+"sku": "LL3600#TORREON",
+"items": [
+"MLA4237504478"
+],
+"fotos": [
+"t14/LL3600_1_ficha.jpg",
+"t14/LL3600_2_usos.jpg"
+]
+},
+{
+"id": "IP40",
+"sku": "IP40#TORREON",
+"items": [
+"MLA2319008775"
+],
+"fotos": [
+"t14/IP40_1_ficha.jpg",
+"t14/IP40_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-200RPM-R",
+"sku": "MOTOR-200RPM-R#TORREON",
+"items": [
+"MLA4237504506"
+],
+"fotos": [
+"t14/MOTOR-200RPM-R_1_ficha.jpg",
+"t14/MOTOR-200RPM-R_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-400RPM-R",
+"sku": "MOTOR-400RPM-R#TORREON",
+"items": [
+"MLA2319008791"
+],
+"fotos": [
+"t14/MOTOR-400RPM-R_1_ficha.jpg",
+"t14/MOTOR-400RPM-R_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-30RPM",
+"sku": "MOTOR-30RPM#TORREON",
+"items": [
+"MLA4237555950"
+],
+"fotos": [
+"t14/MOTOR-30RPM_1_ficha.jpg",
+"t14/MOTOR-30RPM_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-2300RPM",
+"sku": "MOTOR-2300RPM#TORREON",
+"items": [
+"MLA2319008809"
+],
+"fotos": [
+"t14/MOTOR-2300RPM_1_ficha.jpg",
+"t14/MOTOR-2300RPM_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-400RPM",
+"sku": "MOTOR-400RPM#TORREON",
+"items": [
+"MLA4237604672"
+],
+"fotos": [
+"t14/MOTOR-400RPM_1_ficha.jpg",
+"t14/MOTOR-400RPM_2_usos.jpg"
+]
+},
+{
+"id": "MOTOR-750RPM",
+"sku": "MOTOR-750RPM#TORREON",
+"items": [
+"MLA2319008831"
+],
+"fotos": [
+"t14/MOTOR-750RPM_1_ficha.jpg",
+"t14/MOTOR-750RPM_2_usos.jpg"
+]
+},
+{
+"id": "SETUBO34",
+"sku": "SETUBO34#TORREON",
+"items": [
+"MLA4237604694"
+],
+"fotos": [
+"t14/SETUBO34_1_ficha.jpg",
+"t14/SETUBO34_2_usos.jpg"
+]
+},
+{
+"id": "SA8235",
+"sku": "SA8235#TORREON",
+"items": [
+"MLA4237504588"
+],
+"fotos": [
+"t14/SA8235_1_ficha.jpg",
+"t14/SA8235_2_usos.jpg"
+]
+},
+{
+"id": "SA7103K1",
+"sku": "SA7103K1#TORREON",
+"items": [
+"MLA4237556018"
+],
+"fotos": [
+"t14/SA7103K1_1_ficha.jpg",
+"t14/SA7103K1_2_usos.jpg"
+]
+},
+{
+"id": "FD7285",
+"sku": "FD7285#TORREON",
+"items": [
+"MLA4237604832"
+],
+"fotos": [
+"t14/FD7285_1_ficha.jpg",
+"t14/FD7285_2_usos.jpg"
+]
+},
+{
+"id": "FD7286",
+"sku": "FD7286#TORREON",
+"items": [
+"MLA4237504702"
+],
+"fotos": [
+"t14/FD7286_1_ficha.jpg",
+"t14/FD7286_2_usos.jpg"
+]
+},
+{
+"id": "FD2600",
+"sku": "FD2600#TORREON",
+"items": [
+"MLA4237604872"
+],
+"fotos": [
+"t14/FD2600_1_ficha.jpg",
+"t14/FD2600_2_usos.jpg"
+]
+},
+{
+"id": "FD020C",
+"sku": "FD020C#TORREON",
+"items": [
+"MLA2319009031"
+],
+"fotos": [
+"t14/FD020C_1_ficha.jpg",
+"t14/FD020C_2_usos.jpg"
+]
+},
+{
+"id": "FD11801",
+"sku": "FD11801#TORREON",
+"items": [
+"MLA4237556172"
+],
+"fotos": [
+"t14/FD11801_1_ficha.jpg",
+"t14/FD11801_2_usos.jpg"
+]
+},
+{
+"id": "FD5301",
+"sku": "FD5301#TORREON",
+"items": [
+"MLA2319009073"
+],
+"fotos": [
+"t14/FD5301_1_ficha.jpg",
+"t14/FD5301_2_usos.jpg"
+]
+},
+{
+"id": "SA3305",
+"sku": "SA3305#TORREON",
+"items": [
+"MLA4237604926"
+],
+"fotos": [
+"t14/SA3305_1_ficha.jpg",
+"t14/SA3305_2_usos.jpg"
+]
+},
+{
+"id": "EP8151-6S",
+"sku": "EP8151-6S#TORREON",
+"items": [
+"MLA2319009093"
+],
+"fotos": [
+"t14/EP8151-6S_1_ficha.jpg",
+"t14/EP8151-6S_2_usos.jpg"
+]
+},
+{
+"id": "EP5104",
+"sku": "EP5104#TORREON",
+"items": [
+"MLA4237504786"
+],
+"fotos": [
+"t14/EP5104_1_ficha.jpg",
+"t14/EP5104_2_usos.jpg"
+]
+},
+{
+"id": "SA6102",
+"sku": "SA6102#TORREON",
+"items": [
+"MLA4237604996"
+],
+"fotos": [
+"t14/SA6102_1_ficha.jpg",
+"t14/SA6102_2_usos.jpg"
+]
+},
+{
+"id": "AV4818",
+"sku": "AV4818#TORREON",
+"items": [
+"MLA4237504868"
+],
+"fotos": [
+"t14/AV4818_1_ficha.jpg",
+"t14/AV4818_2_usos.jpg"
+]
+},
+{
+"id": "SA7303K",
+"sku": "SA7303K#TORREON",
+"items": [
+"MLA4237556336"
+],
+"fotos": [
+"t14/SA7303K_1_ficha.jpg",
+"t14/SA7303K_2_usos.jpg"
+]
+},
+{
+"id": "FD5300Q",
+"sku": "FD5300Q#TORREON",
+"items": [
+"MLA4237556350"
+],
+"fotos": [
+"t14/FD5300Q_1_ficha.jpg",
+"t14/FD5300Q_2_usos.jpg"
+]
+},
+{
+"id": "SA6117",
+"sku": "SA6117#TORREON",
+"items": [
+"MLA2319009237"
+],
+"fotos": [
+"t14/SA6117_1_ficha.jpg",
+"t14/SA6117_2_usos.jpg"
+]
+},
+{
+"id": "SA6203",
+"sku": "SA6203#TORREON",
+"items": [
+"MLA4237504944"
+],
+"fotos": [
+"t14/SA6203_1_ficha.jpg",
+"t14/SA6203_2_usos.jpg"
+]
+},
+{
+"id": "SA6202",
+"sku": "SA6202#TORREON",
+"items": [
+"MLA4237556380"
+],
+"fotos": [
+"t14/SA6202_1_ficha.jpg",
+"t14/SA6202_2_usos.jpg"
+]
+},
+{
+"id": "SA6210",
+"sku": "SA6210#TORREON",
+"items": [
+"MLA4237605116"
+],
+"fotos": [
+"t14/SA6210_1_ficha.jpg",
+"t14/SA6210_2_usos.jpg"
+]
+},
+{
+"id": "SA6208",
+"sku": "SA6208#TORREON",
+"items": [
+"MLA2319009261"
+],
+"fotos": [
+"t14/SA6208_1_ficha.jpg",
+"t14/SA6208_2_usos.jpg"
+]
+},
+{
+"id": "SB1",
+"sku": "SB1#TORREON",
+"items": [
+"MLA4237556412"
+],
+"fotos": [
+"t14/SB1_1_ficha.jpg",
+"t14/SB1_2_usos.jpg"
+]
+},
+{
+"id": "SB2",
+"sku": "SB2#TORREON",
+"items": [
+"MLA2319009303"
+],
+"fotos": [
+"t14/SB2_1_ficha.jpg",
+"t14/SB2_2_usos.jpg"
+]
+},
+{
+"id": "SB3",
+"sku": "SB3#TORREON",
+"items": [
+"MLA4237504986"
+],
+"fotos": [
+"t14/SB3_1_ficha.jpg",
+"t14/SB3_2_usos.jpg"
+]
+},
+{
+"id": "FD9999G",
+"sku": "FD9999G#TORREON",
+"items": [
+"MLA4237605202"
+],
+"fotos": [
+"t14/FD9999G_1_ficha.jpg",
+"t14/FD9999G_2_usos.jpg"
+]
+},
+{
+"id": "MANG-6.5X6",
+"sku": "MANG-6.5X6#TORREON",
+"items": [
+"MLA4237605224"
+],
+"fotos": [
+"t14/MANG-6.5X6_1_ficha.jpg",
+"t14/MANG-6.5X6_2_usos.jpg"
+]
+},
+{
+"id": "MANG-6.5X8",
+"sku": "MANG-6.5X8#TORREON",
+"items": [
+"MLA2319009363"
+],
+"fotos": [
+"t14/MANG-6.5X8_1_ficha.jpg",
+"t14/MANG-6.5X8_2_usos.jpg"
+]
+},
+{
+"id": "MANG-6.5X12",
+"sku": "MANG-6.5X12#TORREON",
+"items": [
+"MLA4237556526"
+],
+"fotos": [
+"t14/MANG-6.5X12_1_ficha.jpg",
+"t14/MANG-6.5X12_2_usos.jpg"
+]
+},
+{
+"id": "MANG-8X6",
+"sku": "MANG-8X6#TORREON",
+"items": [
+"MLA2319009447"
+],
+"fotos": [
+"t14/MANG-8X6_1_ficha.jpg",
+"t14/MANG-8X6_2_usos.jpg"
+]
+},
+{
+"id": "MANG-8X8",
+"sku": "MANG-8X8#TORREON",
+"items": [
+"MLA2319009465"
+],
+"fotos": [
+"t14/MANG-8X8_1_ficha.jpg",
+"t14/MANG-8X8_2_usos.jpg"
+]
+},
+{
+"id": "MANG-8X12",
+"sku": "MANG-8X12#TORREON",
+"items": [
+"MLA2319009491"
+],
+"fotos": [
+"t14/MANG-8X12_1_ficha.jpg",
+"t14/MANG-8X12_2_usos.jpg"
+]
+},
+{
+"id": "MANG-11X6",
+"sku": "MANG-11X6#TORREON",
+"items": [
+"MLA4237556698"
+],
+"fotos": [
+"t14/MANG-11X6_1_ficha.jpg",
+"t14/MANG-11X6_2_usos.jpg"
+]
+},
+{
+"id": "MANG-11X8",
+"sku": "MANG-11X8#TORREON",
+"items": [
+"MLA4237605418"
+],
+"fotos": [
+"t14/MANG-11X8_1_ficha.jpg",
+"t14/MANG-11X8_2_usos.jpg"
+]
+},
+{
+"id": "SA5022",
+"sku": "SA5022#TORREON",
+"items": [
+"MLA4237505228"
+],
+"fotos": [
+"t14/SA5022_1_ficha.jpg",
+"t14/SA5022_2_usos.jpg"
+]
+},
+{
+"id": "EP3150-6",
+"sku": "EP3150-6#TORREON",
+"items": [
+"MLA4237505236"
+],
+"fotos": [
+"t14/EP3150-6_1_ficha.jpg",
+"t14/EP3150-6_2_usos.jpg"
+]
+},
+{
+"id": "FRL-VTB",
+"sku": "FRL-VTB#TORREON",
+"items": [
+"MLA4237605440"
+],
+"fotos": [
+"t14/FRL-VTB_1_ficha.jpg",
+"t14/FRL-VTB_2_usos.jpg"
+]
+},
+{
+"id": "SETUBO12C",
+"sku": "SETUBO12C#TORREON",
+"items": [
+"MLA2319009535"
+],
+"fotos": [
+"t14/SETUBO12C_1_ficha.jpg",
+"t14/SETUBO12C_2_usos.jpg"
+]
+},
+{
+"id": "SETUBO1",
+"sku": "SETUBO1#TORREON",
+"items": [
+"MLA4237505270"
+],
+"fotos": [
+"t14/SETUBO1_1_ficha.jpg",
+"t14/SETUBO1_2_usos.jpg"
+]
+},
+{
+"id": "SETUBO12L",
+"sku": "SETUBO12L#TORREON",
+"items": [
+"MLA4237556782"
+],
+"fotos": [
+"t14/SETUBO12L_1_ficha.jpg",
+"t14/SETUBO12L_2_usos.jpg"
+]
+},
+{
+"id": "BR8701",
+"sku": "BR8701#TORREON",
+"items": [
+"MLA4237605508"
+],
+"fotos": [
+"t14/BR8701_1_ficha.jpg",
+"t14/BR8701_2_usos.jpg"
+]
+},
+{
+"id": "FD3401",
+"sku": "FD3401#TORREON",
+"items": [
+"MLA4237505398"
+],
+"fotos": [
+"t14/FD3401_1_ficha.jpg",
+"t14/FD3401_2_usos.jpg"
+]
+}
+]
