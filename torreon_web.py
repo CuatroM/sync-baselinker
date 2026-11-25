@@ -30,7 +30,7 @@ def get(url):
             if r.status_code == 200:
                 return r.text
             if r.status_code == 404:
-                return ""
+                return "404"
             log(f"  {r.status_code} {url}")
         except Exception as e:
             log(f"  error {e} {url}")
@@ -72,6 +72,8 @@ def foto_grande(u):
 
 def leer(url):
     h = get(url)
+    if h == "404":
+        return {"url": url, "error": "no existe"}
     if not h:
         return {"url": url, "error": "no se pudo leer"}
     s = BeautifulSoup(h, "html.parser")
@@ -155,24 +157,29 @@ def leer(url):
             "meta_descripcion": meta("og:description") or meta("description")}
 
 
-os.makedirs("salida", exist_ok=True)
-res = []
-for i, u in enumerate(urls_productos(), 1):
-    p = leer(u)
-    res.append(p)
-    log(f"{i:3} {p.get('sku') or '-':16} | {str(p.get('nombre'))[:55]:55} | ${p.get('precio_web')} | stock {p.get('stock_web')} | "
-        f"{len(p.get('fotos') or [])} fotos | {len(p.get('variantes') or [])} var" + (f" | {p['error']}" if p.get("error") else ""))
-    time.sleep(0.6)
-json.dump(res, open("salida/torreon_web.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-with open("salida/torreon_web.csv", "w", newline="", encoding="utf-8-sig") as f:
-    w = csv.writer(f, delimiter=";")
-    w.writerow(["SKU", "NOMBRE", "PRECIO WEB", "PRECIO −30%", "STOCK WEB", "DISPONIBLE", "CATEGORÍA", "VARIANTES", "FOTOS", "URL"])
-    for p in res:
-        pw = p.get("precio_web")
-        w.writerow([p.get("sku"), p.get("nombre"), pw, round(pw * 0.7, 2) if pw else "", p.get("stock_web"),
-                    "SI" if p.get("disponible") else "NO", " > ".join(p.get("categorias") or []),
-                    len(p.get("variantes") or []), len(p.get("fotos") or []), p.get("url")])
-ok = [p for p in res if not p.get("error")]
-log(f"Listo: {len(ok)} productos leídos | disponibles {sum(1 for p in ok if p.get('disponible'))} | "
-    f"sin stock {sum(1 for p in ok if not p.get('disponible'))} | sin precio {sum(1 for p in ok if not p.get('precio_web'))} | "
-    f"sin SKU {sum(1 for p in ok if not p.get('sku'))} | con variantes {sum(1 for p in ok if len(p.get('variantes') or []) > 1)}")
+def main():
+    os.makedirs("salida", exist_ok=True)
+    res = []
+    for i, u in enumerate(urls_productos(), 1):
+        p = leer(u)
+        res.append(p)
+        log(f"{i:3} {p.get('sku') or '-':16} | {str(p.get('nombre'))[:55]:55} | ${p.get('precio_web')} | stock {p.get('stock_web')} | "
+            f"{len(p.get('fotos') or [])} fotos | {len(p.get('variantes') or [])} var" + (f" | {p['error']}" if p.get("error") else ""))
+        time.sleep(0.6)
+    json.dump(res, open("salida/torreon_web.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    with open("salida/torreon_web.csv", "w", newline="", encoding="utf-8-sig") as f:
+        w = csv.writer(f, delimiter=";")
+        w.writerow(["SKU", "NOMBRE", "PRECIO WEB", "PRECIO −30%", "STOCK WEB", "DISPONIBLE", "CATEGORÍA", "VARIANTES", "FOTOS", "URL"])
+        for p in res:
+            pw = p.get("precio_web")
+            w.writerow([p.get("sku"), p.get("nombre"), pw, round(pw * 0.7, 2) if pw else "", p.get("stock_web"),
+                        "SI" if p.get("disponible") else "NO", " > ".join(p.get("categorias") or []),
+                        len(p.get("variantes") or []), len(p.get("fotos") or []), p.get("url")])
+    ok = [p for p in res if not p.get("error")]
+    log(f"Listo: {len(ok)} productos leídos | disponibles {sum(1 for p in ok if p.get('disponible'))} | "
+        f"sin stock {sum(1 for p in ok if not p.get('disponible'))} | sin precio {sum(1 for p in ok if not p.get('precio_web'))} | "
+        f"sin SKU {sum(1 for p in ok if not p.get('sku'))} | con variantes {sum(1 for p in ok if len(p.get('variantes') or []) > 1)}")
+
+
+if __name__ == "__main__":
+    main()

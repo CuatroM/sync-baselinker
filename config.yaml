@@ -78,3 +78,8 @@ planilla_ml:
 # Crear una planilla vacía, compartirla como Editor con la cuenta de servicio y pegar acá su ID.
 planilla_egresos:
   sheet_id: "1dhCX-WaZL7PRdKbxgZf6zsh7eUpwtXZ8ddxWn7kzQHg"
+
+# TORREON (herramientas neumáticas TORREON y VTB): precio = web − 30 % (con IVA 10,5 %), stock = web + 5
+torreon:
+  inventory_id: 66973        # INVENTARIO COMPLETO TORREON 2026 MATIAS
+  # price_group_id: vacío = el grupo de precio por defecto del inventario
