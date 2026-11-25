@@ -2,23 +2,32 @@
 y lista las categorías cuyo nombre coincide con BUSCAR (expresión regular). Sirve para elegir categorías fijas."""
 import os, re, time, csv
 import requests
+from ml.cliente import ML
 
 API = "https://api.mercadolibre.com"
 RAICES = [x.strip() for x in (os.environ.get("RAICES") or "Herramientas,Industrias y Oficinas").split(",")]
 BUSCAR = re.compile(os.environ.get("BUSCAR") or ".", re.I)
-S = requests.Session()
+ml = ML(os.environ.get("ML_CODIGO"))
+SEMILLAS = ["MLA455290", "MLA431110", "MLA413520", "MLA1500"]   # categorías conocidas: de ahí salen las raíces
 
 
 def get(u):
-    for i in range(4):
-        r = S.get(API + u, timeout=30)
-        if r.status_code == 200:
-            return r.json()
-        time.sleep(2 * (i + 1))
-    return {}
+    r = ml.pedir("GET", u, reintentos=3)
+    if r.status_code != 200:
+        print(f"  {r.status_code} {u}", flush=True)
+        return {}
+    return r.json()
 
 
-raices = [c for c in get("/sites/MLA/categories") if c["name"] in RAICES]
+raices, vistos = [], set()
+for c in get("/sites/MLA/categories") or []:
+    if c["name"] in RAICES:
+        raices.append(c)
+for sid in SEMILLAS:   # por si el listado de raíces no está disponible
+    for c in (get(f"/categories/{sid}").get("path_from_root") or [])[:1]:
+        if c["id"] not in {x["id"] for x in raices} and (c["name"] in RAICES or not raices):
+            raices.append(c)
+print("Raíces:", [(c["id"], c["name"]) for c in raices], flush=True)
 filas, pend = [], [(c["id"], c["name"]) for c in raices]
 while pend:
     cid, ruta = pend.pop(0)
