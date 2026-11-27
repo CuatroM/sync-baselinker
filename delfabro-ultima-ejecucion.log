@@ -1,18 +1,15 @@
-[2026-11-26 17:55:02] 218 productos DELFABRO con página en la web | REAL
-[2026-11-26 17:58:59]   50/218 páginas leídas
-[2026-11-26 18:02:53]   100/218 páginas leídas
-[2026-11-26 18:06:41]   150/218 páginas leídas
-[2026-11-26 18:10:34]   200/218 páginas leídas
-[2026-11-26 18:11:56] Web: {'sin existencias': 70, 'disponible': 148}
-[2026-11-26 18:11:56] Inventario: 66518 'INVENTARIO COMPLETO DELFABRO 2026 MATIAS' | depósito por defecto: bl_75994
-[2026-11-26 18:11:57] Catálogo BaseLinker: 218 productos
-[2026-11-26 18:11:57] 218 productos en BaseLinker | depósito de stock: bl_75994 (encontrados: {'bl_75994': 218})
-[2026-11-26 18:11:57] Cambios de stock: 6 (a 0: 1, a 10: 5) | no están en BaseLinker: 0
-[2026-11-26 18:11:57]   T22050#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
-[2026-11-26 18:11:57]   T61001#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
-[2026-11-26 18:11:57]   T61004#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
-[2026-11-26 18:11:57]   T60302#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
-[2026-11-26 18:11:57]   T62103#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
-[2026-11-26 18:11:57]   42020#DELFABRO: 10 -> 0 (sin existencias en la web)
-[2026-11-26 18:11:58] updateInventoryProductsStock: 6 actualizados
-[2026-11-26 18:11:58] Listo.
+[2026-11-27 02:28:11] 218 productos DELFABRO con página en la web | REAL
+[2026-11-27 02:31:03]   50/218 páginas leídas
+[2026-11-27 02:34:09]   100/218 páginas leídas
+[2026-11-27 02:37:05]   150/218 páginas leídas
+[2026-11-27 02:39:12]   200/218 páginas leídas
+[2026-11-27 02:40:14] Web: {'sin existencias': 69, 'disponible': 149}
+[2026-11-27 02:40:14] Inventario: 66518 'INVENTARIO COMPLETO DELFABRO 2026 MATIAS' | depósito por defecto: bl_75994
+[2026-11-27 02:40:15] Catálogo BaseLinker: 218 productos
+[2026-11-27 02:40:15] 218 productos en BaseLinker | depósito de stock: bl_75994 (encontrados: {'bl_75994': 218})
+[2026-11-27 02:40:15] Cambios de stock: 3 (a 0: 1, a 10: 2) | no están en BaseLinker: 0
+[2026-11-27 02:40:15]   TC1#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
+[2026-11-27 02:40:15]   T515075#DELFABRO: 10 -> 0 (sin existencias en la web)
+[2026-11-27 02:40:15]   42020#DELFABRO: 0 -> 10 (volvió a estar disponible en la web)
+[2026-11-27 02:40:16] updateInventoryProductsStock: 3 actualizados
+[2026-11-27 02:40:16] Listo.
